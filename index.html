@@ -1,79 +1,93 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="zh-Hant">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>西晋年末州郡县表</title>
-  <meta name="description" content="依据《中国行政区划通史》西晋州郡县沿革，按年份重建年末行政区划的研究原型。">
+  <title>西晉年末州郡縣表</title>
+  <meta name="description" content="依據《中國行政區劃通史》西晉州郡縣沿革，按年份重建年末行政區劃。">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="site-header">
     <div class="header-inner">
-      <p class="eyebrow">中国历史行政区划 · 年度重建原型</p>
-      <h1>西晋年末州郡县表</h1>
-      <p class="subtitle">选择公元年份，按州查看该年年末的郡国与所辖县级政区。</p>
+      <p class="eyebrow">中國歷史行政區劃 · 年度重建原型</p>
+      <h1>西晉年末州郡縣表</h1>
+      <p class="subtitle">選擇公元年份，按州查看該年年末的郡國與所轄縣級政區。</p>
     </div>
   </header>
 
   <main>
-    <section class="control-panel" aria-label="查询条件">
+    <section class="control-panel" aria-label="查詢條件">
       <div class="control-grid">
         <label>
           <span>年份</span>
-          <select id="yearSelect" aria-label="选择公元年份"></select>
+          <select id="yearSelect" aria-label="選擇公元年份"></select>
         </label>
         <label>
           <span>州</span>
-          <select id="stateSelect" aria-label="筛选州">
+          <select id="stateSelect" aria-label="篩選州">
             <option value="">全部州</option>
           </select>
         </label>
         <label class="search-label">
-          <span>检索政区</span>
-          <input id="searchInput" type="search" placeholder="例如：南顿、荥阳、洛阳" autocomplete="off">
+          <span>檢索政區</span>
+          <input id="searchInput" type="search" placeholder="例如：南頓、滎陽、洛陽" autocomplete="off">
         </label>
         <label class="check-label">
           <input id="changedOnly" type="checkbox">
-          <span>只看本年有变化者</span>
+          <span>只看本年有變動者</span>
         </label>
       </div>
-      <div class="legend" aria-label="图例">
-        <span><i class="legend-normal">郡县</i> 宋体类字体</span>
-        <span><i class="legend-kingdom">封国</i> 楷体类字体</span>
-        <span><i class="legend-change">本年变化</i> 红色</span>
+      <div class="legend" aria-label="圖例">
+        <span><i class="legend-normal">郡縣</i> 宋體類字體</span>
+        <span><i class="legend-kingdom">封國</i> 楷體類字體</span>
+        <span><i class="legend-change">本年變動</i> 紅色</span>
+        <span><i class="legend-uncertain">※</i> 年代或辨字存疑</span>
+        <span><i class="legend-citation">[1]</i> 點擊查看依據</span>
       </div>
     </section>
 
     <section class="notice" id="statusNotice">
-      <strong>数据状态：</strong>
+      <strong>資料狀態：</strong>
       <span id="statusText"></span>
     </section>
 
     <section class="summary" aria-live="polite">
       <div><strong id="stateCount">0</strong><span>州</span></div>
-      <div><strong id="prefCount">0</strong><span>郡国</span></div>
-      <div><strong id="countyCount">0</strong><span>县级政区</span></div>
-      <div><strong id="changeCount">0</strong><span>本年变化项</span></div>
+      <div><strong id="prefCount">0</strong><span>郡國</span></div>
+      <div><strong id="countyCount">0</strong><span>縣級政區</span></div>
+      <div><strong id="changeCount">0</strong><span>本年變動項</span></div>
     </section>
 
     <section id="changePanel" class="change-panel" hidden>
-      <h2>本年变化索引</h2>
+      <h2>本年變動索引</h2>
       <div id="changeList"></div>
     </section>
 
     <section id="results" class="results" aria-live="polite"></section>
 
     <section class="method-note">
-      <h2>使用说明</h2>
-      <p>页面以书中西晋太康二年（281）断面作为优先基准；其他年份由各州郡县沿革所列存续区间重建。书中仅记年份、未记具体月日的变化，当前原型将区间起止年均标红，并暂按“终年仍有效”显示。</p>
-      <p>红色表示该政区的设立、废止、改名或改属年份被初步识别为当前年份。它是校勘提示，不等同于对具体生效日期的最终判定。</p>
+      <h2>使用說明</h2>
+      <p>頁面直接依據書內第592—765頁的西晉州郡縣沿革重建，州、郡與縣均按原文出現次序排列。選定年份所示為該年年末狀態。</p>
+      <p>年末口徑依本編凡例處理：上半年新置者自當年計入，下半年新置者自次年計入；上半年罷廢者以上一年為終年，下半年罷廢者以當年為終年；僅知年份而不明月份者，新置自該年起算，省廢以前一年為終年。故某年內發生並在年末已生效的變化，均反映於該年結果。</p>
+      <p>紅色表示該政區相較上一年年末有新置、復置、廢省、改名、改屬或所轄政區變動。右上角中括號數字每年重新編排；點擊後可查看書內頁碼、PDF頁碼與OCR校訂摘錄。</p>
+      <p>「※」不是原書符號，而是本頁面的校勘標記：表示原文年代帶有「前」「後」「？」等不確定限定，或該字仍需覆核。</p>
     </section>
   </main>
 
   <footer>
-    <p>资料依据：《中国行政区划通史·三国两晋南朝卷（上）》西晋州郡县沿革及太康二年断面。</p>
+    <p>資料依據：《中國行政區劃通史·三國兩晉南朝卷（上）》西晉州郡縣沿革。</p>
   </footer>
+
+  <div id="sourceModal" class="source-modal" hidden>
+    <div class="source-modal-backdrop" data-close-modal></div>
+    <section class="source-modal-panel" role="dialog" aria-modal="true" aria-labelledby="sourceModalTitle">
+      <button id="sourceModalClose" class="source-modal-close" type="button" aria-label="關閉">×</button>
+      <h2 id="sourceModalTitle">變動依據</h2>
+      <p id="sourceModalSummary" class="source-modal-summary"></p>
+      <div id="sourceModalBody"></div>
+    </section>
+  </div>
 
   <script src="data/jin-data.js"></script>
   <script src="app.js"></script>

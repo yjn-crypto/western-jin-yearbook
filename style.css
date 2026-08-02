@@ -180,3 +180,69 @@ footer { padding: 22px 24px 32px; text-align: center; color: #766d63; border-top
   main { max-width: none; padding: 0; }
   .state-card { break-inside: avoid; box-shadow: none; margin-bottom: 12px; }
 }
+
+/* 第二版：引文標註與來源彈窗。原有配色、字體與表格佈局不變。 */
+.legend-uncertain { color: #9b6a30; font-weight: 700; }
+.legend-citation { color: var(--accent); font-size: .78rem; font-weight: 700; }
+.name-with-citation { display: inline; }
+.citation-link {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--accent);
+  margin: 0 0 0 2px;
+  padding: 0;
+  font-family: var(--serif);
+  font-size: .68em;
+  font-weight: 700;
+  line-height: 1;
+  vertical-align: super;
+  cursor: pointer;
+}
+.citation-link:hover { text-decoration: underline; }
+.citation-link:focus-visible { outline: 2px solid rgba(122,46,46,.35); outline-offset: 2px; }
+.change-index-item { display: inline-flex; align-items: baseline; color: var(--changed); }
+body.modal-open { overflow: hidden; }
+.source-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+.source-modal[hidden] { display: none; }
+.source-modal-backdrop { position: absolute; inset: 0; background: rgba(38,34,29,.62); }
+.source-modal-panel {
+  position: relative;
+  width: min(720px, 100%);
+  max-height: min(78vh, 760px);
+  overflow: auto;
+  background: var(--paper-2);
+  border: 1px solid var(--line);
+  box-shadow: 0 18px 54px rgba(35,27,20,.28);
+  padding: 22px 24px 24px;
+}
+.source-modal-panel h2 { margin: 0 42px 6px 0; font-size: 1.25rem; }
+.source-modal-summary { margin: 0 0 14px; color: var(--changed); font-weight: 700; }
+.source-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font: 1.75rem/1 var(--serif);
+  cursor: pointer;
+}
+.source-entry { border-top: 1px solid #e4ddd2; padding: 12px 0 0; margin-top: 12px; }
+.source-entry h3 { margin: 0 0 5px; font-size: .92rem; color: var(--accent); }
+.source-entry p { margin: 0; white-space: pre-wrap; }
+
+@media print {
+  .citation-link { color: #000; }
+  .source-modal { display: none !important; }
+}
+.county-item::after { content: none !important; }
+.county-list > .name-with-citation { white-space: nowrap; }
+.county-list > .name-with-citation:not(:last-child)::after { content: "、"; color: #91877b; }

@@ -3,7 +3,7 @@
 
   const DATA = window.JIN_DATA;
   if (!DATA) {
-    document.body.innerHTML = '<p style="padding:2rem">数据文件未加载。</p>';
+    document.body.innerHTML = '<p style="padding:2rem">資料檔案未載入。</p>';
     return;
   }
 
@@ -13,194 +13,276 @@
   const searchInput = $('searchInput');
   const changedOnly = $('changedOnly');
   const results = $('results');
-
-  const stateOrder = DATA.intervals.map(s => s.name);
-  const intervalByState = new Map(DATA.intervals.map(s => [s.name, s]));
+  const sourceModal = $('sourceModal');
+  const sourceModalClose = $('sourceModalClose');
+  const citationRegistry = new Map();
 
   function normalizeName(value) {
     return String(value || '')
-      .replace(/^\d{3}/, '')
-      .replace(/[\s·`?※]/g, '')
-      .replace(/(王国|公国|侯国|国|郡|尹|属国都尉|典农校尉|县)$/g, '')
-      .replace(/荣阳/g, '荥阳')
-      .replace(/颖/g, '颍')
-      .replace(/琅那|琅政/g, '琅邪')
-      .replace(/玄苋|玄葛|立蓟/g, '玄菟')
-      .replace(/穆章/g, '豫章')
-      .replace(/邺阳|郡阳|好阳/g, '鄱阳')
-      .replace(/衷阳|训阳/g, '襄阳')
-      .replace(/梓关/g, '梓潼')
-      .replace(/新郡/g, '新都')
-      .replace(/姜为/g, '犍为')
-      .replace(/^日$/, '蜀');
+      .replace(/[\s·`?？※]/g, '')
+      .replace(/(王國|公國|侯國|國|郡|尹|屬國都尉|典農校尉|縣)$/g, '')
+      .replace(/臺/g, '台');
   }
 
-  function isKingdom(name) {
+  function isKingdom(name, level, phase) {
+    if (phase && typeof phase.is_fief === 'boolean') return phase.is_fief;
+    if (level !== 'prefecture') return false;
     const n = String(name || '');
-    if (n.includes('属国都尉')) return false;
-    return /(王国|公国|侯国|国)$/.test(n);
+    if (n.includes('屬國都尉')) return false;
+    return /(王國|公國|侯國|國)$/.test(n);
   }
 
-  function phaseAt(periods, year) {
-    const active = (periods || [])
-      .filter(p => Number(p.start) <= year && year <= Number(p.end))
-      .sort((a, b) => Number(b.start) - Number(a.start));
-    return active[0] || null;
+  function activePhase(entity, year) {
+    return (entity.phases || [])
+      .filter((phase) => Number(phase.start) <= year && year <= Number(phase.end))
+      .sort((a, b) => Number(b.start) - Number(a.start))[0] || null;
   }
 
-  function changeInfo(periods, year) {
-    const starts = (periods || []).some(p => Number(p.start) === year);
-    const ends = (periods || []).some(p => Number(p.end) === year);
-    return {
-      changed: starts || ends,
-      starts,
-      ends,
-      label: starts && ends ? '本年变更' : starts ? '本年设立、改名或改属' : ends ? '本年废止、改名或移出' : ''
-    };
+  function sourceKey(source) {
+    if (!source) return '';
+    return `${source.book_page || ''}|${source.pdf_page || ''}|${source.excerpt || ''}`;
   }
 
-  function buildIntervalYear(year) {
-    const states = [];
-    for (const state of DATA.intervals) {
-      const rows = [];
-      for (const pref of state.prefectures) {
-        const phase = phaseAt(pref.periods, year);
-        if (!phase) continue;
-
-        const countyRows = [];
-        for (const county of pref.counties || []) {
-          const cPhase = phaseAt(county.periods, year);
-          if (!cPhase) continue;
-          const ch = changeInfo(county.periods, year);
-          countyRows.push({
-            name: cPhase.name || county.base_name,
-            changed: ch.changed,
-            changeLabel: ch.label,
-            uncertain: Boolean(cPhase.uncertain),
-            kingdom: isKingdom(cPhase.name || county.base_name)
-          });
-        }
-
-        const ch = changeInfo(pref.periods, year);
-        rows.push({
-          name: phase.name || pref.base_name,
-          counties: dedupeCounties(countyRows),
-          changed: ch.changed,
-          changeLabel: ch.label,
-          uncertain: Boolean(phase.uncertain),
-          kingdom: isKingdom(phase.name || pref.base_name),
-          sourcePage: pref.source_book_page || null,
-          sourceKind: 'interval'
-        });
-      }
-      if (rows.length) states.push({ name: state.name, rows: dedupeRows(rows) });
-    }
-    return states;
-  }
-
-  function dedupeCounties(items) {
-    const map = new Map();
-    for (const item of items) {
-      const key = normalizeName(item.name);
-      if (!key) continue;
-      if (!map.has(key)) map.set(key, item);
-      else if (item.changed) map.set(key, { ...map.get(key), ...item, changed: true });
-    }
-    return [...map.values()];
-  }
-
-  function dedupeRows(rows) {
-    const map = new Map();
-    for (const row of rows) {
-      const key = normalizeName(row.name);
-      if (!key) continue;
-      if (!map.has(key)) map.set(key, row);
-      else {
-        const old = map.get(key);
-        map.set(key, {
-          ...old,
-          changed: old.changed || row.changed,
-          counties: dedupeCounties([...(old.counties || []), ...(row.counties || [])])
-        });
-      }
-    }
-    return [...map.values()];
-  }
-
-  function bestRowMatch(rows, name) {
-    const target = normalizeName(name);
-    if (!target) return null;
-    let exact = rows.find(r => normalizeName(r.name) === target);
-    if (exact) return exact;
-    return rows.find(r => {
-      const n = normalizeName(r.name);
-      return n && target.length >= 2 && (n.includes(target) || target.includes(n));
-    }) || null;
-  }
-
-  function bestCountyMatch(counties, name) {
-    const target = normalizeName(name);
-    return counties.find(c => normalizeName(c.name) === target) || null;
-  }
-
-  function build281() {
-    const intervalStates = buildIntervalYear(281);
-    const intervalMap = new Map(intervalStates.map(s => [s.name, s]));
+  function dedupeSources(sources) {
+    const seen = new Set();
     const output = [];
-
-    for (const snapState of DATA.snapshot281) {
-      const intervalState = intervalMap.get(snapState.name) || { rows: [] };
-      const used = new Set();
-      const rows = [];
-
-      for (const snapPref of snapState.prefectures) {
-        const matched = bestRowMatch(intervalState.rows, snapPref.name);
-        if (matched) used.add(normalizeName(matched.name));
-
-        const counties = [];
-        for (const cName of snapPref.counties || []) {
-          const match = matched ? bestCountyMatch(matched.counties || [], cName) : null;
-          counties.push({
-            name: cName,
-            changed: Boolean(match && match.changed),
-            changeLabel: match ? match.changeLabel : '',
-            uncertain: Boolean(match && match.uncertain),
-            kingdom: isKingdom(cName)
-          });
-        }
-        if (matched) {
-          for (const c of matched.counties || []) {
-            if (!bestCountyMatch(counties, c.name)) counties.push(c);
-          }
-        }
-
-        rows.push({
-          name: snapPref.name,
-          counties: dedupeCounties(counties),
-          changed: Boolean(matched && matched.changed),
-          changeLabel: matched ? matched.changeLabel : '',
-          uncertain: Boolean(matched && matched.uncertain),
-          kingdom: isKingdom(snapPref.name),
-          sourcePage: '766-775',
-          sourceKind: 'snapshot'
-        });
-      }
-
-      for (const row of intervalState.rows || []) {
-        if (!used.has(normalizeName(row.name)) && !bestRowMatch(rows, row.name)) rows.push(row);
-      }
-      output.push({ name: snapState.name, rows: dedupeRows(rows) });
+    for (const source of sources || []) {
+      const key = sourceKey(source);
+      if (!key || seen.has(key)) continue;
+      seen.add(key);
+      output.push(source);
     }
-
-    for (const state of intervalStates) {
-      if (!output.some(s => s.name === state.name)) output.push(state);
-    }
-    output.sort((a, b) => stateOrder.indexOf(a.name) - stateOrder.indexOf(b.name));
     return output;
   }
 
-  function getYearData(year) {
-    return year === 281 ? build281() : buildIntervalYear(year);
+  function buildSnapshot(year) {
+    const states = [];
+    for (const stateEntity of DATA.states) {
+      const statePhase = activePhase(stateEntity, year);
+      if (!statePhase) continue;
+      const state = {
+        id: stateEntity.id,
+        name: statePhase.name || stateEntity.name,
+        order: stateEntity.order,
+        uncertain: Boolean(statePhase.uncertain),
+        source: statePhase.source || stateEntity.source,
+        entity: stateEntity,
+        rows: []
+      };
+
+      for (const prefEntity of stateEntity.prefectures || []) {
+        const prefPhase = activePhase(prefEntity, year);
+        if (!prefPhase) continue;
+        const row = {
+          id: prefEntity.id,
+          name: prefPhase.name || prefEntity.base_name,
+          order: prefEntity.order,
+          uncertain: Boolean(prefPhase.uncertain),
+          source: prefPhase.source || prefEntity.source,
+          entity: prefEntity,
+          kingdom: isKingdom(prefPhase.name || prefEntity.base_name, 'prefecture', prefPhase),
+          counties: []
+        };
+        for (const countyEntity of prefEntity.counties || []) {
+          const countyPhase = activePhase(countyEntity, year);
+          if (!countyPhase) continue;
+          row.counties.push({
+            id: countyEntity.id,
+            name: countyPhase.name || countyEntity.base_name,
+            order: countyEntity.order,
+            uncertain: Boolean(countyPhase.uncertain),
+            source: countyPhase.source || countyEntity.source,
+            entity: countyEntity,
+            kingdom: isKingdom(countyPhase.name || countyEntity.base_name, 'county', countyPhase)
+          });
+        }
+        row.counties.sort((a, b) => a.order - b.order);
+        state.rows.push(row);
+      }
+      state.rows.sort((a, b) => a.order - b.order);
+      states.push(state);
+    }
+    states.sort((a, b) => a.order - b.order);
+    return states;
+  }
+
+  function mapById(items) {
+    return new Map((items || []).map((item) => [item.id, item]));
+  }
+
+  function makeChange(summary, sources, kind, label) {
+    return {
+      summary,
+      sources: dedupeSources(sources),
+      kind,
+      label,
+      number: null
+    };
+  }
+
+  function compareSnapshots(current, previous, year) {
+    const previousStateMap = mapById(previous);
+    const removedChanges = [];
+
+    for (const state of current) {
+      const oldState = previousStateMap.get(state.id);
+      const stateSources = [];
+      const stateNotes = [];
+      if (!oldState) {
+        stateNotes.push(`${state.name}於本年年末見於表中`);
+        stateSources.push(state.source);
+      } else if (oldState.name !== state.name) {
+        stateNotes.push(`${oldState.name}改稱${state.name}`);
+        stateSources.push(state.source, oldState.source);
+      }
+
+      const oldPrefMap = mapById(oldState ? oldState.rows : []);
+      for (const row of state.rows) {
+        const oldRow = oldPrefMap.get(row.id);
+        const rowSources = [];
+        const rowNotes = [];
+        if (!oldRow) {
+          rowNotes.push(`${row.name}為本年新增、復置或改隸至本州`);
+          rowSources.push(row.source);
+        } else if (oldRow.name !== row.name) {
+          rowNotes.push(`${oldRow.name}改稱${row.name}`);
+          rowSources.push(row.source, oldRow.source);
+        }
+
+        const oldCountyMap = mapById(oldRow ? oldRow.counties : []);
+        for (const county of row.counties) {
+          const oldCounty = oldCountyMap.get(county.id);
+          if (!oldCounty) {
+            county.change = makeChange(
+              `${county.name}為本年新增、復置、改名或改隸至${row.name}`,
+              [county.source],
+              'county',
+              `${state.name}·${row.name}：${county.name}`
+            );
+          } else if (oldCounty.name !== county.name) {
+            county.change = makeChange(
+              `${oldCounty.name}改稱${county.name}`,
+              [county.source, oldCounty.source],
+              'county',
+              `${state.name}·${row.name}：${oldCounty.name}→${county.name}`
+            );
+          }
+        }
+
+        if (oldRow) {
+          const currentCountyMap = mapById(row.counties);
+          const removedCounties = oldRow.counties.filter((county) => !currentCountyMap.has(county.id));
+          if (removedCounties.length) {
+            rowNotes.push(`${removedCounties.map((county) => county.name).join('、')}於本年不再隸屬${row.name}`);
+            rowSources.push(...removedCounties.map((county) => county.source));
+            for (const county of removedCounties) {
+              removedChanges.push(makeChange(
+                `${county.name}於${year}年末已不見於${row.name}所轄`,
+                [county.source],
+                'removed-county',
+                `${state.name}·${row.name}：撤出／廢省 ${county.name}`
+              ));
+            }
+          }
+        }
+
+        if (rowNotes.length) {
+          row.change = makeChange(
+            rowNotes.join('；'),
+            rowSources,
+            'prefecture',
+            `${state.name}：${row.name}`
+          );
+        }
+      }
+
+      if (oldState) {
+        const currentPrefMap = mapById(state.rows);
+        const removedPrefs = oldState.rows.filter((row) => !currentPrefMap.has(row.id));
+        if (removedPrefs.length) {
+          stateNotes.push(`${removedPrefs.map((row) => row.name).join('、')}於本年不再隸屬${state.name}`);
+          stateSources.push(...removedPrefs.map((row) => row.source));
+          for (const row of removedPrefs) {
+            removedChanges.push(makeChange(
+              `${row.name}於${year}年末已不見於${state.name}所轄`,
+              [row.source],
+              'removed-prefecture',
+              `${state.name}：撤出／廢省 ${row.name}`
+            ));
+          }
+        }
+      }
+
+      if (stateNotes.length) {
+        state.change = makeChange(
+          stateNotes.join('；'),
+          stateSources,
+          'state',
+          state.name
+        );
+      }
+    }
+
+    const currentStateMap = mapById(current);
+    for (const oldState of previous) {
+      if (currentStateMap.has(oldState.id)) continue;
+      removedChanges.push(makeChange(
+        `${oldState.name}於${year}年末已不見於州級政區表中`,
+        [oldState.source],
+        'removed-state',
+        `撤出／廢省 ${oldState.name}`
+      ));
+    }
+
+    citationRegistry.clear();
+    let number = 0;
+    const register = (change) => {
+      if (!change || change.number) return;
+      number += 1;
+      change.number = number;
+      citationRegistry.set(number, change);
+    };
+
+    for (const state of current) {
+      register(state.change);
+      for (const row of state.rows) {
+        register(row.change);
+        for (const county of row.counties) register(county.change);
+      }
+    }
+    for (const change of removedChanges) register(change);
+
+    return { states: current, removedChanges, citationCount: number };
+  }
+
+  function createCitationButton(change) {
+    if (!change || !change.number) return null;
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'citation-link';
+    button.textContent = `[${change.number}]`;
+    button.title = '查看變動依據';
+    button.setAttribute('aria-label', `查看註釋 ${change.number}`);
+    button.dataset.citation = String(change.number);
+    return button;
+  }
+
+  function makeNameSpan(item, className = '') {
+    const span = document.createElement('span');
+    span.className = [
+      className,
+      item.kingdom ? 'kingdom' : '',
+      item.change ? 'changed' : '',
+      item.uncertain ? 'uncertain' : ''
+    ].filter(Boolean).join(' ');
+    span.textContent = item.name;
+    if (item.change) span.title = item.change.summary;
+    const wrapper = document.createElement('span');
+    wrapper.className = 'name-with-citation';
+    wrapper.appendChild(span);
+    const citation = createCitationButton(item.change);
+    if (citation) wrapper.appendChild(citation);
+    return wrapper;
   }
 
   function applyFilters(states) {
@@ -217,24 +299,15 @@
         const rowMatches = !query || stateMatches || normalizeName(row.name).includes(query);
         const matchingCounties = !query || rowMatches
           ? row.counties
-          : row.counties.filter(c => normalizeName(c.name).includes(query));
-        const hasChangedCounty = matchingCounties.some(c => c.changed);
+          : row.counties.filter((county) => normalizeName(county.name).includes(query));
+        const hasChangedCounty = matchingCounties.some((county) => county.change);
         if (query && !rowMatches && matchingCounties.length === 0) continue;
-        if (onlyChanged && !row.changed && !hasChangedCounty) continue;
+        if (onlyChanged && !row.change && !hasChangedCounty) continue;
         rows.push({ ...row, counties: matchingCounties });
       }
-      if (rows.length) filtered.push({ ...state, rows });
+      if (rows.length || (onlyChanged && state.change)) filtered.push({ ...state, rows });
     }
     return filtered;
-  }
-
-  function makeNameSpan(item, className = '') {
-    const span = document.createElement('span');
-    span.className = [className, item.kingdom ? 'kingdom' : '', item.changed ? 'changed' : '', item.uncertain ? 'uncertain' : '']
-      .filter(Boolean).join(' ');
-    span.textContent = item.name;
-    if (item.changeLabel) span.title = item.changeLabel;
-    return span;
   }
 
   function renderState(state) {
@@ -244,20 +317,28 @@
     const heading = document.createElement('div');
     heading.className = 'state-heading';
     const h2 = document.createElement('h2');
-    h2.textContent = state.name;
+    const stateName = makeNameSpan({
+      name: state.name,
+      change: state.change,
+      uncertain: state.uncertain,
+      kingdom: false
+    });
+    h2.appendChild(stateName);
     const meta = document.createElement('span');
     meta.className = 'state-meta';
-    const countyTotal = state.rows.reduce((n, r) => n + r.counties.length, 0);
-    meta.textContent = `${state.rows.length} 郡国 · ${countyTotal} 县级政区`;
+    const countyTotal = state.rows.reduce((sum, row) => sum + row.counties.length, 0);
+    meta.textContent = `${state.rows.length} 郡國 · ${countyTotal} 縣級政區`;
     heading.append(h2, meta);
     article.appendChild(heading);
+
+    if (!state.rows.length) return article;
 
     const wrap = document.createElement('div');
     wrap.className = 'table-wrap';
     const table = document.createElement('table');
     const thead = document.createElement('thead');
     const trh = document.createElement('tr');
-    for (const label of ['郡、国及郡级政区', '所属县级政区']) {
+    for (const label of ['郡、國及郡級政區', '所屬縣級政區']) {
       const th = document.createElement('th');
       th.textContent = label;
       trh.appendChild(th);
@@ -273,21 +354,21 @@
       if (row.kingdom) {
         const badge = document.createElement('span');
         badge.className = 'type-badge kingdom';
-        badge.textContent = '封国';
+        badge.textContent = '封國';
         tdName.appendChild(badge);
       }
       const ref = document.createElement('span');
       ref.className = 'source-ref';
-      ref.textContent = row.sourceKind === 'snapshot'
-        ? '太康二年断面：书页 766-775'
-        : row.sourcePage ? `沿革：书页 ${row.sourcePage}` : '沿革初录：页码待补';
+      ref.textContent = row.source && row.source.book_page
+        ? `沿革：書內第 ${row.source.book_page} 頁`
+        : '沿革：頁碼待校';
       tdName.appendChild(ref);
 
       const tdCounties = document.createElement('td');
       if (!row.counties.length) {
         const empty = document.createElement('span');
         empty.className = 'empty';
-        empty.textContent = '县级政区待校勘';
+        empty.textContent = '本年無可顯示的縣級政區';
         tdCounties.appendChild(empty);
       } else {
         const list = document.createElement('div');
@@ -307,80 +388,146 @@
     return article;
   }
 
-  function renderSummary(states) {
-    const prefCount = states.reduce((n, s) => n + s.rows.length, 0);
-    const countyCount = states.reduce((n, s) => n + s.rows.reduce((m, r) => m + r.counties.length, 0), 0);
-    const changeCount = states.reduce((n, s) => n + s.rows.reduce((m, r) => m + (r.changed ? 1 : 0) + r.counties.filter(c => c.changed).length, 0), 0);
+  function renderSummary(states, removedChanges) {
+    const prefCount = states.reduce((sum, state) => sum + state.rows.length, 0);
+    const countyCount = states.reduce(
+      (sum, state) => sum + state.rows.reduce((inner, row) => inner + row.counties.length, 0),
+      0
+    );
+    const visibleChanges = states.reduce(
+      (sum, state) => sum + (state.change ? 1 : 0) + state.rows.reduce(
+        (inner, row) => inner + (row.change ? 1 : 0) + row.counties.filter((county) => county.change).length,
+        0
+      ),
+      0
+    );
     $('stateCount').textContent = states.length;
     $('prefCount').textContent = prefCount;
     $('countyCount').textContent = countyCount;
-    $('changeCount').textContent = changeCount;
+    $('changeCount').textContent = visibleChanges + removedChanges.length;
+  }
 
-    const changedNames = [];
+  function renderChangePanel(states, removedChanges) {
+    const changes = [];
     for (const state of states) {
+      if (state.change) changes.push(state.change);
       for (const row of state.rows) {
-        if (row.changed) changedNames.push(`${state.name}：${row.name}`);
-        for (const c of row.counties) if (c.changed) changedNames.push(`${state.name}·${row.name}：${c.name}`);
+        if (row.change) changes.push(row.change);
+        for (const county of row.counties) if (county.change) changes.push(county.change);
       }
     }
+    changes.push(...removedChanges);
+
     const panel = $('changePanel');
     const list = $('changeList');
     list.replaceChildren();
-    if (changedNames.length) {
-      const group = document.createElement('div');
-      group.className = 'change-groups';
-      for (const name of changedNames.slice(0, 120)) {
-        const span = document.createElement('span');
-        span.textContent = name;
-        group.appendChild(span);
-      }
-      if (changedNames.length > 120) {
-        const more = document.createElement('span');
-        more.textContent = `另有 ${changedNames.length - 120} 项`;
-        group.appendChild(more);
-      }
-      list.appendChild(group);
-      panel.hidden = false;
-    } else {
+    if (!changes.length) {
       panel.hidden = true;
+      return;
     }
+
+    const group = document.createElement('div');
+    group.className = 'change-groups';
+    for (const change of changes) {
+      const item = document.createElement('span');
+      item.className = 'change-index-item';
+      item.textContent = change.label;
+      const citation = createCitationButton(change);
+      if (citation) item.appendChild(citation);
+      group.appendChild(item);
+    }
+    list.appendChild(group);
+    panel.hidden = false;
+  }
+
+  function openCitation(number) {
+    const change = citationRegistry.get(Number(number));
+    if (!change) return;
+    $('sourceModalTitle').textContent = `註釋 [${change.number}]`;
+    $('sourceModalSummary').textContent = change.summary;
+    const body = $('sourceModalBody');
+    body.replaceChildren();
+
+    if (!change.sources.length) {
+      const p = document.createElement('p');
+      p.textContent = '此項頁碼仍待校勘。';
+      body.appendChild(p);
+    } else {
+      for (const source of change.sources) {
+        const article = document.createElement('article');
+        article.className = 'source-entry';
+        const heading = document.createElement('h3');
+        const bookPage = source.book_page ? `書內第 ${source.book_page} 頁` : '書內頁碼待校';
+        const pdfPage = source.pdf_page ? `PDF 第 ${source.pdf_page} 頁` : 'PDF頁碼待校';
+        heading.textContent = `${bookPage}（${pdfPage}）`;
+        const excerpt = document.createElement('p');
+        excerpt.textContent = source.excerpt || '摘錄待補。';
+        article.append(heading, excerpt);
+        body.appendChild(article);
+      }
+    }
+
+    sourceModal.hidden = false;
+    document.body.classList.add('modal-open');
+    sourceModalClose.focus();
+  }
+
+  function closeCitation() {
+    sourceModal.hidden = true;
+    document.body.classList.remove('modal-open');
+  }
+
+  function filterRemovedChanges(changes) {
+    const selectedState = stateSelect.value;
+    const query = normalizeName(searchInput.value.trim());
+    return changes.filter((change) => {
+      if (selectedState && !change.label.startsWith(selectedState)) return false;
+      if (query && !normalizeName(change.label).includes(query)) return false;
+      return true;
+    });
   }
 
   function render() {
     const year = Number(yearSelect.value);
-    const all = getYearData(year);
-    const filtered = applyFilters(all);
+    const current = buildSnapshot(year);
+    const isBaselineYear = year === DATA.meta.years[0];
+    const previous = isBaselineYear ? current : buildSnapshot(year - 1);
+    const comparison = compareSnapshots(current, previous, year);
+    const filtered = applyFilters(comparison.states);
+    const filteredRemoved = filterRemovedChanges(comparison.removedChanges);
+
     results.replaceChildren();
     if (!filtered.length) {
       const p = document.createElement('div');
       p.className = 'no-results';
-      p.textContent = '没有符合当前条件的政区。';
+      p.textContent = '沒有符合目前條件的政區。';
       results.appendChild(p);
     } else {
       for (const state of filtered) results.appendChild(renderState(state));
     }
-    renderSummary(filtered);
-    $('statusText').textContent = year === 281
-      ? '太康二年使用书中第766-775页断面优先显示，并以第592-765页沿革区间补足遗漏；当前仍是OCR初录校勘版。'
-      : `公元${year}年由书中第592-765页沿革区间自动重建；红色为区间起止年，具体生效月日仍待校勘。`;
-    document.title = `西晋${year}年末州郡县表`;
+
+    renderSummary(filtered, filteredRemoved);
+    renderChangePanel(filtered, filteredRemoved);
+    $('statusText').textContent = isBaselineYear
+      ? `公元${year}年為本資料集的基準年，不以缺失的前一年資料判定變動；州、郡、縣均保留原書次序。`
+      : `公元${year}年所示為年末狀態；與公元${year - 1}年年末相比的變動以紅色及註釋標示。資料已依新版OCR重新抽取，並保留原書州、郡、縣次序。`;
+    document.title = `西晉${year}年末州郡縣表`;
   }
 
   function init() {
     const [start, end] = DATA.meta.years;
-    for (let y = start; y <= end; y++) {
+    for (let year = start; year <= end; year += 1) {
       const option = document.createElement('option');
-      option.value = String(y);
-      option.textContent = `公元 ${y} 年`;
-      if (y === 281) option.selected = true;
+      option.value = String(year);
+      option.textContent = `公元 ${year} 年`;
+      if (year === 281) option.selected = true;
       yearSelect.appendChild(option);
     }
 
-    const names = [...new Set([...stateOrder, ...DATA.snapshot281.map(s => s.name)])];
-    for (const name of names) {
+    for (const state of DATA.states) {
       const option = document.createElement('option');
-      option.value = name;
-      option.textContent = name;
+      option.value = state.name;
+      option.textContent = state.name;
       stateSelect.appendChild(option);
     }
 
@@ -388,6 +535,16 @@
     stateSelect.addEventListener('change', render);
     searchInput.addEventListener('input', render);
     changedOnly.addEventListener('change', render);
+    document.addEventListener('click', (event) => {
+      const citation = event.target.closest('[data-citation]');
+      if (citation) openCitation(citation.dataset.citation);
+      if (event.target.matches('[data-close-modal]')) closeCitation();
+    });
+    sourceModalClose.addEventListener('click', closeCitation);
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && !sourceModal.hidden) closeCitation();
+    });
+
     render();
   }
 

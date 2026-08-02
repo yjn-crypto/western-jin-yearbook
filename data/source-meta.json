@@ -1,13 +1,14 @@
 {
-  "source": "中国行政区划通史·三国两晋南朝卷（上）",
-  "western_jin_changes_book_pages": [592, 765],
-  "snapshot_used": {
-    "year": 281,
-    "book_pages": [766, 775]
+  "title": "西晉年末州郡縣表",
+  "years": [266, 316],
+  "source": "《中國行政區劃通史·三國兩晉南朝卷（上）》",
+  "source_pages": {
+    "annual_changes": [592, 765],
+    "pdf_pages": [619, 792]
   },
-  "snapshot_not_yet_used": {
-    "year": 304,
-    "book_pages": [775, 785]
-  },
-  "status": "OCR初录研究原型，需逐条校勘"
+  "pdf_page_offset": 27,
+  "ordering": "州、郡、縣均依原書出現次序排列。",
+  "date_rule": "按本編凡例折算年末有效區間；本年結果與上一年年末狀態比較。公元266年為基準年。",
+  "uncertain_marker": "※為網頁校勘標記，表示年代或辨字存疑，並非原書符號。",
+  "generated": "2026-08-02"
 }
