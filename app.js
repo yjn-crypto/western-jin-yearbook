@@ -2,6 +2,7 @@
   'use strict';
 
   const DATA = window.JIN_DATA;
+  const PRINCES = window.JIN_PRINCES || { meta: {}, records: [] };
   if (!DATA) {
     document.body.innerHTML = '<p style="padding:2rem">資料檔案未載入。</p>';
     return;
@@ -16,6 +17,8 @@
   const sourceModal = $('sourceModal');
   const sourceModalClose = $('sourceModalClose');
   const citationRegistry = new Map();
+  const auxInfoRegistry = new Map();
+  let auxInfoSequence = 0;
 
   function normalizeName(value) {
     return String(value || '')
@@ -30,6 +33,71 @@
     const n = String(name || '');
     if (n.includes('屬國都尉')) return false;
     return /(王國|公國|侯國|國)$/.test(n);
+  }
+
+
+  function baseFiefName(name) {
+    return String(name || '')
+      .replace(/(王國|公國|侯國|國)$/g, '')
+      .replace(/範/g, '範')
+      .trim();
+  }
+
+  function chineseNumber(value) {
+    const n = Number(value);
+    const digits = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九'];
+    if (!Number.isInteger(n) || n <= 0) return String(value);
+    if (n < 10) return digits[n];
+    if (n === 10) return '十';
+    if (n < 20) return `十${digits[n - 10]}`;
+    if (n < 100) {
+      const tens = Math.floor(n / 10);
+      const ones = n % 10;
+      return `${digits[tens]}十${ones ? digits[ones] : ''}`;
+    }
+    return String(n);
+  }
+
+  function reignYearLabel(year, start) {
+    const ordinal = Number(year) - Number(start) + 1;
+    return ordinal === 1 ? '元年' : `${chineseNumber(ordinal)}年`;
+  }
+
+  function findRuler(name, year) {
+    const fief = baseFiefName(name);
+    const all = (PRINCES.records || []).filter((record) => record.fief === fief);
+    const active = all.filter((record) => (
+      record.start !== null
+      && record.start !== undefined
+      && Number.isFinite(Number(record.start))
+      && Number(record.start) <= year
+      && (record.end === null || record.end === undefined || year <= Number(record.end))
+    ));
+
+    if (!active.length) {
+      return {
+        status: all.length ? 'gap' : 'absent',
+        fief,
+        label: '國主未詳',
+        records: all
+      };
+    }
+
+    active.sort((a, b) => (
+      Number(b.start) - Number(a.start)
+      || Number(b.sequence || 0) - Number(a.sequence || 0)
+    ));
+    const record = active[0];
+    const sameYearChange = active.some((candidate) => candidate.id !== record.id);
+    return {
+      status: 'matched',
+      fief,
+      record,
+      active,
+      sameYearChange,
+      ordinal: Number(year) - Number(record.start) + 1,
+      label: `${record.title}${record.person}之${reignYearLabel(year, record.start)}`
+    };
   }
 
   function activePhase(entity, year) {
@@ -81,19 +149,25 @@
           source: prefPhase.source || prefEntity.source,
           entity: prefEntity,
           kingdom: isKingdom(prefPhase.name || prefEntity.base_name, 'prefecture', prefPhase),
+          ruler: null,
           counties: []
         };
+        if (row.kingdom) row.ruler = findRuler(row.name, year);
         for (const countyEntity of prefEntity.counties || []) {
           const countyPhase = activePhase(countyEntity, year);
           if (!countyPhase) continue;
+          const countyName = countyPhase.name || countyEntity.base_name;
+          const countyKingdom = isKingdom(countyName, 'county', countyPhase);
           row.counties.push({
             id: countyEntity.id,
-            name: countyPhase.name || countyEntity.base_name,
+            name: countyName,
             order: countyEntity.order,
             uncertain: Boolean(countyPhase.uncertain),
             source: countyPhase.source || countyEntity.source,
             entity: countyEntity,
-            kingdom: isKingdom(countyPhase.name || countyEntity.base_name, 'county', countyPhase)
+            kingdom: countyKingdom,
+            fiefAnnotation: countyPhase.fief_annotation || countyEntity.fief_annotation || null,
+            ruler: countyKingdom ? findRuler(countyName, year) : null
           });
         }
         row.counties.sort((a, b) => a.order - b.order);
@@ -267,6 +341,87 @@
     return button;
   }
 
+  function createAuxButton(text, info, className = '') {
+    auxInfoSequence += 1;
+    const id = `aux-${auxInfoSequence}`;
+    auxInfoRegistry.set(id, info);
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = ['fief-detail-button', className].filter(Boolean).join(' ');
+    button.textContent = text;
+    button.dataset.info = id;
+    button.title = info.summary || '查看封國資料來源';
+    return button;
+  }
+
+  function rulerInfoObject(ruler, year) {
+    if (!ruler || ruler.status !== 'matched') {
+      const hasEntries = ruler && ruler.records && ruler.records.length;
+      return {
+        title: '國主與在位年次',
+        summary: `${ruler ? ruler.fief : ''}國在公元${year}年的國主未能由所引藩王表唯一確定。`,
+        paragraphs: [
+          hasEntries
+            ? '《晉朝藩王列表》收有同名封國條目，但沒有可與本年直接匹配且起始年明確的國主。'
+            : '《晉朝藩王列表》中未檢得可直接匹配的同名藩王條目。',
+          '網頁不以郡國名稱自行補造國主；此處保留「國主未詳」。'
+        ],
+        sourceLabel: '維基百科〈晉朝藩王列表〉',
+        sourceUrl: PRINCES.meta && PRINCES.meta.url
+      };
+    }
+    const r = ruler.record;
+    const paragraphs = [
+      `在位時間：${r.time_text || `${r.start}—${r.end || '？'}`}。`,
+      `年次計算：公元${year}年－始封／改封年${r.start}年＋一，故為${reignYearLabel(year, r.start)}。`,
+      r.note ? `表中備註：${r.note}` : '',
+      ruler.sameYearChange ? '同一封國在本年有前後國主重疊記錄；因本頁顯示年末狀態，採表中後列、亦即該年後起者。' : '',
+      r.uncertain ? '該表的在位起訖帶有疑問標記，年次亦應視為暫定。' : ''
+    ].filter(Boolean);
+    return {
+      title: '國主與在位年次',
+      summary: ruler.label,
+      paragraphs,
+      sourceLabel: `維基百科〈晉朝藩王列表〉（下載版第 ${r.pdf_page} 頁）`,
+      sourceUrl: PRINCES.meta && PRINCES.meta.url
+    };
+  }
+
+  function countyFiefInfoObject(county) {
+    const annotation = county.fiefAnnotation;
+    const source = annotation && annotation.source;
+    return {
+      title: '縣級封國標記',
+      summary: `${county.name}：${annotation.label}${annotation.owner ? `，國主／封君 ${annotation.owner}` : ''}`,
+      paragraphs: [
+        annotation.note,
+        annotation.owner
+          ? `本書明載的國主／封君：${annotation.owner}。`
+          : '本書相應條目未能提供可直接錄入的國主／封君姓名，故不作補造。'
+      ].filter(Boolean),
+      sources: source ? [source] : []
+    };
+  }
+
+  function appendFiefDetails(container, item, level, year) {
+    if (level === 'prefecture' && item.kingdom) {
+      const ruler = item.ruler;
+      const label = ruler && ruler.status === 'matched' ? ruler.label : '國主未詳';
+      container.appendChild(createAuxButton(label, rulerInfoObject(ruler, year), 'ruler-year'));
+      return;
+    }
+    if (level === 'county' && item.fiefAnnotation) {
+      const annotation = item.fiefAnnotation;
+      const label = annotation.owner
+        ? `${annotation.label}·${annotation.owner}`
+        : annotation.label;
+      container.appendChild(createAuxButton(label, countyFiefInfoObject(item), 'county-fief-note'));
+      if (item.ruler && item.ruler.status === 'matched') {
+        container.appendChild(createAuxButton(item.ruler.label, rulerInfoObject(item.ruler, year), 'ruler-year'));
+      }
+    }
+  }
+
   function makeNameSpan(item, className = '') {
     const span = document.createElement('span');
     span.className = [
@@ -310,7 +465,7 @@
     return filtered;
   }
 
-  function renderState(state) {
+  function renderState(state, year) {
     const article = document.createElement('article');
     article.className = 'state-card';
 
@@ -357,6 +512,7 @@
         badge.textContent = '封國';
         tdName.appendChild(badge);
       }
+      appendFiefDetails(tdName, row, 'prefecture', year);
       const ref = document.createElement('span');
       ref.className = 'source-ref';
       ref.textContent = row.source && row.source.book_page
@@ -375,6 +531,7 @@
         list.className = 'county-list';
         for (const county of row.counties) {
           const item = makeNameSpan(county, 'county-item');
+          appendFiefDetails(item, county, 'county', year);
           list.appendChild(item);
         }
         tdCounties.appendChild(list);
@@ -472,6 +629,50 @@
     sourceModalClose.focus();
   }
 
+  function openAuxInfo(id) {
+    const info = auxInfoRegistry.get(id);
+    if (!info) return;
+    $('sourceModalTitle').textContent = info.title || '封國資料';
+    $('sourceModalSummary').textContent = info.summary || '';
+    const body = $('sourceModalBody');
+    body.replaceChildren();
+
+    for (const paragraphText of info.paragraphs || []) {
+      const p = document.createElement('p');
+      p.className = 'aux-info-paragraph';
+      p.textContent = paragraphText;
+      body.appendChild(p);
+    }
+
+    for (const source of info.sources || []) {
+      const article = document.createElement('article');
+      article.className = 'source-entry';
+      const heading = document.createElement('h3');
+      const bookPage = source.book_page ? `書內第 ${source.book_page} 頁` : '書內頁碼待校';
+      const pdfPage = source.pdf_page ? `PDF 第 ${source.pdf_page} 頁` : 'PDF頁碼待校';
+      heading.textContent = `${bookPage}（${pdfPage}）`;
+      const excerpt = document.createElement('p');
+      excerpt.textContent = source.excerpt || '摘錄待補。';
+      article.append(heading, excerpt);
+      body.appendChild(article);
+    }
+
+    if (info.sourceLabel) {
+      const article = document.createElement('article');
+      article.className = 'source-entry';
+      const heading = document.createElement('h3');
+      heading.textContent = '補充資料來源';
+      const p = document.createElement('p');
+      p.textContent = info.sourceLabel;
+      article.append(heading, p);
+      body.appendChild(article);
+    }
+
+    sourceModal.hidden = false;
+    document.body.classList.add('modal-open');
+    sourceModalClose.focus();
+  }
+
   function closeCitation() {
     sourceModal.hidden = true;
     document.body.classList.remove('modal-open');
@@ -489,6 +690,8 @@
 
   function render() {
     const year = Number(yearSelect.value);
+    auxInfoRegistry.clear();
+    auxInfoSequence = 0;
     const current = buildSnapshot(year);
     const isBaselineYear = year === DATA.meta.years[0];
     const previous = isBaselineYear ? current : buildSnapshot(year - 1);
@@ -503,14 +706,14 @@
       p.textContent = '沒有符合目前條件的政區。';
       results.appendChild(p);
     } else {
-      for (const state of filtered) results.appendChild(renderState(state));
+      for (const state of filtered) results.appendChild(renderState(state, year));
     }
 
     renderSummary(filtered, filteredRemoved);
     renderChangePanel(filtered, filteredRemoved);
     $('statusText').textContent = isBaselineYear
       ? `公元${year}年為本資料集的基準年，不以缺失的前一年資料判定變動；州、郡、縣均保留原書次序。`
-      : `公元${year}年所示為年末狀態；與公元${year - 1}年年末相比的變動以紅色及註釋標示。資料已依新版OCR重新抽取，並保留原書州、郡、縣次序。`;
+      : `公元${year}年所示為年末狀態；與公元${year - 1}年年末相比的變動以紅色及註釋標示。資料已依新版OCR重新抽取，並保留原書州、郡、縣次序；封國旁補列國主年次，縣級五等封國只在原書條文明載時標示。`;
     document.title = `西晉${year}年末州郡縣表`;
   }
 
@@ -538,6 +741,8 @@
     document.addEventListener('click', (event) => {
       const citation = event.target.closest('[data-citation]');
       if (citation) openCitation(citation.dataset.citation);
+      const info = event.target.closest('[data-info]');
+      if (info) openAuxInfo(info.dataset.info);
       if (event.target.matches('[data-close-modal]')) closeCitation();
     });
     sourceModalClose.addEventListener('click', closeCitation);

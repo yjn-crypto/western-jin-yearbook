@@ -246,3 +246,32 @@ body.modal-open { overflow: hidden; }
 .county-item::after { content: none !important; }
 .county-list > .name-with-citation { white-space: nowrap; }
 .county-list > .name-with-citation:not(:last-child)::after { content: "、"; color: #91877b; }
+
+/* 第三版：封國制度補充。保留原有配色、字體與表格佈局。 */
+.fief-detail-button {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  margin: 0 0 0 6px;
+  padding: 0;
+  color: #746454;
+  font-family: var(--kai);
+  font-size: .72rem;
+  line-height: 1.45;
+  vertical-align: .08em;
+  cursor: pointer;
+  text-align: left;
+}
+.fief-detail-button:hover { color: var(--accent); text-decoration: underline; }
+.fief-detail-button:focus-visible { outline: 2px solid rgba(122,46,46,.35); outline-offset: 2px; }
+.ruler-year { font-size: .69rem; }
+.county-fief-note {
+  color: #7f5839;
+  font-size: .68rem;
+}
+.aux-info-paragraph { margin: 8px 0; white-space: pre-wrap; }
+.legend-ruler { font-family: var(--kai); color: #746454; font-size: .78rem; }
+
+@media print {
+  .fief-detail-button { color: #000; text-decoration: none; }
+}

@@ -1,14 +1,34 @@
 {
   "title": "西晉年末州郡縣表",
-  "years": [266, 316],
+  "years": [
+    266,
+    316
+  ],
   "source": "《中國行政區劃通史·三國兩晉南朝卷（上）》",
   "source_pages": {
-    "annual_changes": [592, 765],
-    "pdf_pages": [619, 792]
+    "annual_changes": [
+      592,
+      765
+    ],
+    "pdf_pages": [
+      619,
+      792
+    ]
   },
   "pdf_page_offset": 27,
   "ordering": "州、郡、縣均依原書出現次序排列。",
   "date_rule": "按本編凡例折算年末有效區間；本年結果與上一年年末狀態比較。公元266年為基準年。",
   "uncertain_marker": "※為網頁校勘標記，表示年代或辨字存疑，並非原書符號。",
-  "generated": "2026-08-02"
+  "generated": "2026-08-03",
+  "version": "3.0-feudal-system",
+  "manual_corrections": [
+    "堂邑郡補堂邑縣",
+    "中丘郡補中丘縣",
+    "幽州昌黎郡補昌黎縣",
+    "西海郡補居延縣"
+  ],
+  "fief_display": {
+    "prefecture_lords": "維基百科〈晉朝藩王列表〉",
+    "county_ranks": "本書縣條中明見公相、侯相、伯相、子相、男相者"
+  }
 }
