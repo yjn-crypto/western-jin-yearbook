@@ -275,3 +275,14 @@ body.modal-open { overflow: hidden; }
 @media print {
   .fief-detail-button { color: #000; text-decoration: none; }
 }
+
+/* 第四版：五等爵資料層。沿用既有色彩、字體與佈局。 */
+.five-rank-note {
+  color: #7f5839;
+  font-size: .68rem;
+}
+.editorial-note {
+  margin-top: 8px !important;
+  color: #7a2e2e;
+  font-size: .86rem;
+}

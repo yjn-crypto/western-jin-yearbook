@@ -3,6 +3,7 @@
 
   const DATA = window.JIN_DATA;
   const PRINCES = window.JIN_PRINCES || { meta: {}, records: [] };
+  const FIVE_RANK = window.JIN_FIVE_RANK_FIEFS || { meta: {}, records: [] };
   if (!DATA) {
     document.body.innerHTML = '<p style="padding:2rem">資料檔案未載入。</p>';
     return;
@@ -100,6 +101,64 @@
     };
   }
 
+  function effectiveOrder(entity, phase, year) {
+    if (phase && Number.isFinite(Number(phase.order))) return Number(phase.order);
+    const override = (entity.order_overrides || [])
+      .filter((item) => Number(item.start) <= year && year <= Number(item.end))
+      .sort((a, b) => Number(b.start) - Number(a.start))[0];
+    return override ? Number(override.order) : Number(entity.order || 0);
+  }
+
+  function findFiveRankFiefs(entityId, year) {
+    const matches = [];
+    for (const record of FIVE_RANK.records || []) {
+      const period = (record.target_periods || []).find((item) => (
+        item.target_id === entityId
+        && Number(item.start) <= year
+        && year <= Number(item.end)
+      ));
+      if (period) matches.push({ record, period });
+    }
+    return matches;
+  }
+
+  function fiveRankLabel(match) {
+    const { record, period } = match;
+    const owners = period.holder_names || [];
+    let ownerText = '';
+    if (owners.length === 1) ownerText = `·${owners[0]}`;
+    else if (owners.length > 1) ownerText = `·${owners.join('／')}`;
+    else ownerText = '·封君未詳';
+    const inferred = period.uncertain || !period.holder_exact ? '（推定）' : '';
+    return `${record.classification}${ownerText}${inferred}`;
+  }
+
+  function fiveRankInfoObject(match, year) {
+    const { record, period } = match;
+    const holders = (record.holders || []).map((holder) => {
+      const parts = [holder.title, holder.person && holder.person !== '?' ? holder.person : '姓名未詳'];
+      if (holder.time_text) parts.push(holder.time_text);
+      if (holder.note) parts.push(holder.note);
+      return parts.filter(Boolean).join('：');
+    });
+    return {
+      title: '五等爵封國資料',
+      summary: `${record.fief}：${fiveRankLabel(match)}`,
+      paragraphs: [
+        `所選年份：公元${year}年。爵等：${record.classification}。`,
+        record.description ? `封授說明：${record.description}` : '',
+        period.holder_exact
+          ? `本年可直接匹配的封君：${(period.holder_names || []).join('、') || '未詳'}。`
+          : `本年封國存續可以確定或推定，但承襲年份不完整；可能的封君為：${(period.holder_names || []).join('、') || '未詳'}。`,
+        period.uncertain ? '本條起訖含年代、問號或終年未詳，故以「推定」標示。' : '',
+        `維基表所列封君序列：${holders.join('；') || '未詳'}。`,
+        FIVE_RANK.meta && FIVE_RANK.meta.caveat ? FIVE_RANK.meta.caveat : ''
+      ].filter(Boolean),
+      sourceLabel: `${record.source_page_title}（下載版第 ${record.source_pdf_page} 頁）`,
+      sourceUrl: record.source_url
+    };
+  }
+
   function activePhase(entity, year) {
     return (entity.phases || [])
       .filter((phase) => Number(phase.start) <= year && year <= Number(phase.end))
@@ -144,12 +203,13 @@
         const row = {
           id: prefEntity.id,
           name: prefPhase.name || prefEntity.base_name,
-          order: prefEntity.order,
+          order: effectiveOrder(prefEntity, prefPhase, year),
           uncertain: Boolean(prefPhase.uncertain),
           source: prefPhase.source || prefEntity.source,
           entity: prefEntity,
           kingdom: isKingdom(prefPhase.name || prefEntity.base_name, 'prefecture', prefPhase),
           ruler: null,
+          fiveRankFiefs: findFiveRankFiefs(prefEntity.id, year),
           counties: []
         };
         if (row.kingdom) row.ruler = findRuler(row.name, year);
@@ -161,13 +221,14 @@
           row.counties.push({
             id: countyEntity.id,
             name: countyName,
-            order: countyEntity.order,
+            order: effectiveOrder(countyEntity, countyPhase, year),
             uncertain: Boolean(countyPhase.uncertain),
             source: countyPhase.source || countyEntity.source,
             entity: countyEntity,
             kingdom: countyKingdom,
             fiefAnnotation: countyPhase.fief_annotation || countyEntity.fief_annotation || null,
-            ruler: countyKingdom ? findRuler(countyName, year) : null
+            ruler: countyKingdom ? findRuler(countyName, year) : null,
+            fiveRankFiefs: findFiveRankFiefs(countyEntity.id, year)
           });
         }
         row.counties.sort((a, b) => a.order - b.order);
@@ -408,7 +469,13 @@
       const ruler = item.ruler;
       const label = ruler && ruler.status === 'matched' ? ruler.label : '國主未詳';
       container.appendChild(createAuxButton(label, rulerInfoObject(ruler, year), 'ruler-year'));
-      return;
+    }
+    for (const match of item.fiveRankFiefs || []) {
+      container.appendChild(createAuxButton(
+        fiveRankLabel(match),
+        fiveRankInfoObject(match, year),
+        'five-rank-note'
+      ));
     }
     if (level === 'county' && item.fiefAnnotation) {
       const annotation = item.fiefAnnotation;
@@ -426,7 +493,7 @@
     const span = document.createElement('span');
     span.className = [
       className,
-      item.kingdom ? 'kingdom' : '',
+      (item.kingdom || (item.fiveRankFiefs || []).length) ? 'kingdom' : '',
       item.change ? 'changed' : '',
       item.uncertain ? 'uncertain' : ''
     ].filter(Boolean).join(' ');
@@ -620,6 +687,12 @@
         const excerpt = document.createElement('p');
         excerpt.textContent = source.excerpt || '摘錄待補。';
         article.append(heading, excerpt);
+        if (source.editorial_note) {
+          const note = document.createElement('p');
+          note.className = 'editorial-note';
+          note.textContent = `人工校勘：${source.editorial_note}`;
+          article.appendChild(note);
+        }
         body.appendChild(article);
       }
     }
@@ -654,6 +727,12 @@
       const excerpt = document.createElement('p');
       excerpt.textContent = source.excerpt || '摘錄待補。';
       article.append(heading, excerpt);
+      if (source.editorial_note) {
+        const note = document.createElement('p');
+        note.className = 'editorial-note';
+        note.textContent = `人工校勘：${source.editorial_note}`;
+        article.appendChild(note);
+      }
       body.appendChild(article);
     }
 
@@ -713,7 +792,7 @@
     renderChangePanel(filtered, filteredRemoved);
     $('statusText').textContent = isBaselineYear
       ? `公元${year}年為本資料集的基準年，不以缺失的前一年資料判定變動；州、郡、縣均保留原書次序。`
-      : `公元${year}年所示為年末狀態；與公元${year - 1}年年末相比的變動以紅色及註釋標示。資料已依新版OCR重新抽取，並保留原書州、郡、縣次序；封國旁補列國主年次，縣級五等封國只在原書條文明載時標示。`;
+      : `公元${year}年所示為年末狀態；與公元${year - 1}年年末相比的變動以紅色及註釋標示。資料已依新版OCR及304年人工覆核修正，並保留原書州、郡、縣次序；宗室王國補列國主年次，公侯伯子男封國另以小字標示，年代或承襲不詳者明示「推定」。`;
     document.title = `西晉${year}年末州郡縣表`;
   }
 
