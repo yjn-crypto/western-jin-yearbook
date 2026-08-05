@@ -286,3 +286,85 @@ body.modal-open { overflow: hidden; }
   color: #7a2e2e;
   font-size: .86rem;
 }
+
+/* 多朝代主題：保留紙張、字體與表格結構，只調整五德相關的主色。 */
+body[data-theme="metal"] {
+  --accent: #626873;
+  --theme-dark: #4f555e;
+  --theme-mid: #777d86;
+  --theme-pale: #e8e8e5;
+  --theme-notice: #f2f1ec;
+  --theme-border: #9c927e;
+}
+body[data-theme="earth"] {
+  --accent: #8b5b26;
+  --theme-dark: #69451f;
+  --theme-mid: #9a6b30;
+  --theme-pale: #eee3cf;
+  --theme-notice: #fff5df;
+  --theme-border: #b18a4e;
+}
+body[data-theme] .site-header {
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--theme-dark) 96%, black), color-mix(in srgb, var(--theme-mid) 92%, black)),
+    repeating-linear-gradient(0deg, transparent 0 7px, rgba(255,255,255,.025) 7px 8px);
+}
+body[data-theme] .state-heading { background: var(--theme-pale); }
+body[data-theme] .notice { border-left-color: var(--theme-border); background: var(--theme-notice); }
+body[data-theme] select:focus,
+body[data-theme] input:focus { outline-color: color-mix(in srgb, var(--accent) 28%, transparent); }
+
+.control-grid { grid-template-columns: 138px 118px 170px minmax(220px,1fr) auto; }
+@media (max-width: 980px) {
+  .control-grid { grid-template-columns: 1fr 1fr 1fr; }
+  .search-label { grid-column: 1 / 3; }
+}
+@media (max-width: 620px) {
+  .control-grid { grid-template-columns: 1fr; }
+  .search-label { grid-column: auto; }
+}
+
+.regime-section { display: grid; gap: 18px; }
+.regime-section + .regime-section { margin-top: 8px; }
+.regime-heading {
+  margin: 2px 0 -4px;
+  padding: 9px 14px;
+  border-left: 5px solid var(--accent);
+  border-bottom: 1px solid var(--line);
+  color: var(--accent);
+  background: color-mix(in srgb, var(--paper-2) 75%, var(--theme-pale));
+  font-size: 1.2rem;
+  letter-spacing: .08em;
+}
+.regime-heading small { margin-left: 8px; color: var(--muted); font-size: .72rem; letter-spacing: 0; }
+.virtual-fief-card {
+  background: var(--paper-2);
+  border: 1px solid var(--line);
+  box-shadow: 0 4px 16px rgba(47,37,27,.045);
+}
+.virtual-fief-card h2 {
+  margin: 0;
+  padding: 13px 16px;
+  background: var(--theme-pale);
+  border-bottom: 1px solid var(--line);
+  font-size: 1.25rem;
+}
+.virtual-fief-list { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 0; }
+.virtual-fief-item { padding: 10px 14px; border-bottom: 1px solid #e4ddd2; }
+.virtual-fief-item:nth-child(odd) { border-right: 1px solid #e4ddd2; }
+.virtual-fief-reason { display: block; color: var(--muted); font-size: .75rem; }
+.chen-fief-note { color: #7f5839; font-size: .68rem; }
+.chen-fief-note.changed { color: var(--changed); }
+.regime-badge {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 0 5px;
+  border: 1px solid var(--theme-border);
+  color: var(--muted);
+  font-size: .66rem;
+  vertical-align: .14em;
+}
+@media (max-width: 650px) {
+  .virtual-fief-list { grid-template-columns: 1fr; }
+  .virtual-fief-item:nth-child(odd) { border-right: 0; }
+}

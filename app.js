@@ -1,15 +1,21 @@
 (() => {
   'use strict';
 
-  const DATA = window.JIN_DATA;
-  const PRINCES = window.JIN_PRINCES || { meta: {}, records: [] };
-  const FIVE_RANK = window.JIN_FIVE_RANK_FIEFS || { meta: {}, records: [] };
-  if (!DATA) {
-    document.body.innerHTML = '<p style="padding:2rem">資料檔案未載入。</p>';
-    return;
-  }
+  const DYNASTIES = {
+    'western-jin': {
+      key: 'western-jin', label: '西晉', theme: 'metal', data: window.JIN_DATA,
+      years: window.JIN_DATA ? window.JIN_DATA.meta.years : [266,316], defaultYear: 304,
+      subtitle: '選擇公元年份，按州查看該年年末的郡國與所轄縣級政區。'
+    },
+    chen: {
+      key: 'chen', label: '南陳', theme: 'earth', data: window.CHEN_DATA,
+      years: window.CHEN_DATA ? window.CHEN_DATA.meta.years : [558,588], defaultYear: 588,
+      subtitle: '選擇公元年份，查看南陳、虛封封爵及同時期後梁、王琳政區。'
+    }
+  };
 
   const $ = (id) => document.getElementById(id);
+  const dynastySelect = $('dynastySelect');
   const yearSelect = $('yearSelect');
   const stateSelect = $('stateSelect');
   const searchInput = $('searchInput');
@@ -20,12 +26,45 @@
   const citationRegistry = new Map();
   const auxInfoRegistry = new Map();
   let auxInfoSequence = 0;
+  let currentDynasty = DYNASTIES['western-jin'];
 
   function normalizeName(value) {
     return String(value || '')
-      .replace(/[\s·`?？※]/g, '')
-      .replace(/(王國|公國|侯國|國|郡|尹|屬國都尉|典農校尉|縣)$/g, '')
+      .replace(/[\s·`?？※、，,。；;（）()\[\]]/g, '')
+      .replace(/錢唐/g, '錢塘')
+      .replace(/候官/g, '侯官')
+      .replace(/(王國|公國|侯國|伯國|子國|男國|國|郡|尹|縣|州)$/g, '')
       .replace(/臺/g, '台');
+  }
+
+  function activePhase(entity, year) {
+    return (entity.phases || [])
+      .filter((phase) => Number(phase.start) <= year && year <= Number(phase.end))
+      .sort((a,b) => Number(b.start) - Number(a.start))[0] || null;
+  }
+
+  function effectiveOrder(entity, phase, year) {
+    if (phase && Number.isFinite(Number(phase.order))) return Number(phase.order);
+    const override = (entity.order_overrides || [])
+      .filter((item) => Number(item.start) <= year && year <= Number(item.end))
+      .sort((a,b) => Number(b.start) - Number(a.start))[0];
+    return override ? Number(override.order) : Number(entity.order || 0);
+  }
+
+  function sourceKey(source) {
+    if (!source) return '';
+    return `${source.book_page || ''}|${source.pdf_page || ''}|${source.excerpt || ''}|${source.editorial_note || ''}`;
+  }
+
+  function dedupeSources(sources) {
+    const seen = new Set();
+    const out = [];
+    for (const source of sources || []) {
+      const key = sourceKey(source);
+      if (!key || seen.has(key)) continue;
+      seen.add(key); out.push(source);
+    }
+    return out;
   }
 
   function isKingdom(name, level, phase) {
@@ -36,801 +75,469 @@
     return /(王國|公國|侯國|國)$/.test(n);
   }
 
+  function mapById(items) { return new Map((items || []).map((item) => [item.id,item])); }
 
+  function makeChange(summary, sources, kind, label) {
+    return { summary, sources: dedupeSources(sources), kind, label, number: null };
+  }
+
+  // ---------- 西晉封國補充 ----------
   function baseFiefName(name) {
-    return String(name || '')
-      .replace(/(王國|公國|侯國|國)$/g, '')
-      .replace(/範/g, '範')
-      .trim();
+    return String(name || '').replace(/(王國|公國|侯國|國)$/g,'').trim();
   }
 
   function chineseNumber(value) {
-    const n = Number(value);
-    const digits = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九'];
+    const n = Number(value), d = ['零','一','二','三','四','五','六','七','八','九'];
     if (!Number.isInteger(n) || n <= 0) return String(value);
-    if (n < 10) return digits[n];
+    if (n < 10) return d[n];
     if (n === 10) return '十';
-    if (n < 20) return `十${digits[n - 10]}`;
-    if (n < 100) {
-      const tens = Math.floor(n / 10);
-      const ones = n % 10;
-      return `${digits[tens]}十${ones ? digits[ones] : ''}`;
-    }
+    if (n < 20) return `十${d[n-10]}`;
+    if (n < 100) return `${d[Math.floor(n/10)]}十${n%10 ? d[n%10] : ''}`;
     return String(n);
   }
 
-  function reignYearLabel(year, start) {
-    const ordinal = Number(year) - Number(start) + 1;
-    return ordinal === 1 ? '元年' : `${chineseNumber(ordinal)}年`;
+  function reignYearLabel(year,start) {
+    const n = Number(year)-Number(start)+1;
+    return n === 1 ? '元年' : `${chineseNumber(n)}年`;
   }
 
-  function findRuler(name, year) {
+  function findJinRuler(name,year) {
+    const records = (window.JIN_PRINCES && window.JIN_PRINCES.records) || [];
     const fief = baseFiefName(name);
-    const all = (PRINCES.records || []).filter((record) => record.fief === fief);
-    const active = all.filter((record) => (
-      record.start !== null
-      && record.start !== undefined
-      && Number.isFinite(Number(record.start))
-      && Number(record.start) <= year
-      && (record.end === null || record.end === undefined || year <= Number(record.end))
-    ));
-
-    if (!active.length) {
-      return {
-        status: all.length ? 'gap' : 'absent',
-        fief,
-        label: '國主未詳',
-        records: all
-      };
-    }
-
-    active.sort((a, b) => (
-      Number(b.start) - Number(a.start)
-      || Number(b.sequence || 0) - Number(a.sequence || 0)
-    ));
+    const all = records.filter((r) => r.fief === fief);
+    const active = all.filter((r) => Number(r.start) <= year && (r.end == null || year <= Number(r.end)));
+    if (!active.length) return {status:all.length?'gap':'absent',fief,label:'國主未詳',records:all};
+    active.sort((a,b) => Number(b.start)-Number(a.start) || Number(b.sequence||0)-Number(a.sequence||0));
     const record = active[0];
-    const sameYearChange = active.some((candidate) => candidate.id !== record.id);
-    return {
-      status: 'matched',
-      fief,
-      record,
-      active,
-      sameYearChange,
-      ordinal: Number(year) - Number(record.start) + 1,
-      label: `${record.title}${record.person}之${reignYearLabel(year, record.start)}`
-    };
+    return {status:'matched',fief,record,active,label:`${record.title}${record.person}之${reignYearLabel(year,record.start)}`};
   }
 
-  function effectiveOrder(entity, phase, year) {
-    if (phase && Number.isFinite(Number(phase.order))) return Number(phase.order);
-    const override = (entity.order_overrides || [])
-      .filter((item) => Number(item.start) <= year && year <= Number(item.end))
-      .sort((a, b) => Number(b.start) - Number(a.start))[0];
-    return override ? Number(override.order) : Number(entity.order || 0);
-  }
-
-  function findFiveRankFiefs(entityId, year) {
-    const matches = [];
-    for (const record of FIVE_RANK.records || []) {
-      const period = (record.target_periods || []).find((item) => (
-        item.target_id === entityId
-        && Number(item.start) <= year
-        && year <= Number(item.end)
-      ));
-      if (period) matches.push({ record, period });
+  function findJinFiveRank(entityId,year) {
+    const records = (window.JIN_FIVE_RANK_FIEFS && window.JIN_FIVE_RANK_FIEFS.records) || [];
+    const out=[];
+    for (const record of records) {
+      const period=(record.target_periods||[]).find((p)=>p.target_id===entityId && Number(p.start)<=year && year<=Number(p.end));
+      if (period) out.push({record,period});
     }
-    return matches;
+    return out;
   }
 
-  function fiveRankLabel(match) {
-    const { record, period } = match;
-    const owners = period.holder_names || [];
-    let ownerText = '';
-    if (owners.length === 1) ownerText = `·${owners[0]}`;
-    else if (owners.length > 1) ownerText = `·${owners.join('／')}`;
-    else ownerText = '·封君未詳';
-    const inferred = period.uncertain || !period.holder_exact ? '（推定）' : '';
-    return `${record.classification}${ownerText}${inferred}`;
+  function jinFiveRankLabel(match) {
+    const names=match.period.holder_names||[];
+    const holder=names.length ? `·${names.join('／')}` : '·封君未詳';
+    const inferred=match.period.uncertain || !match.period.holder_exact ? '（推定）' : '';
+    return `${match.record.classification}${holder}${inferred}`;
   }
 
-  function fiveRankInfoObject(match, year) {
-    const { record, period } = match;
-    const holders = (record.holders || []).map((holder) => {
-      const parts = [holder.title, holder.person && holder.person !== '?' ? holder.person : '姓名未詳'];
-      if (holder.time_text) parts.push(holder.time_text);
-      if (holder.note) parts.push(holder.note);
-      return parts.filter(Boolean).join('：');
-    });
+  function jinFiveRankInfo(match,year) {
+    const {record,period}=match;
     return {
-      title: '五等爵封國資料',
-      summary: `${record.fief}：${fiveRankLabel(match)}`,
-      paragraphs: [
+      title:'五等爵封國資料', summary:`${record.fief}：${jinFiveRankLabel(match)}`,
+      paragraphs:[
         `所選年份：公元${year}年。爵等：${record.classification}。`,
         record.description ? `封授說明：${record.description}` : '',
-        period.holder_exact
-          ? `本年可直接匹配的封君：${(period.holder_names || []).join('、') || '未詳'}。`
-          : `本年封國存續可以確定或推定，但承襲年份不完整；可能的封君為：${(period.holder_names || []).join('、') || '未詳'}。`,
-        period.uncertain ? '本條起訖含年代、問號或終年未詳，故以「推定」標示。' : '',
-        `維基表所列封君序列：${holders.join('；') || '未詳'}。`,
-        FIVE_RANK.meta && FIVE_RANK.meta.caveat ? FIVE_RANK.meta.caveat : ''
+        `本年封君：${(period.holder_names||[]).join('、') || '未詳'}。`,
+        period.uncertain ? '本條起訖或承襲年代不完整，故以「推定」標示。' : '',
+        window.JIN_FIVE_RANK_FIEFS?.meta?.caveat || ''
       ].filter(Boolean),
-      sourceLabel: `${record.source_page_title}（下載版第 ${record.source_pdf_page} 頁）`,
-      sourceUrl: record.source_url
+      sourceLabel:`${record.source_page_title || '維基百科封爵列表'}${record.source_pdf_page ? `（下載版第 ${record.source_pdf_page} 頁）` : ''}`,
+      sourceUrl:record.source_url
     };
   }
 
-  function activePhase(entity, year) {
-    return (entity.phases || [])
-      .filter((phase) => Number(phase.start) <= year && year <= Number(phase.end))
-      .sort((a, b) => Number(b.start) - Number(a.start))[0] || null;
-  }
-
-  function sourceKey(source) {
-    if (!source) return '';
-    return `${source.book_page || ''}|${source.pdf_page || ''}|${source.excerpt || ''}`;
-  }
-
-  function dedupeSources(sources) {
-    const seen = new Set();
-    const output = [];
-    for (const source of sources || []) {
-      const key = sourceKey(source);
-      if (!key || seen.has(key)) continue;
-      seen.add(key);
-      output.push(source);
+  function jinRulerInfo(ruler,year) {
+    if (!ruler || ruler.status !== 'matched') {
+      return {title:'宗室封國資料',summary:'國主未詳',paragraphs:['現有藩王年表未能提供覆蓋本年的唯一國主。']};
     }
-    return output;
-  }
-
-  function buildSnapshot(year) {
-    const states = [];
-    for (const stateEntity of DATA.states) {
-      const statePhase = activePhase(stateEntity, year);
-      if (!statePhase) continue;
-      const state = {
-        id: stateEntity.id,
-        name: statePhase.name || stateEntity.name,
-        order: stateEntity.order,
-        uncertain: Boolean(statePhase.uncertain),
-        source: statePhase.source || stateEntity.source,
-        entity: stateEntity,
-        rows: []
-      };
-
-      for (const prefEntity of stateEntity.prefectures || []) {
-        const prefPhase = activePhase(prefEntity, year);
-        if (!prefPhase) continue;
-        const row = {
-          id: prefEntity.id,
-          name: prefPhase.name || prefEntity.base_name,
-          order: effectiveOrder(prefEntity, prefPhase, year),
-          uncertain: Boolean(prefPhase.uncertain),
-          source: prefPhase.source || prefEntity.source,
-          entity: prefEntity,
-          kingdom: isKingdom(prefPhase.name || prefEntity.base_name, 'prefecture', prefPhase),
-          ruler: null,
-          fiveRankFiefs: findFiveRankFiefs(prefEntity.id, year),
-          counties: []
-        };
-        if (row.kingdom) row.ruler = findRuler(row.name, year);
-        for (const countyEntity of prefEntity.counties || []) {
-          const countyPhase = activePhase(countyEntity, year);
-          if (!countyPhase) continue;
-          const countyName = countyPhase.name || countyEntity.base_name;
-          const countyKingdom = isKingdom(countyName, 'county', countyPhase);
-          row.counties.push({
-            id: countyEntity.id,
-            name: countyName,
-            order: effectiveOrder(countyEntity, countyPhase, year),
-            uncertain: Boolean(countyPhase.uncertain),
-            source: countyPhase.source || countyEntity.source,
-            entity: countyEntity,
-            kingdom: countyKingdom,
-            fiefAnnotation: countyPhase.fief_annotation || countyEntity.fief_annotation || null,
-            ruler: countyKingdom ? findRuler(countyName, year) : null,
-            fiveRankFiefs: findFiveRankFiefs(countyEntity.id, year)
-          });
-        }
-        row.counties.sort((a, b) => a.order - b.order);
-        state.rows.push(row);
-      }
-      state.rows.sort((a, b) => a.order - b.order);
-      states.push(state);
-    }
-    states.sort((a, b) => a.order - b.order);
-    return states;
-  }
-
-  function mapById(items) {
-    return new Map((items || []).map((item) => [item.id, item]));
-  }
-
-  function makeChange(summary, sources, kind, label) {
+    const r=ruler.record;
     return {
-      summary,
-      sources: dedupeSources(sources),
-      kind,
-      label,
-      number: null
+      title:'宗室封國資料', summary:ruler.label,
+      paragraphs:[`所選年份：公元${year}年。`,`王號：${r.title}。國主：${r.person}。`,`表列在位：${r.start}—${r.end ?? '未詳'}年。`],
+      sourceLabel:'維基百科〈晉朝藩王列表〉', sourceUrl:window.JIN_PRINCES?.meta?.source_url
     };
   }
 
-  function compareSnapshots(current, previous, year) {
-    const previousStateMap = mapById(previous);
-    const removedChanges = [];
+  // ---------- 南陳封爵補充 ----------
+  function activeChenFiefPhase(record,year) {
+    return (record.phases||[]).find((p)=>Number(p.start)<=year && year<=Number(p.end)) || null;
+  }
 
-    for (const state of current) {
-      const oldState = previousStateMap.get(state.id);
-      const stateSources = [];
-      const stateNotes = [];
-      if (!oldState) {
-        stateNotes.push(`${state.name}於本年年末見於表中`);
-        stateSources.push(state.source);
-      } else if (oldState.name !== state.name) {
-        stateNotes.push(`${oldState.name}改稱${state.name}`);
-        stateSources.push(state.source, oldState.source);
-      }
-
-      const oldPrefMap = mapById(oldState ? oldState.rows : []);
-      for (const row of state.rows) {
-        const oldRow = oldPrefMap.get(row.id);
-        const rowSources = [];
-        const rowNotes = [];
-        if (!oldRow) {
-          rowNotes.push(`${row.name}為本年新增、復置或改隸至本州`);
-          rowSources.push(row.source);
-        } else if (oldRow.name !== row.name) {
-          rowNotes.push(`${oldRow.name}改稱${row.name}`);
-          rowSources.push(row.source, oldRow.source);
-        }
-
-        const oldCountyMap = mapById(oldRow ? oldRow.counties : []);
-        for (const county of row.counties) {
-          const oldCounty = oldCountyMap.get(county.id);
-          if (!oldCounty) {
-            county.change = makeChange(
-              `${county.name}為本年新增、復置、改名或改隸至${row.name}`,
-              [county.source],
-              'county',
-              `${state.name}·${row.name}：${county.name}`
-            );
-          } else if (oldCounty.name !== county.name) {
-            county.change = makeChange(
-              `${oldCounty.name}改稱${county.name}`,
-              [county.source, oldCounty.source],
-              'county',
-              `${state.name}·${row.name}：${oldCounty.name}→${county.name}`
-            );
-          }
-        }
-
-        if (oldRow) {
-          const currentCountyMap = mapById(row.counties);
-          const removedCounties = oldRow.counties.filter((county) => !currentCountyMap.has(county.id));
-          if (removedCounties.length) {
-            rowNotes.push(`${removedCounties.map((county) => county.name).join('、')}於本年不再隸屬${row.name}`);
-            rowSources.push(...removedCounties.map((county) => county.source));
-            for (const county of removedCounties) {
-              removedChanges.push(makeChange(
-                `${county.name}於${year}年末已不見於${row.name}所轄`,
-                [county.source],
-                'removed-county',
-                `${state.name}·${row.name}：撤出／廢省 ${county.name}`
-              ));
-            }
-          }
-        }
-
-        if (rowNotes.length) {
-          row.change = makeChange(
-            rowNotes.join('；'),
-            rowSources,
-            'prefecture',
-            `${state.name}：${row.name}`
-          );
-        }
-      }
-
-      if (oldState) {
-        const currentPrefMap = mapById(state.rows);
-        const removedPrefs = oldState.rows.filter((row) => !currentPrefMap.has(row.id));
-        if (removedPrefs.length) {
-          stateNotes.push(`${removedPrefs.map((row) => row.name).join('、')}於本年不再隸屬${state.name}`);
-          stateSources.push(...removedPrefs.map((row) => row.source));
-          for (const row of removedPrefs) {
-            removedChanges.push(makeChange(
-              `${row.name}於${year}年末已不見於${state.name}所轄`,
-              [row.source],
-              'removed-prefecture',
-              `${state.name}：撤出／廢省 ${row.name}`
-            ));
-          }
-        }
-      }
-
-      if (stateNotes.length) {
-        state.change = makeChange(
-          stateNotes.join('；'),
-          stateSources,
-          'state',
-          state.name
-        );
-      }
+  function chenHolderNames(record,year) {
+    let candidates=(record.holders||[]).filter((h)=>Number(h.start)<=year && year<=Number(h.end) && h.person && !/[？?]/.test(h.person));
+    const nonPosthumous=candidates.filter((h)=>!String(h.time_text||'').includes('追封'));
+    if (nonPosthumous.length) candidates=nonPosthumous;
+    const exact=candidates.filter((h)=>!h.uncertain);
+    if (exact.length) {
+      const latest=Math.max(...exact.map((h)=>Number(h.start)));
+      candidates=exact.filter((h)=>Number(h.start)===latest);
+    } else if (candidates.length) {
+      const latest=Math.max(...candidates.map((h)=>Number(h.start)));
+      candidates=candidates.filter((h)=>Number(h.start)===latest);
     }
+    return [...new Set(candidates.map((h)=>h.person))];
+  }
 
-    const currentStateMap = mapById(current);
-    for (const oldState of previous) {
-      if (currentStateMap.has(oldState.id)) continue;
-      removedChanges.push(makeChange(
-        `${oldState.name}於${year}年末已不見於州級政區表中`,
-        [oldState.source],
-        'removed-state',
-        `撤出／廢省 ${oldState.name}`
-      ));
-    }
+  function chenFiefText(match) {
+    const {record,phase,holders}=match;
+    const people=holders.length ? holders.join('／') : '封君未詳';
+    if (record.kind === 'prince') return `${phase.fief}王·${people}`;
+    if (record.level === 'prefecture' && record.rank === '公') return `郡公·${people}`;
+    return `${record.rank}國·${people}`;
+  }
 
-    citationRegistry.clear();
-    let number = 0;
-    const register = (change) => {
-      if (!change || change.number) return;
-      number += 1;
-      change.number = number;
-      citationRegistry.set(number, change);
+  function chenFiefInfo(match,year) {
+    const {record,phase,holders,reason}=match;
+    const holderRows=(record.holders||[]).map((h)=>`${h.title || record.label}：${h.person || '未詳'}${h.time_text ? `（${h.time_text}）` : ''}`);
+    return {
+      title:record.kind==='prince'?'南陳宗室王國資料':'南陳開國爵資料',
+      summary:`${phase.fief}國：${chenFiefText(match)}`,
+      paragraphs:[
+        `所選年份：公元${year}年。表列封國存續：${phase.raw || `${phase.start}—${phase.end}`}。`,
+        `本年封君：${holders.join('、') || '未詳'}。南朝封君通常不到封國，本頁只把爵號作為制度注記，不據此反推實際行政機構。`,
+        reason ? `未附於郡縣的原因：${reason}。` : '',
+        record.description ? `年表說明：${record.description}` : '',
+        `年表所列承襲：${holderRows.join('；') || '未詳'}。`,
+        window.CHEN_FIEFS?.meta?.caveat || ''
+      ].filter(Boolean),
+      sourceLabel:record.source_title || '維基百科南朝封爵年表', sourceUrl:record.source_url
     };
+  }
 
-    for (const state of current) {
-      register(state.change);
-      for (const row of state.rows) {
-        register(row.change);
-        for (const county of row.counties) register(county.change);
+  function buildJinSnapshot(year) {
+    const states=[];
+    const data=window.JIN_DATA;
+    for (const stateEntity of data.states||[]) {
+      const sp=activePhase(stateEntity,year); if (!sp) continue;
+      const state={id:stateEntity.id,name:sp.name||stateEntity.name,order:stateEntity.order,filterKey:`jin:${stateEntity.id}`,group:'jin',groupLabel:'西晉',uncertain:!!sp.uncertain,source:sp.source||stateEntity.source,entity:stateEntity,rows:[]};
+      for (const pe of stateEntity.prefectures||[]) {
+        const pp=activePhase(pe,year); if (!pp) continue;
+        const row={id:pe.id,name:pp.name||pe.base_name,order:effectiveOrder(pe,pp,year),uncertain:!!pp.uncertain,source:pp.source||pe.source,entity:pe,kingdom:isKingdom(pp.name||pe.base_name,'prefecture',pp),ruler:null,fiveRankFiefs:findJinFiveRank(pe.id,year),chenFiefs:[],counties:[]};
+        if (row.kingdom) row.ruler=findJinRuler(row.name,year);
+        for (const ce of pe.counties||[]) {
+          const cp=activePhase(ce,year); if (!cp) continue;
+          const name=cp.name||ce.base_name;
+          const kingdom=isKingdom(name,'county',cp);
+          row.counties.push({id:ce.id,name,order:effectiveOrder(ce,cp,year),uncertain:!!cp.uncertain,source:cp.source||ce.source,entity:ce,kingdom,fiefAnnotation:cp.fief_annotation||ce.fief_annotation||null,ruler:kingdom?findJinRuler(name,year):null,fiveRankFiefs:findJinFiveRank(ce.id,year),chenFiefs:[]});
+        }
+        row.counties.sort((a,b)=>a.order-b.order); state.rows.push(row);
+      }
+      state.rows.sort((a,b)=>a.order-b.order); states.push(state);
+    }
+    states.sort((a,b)=>a.order-b.order);
+    return {states,virtualFiefs:[]};
+  }
+
+  function buildChenRegimeStates(regimeKey,year,groupOrder) {
+    const reg=window.CHEN_DATA.regimes[regimeKey];
+    const states=[];
+    for (const se of reg.states||[]) {
+      const sp=activePhase(se,year); if (!sp) continue;
+      const state={id:se.id,name:sp.name||se.name,order:Number(se.order||0),filterKey:`${regimeKey}:${se.id}`,group:regimeKey,groupLabel:reg.label,groupOrder,uncertain:!!sp.uncertain,source:sp.source||se.source,entity:se,rows:[]};
+      for (const pe of se.prefectures||[]) {
+        const pp=activePhase(pe,year); if (!pp) continue;
+        const row={id:pe.id,name:pp.name||pe.base_name,order:effectiveOrder(pe,pp,year),uncertain:!!pp.uncertain,source:pp.source||pe.source,entity:pe,kingdom:isKingdom(pp.name||pe.base_name,'prefecture',pp),ruler:null,fiveRankFiefs:[],chenFiefs:[],counties:[]};
+        for (const ce of pe.counties||[]) {
+          const cp=activePhase(ce,year); if (!cp) continue;
+          row.counties.push({id:ce.id,name:cp.name||ce.base_name,order:effectiveOrder(ce,cp,year),uncertain:!!cp.uncertain,source:cp.source||ce.source,entity:ce,kingdom:false,ruler:null,fiveRankFiefs:[],chenFiefs:[]});
+        }
+        row.counties.sort((a,b)=>a.order-b.order); state.rows.push(row);
+      }
+      state.rows.sort((a,b)=>a.order-b.order); states.push(state);
+    }
+    states.sort((a,b)=>a.order-b.order); return states;
+  }
+
+  function attachChenFiefs(chenStates,year) {
+    const prefMap=new Map(), countyMap=new Map();
+    for (const state of chenStates) for (const row of state.rows) {
+      const pk=normalizeName(row.name); if (!prefMap.has(pk)) prefMap.set(pk,[]); prefMap.get(pk).push(row);
+      for (const county of row.counties) { const ck=normalizeName(county.name); if (!countyMap.has(ck)) countyMap.set(ck,[]); countyMap.get(ck).push(county); }
+    }
+    const virtual=[];
+    for (const record of window.CHEN_FIEFS?.records || []) {
+      const phase=activeChenFiefPhase(record,year); if (!phase) continue;
+      const key=normalizeName(phase.fief);
+      const targetMap=record.level==='prefecture' ? prefMap : countyMap;
+      const targets=targetMap.get(key)||[];
+      const holders=chenHolderNames(record,year);
+      const match={record,phase,holders,changed:Number(phase.start)===year || (record.holders||[]).some((h)=>Number(h.start)===year)};
+      if (targets.length===1) targets[0].chenFiefs.push(match);
+      else {
+        match.reason=targets.length===0
+          ? `本年南陳實州郡縣中沒有可唯一對應的同名${record.level==='prefecture'?'郡':'縣'}`
+          : `本年存在${targets.length}個同名政區，無法無歧義定位`;
+        virtual.push(match);
       }
     }
-    for (const change of removedChanges) register(change);
+    const rankOrder={王:0,公:1,侯:2,伯:3,子:4,男:5};
+    virtual.sort((a,b)=>(rankOrder[a.record.rank]-rankOrder[b.record.rank]) || a.phase.fief.localeCompare(b.phase.fief,'zh-Hant'));
+    return virtual;
+  }
 
-    return { states: current, removedChanges, citationCount: number };
+  function buildChenSnapshot(year) {
+    const chen=buildChenRegimeStates('chen',year,0);
+    const virtualFiefs=attachChenFiefs(chen,year);
+    const later=buildChenRegimeStates('later_liang',year,2);
+    const wang=buildChenRegimeStates('wang_lin',year,3);
+    return {states:[...chen,...later,...wang],virtualFiefs};
+  }
+
+  function buildSnapshot(year) { return currentDynasty.key==='chen' ? buildChenSnapshot(year) : buildJinSnapshot(year); }
+
+  function compareSnapshots(current,previous,year) {
+    const previousStateMap=mapById(previous.states), removedChanges=[];
+    for (const state of current.states) {
+      const oldState=previousStateMap.get(state.id), stateNotes=[], stateSources=[];
+      if (!oldState) { stateNotes.push(`${state.name}於本年年末見於表中`); stateSources.push(state.source); }
+      else if (oldState.name!==state.name) { stateNotes.push(`${oldState.name}改稱${state.name}`); stateSources.push(state.source,oldState.source); }
+      const oldPrefMap=mapById(oldState?oldState.rows:[]);
+      for (const row of state.rows) {
+        const oldRow=oldPrefMap.get(row.id), rowNotes=[], rowSources=[];
+        if (!oldRow) { rowNotes.push(`${row.name}為本年新增、復置或改隸至本州`); rowSources.push(row.source); }
+        else if (oldRow.name!==row.name) { rowNotes.push(`${oldRow.name}改稱${row.name}`); rowSources.push(row.source,oldRow.source); }
+        const oldCountyMap=mapById(oldRow?oldRow.counties:[]);
+        for (const county of row.counties) {
+          const old=oldCountyMap.get(county.id);
+          if (!old) county.change=makeChange(`${county.name}為本年新增、復置、改名或改隸至${row.name}`,[county.source],'county',`${state.name}·${row.name}：${county.name}`);
+          else if (old.name!==county.name) county.change=makeChange(`${old.name}改稱${county.name}`,[county.source,old.source],'county',`${state.name}·${row.name}：${old.name}→${county.name}`);
+        }
+        if (oldRow) {
+          const now=mapById(row.counties), removed=oldRow.counties.filter((c)=>!now.has(c.id));
+          if (removed.length) {
+            rowNotes.push(`${removed.map((c)=>c.name).join('、')}於本年不再隸屬${row.name}`); rowSources.push(...removed.map((c)=>c.source));
+            for (const c of removed) removedChanges.push(makeChange(`${c.name}於${year}年末已不見於${row.name}所轄`,[c.source],'removed-county',`${state.name}·${row.name}：撤出／廢省 ${c.name}`));
+          }
+        }
+        if (rowNotes.length) row.change=makeChange(rowNotes.join('；'),rowSources,'prefecture',`${state.name}：${row.name}`);
+      }
+      if (oldState) {
+        const now=mapById(state.rows), removed=oldState.rows.filter((r)=>!now.has(r.id));
+        if (removed.length) {
+          stateNotes.push(`${removed.map((r)=>r.name).join('、')}於本年不再隸屬${state.name}`); stateSources.push(...removed.map((r)=>r.source));
+          for (const r of removed) removedChanges.push(makeChange(`${r.name}於${year}年末已不見於${state.name}所轄`,[r.source],'removed-prefecture',`${state.name}：撤出／廢省 ${r.name}`));
+        }
+      }
+      if (stateNotes.length) state.change=makeChange(stateNotes.join('；'),stateSources,'state',`${state.groupLabel}·${state.name}`);
+    }
+    const currentMap=mapById(current.states);
+    for (const old of previous.states) if (!currentMap.has(old.id)) removedChanges.push(makeChange(`${old.name}於${year}年末已不見於州級政區表中`,[old.source],'removed-state',`${old.groupLabel}：撤出／廢省 ${old.name}`));
+
+    citationRegistry.clear(); let number=0;
+    const register=(change)=>{if(!change||change.number)return; change.number=++number; citationRegistry.set(number,change);};
+    for (const state of current.states) { register(state.change); for (const row of state.rows) {register(row.change); for (const c of row.counties) register(c.change);} }
+    for (const c of removedChanges) register(c);
+    return {states:current.states,virtualFiefs:current.virtualFiefs,removedChanges};
   }
 
   function createCitationButton(change) {
-    if (!change || !change.number) return null;
-    const button = document.createElement('button');
-    button.type = 'button';
-    button.className = 'citation-link';
-    button.textContent = `[${change.number}]`;
-    button.title = '查看變動依據';
-    button.setAttribute('aria-label', `查看註釋 ${change.number}`);
-    button.dataset.citation = String(change.number);
-    return button;
+    if (!change?.number) return null;
+    const b=document.createElement('button'); b.type='button'; b.className='citation-link'; b.textContent=`[${change.number}]`; b.dataset.citation=String(change.number); b.title='查看變動依據'; return b;
   }
 
-  function createAuxButton(text, info, className = '') {
-    auxInfoSequence += 1;
-    const id = `aux-${auxInfoSequence}`;
-    auxInfoRegistry.set(id, info);
-    const button = document.createElement('button');
-    button.type = 'button';
-    button.className = ['fief-detail-button', className].filter(Boolean).join(' ');
-    button.textContent = text;
-    button.dataset.info = id;
-    button.title = info.summary || '查看封國資料來源';
-    return button;
+  function createAuxButton(text,info,className='') {
+    const id=`aux-${++auxInfoSequence}`; auxInfoRegistry.set(id,info);
+    const b=document.createElement('button'); b.type='button'; b.className=['fief-detail-button',className].filter(Boolean).join(' '); b.textContent=text; b.dataset.info=id; b.title=info.summary||'查看封國資料'; return b;
   }
 
-  function rulerInfoObject(ruler, year) {
-    if (!ruler || ruler.status !== 'matched') {
-      const hasEntries = ruler && ruler.records && ruler.records.length;
-      return {
-        title: '國主與在位年次',
-        summary: `${ruler ? ruler.fief : ''}國在公元${year}年的國主未能由所引藩王表唯一確定。`,
-        paragraphs: [
-          hasEntries
-            ? '《晉朝藩王列表》收有同名封國條目，但沒有可與本年直接匹配且起始年明確的國主。'
-            : '《晉朝藩王列表》中未檢得可直接匹配的同名藩王條目。',
-          '網頁不以郡國名稱自行補造國主；此處保留「國主未詳」。'
-        ],
-        sourceLabel: '維基百科〈晉朝藩王列表〉',
-        sourceUrl: PRINCES.meta && PRINCES.meta.url
-      };
-    }
-    const r = ruler.record;
-    const paragraphs = [
-      `在位時間：${r.time_text || `${r.start}—${r.end || '？'}`}。`,
-      `年次計算：公元${year}年－始封／改封年${r.start}年＋一，故為${reignYearLabel(year, r.start)}。`,
-      r.note ? `表中備註：${r.note}` : '',
-      ruler.sameYearChange ? '同一封國在本年有前後國主重疊記錄；因本頁顯示年末狀態，採表中後列、亦即該年後起者。' : '',
-      r.uncertain ? '該表的在位起訖帶有疑問標記，年次亦應視為暫定。' : ''
-    ].filter(Boolean);
-    return {
-      title: '國主與在位年次',
-      summary: ruler.label,
-      paragraphs,
-      sourceLabel: `維基百科〈晉朝藩王列表〉（下載版第 ${r.pdf_page} 頁）`,
-      sourceUrl: PRINCES.meta && PRINCES.meta.url
-    };
-  }
-
-  function countyFiefInfoObject(county) {
-    const annotation = county.fiefAnnotation;
-    const source = annotation && annotation.source;
-    return {
-      title: '縣級封國標記',
-      summary: `${county.name}：${annotation.label}${annotation.owner ? `，國主／封君 ${annotation.owner}` : ''}`,
-      paragraphs: [
-        annotation.note,
-        annotation.owner
-          ? `本書明載的國主／封君：${annotation.owner}。`
-          : '本書相應條目未能提供可直接錄入的國主／封君姓名，故不作補造。'
-      ].filter(Boolean),
-      sources: source ? [source] : []
-    };
-  }
-
-  function appendFiefDetails(container, item, level, year) {
-    if (level === 'prefecture' && item.kingdom) {
-      const ruler = item.ruler;
-      const label = ruler && ruler.status === 'matched' ? ruler.label : '國主未詳';
-      container.appendChild(createAuxButton(label, rulerInfoObject(ruler, year), 'ruler-year'));
-    }
-    for (const match of item.fiveRankFiefs || []) {
-      container.appendChild(createAuxButton(
-        fiveRankLabel(match),
-        fiveRankInfoObject(match, year),
-        'five-rank-note'
-      ));
-    }
-    if (level === 'county' && item.fiefAnnotation) {
-      const annotation = item.fiefAnnotation;
-      const label = annotation.owner
-        ? `${annotation.label}·${annotation.owner}`
-        : annotation.label;
-      container.appendChild(createAuxButton(label, countyFiefInfoObject(item), 'county-fief-note'));
-      if (item.ruler && item.ruler.status === 'matched') {
-        container.appendChild(createAuxButton(item.ruler.label, rulerInfoObject(item.ruler, year), 'ruler-year'));
+  function appendFiefDetails(container,item,level,year) {
+    if (currentDynasty.key==='western-jin') {
+      if (item.ruler) container.appendChild(createAuxButton(item.ruler.label,jinRulerInfo(item.ruler,year),'ruler-year'));
+      for (const match of item.fiveRankFiefs||[]) container.appendChild(createAuxButton(jinFiveRankLabel(match),jinFiveRankInfo(match,year),'five-rank-note'));
+      if (level==='county' && item.fiefAnnotation) {
+        container.appendChild(createAuxButton(item.fiefAnnotation.label || '封國',{
+          title:'縣級封國資料',summary:`${item.name}：${item.fiefAnnotation.label || '封國'}`,
+          paragraphs:[item.fiefAnnotation.note || '本書正文保存此縣的封國性質。'],sources:[item.source]
+        },'county-fief-note'));
       }
+    } else {
+      for (const match of item.chenFiefs||[]) container.appendChild(createAuxButton(chenFiefText(match),chenFiefInfo(match,year),`chen-fief-note${match.changed?' changed':''}`));
     }
   }
 
-  function makeNameSpan(item, className = '') {
-    const span = document.createElement('span');
-    span.className = [
-      className,
-      (item.kingdom || (item.fiveRankFiefs || []).length) ? 'kingdom' : '',
-      item.change ? 'changed' : '',
-      item.uncertain ? 'uncertain' : ''
-    ].filter(Boolean).join(' ');
-    span.textContent = item.name;
-    if (item.change) span.title = item.change.summary;
-    const wrapper = document.createElement('span');
-    wrapper.className = 'name-with-citation';
-    wrapper.appendChild(span);
-    const citation = createCitationButton(item.change);
-    if (citation) wrapper.appendChild(citation);
-    return wrapper;
+  function makeNameSpan(item,className='') {
+    const wrap=document.createElement('span'); wrap.className='name-with-citation';
+    const name=document.createElement('span'); name.textContent=item.name; name.className=[className,item.kingdom?'kingdom':'',item.change?'changed':'',item.uncertain?'uncertain':''].filter(Boolean).join(' '); wrap.appendChild(name);
+    const citation=createCitationButton(item.change); if (citation) wrap.appendChild(citation); return wrap;
   }
 
-  function applyFilters(states) {
-    const selectedState = stateSelect.value;
-    const query = normalizeName(searchInput.value.trim());
-    const onlyChanged = changedOnly.checked;
-    const filtered = [];
+  function stateMatches(state) {
+    const selected=stateSelect.value, query=normalizeName(searchInput.value.trim());
+    if (selected && state.filterKey!==selected) return false;
+    if (changedOnly.checked) {
+      const any=state.change || state.rows.some((r)=>r.change || r.counties.some((c)=>c.change));
+      if (!any) return false;
+    }
+    if (!query) return true;
+    const text=[state.name,...state.rows.flatMap((r)=>[r.name,...(r.chenFiefs||[]).map(chenFiefText),...(r.fiveRankFiefs||[]).map(jinFiveRankLabel),...r.counties.flatMap((c)=>[c.name,...(c.chenFiefs||[]).map(chenFiefText),...(c.fiveRankFiefs||[]).map(jinFiveRankLabel)])])].join(' ');
+    return normalizeName(text).includes(query);
+  }
 
-    for (const state of states) {
-      if (selectedState && state.name !== selectedState) continue;
-      const stateMatches = query && normalizeName(state.name).includes(query);
-      const rows = [];
-      for (const row of state.rows) {
-        const rowMatches = !query || stateMatches || normalizeName(row.name).includes(query);
-        const matchingCounties = !query || rowMatches
-          ? row.counties
-          : row.counties.filter((county) => normalizeName(county.name).includes(query));
-        const hasChangedCounty = matchingCounties.some((county) => county.change);
-        if (query && !rowMatches && matchingCounties.length === 0) continue;
-        if (onlyChanged && !row.change && !hasChangedCounty) continue;
-        rows.push({ ...row, counties: matchingCounties });
+  function filteredStateCopy(state) {
+    const query=normalizeName(searchInput.value.trim());
+    if (!query) return state;
+    const copy={...state,rows:[]};
+    for (const row of state.rows) {
+      const rowText=normalizeName([row.name,...(row.chenFiefs||[]).map(chenFiefText),...(row.fiveRankFiefs||[]).map(jinFiveRankLabel)].join(' '));
+      const counties=row.counties.filter((c)=>normalizeName([c.name,...(c.chenFiefs||[]).map(chenFiefText),...(c.fiveRankFiefs||[]).map(jinFiveRankLabel)].join(' ')).includes(query));
+      if (rowText.includes(query) || counties.length) copy.rows.push({...row,counties:rowText.includes(query)?row.counties:counties});
+    }
+    return copy;
+  }
+
+  function renderState(state,year) {
+    const article=document.createElement('article'); article.className='state-card';
+    const heading=document.createElement('header'); heading.className='state-heading';
+    const h2=document.createElement('h2'); h2.appendChild(makeNameSpan(state));
+    if (currentDynasty.key==='chen' && state.group!=='chen') { const badge=document.createElement('span'); badge.className='regime-badge'; badge.textContent=state.groupLabel; h2.appendChild(badge); }
+    const meta=document.createElement('span'); meta.className='state-meta'; meta.textContent=`${state.rows.length} 郡級政區`;
+    heading.append(h2,meta); article.appendChild(heading);
+    const wrap=document.createElement('div'); wrap.className='table-wrap'; const table=document.createElement('table');
+    const thead=document.createElement('thead'), hr=document.createElement('tr');
+    for (const label of ['郡、國及郡級政區','所屬縣級政區']) {const th=document.createElement('th');th.textContent=label;hr.appendChild(th);} thead.appendChild(hr);table.appendChild(thead);
+    const tbody=document.createElement('tbody');
+    for (const row of state.rows) {
+      const tr=document.createElement('tr'), td1=document.createElement('td'), td2=document.createElement('td');
+      td1.appendChild(makeNameSpan(row,'pref-name'));
+      if (row.kingdom) {const b=document.createElement('span');b.className='type-badge kingdom';b.textContent='封國';td1.appendChild(b);}
+      appendFiefDetails(td1,row,'prefecture',year);
+      const ref=document.createElement('span');ref.className='source-ref';ref.textContent=row.source?.book_page?`沿革：書內第 ${row.source.book_page} 頁`:'沿革：頁碼待校';td1.appendChild(ref);
+      if (!row.counties.length) {const e=document.createElement('span');e.className='empty';e.textContent='本年無可顯示的縣級政區';td2.appendChild(e);} else {
+        const list=document.createElement('div');list.className='county-list';
+        for (const c of row.counties) {const item=makeNameSpan(c,'county-item');appendFiefDetails(item,c,'county',year);list.appendChild(item);} td2.appendChild(list);
       }
-      if (rows.length || (onlyChanged && state.change)) filtered.push({ ...state, rows });
+      tr.append(td1,td2);tbody.appendChild(tr);
     }
+    table.appendChild(tbody);wrap.appendChild(table);article.appendChild(wrap);return article;
+  }
+
+  function renderVirtualFiefs(items,year) {
+    const query=normalizeName(searchInput.value.trim());
+    const visible=items.filter((m)=>!query || normalizeName(`${m.phase.fief}${chenFiefText(m)}${m.reason}`).includes(query));
+    if (!visible.length || stateSelect.value || changedOnly.checked) return null;
+    const card=document.createElement('article');card.className='virtual-fief-card';
+    const h=document.createElement('h2');h.textContent='虛封封爵';card.appendChild(h);
+    const list=document.createElement('div');list.className='virtual-fief-list';
+    for (const match of visible) {
+      const item=document.createElement('div');item.className='virtual-fief-item';
+      item.appendChild(createAuxButton(`${match.phase.fief}國　${chenFiefText(match)}`,chenFiefInfo(match,year),`chen-fief-note${match.changed?' changed':''}`));
+      const reason=document.createElement('span');reason.className='virtual-fief-reason';reason.textContent=match.reason;item.appendChild(reason);list.appendChild(item);
+    }
+    card.appendChild(list);return card;
+  }
+
+  function renderResults(states,virtualFiefs,year) {
+    results.replaceChildren();
+    const filtered=states.filter(stateMatches).map(filteredStateCopy).filter((s)=>s.rows.length || !normalizeName(searchInput.value.trim()));
+    if (currentDynasty.key!=='chen') {
+      if (!filtered.length) {results.innerHTML='<div class="no-results">沒有符合目前條件的政區。</div>';return filtered;}
+      for (const s of filtered) results.appendChild(renderState(s,year)); return filtered;
+    }
+    const groups=[['chen','南陳州郡縣'],['later_liang','後梁政區'],['wang_lin','王琳政權政區']];
+    let anything=false;
+    for (const [key,label] of groups) {
+      const groupStates=filtered.filter((s)=>s.group===key);
+      if (key==='later_liang') {const virtual=renderVirtualFiefs(virtualFiefs,year); if (virtual){results.appendChild(virtual);anything=true;}}
+      if (!groupStates.length) continue;
+      const section=document.createElement('section');section.className='regime-section';
+      const heading=document.createElement('h2');heading.className='regime-heading';heading.textContent=label;
+      const small=document.createElement('small');small.textContent=key==='chen'?'陳朝本土政區':key==='later_liang'?'政權存續期間顯示':'王琳勢力存續期間顯示';heading.appendChild(small);section.appendChild(heading);
+      for (const s of groupStates) section.appendChild(renderState(s,year));results.appendChild(section);anything=true;
+    }
+    if (!anything) results.innerHTML='<div class="no-results">沒有符合目前條件的政區或封爵。</div>';
     return filtered;
   }
 
-  function renderState(state, year) {
-    const article = document.createElement('article');
-    article.className = 'state-card';
-
-    const heading = document.createElement('div');
-    heading.className = 'state-heading';
-    const h2 = document.createElement('h2');
-    const stateName = makeNameSpan({
-      name: state.name,
-      change: state.change,
-      uncertain: state.uncertain,
-      kingdom: false
-    });
-    h2.appendChild(stateName);
-    const meta = document.createElement('span');
-    meta.className = 'state-meta';
-    const countyTotal = state.rows.reduce((sum, row) => sum + row.counties.length, 0);
-    meta.textContent = `${state.rows.length} 郡國 · ${countyTotal} 縣級政區`;
-    heading.append(h2, meta);
-    article.appendChild(heading);
-
-    if (!state.rows.length) return article;
-
-    const wrap = document.createElement('div');
-    wrap.className = 'table-wrap';
-    const table = document.createElement('table');
-    const thead = document.createElement('thead');
-    const trh = document.createElement('tr');
-    for (const label of ['郡、國及郡級政區', '所屬縣級政區']) {
-      const th = document.createElement('th');
-      th.textContent = label;
-      trh.appendChild(th);
-    }
-    thead.appendChild(trh);
-    table.appendChild(thead);
-
-    const tbody = document.createElement('tbody');
-    for (const row of state.rows) {
-      const tr = document.createElement('tr');
-      const tdName = document.createElement('td');
-      tdName.appendChild(makeNameSpan(row, 'pref-name'));
-      if (row.kingdom) {
-        const badge = document.createElement('span');
-        badge.className = 'type-badge kingdom';
-        badge.textContent = '封國';
-        tdName.appendChild(badge);
-      }
-      appendFiefDetails(tdName, row, 'prefecture', year);
-      const ref = document.createElement('span');
-      ref.className = 'source-ref';
-      ref.textContent = row.source && row.source.book_page
-        ? `沿革：書內第 ${row.source.book_page} 頁`
-        : '沿革：頁碼待校';
-      tdName.appendChild(ref);
-
-      const tdCounties = document.createElement('td');
-      if (!row.counties.length) {
-        const empty = document.createElement('span');
-        empty.className = 'empty';
-        empty.textContent = '本年無可顯示的縣級政區';
-        tdCounties.appendChild(empty);
-      } else {
-        const list = document.createElement('div');
-        list.className = 'county-list';
-        for (const county of row.counties) {
-          const item = makeNameSpan(county, 'county-item');
-          appendFiefDetails(item, county, 'county', year);
-          list.appendChild(item);
-        }
-        tdCounties.appendChild(list);
-      }
-      tr.append(tdName, tdCounties);
-      tbody.appendChild(tr);
-    }
-    table.appendChild(tbody);
-    wrap.appendChild(table);
-    article.appendChild(wrap);
-    return article;
+  function filterRemoved(changes) {
+    const query=normalizeName(searchInput.value.trim());
+    return changes.filter((c)=>(!query||normalizeName(c.label).includes(query)) && (!changedOnly.checked||true));
   }
 
-  function renderSummary(states, removedChanges) {
-    const prefCount = states.reduce((sum, state) => sum + state.rows.length, 0);
-    const countyCount = states.reduce(
-      (sum, state) => sum + state.rows.reduce((inner, row) => inner + row.counties.length, 0),
-      0
-    );
-    const visibleChanges = states.reduce(
-      (sum, state) => sum + (state.change ? 1 : 0) + state.rows.reduce(
-        (inner, row) => inner + (row.change ? 1 : 0) + row.counties.filter((county) => county.change).length,
-        0
-      ),
-      0
-    );
-    $('stateCount').textContent = states.length;
-    $('prefCount').textContent = prefCount;
-    $('countyCount').textContent = countyCount;
-    $('changeCount').textContent = visibleChanges + removedChanges.length;
+  function renderSummary(states,removed) {
+    const pref=states.reduce((n,s)=>n+s.rows.length,0), county=states.reduce((n,s)=>n+s.rows.reduce((m,r)=>m+r.counties.length,0),0);
+    const changes=states.reduce((n,s)=>n+(s.change?1:0)+s.rows.reduce((m,r)=>m+(r.change?1:0)+r.counties.filter((c)=>c.change).length,0),0)+removed.length;
+    $('stateCount').textContent=states.length;$('prefCount').textContent=pref;$('countyCount').textContent=county;$('changeCount').textContent=changes;
   }
 
-  function renderChangePanel(states, removedChanges) {
-    const changes = [];
-    for (const state of states) {
-      if (state.change) changes.push(state.change);
-      for (const row of state.rows) {
-        if (row.change) changes.push(row.change);
-        for (const county of row.counties) if (county.change) changes.push(county.change);
-      }
-    }
-    changes.push(...removedChanges);
-
-    const panel = $('changePanel');
-    const list = $('changeList');
-    list.replaceChildren();
-    if (!changes.length) {
-      panel.hidden = true;
-      return;
-    }
-
-    const group = document.createElement('div');
-    group.className = 'change-groups';
-    for (const change of changes) {
-      const item = document.createElement('span');
-      item.className = 'change-index-item';
-      item.textContent = change.label;
-      const citation = createCitationButton(change);
-      if (citation) item.appendChild(citation);
-      group.appendChild(item);
-    }
-    list.appendChild(group);
-    panel.hidden = false;
+  function renderChangePanel(states,removed) {
+    const changes=[];for(const s of states){if(s.change)changes.push(s.change);for(const r of s.rows){if(r.change)changes.push(r.change);for(const c of r.counties)if(c.change)changes.push(c.change);}}changes.push(...removed);
+    const panel=$('changePanel'),list=$('changeList');list.replaceChildren();if(!changes.length){panel.hidden=true;return;}
+    const group=document.createElement('div');group.className='change-groups';for(const c of changes){const span=document.createElement('span');span.className='change-index-item';span.textContent=c.label;const b=createCitationButton(c);if(b)span.appendChild(b);group.appendChild(span);}list.appendChild(group);panel.hidden=false;
   }
 
   function openCitation(number) {
-    const change = citationRegistry.get(Number(number));
-    if (!change) return;
-    $('sourceModalTitle').textContent = `註釋 [${change.number}]`;
-    $('sourceModalSummary').textContent = change.summary;
-    const body = $('sourceModalBody');
-    body.replaceChildren();
+    const change=citationRegistry.get(Number(number));if(!change)return;
+    $('sourceModalTitle').textContent=`註釋 [${change.number}]`;$('sourceModalSummary').textContent=change.summary;const body=$('sourceModalBody');body.replaceChildren();
+    if(!change.sources.length){const p=document.createElement('p');p.textContent='此項頁碼仍待校勘。';body.appendChild(p);} else for(const source of change.sources){appendSourceEntry(body,source);}
+    sourceModal.hidden=false;document.body.classList.add('modal-open');sourceModalClose.focus();
+  }
 
-    if (!change.sources.length) {
-      const p = document.createElement('p');
-      p.textContent = '此項頁碼仍待校勘。';
-      body.appendChild(p);
-    } else {
-      for (const source of change.sources) {
-        const article = document.createElement('article');
-        article.className = 'source-entry';
-        const heading = document.createElement('h3');
-        const bookPage = source.book_page ? `書內第 ${source.book_page} 頁` : '書內頁碼待校';
-        const pdfPage = source.pdf_page ? `PDF 第 ${source.pdf_page} 頁` : 'PDF頁碼待校';
-        heading.textContent = `${bookPage}（${pdfPage}）`;
-        const excerpt = document.createElement('p');
-        excerpt.textContent = source.excerpt || '摘錄待補。';
-        article.append(heading, excerpt);
-        if (source.editorial_note) {
-          const note = document.createElement('p');
-          note.className = 'editorial-note';
-          note.textContent = `人工校勘：${source.editorial_note}`;
-          article.appendChild(note);
-        }
-        body.appendChild(article);
-      }
-    }
-
-    sourceModal.hidden = false;
-    document.body.classList.add('modal-open');
-    sourceModalClose.focus();
+  function appendSourceEntry(body,source) {
+    const article=document.createElement('article');article.className='source-entry';const h=document.createElement('h3');
+    h.textContent=`${source.book_page?`書內第 ${source.book_page} 頁`:'書內頁碼待校'}（${source.pdf_page?`PDF 第 ${source.pdf_page} 頁`:'PDF頁碼待校'}）`;
+    const p=document.createElement('p');p.textContent=source.excerpt||'摘錄待補。';article.append(h,p);
+    if(source.editorial_note){const n=document.createElement('p');n.className='editorial-note';n.textContent=`人工校勘：${source.editorial_note}`;article.appendChild(n);}body.appendChild(article);
   }
 
   function openAuxInfo(id) {
-    const info = auxInfoRegistry.get(id);
-    if (!info) return;
-    $('sourceModalTitle').textContent = info.title || '封國資料';
-    $('sourceModalSummary').textContent = info.summary || '';
-    const body = $('sourceModalBody');
-    body.replaceChildren();
-
-    for (const paragraphText of info.paragraphs || []) {
-      const p = document.createElement('p');
-      p.className = 'aux-info-paragraph';
-      p.textContent = paragraphText;
-      body.appendChild(p);
-    }
-
-    for (const source of info.sources || []) {
-      const article = document.createElement('article');
-      article.className = 'source-entry';
-      const heading = document.createElement('h3');
-      const bookPage = source.book_page ? `書內第 ${source.book_page} 頁` : '書內頁碼待校';
-      const pdfPage = source.pdf_page ? `PDF 第 ${source.pdf_page} 頁` : 'PDF頁碼待校';
-      heading.textContent = `${bookPage}（${pdfPage}）`;
-      const excerpt = document.createElement('p');
-      excerpt.textContent = source.excerpt || '摘錄待補。';
-      article.append(heading, excerpt);
-      if (source.editorial_note) {
-        const note = document.createElement('p');
-        note.className = 'editorial-note';
-        note.textContent = `人工校勘：${source.editorial_note}`;
-        article.appendChild(note);
-      }
-      body.appendChild(article);
-    }
-
-    if (info.sourceLabel) {
-      const article = document.createElement('article');
-      article.className = 'source-entry';
-      const heading = document.createElement('h3');
-      heading.textContent = '補充資料來源';
-      const p = document.createElement('p');
-      p.textContent = info.sourceLabel;
-      article.append(heading, p);
-      body.appendChild(article);
-    }
-
-    sourceModal.hidden = false;
-    document.body.classList.add('modal-open');
-    sourceModalClose.focus();
+    const info=auxInfoRegistry.get(id);if(!info)return;$('sourceModalTitle').textContent=info.title||'封國資料';$('sourceModalSummary').textContent=info.summary||'';const body=$('sourceModalBody');body.replaceChildren();
+    for(const t of info.paragraphs||[]){const p=document.createElement('p');p.className='aux-info-paragraph';p.textContent=t;body.appendChild(p);}for(const s of info.sources||[])appendSourceEntry(body,s);
+    if(info.sourceLabel){const a=document.createElement('article');a.className='source-entry';const h=document.createElement('h3');h.textContent='補充資料來源';const p=document.createElement('p');p.textContent=info.sourceLabel;a.append(h,p);body.appendChild(a);}
+    sourceModal.hidden=false;document.body.classList.add('modal-open');sourceModalClose.focus();
   }
 
-  function closeCitation() {
-    sourceModal.hidden = true;
-    document.body.classList.remove('modal-open');
+  function closeModal(){sourceModal.hidden=true;document.body.classList.remove('modal-open');}
+
+  function updateMethod() {
+    const box=$('methodContent');box.replaceChildren();const paras=currentDynasty.key==='chen' ? [
+      '頁面依據《中國行政區劃通史·三國兩晉南朝卷（下）》陳代實州郡縣沿革，按書中州、郡、縣原有次序重建公元558—588年各年年末狀態。原書明言陳代材料屬輯考、僅得其涯略，故疑字與年代不明者保留「※」。',
+      '南陳州郡縣列在前；不能與本年南陳實際郡縣唯一對應的王國、郡公國及縣級開國爵，集中列於「虛封封爵」；其後依次列後梁、王琳政權。後梁或王琳政區在其存續期結束後自動消失。',
+      '宗室王國只在郡級政區旁標示王號與姓名，不計算元年、二年。郡公附於郡級，開國公侯伯子男附於縣級，標作公國、侯國、伯國、子國、男國。點擊小字可查看封爵年表、承襲與資料限制。',
+      '封爵補充資料來自使用者指定的維基百科南朝藩王、公爵、侯爵、開國侯（功臣）、伯爵、子爵、男爵列表。封國名稱只在本年能唯一對應一個南陳郡或縣時才附著；不據封爵名稱反推行政政區的實際存在。',
+      '目前不包含地圖；本階段與西晉部分相同，只提供年度州郡縣表、變動標紅、頁碼引文與封國制度注記。'
+    ] : [
+      '頁面依據《中國行政區劃通史·三國兩晉南朝卷（上）》西晉州郡縣沿革重建，州、郡、縣均按原文次序排列。',
+      '年末口徑依本編凡例處理；與上一年年末相比的新置、復置、廢省、改名、改屬等變化以紅色和右上角註釋標示。',
+      '郡級宗室王國補列國主及年次；五等爵封國另以小字標示，起訖或承襲不完整者明示推定。'
+    ];
+    for(const t of paras){const p=document.createElement('p');p.textContent=t;box.appendChild(p);}
+    $('footerText').textContent=currentDynasty.key==='chen'?'資料依據：《中國行政區劃通史·三國兩晉南朝卷（下）》南朝陳實州郡縣沿革；封爵資料另見頁面說明。':'資料依據：《中國行政區劃通史·三國兩晉南朝卷（上）》西晉州郡縣沿革。';
   }
 
-  function filterRemovedChanges(changes) {
-    const selectedState = stateSelect.value;
-    const query = normalizeName(searchInput.value.trim());
-    return changes.filter((change) => {
-      if (selectedState && !change.label.startsWith(selectedState)) return false;
-      if (query && !normalizeName(change.label).includes(query)) return false;
-      return true;
-    });
+  function populateYears() {
+    yearSelect.replaceChildren();const [start,end]=currentDynasty.years;
+    for(let y=start;y<=end;y++){const o=document.createElement('option');o.value=String(y);o.textContent=`公元 ${y} 年`;if(y===currentDynasty.defaultYear)o.selected=true;yearSelect.appendChild(o);}
+  }
+
+  function populateStates(year) {
+    stateSelect.replaceChildren();const first=document.createElement('option');first.value='';first.textContent='全部州';stateSelect.appendChild(first);
+    const snap=buildSnapshot(year);
+    const groups=new Map();for(const s of snap.states){if(!groups.has(s.groupLabel))groups.set(s.groupLabel,[]);groups.get(s.groupLabel).push(s);}
+    for(const [label,states] of groups){const og=document.createElement('optgroup');og.label=label;for(const s of states){const o=document.createElement('option');o.value=s.filterKey;o.textContent=s.name;og.appendChild(o);}stateSelect.appendChild(og);}
   }
 
   function render() {
-    const year = Number(yearSelect.value);
-    auxInfoRegistry.clear();
-    auxInfoSequence = 0;
-    const current = buildSnapshot(year);
-    const isBaselineYear = year === DATA.meta.years[0];
-    const previous = isBaselineYear ? current : buildSnapshot(year - 1);
-    const comparison = compareSnapshots(current, previous, year);
-    const filtered = applyFilters(comparison.states);
-    const filteredRemoved = filterRemovedChanges(comparison.removedChanges);
-
-    results.replaceChildren();
-    if (!filtered.length) {
-      const p = document.createElement('div');
-      p.className = 'no-results';
-      p.textContent = '沒有符合目前條件的政區。';
-      results.appendChild(p);
-    } else {
-      for (const state of filtered) results.appendChild(renderState(state, year));
-    }
-
-    renderSummary(filtered, filteredRemoved);
-    renderChangePanel(filtered, filteredRemoved);
-    $('statusText').textContent = isBaselineYear
-      ? `公元${year}年為本資料集的基準年，不以缺失的前一年資料判定變動；州、郡、縣均保留原書次序。`
-      : `公元${year}年所示為年末狀態；與公元${year - 1}年年末相比的變動以紅色及註釋標示。資料已依新版OCR及304年人工覆核修正，並保留原書州、郡、縣次序；宗室王國補列國主年次，公侯伯子男封國另以小字標示，年代或承襲不詳者明示「推定」。`;
-    document.title = `西晉${year}年末州郡縣表`;
+    const year=Number(yearSelect.value);auxInfoRegistry.clear();auxInfoSequence=0;
+    const current=buildSnapshot(year), baseline=year===currentDynasty.years[0], previous=baseline?current:buildSnapshot(year-1), compared=compareSnapshots(current,previous,year);
+    const visible=renderResults(compared.states,compared.virtualFiefs,year), removed=filterRemoved(compared.removedChanges);
+    renderSummary(visible,removed);renderChangePanel(visible,removed);
+    $('statusText').textContent=baseline
+      ? `公元${year}年為${currentDynasty.label}資料起始年，不以缺失的前一年判定變動；州、郡、縣保留原書次序。`
+      : `公元${year}年所示為年末狀態；與公元${year-1}年年末相比的行政區劃變動以紅色及註釋標示。${currentDynasty.key==='chen'?'陳代資料屬OCR初抽取與輯考重建，後梁、王琳只在政權存續年份顯示。':''}`;
+    document.title=`${currentDynasty.label}${year}年末州郡縣表`;
   }
 
-  function init() {
-    const [start, end] = DATA.meta.years;
-    for (let year = start; year <= end; year += 1) {
-      const option = document.createElement('option');
-      option.value = String(year);
-      option.textContent = `公元 ${year} 年`;
-      if (year === 281) option.selected = true;
-      yearSelect.appendChild(option);
-    }
-
-    for (const state of DATA.states) {
-      const option = document.createElement('option');
-      option.value = state.name;
-      option.textContent = state.name;
-      stateSelect.appendChild(option);
-    }
-
-    yearSelect.addEventListener('change', render);
-    stateSelect.addEventListener('change', render);
-    searchInput.addEventListener('input', render);
-    changedOnly.addEventListener('change', render);
-    document.addEventListener('click', (event) => {
-      const citation = event.target.closest('[data-citation]');
-      if (citation) openCitation(citation.dataset.citation);
-      const info = event.target.closest('[data-info]');
-      if (info) openAuxInfo(info.dataset.info);
-      if (event.target.matches('[data-close-modal]')) closeCitation();
-    });
-    sourceModalClose.addEventListener('click', closeCitation);
-    document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape' && !sourceModal.hidden) closeCitation();
-    });
-
-    render();
+  function switchDynasty() {
+    currentDynasty=DYNASTIES[dynastySelect.value]||DYNASTIES['western-jin'];document.body.dataset.theme=currentDynasty.theme;
+    $('pageTitle').textContent=`${currentDynasty.label}年末州郡縣表`;$('pageSubtitle').textContent=currentDynasty.subtitle;
+    $('fiefLegend').innerHTML=currentDynasty.key==='chen'?'<i class="legend-ruler">始興王·某某／侯國·某某</i> 南朝封爵':'<i class="legend-ruler">某王之二年</i> 國主年次';
+    searchInput.value='';changedOnly.checked=false;populateYears();populateStates(Number(yearSelect.value));updateMethod();render();
   }
 
-  init();
+  dynastySelect.addEventListener('change',switchDynasty);
+  yearSelect.addEventListener('change',()=>{populateStates(Number(yearSelect.value));render();});
+  stateSelect.addEventListener('change',render);searchInput.addEventListener('input',render);changedOnly.addEventListener('change',render);
+  document.addEventListener('click',(event)=>{const c=event.target.closest('[data-citation]');if(c)openCitation(c.dataset.citation);const i=event.target.closest('[data-info]');if(i)openAuxInfo(i.dataset.info);if(event.target.matches('[data-close-modal]'))closeModal();});
+  sourceModalClose.addEventListener('click',closeModal);document.addEventListener('keydown',(e)=>{if(e.key==='Escape'&&!sourceModal.hidden)closeModal();});
+
+  switchDynasty();
 })();
