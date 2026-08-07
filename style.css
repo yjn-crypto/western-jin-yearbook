@@ -368,3 +368,14 @@ body[data-theme] input:focus { outline-color: color-mix(in srgb, var(--accent) 2
   .virtual-fief-list { grid-template-columns: 1fr; }
   .virtual-fief-item:nth-child(odd) { border-right: 0; }
 }
+
+/* 陳代588年人工覆核：原文未標年限的縣保留顯示但降低字色；州直領縣明示無可考郡。 */
+.no-date {
+  color: #8c8378;
+  font-weight: 400 !important;
+}
+.direct-counties-label {
+  color: var(--muted);
+  font-size: .9rem;
+  font-style: italic;
+}
