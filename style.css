@@ -406,3 +406,49 @@ body[data-theme] input:focus { outline-color: color-mix(in srgb, var(--accent) 2
   font-weight: 700;
   color: var(--ink-soft);
 }
+
+/* 南陳方鎮長官：有年表資料的州名可點擊，樣式維持原州名視覺。 */
+.state-governor-name {
+  appearance: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.state-governor-name:hover { text-decoration: underline; text-underline-offset: .18em; }
+.state-governor-name:focus-visible { outline: 2px solid color-mix(in srgb, var(--accent) 35%, transparent); outline-offset: 3px; }
+
+.governor-extra-card {
+  background: var(--paper-2);
+  border: 1px solid var(--line);
+  box-shadow: 0 4px 16px rgba(47,37,27,.045);
+}
+.governor-extra-card h2 {
+  margin: 0;
+  padding: 13px 16px;
+  background: var(--theme-pale);
+  border-bottom: 1px solid var(--line);
+  font-size: 1.25rem;
+}
+.governor-extra-note {
+  margin: 0;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  font-size: .8rem;
+  line-height: 1.65;
+}
+.governor-extra-list { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); }
+.governor-extra-item { padding: 10px 14px; border-bottom: 1px solid #e4ddd2; }
+.governor-extra-item:nth-child(odd) { border-right: 1px solid #e4ddd2; }
+.governor-extra-button { display: inline; color: var(--accent); font-size: .95rem; font-weight: 700; }
+.governor-extra-summary { display: block; margin-top: 3px; color: var(--muted); font-size: .76rem; line-height: 1.5; }
+@media (max-width: 650px) {
+  .governor-extra-list { grid-template-columns: 1fr; }
+  .governor-extra-item:nth-child(odd) { border-right: 0; }
+}
