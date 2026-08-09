@@ -355,6 +355,9 @@ body[data-theme] input:focus { outline-color: color-mix(in srgb, var(--accent) 2
 .virtual-fief-reason { display: block; color: var(--muted); font-size: .75rem; }
 .chen-fief-note { color: #7f5839; font-size: .68rem; }
 .chen-fief-note.changed { color: var(--changed); }
+.chen-fief-note.editorial-uncertain { font-style: italic; opacity: .68; text-decoration-style: dotted; }
+.chen-fief-note.mourning { color: #6e655c; font-style: normal; }
+.fief-uncertain-legend { font-style: italic; opacity: .72; }
 .regime-badge {
   display: inline-block;
   margin-left: 8px;
@@ -378,4 +381,28 @@ body[data-theme] input:focus { outline-color: color-mix(in srgb, var(--accent) 2
   color: var(--muted);
   font-size: .9rem;
   font-style: italic;
+}
+
+
+/* 南陳僑郡、僑縣：下劃線優先於「原文未標年代」的暗色規則 */
+.qiao {
+  text-decoration-line: underline;
+  text-decoration-thickness: 1.2px;
+  text-underline-offset: .18em;
+  text-decoration-skip-ink: auto;
+  color: inherit;
+}
+.changed.qiao { color: var(--change); }
+.legend-qiao {
+  font-style: normal;
+  text-decoration-line: underline;
+  text-decoration-thickness: 1.2px;
+  text-underline-offset: .18em;
+}
+.qiao-origin {
+  margin-top: .55rem;
+  padding-top: .45rem;
+  border-top: 1px dotted var(--line);
+  font-weight: 700;
+  color: var(--ink-soft);
 }

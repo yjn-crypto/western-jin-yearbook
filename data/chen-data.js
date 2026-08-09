@@ -26,11 +26,12 @@ window.CHEN_DATA = {
     },
     "pdf_page_offset": 898,
     "date_rule": "按本編凡例所定年末口徑重建；本年結果與上一年年末狀態比較。",
-    "version": "2026-08-07.1",
+    "version": "2026-08-09.4-fief-location-and-wuzhou-583",
     "generated": "2026-08-07",
     "caveat": "陳代州郡縣皆為輯考，原書明言僅得其涯略；本資料經OCR初抽取後持續人工覆核。原文未標年限而需保留者以淡色顯示，疑字與推定條目以※提示。",
     "fief_note": "宗室王國與南朝開國公侯伯子男另依指定維基年表補充；只在名稱可唯一對應本年南陳郡縣時附註，否則列入虛封封爵。",
-    "editorial_round": "588年人工覆核第一輪：校正OCR、無年限縣、海寧郡、臨江郡、沔州、南荊州／祐州及若干漏州漏郡。"
+    "editorial_round": "封國考據第二輪：依使用者588年封國考據稿，建立繼承規則、存疑規則、二王後例外與54項個案修訂；同時補河東郡、連續化豫章郡及修正「郡無考」呈現。",
+    "editorial_note": "加入陳代僑郡縣表層：僑郡、僑縣以下劃線表示；僑置優先於無年代暗色；州不因僑置表加下劃線。；人工改定第二次吳州存續至583年，江州鄱陽郡自584年復歸，以消除同一鄱陽郡重複顯示。"
   },
   "regimes": {
     "chen": {
@@ -436,6 +437,86 @@ window.CHEN_DATA = {
                   }
                 },
                 {
+                  "id": "ch_c_qiao_pengcheng",
+                  "base_name": "彭城",
+                  "order": 5.2,
+                  "period_text": "558—588",
+                  "phases": [
+                    {
+                      "start": 558,
+                      "end": 588,
+                      "uncertain": false,
+                      "raw": "558—588",
+                      "name": "彭城",
+                      "source": {
+                        "book_page": 1601,
+                        "pdf_page": 703,
+                        "excerpt": "彭城、琅邪僑置考表保存南朝各代僑置沿革；本文依陳代欄補彭城、費二僑縣。"
+                      },
+                      "is_fief": false,
+                      "period_label": "558—588"
+                    }
+                  ],
+                  "source": {
+                    "book_page": 1601,
+                    "pdf_page": 703,
+                    "excerpt": "彭城、琅邪僑置考表保存南朝各代僑置沿革；本文依陳代欄補彭城、費二僑縣。"
+                  },
+                  "qiao": true,
+                  "qiao_annotation": {
+                    "summary": "彭城為僑縣。",
+                    "sources": [
+                      {
+                        "book_page": 1601,
+                        "pdf_page": 703,
+                        "excerpt": "彭城、琅邪僑置考表保存南朝各代僑置沿革；本文依陳代欄補彭城、費二僑縣。",
+                        "origin": "徐州彭城國"
+                      }
+                    ],
+                    "origin": "徐州彭城國"
+                  }
+                },
+                {
+                  "id": "ch_c_qiao_fei",
+                  "base_name": "費",
+                  "order": 5.4,
+                  "period_text": "558—588",
+                  "phases": [
+                    {
+                      "start": 558,
+                      "end": 588,
+                      "uncertain": false,
+                      "raw": "558—588",
+                      "name": "費",
+                      "source": {
+                        "book_page": 1601,
+                        "pdf_page": 703,
+                        "excerpt": "彭城、琅邪僑置考表保存南朝各代僑置沿革；本文依陳代欄補彭城、費二僑縣。"
+                      },
+                      "is_fief": false,
+                      "period_label": "558—588"
+                    }
+                  ],
+                  "source": {
+                    "book_page": 1601,
+                    "pdf_page": 703,
+                    "excerpt": "彭城、琅邪僑置考表保存南朝各代僑置沿革；本文依陳代欄補彭城、費二僑縣。"
+                  },
+                  "qiao": true,
+                  "qiao_annotation": {
+                    "summary": "費為僑縣。",
+                    "sources": [
+                      {
+                        "book_page": 1601,
+                        "pdf_page": 703,
+                        "excerpt": "彭城、琅邪僑置考表保存南朝各代僑置沿革；本文依陳代欄補彭城、費二僑縣。",
+                        "origin": "徐州琅邪國"
+                      }
+                    ],
+                    "origin": "徐州琅邪國"
+                  }
+                },
+                {
                   "id": "ch_c0013",
                   "base_name": "臨沂",
                   "order": 6,
@@ -461,9 +542,35 @@ window.CHEN_DATA = {
                     "pdf_page": 465,
                     "excerpt": "6.臨沂"
                   },
-                  "timeless": true
+                  "timeless": true,
+                  "qiao": true,
+                  "qiao_annotation": {
+                    "summary": "臨沂為僑縣。",
+                    "sources": [
+                      {
+                        "book_page": 1603,
+                        "pdf_page": 705,
+                        "excerpt": "琅邪僑郡所領臨沂僑縣。",
+                        "origin": "徐州琅邪國"
+                      }
+                    ],
+                    "origin": "徐州琅邪國"
+                  }
                 }
-              ]
+              ],
+              "qiao": true,
+              "qiao_annotation": {
+                "summary": "南琅邪、彭城二郡為雙頭僑郡。",
+                "sources": [
+                  {
+                    "book_page": 1601,
+                    "pdf_page": 703,
+                    "excerpt": "僑置考表分別考彭城郡與琅邪郡的南渡僑置。陳代至德年間仍見「南琅邪、彭城二郡太守」，本頁作雙頭僑郡處理。",
+                    "origin": "彭城郡原屬徐州；琅邪郡原屬徐州"
+                  }
+                ],
+                "origin": "彭城郡原屬徐州；琅邪郡原屬徐州"
+              }
             },
             {
               "id": "ch_p0003",
@@ -601,7 +708,20 @@ window.CHEN_DATA = {
                     "excerpt": "4.安吉（558-588） 按：齊安吉縣屬吳興郡，梁亦有安吉縣。據石封縣考證所引《隋志》，陳當 承舊有安吉縣，屬陳留郡。"
                   }
                 }
-              ]
+              ],
+              "qiao": true,
+              "qiao_annotation": {
+                "summary": "陳留郡在陳代為僑郡，僑寄綏安。",
+                "sources": [
+                  {
+                    "book_page": 1519,
+                    "pdf_page": 621,
+                    "excerpt": "僑置考表梁陳欄列陳代陳留郡△，僑寄綏安（今安徽廣德縣）。綏安為僑寄地，非本頁新增縣。",
+                    "origin": "兗州"
+                  }
+                ],
+                "origin": "兗州"
+              }
             },
             {
               "id": "ch_p0004",
@@ -5653,7 +5773,20 @@ window.CHEN_DATA = {
                     "excerpt": "1.郟 2.丹徒（558—588） 按：齊南東海僑郡領有丹徒縣，梁承之。據本州考證所引《隋志》，陳亦有 丹徒縣。 3.蘭陵（558—588）",
                     "editorial_note": "人工復核：OCR「郟」校為「郯」；原文未標年限。"
                   },
-                  "timeless": true
+                  "timeless": true,
+                  "qiao": true,
+                  "qiao_annotation": {
+                    "summary": "郯為東海僑郡所領僑縣。",
+                    "sources": [
+                      {
+                        "book_page": 1603,
+                        "pdf_page": 705,
+                        "excerpt": "東海郡原治郯；本頁此前已據人工覆核將OCR誤字校為郯，現按僑縣處理。",
+                        "origin": "徐州東海國"
+                      }
+                    ],
+                    "origin": "徐州東海國"
+                  }
                 },
                 {
                   "id": "ch_c0158",
@@ -5736,7 +5869,20 @@ window.CHEN_DATA = {
                     "excerpt": "4.曲阿（558—588） 按：齊晉陵郡領有曲阿縣，梁承之。據蘭陵縣考證所引《隋志》，陳亦有曲 阿縣，當屬東海僑郡。"
                   }
                 }
-              ]
+              ],
+              "qiao": true,
+              "qiao_annotation": {
+                "summary": "東海郡為僑郡。",
+                "sources": [
+                  {
+                    "book_page": 1603,
+                    "pdf_page": 705,
+                    "excerpt": "僑置考表列陳代東海郡△，並考其自東晉以來南東海、東海僑置沿革。",
+                    "origin": "徐州"
+                  }
+                ],
+                "origin": "徐州"
+              }
             },
             {
               "id": "ch_p0030",
@@ -6475,7 +6621,20 @@ window.CHEN_DATA = {
                     "pdf_page": 483,
                     "excerpt": "3.繁昌 4.當塗 5.襄垣"
                   },
-                  "timeless": true
+                  "timeless": true,
+                  "qiao": true,
+                  "qiao_annotation": {
+                    "summary": "繁昌為僑縣。",
+                    "sources": [
+                      {
+                        "book_page": 1619,
+                        "pdf_page": 721,
+                        "excerpt": "淮南僑郡所領繁昌僑縣。",
+                        "origin": "豫州襄城郡"
+                      }
+                    ],
+                    "origin": "豫州襄城郡"
+                  }
                 },
                 {
                   "id": "ch_c0182",
@@ -6503,7 +6662,20 @@ window.CHEN_DATA = {
                     "pdf_page": 483,
                     "excerpt": "4.當塗 5.襄垣"
                   },
-                  "timeless": true
+                  "timeless": true,
+                  "qiao": true,
+                  "qiao_annotation": {
+                    "summary": "當塗為僑縣。",
+                    "sources": [
+                      {
+                        "book_page": 1619,
+                        "pdf_page": 721,
+                        "excerpt": "淮南僑郡所領當塗僑縣。",
+                        "origin": "揚州淮南郡"
+                      }
+                    ],
+                    "origin": "揚州淮南郡"
+                  }
                 },
                 {
                   "id": "ch_c0183",
@@ -6531,9 +6703,35 @@ window.CHEN_DATA = {
                     "pdf_page": 483,
                     "excerpt": "5.襄垣"
                   },
-                  "timeless": true
+                  "timeless": true,
+                  "qiao": true,
+                  "qiao_annotation": {
+                    "summary": "襄垣為僑縣。",
+                    "sources": [
+                      {
+                        "book_page": 1619,
+                        "pdf_page": 721,
+                        "excerpt": "淮南僑郡所領襄垣僑縣。",
+                        "origin": "并州上黨郡"
+                      }
+                    ],
+                    "origin": "并州上黨郡"
+                  }
                 }
-              ]
+              ],
+              "qiao": true,
+              "qiao_annotation": {
+                "summary": "淮南郡為僑郡。",
+                "sources": [
+                  {
+                    "book_page": 1619,
+                    "pdf_page": 721,
+                    "excerpt": "僑置考表系統考淮南郡及所領僑縣，陳代仍作僑郡系統保存。",
+                    "origin": "揚州"
+                  }
+                ],
+                "origin": "揚州"
+              }
             },
             {
               "id": "ch_p0035",
@@ -6806,7 +7004,20 @@ window.CHEN_DATA = {
                     "pdf_page": 484,
                     "excerpt": "9.逸遒"
                   },
-                  "timeless": true
+                  "timeless": true,
+                  "qiao": true,
+                  "qiao_annotation": {
+                    "summary": "逸遒為僑縣。",
+                    "sources": [
+                      {
+                        "book_page": 1621,
+                        "pdf_page": 723,
+                        "excerpt": "逸遒為僑縣；本文沿用陳代正文地名並以僑置表補充其僑置性質。",
+                        "origin": "揚州淮南郡"
+                      }
+                    ],
+                    "origin": "揚州淮南郡"
+                  }
                 }
               ]
             },
@@ -7124,7 +7335,20 @@ window.CHEN_DATA = {
                     "pdf_page": 485,
                     "excerpt": "4.定陵 按：齊淮南僑郡領有定陵僑縣，梁承之。陳屬南陵郡。 5.故治（558—588） 按：據本州考證所引《隋志》，陳有故治縣，屬南陵郡。"
                   },
-                  "timeless": true
+                  "timeless": true,
+                  "qiao": true,
+                  "qiao_annotation": {
+                    "summary": "定陵為僑縣。",
+                    "sources": [
+                      {
+                        "book_page": 1621,
+                        "pdf_page": 723,
+                        "excerpt": "定陵為僑縣。",
+                        "origin": "豫州襄城郡"
+                      }
+                    ],
+                    "origin": "豫州襄城郡"
+                  }
                 },
                 {
                   "id": "ch_c0199",
@@ -7172,9 +7396,9 @@ window.CHEN_DATA = {
             },
             {
               "start": 582,
-              "end": 586,
+              "end": 583,
               "uncertain": true,
-              "raw": "582—587前",
+              "raw": "582—583",
               "name": "吳州"
             }
           ],
@@ -7188,7 +7412,7 @@ window.CHEN_DATA = {
               "id": "ch_p0040",
               "base_name": "鄱陽郡",
               "order": 1,
-              "period_text": "558—567，582—587前",
+              "period_text": "558—567，582—583",
               "phases": [
                 {
                   "start": 558,
@@ -7206,9 +7430,9 @@ window.CHEN_DATA = {
                 },
                 {
                   "start": 582,
-                  "end": 586,
+                  "end": 583,
                   "uncertain": true,
-                  "raw": "582—587前",
+                  "raw": "582—583",
                   "name": "鄱陽郡",
                   "source": {
                     "book_page": 1384,
@@ -7216,7 +7440,7 @@ window.CHEN_DATA = {
                     "excerpt": "鄱陽郡（558—567，582—587前）——治鄱陽（今江西鄱陽縣） 按：據本州考證，陳初承梁末，鄱陽郡屬吳州，光大二年正月，罷吳州，鄱 陽郡移屬江州；太建十三年十月，復置吳州，鄱陽郡復來屬；禎明元年前，吳州 罷，鄱陽郡又移屬江州。 1.鄱陽（558-567，582—587前） 按：齊鄱陽郡領有鄱陽縣，梁承之。《隋志》下鄱陽郡鄱陽：“舊置鄱陽郡。 平陳廢。”則陳有鄱陽縣。 2.葛陽（558—567，582—587前）"
                   },
                   "is_fief": false,
-                  "period_label": "558—567，582—587前"
+                  "period_label": "582—583（本文改定）"
                 }
               ],
               "source": {
@@ -7229,7 +7453,7 @@ window.CHEN_DATA = {
                   "id": "ch_c0200",
                   "base_name": "鄱陽",
                   "order": 1,
-                  "period_text": "558-567，582—587前",
+                  "period_text": "558-567，582—583",
                   "phases": [
                     {
                       "start": 558,
@@ -7247,9 +7471,9 @@ window.CHEN_DATA = {
                     },
                     {
                       "start": 582,
-                      "end": 586,
+                      "end": 583,
                       "uncertain": true,
-                      "raw": "582—587前",
+                      "raw": "582—583",
                       "name": "鄱陽",
                       "source": {
                         "book_page": 1384,
@@ -7257,7 +7481,7 @@ window.CHEN_DATA = {
                         "excerpt": "1.鄱陽（558-567，582—587前） 按：齊鄱陽郡領有鄱陽縣，梁承之。《隋志》下鄱陽郡鄱陽：“舊置鄱陽郡。 平陳廢。”則陳有鄱陽縣。 2.葛陽（558—567，582—587前） 按：齊鄱陽郡領有葛陽縣，梁承之。《隋志》下鄱陽郡代陽：“舊日葛陽，開"
                       },
                       "is_fief": false,
-                      "period_label": "558-567，582—587前"
+                      "period_label": "582—583（本文改定）"
                     }
                   ],
                   "source": {
@@ -7270,7 +7494,7 @@ window.CHEN_DATA = {
                   "id": "ch_c0201",
                   "base_name": "葛陽",
                   "order": 2,
-                  "period_text": "558—567，582—587前",
+                  "period_text": "558—567，582—583",
                   "phases": [
                     {
                       "start": 558,
@@ -7288,9 +7512,9 @@ window.CHEN_DATA = {
                     },
                     {
                       "start": 582,
-                      "end": 586,
+                      "end": 583,
                       "uncertain": true,
-                      "raw": "582—587前",
+                      "raw": "582—583",
                       "name": "葛陽",
                       "source": {
                         "book_page": 1384,
@@ -7298,7 +7522,7 @@ window.CHEN_DATA = {
                         "excerpt": "2.葛陽（558—567，582—587前） 按：齊鄱陽郡領有葛陽縣，梁承之。《隋志》下鄱陽郡代陽：“舊日葛陽，開 皇十二年改。”則陳當有葛陽縣。 3.銀城（？） 按：《隋志》下鄱陽郡鄱陽：“舊置鄱陽郡。平陳廢，又有陳銀城縣廢入"
                       },
                       "is_fief": false,
-                      "period_label": "558—567，582—587前"
+                      "period_label": "582—583（本文改定）"
                     }
                   ],
                   "source": {
@@ -7325,19 +7549,33 @@ window.CHEN_DATA = {
                       },
                       "is_fief": false,
                       "period_label": "隨郡存續（原文未另標年限）"
+                    },
+                    {
+                      "start": 582,
+                      "end": 583,
+                      "uncertain": true,
+                      "name": "銀城",
+                      "period_label": "隨鄱陽郡存續（原文年代不詳）",
+                      "source": {
+                        "book_page": 1384,
+                        "pdf_page": 486,
+                        "excerpt": "3.銀城（？） 按：《隋志》下鄱陽郡鄱陽：“舊置鄱陽郡。平陳廢，又有陳銀城縣廢入 焉。”則陳置銀城縣。 4.余乾（558-567，582-587前） 按：齊江州鄱陽郡領有餘汗縣，或作余乾縣。梁亦有餘乾縣。《隋志》下"
+                      },
+                      "timeless": true
                     }
                   ],
                   "source": {
                     "book_page": 1384,
                     "pdf_page": 486,
                     "excerpt": "3.銀城（？） 按：《隋志》下鄱陽郡鄱陽：“舊置鄱陽郡。平陳廢，又有陳銀城縣廢入 焉。”則陳置銀城縣。 4.余乾（558-567，582-587前） 按：齊江州鄱陽郡領有餘汗縣，或作余乾縣。梁亦有餘乾縣。《隋志》下"
-                  }
+                  },
+                  "timeless": true
                 },
                 {
                   "id": "ch_c0203",
                   "base_name": "余乾",
                   "order": 4,
-                  "period_text": "558-567，582-587前",
+                  "period_text": "558-567，582—583",
                   "phases": [
                     {
                       "start": 558,
@@ -7355,9 +7593,9 @@ window.CHEN_DATA = {
                     },
                     {
                       "start": 582,
-                      "end": 586,
+                      "end": 583,
                       "uncertain": true,
-                      "raw": "582—587前",
+                      "raw": "582—583",
                       "name": "余乾",
                       "source": {
                         "book_page": 1384,
@@ -7365,7 +7603,7 @@ window.CHEN_DATA = {
                         "excerpt": "4.余乾（558-567，582-587前） 按：齊江州鄱陽郡領有餘汗縣，或作余乾縣。梁亦有餘乾縣。《隋志》下 鄱陽郡領有餘乾縣。則陳亦有餘乾縣。 5.上饒（558—567，582—587前） 按：齊江州鄱陽郡領有上饒縣，《陳書》卷15《陳擬傳》：陳建國，以陳靈為"
                       },
                       "is_fief": false,
-                      "period_label": "558-567，582-587前"
+                      "period_label": "582—583（本文改定）"
                     }
                   ],
                   "source": {
@@ -7378,7 +7616,7 @@ window.CHEN_DATA = {
                   "id": "ch_c0204",
                   "base_name": "上饒",
                   "order": 5,
-                  "period_text": "558—567，582—587前",
+                  "period_text": "558—567，582—583",
                   "phases": [
                     {
                       "start": 558,
@@ -7396,9 +7634,9 @@ window.CHEN_DATA = {
                     },
                     {
                       "start": 582,
-                      "end": 586,
+                      "end": 583,
                       "uncertain": true,
-                      "raw": "582—587前",
+                      "raw": "582—583",
                       "name": "上饒",
                       "source": {
                         "book_page": 1384,
@@ -7406,7 +7644,7 @@ window.CHEN_DATA = {
                         "excerpt": "5.上饒（558—567，582—587前） 按：齊江州鄱陽郡領有上饒縣，《陳書》卷15《陳擬傳》：陳建國，以陳靈為 上饒縣開國侯。則陳有上饒縣。 6.安仁（560後—567，582—587前） 按：《寰宇記》卷107《江南西道五》饒州余乾縣：“安仁故城·按《鄱陽"
                       },
                       "is_fief": false,
-                      "period_label": "558—567，582—587前"
+                      "period_label": "582—583（本文改定）"
                     }
                   ],
                   "source": {
@@ -7419,7 +7657,7 @@ window.CHEN_DATA = {
                   "id": "ch_c0205",
                   "base_name": "安仁",
                   "order": 6,
-                  "period_text": "560後—567，582—587前",
+                  "period_text": "560後—567，582—583",
                   "phases": [
                     {
                       "start": 561,
@@ -7437,9 +7675,9 @@ window.CHEN_DATA = {
                     },
                     {
                       "start": 582,
-                      "end": 586,
+                      "end": 583,
                       "uncertain": true,
-                      "raw": "582—587前",
+                      "raw": "582—583",
                       "name": "安仁",
                       "source": {
                         "book_page": 1384,
@@ -7447,7 +7685,7 @@ window.CHEN_DATA = {
                         "excerpt": "6.安仁（560後—567，582—587前） 按：《寰宇記》卷107《江南西道五》饒州余乾縣：“安仁故城·按《鄱陽 記》雲：‘晉永嘉七年分余乾置興安縣，尋廢焉。陳天嘉中復於興安故地置安仁 縣。”至隋開皇九年復廢，並人余乾。”則陳天嘉中置安仁縣。"
                       },
                       "is_fief": false,
-                      "period_label": "560後—567，582—587前"
+                      "period_label": "582—583（本文改定）"
                     }
                   ],
                   "source": {
@@ -7458,7 +7696,20 @@ window.CHEN_DATA = {
                 }
               ]
             }
-          ]
+          ],
+          "year_notes": {
+            "583": {
+              "summary": "吳州裁撤年代的人工考據",
+              "sources": [
+                {
+                  "book_page": 1383,
+                  "pdf_page": 485,
+                  "excerpt": "原書系吳州第二次存續為「582—587前」，本文依人工考據改定至583年。",
+                  "editorial_note": "呂梁覆車後，陳宣帝曾密集地發布了大量調整行政區劃的命令，如改南琅邪彭城二郡為建興郡，其緣由難以完全考知，但這些變更多沒有得到延續。另外，鄱陽郡為陳代大郡，其所在的吳州也不是邊遠小州。陳武帝、陳文帝時期的吳州刺史皆可考，不可能這個新置的吳州刺史卻不被記載。據《陳書》，太建以後並未見到吳州刺史。因此，本文認為，吳州應當在陳後主即位後不久就被裁撤了。"
+                }
+              ]
+            }
+          }
         },
         {
           "id": "ch_s0010",
@@ -7560,7 +7811,20 @@ window.CHEN_DATA = {
                     "pdf_page": 487,
                     "excerpt": "2.汝南 3.上甲（558—588） 按：東晉江州尋陽郡領有上甲縣，後廢，梁復置。陳或有之，《補陳志》卷2 列上甲縣為江州尋陽郡屬縣，今姑從之。 4.龍城（558—588）"
                   },
-                  "timeless": true
+                  "timeless": true,
+                  "qiao": true,
+                  "qiao_annotation": {
+                    "summary": "汝南為僑縣。",
+                    "sources": [
+                      {
+                        "book_page": 1627,
+                        "pdf_page": 729,
+                        "excerpt": "尋陽郡所領汝南為僑縣，原為豫州汝南郡系統。",
+                        "origin": "豫州汝南郡"
+                      }
+                    ],
+                    "origin": "豫州汝南郡"
+                  }
                 },
                 {
                   "id": "ch_c0208",
@@ -7622,13 +7886,13 @@ window.CHEN_DATA = {
               "id": "ch_p0042",
               "base_name": "鄱陽郡",
               "order": 2,
-              "period_text": "568—581，587前—588",
+              "period_text": "568—581，584—588",
               "phases": [
                 {
-                  "start": 558,
-                  "end": 588,
-                  "uncertain": true,
-                  "raw": "587前—588；568—581",
+                  "start": 568,
+                  "end": 581,
+                  "uncertain": false,
+                  "raw": "568—581",
                   "name": "鄱陽郡",
                   "source": {
                     "book_page": 1385,
@@ -7636,7 +7900,21 @@ window.CHEN_DATA = {
                     "excerpt": "（二）鄱陽郡（568—581，587前—588）——治鄱陽（今江西鄱陽縣） 按：據吳州鄱陽郡考證，光大二年正月，吳州廢，鄱陽郡來屬，太建十三年 又置吳州，鄱陽郡乃移屬焉。禎明元年前，吳州又罷，鄱陽郡復來屬。 1.鄱陽（568—581，587前—588） 2.葛陽（568—581，587前—588） 3.銀城（？—588) 4.余乾（568—581，587前—588） 5.上饒（568—581，587前—588）"
                   },
                   "is_fief": false,
-                  "period_label": "568—581，587前—588"
+                  "period_label": "568—581"
+                },
+                {
+                  "start": 584,
+                  "end": 588,
+                  "uncertain": true,
+                  "raw": "584—588（本文改定）",
+                  "name": "鄱陽郡",
+                  "source": {
+                    "book_page": 1385,
+                    "pdf_page": 487,
+                    "excerpt": "（二）鄱陽郡（568—581，587前—588）——治鄱陽（今江西鄱陽縣） 按：據吳州鄱陽郡考證，光大二年正月，吳州廢，鄱陽郡來屬，太建十三年 又置吳州，鄱陽郡乃移屬焉。禎明元年前，吳州又罷，鄱陽郡復來屬。 1.鄱陽（568—581，587前—588） 2.葛陽（568—581，587前—588） 3.銀城（？—588) 4.余乾（568—581，587前—588） 5.上饒（568—581，587前—588）"
+                  },
+                  "is_fief": false,
+                  "period_label": "584—588（本文改定）"
                 }
               ],
               "source": {
@@ -7649,13 +7927,13 @@ window.CHEN_DATA = {
                   "id": "ch_c0210",
                   "base_name": "鄱陽",
                   "order": 1,
-                  "period_text": "568—581，587前—588",
+                  "period_text": "568—581，584—588",
                   "phases": [
                     {
-                      "start": 558,
-                      "end": 588,
-                      "uncertain": true,
-                      "raw": "587前—588；568—581",
+                      "start": 568,
+                      "end": 581,
+                      "uncertain": false,
+                      "raw": "568—581",
                       "name": "鄱陽",
                       "source": {
                         "book_page": 1385,
@@ -7663,7 +7941,21 @@ window.CHEN_DATA = {
                         "excerpt": "1.鄱陽（568—581，587前—588） 2.葛陽（568—581，587前—588） 3.銀城（？—588) 4.余乾（568—581，587前—588） 5.上饒（568—581，587前—588）"
                       },
                       "is_fief": false,
-                      "period_label": "568—581，587前—588"
+                      "period_label": "568—581"
+                    },
+                    {
+                      "start": 584,
+                      "end": 588,
+                      "uncertain": true,
+                      "raw": "584—588（本文改定）",
+                      "name": "鄱陽",
+                      "source": {
+                        "book_page": 1385,
+                        "pdf_page": 487,
+                        "excerpt": "1.鄱陽（568—581，587前—588） 2.葛陽（568—581，587前—588） 3.銀城（？—588) 4.余乾（568—581，587前—588） 5.上饒（568—581，587前—588）"
+                      },
+                      "is_fief": false,
+                      "period_label": "584—588（本文改定）"
                     }
                   ],
                   "source": {
@@ -7676,13 +7968,13 @@ window.CHEN_DATA = {
                   "id": "ch_c0211",
                   "base_name": "葛陽",
                   "order": 2,
-                  "period_text": "568—581，587前—588",
+                  "period_text": "568—581，584—588",
                   "phases": [
                     {
-                      "start": 558,
-                      "end": 588,
-                      "uncertain": true,
-                      "raw": "587前—588；568—581",
+                      "start": 568,
+                      "end": 581,
+                      "uncertain": false,
+                      "raw": "568—581",
                       "name": "葛陽",
                       "source": {
                         "book_page": 1385,
@@ -7690,7 +7982,21 @@ window.CHEN_DATA = {
                         "excerpt": "2.葛陽（568—581，587前—588） 3.銀城（？—588) 4.余乾（568—581，587前—588） 5.上饒（568—581，587前—588） 6.安仁（568—581，587前—588）"
                       },
                       "is_fief": false,
-                      "period_label": "568—581，587前—588"
+                      "period_label": "568—581"
+                    },
+                    {
+                      "start": 584,
+                      "end": 588,
+                      "uncertain": true,
+                      "raw": "584—588（本文改定）",
+                      "name": "葛陽",
+                      "source": {
+                        "book_page": 1385,
+                        "pdf_page": 487,
+                        "excerpt": "2.葛陽（568—581，587前—588） 3.銀城（？—588) 4.余乾（568—581，587前—588） 5.上饒（568—581，587前—588） 6.安仁（568—581，587前—588）"
+                      },
+                      "is_fief": false,
+                      "period_label": "584—588（本文改定）"
                     }
                   ],
                   "source": {
@@ -7706,10 +8012,10 @@ window.CHEN_DATA = {
                   "period_text": "？—588",
                   "phases": [
                     {
-                      "start": 558,
-                      "end": 588,
+                      "start": 568,
+                      "end": 581,
                       "uncertain": true,
-                      "raw": "？—588",
+                      "raw": "？（隨郡顯示）",
                       "name": "銀城",
                       "source": {
                         "book_page": 1385,
@@ -7717,26 +8023,43 @@ window.CHEN_DATA = {
                         "excerpt": "3.銀城（？—588) 4.余乾（568—581，587前—588） 5.上饒（568—581，587前—588） 6.安仁（568—581，587前—588）"
                       },
                       "is_fief": false,
-                      "period_label": "？—588"
+                      "period_label": "隨鄱陽郡存續（原文年代不詳）",
+                      "timeless": true
+                    },
+                    {
+                      "start": 584,
+                      "end": 588,
+                      "uncertain": true,
+                      "raw": "？（隨郡顯示）",
+                      "name": "銀城",
+                      "source": {
+                        "book_page": 1385,
+                        "pdf_page": 487,
+                        "excerpt": "3.銀城（？—588) 4.余乾（568—581，587前—588） 5.上饒（568—581，587前—588） 6.安仁（568—581，587前—588）"
+                      },
+                      "is_fief": false,
+                      "period_label": "隨鄱陽郡存續（原文年代不詳）",
+                      "timeless": true
                     }
                   ],
                   "source": {
                     "book_page": 1385,
                     "pdf_page": 487,
                     "excerpt": "3.銀城（？—588) 4.余乾（568—581，587前—588） 5.上饒（568—581，587前—588） 6.安仁（568—581，587前—588）"
-                  }
+                  },
+                  "timeless": true
                 },
                 {
                   "id": "ch_c0213",
                   "base_name": "余乾",
                   "order": 4,
-                  "period_text": "568—581，587前—588",
+                  "period_text": "568—581，584—588",
                   "phases": [
                     {
-                      "start": 558,
-                      "end": 588,
-                      "uncertain": true,
-                      "raw": "587前—588；568—581",
+                      "start": 568,
+                      "end": 581,
+                      "uncertain": false,
+                      "raw": "568—581",
                       "name": "余乾",
                       "source": {
                         "book_page": 1385,
@@ -7744,7 +8067,21 @@ window.CHEN_DATA = {
                         "excerpt": "4.余乾（568—581，587前—588） 5.上饒（568—581，587前—588） 6.安仁（568—581，587前—588）"
                       },
                       "is_fief": false,
-                      "period_label": "568—581，587前—588"
+                      "period_label": "568—581"
+                    },
+                    {
+                      "start": 584,
+                      "end": 588,
+                      "uncertain": true,
+                      "raw": "584—588（本文改定）",
+                      "name": "余乾",
+                      "source": {
+                        "book_page": 1385,
+                        "pdf_page": 487,
+                        "excerpt": "4.余乾（568—581，587前—588） 5.上饒（568—581，587前—588） 6.安仁（568—581，587前—588）"
+                      },
+                      "is_fief": false,
+                      "period_label": "584—588（本文改定）"
                     }
                   ],
                   "source": {
@@ -7757,13 +8094,13 @@ window.CHEN_DATA = {
                   "id": "ch_c0214",
                   "base_name": "上饒",
                   "order": 5,
-                  "period_text": "568—581，587前—588",
+                  "period_text": "568—581，584—588",
                   "phases": [
                     {
-                      "start": 558,
-                      "end": 588,
-                      "uncertain": true,
-                      "raw": "587前—588；568—581",
+                      "start": 568,
+                      "end": 581,
+                      "uncertain": false,
+                      "raw": "568—581",
                       "name": "上饒",
                       "source": {
                         "book_page": 1385,
@@ -7771,7 +8108,21 @@ window.CHEN_DATA = {
                         "excerpt": "5.上饒（568—581，587前—588） 6.安仁（568—581，587前—588）"
                       },
                       "is_fief": false,
-                      "period_label": "568—581，587前—588"
+                      "period_label": "568—581"
+                    },
+                    {
+                      "start": 584,
+                      "end": 588,
+                      "uncertain": true,
+                      "raw": "584—588（本文改定）",
+                      "name": "上饒",
+                      "source": {
+                        "book_page": 1385,
+                        "pdf_page": 487,
+                        "excerpt": "5.上饒（568—581，587前—588） 6.安仁（568—581，587前—588）"
+                      },
+                      "is_fief": false,
+                      "period_label": "584—588（本文改定）"
                     }
                   ],
                   "source": {
@@ -7784,13 +8135,13 @@ window.CHEN_DATA = {
                   "id": "ch_c0215",
                   "base_name": "安仁",
                   "order": 6,
-                  "period_text": "568—581，587前—588",
+                  "period_text": "568—581，584—588",
                   "phases": [
                     {
-                      "start": 558,
-                      "end": 588,
-                      "uncertain": true,
-                      "raw": "587前—588；568—581",
+                      "start": 568,
+                      "end": 581,
+                      "uncertain": false,
+                      "raw": "568—581",
                       "name": "安仁",
                       "source": {
                         "book_page": 1385,
@@ -7798,7 +8149,21 @@ window.CHEN_DATA = {
                         "excerpt": "6.安仁（568—581，587前—588）"
                       },
                       "is_fief": false,
-                      "period_label": "568—581，587前—588"
+                      "period_label": "568—581"
+                    },
+                    {
+                      "start": 584,
+                      "end": 588,
+                      "uncertain": true,
+                      "raw": "584—588（本文改定）",
+                      "name": "安仁",
+                      "source": {
+                        "book_page": 1385,
+                        "pdf_page": 487,
+                        "excerpt": "6.安仁（568—581，587前—588）"
+                      },
+                      "is_fief": false,
+                      "period_label": "584—588（本文改定）"
                     }
                   ],
                   "source": {
@@ -7888,7 +8253,20 @@ window.CHEN_DATA = {
                     "pdf_page": 489,
                     "excerpt": "2.晉陽 3.和城 4.天水 第九編·第一章南朝陳實州郡縣沿革1387"
                   },
-                  "timeless": true
+                  "timeless": true,
+                  "qiao": true,
+                  "qiao_annotation": {
+                    "summary": "晉陽為僑縣。",
+                    "sources": [
+                      {
+                        "book_page": 1559,
+                        "pdf_page": 661,
+                        "excerpt": "太原僑郡所領晉陽縣。",
+                        "origin": "并州太原國"
+                      }
+                    ],
+                    "origin": "并州太原國"
+                  }
                 },
                 {
                   "id": "ch_c0218",
@@ -7916,7 +8294,20 @@ window.CHEN_DATA = {
                     "pdf_page": 489,
                     "excerpt": "3.和城 4.天水 第九編·第一章南朝陳實州郡縣沿革1387"
                   },
-                  "timeless": true
+                  "timeless": true,
+                  "qiao": true,
+                  "qiao_annotation": {
+                    "summary": "和城為僑縣。",
+                    "sources": [
+                      {
+                        "book_page": 1559,
+                        "pdf_page": 661,
+                        "excerpt": "太原僑郡所領和城縣。",
+                        "origin": "豫州南頓郡"
+                      }
+                    ],
+                    "origin": "豫州南頓郡"
+                  }
                 },
                 {
                   "id": "ch_c0219",
@@ -7944,21 +8335,47 @@ window.CHEN_DATA = {
                     "pdf_page": 489,
                     "excerpt": "4.天水 第九編·第一章南朝陳實州郡縣沿革1387"
                   },
-                  "timeless": true
+                  "timeless": true,
+                  "qiao": true,
+                  "qiao_annotation": {
+                    "summary": "天水為僑縣。",
+                    "sources": [
+                      {
+                        "book_page": 1559,
+                        "pdf_page": 661,
+                        "excerpt": "太原僑郡所領天水縣。",
+                        "origin": "秦州天水郡"
+                      }
+                    ],
+                    "origin": "秦州天水郡"
+                  }
                 }
-              ]
+              ],
+              "qiao": true,
+              "qiao_annotation": {
+                "summary": "太原郡為僑郡，僑寄彭澤。",
+                "sources": [
+                  {
+                    "book_page": 1559,
+                    "pdf_page": 661,
+                    "excerpt": "僑置考表列梁陳太原郡僑於彭澤；《隋志》所見太原郡領彭澤、晉陽、和城、天水等縣。",
+                    "origin": "并州"
+                  }
+                ],
+                "origin": "并州"
+              }
             },
             {
               "id": "ch_p0044",
               "base_name": "豫章郡",
               "order": 4,
-              "period_text": "558—565，？—588",
+              "period_text": "558—588",
               "phases": [
                 {
                   "start": 558,
                   "end": 588,
-                  "uncertain": true,
-                  "raw": "558—565；？—588",
+                  "uncertain": false,
+                  "raw": "558—588（本文取消原問號）",
                   "name": "豫章郡",
                   "source": {
                     "book_page": 1387,
@@ -7966,7 +8383,7 @@ window.CHEN_DATA = {
                     "excerpt": "（四）豫章郡（558—565，？—588）—治南昌（今江西南昌市） 按：梁末江州領有豫章郡，陳承之。《陳書》卷3《世祖紀》：天嘉六年“九 月癸未，罷豫章郡”。《隋志》下豫章郡豫章：“舊置豫章郡。平陳，郡廢。大業 初復置郡。”似陳、隋之際仍有豫章郡，故豫章郡當罷而復置。 1.南昌（558—565，？—588) 按：齊豫章郡領有南昌縣，梁承之。《州郡典》十二章郡南昌：“漢舊縣。 隋改為章縣。”則陳當有南昌縣。 2.建城（558—565，？—588)"
                   },
                   "is_fief": false,
-                  "period_label": "558—565，？—588"
+                  "period_label": "558—588"
                 }
               ],
               "source": {
@@ -7979,13 +8396,13 @@ window.CHEN_DATA = {
                   "id": "ch_c0220",
                   "base_name": "南昌",
                   "order": 1,
-                  "period_text": "558—565，？—588",
+                  "period_text": "558—588",
                   "phases": [
                     {
                       "start": 558,
                       "end": 588,
-                      "uncertain": true,
-                      "raw": "558—565；？—588",
+                      "uncertain": false,
+                      "raw": "558—588（本文取消原問號）",
                       "name": "南昌",
                       "source": {
                         "book_page": 1387,
@@ -7993,7 +8410,7 @@ window.CHEN_DATA = {
                         "excerpt": "1.南昌（558—565，？—588) 按：齊豫章郡領有南昌縣，梁承之。《州郡典》十二章郡南昌：“漢舊縣。 隋改為章縣。”則陳當有南昌縣。 2.建城（558—565，？—588) 按：齊豫章郡領有建城縣，梁承之。《隋志》下豫章郡領有建城縣，則陳當"
                       },
                       "is_fief": false,
-                      "period_label": "558—565，？—588"
+                      "period_label": "558—588"
                     }
                   ],
                   "source": {
@@ -8006,13 +8423,13 @@ window.CHEN_DATA = {
                   "id": "ch_c0221",
                   "base_name": "建城",
                   "order": 2,
-                  "period_text": "558—565，？—588",
+                  "period_text": "558—588",
                   "phases": [
                     {
                       "start": 558,
                       "end": 588,
-                      "uncertain": true,
-                      "raw": "558—565；？—588",
+                      "uncertain": false,
+                      "raw": "558—588（本文取消原問號）",
                       "name": "建城",
                       "source": {
                         "book_page": 1387,
@@ -8020,7 +8437,7 @@ window.CHEN_DATA = {
                         "excerpt": "2.建城（558—565，？—588) 按：齊豫章郡領有建城縣，梁承之。《隋志》下豫章郡領有建城縣，則陳當 有此縣。 3.望蔡（558—565，？—588) 按：齊豫章郡領有望蔡縣。《陳書》卷23《沈君理傳》：太建二年，“高宗以"
                       },
                       "is_fief": false,
-                      "period_label": "558—565，？—588"
+                      "period_label": "558—588"
                     }
                   ],
                   "source": {
@@ -8033,13 +8450,13 @@ window.CHEN_DATA = {
                   "id": "ch_c0222",
                   "base_name": "望蔡",
                   "order": 3,
-                  "period_text": "558—565，？—588",
+                  "period_text": "558—588",
                   "phases": [
                     {
                       "start": 558,
                       "end": 588,
-                      "uncertain": true,
-                      "raw": "558—565；？—588",
+                      "uncertain": false,
+                      "raw": "558—588（本文取消原問號）",
                       "name": "望蔡",
                       "source": {
                         "book_page": 1387,
@@ -8047,7 +8464,7 @@ window.CHEN_DATA = {
                         "excerpt": "3.望蔡（558—565，？—588) 按：齊豫章郡領有望蔡縣。《陳書》卷23《沈君理傳》：太建二年，“高宗以 君理女為皇太子妃，賜爵望蔡縣侯”。則陳有望蔡縣。 4.吳平（558—565，？—588） 按：齊豫章郡領有吳平縣，梁承之。《隋志》下宜春郡宜春：“舊日宜陽，開"
                       },
                       "is_fief": false,
-                      "period_label": "558—565，？—588"
+                      "period_label": "558—588"
                     }
                   ],
                   "source": {
@@ -8060,13 +8477,13 @@ window.CHEN_DATA = {
                   "id": "ch_c0223",
                   "base_name": "吳平",
                   "order": 4,
-                  "period_text": "558—565，？—588",
+                  "period_text": "558—588",
                   "phases": [
                     {
                       "start": 558,
                       "end": 588,
-                      "uncertain": true,
-                      "raw": "558—565；？—588",
+                      "uncertain": false,
+                      "raw": "558—588（本文取消原問號）",
                       "name": "吳平",
                       "source": {
                         "book_page": 1387,
@@ -8074,7 +8491,7 @@ window.CHEN_DATA = {
                         "excerpt": "4.吳平（558—565，？—588） 按：齊豫章郡領有吳平縣，梁承之。《隋志》下宜春郡宜春：“舊日宜陽，開 皇十一年廢吳平縣人。”則陳有吳平縣。 5.康樂（558—565，？—588） 按：齊豫章郡領有康樂縣，梁承之。《陳書》卷35《陳寶應傳》載有“定州刺"
                       },
                       "is_fief": false,
-                      "period_label": "558—565，？—588"
+                      "period_label": "558—588"
                     }
                   ],
                   "source": {
@@ -8087,13 +8504,13 @@ window.CHEN_DATA = {
                   "id": "ch_c0224",
                   "base_name": "康樂",
                   "order": 5,
-                  "period_text": "558—565，？—588",
+                  "period_text": "558—588",
                   "phases": [
                     {
                       "start": 558,
                       "end": 588,
-                      "uncertain": true,
-                      "raw": "558—565；？—588",
+                      "uncertain": false,
+                      "raw": "558—588（本文取消原問號）",
                       "name": "康樂",
                       "source": {
                         "book_page": 1387,
@@ -8101,7 +8518,7 @@ window.CHEN_DATA = {
                         "excerpt": "5.康樂（558—565，？—588） 按：齊豫章郡領有康樂縣，梁承之。《陳書》卷35《陳寶應傳》載有“定州刺 史康樂縣開國侯林馮”，則陳當有康樂縣。 6.宜豐（558—565，？—588) 按：梁豫章郡領有宜豐縣，《寰宇記》卷106《江南西道四》筠州高安縣："
                       },
                       "is_fief": false,
-                      "period_label": "558—565，？—588"
+                      "period_label": "558—588"
                     }
                   ],
                   "source": {
@@ -8114,13 +8531,13 @@ window.CHEN_DATA = {
                   "id": "ch_c0225",
                   "base_name": "宜豐",
                   "order": 6,
-                  "period_text": "558—565，？—588",
+                  "period_text": "558—588",
                   "phases": [
                     {
                       "start": 558,
                       "end": 588,
-                      "uncertain": true,
-                      "raw": "558—565；？—588",
+                      "uncertain": false,
+                      "raw": "558—588（本文取消原問號）",
                       "name": "宜豐",
                       "source": {
                         "book_page": 1387,
@@ -8128,7 +8545,7 @@ window.CHEN_DATA = {
                         "excerpt": "6.宜豐（558—565，？—588) 按：梁豫章郡領有宜豐縣，《寰宇記》卷106《江南西道四》筠州高安縣： “《奧地志》雲：“…····孫吳又置陽樂、宜豐二縣”···隋開皇九年廢望蔡、康樂、 宜豐縣歸建城。”則陳當有宜豐縣。 7.鐘陵（558—565，？—588）"
                       },
                       "is_fief": false,
-                      "period_label": "558—565，？—588"
+                      "period_label": "558—588"
                     }
                   ],
                   "source": {
@@ -8141,13 +8558,13 @@ window.CHEN_DATA = {
                   "id": "ch_c0226",
                   "base_name": "鐘陵",
                   "order": 7,
-                  "period_text": "558—565，？—588",
+                  "period_text": "558—588",
                   "phases": [
                     {
                       "start": 558,
                       "end": 588,
-                      "uncertain": true,
-                      "raw": "558—565；？—588",
+                      "uncertain": false,
+                      "raw": "558—588（本文取消原問號）",
                       "name": "鐘陵",
                       "source": {
                         "book_page": 1387,
@@ -8155,7 +8572,7 @@ window.CHEN_DATA = {
                         "excerpt": "7.鐘陵（558—565，？—588） 按：梁豫章郡領有鐘陵縣，《陳書》卷15《陳擬傳》：陳建國，封“（陳）褒鐘 陵縣開國侯”。則陳當有鐘陵縣。"
                       },
                       "is_fief": false,
-                      "period_label": "558—565，？—588"
+                      "period_label": "558—588"
                     }
                   ],
                   "source": {
@@ -8164,7 +8581,18 @@ window.CHEN_DATA = {
                     "excerpt": "7.鐘陵（558—565，？—588） 按：梁豫章郡領有鐘陵縣，《陳書》卷15《陳擬傳》：陳建國，封“（陳）褒鐘 陵縣開國侯”。則陳當有鐘陵縣。"
                   }
                 }
-              ]
+              ],
+              "year_notes": {
+                "565": {
+                  "summary": "豫章郡罷復問題註記。",
+                  "source": {
+                    "book_page": 1387,
+                    "pdf_page": 489,
+                    "excerpt": "（四）豫章郡（558—565，？—588）—治南昌（今江西南昌市） 按：梁末江州領有豫章郡，陳承之。《陳書》卷3《世祖紀》：天嘉六年“九 月癸未，罷豫章郡”。《隋志》下豫章郡豫章：“舊置豫章郡。平陳，郡廢。大業 初復置郡。”似陳、隋之際仍有豫章郡，故豫章郡當罷而復置。 1.南昌（558—565，？—588) 按：齊豫章郡領有南昌縣，梁承之。《州郡典》十二章郡南昌：“漢舊縣。 隋改為章縣。”則陳當有南昌縣。 2.建城（558—565，？—588)",
+                    "editorial_note": "《陳書》卷三《世祖》記天嘉六年九月罷豫章郡，此記錄存疑。即使曾罷，也不應長久：569年封豫章王陳叔英以前豫章郡必已恢復。本文故暫按558—588連續處理。"
+                  }
+                }
+              }
             },
             {
               "id": "ch_p0045",
@@ -9901,6 +10329,73 @@ window.CHEN_DATA = {
                   }
                 }
               ]
+            },
+            {
+              "id": "ch_p_qiao_gaotang",
+              "base_name": "高唐郡",
+              "order": 3.5,
+              "period_text": "558—588",
+              "phases": [
+                {
+                  "start": 558,
+                  "end": 588,
+                  "name": "高唐郡",
+                  "uncertain": false,
+                  "raw": "558—588",
+                  "source": {
+                    "book_page": 1555,
+                    "pdf_page": 657,
+                    "excerpt": "《梁書·敬帝紀》太平二年分尋陽、太原、齊昌、高唐、新蔡五郡置西江州；《隋志》宿松稱梁置高塘郡，《考異》校作高唐；《考異》又稱梁陳之際僑立高唐郡於宿松。"
+                  },
+                  "is_fief": false,
+                  "period_label": "558—588"
+                }
+              ],
+              "source": {
+                "book_page": 1555,
+                "pdf_page": 657,
+                "excerpt": "《梁書·敬帝紀》太平二年分尋陽、太原、齊昌、高唐、新蔡五郡置西江州；《隋志》宿松稱梁置高塘郡，《考異》校作高唐；《考異》又稱梁陳之際僑立高唐郡於宿松。"
+              },
+              "counties": [],
+              "empty_county_label": "",
+              "qiao": true,
+              "qiao_annotation": {
+                "summary": "高唐郡為僑郡，僑寄宿松；是少數由舊縣名升為僑郡名的例子。",
+                "sources": [
+                  {
+                    "book_page": 1555,
+                    "pdf_page": 657,
+                    "excerpt": "《梁書·敬帝紀》太平二年分尋陽、太原、齊昌、高唐、新蔡五郡置西江州；《隋志》宿松稱梁置高塘郡，《考異》校作高唐；《考異》又稱梁陳之際僑立高唐郡於宿松。",
+                    "origin": "冀州平原國高唐縣（郡名取自舊高唐縣）",
+                    "editorial_note": "僑郡縣多由郡名下降為縣名，高唐則是少數由舊縣名上升為僑郡名的例子。"
+                  }
+                ],
+                "origin": "冀州平原國高唐縣（郡名取自舊高唐縣）"
+              },
+              "year_notes": {
+                "558": {
+                  "summary": "西江州與高唐郡歸屬的人工考據",
+                  "sources": [
+                    {
+                      "book_page": 1555,
+                      "pdf_page": 657,
+                      "excerpt": "高唐郡僑置於宿松，梁末分五郡置西江州。",
+                      "editorial_note": "按西江州設置於太平二年正月，五郡中尋陽、太原屬於江州，高唐、新蔡在江北，當屬於魯悉達，而太原、高唐皆為僑郡，因而，「即於尋陽仍充州鎮」的西江州，大概也只是梁末陳初例行的以郡升州。考慮到陳武帝永定年間，江州刺史多在豫章，西江州確實有可能存在。但是，陳代並未曾見到西江州刺史，而永定年間陳政權對江州的控制又十分薄弱，西江州也可能只是空有其名。無論如何，當天嘉元年陳文帝擊敗王琳後，就任命華皎駐扎湓城並監江州事，則此時西江州應該已經不存；此後的江州長史帶尋陽太守，也可知江州回到了尋陽。對於這段細碎的歷史，正文考證部分沒有詳論。我們也依照正文，暫時不考慮西江州，而將高唐郡始終視為江州下的屬郡。"
+                    }
+                  ]
+                },
+                "559": {
+                  "summary": "西江州與高唐郡歸屬的人工考據",
+                  "sources": [
+                    {
+                      "book_page": 1555,
+                      "pdf_page": 657,
+                      "excerpt": "高唐郡僑置於宿松，梁末分五郡置西江州。",
+                      "editorial_note": "按西江州設置於太平二年正月，五郡中尋陽、太原屬於江州，高唐、新蔡在江北，當屬於魯悉達，而太原、高唐皆為僑郡，因而，「即於尋陽仍充州鎮」的西江州，大概也只是梁末陳初例行的以郡升州。考慮到陳武帝永定年間，江州刺史多在豫章，西江州確實有可能存在。但是，陳代並未曾見到西江州刺史，而永定年間陳政權對江州的控制又十分薄弱，西江州也可能只是空有其名。無論如何，當天嘉元年陳文帝擊敗王琳後，就任命華皎駐扎湓城並監江州事，則此時西江州應該已經不存；此後的江州長史帶尋陽太守，也可知江州回到了尋陽。對於這段細碎的歷史，正文考證部分沒有詳論。我們也依照正文，暫時不考慮西江州，而將高唐郡始終視為江州下的屬郡。"
+                    }
+                  ]
+                }
+              }
             }
           ]
         },
@@ -11765,6 +12260,19 @@ window.CHEN_DATA = {
                     "book_page": 1399,
                     "pdf_page": 501,
                     "excerpt": "1.沛 2.橫山（573—579) 按：梁置橫山縣。據本州考證所引《隋志》，則陳亦當一度有橫山縣。 3.義城（573—579) 按：《方輿紀要》卷21《南直三》鳳陽府天長縣石梁城：“又有義城，在縣南"
+                  },
+                  "qiao": true,
+                  "qiao_annotation": {
+                    "summary": "沛縣為僑縣。",
+                    "sources": [
+                      {
+                        "book_page": 1537,
+                        "pdf_page": 639,
+                        "excerpt": "沛郡所領沛縣為僑縣。",
+                        "origin": "豫州沛國沛縣"
+                      }
+                    ],
+                    "origin": "豫州沛國沛縣"
                   }
                 },
                 {
@@ -11821,7 +12329,20 @@ window.CHEN_DATA = {
                     "excerpt": "3.義城（573—579) 按：《方輿紀要》卷21《南直三》鳳陽府天長縣石梁城：“又有義城，在縣南 三十五里。或日梁時嘗置義城縣於此。”今姑從之。"
                   }
                 }
-              ]
+              ],
+              "qiao": true,
+              "qiao_annotation": {
+                "summary": "沛郡為僑郡，僑寄永福。",
+                "sources": [
+                  {
+                    "book_page": 1537,
+                    "pdf_page": 639,
+                    "excerpt": "僑置考表列陳代沛郡，僑寄永福；本頁以表中沛縣為僑縣，永福僅作僑寄地。",
+                    "origin": "豫州"
+                  }
+                ],
+                "origin": "豫州"
+              }
             }
           ]
         },
@@ -16331,7 +16852,20 @@ window.CHEN_DATA = {
                     "pdf_page": 523,
                     "excerpt": "1.汝南 2.永興（560—588） 按：《一統志》卷336武昌府永興故城：“陳置縣，隋省人富川，又改富川為 永興。《隋書·地理志》江夏郡永興：“陳日陽新。平陳，改日富川。開皇十一 年廢永興縣人焉。十八年改名。”《元和志》：“陳永興故縣在永興縣城東五十"
                   },
-                  "timeless": true
+                  "timeless": true,
+                  "qiao": true,
+                  "qiao_annotation": {
+                    "summary": "汝南為僑縣；東晉先為汝南僑郡，後降為縣。",
+                    "sources": [
+                      {
+                        "book_page": 1609,
+                        "pdf_page": 711,
+                        "excerpt": "汝南在東晉時為僑郡，後省為汝南縣；陳代作江夏郡所領僑縣保存。",
+                        "origin": "豫州汝南郡"
+                      }
+                    ],
+                    "origin": "豫州汝南郡"
+                  }
                 },
                 {
                   "id": "ch_c0418",
@@ -16725,6 +17259,61 @@ window.CHEN_DATA = {
               ]
             },
             {
+              "id": "ch_p_qiao_jingling",
+              "base_name": "竟陵郡",
+              "order": 5.5,
+              "period_text": "561—566",
+              "phases": [
+                {
+                  "start": 561,
+                  "end": 566,
+                  "name": "竟陵郡",
+                  "uncertain": false,
+                  "raw": "561—566",
+                  "source": {
+                    "book_page": 1615,
+                    "pdf_page": 717,
+                    "excerpt": "《陳書·世祖紀》天嘉二年十一月：「以武昌國川為竟陵郡，以安流民。」僑置考表據此討論陳代竟陵僑郡。"
+                  },
+                  "is_fief": false,
+                  "period_label": "561—566"
+                }
+              ],
+              "source": {
+                "book_page": 1615,
+                "pdf_page": 717,
+                "excerpt": "《陳書·世祖紀》天嘉二年十一月：「以武昌國川為竟陵郡，以安流民。」僑置考表據此討論陳代竟陵僑郡。"
+              },
+              "counties": [],
+              "empty_county_label": "縣無考",
+              "qiao": true,
+              "qiao_annotation": {
+                "summary": "竟陵郡為陳代短期僑郡。",
+                "sources": [
+                  {
+                    "book_page": 1615,
+                    "pdf_page": 717,
+                    "excerpt": "《陳書·世祖紀》天嘉二年十一月：「以武昌國川為竟陵郡，以安流民。」僑置考表據此討論陳代竟陵僑郡。",
+                    "origin": "荊州"
+                  }
+                ],
+                "origin": "荊州"
+              },
+              "year_notes": {
+                "561": {
+                  "summary": "竟陵郡設置的人工理解",
+                  "sources": [
+                    {
+                      "book_page": 1615,
+                      "pdf_page": 717,
+                      "excerpt": "天嘉二年十一月，以武昌國川為竟陵郡，以安流民。",
+                      "editorial_note": "本文將「武昌國川」理解為「武昌之國川」，因而武昌仍屬武昌縣。按陳文帝常欲入漢（沔州），故本文暫將竟陵郡置於文帝一朝，即561—566年。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
               "id": "ch_p0128",
               "base_name": "齊安郡",
               "order": 6,
@@ -16886,7 +17475,20 @@ window.CHEN_DATA = {
                     "excerpt": "2.西陽"
                   }
                 }
-              ]
+              ],
+              "qiao": true,
+              "qiao_annotation": {
+                "summary": "西陽郡為僑郡；表與備考均保存其陳代線索。",
+                "sources": [
+                  {
+                    "book_page": 1611,
+                    "pdf_page": 713,
+                    "excerpt": "僑置考表列西陽郡；備考又據《陳書·周敷傳》等材料討論西陽、武昌二郡關係，西陽郡或貼治武昌，具有雙頭郡性質。",
+                    "origin": "豫州"
+                  }
+                ],
+                "origin": "豫州"
+              }
             }
           ]
         },
@@ -17845,7 +18447,20 @@ window.CHEN_DATA = {
                     "pdf_page": 530,
                     "excerpt": "2.湘陰 3.玉山（560—588) 按：據本郡考證所引《隋志》，陳似有玉山縣。 4.湘濱（560—588） 按：梁有湘濱縣，《隋志》下巴陵郡羅：“開皇九年廢吳昌、湘濱二縣人。”則"
                   },
-                  "timeless": true
+                  "timeless": true,
+                  "qiao": true,
+                  "qiao_annotation": {
+                    "summary": "湘陰為僑縣。",
+                    "sources": [
+                      {
+                        "book_page": 1615,
+                        "pdf_page": 717,
+                        "excerpt": "岳陽郡所領湘陰為僑縣；劉宋時以巴、硤流民新立。",
+                        "origin": "劉宋以巴、硤流民新立"
+                      }
+                    ],
+                    "origin": "劉宋以巴、硤流民新立"
+                  }
                 },
                 {
                   "id": "ch_c0468",
@@ -19363,7 +19978,20 @@ window.CHEN_DATA = {
                     "pdf_page": 536,
                     "excerpt": "2.平氏 3.厥西"
                   },
-                  "timeless": true
+                  "timeless": true,
+                  "qiao": true,
+                  "qiao_annotation": {
+                    "summary": "平氏為僑縣。",
+                    "sources": [
+                      {
+                        "book_page": 1613,
+                        "pdf_page": 715,
+                        "excerpt": "平氏為義陽僑郡所領僑縣。",
+                        "origin": "荊州義陽郡"
+                      }
+                    ],
+                    "origin": "荊州義陽郡"
+                  }
                 },
                 {
                   "id": "ch_c0510",
@@ -19391,9 +20019,35 @@ window.CHEN_DATA = {
                     "pdf_page": 536,
                     "excerpt": "3.厥西"
                   },
-                  "timeless": true
+                  "timeless": true,
+                  "qiao": true,
+                  "qiao_annotation": {
+                    "summary": "厥西為僑縣。",
+                    "sources": [
+                      {
+                        "book_page": 1613,
+                        "pdf_page": 715,
+                        "excerpt": "厥西為義陽僑郡所領僑縣。",
+                        "origin": "荊州義陽郡"
+                      }
+                    ],
+                    "origin": "荊州義陽郡"
+                  }
                 }
-              ]
+              ],
+              "qiao": true,
+              "qiao_annotation": {
+                "summary": "義陽郡為僑郡。",
+                "sources": [
+                  {
+                    "book_page": 1613,
+                    "pdf_page": 715,
+                    "excerpt": "義陽郡在僑置考表中屬南渡僑郡系統；本頁對陳代不同年度的實際州屬仍依實州郡縣沿革。",
+                    "origin": "荊州"
+                  }
+                ],
+                "origin": "荊州"
+              }
             }
           ]
         },
@@ -19958,7 +20612,20 @@ window.CHEN_DATA = {
                     "pdf_page": 537,
                     "excerpt": "2.平氏 1436中國行政區劃通史·三國兩晉南朝卷 3.厥西"
                   },
-                  "timeless": true
+                  "timeless": true,
+                  "qiao": true,
+                  "qiao_annotation": {
+                    "summary": "平氏為僑縣。",
+                    "sources": [
+                      {
+                        "book_page": 1613,
+                        "pdf_page": 715,
+                        "excerpt": "平氏為義陽僑郡所領僑縣。",
+                        "origin": "荊州義陽郡"
+                      }
+                    ],
+                    "origin": "荊州義陽郡"
+                  }
                 },
                 {
                   "id": "ch_c0526",
@@ -19986,9 +20653,243 @@ window.CHEN_DATA = {
                     "pdf_page": 538,
                     "excerpt": "3.厥西"
                   },
+                  "timeless": true,
+                  "qiao": true,
+                  "qiao_annotation": {
+                    "summary": "厥西為僑縣。",
+                    "sources": [
+                      {
+                        "book_page": 1613,
+                        "pdf_page": 715,
+                        "excerpt": "厥西為義陽僑郡所領僑縣。",
+                        "origin": "荊州義陽郡"
+                      }
+                    ],
+                    "origin": "荊州義陽郡"
+                  }
+                }
+              ],
+              "qiao": true,
+              "qiao_annotation": {
+                "summary": "義陽郡為僑郡。",
+                "sources": [
+                  {
+                    "book_page": 1613,
+                    "pdf_page": 715,
+                    "excerpt": "義陽郡在僑置考表中屬南渡僑郡系統；本頁對陳代不同年度的實際州屬仍依實州郡縣沿革。",
+                    "origin": "荊州"
+                  }
+                ],
+                "origin": "荊州"
+              }
+            },
+            {
+              "id": "ch_p_manual_hedong_jing",
+              "base_name": "河東郡",
+              "order": 99,
+              "period_text": "568—588",
+              "phases": [
+                {
+                  "start": 568,
+                  "end": 588,
+                  "uncertain": false,
+                  "raw": "568—588",
+                  "name": "河東郡",
+                  "source": {
+                    "book_page": null,
+                    "pdf_page": null,
+                    "excerpt": "河東郡為本輪人工補入政區；原OCR正文體例漏列。",
+                    "editorial_note": "561—562屬南荊州；563—567非陳領；568—588屬荊州。河東郡下置松滋、上明二縣。"
+                  },
+                  "is_fief": false,
+                  "period_label": "568—588"
+                }
+              ],
+              "source": {
+                "book_page": null,
+                "pdf_page": null,
+                "excerpt": "河東郡為本輪人工補入政區；原OCR正文體例漏列。",
+                "editorial_note": "561—562屬南荊州；563—567非陳領；568—588屬荊州。河東郡下置松滋、上明二縣。"
+              },
+              "counties": [
+                {
+                  "id": "ch_p_manual_hedong_jing_c1",
+                  "base_name": "松滋",
+                  "order": 1,
+                  "period_text": "568—588",
+                  "phases": [
+                    {
+                      "start": 568,
+                      "end": 588,
+                      "uncertain": false,
+                      "raw": "568—588",
+                      "name": "松滋",
+                      "source": {
+                        "book_page": null,
+                        "pdf_page": null,
+                        "excerpt": "河東郡為本輪人工補入政區；原OCR正文體例漏列。",
+                        "editorial_note": "561—562屬南荊州；563—567非陳領；568—588屬荊州。河東郡下置松滋、上明二縣。"
+                      },
+                      "is_fief": false,
+                      "period_label": "568—588"
+                    }
+                  ],
+                  "source": {
+                    "book_page": null,
+                    "pdf_page": null,
+                    "excerpt": "河東郡為本輪人工補入政區；原OCR正文體例漏列。",
+                    "editorial_note": "561—562屬南荊州；563—567非陳領；568—588屬荊州。河東郡下置松滋、上明二縣。"
+                  },
+                  "qiao": true,
+                  "qiao_annotation": {
+                    "summary": "松滋為河東僑郡所領僑縣，並為僑寄地。",
+                    "sources": [
+                      {
+                        "book_page": 1511,
+                        "pdf_page": 613,
+                        "excerpt": "河東僑郡所領松滋縣；僑置表並記河東郡僑寄松滋。",
+                        "origin": "豫州安豐郡"
+                      }
+                    ],
+                    "origin": "豫州安豐郡"
+                  }
+                },
+                {
+                  "id": "ch_p_manual_hedong_jing_q_wenxi",
+                  "base_name": "聞喜",
+                  "order": 2,
+                  "period_text": "568—588",
+                  "phases": [
+                    {
+                      "start": 568,
+                      "end": 588,
+                      "uncertain": false,
+                      "raw": "568—588",
+                      "name": "聞喜",
+                      "source": {
+                        "book_page": 1511,
+                        "pdf_page": 613,
+                        "excerpt": "河東僑郡表列聞喜、譙、松滋等僑縣；本文依表補入。"
+                      },
+                      "is_fief": false,
+                      "period_label": "568—588"
+                    }
+                  ],
+                  "source": {
+                    "book_page": 1511,
+                    "pdf_page": 613,
+                    "excerpt": "河東僑郡表列聞喜、譙、松滋等僑縣；本文依表補入。"
+                  },
+                  "qiao": true,
+                  "qiao_annotation": {
+                    "summary": "聞喜為僑縣。",
+                    "sources": [
+                      {
+                        "book_page": 1511,
+                        "pdf_page": 613,
+                        "excerpt": "河東僑郡表列聞喜、譙、松滋等僑縣；本文依表補入。",
+                        "origin": "司州河東郡"
+                      }
+                    ],
+                    "origin": "司州河東郡"
+                  }
+                },
+                {
+                  "id": "ch_p_manual_hedong_jing_q_qiao",
+                  "base_name": "譙",
+                  "order": 3,
+                  "period_text": "568—588",
+                  "phases": [
+                    {
+                      "start": 568,
+                      "end": 588,
+                      "uncertain": false,
+                      "raw": "568—588",
+                      "name": "譙",
+                      "source": {
+                        "book_page": 1511,
+                        "pdf_page": 613,
+                        "excerpt": "河東僑郡表列聞喜、譙、松滋等僑縣；本文依表補入。"
+                      },
+                      "is_fief": false,
+                      "period_label": "568—588"
+                    }
+                  ],
+                  "source": {
+                    "book_page": 1511,
+                    "pdf_page": 613,
+                    "excerpt": "河東僑郡表列聞喜、譙、松滋等僑縣；本文依表補入。"
+                  },
+                  "qiao": true,
+                  "qiao_annotation": {
+                    "summary": "譙為僑縣。",
+                    "sources": [
+                      {
+                        "book_page": 1511,
+                        "pdf_page": 613,
+                        "excerpt": "河東僑郡表列聞喜、譙、松滋等僑縣；本文依表補入。",
+                        "origin": "豫州譙郡"
+                      }
+                    ],
+                    "origin": "豫州譙郡"
+                  }
+                },
+                {
+                  "id": "ch_p_manual_hedong_jing_c2",
+                  "base_name": "上明",
+                  "order": 4,
+                  "period_text": "568—588",
+                  "phases": [
+                    {
+                      "start": 568,
+                      "end": 588,
+                      "uncertain": false,
+                      "raw": "568—588",
+                      "name": "上明",
+                      "source": {
+                        "book_page": null,
+                        "pdf_page": null,
+                        "excerpt": "河東郡為本輪人工補入政區；原OCR正文體例漏列。",
+                        "editorial_note": "561—562屬南荊州；563—567非陳領；568—588屬荊州。河東郡下置松滋、上明二縣。"
+                      },
+                      "is_fief": false,
+                      "period_label": "568—588",
+                      "timeless": true
+                    }
+                  ],
+                  "source": {
+                    "book_page": null,
+                    "pdf_page": null,
+                    "excerpt": "河東郡為本輪人工補入政區；原OCR正文體例漏列。",
+                    "editorial_note": "561—562屬南荊州；563—567非陳領；568—588屬荊州。河東郡下置松滋、上明二縣。"
+                  },
                   "timeless": true
                 }
-              ]
+              ],
+              "year_notes": {
+                "568": {
+                  "summary": "河東郡本年復入陳境並屬荊州。",
+                  "source": {
+                    "book_page": null,
+                    "pdf_page": null,
+                    "excerpt": "《Word》人工考據：是年以前蕭巋以大將軍許孝敬守河東。",
+                    "editorial_note": "是年以前，蕭巋以大將軍許孝敬守河東。是年，吳明徹乘勝攻尅巋河東郡，獲其守將許孝敬。"
+                  }
+                }
+              },
+              "qiao": true,
+              "qiao_annotation": {
+                "summary": "河東郡為僑郡；陳代實際存廢仍採人工考證。",
+                "sources": [
+                  {
+                    "book_page": 1511,
+                    "pdf_page": 613,
+                    "excerpt": "《晉志》載元帝渡江後，以河東人南寓者於武陵郡孱陵縣界上明地僑立河東郡；《宋志》南河東太守條所見僑縣有聞喜、永安、松滋、譙等；《補陳疆域志》南荊州河東郡領譙、聞喜、松滋，《隋志》松滋亦稱江左舊置河東郡。本頁對河東郡在陳代的實際存廢，仍採用此前人工考證，不以本表重新推定。",
+                    "origin": "司州"
+                  }
+                ],
+                "origin": "司州"
+              }
             }
           ]
         },
@@ -20415,6 +21316,203 @@ window.CHEN_DATA = {
                 "excerpt": "（三）羅郡（561—？）——治乏考 按：據本州考證所引《陳書》，天嘉二年，以羅郡等四郡置南荊州。《補陳 志》卷3南荊州條以為“陳罷梁羅州置，尋罷”。然梁之羅州領岳陽、藥山二郡， 與南荊州地望不合，且藥山郡已於天嘉元年屬武州，岳陽郡已屬湘州。故《補 陳志》當為臆斷。羅郡領縣及地望當待後考。"
               },
               "counties": []
+            },
+            {
+              "id": "ch_p_manual_hedong_southjing",
+              "base_name": "河東郡",
+              "order": 4,
+              "period_text": "561—562",
+              "phases": [
+                {
+                  "start": 561,
+                  "end": 562,
+                  "uncertain": false,
+                  "raw": "561—562",
+                  "name": "河東郡",
+                  "source": {
+                    "book_page": null,
+                    "pdf_page": null,
+                    "excerpt": "河東郡為本輪人工補入政區；原OCR正文體例漏列。",
+                    "editorial_note": "561—562屬南荊州；563—567非陳領；568—588屬荊州。河東郡下置松滋、上明二縣。"
+                  },
+                  "is_fief": false,
+                  "period_label": "561—562"
+                }
+              ],
+              "source": {
+                "book_page": null,
+                "pdf_page": null,
+                "excerpt": "河東郡為本輪人工補入政區；原OCR正文體例漏列。",
+                "editorial_note": "561—562屬南荊州；563—567非陳領；568—588屬荊州。河東郡下置松滋、上明二縣。"
+              },
+              "counties": [
+                {
+                  "id": "ch_p_manual_hedong_southjing_c1",
+                  "base_name": "松滋",
+                  "order": 1,
+                  "period_text": "561—562",
+                  "phases": [
+                    {
+                      "start": 561,
+                      "end": 562,
+                      "uncertain": false,
+                      "raw": "561—562",
+                      "name": "松滋",
+                      "source": {
+                        "book_page": null,
+                        "pdf_page": null,
+                        "excerpt": "河東郡為本輪人工補入政區；原OCR正文體例漏列。",
+                        "editorial_note": "561—562屬南荊州；563—567非陳領；568—588屬荊州。河東郡下置松滋、上明二縣。"
+                      },
+                      "is_fief": false,
+                      "period_label": "561—562"
+                    }
+                  ],
+                  "source": {
+                    "book_page": null,
+                    "pdf_page": null,
+                    "excerpt": "河東郡為本輪人工補入政區；原OCR正文體例漏列。",
+                    "editorial_note": "561—562屬南荊州；563—567非陳領；568—588屬荊州。河東郡下置松滋、上明二縣。"
+                  },
+                  "qiao": true,
+                  "qiao_annotation": {
+                    "summary": "松滋為河東僑郡所領僑縣，並為僑寄地。",
+                    "sources": [
+                      {
+                        "book_page": 1511,
+                        "pdf_page": 613,
+                        "excerpt": "河東僑郡所領松滋縣；僑置表並記河東郡僑寄松滋。",
+                        "origin": "豫州安豐郡"
+                      }
+                    ],
+                    "origin": "豫州安豐郡"
+                  }
+                },
+                {
+                  "id": "ch_p_manual_hedong_southjing_q_wenxi",
+                  "base_name": "聞喜",
+                  "order": 2,
+                  "period_text": "561—562",
+                  "phases": [
+                    {
+                      "start": 561,
+                      "end": 562,
+                      "uncertain": false,
+                      "raw": "561—562",
+                      "name": "聞喜",
+                      "source": {
+                        "book_page": 1511,
+                        "pdf_page": 613,
+                        "excerpt": "河東僑郡表列聞喜、譙、松滋等僑縣；本文依表補入。"
+                      },
+                      "is_fief": false,
+                      "period_label": "561—562"
+                    }
+                  ],
+                  "source": {
+                    "book_page": 1511,
+                    "pdf_page": 613,
+                    "excerpt": "河東僑郡表列聞喜、譙、松滋等僑縣；本文依表補入。"
+                  },
+                  "qiao": true,
+                  "qiao_annotation": {
+                    "summary": "聞喜為僑縣。",
+                    "sources": [
+                      {
+                        "book_page": 1511,
+                        "pdf_page": 613,
+                        "excerpt": "河東僑郡表列聞喜、譙、松滋等僑縣；本文依表補入。",
+                        "origin": "司州河東郡"
+                      }
+                    ],
+                    "origin": "司州河東郡"
+                  }
+                },
+                {
+                  "id": "ch_p_manual_hedong_southjing_q_qiao",
+                  "base_name": "譙",
+                  "order": 3,
+                  "period_text": "561—562",
+                  "phases": [
+                    {
+                      "start": 561,
+                      "end": 562,
+                      "uncertain": false,
+                      "raw": "561—562",
+                      "name": "譙",
+                      "source": {
+                        "book_page": 1511,
+                        "pdf_page": 613,
+                        "excerpt": "河東僑郡表列聞喜、譙、松滋等僑縣；本文依表補入。"
+                      },
+                      "is_fief": false,
+                      "period_label": "561—562"
+                    }
+                  ],
+                  "source": {
+                    "book_page": 1511,
+                    "pdf_page": 613,
+                    "excerpt": "河東僑郡表列聞喜、譙、松滋等僑縣；本文依表補入。"
+                  },
+                  "qiao": true,
+                  "qiao_annotation": {
+                    "summary": "譙為僑縣。",
+                    "sources": [
+                      {
+                        "book_page": 1511,
+                        "pdf_page": 613,
+                        "excerpt": "河東僑郡表列聞喜、譙、松滋等僑縣；本文依表補入。",
+                        "origin": "豫州譙郡"
+                      }
+                    ],
+                    "origin": "豫州譙郡"
+                  }
+                },
+                {
+                  "id": "ch_p_manual_hedong_southjing_c2",
+                  "base_name": "上明",
+                  "order": 4,
+                  "period_text": "561—562",
+                  "phases": [
+                    {
+                      "start": 561,
+                      "end": 562,
+                      "uncertain": false,
+                      "raw": "561—562",
+                      "name": "上明",
+                      "source": {
+                        "book_page": null,
+                        "pdf_page": null,
+                        "excerpt": "河東郡為本輪人工補入政區；原OCR正文體例漏列。",
+                        "editorial_note": "561—562屬南荊州；563—567非陳領；568—588屬荊州。河東郡下置松滋、上明二縣。"
+                      },
+                      "is_fief": false,
+                      "period_label": "561—562",
+                      "timeless": true
+                    }
+                  ],
+                  "source": {
+                    "book_page": null,
+                    "pdf_page": null,
+                    "excerpt": "河東郡為本輪人工補入政區；原OCR正文體例漏列。",
+                    "editorial_note": "561—562屬南荊州；563—567非陳領；568—588屬荊州。河東郡下置松滋、上明二縣。"
+                  },
+                  "timeless": true
+                }
+              ],
+              "qiao": true,
+              "qiao_annotation": {
+                "summary": "河東郡為僑郡；陳代實際存廢仍採人工考證。",
+                "sources": [
+                  {
+                    "book_page": 1511,
+                    "pdf_page": 613,
+                    "excerpt": "《晉志》載元帝渡江後，以河東人南寓者於武陵郡孱陵縣界上明地僑立河東郡；《宋志》南河東太守條所見僑縣有聞喜、永安、松滋、譙等；《補陳疆域志》南荊州河東郡領譙、聞喜、松滋，《隋志》松滋亦稱江左舊置河東郡。本頁對河東郡在陳代的實際存廢，仍採用此前人工考證，不以本表重新推定。",
+                    "origin": "司州"
+                  }
+                ],
+                "origin": "司州"
+              }
             }
           ],
           "year_notes": {
@@ -21313,6 +22411,17 @@ window.CHEN_DATA = {
                     "book_page": 1442,
                     "pdf_page": 544,
                     "excerpt": "5.崇德（558—588) 按：齊宋隆郡領有崇德縣，梁承之。據本郡考證所引《隋志》，則陳有崇 德縣。 6.崇化（558—588） 按：齊宋隆郡領有崇化縣，梁承之。據本郡考證所引《隋志》，則陳有崇"
+                  },
+                  "year_notes": {
+                    "561": {
+                      "summary": "崇德子國封爵註記：庾持「拜封之日」即坐免，本文推測其大概率在560年內已失爵。",
+                      "source": {
+                        "book_page": 1442,
+                        "pdf_page": 544,
+                        "excerpt": "5.崇德（558—588) 按：齊宋隆郡領有崇德縣，梁承之。據本郡考證所引《隋志》，則陳有崇 德縣。 6.崇化（558—588） 按：齊宋隆郡領有崇化縣，梁承之。據本郡考證所引《隋志》，則陳有崇",
+                        "editorial_note": "本傳只說庾持「天嘉初」獲得爵位，本文暫定於560年；「拜封之日」即坐免，故推測同年失爵。"
+                      }
+                    }
                   }
                 },
                 {
@@ -31162,7 +32271,9 @@ window.CHEN_DATA = {
                     "excerpt": "利州（558一588），治金寧（今越南河靜省河靜市西北）。梁置利州。《隋 志》下九真郡金寧：“梁置利州，開皇十八年改為智州。”則陳承舊有利州。所領 郡乏考。 金寧（558-588) 按：《方輿紀要》卷112《廣西七》義安府越裳廢縣條：“又金寧廢縣，在廢越 裳縣西南。蕭梁時置，兼置利州。隋開皇十八年改為智州，大業初州廢，縣屬 日南郡。”則陳有金寧縣。"
                   }
                 }
-              ]
+              ],
+              "unknown_prefecture": true,
+              "display_label": "郡無考"
             }
           ]
         },
@@ -31241,7 +32352,9 @@ window.CHEN_DATA = {
                     "excerpt": "明州（558一588），治交谷（今越南河靜省河靜市以南）。梁置明州。《隋 志》下日南郡交谷：“梁置明州，大業初州廢。”則陳承舊有明州。所領郡乏考。 交谷（558—588） 按：《方輿紀要》卷112《廣西七》義安府越裳廢縣條：“交谷廢縣，在越裳縣 南。蕭梁時置縣，兼置明州。隋大業初州廢，縣屬日南郡。”則陳有交谷縣。"
                   }
                 }
-              ]
+              ],
+              "unknown_prefecture": true,
+              "display_label": "郡無考"
             }
           ]
         },
