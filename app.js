@@ -28,6 +28,8 @@
   const yearMapStage = $('yearMapStage');
   const yearMapImage = $('yearMapImage');
   const yearMapOverlay = $('yearMapOverlay');
+  const textMapLinkControl = $('textMapLinkControl');
+  const textMapLinkToggle = $('textMapLinkToggle');
   const citationRegistry = new Map();
   const auxInfoRegistry = new Map();
   let auxInfoSequence = 0;
@@ -458,7 +460,7 @@
 
   function makeNameSpan(item,className='',info=null) {
     const wrap=document.createElement('span'); wrap.className='name-with-citation';
-    if (item.id) { wrap.dataset.entityId=item.id; wrap.title='點擊在地圖中定位此政區'; }
+    if (item.id) wrap.dataset.entityId=item.id;
     const name=document.createElement(info?'button':'span');
     if (info) { name.type='button'; name.dataset.info=registerAuxInfo(info); name.title='查看本州方鎮長官與考證'; }
     name.textContent=item.name; name.className=[className,info?'state-governor-name':'',item.kingdom?'kingdom':'',item.change?'changed':'',item.uncertain?'uncertain':'',item.qiao?'qiao':'',item.timeless&&!item.qiao?'no-date':''].filter(Boolean).join(' '); wrap.appendChild(name);
@@ -669,6 +671,8 @@
   function renderYearMap(year) {
     const map=currentDynasty.key==='chen' && year===588 ? window.CHEN_MAP_588 : null;
     yearMapPanel.hidden=!map;
+    textMapLinkControl.hidden=!map;
+    results.classList.toggle('text-map-link-enabled',Boolean(map&&textMapLinkToggle.checked));
     if (!map) { yearMapOverlay.replaceChildren(); return; }
     yearMapImage.src=map.image;$('yearMapUhd').href=map.uhd;$('yearMapCsv').href=map.csv;
     yearMapOverlay.setAttribute('viewBox',`0 0 ${map.width} ${map.height}`);
@@ -743,10 +747,16 @@
     const c=event.target.closest('[data-citation]');if(c){openCitation(c.dataset.citation);return;}
     const i=event.target.closest('[data-info]');if(i){openAuxInfo(i.dataset.info);return;}
     const hotspot=event.target.closest('.map-hotspot');if(hotspot){revealTextEntity(hotspot.dataset.entityId);return;}
-    const entity=event.target.closest('.name-with-citation[data-entity-id]');if(entity)highlightMapEntity(entity.dataset.entityId,{scrollToMap:true});
+    const entity=event.target.closest('.name-with-citation[data-entity-id]');if(entity&&textMapLinkToggle.checked)highlightMapEntity(entity.dataset.entityId,{scrollToMap:true});
     if(event.target.matches('[data-close-modal]'))closeModal();
   });
   yearMapOverlay.addEventListener('keydown',(event)=>{if((event.key==='Enter'||event.key===' ')&&event.target.matches('.map-hotspot')){event.preventDefault();revealTextEntity(event.target.dataset.entityId);}});
+  textMapLinkToggle.addEventListener('change',()=>{
+    results.classList.toggle('text-map-link-enabled',textMapLinkToggle.checked&&!yearMapPanel.hidden);
+    if(!yearMapPanel.hidden)$('yearMapStatus').textContent=textMapLinkToggle.checked
+      ? '文字定位地圖已開啟；點擊普通州郡縣名稱可返回地圖。頁碼註釋、封國與方鎮說明仍按原方式開啟。'
+      : `文字定位地圖已關閉；仍可從地圖的 ${window.CHEN_MAP_588?.features?.length||0} 個治所熱點定位到下方文字。`;
+  });
   sourceModalClose.addEventListener('click',closeModal);document.addEventListener('keydown',(e)=>{if(e.key==='Escape'&&!sourceModal.hidden)closeModal();});
 
   switchDynasty();

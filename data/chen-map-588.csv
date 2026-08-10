@@ -22,7 +22,7 @@
 588,yearbook_588,administrative_entity,南陳,county,ch_c0015,40161,ch_s0001,揚州,ch_p0003,陳留郡,ch_c0015,故鄣,故鄣,故鄣,0,,,,0,0,119.60508099808786,30.90242098658171,1,seat,,CHGIS V6,1364,466,,
 588,yearbook_588,administrative_entity,南陳,county,ch_c0016,,ch_s0001,揚州,ch_p0003,陳留郡,ch_c0016,廣德,廣德,廣德,0,,,,0,0,,,0,unmapped,CHGIS 588未找到可采用的同名縣治點,,1364,466,,
 588,yearbook_588,administrative_entity,南陳,county,ch_c0017,40147,ch_s0001,揚州,ch_p0003,陳留郡,ch_c0017,安吉,安吉,安吉,0,,,,0,0,119.54862199960354,30.585385987357096,1,seat,,CHGIS V6,1364,466,,
-588,yearbook_588,administrative_entity,南陳,state,ch_s0002,30147,ch_s0002,吳州,,,,,吳州,吳州,0,,,,0,0,116.66383300139859,28.994166999920306,1,seat,,CHGIS V4,1371,473,,
+588,yearbook_588,administrative_entity,南陳,state,ch_s0002,ch_s0002-seat,ch_s0002,吳州,,,,,吳州,吳州,0,,,,0,0,120.61862196466318,31.31270997478973,1,seat,,western-jin-yearbook＋CHGIS V6,1371,473,,
 588,yearbook_588,administrative_entity,南陳,prefecture,ch_p0013,32059,ch_s0002,吳州,ch_p0013,吳郡,,,吳郡,吳郡,0,,,,0,0,120.61862196466318,31.31270997478973,1,seat,,CHGIS V6,1371,473,,
 588,yearbook_588,administrative_entity,南陳,county,ch_c0073,40404,ch_s0002,吳州,ch_p0013,吳郡,ch_c0073,吳,吳,吳,0,,,,0,0,120.61862196466318,31.31270997478973,1,seat,,CHGIS V6,1371,473,,
 588,yearbook_588,administrative_entity,南陳,county,ch_c0074,,ch_s0002,吳州,ch_p0013,吳郡,ch_c0074,婁,婁,婁,0,,,,0,0,,,0,unmapped,CHGIS 588未找到可采用的同名縣治點,,1371,473,,
@@ -872,6 +872,7 @@
 588,fief_588,fief,南陳,prefecture,ch_p0014,32356,ch_s0002,吳州,ch_p0014,錢塘郡,,,錢塘郡,錢唐國,1,chen_fief_0148,王,陳恬,0,0,120.16862498905506,30.29412498176254,1,seat,,CHGIS V6,,,南朝藩王列表,https://zh.wikipedia.org/zh-hans/南朝藩王列表
 588,fief_588,fief,南陳,prefecture,ch_p0130,32919,ch_s0040,巴州,ch_p0130,巴陵郡,,,巴陵郡,巴陵國,1,chen_fief_manual_baling_king,王,巴陵郡王·蕭沇,0,0,113.09765600000601,29.37125999999744,1,seat,,CHGIS V6,,,南朝藩王列表,https://zh.wikipedia.org/zh-hans/南朝藩王列表
 588,fief_588,fief,南陳,prefecture,ch_p0032,32042,ch_s0006,南徐州,ch_p0032,江陰郡,,,江陰郡,江陰國,1,chen_fief_manual_jiangyin_king,王,江陰郡王·蕭彝,0,0,120.26608997704696,31.90876997840655,1,seat,,CHGIS V6,,,南朝藩王列表,https://zh.wikipedia.org/zh-hans/南朝藩王列表
+588,chgis_map_layer,state_area,同時期CHGIS,state,,ch_s0002-area,,,,,,,吳州,吳州,0,,,,0,0,120.35751508683447,30.569477572268923,1,area,,western-jin-yearbook＋CHGIS V6,,,,
 588,chgis_map_layer,state_area,同時期CHGIS,state,,97888,,,,,,,黃州,黃州,0,,,,0,0,114.82171571316492,31.00523659221681,1,area,,CHGIS V6,,,,
 588,chgis_map_layer,state_area,同時期CHGIS,state,,97899,,,,,,,復州,復州,0,,,,0,0,113.47465169470082,30.170103528438855,1,area,,CHGIS V6,,,,
 588,chgis_map_layer,state_area,同時期CHGIS,state,,97930,,,,,,,襄州,襄州,0,,,,0,0,111.79539003781312,31.936222607402204,1,area,,CHGIS V6,,,,
@@ -912,7 +913,6 @@
 588,chgis_map_layer,state_area,同時期CHGIS,state,,98089,,,,,,,南徐州,南徐州,0,,,,0,0,120.179,31.645999,1,area,,CHGIS V4,,,,
 588,chgis_map_layer,state_area,同時期CHGIS,state,,98153,,,,,,,東揚州,東揚州,0,,,,0,0,119.824996,28.977699,1,area,,CHGIS V4,,,,
 588,chgis_map_layer,state_area,同時期CHGIS,state,,98091,,,,,,,南豫州,南豫州,0,,,,0,0,118.327003,30.711799,1,area,,CHGIS V4,,,,
-588,chgis_map_layer,state_area,同時期CHGIS,state,,98196,,,,,,,吳州,吳州,0,,,,0,0,117.302001,28.7758,1,area,,CHGIS V4,,,,
 588,chgis_map_layer,state_area,同時期CHGIS,state,,98435,,,,,,,荊州,荊州,0,,,,0,0,111.244003,29.709499,1,area,,CHGIS V4,,,,
 588,chgis_map_layer,state_area,同時期CHGIS,state,,98446,,,,,,,湘州,湘州,0,,,,0,0,112.018997,26.812,1,area,,CHGIS V4,,,,
 588,chgis_map_layer,state_area,同時期CHGIS,state,,98372,,,,,,,西衡州,西衡州,0,,,,0,0,112.684997,25.1832,1,area,,CHGIS V4,,,,
@@ -1055,6 +1055,7 @@
 588,chgis_map_layer,prefecture_area,同時期CHGIS,prefecture,,93361,,,,,,,安昌郡,安昌郡,0,,,,0,0,109.03,21.72,1,area,,CHGIS V5,,,,
 588,chgis_map_layer,prefecture_area,同時期CHGIS,prefecture,,93362,,,,,,,封山郡,封山郡,0,,,,0,0,109.47,22.34,1,area,,CHGIS V5,,,,
 588,chgis_map_layer,prefecture_area,同時期CHGIS,prefecture,,93363,,,,,,,鹽田郡,鹽田郡,0,,,,0,0,109.33,21.52,1,area,,CHGIS V5,,,,
+588,chgis_map_layer,state_seat,同時期CHGIS,state,,ch_s0002-seat,,,,,,,吳州,吳州,0,,,,0,0,120.61862196466318,31.31270997478973,1,seat,,western-jin-yearbook＋CHGIS V6,,,,
 588,chgis_map_layer,state_seat,同時期CHGIS,state,,210034,,,,,,,並州,並州,0,,,,0,0,112.48845700000115,37.739570999999344,1,seat,,CHGIS V6,,,,
 588,chgis_map_layer,state_seat,同時期CHGIS,state,,212419,,,,,,,代州,代州,0,,,,0,0,112.9490430000046,39.06039099999645,1,seat,,CHGIS V6,,,,
 588,chgis_map_layer,state_seat,同時期CHGIS,state,,212620,,,,,,,石州,石州,0,,,,0,0,111.13517799999998,37.510105,1,seat,,CHGIS V6,,,,
@@ -1220,7 +1221,6 @@
 588,chgis_map_layer,state_seat,同時期CHGIS,state,,30061,,,,,,,南徐州,南徐州,0,,,,0,0,119.5149920277341,32.19528999847986,1,seat,,CHGIS V4,,,,
 588,chgis_map_layer,state_seat,同時期CHGIS,state,,30066,,,,,,,南豫州,南豫州,0,,,,0,0,118.7425000138833,30.94694099917732,1,seat,,CHGIS V4,,,,
 588,chgis_map_layer,state_seat,同時期CHGIS,state,,30127,,,,,,,江州,江州,0,,,,0,0,115.9436730005358,29.641568999975263,1,seat,,CHGIS V4,,,,
-588,chgis_map_layer,state_seat,同時期CHGIS,state,,30147,,,,,,,吳州,吳州,0,,,,0,0,116.66383300139859,28.994166999920306,1,seat,,CHGIS V4,,,,
 588,chgis_map_layer,state_seat,同時期CHGIS,state,,30267,,,,,,,荊州,荊州,0,,,,0,0,112.18909500000001,30.10425000000003,1,seat,,CHGIS V4,,,,
 588,chgis_map_layer,state_seat,同時期CHGIS,state,,30303,,,,,,,湘州,湘州,0,,,,0,0,112.9781340000008,28.198197999999998,1,seat,,CHGIS V4,,,,
 588,chgis_map_layer,state_seat,同時期CHGIS,state,,30274,,,,,,,西衡州,西衡州,0,,,,0,0,113.12419900000098,24.258880999999967,1,seat,,CHGIS V4,,,,

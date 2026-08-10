@@ -128,8 +128,25 @@ select:focus, input:focus { outline: 2px solid rgba(122,46,46,.25); border-color
 .map-hotspot:hover,.map-hotspot:focus-visible { fill: rgba(255,255,255,.28); stroke: #f5f1d7; outline: none; }
 .map-hotspot.is-active { fill: rgba(255,241,153,.42); stroke: #9b2f52; stroke-width: 7; }
 .map-hotspot-state { stroke-dasharray: 1 0; }
-.name-with-citation[data-entity-id] { cursor: crosshair; }
+.results.text-map-link-enabled .name-with-citation[data-entity-id] { cursor: crosshair; }
 .map-linked-active { background: #fff1a8; outline: 3px solid rgba(155,47,82,.45); outline-offset: 4px; border-radius: 2px; }
+
+.text-map-link-control {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 0 0 16px;
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--theme-border);
+  background: var(--paper-2);
+}
+.text-map-link-control[hidden] { display: none; }
+.text-map-link-control label { display: flex; align-items: center; gap: 9px; cursor: pointer; }
+.text-map-link-control label span { margin: 0; color: var(--ink); font-size: .9rem; }
+.text-map-link-control input { width: 18px; height: 18px; accent-color: var(--accent); }
+.text-map-link-control small { color: var(--muted); font-size: .76rem; text-align: right; }
 
 .change-panel, .method-note {
   margin: 0 0 20px;
@@ -199,6 +216,8 @@ footer { padding: 22px 24px 32px; text-align: center; color: #766d63; border-top
   th:first-child, td:first-child { width: 155px; }
   .year-map-heading { align-items: start; flex-direction: column; }
   .year-map-stage { width: 1250px; }
+  .text-map-link-control { align-items: flex-start; flex-direction: column; gap: 4px; }
+  .text-map-link-control small { text-align: left; }
 }
 @media (max-width: 520px) {
   main { padding-left: 12px; padding-right: 12px; }
@@ -213,7 +232,7 @@ footer { padding: 22px 24px 32px; text-align: center; color: #766d63; border-top
 
 @media print {
   .site-header { color: #000; background: #fff; border-bottom: 2px solid #000; }
-  .control-panel, .notice, .summary, .year-map-panel, .change-panel, .method-note, footer { display: none !important; }
+  .control-panel, .notice, .summary, .year-map-panel, .text-map-link-control, .change-panel, .method-note, footer { display: none !important; }
   main { max-width: none; padding: 0; }
   .state-card { break-inside: avoid; box-shadow: none; margin-bottom: 12px; }
 }

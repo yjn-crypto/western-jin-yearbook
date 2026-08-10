@@ -89,12 +89,20 @@
           <svg id="yearMapOverlay" class="year-map-overlay" role="img" aria-label="588年州郡縣治所可點擊定位圖層"></svg>
         </div>
       </div>
-      <p class="year-map-note">政權底色以 ChinaXMap 572 年北周、北齊、陳疆域近似重分類為隋、陳，只作 588 年政權形勢參考；州郡縣治所與可用界線來自 CHGIS V6，並以 V4／V5 補足。缺坐標者不臆測，傳承不明封國仍保留為封國。</p>
+      <p class="year-map-note">政權底色以 ChinaXMap 572 年疆域為基礎，將北周、北齊、後梁合併為統一隋面，只作 588 年政權形勢參考；州郡縣治所與可用界線來自 CHGIS V6，並以 V4／V5 補足。缺坐標者不臆測，傳承不明封國仍保留為封國。</p>
     </section>
 
     <section id="changePanel" class="change-panel" hidden>
       <h2>本年變動索引</h2>
       <div id="changeList"></div>
+    </section>
+
+    <section id="textMapLinkControl" class="text-map-link-control" hidden aria-label="文字與地圖聯動設定">
+      <label for="textMapLinkToggle">
+        <input id="textMapLinkToggle" type="checkbox" role="switch">
+        <span>點擊州郡縣名稱時定位到地圖</span>
+      </label>
+      <small>預設關閉；地圖點擊定位文字、頁碼註釋及封國與方鎮說明不受影響。</small>
     </section>
 
     <section id="results" class="results" aria-live="polite"></section>
