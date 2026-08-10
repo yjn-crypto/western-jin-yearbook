@@ -71,6 +71,27 @@
       <div><strong id="changeCount">0</strong><span>本年變動項</span></div>
     </section>
 
+    <section id="yearMapPanel" class="year-map-panel" aria-labelledby="yearMapTitle" hidden>
+      <header class="year-map-heading">
+        <div>
+          <p class="year-map-kicker">州郡縣封國地圖</p>
+          <h2 id="yearMapTitle">公元588年隋陳疆域與州郡縣封國</h2>
+        </div>
+        <div class="year-map-actions">
+          <a id="yearMapUhd" href="assets/maps/chen-588-terrain-map-uhd.png" download>下載超高清 PNG</a>
+          <a id="yearMapCsv" href="data/chen-map-588.csv" download>下載 CSV</a>
+        </div>
+      </header>
+      <p id="yearMapStatus" class="year-map-status">點擊地圖上的治所熱點可定位到下方州郡縣；點擊表中政區名稱可在地圖上定位。</p>
+      <div id="yearMapViewport" class="year-map-viewport">
+        <div id="yearMapStage" class="year-map-stage">
+          <img id="yearMapImage" alt="公元588年隋陳疆域與州郡縣封國地形圖" loading="eager">
+          <svg id="yearMapOverlay" class="year-map-overlay" role="img" aria-label="588年州郡縣治所可點擊定位圖層"></svg>
+        </div>
+      </div>
+      <p class="year-map-note">政權底色以 ChinaXMap 572 年北周、北齊、陳疆域近似重分類為隋、陳，只作 588 年政權形勢參考；州郡縣治所與可用界線來自 CHGIS V6，並以 V4／V5 補足。缺坐標者不臆測，傳承不明封國仍保留為封國。</p>
+    </section>
+
     <section id="changePanel" class="change-panel" hidden>
       <h2>本年變動索引</h2>
       <div id="changeList"></div>
@@ -102,6 +123,7 @@
   <script src="data/chen-data.js"></script>
   <script src="data/chen-fiefs.js"></script>
   <script src="data/chen-governors.js"></script>
+  <script src="data/chen-map-588.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

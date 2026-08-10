@@ -23,6 +23,11 @@
   const results = $('results');
   const sourceModal = $('sourceModal');
   const sourceModalClose = $('sourceModalClose');
+  const yearMapPanel = $('yearMapPanel');
+  const yearMapViewport = $('yearMapViewport');
+  const yearMapStage = $('yearMapStage');
+  const yearMapImage = $('yearMapImage');
+  const yearMapOverlay = $('yearMapOverlay');
   const citationRegistry = new Map();
   const auxInfoRegistry = new Map();
   let auxInfoSequence = 0;
@@ -453,6 +458,7 @@
 
   function makeNameSpan(item,className='',info=null) {
     const wrap=document.createElement('span'); wrap.className='name-with-citation';
+    if (item.id) { wrap.dataset.entityId=item.id; wrap.title='點擊在地圖中定位此政區'; }
     const name=document.createElement(info?'button':'span');
     if (info) { name.type='button'; name.dataset.info=registerAuxInfo(info); name.title='查看本州方鎮長官與考證'; }
     name.textContent=item.name; name.className=[className,info?'state-governor-name':'',item.kingdom?'kingdom':'',item.change?'changed':'',item.uncertain?'uncertain':'',item.qiao?'qiao':'',item.timeless&&!item.qiao?'no-date':''].filter(Boolean).join(' '); wrap.appendChild(name);
@@ -489,6 +495,7 @@
 
   function renderState(state,year) {
     const article=document.createElement('article'); article.className='state-card';
+    article.dataset.entityId=state.id;
     const heading=document.createElement('header'); heading.className='state-heading';
     const h2=document.createElement('h2'); h2.appendChild(makeNameSpan(state,'',currentDynasty.key==='chen'&&state.governor?chenGovernorInfo(state.governor,year):null));
     if (currentDynasty.key==='chen' && state.group!=='chen') { const badge=document.createElement('span'); badge.className='regime-badge'; badge.textContent=state.groupLabel; h2.appendChild(badge); }
@@ -500,6 +507,7 @@
     const tbody=document.createElement('tbody');
     for (const row of state.rows) {
       const tr=document.createElement('tr'), td1=document.createElement('td'), td2=document.createElement('td');
+      tr.dataset.entityId=row.id;
       if (row.directCounties) { const d=document.createElement('span'); d.className='direct-counties-label'; d.textContent=`（${row.displayLabel || '郡無考'}）`; td1.appendChild(d); } else td1.appendChild(makeNameSpan(row,'pref-name'));
       if (row.kingdom) {const b=document.createElement('span');b.className='type-badge kingdom';b.textContent='封國';td1.appendChild(b);}
       appendFiefDetails(td1,row,'prefecture',year);
@@ -617,6 +625,66 @@
 
   function closeModal(){sourceModal.hidden=true;document.body.classList.remove('modal-open');}
 
+  function clearMapLinkHighlights() {
+    document.querySelectorAll('.map-hotspot.is-active,.map-linked-active').forEach((node)=>node.classList.remove('is-active','map-linked-active'));
+  }
+
+  function mapFeatureById(entityId) {
+    return window.CHEN_MAP_588?.features?.find((feature)=>feature.entity_id===entityId) || null;
+  }
+
+  function highlightMapEntity(entityId,{scrollToMap=false}={}) {
+    if (yearMapPanel.hidden) return;
+    const feature=mapFeatureById(entityId), hotspot=yearMapOverlay.querySelector(`[data-entity-id="${entityId}"]`);
+    if (!feature || !hotspot) return;
+    clearMapLinkHighlights();hotspot.classList.add('is-active');
+    const stageWidth=yearMapStage.clientWidth,stageHeight=yearMapStage.clientHeight;
+    if (stageWidth && stageHeight) {
+      yearMapViewport.scrollTo({
+        left:Math.max(0,feature.x/window.CHEN_MAP_588.width*stageWidth-yearMapViewport.clientWidth/2),
+        top:Math.max(0,feature.y/window.CHEN_MAP_588.height*stageHeight-yearMapViewport.clientHeight/2),
+        behavior:'smooth'
+      });
+    }
+    if (scrollToMap) yearMapPanel.scrollIntoView({behavior:'smooth',block:'start'});
+    $('yearMapStatus').textContent=`已在地圖定位：${feature.label}（${feature.level==='state'?'州':feature.level==='prefecture'?'郡級':'縣級'}）`;
+  }
+
+  function revealTextEntity(entityId) {
+    let target=results.querySelector(`.name-with-citation[data-entity-id="${entityId}"]`);
+    if (!target && (stateSelect.value || searchInput.value || changedOnly.checked)) {
+      stateSelect.value='';searchInput.value='';changedOnly.checked=false;render();
+      target=results.querySelector(`.name-with-citation[data-entity-id="${entityId}"]`);
+    }
+    if (!target) {
+      $('yearMapStatus').textContent='此治所已進入地圖，但目前年表沒有可唯一聯動的同一實體。';
+      return;
+    }
+    clearMapLinkHighlights();target.classList.add('map-linked-active');
+    const hotspot=yearMapOverlay.querySelector(`[data-entity-id="${entityId}"]`);if(hotspot)hotspot.classList.add('is-active');
+    target.scrollIntoView({behavior:'smooth',block:'center'});
+    setTimeout(()=>target.classList.remove('map-linked-active'),2600);
+  }
+
+  function renderYearMap(year) {
+    const map=currentDynasty.key==='chen' && year===588 ? window.CHEN_MAP_588 : null;
+    yearMapPanel.hidden=!map;
+    if (!map) { yearMapOverlay.replaceChildren(); return; }
+    yearMapImage.src=map.image;$('yearMapUhd').href=map.uhd;$('yearMapCsv').href=map.csv;
+    yearMapOverlay.setAttribute('viewBox',`0 0 ${map.width} ${map.height}`);
+    yearMapOverlay.replaceChildren();
+    for (const feature of map.features) {
+      const circle=document.createElementNS('http://www.w3.org/2000/svg','circle');
+      circle.setAttribute('cx',feature.x);circle.setAttribute('cy',feature.y);
+      circle.setAttribute('r',feature.level==='state'?20:feature.level==='prefecture'?15:11);
+      circle.classList.add('map-hotspot',`map-hotspot-${feature.level}`);circle.dataset.entityId=feature.entity_id;
+      circle.setAttribute('tabindex','0');circle.setAttribute('role','button');circle.setAttribute('aria-label',`定位到${feature.label}`);
+      const title=document.createElementNS('http://www.w3.org/2000/svg','title');title.textContent=feature.label;circle.appendChild(title);
+      yearMapOverlay.appendChild(circle);
+    }
+    $('yearMapStatus').textContent=`本圖有 ${map.features.length} 個年表政區取得可靠坐標，可與下方文字雙向定位；其餘記錄不臆造位置。`;
+  }
+
   function updateMethod() {
     const box=$('methodContent');box.replaceChildren();const paras=currentDynasty.key==='chen' ? [
       '頁面依據《中國行政區劃通史·三國兩晉南朝卷（下）》陳代實州郡縣沿革，按書中州、郡、縣原有次序重建公元558—588年各年年末狀態。原書明言陳代材料屬輯考、僅得其涯略，故疑字與年代不明者保留「※」。',
@@ -625,7 +693,7 @@
       '封爵資料只是制度注記。南朝封君通常不到封國，網頁不以爵國名稱反推實際行政機構；只有本年能唯一對應一個南陳郡或縣時，才把爵號附在該政區旁。但是，儘管在行政上，封君已經基本喪失了對封國的干預，但封國在制度、禮儀、經濟等諸多層面的實在性確是確定無疑的。因此，我們認為，在唐朝不開國以前，仍有必要在郡縣旁邊標註封國與封君。',
       '陳代僑郡縣另依本書第十編侨州郡縣考表補充。梁、陳欄中，○所標為梁，△或明確屬陳者用於陳代判定。陳代不再把無實土侨州作為州級政區另列，州名及原有統屬不因此改變；僑郡、僑縣名稱以下劃線標示。若正文未標年代而原本以暗色顯示，一旦由侨置表確認為僑郡縣，以下劃線優先，不再變暗。點擊其註釋可見「原屬」與考表依據。',
       '方鎮長官另據魯力《魏晉南北朝方鎮年表新編·宋齊梁陳卷》之「陳方鎮年表」。該表以年為經、州為緯，州下列都督、刺史等人物，並記官銜、月份、遷轉及考證。本頁將有資料的州名設為可點擊；方鎮表有長官而本年政區表未列的州，另置「方鎮表另見之州」，只作政治史資料提示，不據此直接增改行政區劃。',
-      '明州、利州等正文只知所領縣而所領郡乏考者，表格標為「郡無考」，不使用後世概念「州直領」。目前不包含地圖；本階段與西晉部分相同，只提供年度州郡縣表、變動標紅、頁碼引文、僑置屬性、方鎮長官與封國制度注記。'
+      '明州、利州等正文只知所領縣而所領郡乏考者，表格標為「郡無考」，不使用後世概念「州直領」。588年加入地形行政圖：治所與可用行政界線以CHGIS V6為主，V4補州界、V5補郡界；沒有坐標者不臆造位置，沒有邊界但有治所者以治所點承載州郡資訊。政權底色暫以ChinaXMap 572年疆域近似代替並明確標註，並非精確的588年復原。'
     ] : [
       '頁面依據《中國行政區劃通史·三國兩晉南朝卷（上）》西晉州郡縣沿革重建，州、郡、縣均按原文次序排列。',
       '年末口徑依本編凡例處理；與上一年年末相比的新置、復置、廢省、改名、改屬等變化以紅色和右上角註釋標示。',
@@ -652,6 +720,7 @@
     const current=buildSnapshot(year), baseline=year===currentDynasty.years[0], previous=baseline?current:buildSnapshot(year-1), compared=compareSnapshots(current,previous,year);
     const visible=renderResults(compared.states,compared.virtualFiefs,compared.extraGovernorStates,year), removed=filterRemoved(compared.removedChanges);
     renderSummary(visible,removed);renderChangePanel(visible,removed);
+    renderYearMap(year);
     $('statusText').textContent=baseline
       ? `${formatYearLabel(year)}為${currentDynasty.label}資料起始年，不以缺失的前一年判定變動；州、郡、縣保留原書次序。`
       : `${formatYearLabel(year)}所示為年末狀態；與${formatYearLabel(year-1)}年末相比的行政區劃變動以紅色及註釋標示。${currentDynasty.key==='chen'?'陳代資料屬OCR初抽取與輯考重建；州名可點擊查看本年《方鎮年表》長官資料，後梁、王琳只在政權存續年份顯示。':''}`;
@@ -670,7 +739,14 @@
   dynastySelect.addEventListener('change',switchDynasty);
   yearSelect.addEventListener('change',()=>{populateStates(Number(yearSelect.value));render();});
   stateSelect.addEventListener('change',render);searchInput.addEventListener('input',render);changedOnly.addEventListener('change',render);
-  document.addEventListener('click',(event)=>{const c=event.target.closest('[data-citation]');if(c)openCitation(c.dataset.citation);const i=event.target.closest('[data-info]');if(i)openAuxInfo(i.dataset.info);if(event.target.matches('[data-close-modal]'))closeModal();});
+  document.addEventListener('click',(event)=>{
+    const c=event.target.closest('[data-citation]');if(c){openCitation(c.dataset.citation);return;}
+    const i=event.target.closest('[data-info]');if(i){openAuxInfo(i.dataset.info);return;}
+    const hotspot=event.target.closest('.map-hotspot');if(hotspot){revealTextEntity(hotspot.dataset.entityId);return;}
+    const entity=event.target.closest('.name-with-citation[data-entity-id]');if(entity)highlightMapEntity(entity.dataset.entityId,{scrollToMap:true});
+    if(event.target.matches('[data-close-modal]'))closeModal();
+  });
+  yearMapOverlay.addEventListener('keydown',(event)=>{if((event.key==='Enter'||event.key===' ')&&event.target.matches('.map-hotspot')){event.preventDefault();revealTextEntity(event.target.dataset.entityId);}});
   sourceModalClose.addEventListener('click',closeModal);document.addEventListener('keydown',(e)=>{if(e.key==='Escape'&&!sourceModal.hidden)closeModal();});
 
   switchDynasty();
