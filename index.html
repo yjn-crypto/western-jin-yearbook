@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>漢魏六朝年末州郡縣表</title>
   <meta name="description" content="依據《中國行政區劃通史》逐年重建漢魏六朝年末州郡縣，並附封國資料。">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=20260811">
 </head>
 <body data-theme="metal">
   <header class="site-header">
@@ -78,18 +78,28 @@
           <h2 id="yearMapTitle">公元588年隋陳疆域與州郡縣封國</h2>
         </div>
         <div class="year-map-actions">
-          <a id="yearMapUhd" href="assets/maps/chen-588-terrain-map-uhd.png" download>下載超高清 PNG</a>
-          <a id="yearMapCsv" href="data/chen-map-588.csv" download>下載 CSV</a>
+          <a id="yearMapUhd" href="assets/maps/chen-588-terrain-map-uhd.png" download>下載588年超高清 PNG</a>
+          <a id="yearMapCsv" href="data/chen-map-588.csv" download>下載588年 CSV</a>
+          <button id="yearMapExport" type="button">匯出當前年份 PNG</button>
         </div>
       </header>
       <p id="yearMapStatus" class="year-map-status">點擊地圖上的治所熱點可定位到下方州郡縣；點擊表中政區名稱可在地圖上定位。</p>
+      <div class="year-map-toolbar" role="toolbar" aria-label="地圖縮放與瀏覽">
+        <button id="yearMapZoomOut" type="button" aria-label="縮小地圖">−</button>
+        <button id="yearMapZoomIn" type="button" aria-label="放大地圖">＋</button>
+        <button id="yearMapFit" type="button">適合視窗</button>
+        <button id="yearMapReset" type="button">重設</button>
+        <button id="yearMapLoadUhd" type="button">載入588年超高清原圖</button>
+        <output id="yearMapZoomValue" aria-live="polite">100%</output>
+        <span>滑鼠滾輪縮放；按住地圖拖曳平移</span>
+      </div>
       <div id="yearMapViewport" class="year-map-viewport">
         <div id="yearMapStage" class="year-map-stage">
           <img id="yearMapImage" alt="公元588年隋陳疆域與州郡縣封國地形圖" loading="eager">
           <svg id="yearMapOverlay" class="year-map-overlay" role="img" aria-label="588年州郡縣治所可點擊定位圖層"></svg>
         </div>
       </div>
-      <p class="year-map-note">政權底色以 ChinaXMap 572 年疆域為基礎，將北周、北齊、後梁合併為統一隋面，只作 588 年政權形勢參考；州郡縣治所與可用界線來自 CHGIS V6，並以 V4／V5 補足。缺坐標者不臆測，傳承不明封國仍保留為封國。</p>
+      <p class="year-map-note">558—587年共用一份地形底圖，並按所選年份動態繪製州郡縣、封國及可用邊界；588年預設顯示人工覆核原圖，放大後才載入約31 MB超高清檔案。政權疆域仍以 ChinaXMap 572年斷面近似，州郡縣治所與邊界以CHGIS V6為主、V4／V5補足。缺坐標者不臆測，傳承不明封國仍按封國顯示。</p>
     </section>
 
     <section id="changePanel" class="change-panel" hidden>
@@ -131,7 +141,8 @@
   <script src="data/chen-data.js"></script>
   <script src="data/chen-fiefs.js"></script>
   <script src="data/chen-governors.js"></script>
-  <script src="data/chen-map-588.js"></script>
-  <script src="app.js"></script>
+  <script src="data/chen-map-dynamic.js?v=20260811"></script>
+  <script src="data/chen-map-588.js?v=20260811"></script>
+  <script src="app.js?v=20260811"></script>
 </body>
 </html>

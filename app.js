@@ -28,12 +28,19 @@
   const yearMapStage = $('yearMapStage');
   const yearMapImage = $('yearMapImage');
   const yearMapOverlay = $('yearMapOverlay');
+  const yearMapZoomValue = $('yearMapZoomValue');
+  const yearMapLoadUhd = $('yearMapLoadUhd');
   const textMapLinkControl = $('textMapLinkControl');
   const textMapLinkToggle = $('textMapLinkToggle');
   const citationRegistry = new Map();
   const auxInfoRegistry = new Map();
   let auxInfoSequence = 0;
   let currentDynasty = DYNASTIES['western-jin'];
+  let currentMap = null;
+  let currentMapFeatures = [];
+  let mapZoom = 1;
+  let mapUhdLoaded = false;
+  let mapDrag = null;
 
   function formatYearLabel(year) {
     if (currentDynasty.key === 'chen') {
@@ -632,7 +639,7 @@
   }
 
   function mapFeatureById(entityId) {
-    return window.CHEN_MAP_588?.features?.find((feature)=>feature.entity_id===entityId) || null;
+    return currentMapFeatures.find((feature)=>feature.entity_id===entityId) || null;
   }
 
   function highlightMapEntity(entityId,{scrollToMap=false}={}) {
@@ -643,8 +650,8 @@
     const stageWidth=yearMapStage.clientWidth,stageHeight=yearMapStage.clientHeight;
     if (stageWidth && stageHeight) {
       yearMapViewport.scrollTo({
-        left:Math.max(0,feature.x/window.CHEN_MAP_588.width*stageWidth-yearMapViewport.clientWidth/2),
-        top:Math.max(0,feature.y/window.CHEN_MAP_588.height*stageHeight-yearMapViewport.clientHeight/2),
+        left:Math.max(0,feature.x/currentMap.width*stageWidth-yearMapViewport.clientWidth/2),
+        top:Math.max(0,feature.y/currentMap.height*stageHeight-yearMapViewport.clientHeight/2),
         behavior:'smooth'
       });
     }
@@ -668,25 +675,270 @@
     setTimeout(()=>target.classList.remove('map-linked-active'),2600);
   }
 
-  function renderYearMap(year) {
-    const map=currentDynasty.key==='chen' && year===588 ? window.CHEN_MAP_588 : null;
-    yearMapPanel.hidden=!map;
-    textMapLinkControl.hidden=!map;
-    results.classList.toggle('text-map-link-enabled',Boolean(map&&textMapLinkToggle.checked));
-    if (!map) { yearMapOverlay.replaceChildren(); return; }
-    yearMapImage.src=map.image;$('yearMapUhd').href=map.uhd;$('yearMapCsv').href=map.csv;
-    yearMapOverlay.setAttribute('viewBox',`0 0 ${map.width} ${map.height}`);
-    yearMapOverlay.replaceChildren();
-    for (const feature of map.features) {
-      const circle=document.createElementNS('http://www.w3.org/2000/svg','circle');
-      circle.setAttribute('cx',feature.x);circle.setAttribute('cy',feature.y);
-      circle.setAttribute('r',feature.level==='state'?20:feature.level==='prefecture'?15:11);
-      circle.classList.add('map-hotspot',`map-hotspot-${feature.level}`);circle.dataset.entityId=feature.entity_id;
-      circle.setAttribute('tabindex','0');circle.setAttribute('role','button');circle.setAttribute('aria-label',`定位到${feature.label}`);
-      const title=document.createElementNS('http://www.w3.org/2000/svg','title');title.textContent=feature.label;circle.appendChild(title);
-      yearMapOverlay.appendChild(circle);
+  const SVG_NS='http://www.w3.org/2000/svg';
+  const MAP_EXPORT_STYLE=`
+    text{font-family:"Noto Serif CJK TC","Songti TC","PMingLiU",serif}.dynamic-map-title{fill:#302b27;font-size:46px;font-weight:700;letter-spacing:3px}.dynamic-map-subtitle{fill:#665d54;font-size:16px}.dynamic-regime{stroke-width:2.2;fill-opacity:.62}.dynamic-regime-label{fill:#fffdf2;stroke:rgba(40,32,25,.72);stroke-width:2.6;paint-order:stroke;font-size:42px;font-weight:700;letter-spacing:5px}.dynamic-state-boundary{fill:none;stroke:#60392d;stroke-width:2.2}.dynamic-pref-boundary{fill:none;stroke:#776d55;stroke-width:1.1}.dynamic-supplement-boundary{stroke-dasharray:5 4;opacity:.72}.dynamic-state-dot{fill:#6a382d;stroke:#fff8e8;stroke-width:.9}.dynamic-prefecture-dot{fill:#a85e52;stroke:#fff8e8;stroke-width:.6}.dynamic-county-dot{fill:#365f70}.dynamic-map-label{paint-order:stroke;stroke:rgba(255,252,240,.94);stroke-width:2.3;stroke-linejoin:round;dominant-baseline:central}.dynamic-state-area-label{fill:#4d3028;font-size:24.5px;font-weight:700;letter-spacing:2px}.dynamic-state-seat-label{fill:#562f28;font-size:22.5px;font-weight:700}.dynamic-prefecture-area-label{fill:#3f4a38;font-size:16.5px;font-weight:700}.dynamic-prefecture-seat-label{fill:#684a3f;font-size:10.8px}.dynamic-county-seat-label{fill:#264f60;font-size:8.6px}.dynamic-fief-label{fill:#754476;font-weight:700}.is-uncertain{font-style:italic}`;
+
+  function svgNode(tag,attributes={},text='') {
+    const node=document.createElementNS(SVG_NS,tag);
+    for(const [key,value] of Object.entries(attributes)) if(value!=null) node.setAttribute(key,String(value));
+    if(text) node.textContent=text;
+    return node;
+  }
+
+  function activeMapRecords(records,year,spatialStep=120) {
+    const priority={'CHGIS V6':0,'western-jin-yearbook＋CHGIS V6':0,'CHGIS V4':1,'CHGIS V5':2};
+    const active=(records||[]).filter((item)=>Number(item.b)<=year&&year<=Number(item.e));
+    active.sort((a,b)=>(priority[a.s]??5)-(priority[b.s]??5));
+    const seen=new Set(),out=[];
+    for(const item of active) {
+      const key=`${item.k}|${Math.round(Number(item.x||0)/spatialStep)}|${Math.round(Number(item.y||0)/spatialStep)}`;
+      if(seen.has(key)) continue;
+      seen.add(key);out.push(item);
     }
-    $('yearMapStatus').textContent=`本圖有 ${map.features.length} 個年表政區取得可靠坐標，可與下方文字雙向定位；其餘記錄不臆造位置。`;
+    return out;
+  }
+
+  function drawRegimes(year,root,map) {
+    const paths=map.regimes||{};
+    const add=(key,fill,stroke,label,x,y)=>{
+      if(!paths[key])return;
+      root.appendChild(svgNode('path',{d:paths[key],class:'dynamic-regime',fill,stroke}));
+      root.appendChild(svgNode('text',{x,y,'text-anchor':'middle','dominant-baseline':'central',class:'dynamic-regime-label'},label));
+    };
+    if(year<=576) {
+      add('northZhou','#d8b05b','#6d5a2b','北周',2050,1310);
+      add('northQi','#82a8a2','#3d625f','北齊',3350,1410);
+      add('chen','#c98075','#6c3733','陳',2767,2907);
+      add('laterLiang','#9a83aa','#57436c','後梁',2820,2050);
+    } else {
+      add('sui','#d8b05b','#6d5a2b',year>=581?'隋':'北周',2425,1435);
+      add('chen','#c98075','#6c3733','陳',2767,2907);
+      if(year<=587)add('laterLiang','#9a83aa','#57436c','後梁',2820,2050);
+    }
+  }
+
+  function mapDistance(a,b) { return Math.hypot(Number(a.x)-Number(b.x),Number(a.y)-Number(b.y)); }
+
+  function chooseEntitySeat(name,level,seats,parent,group) {
+    const key=normalizeName(name);
+    let candidates=seats.filter((item)=>item.k===key);
+    if(group==='chen') {
+      const southern=candidates.filter((item)=>Number(item.x)>=2250&&Number(item.y)>=1620);
+      if(southern.length)candidates=southern;
+    }
+    if(parent&&candidates.length>1)candidates.sort((a,b)=>mapDistance(a,parent)-mapDistance(b,parent));
+    return candidates[0]||null;
+  }
+
+  function resolveSnapshotFeatures(snapshot,seatsByLevel) {
+    const features=[],byId=new Map();
+    for(const state of snapshot.states) {
+      const stateSeat=chooseEntitySeat(state.name,'state',seatsByLevel.state,null,state.group);
+      if(stateSeat) {
+        const feature={entity_id:state.id,level:'state',label:state.name,x:stateSeat.x,y:stateSeat.y,entity:state};
+        features.push(feature);byId.set(state.id,feature);
+      }
+      for(const row of state.rows) {
+        const prefSeat=chooseEntitySeat(row.name,'prefecture',seatsByLevel.prefecture,stateSeat,state.group);
+        if(prefSeat) {
+          const feature={entity_id:row.id,level:'prefecture',label:row.name,x:prefSeat.x,y:prefSeat.y,entity:row,state};
+          features.push(feature);byId.set(row.id,feature);
+        }
+        for(const county of row.counties) {
+          const countySeat=chooseEntitySeat(county.name,'county',seatsByLevel.county,prefSeat||stateSeat,state.group);
+          if(!countySeat)continue;
+          const feature={entity_id:county.id,level:'county',label:county.name,x:countySeat.x,y:countySeat.y,entity:county,state,row};
+          features.push(feature);byId.set(county.id,feature);
+        }
+      }
+    }
+    return {features,byId};
+  }
+
+  function dynamicFiefLabels(snapshot,resolved,seatsByLevel) {
+    const labels=[];
+    const append=(feature,matches)=>{
+      if(!feature||!matches?.length)return;
+      const names=[],ids=[],uncertain=[];
+      for(const match of matches) {
+        const record=match.record,phase=match.phase;
+        const label=record.kind==='prince'?`${phase.fief}國`:`${phase.fief}${record.rank}國`;
+        if(!names.includes(label))names.push(label);
+        ids.push(record.id);uncertain.push(Boolean(phase.uncertain||match.display?.uncertain));
+      }
+      labels.push({text:names.join('／'),x:feature.x,y:feature.y,level:feature.level,entityId:feature.entity_id,fiefIds:ids,uncertain:uncertain.some(Boolean)});
+    };
+    for(const feature of resolved.features)append(feature,feature.entity?.chenFiefs||[]);
+    for(const match of snapshot.virtualFiefs||[]) {
+      const level=match.record.level;
+      const candidates=seatsByLevel[level].filter((item)=>item.k===normalizeName(match.phase.fief)&&Number(item.x)>=2250&&Number(item.y)>=1620);
+      if(candidates.length===1)append({x:candidates[0].x,y:candidates[0].y,level,entity_id:''},[match]);
+    }
+    return labels;
+  }
+
+  function labelWidth(text,fontSize) {
+    let units=0;
+    for(const char of String(text||''))units+=/\s/.test(char)?.35:/[\x00-\xff]/.test(char)?.62:1;
+    return units*fontSize+5;
+  }
+
+  function labelCandidates(label) {
+    const {x,y,fontSize,kind}=label,d=kind.includes('area')?fontSize*1.1:fontSize*1.05;
+    if(kind.includes('area'))return [[x,y,'middle'],[x,y-d,'middle'],[x,y+d,'middle']];
+    return [[x+d,y,'start'],[x-d,y,'end'],[x,y-d,'middle'],[x,y+d,'middle'],[x+d*.75,y-d*.72,'start'],[x-d*.75,y+d*.72,'end']];
+  }
+
+  function placeAndDrawLabels(root,labels,level,plot) {
+    const occupied=[];
+    labels.sort((a,b)=>b.priority-a.priority||a.y-b.y||a.x-b.x);
+    for(const label of labels) {
+      const width=labelWidth(label.text,label.fontSize),height=label.fontSize*1.22;
+      let placement=null;
+      for(const [x,y,anchor] of labelCandidates(label)) {
+        const left=anchor==='middle'?x-width/2:anchor==='end'?x-width:x;
+        const box=[left,y-height/2,left+width,y+height/2];
+        if(box[0]<plot[0]||box[1]<plot[1]||box[2]>plot[2]||box[3]>plot[3])continue;
+        if(occupied.some((other)=>!(box[2]+1<other[0]||other[2]+1<box[0]||box[3]+1<other[1]||other[3]+1<box[1])))continue;
+        placement={x,y,anchor,box};break;
+      }
+      if(!placement)continue;
+      occupied.push(placement.box);
+      const classes=['dynamic-map-label',`dynamic-${label.kind}-label`];
+      if(label.fief)classes.push('dynamic-fief-label');
+      if(label.uncertain)classes.push('is-uncertain');
+      const text=svgNode('text',{x:placement.x,y:placement.y,'text-anchor':placement.anchor,class:classes.join(' '),'data-label-level':level},label.text);
+      if(label.fiefIds?.length)text.dataset.fiefIds=label.fiefIds.join(' ');
+      root.appendChild(text);
+    }
+  }
+
+  function appendHotspots(root,features) {
+    for(const feature of features) {
+      const circle=svgNode('circle',{cx:feature.x,cy:feature.y,r:feature.level==='state'?20:feature.level==='prefecture'?15:11,class:`map-hotspot map-hotspot-${feature.level}`,tabindex:0,role:'button','aria-label':`定位到${feature.label}`});
+      circle.dataset.entityId=feature.entity_id;
+      circle.appendChild(svgNode('title',{},feature.label));root.appendChild(circle);
+    }
+  }
+
+  function renderDynamicMap(year,snapshot,map) {
+    const stateAreas=activeMapRecords(map.stateAreas,year,190);
+    const prefAreas=activeMapRecords(map.prefAreas,year,120);
+    const seatsByLevel={
+      state:activeMapRecords(map.stateSeats,year,75),
+      prefecture:activeMapRecords(map.prefSeats,year,55),
+      county:activeMapRecords(map.countySeats,year,34),
+    };
+    const resolved=resolveSnapshotFeatures(snapshot,seatsByLevel);
+    const fiefs=dynamicFiefLabels(snapshot,resolved,seatsByLevel);
+    const suppressed=new Set(fiefs.map((item)=>`${item.level}|${Math.round(item.x)}|${Math.round(item.y)}`));
+    const labels={state:[],prefecture:[],county:[]};
+    const root=yearMapOverlay;
+    root.replaceChildren();
+    root.appendChild(svgNode('text',{x:650,y:92,class:'dynamic-map-title'},`公元${year}年　南陳與同時期政權州郡縣封國`));
+    root.appendChild(svgNode('text',{x:650,y:145,class:'dynamic-map-subtitle'},'共用地形：CHGIS DEM　｜　行政點面：CHGIS V6＋V4／V5補充　｜　政權疆域：ChinaXMap 572年斷面近似'));
+    drawRegimes(year,root,map);
+    for(const area of stateAreas) {
+      root.appendChild(svgNode('path',{d:area.d,class:`dynamic-state-boundary${area.s==='CHGIS V5'?' dynamic-supplement-boundary':''}`}));
+      labels.state.push({text:area.n,x:area.x,y:area.y,fontSize:24.5,kind:'state-area',priority:1000});
+    }
+    for(const area of prefAreas) {
+      root.appendChild(svgNode('path',{d:area.d,class:`dynamic-pref-boundary${area.s==='CHGIS V5'?' dynamic-supplement-boundary':''}`}));
+      labels.prefecture.push({text:area.n,x:area.x,y:area.y,fontSize:16.5,kind:'prefecture-area',priority:900});
+    }
+    const specs=[['state','state-seat',22.5,560,4.1],['prefecture','prefecture-seat',10.8,500,2.9],['county','county-seat',8.6,400,2]];
+    for(const [level,kind,fontSize,priority,radius] of specs)for(const seat of seatsByLevel[level]) {
+      root.appendChild(svgNode('circle',{cx:seat.x,cy:seat.y,r:radius,class:`dynamic-${level}-dot`}));
+      if(!suppressed.has(`${level}|${Math.round(seat.x)}|${Math.round(seat.y)}`))labels[level].push({text:seat.n,x:seat.x,y:seat.y,fontSize,kind,priority});
+    }
+    for(const fief of fiefs)labels[fief.level].push({...fief,fontSize:fief.level==='prefecture'?12.5:10.2,kind:`${fief.level}-seat`,priority:1300,fief:true});
+    for(const level of ['state','prefecture','county'])placeAndDrawLabels(root,labels[level],level,map.plot);
+    appendHotspots(root,resolved.features);
+    return resolved.features;
+  }
+
+  function applyMapZoom(next,{clientX=null,clientY=null}={}) {
+    if(!currentMap)return;
+    const oldWidth=yearMapStage.clientWidth||yearMapViewport.clientWidth;
+    const oldHeight=yearMapStage.clientHeight||oldWidth*currentMap.height/currentMap.width;
+    const rect=yearMapViewport.getBoundingClientRect();
+    const anchorX=clientX==null?yearMapViewport.clientWidth/2:clientX-rect.left;
+    const anchorY=clientY==null?yearMapViewport.clientHeight/2:clientY-rect.top;
+    const contentX=(yearMapViewport.scrollLeft+anchorX)/oldWidth;
+    const contentY=(yearMapViewport.scrollTop+anchorY)/oldHeight;
+    mapZoom=Math.min(6,Math.max(1,Number(next)||1));
+    const fitWidth=Math.max(320,yearMapViewport.clientWidth-2);
+    yearMapStage.style.width=`${Math.round(fitWidth*mapZoom)}px`;
+    yearMapZoomValue.value=`${Math.round(mapZoom*100)}%`;
+    requestAnimationFrame(()=>{
+      yearMapViewport.scrollLeft=Math.max(0,contentX*yearMapStage.clientWidth-anchorX);
+      yearMapViewport.scrollTop=Math.max(0,contentY*yearMapStage.clientHeight-anchorY);
+    });
+    if(currentMap.year===588&&mapZoom>=1.6&&!mapUhdLoaded)load588Uhd();
+  }
+
+  function resetMapView() {
+    mapZoom=1;yearMapViewport.scrollLeft=0;yearMapViewport.scrollTop=0;applyMapZoom(1);
+  }
+
+  function load588Uhd() {
+    if(currentMap?.year!==588||mapUhdLoaded)return;
+    yearMapImage.src=currentMap.uhd;mapUhdLoaded=true;
+    yearMapLoadUhd.textContent='588年超高清原圖已載入';yearMapLoadUhd.disabled=true;
+    $('yearMapStatus').textContent=`已載入588年9600×8256超高清原圖；${currentMapFeatures.length}個治所熱點仍可定位文字。`;
+  }
+
+  function renderYearMap(year,snapshot) {
+    const dynamic=currentDynasty.key==='chen'?window.CHEN_DYNAMIC_MAP:null;
+    yearMapPanel.hidden=!dynamic;textMapLinkControl.hidden=!dynamic;
+    results.classList.toggle('text-map-link-enabled',Boolean(dynamic&&textMapLinkToggle.checked));
+    if(!dynamic){currentMap=null;currentMapFeatures=[];yearMapOverlay.replaceChildren();return;}
+    currentMap={year,width:dynamic.width,height:dynamic.height,uhd:dynamic.map588.uhd};
+    yearMapOverlay.setAttribute('viewBox',`0 0 ${dynamic.width} ${dynamic.height}`);
+    yearMapOverlay.setAttribute('aria-label',`${year}年州郡縣治所可點擊定位圖層`);
+    $('yearMapTitle').textContent=`公元${year}年南陳與同時期政權州郡縣封國`;
+    $('yearMapUhd').href=dynamic.map588.uhd;$('yearMapCsv').href=dynamic.map588.csv;
+    mapUhdLoaded=false;yearMapLoadUhd.disabled=false;yearMapLoadUhd.hidden=year!==588;yearMapLoadUhd.textContent='載入588年超高清原圖';
+    if(year===588) {
+      yearMapImage.src=dynamic.map588.preview;
+      yearMapOverlay.replaceChildren();
+      currentMapFeatures=window.CHEN_MAP_588?.features||[];
+      appendHotspots(yearMapOverlay,currentMapFeatures);
+      $('yearMapStatus').textContent=`588年先載入4.2 MB完整預覽；放大至160%或點擊按鈕後載入約31 MB原圖。${currentMapFeatures.length}個治所可與文字雙向定位。`;
+    } else {
+      yearMapImage.src=dynamic.base;
+      currentMapFeatures=renderDynamicMap(year,snapshot,dynamic);
+      $('yearMapStatus').textContent=`${year}年以共用地形和年度向量層即時繪製；${currentMapFeatures.length}個年表政區取得可用坐標，可與下方文字雙向定位。`;
+    }
+    yearMapImage.alt=`公元${year}年南陳與同時期政權州郡縣封國地形圖`;
+    resetMapView();
+  }
+
+  async function exportCurrentYearMap() {
+    if(!currentMap)return;
+    if(currentMap.year===588) {
+      const link=document.createElement('a');link.href=currentMap.uhd;link.download='588年_隋陳州郡縣封國地形圖_超高清.png';link.click();return;
+    }
+    const button=$('yearMapExport'),oldText=button.textContent;
+    button.disabled=true;button.textContent='正在匯出…';
+    try {
+      const width=2400,height=2064,canvas=document.createElement('canvas');canvas.width=width;canvas.height=height;
+      const context=canvas.getContext('2d');
+      const base=new Image();base.src=yearMapImage.currentSrc||yearMapImage.src;await base.decode();context.drawImage(base,0,0,width,height);
+      const clone=yearMapOverlay.cloneNode(true);
+      clone.querySelectorAll('.map-hotspot').forEach((node)=>node.remove());
+      clone.setAttribute('width',String(width));clone.setAttribute('height',String(height));
+      const defs=svgNode('defs'),style=svgNode('style',{},MAP_EXPORT_STYLE);defs.appendChild(style);clone.insertBefore(defs,clone.firstChild);
+      const blob=new Blob([new XMLSerializer().serializeToString(clone)],{type:'image/svg+xml;charset=utf-8'});
+      const url=URL.createObjectURL(blob),overlay=new Image();overlay.src=url;await overlay.decode();context.drawImage(overlay,0,0,width,height);URL.revokeObjectURL(url);
+      const png=await new Promise((resolve)=>canvas.toBlob(resolve,'image/png'));
+      const downloadUrl=URL.createObjectURL(png),link=document.createElement('a');link.href=downloadUrl;link.download=`${currentMap.year}年_南陳州郡縣封國動態地圖.png`;link.click();
+      setTimeout(()=>URL.revokeObjectURL(downloadUrl),1000);
+      $('yearMapStatus').textContent=`已匯出${currentMap.year}年2400×2064 PNG；588年另保留9600×8256人工覆核原圖。`;
+    } catch(error) {
+      console.error(error);$('yearMapStatus').textContent='瀏覽器未能完成PNG匯出；請稍後重試或改用桌面瀏覽器。';
+    } finally {button.disabled=false;button.textContent=oldText;}
   }
 
   function updateMethod() {
@@ -724,7 +976,7 @@
     const current=buildSnapshot(year), baseline=year===currentDynasty.years[0], previous=baseline?current:buildSnapshot(year-1), compared=compareSnapshots(current,previous,year);
     const visible=renderResults(compared.states,compared.virtualFiefs,compared.extraGovernorStates,year), removed=filterRemoved(compared.removedChanges);
     renderSummary(visible,removed);renderChangePanel(visible,removed);
-    renderYearMap(year);
+    renderYearMap(year,current);
     $('statusText').textContent=baseline
       ? `${formatYearLabel(year)}為${currentDynasty.label}資料起始年，不以缺失的前一年判定變動；州、郡、縣保留原書次序。`
       : `${formatYearLabel(year)}所示為年末狀態；與${formatYearLabel(year-1)}年末相比的行政區劃變動以紅色及註釋標示。${currentDynasty.key==='chen'?'陳代資料屬OCR初抽取與輯考重建；州名可點擊查看本年《方鎮年表》長官資料，後梁、王琳只在政權存續年份顯示。':''}`;
@@ -755,8 +1007,30 @@
     results.classList.toggle('text-map-link-enabled',textMapLinkToggle.checked&&!yearMapPanel.hidden);
     if(!yearMapPanel.hidden)$('yearMapStatus').textContent=textMapLinkToggle.checked
       ? '文字定位地圖已開啟；點擊普通州郡縣名稱可返回地圖。頁碼註釋、封國與方鎮說明仍按原方式開啟。'
-      : `文字定位地圖已關閉；仍可從地圖的 ${window.CHEN_MAP_588?.features?.length||0} 個治所熱點定位到下方文字。`;
+      : `文字定位地圖已關閉；仍可從地圖的 ${currentMapFeatures.length} 個治所熱點定位到下方文字。`;
   });
+  $('yearMapZoomIn').addEventListener('click',()=>applyMapZoom(mapZoom*1.25));
+  $('yearMapZoomOut').addEventListener('click',()=>applyMapZoom(mapZoom/1.25));
+  $('yearMapFit').addEventListener('click',resetMapView);
+  $('yearMapReset').addEventListener('click',()=>{resetMapView();clearMapLinkHighlights();});
+  yearMapLoadUhd.addEventListener('click',load588Uhd);
+  $('yearMapExport').addEventListener('click',exportCurrentYearMap);
+  yearMapViewport.addEventListener('wheel',(event)=>{
+    if(!currentMap)return;
+    event.preventDefault();applyMapZoom(mapZoom*(event.deltaY<0?1.14:1/1.14),{clientX:event.clientX,clientY:event.clientY});
+  },{passive:false});
+  yearMapViewport.addEventListener('pointerdown',(event)=>{
+    if(event.button!==0||event.target.closest('.map-hotspot'))return;
+    mapDrag={id:event.pointerId,x:event.clientX,y:event.clientY,left:yearMapViewport.scrollLeft,top:yearMapViewport.scrollTop};
+    yearMapViewport.classList.add('is-dragging');yearMapViewport.setPointerCapture(event.pointerId);
+  });
+  yearMapViewport.addEventListener('pointermove',(event)=>{
+    if(!mapDrag||mapDrag.id!==event.pointerId)return;
+    yearMapViewport.scrollLeft=mapDrag.left-(event.clientX-mapDrag.x);yearMapViewport.scrollTop=mapDrag.top-(event.clientY-mapDrag.y);
+  });
+  const finishMapDrag=(event)=>{if(!mapDrag||mapDrag.id!==event.pointerId)return;mapDrag=null;yearMapViewport.classList.remove('is-dragging');};
+  yearMapViewport.addEventListener('pointerup',finishMapDrag);yearMapViewport.addEventListener('pointercancel',finishMapDrag);
+  window.addEventListener('resize',()=>{if(currentMap)applyMapZoom(mapZoom);});
   sourceModalClose.addEventListener('click',closeModal);document.addEventListener('keydown',(e)=>{if(e.key==='Escape'&&!sourceModal.hidden)closeModal();});
 
   switchDynasty();

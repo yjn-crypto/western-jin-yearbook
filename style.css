@@ -109,7 +109,7 @@ select:focus, input:focus { outline: 2px solid rgba(122,46,46,.25); border-color
 .year-map-heading h2 { margin: 0; color: var(--accent); font-size: 1.28rem; }
 .year-map-kicker { margin: 0 0 2px; color: var(--muted); font-size: .76rem; letter-spacing: .12em; }
 .year-map-actions { display: flex; flex-wrap: wrap; gap: 8px; }
-.year-map-actions a {
+.year-map-actions a,.year-map-actions button {
   display: inline-block;
   padding: 6px 10px;
   border: 1px solid var(--theme-border);
@@ -117,13 +117,47 @@ select:focus, input:focus { outline: 2px solid rgba(122,46,46,.25); border-color
   background: color-mix(in srgb, var(--paper-2) 75%, var(--theme-pale));
   font-size: .8rem;
   text-decoration: none;
+  font-family: inherit;
+  cursor: pointer;
 }
-.year-map-actions a:hover { background: var(--theme-pale); }
+.year-map-actions a:hover,.year-map-actions button:hover { background: var(--theme-pale); }
 .year-map-status,.year-map-note { margin: 7px 0; color: var(--muted); font-size: .8rem; }
-.year-map-viewport { width: 100%; max-height: min(70vh,760px); overflow: auto; border: 1px solid #cfc5b7; background: #dce8e8; }
-.year-map-stage { position: relative; width: max(100%,1500px); line-height: 0; }
+.year-map-toolbar { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; margin: 9px 0 8px; }
+.year-map-toolbar button {
+  min-height: 32px;
+  padding: 4px 10px;
+  border: 1px solid #b9aa98;
+  color: var(--ink);
+  background: #faf6ee;
+  font-family: inherit;
+  cursor: pointer;
+}
+.year-map-toolbar button:hover { background: var(--theme-pale); }
+.year-map-toolbar output { min-width: 50px; color: var(--accent); font-weight: 700; text-align: center; }
+.year-map-toolbar span { color: var(--muted); font-size: .75rem; }
+.year-map-viewport { width: 100%; max-height: min(72vh,800px); overflow: auto; border: 1px solid #cfc5b7; background: #dce8e8; cursor: grab; overscroll-behavior: contain; }
+.year-map-viewport.is-dragging { cursor: grabbing; user-select: none; }
+.year-map-stage { position: relative; width: 100%; line-height: 0; transform-origin: top left; }
 .year-map-stage img { display: block; width: 100%; height: auto; }
 .year-map-overlay { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.dynamic-map-title { fill: #302b27; font-size: 46px; font-weight: 700; letter-spacing: 3px; }
+.dynamic-map-subtitle { fill: #665d54; font-size: 16px; }
+.dynamic-regime { stroke-width: 2.2; fill-opacity: .62; vector-effect: non-scaling-stroke; }
+.dynamic-regime-label { fill: #fffdf2; stroke: rgba(40,32,25,.72); stroke-width: 2.6; paint-order: stroke; font-size: 42px; font-weight: 700; letter-spacing: 5px; pointer-events: none; }
+.dynamic-state-boundary { fill: none; stroke: #60392d; stroke-width: 2.2; vector-effect: non-scaling-stroke; pointer-events: none; }
+.dynamic-pref-boundary { fill: none; stroke: #776d55; stroke-width: 1.1; vector-effect: non-scaling-stroke; pointer-events: none; }
+.dynamic-supplement-boundary { stroke-dasharray: 5 4; opacity: .72; }
+.dynamic-state-dot { fill: #6a382d; stroke: #fff8e8; stroke-width: .9; }
+.dynamic-prefecture-dot { fill: #a85e52; stroke: #fff8e8; stroke-width: .6; }
+.dynamic-county-dot { fill: #365f70; }
+.dynamic-map-label { paint-order: stroke; stroke: rgba(255,252,240,.94); stroke-width: 2.3; stroke-linejoin: round; dominant-baseline: central; pointer-events: none; }
+.dynamic-state-area-label { fill: #4d3028; font-size: 24.5px; font-weight: 700; letter-spacing: 2px; }
+.dynamic-state-seat-label { fill: #562f28; font-size: 22.5px; font-weight: 700; }
+.dynamic-prefecture-area-label { fill: #3f4a38; font-size: 16.5px; font-weight: 700; }
+.dynamic-prefecture-seat-label { fill: #684a3f; font-size: 10.8px; }
+.dynamic-county-seat-label { fill: #264f60; font-size: 8.6px; }
+.dynamic-fief-label { fill: #754476; font-family: var(--kai); font-weight: 700; }
+.dynamic-fief-label.is-uncertain { font-style: italic; text-decoration: underline dotted; }
 .map-hotspot { fill: transparent; stroke: transparent; stroke-width: 5; vector-effect: non-scaling-stroke; cursor: pointer; pointer-events: all; }
 .map-hotspot:hover,.map-hotspot:focus-visible { fill: rgba(255,255,255,.28); stroke: #f5f1d7; outline: none; }
 .map-hotspot.is-active { fill: rgba(255,241,153,.42); stroke: #9b2f52; stroke-width: 7; }
@@ -215,7 +249,7 @@ footer { padding: 22px 24px 32px; text-align: center; color: #766d63; border-top
   .summary { grid-template-columns: 1fr 1fr; }
   th:first-child, td:first-child { width: 155px; }
   .year-map-heading { align-items: start; flex-direction: column; }
-  .year-map-stage { width: 1250px; }
+  .year-map-toolbar span { width: 100%; }
   .text-map-link-control { align-items: flex-start; flex-direction: column; gap: 4px; }
   .text-map-link-control small { text-align: left; }
 }
