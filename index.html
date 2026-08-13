@@ -29,7 +29,7 @@
             <option value="eastern-jin" disabled>東晉（待建）</option>
             <option value="liu-song" disabled>劉宋（待建）</option>
             <option value="southern-qi" disabled>蕭齊（待建）</option>
-            <option value="southern-liang" disabled>蕭梁（待建）</option>
+            <option value="southern-liang">蕭梁</option>
             <option value="chen">南陳</option>
           </select>
         </label>
@@ -144,5 +144,12 @@
   <script src="data/chen-map-dynamic.js?v=20260811"></script>
   <script src="data/chen-map-588.js?v=20260811"></script>
   <script src="app.js?v=20260811"></script>
+  <script>
+document.getElementById('dynastySelect').addEventListener('change', function () {
+  if (this.value === 'southern-liang') {
+    window.location.href = 'liang.html';
+  }
+});
+</script>
 </body>
 </html>
