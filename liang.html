@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>蕭梁年末州郡縣表（502—557）</title>
+<link rel="stylesheet" href="liang.css">
+</head>
+<body>
+<header class="site-header">
+  <div>
+    <a class="back" href="index.html">← 返回西晉／南陳主頁</a>
+    <h1>蕭梁年末州—郡—縣</h1>
+    <p>502—557 · 州郡逐年復原；縣依齊末與558年陳代關係靜態附入</p>
+  </div>
+</header>
+<main>
+<section class="controls panel">
+  <div class="control"><label for="yearSelect">年份</label><select id="yearSelect"></select></div>
+  <div class="control"><label for="stateFilter">州</label><select id="stateFilter"><option value="">全部州</option></select></div>
+  <div class="control grow"><label for="searchInput">檢索</label><input id="searchInput" placeholder="州、郡、縣、封君或刺史"></div>
+  <label class="check"><input type="checkbox" id="showUncertain" checked> 顯示存疑建置</label>
+</section>
+
+<section class="method panel">
+  <h2>本頁口徑</h2>
+  <p id="methodText"></p>
+  <div class="legend">
+    <span><u>下劃線</u>＝僑置州郡縣</span><span><em>斜體／※</em>＝年代或承襲存疑</span>
+    <span class="badge mourning">服喪</span><span class="badge fief">封國</span><span class="badge governor">方鎮</span>
+  </div>
+</section>
+
+<section class="stats" id="stats"></section>
+
+<section class="map-panel panel">
+  <div class="section-head">
+    <div><h2>CHGIS 基準地圖</h2><p id="mapCaption"></p></div>
+    <div class="map-actions"><button id="fitMap">適合視窗</button><button id="zoomIn">＋</button><button id="zoomOut">－</button></div>
+  </div>
+  <div class="map-viewport" id="mapViewport"><img id="liangMap" alt="蕭梁 CHGIS 基準地圖"></div>
+  <p class="caveat">地圖只作鄰近年份空間參考，不把 534／555 年邊界外推為逐年精確疆域。</p>
+</section>
+
+<section class="review panel">
+  <div class="section-head">
+    <div><h2>縣級人工校勘</h2><p><strong id="reviewCount"></strong> 個梁實縣條目尚未唯一確認所屬郡；它們不會被強行放入任何郡。</p></div>
+    <a class="button-link" id="downloadReview" href="data/蕭梁未確認縣郡歸屬.xlsx" download>下載人工判斷 Excel</a>
+  </div>
+</section>
+
+<section id="results"></section>
+
+<section id="unmatched" class="panel unmatched"></section>
+</main>
+
+<script src="data/liang-data.js"></script>
+<script src="data/liang-governors.js"></script>
+<script src="data/liang-county-overlay.js"></script>
+<script src="data/liang-fiefs.js"></script>
+<script src="liang-app.js?v=20260813"></script>
+</body>
+</html>
