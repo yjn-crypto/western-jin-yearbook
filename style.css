@@ -386,6 +386,30 @@ body[data-theme="metal"] {
   --theme-notice: #f2f1ec;
   --theme-border: #9c927e;
 }
+body[data-theme="water"] {
+  --accent: #385f78;
+  --theme-dark: #263f50;
+  --theme-mid: #486d82;
+  --theme-pale: #e1eaf0;
+  --theme-notice: #edf5f7;
+  --theme-border: #7897a7;
+}
+body[data-theme="wood"] {
+  --accent: #476d4d;
+  --theme-dark: #304b35;
+  --theme-mid: #587b59;
+  --theme-pale: #e3ece0;
+  --theme-notice: #f0f6eb;
+  --theme-border: #839d78;
+}
+body[data-theme="fire"] {
+  --accent: #98423a;
+  --theme-dark: #6d2d29;
+  --theme-mid: #a54e42;
+  --theme-pale: #f1e1dc;
+  --theme-notice: #fff0e8;
+  --theme-border: #bd7467;
+}
 body[data-theme="earth"] {
   --accent: #8b5b26;
   --theme-dark: #69451f;
