@@ -5,7 +5,7 @@
   --muted: #6e665d;
   --line: #d9d0c1;
   --accent: #7a2e2e;
-  --changed: #b42318;
+  --changed: #302b27;
   --shadow: 0 8px 28px rgba(47, 37, 27, .08);
   --serif: "Noto Serif SC", "Source Han Serif SC", "Songti SC", SimSun, serif;
   --kai: KaiTi, STKaiti, "Kaiti SC", "楷体", serif;
@@ -69,7 +69,7 @@ select:focus, input:focus { outline: 2px solid rgba(122,46,46,.25); border-color
 .legend { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 12px; padding-top: 10px; border-top: 1px solid #e5ded3; color: var(--muted); font-size: .86rem; }
 .legend i { font-style: normal; margin-right: 4px; }
 .legend-kingdom { font-family: var(--kai); font-weight: 700; }
-.legend-change { color: var(--changed); font-weight: 700; }
+.legend-change { color: inherit; font-weight: 700; }
 
 .notice {
   margin: 0 0 16px;
@@ -190,7 +190,7 @@ select:focus, input:focus { outline: 2px solid rgba(122,46,46,.25); border-color
 }
 .change-panel h2, .method-note h2 { margin: 0 0 8px; font-size: 1.15rem; }
 .change-groups { display: flex; flex-wrap: wrap; gap: 8px 16px; }
-.change-groups span { color: var(--changed); }
+.change-groups span { color: inherit; }
 
 .results { display: grid; gap: 20px; }
 .state-card {
@@ -218,7 +218,7 @@ th:first-child, td:first-child { width: 210px; border-right: 1px solid #e4ddd2; 
 tr:last-child td { border-bottom: 0; }
 .pref-name { font-weight: 700; font-size: 1.02rem; }
 .kingdom { font-family: var(--kai); font-weight: 700; letter-spacing: .04em; }
-.changed { color: var(--changed) !important; font-weight: 700; }
+.changed { font-weight: 700; }
 .uncertain::after { content: "※"; font-size: .7em; vertical-align: super; margin-left: 2px; color: #9b6a30; }
 .type-badge {
   display: inline-block;
@@ -291,7 +291,7 @@ footer { padding: 22px 24px 32px; text-align: center; color: #766d63; border-top
 }
 .citation-link:hover { text-decoration: underline; }
 .citation-link:focus-visible { outline: 2px solid rgba(122,46,46,.35); outline-offset: 2px; }
-.change-index-item { display: inline-flex; align-items: baseline; color: var(--changed); }
+.change-index-item { display: inline-flex; align-items: baseline; color: inherit; font-weight: 700; }
 body.modal-open { overflow: hidden; }
 .source-modal {
   position: fixed;
@@ -314,7 +314,7 @@ body.modal-open { overflow: hidden; }
   padding: 22px 24px 24px;
 }
 .source-modal-panel h2 { margin: 0 42px 6px 0; font-size: 1.25rem; }
-.source-modal-summary { margin: 0 0 14px; color: var(--changed); font-weight: 700; }
+.source-modal-summary { margin: 0 0 14px; color: var(--ink); font-weight: 700; }
 .source-modal-close {
   position: absolute;
   top: 10px;
@@ -354,6 +354,33 @@ body.modal-open { overflow: hidden; }
 }
 .fief-detail-button:hover { color: var(--accent); text-decoration: underline; }
 .fief-detail-button:focus-visible { outline: 2px solid rgba(122,46,46,.35); outline-offset: 2px; }
+.fief-detail-button.fief-badge {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 1px 7px;
+  border: 1px solid #cfb9dc;
+  border-radius: 999px;
+  color: #603b75;
+  background: #ece0f3;
+  line-height: 1.45;
+  vertical-align: .08em;
+}
+.fief-detail-button.fief-badge:hover {
+  border-color: #a987ba;
+  color: #4e2d63;
+  background: #e4d2ed;
+  text-decoration: none;
+}
+.fief-detail-button.fief-badge.editorial-uncertain {
+  border-color: #d5b4ad;
+  color: #7b3d31;
+  background: #f0e0dd;
+}
+.fief-detail-button.fief-badge.mourning {
+  border-color: #dec199;
+  color: #7d5221;
+  background: #f6e5cc;
+}
 .ruler-year { font-size: .69rem; }
 .county-fief-note {
   color: #7f5839;
@@ -364,6 +391,7 @@ body.modal-open { overflow: hidden; }
 
 @media print {
   .fief-detail-button { color: #000; text-decoration: none; }
+  .fief-detail-button.fief-badge { border-color: #777; color: #000; background: transparent; }
 }
 
 /* 第四版：五等爵資料層。沿用既有色彩、字體與佈局。 */
@@ -444,7 +472,7 @@ body[data-theme] input:focus { outline-color: color-mix(in srgb, var(--accent) 2
 .virtual-fief-item:nth-child(odd) { border-right: 1px solid #e4ddd2; }
 .virtual-fief-reason { display: block; color: var(--muted); font-size: .75rem; }
 .chen-fief-note { color: #7f5839; font-size: .68rem; }
-.chen-fief-note.changed { color: var(--changed); }
+.chen-fief-note.changed { font-weight: 700; }
 .chen-fief-note.editorial-uncertain { font-style: italic; opacity: .68; text-decoration-style: dotted; }
 .chen-fief-note.mourning { color: #6e655c; font-style: normal; }
 .fief-uncertain-legend { font-style: italic; opacity: .72; }
@@ -482,7 +510,7 @@ body[data-theme] input:focus { outline-color: color-mix(in srgb, var(--accent) 2
   text-decoration-skip-ink: auto;
   color: inherit;
 }
-.changed.qiao { color: var(--change); }
+.changed.qiao { font-weight: 700; }
 .legend-qiao {
   font-style: normal;
   text-decoration-line: underline;
@@ -497,7 +525,7 @@ body[data-theme] input:focus { outline-color: color-mix(in srgb, var(--accent) 2
   color: var(--ink-soft);
 }
 
-/* 南陳方鎮長官：有年表資料的州名可點擊，樣式維持原州名視覺。 */
+/* 南陳都督/刺史：主表逐人分行，州名與標題均保留完整考證入口。 */
 .state-governor-name {
   appearance: none;
   border: 0;
@@ -512,6 +540,33 @@ body[data-theme] input:focus { outline-color: color-mix(in srgb, var(--accent) 2
 }
 .state-governor-name:hover { text-decoration: underline; text-underline-offset: .18em; }
 .state-governor-name:focus-visible { outline: 2px solid color-mix(in srgb, var(--accent) 35%, transparent); outline-offset: 3px; }
+
+.state-governor-box {
+  display: grid;
+  grid-template-columns: 112px minmax(0,1fr);
+  gap: 12px;
+  align-items: start;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--line);
+  background: #f3f8f2;
+}
+.state-governor-label {
+  appearance: none;
+  border: 1px solid #b7d0b9;
+  border-radius: 999px;
+  padding: 2px 9px;
+  color: #315a36;
+  background: #e1eee2;
+  font: inherit;
+  font-size: .76rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.state-governor-label:hover { border-color: #7a9b75; background: #d6e7d7; }
+.state-governor-label:focus-visible { outline: 2px solid color-mix(in srgb, #315a36 35%, transparent); outline-offset: 2px; }
+.state-governor-entries { min-width: 0; }
+.state-governor-entries p { margin: 0; font-size: .84rem; line-height: 1.65; }
+.state-governor-entries p + p { margin-top: 3px; padding-top: 3px; border-top: 1px dotted #cfddcf; }
 
 .governor-extra-card {
   background: var(--paper-2);
@@ -538,7 +593,11 @@ body[data-theme] input:focus { outline-color: color-mix(in srgb, var(--accent) 2
 .governor-extra-item:nth-child(odd) { border-right: 1px solid #e4ddd2; }
 .governor-extra-button { display: inline; color: var(--accent); font-size: .95rem; font-weight: 700; }
 .governor-extra-summary { display: block; margin-top: 3px; color: var(--muted); font-size: .76rem; line-height: 1.5; }
+.governor-extra-summary p { margin: 0; }
+.governor-extra-summary p + p { margin-top: 2px; }
 @media (max-width: 650px) {
+  .state-governor-box { grid-template-columns: 1fr; gap: 7px; }
+  .state-governor-label { justify-self: start; }
   .governor-extra-list { grid-template-columns: 1fr; }
   .governor-extra-item:nth-child(odd) { border-right: 0; }
 }

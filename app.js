@@ -270,10 +270,10 @@
     const summary=record.summary_lines || [];
     const evidence=record.evidence_lines || [];
     return {
-      title:'方鎮長官資料',
+      title:'都督/刺史與方鎮史料',
       summary:`${formatYearLabel(year)} · ${record.state}`,
       paragraphs:[
-        summary.length ? `年表所列：${summary.join('；')}` : '本年年表未列可考長官。',
+        ...(summary.length ? summary.map((line,index)=>`${index===0?'年表所列：':'　'}${line}`) : ['本年年表未列可考長官。']),
         ...((record.editorial_notes||[]).map((t)=>`人工校勘：${t}`)),
         ...(evidence.length ? ['相關考證與史料：', ...evidence] : [])
       ],
@@ -450,18 +450,28 @@
     const b=document.createElement('button'); b.type='button'; b.className=['fief-detail-button',className].filter(Boolean).join(' '); b.textContent=text; b.dataset.info=id; b.title=info.summary||'查看資料'; return b;
   }
 
+  function renderGovernorBox(record,year) {
+    const lines=(record?.summary_lines||[]).filter((line)=>String(line||'').trim());
+    if (!lines.length) return null;
+    const box=document.createElement('section');box.className='state-governor-box';box.setAttribute('aria-label',`${record.state}都督與刺史`);
+    const label=document.createElement('button');label.type='button';label.className='state-governor-label';label.textContent='都督/刺史';label.dataset.info=registerAuxInfo(chenGovernorInfo(record,year));label.title='展開本年完整方鎮考證與史料';box.appendChild(label);
+    const entries=document.createElement('div');entries.className='state-governor-entries';
+    for (const line of lines) {const p=document.createElement('p');p.textContent=line;entries.appendChild(p);}
+    box.appendChild(entries);return box;
+  }
+
   function appendFiefDetails(container,item,level,year) {
     if (currentDynasty.key==='western-jin') {
-      if (item.ruler) container.appendChild(createAuxButton(item.ruler.label,jinRulerInfo(item.ruler,year),'ruler-year'));
-      for (const match of item.fiveRankFiefs||[]) container.appendChild(createAuxButton(jinFiveRankLabel(match),jinFiveRankInfo(match,year),'five-rank-note'));
+      if (item.ruler) container.appendChild(createAuxButton(item.ruler.label,jinRulerInfo(item.ruler,year),'fief-badge ruler-year'));
+      for (const match of item.fiveRankFiefs||[]) container.appendChild(createAuxButton(jinFiveRankLabel(match),jinFiveRankInfo(match,year),'fief-badge five-rank-note'));
       if (level==='county' && item.fiefAnnotation) {
         container.appendChild(createAuxButton(item.fiefAnnotation.label || '封國',{
           title:'縣級封國資料',summary:`${item.name}：${item.fiefAnnotation.label || '封國'}`,
           paragraphs:[item.fiefAnnotation.note || '本書正文保存此縣的封國性質。'],sources:[item.source]
-        },'county-fief-note'));
+        },'fief-badge county-fief-note'));
       }
     } else {
-      for (const match of item.chenFiefs||[]) { const cls=['chen-fief-note',match.changed?'changed':'',match.display?.uncertain?'editorial-uncertain':'',match.display?.mourning?'mourning':''].filter(Boolean).join(' '); container.appendChild(createAuxButton(chenFiefText(match),chenFiefInfo(match,year),cls)); }
+      for (const match of item.chenFiefs||[]) { const cls=['fief-badge','chen-fief-note',match.changed?'changed':'',match.display?.uncertain?'editorial-uncertain':'',match.display?.mourning?'mourning':''].filter(Boolean).join(' '); container.appendChild(createAuxButton(chenFiefText(match),chenFiefInfo(match,year),cls)); }
     }
   }
 
@@ -469,7 +479,7 @@
     const wrap=document.createElement('span'); wrap.className='name-with-citation';
     if (item.id) wrap.dataset.entityId=item.id;
     const name=document.createElement(info?'button':'span');
-    if (info) { name.type='button'; name.dataset.info=registerAuxInfo(info); name.title='查看本州方鎮長官與考證'; }
+    if (info) { name.type='button'; name.dataset.info=registerAuxInfo(info); name.title='查看本州都督/刺史與方鎮考證'; }
     name.textContent=item.name; name.className=[className,info?'state-governor-name':'',item.kingdom?'kingdom':'',item.change?'changed':'',item.uncertain?'uncertain':'',item.qiao?'qiao':'',item.timeless&&!item.qiao?'no-date':''].filter(Boolean).join(' '); wrap.appendChild(name);
     const citation=createCitationButton(item.change); if (citation) wrap.appendChild(citation);
     const annotation=createCitationButton(item.annotation); if (annotation) wrap.appendChild(annotation);
@@ -510,6 +520,7 @@
     if (currentDynasty.key==='chen' && state.group!=='chen') { const badge=document.createElement('span'); badge.className='regime-badge'; badge.textContent=state.groupLabel; h2.appendChild(badge); }
     const meta=document.createElement('span'); meta.className='state-meta'; const prefCount=state.rows.filter((r)=>!r.directCounties).length; meta.textContent=`${prefCount} 郡級政區`; if(state.rows.some((r)=>r.directCounties)) meta.textContent+=`，另有郡無考縣`;
     heading.append(h2,meta); article.appendChild(heading);
+    if (currentDynasty.key==='chen' && state.governor) article.appendChild(renderGovernorBox(state.governor,year));
     const wrap=document.createElement('div'); wrap.className='table-wrap'; const table=document.createElement('table');
     const thead=document.createElement('thead'), hr=document.createElement('tr');
     for (const label of ['郡、國及郡級政區','所屬縣級政區']) {const th=document.createElement('th');th.textContent=label;hr.appendChild(th);} thead.appendChild(hr);table.appendChild(thead);
@@ -545,7 +556,7 @@
     const list=document.createElement('div');list.className='virtual-fief-list';
     for (const match of visible) {
       const item=document.createElement('div');item.className='virtual-fief-item';
-      { const cls=['chen-fief-note',match.changed?'changed':'',match.display?.uncertain?'editorial-uncertain':'',match.display?.mourning?'mourning':''].filter(Boolean).join(' '); item.appendChild(createAuxButton(`${match.phase.fief}國　${chenFiefText(match)}`,chenFiefInfo(match,year),cls)); }
+      { const cls=['fief-badge','chen-fief-note',match.changed?'changed':'',match.display?.uncertain?'editorial-uncertain':'',match.display?.mourning?'mourning':''].filter(Boolean).join(' '); item.appendChild(createAuxButton(`${match.phase.fief}國　${chenFiefText(match)}`,chenFiefInfo(match,year),cls)); }
       const reason=document.createElement('span');reason.className='virtual-fief-reason';reason.textContent=match.reason;item.appendChild(reason);list.appendChild(item);
     }
     card.appendChild(list);return card;
@@ -562,7 +573,9 @@
     for (const record of visible) {
       const item=document.createElement('div');item.className='governor-extra-item';
       item.appendChild(createAuxButton(record.state,chenGovernorInfo(record,year),'governor-extra-button'));
-      const brief=document.createElement('span');brief.className='governor-extra-summary';brief.textContent=(record.summary_lines||[]).join('；');item.appendChild(brief);
+      const brief=document.createElement('div');brief.className='governor-extra-summary';
+      for (const line of record.summary_lines||[]) {const p=document.createElement('p');p.textContent=line;brief.appendChild(p);}
+      item.appendChild(brief);
       list.appendChild(item);
     }
     card.appendChild(list);return card;
@@ -948,11 +961,11 @@
       '宗室王國只在郡級政區旁標示王號與姓名，不計算元年、二年。郡公附於郡級，開國公侯伯子男附於縣級，標作公國、侯國、伯國、子國、男國。點擊小字可查看封爵年表、承襲與資料限制。封君卒後若襲封年份無明文而親屬關係、卒年可確，原則上以第三年記新封君，中間兩年記世子服喪；史料明載優先。最後可確年份以後材料不足者，以斜體表示存疑。',
       '封爵資料只是制度注記。南朝封君通常不到封國，網頁不以爵國名稱反推實際行政機構；只有本年能唯一對應一個南陳郡或縣時，才把爵號附在該政區旁。但是，儘管在行政上，封君已經基本喪失了對封國的干預，但封國在制度、禮儀、經濟等諸多層面的實在性確是確定無疑的。因此，我們認為，在唐朝不開國以前，仍有必要在郡縣旁邊標註封國與封君。',
       '陳代僑郡縣另依本書第十編侨州郡縣考表補充。梁、陳欄中，○所標為梁，△或明確屬陳者用於陳代判定。陳代不再把無實土侨州作為州級政區另列，州名及原有統屬不因此改變；僑郡、僑縣名稱以下劃線標示。若正文未標年代而原本以暗色顯示，一旦由侨置表確認為僑郡縣，以下劃線優先，不再變暗。點擊其註釋可見「原屬」與考表依據。',
-      '方鎮長官另據魯力《魏晉南北朝方鎮年表新編·宋齊梁陳卷》之「陳方鎮年表」。該表以年為經、州為緯，州下列都督、刺史等人物，並記官銜、月份、遷轉及考證。本頁將有資料的州名設為可點擊；方鎮表有長官而本年政區表未列的州，另置「方鎮表另見之州」，只作政治史資料提示，不據此直接增改行政區劃。',
+      '方鎮長官另據魯力《魏晉南北朝方鎮年表新編·宋齊梁陳卷》之「陳方鎮年表」。該表以年為經、州為緯，州下列都督、刺史等人物，並記官銜、月份、遷轉及考證。本頁在各州表內以「都督/刺史」逐人分行列出年表原有的人物、時間與官銜；州名及「都督/刺史」標題均可點擊展開完整考證。方鎮表有長官而本年政區表未列的州，另置「方鎮表另見之州」，只作政治史資料提示，不據此直接增改行政區劃。',
       '明州、利州等正文只知所領縣而所領郡乏考者，表格標為「郡無考」，不使用後世概念「州直領」。588年加入地形行政圖：治所與可用行政界線以CHGIS V6為主，V4補州界、V5補郡界；沒有坐標者不臆造位置，沒有邊界但有治所者以治所點承載州郡資訊。政權底色暫以ChinaXMap 572年疆域近似代替並明確標註，並非精確的588年復原。'
     ] : [
       '頁面依據《中國行政區劃通史·三國兩晉南朝卷（上）》西晉州郡縣沿革重建，州、郡、縣均按原文次序排列。',
-      '年末口徑依本編凡例處理；與上一年年末相比的新置、復置、廢省、改名、改屬等變化以紅色和右上角註釋標示。',
+      '年末口徑依本編凡例處理；與上一年年末相比的新置、復置、廢省、改名、改屬等變化以加粗和右上角註釋標示。',
       '郡級宗室王國補列國主及年次；五等爵封國另以小字標示，起訖或承襲不完整者明示推定。'
     ];
     for(const t of paras){const p=document.createElement('p');p.textContent=t;box.appendChild(p);}
@@ -979,7 +992,7 @@
     renderYearMap(year,current);
     $('statusText').textContent=baseline
       ? `${formatYearLabel(year)}為${currentDynasty.label}資料起始年，不以缺失的前一年判定變動；州、郡、縣保留原書次序。`
-      : `${formatYearLabel(year)}所示為年末狀態；與${formatYearLabel(year-1)}年末相比的行政區劃變動以紅色及註釋標示。${currentDynasty.key==='chen'?'陳代資料屬OCR初抽取與輯考重建；州名可點擊查看本年《方鎮年表》長官資料，後梁、王琳只在政權存續年份顯示。':''}`;
+      : `${formatYearLabel(year)}所示為年末狀態；與${formatYearLabel(year-1)}年末相比的行政區劃變動以加粗及註釋標示。${currentDynasty.key==='chen'?'陳代資料屬OCR初抽取與輯考重建；各州「都督/刺史」逐人分行列示，州名可點擊查看完整方鎮考證，後梁、王琳只在政權存續年份顯示。':''}`;
     document.title=`${currentDynasty.label}·${formatYearLabel(year)}年末州郡縣表`;
   }
 
