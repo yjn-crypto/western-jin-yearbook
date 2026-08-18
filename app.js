@@ -648,13 +648,54 @@
     const b=document.createElement('button'); b.type='button'; b.className=['fief-detail-button',className].filter(Boolean).join(' '); b.textContent=text; b.dataset.info=id; b.title=info.summary||'查看資料'; return b;
   }
 
+  function liangPersonColorMatches(text,year) {
+    if (currentDynasty.key!=='southern-liang') return [];
+    const value=String(text||''),candidates=[];
+    for (const person of window.LIANG_PERSON_COLORS?.people||[]) {
+      const yearStyle=person.years?.[String(year)];
+      if (!yearStyle) continue;
+      const seen=new Set();
+      for (const alias of [person.name,...(person.aliases||[])]) {
+        if (!alias||seen.has(alias)) continue;seen.add(alias);
+        let from=0,index;
+        while ((index=value.indexOf(alias,from))!==-1) {candidates.push({index,length:alias.length,text:alias,person,yearStyle});from=index+alias.length;}
+      }
+      if (person.name?.startsWith('蕭')) {
+        const given=person.name.slice(1).replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+        const royalPattern=new RegExp(`[\\u3400-\\u9fff]{1,8}王${given}`,'gu');
+        for (const match of value.matchAll(royalPattern)) candidates.push({index:match.index,length:match[0].length,text:match[0],person,yearStyle});
+      }
+    }
+    candidates.sort((a,b)=>a.index-b.index||b.length-a.length);
+    const accepted=[];let end=-1;
+    for (const match of candidates) {if(match.index<end)continue;accepted.push(match);end=match.index+match.length;}
+    return accepted;
+  }
+
+  function appendLiangPersonColors(container,text,year) {
+    const value=String(text||''),matches=liangPersonColorMatches(value,year);
+    if (!matches.length) {container.appendChild(document.createTextNode(value));return;}
+    let cursor=0;
+    for (const match of matches) {
+      if(match.index>cursor)container.appendChild(document.createTextNode(value.slice(cursor,match.index)));
+      const span=document.createElement('span');span.className='liang-person-color';span.style.color=match.yearStyle.color;
+      span.dataset.category=match.yearStyle.category;span.title=`${match.person.name}：${match.yearStyle.category}（據梁代刺史表，${year}年）`;span.textContent=match.text;container.appendChild(span);
+      cursor=match.index+match.length;
+    }
+    if(cursor<value.length)container.appendChild(document.createTextNode(value.slice(cursor)));
+  }
+
+  function createLiangColoredAuxButton(text,info,className='',year=null) {
+    const button=createAuxButton('',info,className);appendLiangPersonColors(button,text,year);button.setAttribute('aria-label',text);return button;
+  }
+
   function renderGovernorBox(record,year) {
     const lines=(record?.summary_lines||[]).filter((line)=>String(line||'').trim());
     if (!lines.length) return null;
     const box=document.createElement('section');box.className='state-governor-box';box.setAttribute('aria-label',`${record.state}都督與刺史`);
     const label=document.createElement('button');label.type='button';label.className='state-governor-label';label.textContent='都督/刺史';label.dataset.info=registerAuxInfo(governorInfo(record,year));label.title='展開本年完整方鎮考證與史料';box.appendChild(label);
     const entries=document.createElement('div');entries.className='state-governor-entries';
-    for (const line of lines) {const p=document.createElement('p');p.textContent=line;entries.appendChild(p);}
+    for (const line of lines) {const p=document.createElement('p');if(currentDynasty.key==='southern-liang')appendLiangPersonColors(p,line,year);else p.textContent=line;entries.appendChild(p);}
     box.appendChild(entries);return box;
   }
 
@@ -669,7 +710,7 @@
         },'fief-badge county-fief-note'));
       }
     } else if (currentDynasty.key==='southern-liang') {
-      for (const match of item.liangFiefs||[]) {const cls=['fief-badge','liang-fief-note',match.changed?'changed':'',match.status==='uncertain'?'editorial-uncertain':'',match.status==='mourning'?'mourning':''].filter(Boolean).join(' ');container.appendChild(createAuxButton(liangFiefText(match),liangFiefInfo(match,year),cls));}
+      for (const match of item.liangFiefs||[]) {const cls=['fief-badge','liang-fief-note',match.changed?'changed':'',match.status==='uncertain'?'editorial-uncertain':'',match.status==='mourning'?'mourning':''].filter(Boolean).join(' ');container.appendChild(createLiangColoredAuxButton(liangFiefText(match),liangFiefInfo(match,year),cls,year));}
     } else {
       for (const match of item.chenFiefs||[]) { const cls=['fief-badge','chen-fief-note',match.changed?'changed':'',match.display?.uncertain?'editorial-uncertain':'',match.display?.mourning?'mourning':''].filter(Boolean).join(' '); container.appendChild(createAuxButton(chenFiefText(match),chenFiefInfo(match,year),cls)); }
     }
@@ -768,7 +809,7 @@
     const list=document.createElement('div');list.className='virtual-fief-list';
     for (const match of visible) {
       const item=document.createElement('div');item.className='virtual-fief-item';
-      { const cls=['fief-badge',currentDynasty.key==='southern-liang'?'liang-fief-note':'chen-fief-note',match.changed?'changed':'',match.display?.uncertain?'editorial-uncertain':'',match.display?.mourning?'mourning':''].filter(Boolean).join(' '); item.appendChild(createAuxButton(`${match.phase.fief}國　${activeFiefText(match)}`,activeFiefInfo(match,year),cls)); }
+      { const cls=['fief-badge',currentDynasty.key==='southern-liang'?'liang-fief-note':'chen-fief-note',match.changed?'changed':'',match.display?.uncertain?'editorial-uncertain':'',match.display?.mourning?'mourning':''].filter(Boolean).join(' '); const label=`${match.phase.fief}國　${activeFiefText(match)}`;item.appendChild(currentDynasty.key==='southern-liang'?createLiangColoredAuxButton(label,activeFiefInfo(match,year),cls,year):createAuxButton(label,activeFiefInfo(match,year),cls)); }
       const reason=document.createElement('span');reason.className='virtual-fief-reason';reason.textContent=match.reason;item.appendChild(reason);list.appendChild(item);
     }
     card.appendChild(list);return card;
@@ -786,7 +827,7 @@
       const item=document.createElement('div');item.className='governor-extra-item';
       item.appendChild(createAuxButton(record.state,governorInfo(record,year),'governor-extra-button'));
       const brief=document.createElement('div');brief.className='governor-extra-summary';
-      for (const line of record.summary_lines||[]) {const p=document.createElement('p');p.textContent=line;brief.appendChild(p);}
+      for (const line of record.summary_lines||[]) {const p=document.createElement('p');if(currentDynasty.key==='southern-liang')appendLiangPersonColors(p,line,year);else p.textContent=line;brief.appendChild(p);}
       item.appendChild(brief);
       list.appendChild(item);
     }
@@ -1211,7 +1252,8 @@
       '僑州、僑郡、僑縣以下劃線顯示；能由第十編僑州郡縣考表精確匹配者，可點擊註釋查看原屬州郡與考表頁序。梁代保留僑州，不套用南陳“不列無實土僑州”的規則。',
       '宗室王國、郡公與縣級開國爵依蕭梁封爵資料附於同名政區；只有本年能唯一匹配的政區才直接附入，無同名政區或存在多個同名政區者集中列入「未唯一定位的蕭梁封爵」。封君起訖不明、承襲空檔與服喪仍按原頁規則明示。',
       '都督、刺史等長官依《魏晉南北朝方鎮年表新編》梁方鎮年表逐年附入各州，每位人物獨佔一行；點擊州名或「都督/刺史」可查看年表頁序。方鎮表有條目而本年政區表沒有唯一對應州者，另列「方鎮表另見之州」，不據官銜反推行政建置。',
-      '地圖僅顯示534年與555年兩個CHGIS基準斷面：544年以前選用534年圖，545年以後選用555年圖。它們只提供鄰近年份的空間參考，不把單年邊界外推為502—557年逐年精確疆域。'
+      '地圖僅顯示534年與555年兩個CHGIS基準斷面：544年以前選用534年圖，545年以後選用555年圖。它們只提供鄰近年份的空間參考，不把單年邊界外推為502—557年逐年精確疆域。',
+      '都督／刺史與封國國君的人名色彩取自「梁代職官查詢換算系統」刺史年表：皇弟紅、皇子深紅、庶姓綠、皇弟皇子之庶子藍、嗣王紫、疏屬褐、昭明太子諸子橙、皇太子諸子黃、蕃王洋紅、特封郡王玫紅。色彩按「人物＋年份」逐年套用，同一人物跨年身份變化時保留各年的來源顏色；該年表中當年未見的人物保持原樣。只有同一人物同一年顏色互相衝突時，才不自動著色並等待人工覆核。'
     ] : [
       '頁面依據《中國行政區劃通史·三國兩晉南朝卷（上）》西晉州郡縣沿革重建，州、郡、縣均按原文次序排列。',
       '年末口徑依本編凡例處理；與上一年年末相比的新置、復置、廢省、改名、改屬等變化以加粗和右上角註釋標示。',
@@ -1260,6 +1302,7 @@
     const hasSouthernLayers=currentDynasty.key==='chen'||currentDynasty.key==='southern-liang';
     const qiaoLegend=$('qiaoLegend'); if(qiaoLegend) qiaoLegend.hidden=!hasSouthernLayers;
     const governorLegend=$('governorLegend'); if(governorLegend) governorLegend.hidden=!hasSouthernLayers;
+    const liangColorLegend=$('liangColorLegend');if(liangColorLegend)liangColorLegend.hidden=currentDynasty.key!=='southern-liang';
     if(liangReviewPanel)liangReviewPanel.hidden=currentDynasty.key!=='southern-liang';
     if(liangReviewCount)liangReviewCount.textContent=window.LIANG_COUNTY_OVERLAY?.meta?.manual_review||188;
     const url=new URL(window.location.href);if(currentDynasty.key==='western-jin')url.searchParams.delete('dynasty');else url.searchParams.set('dynasty',currentDynasty.key);history.replaceState(null,'',url);
