@@ -639,3 +639,21 @@ body[data-theme] input:focus { outline-color: color-mix(in srgb, var(--accent) 2
   .liang-review-panel { align-items: stretch; flex-direction: column; }
   .liang-review-panel a { align-self: flex-start; }
 }
+
+.liang-color-key {
+  display: inline-block;
+  padding: 0 5px;
+  border-bottom: 3px solid transparent;
+  border-image: linear-gradient(90deg,#ff0000,#c00000,#00b050,#0070c0,#7030a0,#632523,#ffc000,#ffff00,#cc00ff,#d60093) 1;
+  color: var(--ink);
+  font-style: normal;
+  font-weight: 700;
+}
+.liang-person-color {
+  font-weight: 700;
+  text-decoration: underline dotted color-mix(in srgb, currentColor 55%, transparent);
+  text-underline-offset: .16em;
+}
+.liang-person-color[data-category="皇太子諸子"] {
+  text-shadow: 0 0 1px #675700, 0 0 2px #675700;
+}
