@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>漢魏六朝年末州郡縣表</title>
   <meta name="description" content="依據《中國行政區劃通史》逐年重建漢魏六朝年末州郡縣，並附封國資料。">
-  <link rel="stylesheet" href="style.css?v=20260816">
+  <link rel="stylesheet" href="style.css?v=20260817">
 </head>
 <body data-theme="metal">
   <header class="site-header">
@@ -99,12 +99,20 @@
           <svg id="yearMapOverlay" class="year-map-overlay" role="img" aria-label="588年州郡縣治所可點擊定位圖層"></svg>
         </div>
       </div>
-      <p class="year-map-note">558—587年共用一份地形底圖，並按所選年份動態繪製州郡縣、封國及可用邊界；588年預設顯示人工覆核原圖，放大後才載入約31 MB超高清檔案。政權疆域仍以 ChinaXMap 572年斷面近似，州郡縣治所與邊界以CHGIS V6為主、V4／V5補足。缺坐標者不臆測，傳承不明封國仍按封國顯示。</p>
+      <p id="yearMapNote" class="year-map-note">558—587年共用一份地形底圖，並按所選年份動態繪製州郡縣、封國及可用邊界；588年預設顯示人工覆核原圖，放大後才載入約31 MB超高清檔案。政權疆域仍以 ChinaXMap 572年斷面近似，州郡縣治所與邊界以CHGIS V6為主、V4／V5補足。缺坐標者不臆測，傳承不明封國仍按封國顯示。</p>
     </section>
 
     <section id="changePanel" class="change-panel" hidden>
       <h2>本年變動索引</h2>
       <div id="changeList"></div>
+    </section>
+
+    <section id="liangReviewPanel" class="liang-review-panel" hidden>
+      <div>
+        <h2>縣級人工校勘</h2>
+        <p><strong id="liangReviewCount">188</strong> 個梁實縣條目尚未唯一確認所屬郡；它們不會被強行放入任何郡。</p>
+      </div>
+      <a href="data/蕭梁未確認縣郡歸屬.xlsx" download>下載人工判斷 Excel</a>
     </section>
 
     <section id="textMapLinkControl" class="text-map-link-control" hidden aria-label="文字與地圖聯動設定">
@@ -138,18 +146,15 @@
   <script src="data/jin-data.js"></script>
   <script src="data/princes.js"></script>
   <script src="data/five-rank-fiefs.js"></script>
+  <script src="data/liang-data.js"></script>
+  <script src="data/liang-governors.js"></script>
+  <script src="data/liang-county-overlay.js"></script>
+  <script src="data/liang-fiefs.js"></script>
   <script src="data/chen-data.js"></script>
   <script src="data/chen-fiefs.js"></script>
   <script src="data/chen-governors.js"></script>
   <script src="data/chen-map-dynamic.js?v=20260811"></script>
   <script src="data/chen-map-588.js?v=20260811"></script>
-  <script src="app.js?v=20260816"></script>
-  <script>
-document.getElementById('dynastySelect').addEventListener('change', function () {
-  if (this.value === 'southern-liang') {
-    window.location.href = 'liang.html';
-  }
-});
-</script>
+  <script src="app.js?v=20260817"></script>
 </body>
 </html>

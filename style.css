@@ -422,6 +422,14 @@ body[data-theme="earth"] {
   --theme-notice: #fff5df;
   --theme-border: #b18a4e;
 }
+body[data-theme="fire"] {
+  --accent: #9a3e32;
+  --theme-dark: #6f2923;
+  --theme-mid: #a34c3d;
+  --theme-pale: #f1ded7;
+  --theme-notice: #fff0e9;
+  --theme-border: #bf7464;
+}
 body[data-theme] .site-header {
   background:
     linear-gradient(90deg, color-mix(in srgb, var(--theme-dark) 96%, black), color-mix(in srgb, var(--theme-mid) 92%, black)),
@@ -471,10 +479,10 @@ body[data-theme] input:focus { outline-color: color-mix(in srgb, var(--accent) 2
 .virtual-fief-item { padding: 10px 14px; border-bottom: 1px solid #e4ddd2; }
 .virtual-fief-item:nth-child(odd) { border-right: 1px solid #e4ddd2; }
 .virtual-fief-reason { display: block; color: var(--muted); font-size: .75rem; }
-.chen-fief-note { color: #7f5839; font-size: .68rem; }
-.chen-fief-note.changed { font-weight: 700; }
-.chen-fief-note.editorial-uncertain { font-style: italic; opacity: .68; text-decoration-style: dotted; }
-.chen-fief-note.mourning { color: #6e655c; font-style: normal; }
+.chen-fief-note, .liang-fief-note { color: #7f5839; font-size: .68rem; }
+.chen-fief-note.changed, .liang-fief-note.changed { font-weight: 700; }
+.chen-fief-note.editorial-uncertain, .liang-fief-note.editorial-uncertain { font-style: italic; opacity: .68; text-decoration-style: dotted; }
+.chen-fief-note.mourning, .liang-fief-note.mourning { color: #6e655c; font-style: normal; }
 .fief-uncertain-legend { font-style: italic; opacity: .72; }
 .regime-badge {
   display: inline-block;
@@ -600,4 +608,34 @@ body[data-theme] input:focus { outline-color: color-mix(in srgb, var(--accent) 2
   .state-governor-label { justify-self: start; }
   .governor-extra-list { grid-template-columns: 1fr; }
   .governor-extra-item:nth-child(odd) { border-right: 0; }
+}
+
+.liang-review-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin: 0 0 20px;
+  padding: 16px 18px;
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--theme-border);
+  background: var(--theme-notice);
+}
+.liang-review-panel[hidden] { display: none; }
+.liang-review-panel h2 { margin: 0 0 6px; font-size: 1.15rem; }
+.liang-review-panel p { margin: 0; color: var(--muted); font-size: .86rem; line-height: 1.65; }
+.liang-review-panel a {
+  flex: 0 0 auto;
+  padding: 8px 12px;
+  border: 1px solid var(--theme-border);
+  color: var(--accent);
+  background: var(--paper-2);
+  text-decoration: none;
+  font-size: .82rem;
+  font-weight: 700;
+}
+.liang-review-panel a:hover { background: var(--theme-pale); }
+@media (max-width: 650px) {
+  .liang-review-panel { align-items: stretch; flex-direction: column; }
+  .liang-review-panel a { align-self: flex-start; }
 }
