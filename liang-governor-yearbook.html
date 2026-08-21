@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>蕭梁刺史年表</title>
+  <meta name="description" content="依《南朝刺史、長史、司馬年表》工作簿蕭梁表段重建的502—556年逐年刺史年表。">
+  <link rel="stylesheet" href="style.css?v=20260821.1">
+  <link rel="stylesheet" href="liang-governor-yearbook.css?v=20260821.1">
+</head>
+<body data-theme="fire" class="liang-governor-yearbook-page">
+  <header class="site-header">
+    <div class="header-inner">
+      <p class="eyebrow">蕭梁方鎮 · 原表逐格重建</p>
+      <h1>蕭梁刺史年表</h1>
+      <p class="subtitle">按工作簿「蕭梁」表段原有紀年、州列、換行與附錄內容呈現；可由州郡縣表的本年刺史詳情直接定位。</p>
+    </div>
+  </header>
+
+  <main class="governor-yearbook-main">
+    <nav class="yearbook-nav" aria-label="返回與切換">
+      <button id="historyBack" type="button">返回上一頁</button>
+      <a id="mainYearbookLink" href="index.html?dynasty=southern-liang">返回蕭梁州郡縣表</a>
+    </nav>
+
+    <section class="yearbook-controls" aria-label="年表定位與檢索">
+      <label>
+        <span>定位年份</span>
+        <select id="governorYearSelect">
+          <option value="">全部年份</option>
+        </select>
+      </label>
+      <label>
+        <span>定位州</span>
+        <select id="governorStateSelect">
+          <option value="">全部州</option>
+        </select>
+      </label>
+      <label class="yearbook-search-label">
+        <span>檢索原表文字</span>
+        <input id="governorSearch" type="search" placeholder="例如：蕭宏、南梁州、長史" autocomplete="off">
+      </label>
+      <label class="check-label yearbook-match-only">
+        <input id="matchOnly" type="checkbox">
+        <span>只看命中年份</span>
+      </label>
+      <button id="resetYearbook" class="yearbook-reset" type="button">重設</button>
+    </section>
+
+    <section id="yearbookStatus" class="notice yearbook-status" aria-live="polite"></section>
+
+    <section class="yearbook-key" aria-label="人物色彩圖例">
+      <strong>人物色彩：</strong>
+      <span id="personColorLegend"></span>
+      <span class="yearbook-key-note">顏色沿用原工作簿整理出的「人物＋年份」身份；正文、月份、職掌與校勘語仍照原格文字保留。</span>
+    </section>
+
+    <div class="yearbook-table-shell" aria-label="可橫向捲動的蕭梁刺史年表">
+      <table id="liangGovernorTable" class="liang-governor-table">
+        <caption>工作簿 Sheet1「蕭梁」表段 A258:AC312</caption>
+        <thead></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <section class="method-note yearbook-method">
+      <h2>資料範圍與讀法</h2>
+      <p>本頁只採工作簿中以「蕭梁」為表頭的固定表段：26個州列、55個紀年行，涵蓋天監元年（502）至紹泰二年／太平元年（556）。中興元、二年的改朝過渡行不計入，後接南陳表段也不移入。</p>
+      <p>「附錄」仍按原格保存。從州詳情進入時，若州名屬固定州列，直接標亮該年該州格；若州名只見於附錄，則標亮該年附錄格。原表梁段未收太平二年（557），深鏈到該年時會明示資料缺口，不以南陳表段補寫。</p>
+    </section>
+  </main>
+
+  <footer><p>資料來源：使用者提供的《南朝刺史、長史、司馬年表.xlsx》工作簿，Sheet1 蕭梁表段。</p></footer>
+
+  <script src="data/liang-governor-yearbook.js?v=20260821.1"></script>
+  <script src="data/liang-person-colors.js?v=20260817"></script>
+  <script src="liang-governor-yearbook-app.js?v=20260821.1"></script>
+</body>
+</html>

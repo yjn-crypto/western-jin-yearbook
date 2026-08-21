@@ -657,3 +657,40 @@ body[data-theme] input:focus { outline-color: color-mix(in srgb, var(--accent) 2
 .liang-person-color[data-category="皇太子諸子"] {
   text-shadow: 0 0 1px #675700, 0 0 2px #675700;
 }
+
+.liang-governor-yearbook-switch {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 0 0 20px;
+  padding: 16px 18px;
+  border: 1px solid var(--theme-border);
+  border-left: 5px solid var(--accent);
+  background: linear-gradient(110deg, var(--theme-notice), var(--paper-2));
+  box-shadow: 0 4px 16px rgba(47,37,27,.045);
+}
+.liang-governor-yearbook-switch[hidden] { display: none; }
+.liang-governor-yearbook-switch h2 { margin: 0 0 4px; color: var(--accent); font-size: 1.2rem; }
+.liang-governor-yearbook-switch p { margin: 0; color: var(--muted); font-size: .84rem; }
+.liang-governor-yearbook-switch .yearbook-switch-kicker { margin-bottom: 2px; color: var(--accent); font-size: .72rem; font-weight: 700; letter-spacing: .14em; }
+.liang-governor-yearbook-switch a,
+.aux-info-action {
+  display: inline-block;
+  flex: 0 0 auto;
+  padding: 8px 12px;
+  border: 1px solid var(--theme-border);
+  border-radius: 3px;
+  background: var(--paper-2);
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: none;
+}
+.liang-governor-yearbook-switch a:hover,
+.aux-info-action:hover { background: var(--theme-pale); }
+.aux-info-action { margin: 0 0 10px; }
+
+@media (max-width: 680px) {
+  .liang-governor-yearbook-switch { align-items: stretch; flex-direction: column; }
+  .liang-governor-yearbook-switch a { align-self: flex-start; }
+}

@@ -39,5 +39,21 @@
       "晉朝男爵列表"
     ],
     "five_rank_method": "郡公、郡侯及公侯伯子男封國以小字顯示，不計元年、二年；年代或承襲年不詳者標為推定；同名無法唯一定位者不自動附會。"
+  },
+  "liang_governor_yearbook": {
+    "title": "蕭梁刺史年表",
+    "source_file": "南朝刺史、長史、司馬年表.xlsx",
+    "source_sheet": "Sheet1",
+    "source_range": "A258:AC312",
+    "years": [
+      502,
+      556
+    ],
+    "state_columns": 26,
+    "rows": 55,
+    "fixed_state_nonempty_cells": 895,
+    "appendix_nonempty_rows": 39,
+    "scope_note": "只取工作簿中以『蕭梁』為表頭的表段；中興元、二年過渡行及後接南陳表段均未納入。太平二年（557）因此明示為來源表段缺口。",
+    "generated": "2026-08-21"
   }
 }

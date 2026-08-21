@@ -43,6 +43,8 @@
   const textMapLinkToggle = $('textMapLinkToggle');
   const liangReviewPanel = $('liangReviewPanel');
   const liangReviewCount = $('liangReviewCount');
+  const liangGovernorYearbookSwitch = $('liangGovernorYearbookSwitch');
+  const liangGovernorYearbookLink = $('liangGovernorYearbookLink');
   const citationRegistry = new Map();
   const auxInfoRegistry = new Map();
   let auxInfoSequence = 0;
@@ -52,6 +54,12 @@
   let mapZoom = 1;
   let mapUhdLoaded = false;
   let mapDrag = null;
+  const initialParams = new URLSearchParams(window.location.search);
+  const requestedDynasty = initialParams.get('dynasty');
+  const requestedYear = Number(initialParams.get('year')) || null;
+  const requestedState = initialParams.get('state') || '';
+  const EXTRA_GOVERNOR_FILTER_PREFIX = 'governor-extra:';
+  let initialLocationApplied = false;
 
   function formatYearLabel(year) {
     if (currentDynasty.key === 'chen') {
@@ -380,8 +388,23 @@
         record.source_page_index ? `方鎮年表資料頁序：${record.source_page_index}。` : '',
         ...(evidence.length ? ['相關考證與史料：', ...evidence] : [])
       ].filter(Boolean),
-      sourceLabel:data?.meta?.source || '魯力《魏晉南北朝方鎮年表新編·宋齊梁陳卷》方鎮年表'
+      sourceLabel:data?.meta?.source || '魯力《魏晉南北朝方鎮年表新編·宋齊梁陳卷》方鎮年表',
+      actionLabel:currentDynasty.key==='southern-liang' ? `在蕭梁刺史年表定位${record.state}` : '',
+      actionUrl:currentDynasty.key==='southern-liang' ? governorYearbookHref(year,record.state,'detail') : ''
     };
+  }
+
+  function governorYearbookHref(year,state='',from='main') {
+    const url=new URL('liang-governor-yearbook.html',window.location.href);
+    if(year)url.searchParams.set('year',String(year));
+    if(state)url.searchParams.set('state',state);
+    if(from)url.searchParams.set('from',from);
+    return url.href;
+  }
+
+  function updateLiangGovernorYearbookSwitch(year) {
+    if(!liangGovernorYearbookLink)return;
+    liangGovernorYearbookLink.href=governorYearbookHref(year,'','main');
   }
 
   function attachGovernors(states,year,targetGroup) {
@@ -817,8 +840,13 @@
 
   function renderExtraGovernorStates(items,year) {
     const query=normalizeName(searchInput.value.trim());
-    const visible=(items||[]).filter((r)=>!query || normalizeName([r.state,...(r.summary_lines||[]),...(r.evidence_lines||[])].join(' ')).includes(query));
-    if (!visible.length || stateSelect.value || changedOnly.checked) return null;
+    const selected=stateSelect.value;
+    const selectedExtraState=selected.startsWith(EXTRA_GOVERNOR_FILTER_PREFIX)
+      ? normalizeName(selected.slice(EXTRA_GOVERNOR_FILTER_PREFIX.length))
+      : '';
+    const visible=(items||[]).filter((r)=>(!selectedExtraState || normalizeName(r.state)===selectedExtraState)
+      && (!query || normalizeName([r.state,...(r.summary_lines||[]),...(r.evidence_lines||[])].join(' ')).includes(query)));
+    if (!visible.length || (selected && !selectedExtraState) || changedOnly.checked) return null;
     const card=document.createElement('article');card.className='governor-extra-card';
     const h=document.createElement('h2');h.textContent='方鎮表另見之州';card.appendChild(h);
     const note=document.createElement('p');note.className='governor-extra-note';note.textContent=`下列州在本年方鎮年表中有長官資料，但未能唯一附著於本年${currentDynasty.label}州郡縣政區表。其原因可能涉及同名州、遙領、僑置、短暫設置或目前政區基底未收，故只作方鎮資料列示，不據此直接增改行政區劃。`;card.appendChild(note);
@@ -906,6 +934,7 @@
 
   function openAuxInfo(id) {
     const info=auxInfoRegistry.get(id);if(!info)return;$('sourceModalTitle').textContent=info.title||'封國資料';$('sourceModalSummary').textContent=info.summary||'';const body=$('sourceModalBody');body.replaceChildren();
+    if(info.actionUrl){const a=document.createElement('a');a.className='aux-info-action';a.href=info.actionUrl;a.textContent=info.actionLabel||'開啟相關年表';body.appendChild(a);}
     for(const t of info.paragraphs||[]){const p=document.createElement('p');p.className='aux-info-paragraph';p.textContent=t;body.appendChild(p);}for(const s of info.sources||[])appendSourceEntry(body,s);
     if(info.sourceLabel){const a=document.createElement('article');a.className='source-entry';const h=document.createElement('h3');h.textContent='補充資料來源';const p=document.createElement('p');p.textContent=info.sourceLabel;a.append(h,p);body.appendChild(a);}
     sourceModal.hidden=false;document.body.classList.add('modal-open');sourceModalClose.focus();
@@ -1277,10 +1306,20 @@
     const snap=buildSnapshot(year);
     const groups=new Map();for(const s of snap.states){if(!groups.has(s.groupLabel))groups.set(s.groupLabel,[]);groups.get(s.groupLabel).push(s);}
     for(const [label,states] of groups){const og=document.createElement('optgroup');og.label=label;for(const s of states){const o=document.createElement('option');o.value=s.filterKey;o.textContent=s.name;og.appendChild(o);}stateSelect.appendChild(og);}
+    if(currentDynasty.key==='southern-liang'&&snap.extraGovernorStates?.length){
+      const fixedNames=new Set(snap.states.map((state)=>normalizeName(state.name)));
+      const extras=[...new Set(snap.extraGovernorStates.map((record)=>record.state).filter((state)=>state&&!fixedNames.has(normalizeName(state))))];
+      if(extras.length){
+        const og=document.createElement('optgroup');og.label='方鎮表附錄州';
+        for(const state of extras){const o=document.createElement('option');o.value=`${EXTRA_GOVERNOR_FILTER_PREFIX}${state}`;o.textContent=state;og.appendChild(o);}
+        stateSelect.appendChild(og);
+      }
+    }
   }
 
   function render() {
     const year=Number(yearSelect.value);auxInfoRegistry.clear();auxInfoSequence=0;
+    updateLiangGovernorYearbookSwitch(year);
     const current=buildSnapshot(year), baseline=year===currentDynasty.years[0], previous=baseline?current:buildSnapshot(year-1), compared=compareSnapshots(current,previous,year);
     const visible=renderResults(compared.states,compared.virtualFiefs,compared.extraGovernorStates,year), removed=filterRemoved(compared.removedChanges);
     renderSummary(visible,removed);renderChangePanel(visible,removed);
@@ -1304,14 +1343,31 @@
     const governorLegend=$('governorLegend'); if(governorLegend) governorLegend.hidden=!hasSouthernLayers;
     const liangColorLegend=$('liangColorLegend');if(liangColorLegend)liangColorLegend.hidden=currentDynasty.key!=='southern-liang';
     if(liangReviewPanel)liangReviewPanel.hidden=currentDynasty.key!=='southern-liang';
+    if(liangGovernorYearbookSwitch)liangGovernorYearbookSwitch.hidden=currentDynasty.key!=='southern-liang';
     if(liangReviewCount)liangReviewCount.textContent=window.LIANG_COUNTY_OVERLAY?.meta?.manual_review||188;
-    const url=new URL(window.location.href);if(currentDynasty.key==='western-jin')url.searchParams.delete('dynasty');else url.searchParams.set('dynasty',currentDynasty.key);history.replaceState(null,'',url);
-    searchInput.value='';changedOnly.checked=false;populateYears();populateStates(Number(yearSelect.value));updateMethod();render();
+    searchInput.value='';changedOnly.checked=false;populateYears();
+    if(!initialLocationApplied&&requestedDynasty===currentDynasty.key&&requestedYear&&[...yearSelect.options].some((option)=>Number(option.value)===requestedYear))yearSelect.value=String(requestedYear);
+    populateStates(Number(yearSelect.value));
+    if(!initialLocationApplied&&requestedDynasty===currentDynasty.key&&requestedState){const option=[...stateSelect.options].find((item)=>normalizeName(item.textContent)===normalizeName(requestedState));if(option)stateSelect.value=option.value;}
+    initialLocationApplied=true;syncMainLocation();updateMethod();render();
+  }
+
+  function syncMainLocation() {
+    const url=new URL(window.location.href);
+    if(currentDynasty.key==='western-jin')url.searchParams.delete('dynasty');else url.searchParams.set('dynasty',currentDynasty.key);
+    if(currentDynasty.key==='southern-liang'){
+      url.searchParams.set('year',String(yearSelect.value));
+      const selected=stateSelect.selectedOptions[0];
+      if(stateSelect.value&&selected)url.searchParams.set('state',selected.textContent);else url.searchParams.delete('state');
+    }else{
+      url.searchParams.delete('year');url.searchParams.delete('state');
+    }
+    history.replaceState(null,'',url);
   }
 
   dynastySelect.addEventListener('change',switchDynasty);
-  yearSelect.addEventListener('change',()=>{populateStates(Number(yearSelect.value));render();});
-  stateSelect.addEventListener('change',render);searchInput.addEventListener('input',render);changedOnly.addEventListener('change',render);
+  yearSelect.addEventListener('change',()=>{populateStates(Number(yearSelect.value));syncMainLocation();render();});
+  stateSelect.addEventListener('change',()=>{syncMainLocation();render();});searchInput.addEventListener('input',render);changedOnly.addEventListener('change',render);
   document.addEventListener('click',(event)=>{
     const c=event.target.closest('[data-citation]');if(c){openCitation(c.dataset.citation);return;}
     const i=event.target.closest('[data-info]');if(i){openAuxInfo(i.dataset.info);return;}
@@ -1350,7 +1406,6 @@
   window.addEventListener('resize',()=>{if(currentMap)applyMapZoom(mapZoom);});
   sourceModalClose.addEventListener('click',closeModal);document.addEventListener('keydown',(e)=>{if(e.key==='Escape'&&!sourceModal.hidden)closeModal();});
 
-  const requestedDynasty=new URLSearchParams(window.location.search).get('dynasty');
   if(requestedDynasty&&DYNASTIES[requestedDynasty])dynastySelect.value=requestedDynasty;
   switchDynasty();
 })();
