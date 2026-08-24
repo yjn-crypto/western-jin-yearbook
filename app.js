@@ -14,7 +14,7 @@
     },
     chen: {
       key: 'chen', label: '南陳', theme: 'earth', data: window.CHEN_DATA,
-      years: window.CHEN_DATA ? window.CHEN_DATA.meta.years : [558,588], defaultYear: 588,
+      years: window.CHEN_DATA ? [557,window.CHEN_DATA.meta.years[1]] : [557,588], defaultYear: 588,
       subtitle: '選擇紀年，查看南陳州郡縣、方鎮長官、封爵及同時期後梁、王琳政區。'
     }
   };
@@ -37,6 +37,7 @@
   const yearMapLoadUhd = $('yearMapLoadUhd');
   const yearMapUhd = $('yearMapUhd');
   const yearMapCsv = $('yearMapCsv');
+  const yearMapGeoJson = $('yearMapGeoJson');
   const yearMapExport = $('yearMapExport');
   const yearMapNote = $('yearMapNote');
   const textMapLinkControl = $('textMapLinkControl');
@@ -63,6 +64,7 @@
 
   function formatYearLabel(year) {
     if (currentDynasty.key === 'chen') {
+      if (Number(year)===557) return '永定元年·丁丑（557）';
       return window.CHEN_GOVERNORS?.year_labels?.[String(year)] || `公元${year}年`;
     }
     if (currentDynasty.key === 'southern-liang') {
@@ -985,7 +987,7 @@
 
   const SVG_NS='http://www.w3.org/2000/svg';
   const MAP_EXPORT_STYLE=`
-    text{font-family:"Noto Serif CJK TC","Songti TC","PMingLiU",serif}.dynamic-map-title{fill:#302b27;font-size:46px;font-weight:700;letter-spacing:3px}.dynamic-map-subtitle{fill:#665d54;font-size:16px}.dynamic-regime{stroke-width:2.2;fill-opacity:.62}.dynamic-regime-label{fill:#fffdf2;stroke:rgba(40,32,25,.72);stroke-width:2.6;paint-order:stroke;font-size:42px;font-weight:700;letter-spacing:5px}.dynamic-state-boundary{fill:none;stroke:#60392d;stroke-width:2.2}.dynamic-pref-boundary{fill:none;stroke:#776d55;stroke-width:1.1}.dynamic-supplement-boundary{stroke-dasharray:5 4;opacity:.72}.dynamic-state-dot{fill:#6a382d;stroke:#fff8e8;stroke-width:.9}.dynamic-prefecture-dot{fill:#a85e52;stroke:#fff8e8;stroke-width:.6}.dynamic-county-dot{fill:#365f70}.dynamic-map-label{paint-order:stroke;stroke:rgba(255,252,240,.94);stroke-width:2.3;stroke-linejoin:round;dominant-baseline:central}.dynamic-state-area-label{fill:#4d3028;font-size:24.5px;font-weight:700;letter-spacing:2px}.dynamic-state-seat-label{fill:#562f28;font-size:22.5px;font-weight:700}.dynamic-prefecture-area-label{fill:#3f4a38;font-size:16.5px;font-weight:700}.dynamic-prefecture-seat-label{fill:#684a3f;font-size:10.8px}.dynamic-county-seat-label{fill:#264f60;font-size:8.6px}.dynamic-fief-label{fill:#754476;font-weight:700}.is-uncertain{font-style:italic}`;
+    text{font-family:"Noto Serif CJK TC","Songti TC","PMingLiU",serif}.dynamic-map-title{fill:#302b27;font-size:46px;font-weight:700;letter-spacing:3px}.dynamic-map-subtitle{fill:#665d54;font-size:16px}.dynamic-regime{stroke-width:2.2;fill-opacity:.62;fill-rule:evenodd}.dynamic-rebellion{fill-opacity:.8;stroke-dasharray:12 7}.dynamic-regime-label{fill:#fffdf2;stroke:rgba(40,32,25,.72);stroke-width:2.6;paint-order:stroke;font-size:42px;font-weight:700;letter-spacing:5px}.dynamic-rebellion-label{font-size:23px;letter-spacing:1px}.dynamic-state-boundary{fill:none;stroke:#60392d;stroke-width:2.2}.dynamic-pref-boundary{fill:none;stroke:#776d55;stroke-width:1.1}.dynamic-supplement-boundary{stroke-dasharray:5 4;opacity:.72}.dynamic-state-dot{fill:#6a382d;stroke:#fff8e8;stroke-width:.9}.dynamic-prefecture-dot{fill:#a85e52;stroke:#fff8e8;stroke-width:.6}.dynamic-county-dot{fill:#365f70}.dynamic-map-label{paint-order:stroke;stroke:rgba(255,252,240,.94);stroke-width:2.3;stroke-linejoin:round;dominant-baseline:central}.dynamic-state-area-label{fill:#4d3028;font-size:24.5px;font-weight:700;letter-spacing:2px}.dynamic-state-seat-label{fill:#562f28;font-size:22.5px;font-weight:700}.dynamic-prefecture-area-label{fill:#3f4a38;font-size:16.5px;font-weight:700}.dynamic-prefecture-seat-label{fill:#684a3f;font-size:10.8px}.dynamic-county-seat-label{fill:#264f60;font-size:8.6px}.dynamic-fief-label{fill:#754476;font-weight:700}.is-uncertain{font-style:italic}`;
 
   function svgNode(tag,attributes={},text='') {
     const node=document.createElementNS(SVG_NS,tag);
@@ -1007,22 +1009,43 @@
     return out;
   }
 
+  function chenTerritoryFeature(year,kind='territory') {
+    return (window.CHEN_TERRITORIES?.features||[]).find((item)=>
+      Number(item?.properties?.year)===Number(year) && item?.properties?.kind===kind
+    ) || null;
+  }
+
+  function chenTerritorySource(year) {
+    const feature=chenTerritoryFeature(year);
+    if(!feature)return 'ChinaXMap 572年斷面近似';
+    const relation=feature.properties.year_relation==='exact'?'本年圖':`近年${feature.properties.source_year}年圖`;
+    return `史圖館${relation}矢量化`;
+  }
+
   function drawRegimes(year,root,map) {
     const paths=map.regimes||{};
-    const add=(key,fill,stroke,label,x,y)=>{
-      if(!paths[key])return;
-      root.appendChild(svgNode('path',{d:paths[key],class:'dynamic-regime',fill,stroke}));
+    const add=(key,fill,stroke,label,x,y,pathOverride='',extraClass='')=>{
+      const path=pathOverride||paths[key];
+      if(!path)return;
+      root.appendChild(svgNode('path',{d:path,class:`dynamic-regime ${extraClass}`.trim(),fill,stroke,'fill-rule':'evenodd'}));
       root.appendChild(svgNode('text',{x,y,'text-anchor':'middle','dominant-baseline':'central',class:'dynamic-regime-label'},label));
     };
+    const territory=chenTerritoryFeature(year);
+    const rebellion=chenTerritoryFeature(year,'rebellion');
+    const chenPath=territory?.properties?.svgPath||paths.chen;
     if(year<=576) {
       add('northZhou','#d8b05b','#6d5a2b','北周',2050,1310);
       add('northQi','#82a8a2','#3d625f','北齊',3350,1410);
-      add('chen','#c98075','#6c3733','陳',2767,2907);
+      add('chen','#c98075','#6c3733','陳',2767,2907,chenPath);
       add('laterLiang','#9a83aa','#57436c','後梁',2820,2050);
     } else {
       add('sui','#d8b05b','#6d5a2b',year>=581?'隋':'北周',2425,1435);
-      add('chen','#c98075','#6c3733','陳',2767,2907);
+      add('chen','#c98075','#6c3733','陳',2767,2907,chenPath);
       if(year<=587)add('laterLiang','#9a83aa','#57436c','後梁',2820,2050);
+    }
+    if(rebellion?.properties?.svgPath) {
+      add('rebellion','#398b51','#1f6034','廣州叛亂',2775,3035,rebellion.properties.svgPath,'dynamic-rebellion');
+      root.lastElementChild?.classList.add('dynamic-rebellion-label');
     }
   }
 
@@ -1145,7 +1168,7 @@
     const root=yearMapOverlay;
     root.replaceChildren();
     root.appendChild(svgNode('text',{x:650,y:92,class:'dynamic-map-title'},`公元${year}年　南陳與同時期政權州郡縣封國`));
-    root.appendChild(svgNode('text',{x:650,y:145,class:'dynamic-map-subtitle'},'共用地形：CHGIS DEM　｜　行政點面：CHGIS V6＋V4／V5補充　｜　政權疆域：ChinaXMap 572年斷面近似'));
+    root.appendChild(svgNode('text',{x:650,y:145,class:'dynamic-map-subtitle'},`共用地形：CHGIS DEM　｜　行政點面：CHGIS V6＋V4／V5補充　｜　政權疆域：${chenTerritorySource(year)}`));
     drawRegimes(year,root,map);
     for(const area of stateAreas) {
       root.appendChild(svgNode('path',{d:area.d,class:`dynamic-state-boundary${area.s==='CHGIS V5'?' dynamic-supplement-boundary':''}`}));
@@ -1214,11 +1237,17 @@
       $('yearMapTitle').textContent=`公元${year}年蕭梁政區 · ${referenceYear}年CHGIS基準斷面`;
       $('yearMapStatus').textContent=`所選${year}年顯示最接近的${referenceYear}年CHGIS基準地圖；地圖只作空間參考，不將該年邊界外推為逐年精確疆域。`;
       yearMapNote.textContent='蕭梁州郡沿革按502—557年逐年重建；目前只有534年與555年兩個CHGIS基準斷面。地圖不承擔逐年邊界判定，表格資料仍以《中國行政區劃通史》沿革為準。';
-      yearMapUhd.hidden=true;yearMapCsv.hidden=true;yearMapExport.hidden=true;yearMapLoadUhd.hidden=true;
+      yearMapUhd.hidden=true;yearMapCsv.hidden=true;yearMapGeoJson.hidden=true;yearMapExport.hidden=true;yearMapLoadUhd.hidden=true;
       resetMapView();return;
     }
-    yearMapUhd.hidden=false;yearMapCsv.hidden=false;yearMapExport.hidden=false;
-    yearMapNote.textContent='558—587年共用一份地形底圖，並按所選年份動態繪製州郡縣、封國及可用邊界；588年預設顯示人工覆核原圖，放大後才載入約31 MB超高清檔案。政權疆域仍以 ChinaXMap 572年斷面近似，州郡縣治所與邊界以CHGIS V6為主、V4／V5補足。缺坐標者不臆測，傳承不明封國仍按封國顯示。';
+    yearMapUhd.hidden=false;yearMapCsv.hidden=false;yearMapGeoJson.hidden=false;yearMapExport.hidden=false;
+    const territory=chenTerritoryFeature(year);
+    const territoryNote=territory
+      ? `${year}年陳境採史圖館${territory.properties.source_year}年圖矢量化${territory.properties.year_relation==='exact'?'':'（最近可用年份）'}。${year===569?'廣州叛亂區仍計入陳境，另以綠色叛亂層疊加。':''}`
+      : '本年尚無史圖館分期矢量，政權疆域仍以ChinaXMap 572年斷面近似。';
+    yearMapNote.textContent=year===588
+      ? '588年顯示人工覆核原圖；政權疆域以ChinaXMap 572年斷面近似，州郡縣治所與邊界以CHGIS V6為主、V4／V5補足。放大至160%後才載入約31 MB超高清檔案。'
+      : `${year===557?'557年只繪製疆域，不反向補造行政資料。':'558—587年共用一份地形底圖，州郡縣、封國及可用邊界按年即時繪製。'}${territoryNote} 州郡縣治所與邊界以CHGIS V6為主、V4／V5補足；缺坐標者不臆測。`;
     currentMap={year,width:dynamic.width,height:dynamic.height,uhd:dynamic.map588.uhd};
     yearMapOverlay.setAttribute('viewBox',`0 0 ${dynamic.width} ${dynamic.height}`);
     yearMapOverlay.setAttribute('aria-label',`${year}年州郡縣治所可點擊定位圖層`);
@@ -1268,13 +1297,13 @@
 
   function updateMethod() {
     const box=$('methodContent');box.replaceChildren();const paras=currentDynasty.key==='chen' ? [
-      '頁面依據《中國行政區劃通史·三國兩晉南朝卷（下）》陳代實州郡縣沿革，按書中州、郡、縣原有次序重建公元558—588年各年年末狀態。原書明言陳代材料屬輯考、僅得其涯略，故疑字與年代不明者保留「※」。',
+      '頁面依據《中國行政區劃通史·三國兩晉南朝卷（下）》陳代實州郡縣沿革，按書中州、郡、縣原有次序重建公元558—588年各年年末狀態。永定元年（557）只新增史圖館疆域圖入口，行政區劃表仍明示原資料始於558年。原書明言陳代材料屬輯考、僅得其涯略，故疑字與年代不明者保留「※」。',
       '南陳州郡縣列在前；不能與本年南陳實際郡縣唯一對應的王國、郡公國及縣級開國爵，集中列於「未定位／疑似虛封封爵」。這一區並不等同於一律判定虛封：若史料或制度可證其並非虛封（如二王後），將在註記中明示。其後依次列後梁、王琳政權。後梁或王琳政區在其存續期結束後自動消失。',
       '宗室王國只在郡級政區旁標示王號與姓名，不計算元年、二年。郡公附於郡級，開國公侯伯子男附於縣級，標作公國、侯國、伯國、子國、男國。點擊小字可查看封爵年表、承襲與資料限制。封君卒後若襲封年份無明文而親屬關係、卒年可確，原則上以第三年記新封君，中間兩年記世子服喪；史料明載優先。最後可確年份以後材料不足者，以斜體表示存疑。',
       '封爵資料只是制度注記。南朝封君通常不到封國，網頁不以爵國名稱反推實際行政機構；只有本年能唯一對應一個南陳郡或縣時，才把爵號附在該政區旁。但是，儘管在行政上，封君已經基本喪失了對封國的干預，但封國在制度、禮儀、經濟等諸多層面的實在性確是確定無疑的。因此，我們認為，在唐朝不開國以前，仍有必要在郡縣旁邊標註封國與封君。',
       '陳代僑郡縣另依本書第十編侨州郡縣考表補充。梁、陳欄中，○所標為梁，△或明確屬陳者用於陳代判定。陳代不再把無實土侨州作為州級政區另列，州名及原有統屬不因此改變；僑郡、僑縣名稱以下劃線標示。若正文未標年代而原本以暗色顯示，一旦由侨置表確認為僑郡縣，以下劃線優先，不再變暗。點擊其註釋可見「原屬」與考表依據。',
       '方鎮長官另據魯力《魏晉南北朝方鎮年表新編·宋齊梁陳卷》之「陳方鎮年表」。該表以年為經、州為緯，州下列都督、刺史等人物，並記官銜、月份、遷轉及考證。本頁在各州表內以「都督/刺史」逐人分行列出年表原有的人物、時間與官銜；州名及「都督/刺史」標題均可點擊展開完整考證。方鎮表有長官而本年政區表未列的州，另置「方鎮表另見之州」，只作政治史資料提示，不據此直接增改行政區劃。',
-      '明州、利州等正文只知所領縣而所領郡乏考者，表格標為「郡無考」，不使用後世概念「州直領」。588年加入地形行政圖：治所與可用行政界線以CHGIS V6為主，V4補州界、V5補郡界；沒有坐標者不臆造位置，沒有邊界但有治所者以治所點承載州郡資訊。政權底色暫以ChinaXMap 572年疆域近似代替並明確標註，並非精確的588年復原。'
+      '明州、利州等正文只知所領縣而所領郡乏考者，表格標為「郡無考」，不使用後世概念「州直領」。地圖治所與可用行政界線以CHGIS V6為主，V4補州界、V5補郡界；沒有坐標者不臆造位置。永定元年至天嘉三年、太建五年至太建十一年改用使用者保存的史圖館相應或最近年份地圖矢量化疆域，其餘年份仍明示採ChinaXMap 572年斷面近似。太建元年廣州叛亂區保留在陳境內，另疊加叛亂面。'
     ] : currentDynasty.key==='southern-liang' ? [
       '頁面依據《中國行政區劃通史·三國兩晉南朝卷（下）》第八編，按書中原有次序重建公元502—557年蕭梁州、郡級政區的逐年年末狀態。原書以問號、「前」「後」等表示的斷限仍以「※」保留，不改作確定年份。',
       '梁代實縣目前不做逐年變化：優先採用梁縣考證中的直接關係，其次採用齊末統屬，再以558年陳代統屬補充。744個梁實縣條目中，556個已確認所屬郡並靜態附入，188個多候選或無對應條目留待人工校勘，不強行放入任何郡。',
@@ -1290,7 +1319,7 @@
     ];
     for(const t of paras){const p=document.createElement('p');p.textContent=t;box.appendChild(p);}
     $('footerText').textContent=currentDynasty.key==='chen'
-      ? '資料依據：《中國行政區劃通史·三國兩晉南朝卷（下）》南朝陳政區；魯力《魏晉南北朝方鎮年表新編·宋齊梁陳卷》方鎮長官；封爵資料另見頁面說明。'
+      ? '資料依據：《中國行政區劃通史·三國兩晉南朝卷（下）》南朝陳政區；魯力《魏晉南北朝方鎮年表新編·宋齊梁陳卷》方鎮長官；史圖館中國歷代疆域變遷地圖；封爵資料另見頁面說明。'
       : currentDynasty.key==='southern-liang'
         ? '資料依據：《中國行政區劃通史·三國兩晉南朝卷（下）》蕭梁政區；《魏晉南北朝方鎮年表新編》梁方鎮年表；封爵與僑置資料見頁面說明。'
         : '資料依據：《中國行政區劃通史·三國兩晉南朝卷（上）》西晉州郡縣沿革。';
@@ -1320,12 +1349,15 @@
   function render() {
     const year=Number(yearSelect.value);auxInfoRegistry.clear();auxInfoSequence=0;
     updateLiangGovernorYearbookSwitch(year);
-    const current=buildSnapshot(year), baseline=year===currentDynasty.years[0], previous=baseline?current:buildSnapshot(year-1), compared=compareSnapshots(current,previous,year);
+    const chenAdministrativeBaseline=currentDynasty.key==='chen'&&year===558;
+    const current=buildSnapshot(year), baseline=year===currentDynasty.years[0]||chenAdministrativeBaseline, previous=baseline?current:buildSnapshot(year-1), compared=compareSnapshots(current,previous,year);
     const visible=renderResults(compared.states,compared.virtualFiefs,compared.extraGovernorStates,year), removed=filterRemoved(compared.removedChanges);
     renderSummary(visible,removed);renderChangePanel(visible,removed);
     renderYearMap(year,current);
-    $('statusText').textContent=baseline
-      ? `${formatYearLabel(year)}為${currentDynasty.label}資料起始年，不以缺失的前一年判定變動；州、郡、縣保留原書次序。`
+    $('statusText').textContent=currentDynasty.key==='chen'&&year===557
+      ? '永定元年（557）只顯示史圖館矢量化疆域；現有《中國行政區劃通史》州郡縣資料從558年開始，故本年不反向補造行政區劃表。'
+      : baseline
+      ? `${formatYearLabel(year)}為${currentDynasty.label}行政資料起始年，不以缺失的前一年判定變動；州、郡、縣保留原書次序。`
       : `${formatYearLabel(year)}所示為年末狀態；與${formatYearLabel(year-1)}年末相比的行政區劃變動以加粗及註釋標示。${currentDynasty.key==='chen'?'陳代資料屬OCR初抽取與輯考重建；各州「都督/刺史」逐人分行列示，州名可點擊查看完整方鎮考證，後梁、王琳只在政權存續年份顯示。':currentDynasty.key==='southern-liang'?`蕭梁州郡逐年重建；556個已確認梁實縣靜態附入，另有${window.LIANG_COUNTY_OVERLAY?.meta?.manual_review||188}個待人工判斷。各州「都督/刺史」逐人分行列示。`:''}`;
     document.title=`${currentDynasty.label}·${formatYearLabel(year)}年末州郡縣表`;
   }

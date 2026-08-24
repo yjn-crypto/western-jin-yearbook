@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>漢魏六朝年末州郡縣表</title>
   <meta name="description" content="依據《中國行政區劃通史》逐年重建漢魏六朝年末州郡縣，並附封國資料。">
-  <link rel="stylesheet" href="style.css?v=20260821.1">
+  <link rel="stylesheet" href="style.css?v=20260824.1">
 </head>
 <body data-theme="metal">
   <header class="site-header">
@@ -81,6 +81,7 @@
         <div class="year-map-actions">
           <a id="yearMapUhd" href="assets/maps/chen-588-terrain-map-uhd.png" download>下載588年超高清 PNG</a>
           <a id="yearMapCsv" href="data/chen-map-588.csv" download>下載588年 CSV</a>
+          <a id="yearMapGeoJson" href="data/chen-territories.geojson" download>下載史圖館分期疆域 GeoJSON</a>
           <button id="yearMapExport" type="button">匯出當前年份 PNG</button>
         </div>
       </header>
@@ -100,7 +101,7 @@
           <svg id="yearMapOverlay" class="year-map-overlay" role="img" aria-label="588年州郡縣治所可點擊定位圖層"></svg>
         </div>
       </div>
-      <p id="yearMapNote" class="year-map-note">558—587年共用一份地形底圖，並按所選年份動態繪製州郡縣、封國及可用邊界；588年預設顯示人工覆核原圖，放大後才載入約31 MB超高清檔案。政權疆域仍以 ChinaXMap 572年斷面近似，州郡縣治所與邊界以CHGIS V6為主、V4／V5補足。缺坐標者不臆測，傳承不明封國仍按封國顯示。</p>
+      <p id="yearMapNote" class="year-map-note">南陳各年共用地形底圖，州郡縣與封國按年繪製；指定年份的政權疆域改用史圖館地圖矢量化，其餘年份仍明示採 ChinaXMap 572 年斷面近似。</p>
     </section>
 
     <section id="changePanel" class="change-panel" hidden>
@@ -165,7 +166,8 @@
   <script src="data/chen-fiefs.js"></script>
   <script src="data/chen-governors.js"></script>
   <script src="data/chen-map-dynamic.js?v=20260811"></script>
+  <script src="data/chen-territories.js?v=20260824"></script>
   <script src="data/chen-map-588.js?v=20260811"></script>
-  <script src="app.js?v=20260821.1"></script>
+  <script src="app.js?v=20260824.1"></script>
 </body>
 </html>
