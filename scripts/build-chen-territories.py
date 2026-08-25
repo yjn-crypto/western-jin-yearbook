@@ -2,9 +2,12 @@
 """Vectorise selected Shituguan Chen maps into WGS 84 GeoJSON.
 
 The source screenshots use one fixed cartographic canvas.  The script extracts
-the dark-blue Chen polity fill, registers the 569 outline to the existing
-ChinaXMap 572 outline, converts map pixels through the web map's geographic
-grid, and writes both GeoJSON and a browser-ready JavaScript copy.
+the dark-blue Chen polity fill, separately recognises the mainland and Hainan,
+registers the fixed source canvas through Jiankang, Jiangling, Wuling,
+Guangzhou, Jiaozhi, and Hainan controls, and then constrains maritime edges to
+the coastline in the web terrain base.  The result is converted through the
+web map's geographic grid and written as both
+GeoJSON and a browser-ready JavaScript copy.
 """
 
 from __future__ import annotations
@@ -23,7 +26,7 @@ if LOCAL_DEPS.exists():
 
 import cv2  # type: ignore  # noqa: E402
 import numpy as np  # noqa: E402
-from PIL import Image  # noqa: E402
+from PIL import Image, ImageDraw  # noqa: E402
 from shapely.geometry import MultiPolygon, Point, Polygon, mapping, shape  # type: ignore  # noqa: E402
 from shapely.ops import unary_union  # type: ignore  # noqa: E402
 from shapely.validation import make_valid  # type: ignore  # noqa: E402
@@ -33,6 +36,20 @@ MAP_WIDTH = 4800
 MAP_HEIGHT = 4128
 PLOT = (650.0, 390.0, 4490.0, 3690.0)
 GEO_EXTENT = (93.5, 18.0, 128.5, 44.0)  # west, south, east, north
+COAST_SNAP_RADIUS_PX = 84.0
+COASTAL_LAND_BAND_PX = 112.0
+ADMINISTRATIVE_CONTROL_POINTS = {
+    # source_xy was read from the fixed 4661×2622 Shituguan canvas; target_xy
+    # uses the corresponding CHGIS/web-map seat or, for Hainan, the terrain
+    # island centroid.  Jiangling is a Later Liang seat in these years: it is a
+    # geodetic control only and must not be forced into Chen territory.
+    "建康（南陳都城）": {"source_xy": (2858.0, 1411.0), "target_xy": (3426.7, 1915.7)},
+    "江陵（後梁都城、荊州地理錨點）": {"source_xy": (2562.0, 1532.0), "target_xy": (2701.3, 2135.2)},
+    "武陵（武陵郡治臨沅）": {"source_xy": (2547.0, 1609.0), "target_xy": (2646.2, 2302.2)},
+    "廣州（南海郡治番禺）": {"source_xy": (2647.0, 1920.0), "target_xy": (2818.8, 3027.1)},
+    "交趾（交州核心）": {"source_xy": (2273.0, 2052.0), "target_xy": (2005.0, 3305.0)},
+    "海南（史圖館島形質心）": {"source_xy": (2482.0, 2141.0), "target_xy": (2431.4, 3491.5)},
+}
 
 YEAR_SOURCES = {
     557: "永定元年.jpg",
@@ -122,14 +139,110 @@ def largest_component(mask: np.ndarray, close_size: int = 9) -> np.ndarray:
     return np.where(labels == winner, 255, 0).astype(np.uint8)
 
 
-def extract_chen_mask(rgb: np.ndarray) -> np.ndarray:
+def clean_selected_component(labels: np.ndarray, label_id: int, close_size: int = 9) -> np.ndarray:
+    component = np.where(labels == label_id, 255, 0).astype(np.uint8)
+    component = cv2.morphologyEx(
+        component,
+        cv2.MORPH_CLOSE,
+        np.ones((close_size, close_size), dtype=np.uint8),
+        iterations=2,
+    )
+    return cv2.morphologyEx(component, cv2.MORPH_OPEN, np.ones((3, 3), dtype=np.uint8))
+
+
+def extract_chen_components(rgb: np.ndarray) -> tuple[np.ndarray, bool]:
+    """Return the mainland Chen mask and whether the source colours Hainan as Chen.
+
+    Hainan is deliberately detected before morphological closing.  In the
+    source JPEG it is a separate blue component; closing the whole mask first
+    can bridge the narrow Qiongzhou Strait and silently merge island and
+    mainland.  The final island outline comes from the georeferenced terrain
+    coastline, while this source component supplies the historical inclusion.
+    """
+
     hsv = cv2.cvtColor(rgb, cv2.COLOR_RGB2HSV)
     # Shituguan's Chen fill is a saturated indigo-blue.  The value ceiling
     # excludes the pale ocean and the saturation floor excludes relief shading.
     mask = cv2.inRange(hsv, np.array([105, 78, 42]), np.array([148, 255, 224]))
     mask[:500, :] = 0
     mask[:, 3500:] = 0
-    return largest_component(mask)
+    count, labels, stats, centroids = cv2.connectedComponentsWithStats(mask, 8)
+    if count <= 1:
+        raise RuntimeError("No Chen political fill component was found")
+    mainland_id = 1 + int(np.argmax(stats[1:, cv2.CC_STAT_AREA]))
+    mainland = clean_selected_component(labels, mainland_id)
+
+    hainan_candidates = []
+    for label_id in range(1, count):
+        if label_id == mainland_id or stats[label_id, cv2.CC_STAT_AREA] < 1200:
+            continue
+        x, y = centroids[label_id]
+        if 2350 <= x <= 2600 and 2020 <= y <= 2250:
+            hainan_candidates.append(label_id)
+    hainan_present = bool(hainan_candidates)
+    return mainland, hainan_present
+
+
+def extract_chen_mask(rgb: np.ndarray) -> np.ndarray:
+    mainland, _ = extract_chen_components(rgb)
+    return mainland
+
+
+def map_lonlat_to_xy(lon: float, lat: float) -> tuple[int, int]:
+    west, south, east, north = GEO_EXTENT
+    left, top, right, bottom = PLOT
+    x = left + (lon - west) / (east - west) * (right - left)
+    y = top + (north - lat) / (north - south) * (bottom - top)
+    return int(round(x)), int(round(y))
+
+
+def terrain_land_masks(dynamic: dict) -> tuple[np.ndarray, np.ndarray, dict]:
+    """Extract target land and a detached Hainan mask from the web terrain base."""
+
+    base = np.asarray(Image.open(ROOT / dynamic["base"].split("?")[0]).convert("RGB"))
+    hsv = cv2.cvtColor(base, cv2.COLOR_RGB2HSV)
+    water = cv2.inRange(hsv, np.array([88, 15, 140]), np.array([115, 120, 255]))
+    count, labels, stats, _ = cv2.connectedComponentsWithStats(water, 8)
+    ocean_id = 1 + int(np.argmax(stats[1:, cv2.CC_STAT_AREA]))
+    ocean = np.where(labels == ocean_id, 255, 0).astype(np.uint8)
+
+    plot = np.zeros_like(ocean)
+    left, top, right, bottom = (int(round(value)) for value in PLOT)
+    plot[top : bottom + 1, left : right + 1] = 255
+    land = np.where((plot > 0) & (ocean == 0), 255, 0).astype(np.uint8)
+
+    count, labels, stats, _ = cv2.connectedComponentsWithStats(land, 8)
+    hainan_x, hainan_y = map_lonlat_to_xy(109.8, 19.25)
+    hainan_id = int(labels[hainan_y, hainan_x])
+    if hainan_id == 0 or stats[hainan_id, cv2.CC_STAT_AREA] < 10000:
+        raise RuntimeError("The terrain coastline did not yield a detached Hainan component")
+    hainan = np.where(labels == hainan_id, 255, 0).astype(np.uint8)
+    mainland_x, mainland_y = map_lonlat_to_xy(110.1, 20.5)
+    mainland_id = int(labels[mainland_y, mainland_x])
+    if mainland_id == 0 or mainland_id == hainan_id:
+        raise RuntimeError("Qiongzhou Strait is not detached in the terrain coastline mask")
+    return land, hainan, {
+        "source": dynamic["base"].split("?")[0],
+        "coast_snap_radius_px": COAST_SNAP_RADIUS_PX,
+        "coastal_land_band_px": COASTAL_LAND_BAND_PX,
+        "hainan_component_area_px": int(stats[hainan_id, cv2.CC_STAT_AREA]),
+        "hainan_detached_from_mainland": True,
+    }
+
+
+def constrain_mainland_to_coast(mainland: np.ndarray, land: np.ndarray) -> np.ndarray:
+    """Snap only the maritime fringe to land while preserving inland borders."""
+
+    land_distance = cv2.distanceTransform(land, cv2.DIST_L2, 5)
+    outside_territory = np.where(mainland > 0, 0, 255).astype(np.uint8)
+    territory_distance = cv2.distanceTransform(outside_territory, cv2.DIST_L2, 5)
+    kept = (mainland > 0) & (land > 0)
+    coastal_fill = (
+        (land > 0)
+        & (land_distance <= COASTAL_LAND_BAND_PX)
+        & (territory_distance <= COAST_SNAP_RADIUS_PX)
+    )
+    return np.where(kept | coastal_fill, 255, 0).astype(np.uint8)
 
 
 def extract_guangzhou_rebellion(rgb: np.ndarray) -> np.ndarray:
@@ -143,77 +256,10 @@ def extract_guangzhou_rebellion(rgb: np.ndarray) -> np.ndarray:
     return largest_component(crop, close_size=11)
 
 
-def component_bbox(mask: np.ndarray) -> tuple[int, int, int, int]:
-    ys, xs = np.where(mask > 0)
-    if not len(xs):
-        raise RuntimeError("Cannot compute an empty mask's bounding box")
-    return int(xs.min()), int(ys.min()), int(xs.max()), int(ys.max())
-
-
-def affine_from_bbox(source: np.ndarray, target: np.ndarray) -> np.ndarray:
-    sx0, sy0, sx1, sy1 = component_bbox(source)
-    tx0, ty0, tx1, ty1 = component_bbox(target)
-    scale_x = (tx1 - tx0) / (sx1 - sx0)
-    scale_y = (ty1 - ty0) / (sy1 - sy0)
-    return np.asarray(
-        [[scale_x, 0.0, tx0 - scale_x * sx0], [0.0, scale_y, ty0 - scale_y * sy0]],
-        dtype=np.float32,
-    )
-
-
 def iou(left: np.ndarray, right: np.ndarray) -> float:
     intersection = np.count_nonzero((left > 0) & (right > 0))
     union = np.count_nonzero((left > 0) | (right > 0))
     return intersection / union if union else 0.0
-
-
-def register_to_web_map(source_mask: np.ndarray, target_mask: np.ndarray) -> tuple[np.ndarray, dict]:
-    """Register the 569 fill to the 572 XMap outline.
-
-    The first transform uses polity bounding boxes.  A conservative ECC pass
-    then adjusts the already-warped masks at quarter resolution.  The better of
-    the forward/inverse ECC interpretations is selected by actual mask IoU.
-    """
-
-    initial = affine_from_bbox(source_mask, target_mask)
-    quarter = (MAP_WIDTH // 4, MAP_HEIGHT // 4)
-    source_small = cv2.resize(source_mask, (source_mask.shape[1] // 4, source_mask.shape[0] // 4), interpolation=cv2.INTER_NEAREST)
-    target_small = cv2.resize(target_mask, quarter, interpolation=cv2.INTER_NEAREST)
-    initial_small = initial.copy()
-    initial_small[:, 2] /= 4.0
-    warped = cv2.warpAffine(source_small, initial_small, quarter, flags=cv2.INTER_NEAREST)
-
-    template = cv2.GaussianBlur(target_small.astype(np.float32) / 255.0, (0, 0), 3.0)
-    moving = cv2.GaussianBlur(warped.astype(np.float32) / 255.0, (0, 0), 3.0)
-    delta = np.eye(2, 3, dtype=np.float32)
-    try:
-        score, delta = cv2.findTransformECC(
-            template,
-            moving,
-            delta,
-            cv2.MOTION_AFFINE,
-            (cv2.TERM_CRITERIA_EPS | cv2.TERM_CRITERIA_COUNT, 160, 1e-6),
-            None,
-            5,
-        )
-    except cv2.error:
-        score = 0.0
-        delta = np.eye(2, 3, dtype=np.float32)
-
-    candidates: list[tuple[float, np.ndarray, str]] = []
-    initial_3 = np.vstack([initial, [0.0, 0.0, 1.0]])
-    delta_3 = np.vstack([delta, [0.0, 0.0, 1.0]])
-    for matrix_3, label in ((delta_3 @ initial_3, "ecc-forward"), (np.linalg.inv(delta_3) @ initial_3, "ecc-inverse"), (initial_3, "bbox")):
-        matrix = matrix_3[:2].astype(np.float32)
-        test = cv2.warpAffine(source_mask, matrix, (MAP_WIDTH, MAP_HEIGHT), flags=cv2.INTER_NEAREST)
-        candidates.append((iou(test, target_mask), matrix, label))
-    best_iou, best, label = max(candidates, key=lambda item: item[0])
-    return best, {
-        "method": label,
-        "ecc_score": round(float(score), 6),
-        "reference_iou": round(float(best_iou), 6),
-        "matrix": [[round(float(v), 9) for v in row] for row in best],
-    }
 
 
 def map_xy_to_lonlat(x: float, y: float) -> tuple[float, float]:
@@ -224,7 +270,22 @@ def map_xy_to_lonlat(x: float, y: float) -> tuple[float, float]:
     return round(float(lon), 6), round(float(lat), 6)
 
 
-def mask_to_geometry(mask: np.ndarray, min_area_px: float = 500.0):
+def polygon_parts(geometry) -> list[Polygon]:
+    if isinstance(geometry, Polygon):
+        return [geometry]
+    if isinstance(geometry, MultiPolygon):
+        return list(geometry.geoms)
+    if hasattr(geometry, "geoms"):
+        return [polygon for child in geometry.geoms for polygon in polygon_parts(child)]
+    return []
+
+
+def mask_to_geometry(
+    mask: np.ndarray,
+    min_area_px: float = 500.0,
+    approx_epsilon_px: float = 1.0,
+    simplify_degrees: float = 0.004,
+):
     contours, hierarchy = cv2.findContours(mask, cv2.RETR_CCOMP, cv2.CHAIN_APPROX_NONE)
     if hierarchy is None:
         raise RuntimeError("No contours found")
@@ -233,27 +294,30 @@ def mask_to_geometry(mask: np.ndarray, min_area_px: float = 500.0):
     for index, contour in enumerate(contours):
         if hierarchy[index][3] != -1 or cv2.contourArea(contour) < min_area_px:
             continue
-        outer_px = cv2.approxPolyDP(contour, 2.2, True).reshape(-1, 2)
+        outer_px = cv2.approxPolyDP(contour, approx_epsilon_px, True).reshape(-1, 2)
         outer = [map_xy_to_lonlat(x, y) for x, y in outer_px]
         holes = []
         child = hierarchy[index][2]
         while child != -1:
             if cv2.contourArea(contours[child]) >= 180.0:
-                hole_px = cv2.approxPolyDP(contours[child], 2.0, True).reshape(-1, 2)
+                hole_px = cv2.approxPolyDP(contours[child], approx_epsilon_px, True).reshape(-1, 2)
                 holes.append([map_xy_to_lonlat(x, y) for x, y in hole_px])
             child = hierarchy[child][0]
         if len(outer) >= 4:
             polygon = Polygon(outer, holes)
             if not polygon.is_valid:
                 polygon = make_valid(polygon)
-            polygons.append(polygon)
+            polygons.extend(polygon_parts(polygon))
+    if not polygons:
+        raise RuntimeError("No polygonal contours found")
     geometry = unary_union(polygons)
     if not geometry.is_valid:
         geometry = make_valid(geometry)
-    geometry = geometry.simplify(0.012, preserve_topology=True)
-    if isinstance(geometry, Polygon):
-        geometry = MultiPolygon([geometry])
-    return geometry
+    geometry = geometry.simplify(simplify_degrees, preserve_topology=True)
+    parts = polygon_parts(geometry)
+    if not parts:
+        raise RuntimeError("Topology repair removed every polygon")
+    return MultiPolygon(parts)
 
 
 def geometry_to_svg_path(geometry) -> str:
@@ -289,7 +353,7 @@ def feature(year: int, source_name: str, kind: str, geometry, registration: dict
             "source_year": source_year,
             "year_relation": "exact" if year == source_year else "nearest-available",
             "note": note,
-            "fidelity": "image-vectorized",
+            "fidelity": "image-vectorized-coastline-constrained",
             "svgPath": geometry_to_svg_path(geometry),
             "registration": registration,
         },
@@ -326,37 +390,107 @@ def write_preview(features: list[dict], dynamic: dict, destination: Path) -> Non
     contact.save(destination)
 
 
+def write_control_previews(rgb: np.ndarray, transform: np.ndarray, destination: Path) -> None:
+    """Write source-map crops around inverse-projected administrative controls."""
+
+    destination.mkdir(parents=True, exist_ok=True)
+    inverse = cv2.invertAffineTransform(transform)
+    source = Image.fromarray(rgb)
+    for name, item in ADMINISTRATIVE_CONTROL_POINTS.items():
+        target_x, target_y = item["target_xy"]
+        source_x, source_y = inverse @ np.asarray([target_x, target_y, 1.0])
+        half = 180
+        left = max(0, int(round(source_x)) - half)
+        top = max(0, int(round(source_y)) - half)
+        right = min(source.width, int(round(source_x)) + half)
+        bottom = min(source.height, int(round(source_y)) + half)
+        crop = source.crop((left, top, right, bottom)).resize(((right - left) * 2, (bottom - top) * 2), Image.Resampling.LANCZOS)
+        draw = ImageDraw.Draw(crop)
+        cx = (source_x - left) * 2
+        cy = (source_y - top) * 2
+        draw.line((cx - 26, cy, cx + 26, cy), fill=(255, 30, 30), width=3)
+        draw.line((cx, cy - 26, cx, cy + 26), fill=(255, 30, 30), width=3)
+        safe_name = name.split("（", 1)[0]
+        crop.save(destination / f"{safe_name}.png")
+
+
+def register_from_administrative_controls(source_mask: np.ndarray, target_mask: np.ndarray) -> tuple[np.ndarray, dict]:
+    """Fit the fixed Shituguan canvas to CHGIS with distributed historical seats."""
+
+    source = np.asarray([item["source_xy"] for item in ADMINISTRATIVE_CONTROL_POINTS.values()], dtype=np.float64)
+    target = np.asarray([item["target_xy"] for item in ADMINISTRATIVE_CONTROL_POINTS.values()], dtype=np.float64)
+    design = np.column_stack([source, np.ones(len(source), dtype=np.float64)])
+    transform = np.linalg.lstsq(design, target, rcond=None)[0].T.astype(np.float32)
+    predicted = design @ transform.T
+    residuals = np.linalg.norm(predicted - target, axis=1)
+    warped = cv2.warpAffine(source_mask, transform, (MAP_WIDTH, MAP_HEIGHT), flags=cv2.INTER_NEAREST)
+    controls = []
+    for (name, item), predicted_xy, residual in zip(ADMINISTRATIVE_CONTROL_POINTS.items(), predicted, residuals):
+        target_x, target_y = item["target_xy"]
+        controls.append(
+            {
+                "name": name,
+                "source_xy": list(item["source_xy"]),
+                "target_xy": list(item["target_xy"]),
+                "target_lonlat": list(map_xy_to_lonlat(target_x, target_y)),
+                "fitted_xy": [round(float(predicted_xy[0]), 3), round(float(predicted_xy[1]), 3)],
+                "residual_px": round(float(residual), 3),
+            }
+        )
+    return transform, {
+        "method": "administrative-control-affine-lstsq",
+        "control_rmse_px": round(float(np.sqrt(np.mean(residuals**2))), 6),
+        "control_max_residual_px": round(float(np.max(residuals)), 6),
+        "reference_iou": round(float(iou(warped, target_mask)), 6),
+        "matrix": [[round(float(value), 9) for value in row] for row in transform],
+        "controls": controls,
+    }
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--source-dir", type=Path, default=Path(r"E:\BaiduNetdiskDownload\史图馆地图"))
     parser.add_argument("--output", type=Path, default=ROOT / "data" / "chen-territories.geojson")
     parser.add_argument("--js-output", type=Path, default=ROOT / "data" / "chen-territories.js")
     parser.add_argument("--preview", type=Path, default=WORKSPACE / "research" / "chen-territories" / "vector-preview.png")
+    parser.add_argument("--control-preview", type=Path, default=WORKSPACE / "research" / "chen-territories" / "control-points")
     args = parser.parse_args()
 
     dynamic = load_dynamic_map()
     target = largest_component(rasterise_svg(dynamic["regimes"]["chen"]), close_size=5)
+    terrain_land, terrain_hainan, coastline = terrain_land_masks(dynamic)
+    terrain_mainland_land = cv2.bitwise_and(terrain_land, cv2.bitwise_not(terrain_hainan))
+    coastline["mainland_excludes_hainan_before_snap"] = True
     calibration_rgb = load_rgb(args.source_dir / "太建元年.jpg")
     calibration_mask = extract_chen_mask(calibration_rgb)
-    transform, registration = register_to_web_map(calibration_mask, target)
+    transform, registration = register_from_administrative_controls(calibration_mask, target)
+    write_control_previews(calibration_rgb, transform, args.control_preview)
+    registration["coastline_constraint"] = coastline
 
     features: list[dict] = []
-    cache: dict[str, tuple[object, np.ndarray]] = {}
+    cache: dict[str, tuple[object, np.ndarray, bool, np.ndarray]] = {}
     for year, source_name in YEAR_SOURCES.items():
         if source_name not in cache:
             rgb = load_rgb(args.source_dir / source_name)
-            source_mask = extract_chen_mask(rgb)
-            web_mask = cv2.warpAffine(source_mask, transform, (MAP_WIDTH, MAP_HEIGHT), flags=cv2.INTER_NEAREST)
-            cache[source_name] = (mask_to_geometry(web_mask), rgb)
-        blue_geometry, rgb = cache[source_name]
+            source_mainland, hainan_present = extract_chen_components(rgb)
+            web_mainland = cv2.warpAffine(source_mainland, transform, (MAP_WIDTH, MAP_HEIGHT), flags=cv2.INTER_NEAREST)
+            web_mask = constrain_mainland_to_coast(web_mainland, terrain_mainland_land)
+            if hainan_present:
+                web_mask = cv2.bitwise_or(web_mask, terrain_hainan)
+            cache[source_name] = (mask_to_geometry(web_mask), rgb, hainan_present, web_mask)
+        blue_geometry, rgb, hainan_present, territory_mask = cache[source_name]
         territory = blue_geometry
-        note = ""
+        note = "史圖館內陸疆界保留；海岸依網頁地形底圖校準，海南按原圖歸屬以獨立島形重建。" if hainan_present else "史圖館內陸疆界保留；海岸依網頁地形底圖校準。"
         if year == 569:
             rebellion_source = extract_guangzhou_rebellion(rgb)
-            rebellion_web = cv2.warpAffine(rebellion_source, transform, (MAP_WIDTH, MAP_HEIGHT), flags=cv2.INTER_NEAREST)
+            rebellion_raw = cv2.warpAffine(rebellion_source, transform, (MAP_WIDTH, MAP_HEIGHT), flags=cv2.INTER_NEAREST)
+            ocean_pixels_removed = int(np.count_nonzero((rebellion_raw > 0) & (terrain_land == 0)))
+            rebellion_web = cv2.bitwise_and(rebellion_raw, terrain_mainland_land)
+            coastline["rebellion_ocean_pixels_removed"] = ocean_pixels_removed
+            coastline["rebellion_ocean_overlap_px"] = int(np.count_nonzero((rebellion_web > 0) & (terrain_land == 0)))
             rebellion = mask_to_geometry(rebellion_web, min_area_px=110.0)
-            territory = make_valid(unary_union([territory, rebellion])).simplify(0.012, preserve_topology=True)
-            note = "廣州叛亂區仍計入南陳政權疆域；另以 rebellion 圖層疊加表示。"
+            territory = mask_to_geometry(cv2.bitwise_or(territory_mask, rebellion_web))
+            note += "廣州叛亂區仍計入南陳政權疆域；另以 rebellion 圖層疊加表示。"
             features.append(feature(year, source_name, "rebellion", rebellion, registration, "歐陽紇於廣州舉兵；本層不從南陳主疆域扣除。"))
         features.append(feature(year, source_name, "territory", territory, registration, note))
 
@@ -374,7 +508,7 @@ def main() -> None:
         "name": "南陳史圖館分期疆域",
         "crs": {"type": "name", "properties": {"name": "urn:ogc:def:crs:OGC:1.3:CRS84"}},
         "metadata": {
-            "version": "2026-08-24.1",
+            "version": "2026-08-24.4",
             "license_note": "疆界係依使用者本機保存的史圖館公開地圖截圖矢量化；請在再利用時保留史圖館來源說明。",
             "coordinate_system": "WGS 84 longitude/latitude (CRS84)",
             "web_map_extent": list(GEO_EXTENT),
@@ -382,7 +516,7 @@ def main() -> None:
             "registration": registration,
             "guangzhou_569_in_territory": guangzhou_569_in_territory,
             "year_mapping": {str(year): {"source_file": name, "source_year": SOURCE_YEARS[name]} for year, name in YEAR_SOURCES.items()},
-            "method": "HSV政權色分割；形態學清理；以569史圖館陳境對ChinaXMap 572陳境配準；轉入現有經緯網；輪廓拓撲修復與保形簡化。",
+            "method": "HSV政權色分割；大陸與海南分量獨立辨識；以建康、江陵、武陵、廣州、交趾、海南六個分布式人文地理控制點對CHGIS／網頁經緯網作最小二乘仿射配準；海岸線以網頁地形底圖海陸掩膜約束；海南採底圖獨立島形；輪廓拓撲修復與保形簡化。",
             "caveat": "這是史圖館概括性疆域圖的可重複矢量化，不等同逐縣邊界；缺年採最近可用年份並逐條標記。",
         },
         "features": features,

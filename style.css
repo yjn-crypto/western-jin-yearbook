@@ -552,6 +552,26 @@ body[data-theme] input:focus { outline-color: color-mix(in srgb, var(--accent) 2
 .state-governor-name:hover { text-decoration: underline; text-underline-offset: .18em; }
 .state-governor-name:focus-visible { outline: 2px solid color-mix(in srgb, var(--accent) 35%, transparent); outline-offset: 3px; }
 
+.governor-index-link {
+  appearance: none;
+  border: 0;
+  border-radius: 3px;
+  padding: 0 .08em;
+  margin: 0 0 0 .25em;
+  background: transparent;
+  color: var(--accent);
+  font-family: var(--serif);
+  font-size: .64em;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0;
+  vertical-align: super;
+  cursor: pointer;
+}
+.governor-index-link:hover { background: color-mix(in srgb, var(--accent) 10%, transparent); text-decoration: underline; }
+.governor-index-link:focus-visible { outline: 2px solid color-mix(in srgb, var(--accent) 45%, transparent); outline-offset: 2px; }
+.legend-governor-index { color: var(--accent); font-style: normal; font-size: .78rem; font-weight: 700; }
+
 .state-governor-box {
   display: grid;
   grid-template-columns: 112px minmax(0,1fr);

@@ -17,7 +17,14 @@ const expectedSourceYears = new Map([
 assert.equal(geojson.type, 'FeatureCollection');
 assert.deepEqual(JSON.parse(JSON.stringify(context.window.CHEN_TERRITORIES)), geojson, 'JS wrapper must match GeoJSON');
 assert.equal(geojson.crs.properties.name, 'urn:ogc:def:crs:OGC:1.3:CRS84');
-assert.ok(geojson.metadata.registration.reference_iou > 0.6, 'registration IoU is unexpectedly low');
+assert.equal(geojson.metadata.registration.method, 'administrative-control-affine-lstsq');
+assert.equal(geojson.metadata.registration.controls.length, 6);
+assert.ok(geojson.metadata.registration.control_rmse_px < 30, 'administrative control-point RMSE is unexpectedly high');
+assert.ok(geojson.metadata.registration.reference_iou > 0.8, 'registration IoU is unexpectedly low');
+assert.equal(geojson.metadata.registration.coastline_constraint.hainan_detached_from_mainland, true);
+assert.equal(geojson.metadata.registration.coastline_constraint.mainland_excludes_hainan_before_snap, true);
+assert.ok(geojson.metadata.registration.coastline_constraint.rebellion_ocean_pixels_removed > 0, 'Guangzhou rebellion source should record clipped coastal-ocean pixels');
+assert.equal(geojson.metadata.registration.coastline_constraint.rebellion_ocean_overlap_px, 0, 'Guangzhou rebellion layer must be clipped to land');
 assert.equal(geojson.metadata.guangzhou_569_in_territory, true);
 
 const territories = geojson.features.filter((feature) => feature.properties.kind === 'territory');
@@ -66,7 +73,24 @@ function featureContains(feature, point) {
 const territory = (year) => territories.find((feature) => feature.properties.year === year);
 const guangzhou = [113.2644, 23.1291];
 const shouchun = [116.79, 32.57];
+const jiankang = [118.808464, 31.979333];
+const jiangling = [112.196745, 30.249939];
+const wuling = [111.694531, 28.934182];
+const jiaozhi = [105.85026, 21.033333];
+const hainan = [109.8, 19.25];
+const qiongzhouStrait = [110.0, 20.3];
+const taiwan = [121.0, 23.7];
 assert.ok(featureContains(territory(569), guangzhou), 'Guangzhou must remain inside Chen territory in 569');
+for (const feature of territories) {
+  assert.ok(featureContains(feature, jiankang), `Jiankang must remain in Chen territory in ${feature.properties.year}`);
+  assert.ok(featureContains(feature, guangzhou), `Guangzhou must remain in Chen territory in ${feature.properties.year}`);
+  assert.ok(featureContains(feature, jiaozhi), `Jiaozhi must remain in Chen territory in ${feature.properties.year}`);
+  assert.ok(featureContains(feature, hainan), `Hainan must remain in Chen territory in ${feature.properties.year}`);
+  assert.ok(!featureContains(feature, qiongzhouStrait), `Qiongzhou Strait must remain water in ${feature.properties.year}`);
+  assert.ok(!featureContains(feature, taiwan), `Taiwan must not be absorbed by coastal snapping in ${feature.properties.year}`);
+}
+assert.ok(!featureContains(territory(569), jiangling), 'Later Liang capital Jiangling must not be forced into Chen territory');
+assert.ok(featureContains(territory(569), wuling), 'Wuling must align inside the 569 Chen extent');
 assert.ok(!featureContains(territory(557), shouchun), 'Shouchun must not appear in the early Chen extent');
 assert.ok(featureContains(territory(575), shouchun), 'Shouchun must appear during the Taijian northern expansion');
 assert.ok(!featureContains(territory(579), shouchun), 'Shouchun must fall outside the 579 extent');
