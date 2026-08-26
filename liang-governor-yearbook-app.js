@@ -1,14 +1,15 @@
 (() => {
   'use strict';
 
-  const DATA = window.LIANG_GOVERNOR_YEARBOOK || { meta: {}, states: [], rows: [] };
-  const COLORS = window.LIANG_PERSON_COLORS || { categories: [], people: [] };
+  const DATA = window.GOVERNOR_YEARBOOK || window.LIANG_GOVERNOR_YEARBOOK || window.CHEN_GOVERNOR_YEARBOOK || { meta: {}, states: [], rows: [] };
+  const dynastyKey = DATA.meta.dynasty_key || 'southern-liang';
+  const isLiang = dynastyKey === 'southern-liang';
   const $ = (id) => document.getElementById(id);
   const yearSelect = $('governorYearSelect');
   const stateSelect = $('governorStateSelect');
   const searchInput = $('governorSearch');
   const matchOnly = $('matchOnly');
-  const table = $('liangGovernorTable');
+  const table = $('governorYearbookTable');
   const thead = table.querySelector('thead');
   const tbody = table.querySelector('tbody');
   const status = $('yearbookStatus');
@@ -16,14 +17,6 @@
   const params = new URLSearchParams(window.location.search);
   const requestedYear = Number(params.get('year')) || null;
   const requestedState = (params.get('state') || '').trim();
-  const peopleByYear = new Map();
-
-  for (const person of COLORS.people || []) {
-    for (const [year, yearStyle] of Object.entries(person.years || {})) {
-      if (!peopleByYear.has(year)) peopleByYear.set(year, []);
-      peopleByYear.get(year).push({ person, yearStyle });
-    }
-  }
 
   const STATE_ALIASES = new Map([
     ['東揚州/會稽郡', ['東揚州', '會稽郡', '會稽']],
@@ -56,65 +49,28 @@
     return aliases.some((alias) => haystack.includes(alias));
   }
 
-  function personColorMatches(text, year) {
-    const value = String(text || '');
-    const candidates = [];
-    for (const { person, yearStyle } of peopleByYear.get(String(year)) || []) {
-      for (const alias of [person.name, ...(person.aliases || [])]) {
-        if (!alias) continue;
-        let index = value.indexOf(alias);
-        while (index >= 0) {
-          candidates.push({ index, length: alias.length, text: alias, person, yearStyle });
-          index = value.indexOf(alias, index + Math.max(1, alias.length));
-        }
-      }
-    }
-    candidates.sort((a, b) => a.index - b.index || b.length - a.length || a.person.name.localeCompare(b.person.name, 'zh-Hant'));
-    const accepted = [];
-    let end = -1;
-    for (const match of candidates) {
-      if (match.index < end) continue;
-      accepted.push(match);
-      end = match.index + match.length;
-    }
-    return accepted;
-  }
-
-  function appendColoredText(container, text, year) {
-    const value = String(text || '');
-    const matches = personColorMatches(value, year);
-    if (!matches.length) {
-      container.appendChild(document.createTextNode(value));
-      return;
-    }
-    let cursor = 0;
-    for (const match of matches) {
-      if (match.index > cursor) container.appendChild(document.createTextNode(value.slice(cursor, match.index)));
-      const span = document.createElement('span');
-      span.className = 'liang-person-color';
-      span.style.color = match.yearStyle.color;
-      span.dataset.category = match.yearStyle.category;
-      span.title = `${match.person.name}：${match.yearStyle.category}（據梁代刺史表，${year}年）`;
-      span.textContent = match.text;
-      container.appendChild(span);
-      cursor = match.index + match.length;
-    }
-    if (cursor < value.length) container.appendChild(document.createTextNode(value.slice(cursor)));
-  }
-
-  function renderCell(cell, value, year) {
+  function renderCell(cell, value, sourceColor = null) {
     const text = String(value || '');
     cell.replaceChildren();
+    cell.style.removeProperty('color');
+    delete cell.dataset.sourceColor;
     if (!text) {
       cell.classList.add('empty-cell');
       cell.textContent = '—';
       return;
     }
     cell.classList.remove('empty-cell');
+    if (sourceColor) {
+      cell.style.color = sourceColor;
+      cell.dataset.sourceColor = sourceColor;
+      cell.title = `原工作簿整格字体色：${sourceColor}`;
+    } else {
+      cell.removeAttribute('title');
+    }
     for (const line of text.split(/\r?\n/)) {
       const div = document.createElement('div');
       div.className = 'cell-line';
-      appendColoredText(div, line, year);
+      div.textContent = line;
       cell.appendChild(div);
     }
   }
@@ -126,10 +82,12 @@
       option.textContent = `${row.reign.replace(/\r?\n/g, '／')}（${row.year}）`;
       yearSelect.appendChild(option);
     }
-    const missing557 = document.createElement('option');
-    missing557.value = '557';
-    missing557.textContent = '太平二年（557；原表梁段未收）';
-    yearSelect.appendChild(missing557);
+    if (isLiang) {
+      const missing557 = document.createElement('option');
+      missing557.value = '557';
+      missing557.textContent = '太平二年（557；原表梁段未收）';
+      yearSelect.appendChild(missing557);
+    }
 
     for (const state of DATA.states) {
       const option = document.createElement('option');
@@ -148,8 +106,12 @@
       option.textContent = `附錄定位：${requestedState}`;
       stateSelect.appendChild(option);
     }
-    if (requestedYear && requestedYear >= 502 && requestedYear <= 557) yearSelect.value = String(requestedYear);
-    if (requestedState) stateSelect.value = requestedState;
+    const [firstYear, lastYear] = DATA.meta.years || [];
+    if (requestedYear && requestedYear >= firstYear && requestedYear <= lastYear + Number(isLiang)) yearSelect.value = String(requestedYear);
+    if (requestedState) {
+      const requestedStateIndex = fixedStateIndex(requestedState);
+      stateSelect.value = requestedStateIndex >= 0 ? DATA.states[requestedStateIndex].name : requestedState;
+    }
     searchInput.value = params.get('q') || '';
     matchOnly.checked = params.get('match') === '1';
   }
@@ -157,7 +119,7 @@
   function renderLegend() {
     const legend = $('personColorLegend');
     legend.replaceChildren();
-    for (const category of COLORS.categories || []) {
+    for (const category of DATA.meta.legends || []) {
       const span = document.createElement('span');
       span.className = 'yearbook-color-swatch';
       span.style.color = category.color;
@@ -185,7 +147,7 @@
     history.replaceState(null, '', url);
 
     const back = new URL('index.html', window.location.href);
-    back.searchParams.set('dynasty', 'southern-liang');
+    back.searchParams.set('dynasty', dynastyKey);
     if (year) back.searchParams.set('year', String(year));
     if (state && state !== '附錄') back.searchParams.set('state', state);
     $('mainYearbookLink').href = back.href;
@@ -205,21 +167,18 @@
       th.textContent = state.name;
       th.dataset.state = state.name;
       if (targetStateIndex === index) th.classList.add('is-target-column');
-      else if (targetStateIndex >= 0 || focusAppendix) th.classList.add('is-muted-column');
       row.appendChild(th);
     });
     const count = document.createElement('th');
     count.scope = 'col';
     count.className = 'count-column';
-    count.textContent = '出鎮皇弟皇子數';
-    if (targetStateIndex >= 0 || focusAppendix) count.classList.add('is-muted-column');
+    count.textContent = DATA.meta.auxiliary_label || '附加欄';
     row.appendChild(count);
     const appendix = document.createElement('th');
     appendix.scope = 'col';
     appendix.className = 'appendix-column';
     appendix.textContent = '附錄';
     if (focusAppendix) appendix.classList.add('is-target-column');
-    else if (targetStateIndex >= 0) appendix.classList.add('is-muted-column');
     row.appendChild(appendix);
     thead.appendChild(row);
   }
@@ -242,15 +201,14 @@
     for (const record of DATA.rows) {
       const tr = document.createElement('tr');
       tr.dataset.year = String(record.year);
-      const rowText = [record.reign, ...record.cells, record.royal_outpost_count, record.appendix].join('\n');
+      const rowText = [record.reign, ...record.cells, record.auxiliary, record.appendix].join('\n');
       const rowMatches = !query || normalize(rowText).includes(query);
       if (query && rowMatches) {
         tr.classList.add('is-search-match');
         matchedRows += 1;
       }
-      const filteredByYear = year && year !== 557 && record.year !== year;
       const filteredBySearch = query && matchOnly.checked && !rowMatches;
-      if (filteredByYear || filteredBySearch) tr.hidden = true;
+      if (filteredBySearch) tr.hidden = true;
       else visibleRows += 1;
 
       const yearCell = document.createElement('th');
@@ -275,20 +233,17 @@
         td.dataset.year = String(record.year);
         td.dataset.state = DATA.states[index].name;
         if (query && normalize(value).includes(query)) td.classList.add('is-search-match');
-        if (stateIndex >= 0 && index !== stateIndex) td.classList.add('is-muted-column');
-        if (focusAppendix) td.classList.add('is-muted-column');
         if (isTargetYear && stateIndex === index && !(!value && appendixHasTarget)) {
           td.classList.add('is-target-cell');
           targetCell = td;
         }
-        renderCell(td, value, record.year);
+        renderCell(td, value, record.colors?.[index]);
         tr.appendChild(td);
       });
 
       const count = document.createElement('td');
       count.className = 'count-column';
-      if (state) count.classList.add('is-muted-column');
-      renderCell(count, record.royal_outpost_count, record.year);
+      renderCell(count, record.auxiliary, record.auxiliary_color);
       tr.appendChild(count);
 
       const appendix = document.createElement('td');
@@ -296,14 +251,12 @@
       appendix.dataset.year = String(record.year);
       appendix.dataset.state = '附錄';
       if (query && normalize(record.appendix).includes(query)) appendix.classList.add('is-search-match');
-      if (stateIndex >= 0) appendix.classList.add('is-muted-column');
       if (isTargetYear && (focusAppendix || (stateIndex >= 0 && !record.cells[stateIndex] && appendixHasTarget))) {
-        appendix.classList.remove('is-muted-column');
         appendix.classList.add('is-target-cell');
         targetCell = appendix;
         targetAppendixContainsState = appendixHasTarget || state === '附錄';
       }
-      renderCell(appendix, record.appendix, record.year);
+      renderCell(appendix, record.appendix, record.appendix_color);
       tr.appendChild(appendix);
       tbody.appendChild(tr);
     }
@@ -319,7 +272,7 @@
   }
 
   function updateStatus({ year, state, stateIndex, query, visibleRows, matchedRows, targetCell, targetAppendixContainsState }) {
-    if (year === 557) {
+    if (isLiang && year === 557) {
       status.innerHTML = '<strong>原表梁段未收557年：</strong> 工作簿將「太平二年／永定元年」置於後接南陳表段；本頁遵守只取蕭梁表段的範圍，不跨表抄入。下方仍顯示502—556年完整梁表。';
       return;
     }

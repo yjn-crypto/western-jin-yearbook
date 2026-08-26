@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>南陳刺史年表</title>
+  <meta name="description" content="依《南朝刺史、長史、司馬年表》工作簿南陳表段重建的557—588年逐年刺史年表。">
+  <link rel="stylesheet" href="style.css?v=20260821.1">
+  <link rel="stylesheet" href="liang-governor-yearbook.css?v=20260826.1">
+</head>
+<body data-theme="ink" class="governor-yearbook-page">
+  <header class="site-header">
+    <div class="header-inner">
+      <p class="eyebrow">南陳方鎮 · 原表逐格重建</p>
+      <h1>南陳刺史年表</h1>
+      <p class="subtitle">按工作簿「南陳」表段原有紀年、州列、換行、整格字体色與附錄內容呈現；可由州郡縣表的本年刺史詳情直接定位。</p>
+    </div>
+  </header>
+
+  <main class="governor-yearbook-main">
+    <nav class="yearbook-nav" aria-label="返回與切換">
+      <button id="historyBack" type="button">返回上一頁</button>
+      <a id="mainYearbookLink" href="index.html?dynasty=chen">返回南陳州郡縣表</a>
+    </nav>
+
+    <section class="yearbook-controls" aria-label="年表定位與檢索">
+      <label>
+        <span>定位年份</span>
+        <select id="governorYearSelect"><option value="">全部年份</option></select>
+      </label>
+      <label>
+        <span>定位州</span>
+        <select id="governorStateSelect"><option value="">全部州</option></select>
+      </label>
+      <label class="yearbook-search-label">
+        <span>檢索原表文字</span>
+        <input id="governorSearch" type="search" placeholder="例如：陳伯恭、江州、長史" autocomplete="off">
+      </label>
+      <label class="check-label yearbook-match-only">
+        <input id="matchOnly" type="checkbox">
+        <span>只看命中年份</span>
+      </label>
+      <button id="resetYearbook" class="yearbook-reset" type="button">重設</button>
+    </section>
+
+    <section id="yearbookStatus" class="notice yearbook-status" aria-live="polite"></section>
+
+    <section class="yearbook-key" aria-label="人物色彩圖例">
+      <strong>人物色彩：</strong>
+      <span id="personColorLegend"></span>
+      <span class="yearbook-key-note">顏色按原工作簿的整格字体色重建；太建元年以後的淡褐色專表陳文帝諸子，其餘顏色亦保持原表範圍。</span>
+    </section>
+
+    <div class="yearbook-table-shell" aria-label="可橫向捲動的南陳刺史年表">
+      <table id="governorYearbookTable" class="governor-yearbook-table">
+        <caption>工作簿 Sheet1「南陳」表段 A321:AA352</caption>
+        <thead></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <section class="method-note yearbook-method">
+      <h2>資料範圍與讀法</h2>
+      <p>本頁採工作簿中以「南陳」為表頭的固定表段：24個州列、32個紀年行，涵蓋太平二年／永定元年（557）至禎明二年（588）。州資與附錄兩列也按原格保存。</p>
+      <p>從州詳情進入時，頁面保留557—588年完整年表，只捲動並標紅所定位的年份、州列與交叉格；若州名只見於附錄，則定位到本年附錄格。</p>
+    </section>
+  </main>
+
+  <footer><p>資料來源：使用者提供的《南朝刺史、長史、司馬年表.xlsx》工作簿，Sheet1 南陳表段。</p></footer>
+
+  <script src="data/chen-governor-yearbook.js?v=20260826.1"></script>
+  <script src="liang-governor-yearbook-app.js?v=20260826.1"></script>
+</body>
+</html>

@@ -53,12 +53,13 @@
 - 502—557年逐年附入各州；同年多任都督、刺史各佔一行，有資料的州按同年州序從 `{1}` 起編號；索引、州名與「都督/刺史」標題均可展開完整官銜、月份、遷轉與考證。
 - 年表有條目而當年政區表無唯一對應州者另列「方鎮表另見之州」，不以官銜反推行政建置。
 
-### 蕭梁刺史年表（工作簿表格）
+### 梁陳刺史年表（工作簿表格）
 
 - 使用者提供的《南朝刺史、長史、司馬年表.xlsx》，Sheet1「蕭梁」表段。
 - 網頁資料範圍為原表 A258:AC312：A欄紀年、B:AA二十六個固定州列、AB欄「出鎮皇弟皇子數」、AC欄「附錄」。格內文字與換行原樣保存，不用現有方鎮摘要反向拼表。
 - 表內中興元、二年屬改朝過渡行，未計入502—556的蕭梁逐年表；太平二年（557）位於後接南陳表段，遵守「只取蕭梁表段」原則不移入。
-- `liang-governor-yearbook.html?year=年&state=州名` 可直接定位；固定州列以紅框標亮，僅見於附錄的州則標亮該年附錄格。返回連結保留蕭梁主表年份與州篩選。
+- 南陳頁採原表 A321:AA352：557—588年、二十四個固定州列，另保留「州資」與「附錄」。梁陳兩頁均按 Excel 整格字体色顯示，不縮小王侯原有着色範圍。
+- `liang-governor-yearbook.html?year=年&state=州名` 與 `chen-governor-yearbook.html?year=年&state=州名` 可直接定位；完整年表不因年份定位而折疊，只以紅框標亮目標格。返回連結保留主表年份與州篩選。
 
 ### 南陳封爵
 
@@ -102,6 +103,7 @@ index.html
 style.css
 app.js
 liang-governor-yearbook.html
+chen-governor-yearbook.html
 liang-governor-yearbook.css
 liang-governor-yearbook-app.js
 README.md
@@ -119,6 +121,7 @@ data/
   chen-map-588.csv
   source-meta.json
   liang-governor-yearbook.js
+  chen-governor-yearbook.js
 assets/
   maps/
     chen-588-terrain-map-web.png

@@ -1,4 +1,4 @@
-.liang-governor-yearbook-page main.governor-yearbook-main {
+.governor-yearbook-page main.governor-yearbook-main {
   max-width: 1720px;
 }
 
@@ -82,7 +82,7 @@
   scrollbar-gutter: stable;
 }
 
-.liang-governor-table {
+.governor-yearbook-table {
   width: max-content;
   min-width: 100%;
   border-collapse: separate;
@@ -92,7 +92,7 @@
   line-height: 1.52;
 }
 
-.liang-governor-table caption {
+.governor-yearbook-table caption {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -100,8 +100,8 @@
   clip: rect(0 0 0 0);
 }
 
-.liang-governor-table th,
-.liang-governor-table td {
+.governor-yearbook-table th,
+.governor-yearbook-table td {
   width: 226px;
   min-width: 226px;
   max-width: 226px;
@@ -114,7 +114,7 @@
   overflow-wrap: anywhere;
 }
 
-.liang-governor-table thead th {
+.governor-yearbook-table thead th {
   position: sticky;
   top: 0;
   z-index: 20;
@@ -125,7 +125,7 @@
   letter-spacing: .04em;
 }
 
-.liang-governor-table .year-column {
+.governor-yearbook-table .year-column {
   position: sticky;
   left: 0;
   z-index: 15;
@@ -137,25 +137,24 @@
   text-align: center;
 }
 
-.liang-governor-table thead .year-column { z-index: 40; }
-.liang-governor-table .count-column { width: 128px; min-width: 128px; max-width: 128px; text-align: center; }
-.liang-governor-table .appendix-column { width: 340px; min-width: 340px; max-width: 340px; }
-.liang-governor-table .source-row { display: block; margin-top: 5px; color: #71805d; font-size: .68rem; }
-.liang-governor-table .empty-cell { color: #aaa39a; text-align: center; }
-.liang-governor-table .cell-line + .cell-line { margin-top: 4px; padding-top: 4px; border-top: 1px dotted #ddd4c8; }
+.governor-yearbook-table thead .year-column { z-index: 40; }
+.governor-yearbook-table .count-column { width: 128px; min-width: 128px; max-width: 128px; text-align: center; }
+.governor-yearbook-table .appendix-column { width: 340px; min-width: 340px; max-width: 340px; }
+.governor-yearbook-table .source-row { display: block; margin-top: 5px; color: #71805d; font-size: .68rem; }
+.governor-yearbook-table .empty-cell { color: #aaa39a; text-align: center; }
+.governor-yearbook-table .cell-line + .cell-line { margin-top: 4px; padding-top: 4px; border-top: 1px dotted #ddd4c8; }
 
-.liang-governor-table tr.is-search-match > .year-column { box-shadow: inset 5px 0 0 #aa772d; }
-.liang-governor-table td.is-search-match { background: #fff6d8; }
-.liang-governor-table th.is-target-column { background: #f2ccd0; color: #7e1c28; }
-.liang-governor-table td.is-target-cell {
+.governor-yearbook-table tr.is-search-match > .year-column { box-shadow: inset 5px 0 0 #aa772d; }
+.governor-yearbook-table td.is-search-match { background: #fff6d8; }
+.governor-yearbook-table th.is-target-column { background: #f2ccd0; color: #7e1c28; }
+.governor-yearbook-table td.is-target-cell {
   position: relative;
   z-index: 16;
   background: #fff0f1;
-  color: #52151d;
   box-shadow: inset 0 0 0 3px #c62838;
   scroll-margin: 120px 140px;
 }
-.liang-governor-table td.is-target-cell::before {
+.governor-yearbook-table td.is-target-cell::before {
   content: "定位";
   float: right;
   margin: 0 0 5px 8px;
@@ -166,14 +165,13 @@
   font-size: .68rem;
   font-weight: 700;
 }
-.liang-governor-table tr.is-target-row > .year-column {
+.governor-yearbook-table tr.is-target-row > .year-column {
   background: #f0c9cb;
   color: #741c25;
   box-shadow: inset 5px 0 0 #c62838;
 }
-.liang-governor-table .is-muted-column { opacity: .42; }
-.liang-governor-table .target-text { background: #ffd1d5; color: #7e1320; font-weight: 700; }
-.liang-governor-table tbody tr[hidden] { display: none; }
+.governor-yearbook-table .target-text { background: #ffd1d5; color: #7e1320; font-weight: 700; }
+.governor-yearbook-table tbody tr[hidden] { display: none; }
 
 .yearbook-method { margin-top: 18px; }
 .yearbook-method p { margin: .55em 0; }
@@ -185,11 +183,11 @@
 }
 
 @media (max-width: 620px) {
-  .liang-governor-yearbook-page main.governor-yearbook-main { padding-inline: 12px; }
+  .governor-yearbook-page main.governor-yearbook-main { padding-inline: 12px; }
   .yearbook-controls { position: static; grid-template-columns: 1fr; }
   .yearbook-search-label { grid-column: auto; }
   .yearbook-table-shell { max-height: 72vh; }
-  .liang-governor-table th,
-  .liang-governor-table td { width: 202px; min-width: 202px; max-width: 202px; }
-  .liang-governor-table .year-column { width: 124px; min-width: 124px; max-width: 124px; }
+  .governor-yearbook-table th,
+  .governor-yearbook-table td { width: 202px; min-width: 202px; max-width: 202px; }
+  .governor-yearbook-table .year-column { width: 124px; min-width: 124px; max-width: 124px; }
 }

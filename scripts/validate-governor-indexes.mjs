@@ -31,6 +31,19 @@ const appendGovernorExtra=vm.runInNewContext(`(${extractFunction(appSource,'appe
   normalizeName:(value)=>String(value||'').replace(/\s/g,''),
   mergeGovernorRecords
 });
+const coreGovernorStates=new Set(['揚州','江州','郢州','湘州','豫州','交州'].map((value)=>value.replace(/州$/,'')));
+const chooseGovernorTarget=vm.runInNewContext(`(${extractFunction(appSource,'chooseGovernorTarget')})`,{
+  normalizeName:(value)=>String(value||'').replace(/州$/,''),
+  CORE_SOUTHERN_GOVERNOR_STATES:coreGovernorStates,
+  governorStateContinuity:(state)=>state.continuity||0
+});
+const coreJiang={id:'liang_s0008',name:'江州',rows:Array(10),continuity:55,order:8};
+const emptyJiang={id:'liang_s0146',name:'江州',rows:[],continuity:1,order:146};
+assert.equal(chooseGovernorTarget([emptyJiang,coreJiang],{state:'江州'}),coreJiang,'正史江州應按大州與上下年連續性匹配，不得列入另見之州');
+const coreYing={id:'liang_s0058',name:'郢州',rows:Array(11),continuity:55,order:58};
+const emptyYing={id:'liang_s0034',name:'郢州',rows:[],continuity:2,order:34};
+assert.equal(chooseGovernorTarget([emptyYing,coreYing],{state:'郢州'}),coreYing,'正史郢州應按大州與上下年連續性匹配，不得列入另見之州');
+assert.equal(chooseGovernorTarget([{id:'a',name:'潼州',rows:[{}],continuity:2},{id:'b',name:'潼州',rows:[{}],continuity:2}],{state:'潼州'}),null,'非核心同名州缺乏上下文時不得強配');
 const sample=[
   {name:'揚州',group:'chen',governor:{}},
   {name:'江州',group:'chen',governor:null},

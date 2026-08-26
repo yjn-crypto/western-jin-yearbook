@@ -44,8 +44,10 @@
   const textMapLinkToggle = $('textMapLinkToggle');
   const liangReviewPanel = $('liangReviewPanel');
   const liangReviewCount = $('liangReviewCount');
-  const liangGovernorYearbookSwitch = $('liangGovernorYearbookSwitch');
-  const liangGovernorYearbookLink = $('liangGovernorYearbookLink');
+  const governorYearbookSwitch = $('governorYearbookSwitch');
+  const governorYearbookHeading = $('governorYearbookHeading');
+  const governorYearbookDescription = $('governorYearbookDescription');
+  const governorYearbookLink = $('governorYearbookLink');
   const citationRegistry = new Map();
   const auxInfoRegistry = new Map();
   let auxInfoSequence = 0;
@@ -445,22 +447,28 @@
         ...(evidence.length ? ['相關考證與史料：', ...evidence] : [])
       ].filter(Boolean),
       sourceLabel:data?.meta?.source || '魯力《魏晉南北朝方鎮年表新編·宋齊梁陳卷》方鎮年表',
-      actionLabel:currentDynasty.key==='southern-liang' ? `在蕭梁刺史年表定位${record.state}` : '',
-      actionUrl:currentDynasty.key==='southern-liang' ? governorYearbookHref(year,record.state,'detail') : ''
+      actionLabel:['southern-liang','chen'].includes(currentDynasty.key) ? `在${currentDynasty.label}刺史年表定位${record.state}` : '',
+      actionUrl:['southern-liang','chen'].includes(currentDynasty.key) ? governorYearbookHref(year,record.state,'detail') : ''
     };
   }
 
   function governorYearbookHref(year,state='',from='main') {
-    const url=new URL('liang-governor-yearbook.html',window.location.href);
+    const filename=currentDynasty.key==='chen'?'chen-governor-yearbook.html':'liang-governor-yearbook.html';
+    const url=new URL(filename,window.location.href);
     if(year)url.searchParams.set('year',String(year));
     if(state)url.searchParams.set('state',state);
     if(from)url.searchParams.set('from',from);
     return url.href;
   }
 
-  function updateLiangGovernorYearbookSwitch(year) {
-    if(!liangGovernorYearbookLink)return;
-    liangGovernorYearbookLink.href=governorYearbookHref(year,'','main');
+  function updateGovernorYearbookSwitch(year) {
+    if(!governorYearbookLink)return;
+    const label=currentDynasty.key==='chen'?'南陳':'蕭梁';
+    governorYearbookLink.href=governorYearbookHref(year,'','main');
+    governorYearbookLink.textContent=`開啟${label}刺史年表`;
+    if(governorYearbookHeading)governorYearbookHeading.textContent=`按原工作簿查看${label}逐年方鎮`;
+    if(governorYearbookDescription)governorYearbookDescription.textContent=`固定州列、附錄、格內換行與原格着色均依《南朝刺史、長史、司馬年表》${label}表段重建；從刺史詳情進入時只定位標紅本年本州，仍保留完整年表。`;
+    if(governorYearbookSwitch)governorYearbookSwitch.setAttribute('aria-label',`切換至${label}刺史年表`);
   }
 
   function assignGovernorIndexes(states,targetGroup) {
@@ -468,6 +476,39 @@
     for (const state of states) {
       state.governorIndex=state.group===targetGroup&&state.governor ? nextIndex++ : null;
     }
+  }
+
+  const CORE_SOUTHERN_GOVERNOR_STATES=new Set([
+    '揚州','南徐州','東揚州','荊州','江州','雍州','郢州','南兗州','湘州','豫州','司州','益州',
+    '廣州','青州','冀州','北徐州','北兗州','梁州','秦州','交州','越州','桂州','寧州'
+  ].map(normalizeName));
+
+  function governorStateContinuity(state,stateName) {
+    const [dynastyStart,dynastyEnd]=currentDynasty.years;
+    const key=normalizeName(stateName);
+    let years=0;
+    for(const phase of state.entity?.phases||state.entity?.ph||[]){
+      if(normalizeName(phase.name||state.entity?.name||state.entity?.n)!==key)continue;
+      const start=Math.max(dynastyStart,Number(phase.start));
+      const end=Math.min(dynastyEnd,Number(phase.end));
+      if(Number.isFinite(start)&&Number.isFinite(end)&&end>=start)years+=end-start+1;
+    }
+    return years;
+  }
+
+  function chooseGovernorTarget(candidates,record) {
+    if(record.target_id){
+      const explicit=candidates.find((state)=>state.id===record.target_id);
+      if(explicit)return explicit;
+    }
+    if(candidates.length===1)return candidates[0];
+    if(!CORE_SOUTHERN_GOVERNOR_STATES.has(normalizeName(record.state)))return null;
+    const ranked=candidates.map((state)=>({
+      state,
+      score:(state.rows?.length||0)*10000+governorStateContinuity(state,record.state)*100-Number(state.order||0)/1000
+    })).sort((a,b)=>b.score-a.score);
+    if(!ranked.length||ranked[0].score===ranked[1]?.score)return null;
+    return ranked[0].state;
   }
 
   function attachGovernors(states,year,targetGroup) {
@@ -479,11 +520,9 @@
       const displayRecord={...record,summary_lines:summaryLines};
       const key=normalizeName(record.state);
       const candidates=states.filter((s)=>s.group===targetGroup && normalizeName(s.name)===key);
-      let target=null;
-      if (record.target_id) target=candidates.find((s)=>s.id===record.target_id) || null;
-      else if (candidates.length===1) target=candidates[0];
+      const target=chooseGovernorTarget(candidates,record);
       if (target) target.governor=mergeGovernorRecords(target.governor,displayRecord);
-      else appendGovernorExtra(extras,displayRecord,candidates.length>1?`本年${currentDynasty.label}政區表存在多個同名州，未自動附著。`:`方鎮年表有長官條目，但本年${currentDynasty.label}州郡縣政區表未列此州。`);
+      else appendGovernorExtra(extras,displayRecord,candidates.length>1?`本年${currentDynasty.label}政區表存在多個同名實州，按正史大州與上下年沿革仍不能唯一判定，未自動附着。`:`方鎮年表有長官條目，但本年${currentDynasty.label}州郡縣政區表未列此州。`);
     }
     assignGovernorIndexes(states,targetGroup);
     return extras;
@@ -1398,14 +1437,14 @@
       '宗室王國只在郡級政區旁標示王號與姓名，不計算元年、二年。郡公附於郡級，開國公侯伯子男附於縣級，標作公國、侯國、伯國、子國、男國。點擊小字可查看封爵年表、承襲與資料限制。封君卒後若襲封年份無明文而親屬關係、卒年可確，原則上以第三年記新封君，中間兩年記世子服喪；史料明載優先。最後可確年份以後材料不足者，以斜體表示存疑。',
       '封爵資料只是制度注記。南朝封君通常不到封國，網頁不以爵國名稱反推實際行政機構；只有本年能唯一對應一個南陳郡或縣時，才把爵號附在該政區旁。凡本年郡級政區已按此規則附有任何封國，其逐年顯示名由「某某郡」寫作「某某國」；底層郡名、穩定ID、治所與沿革不改，封國終止後自然恢復顯示為郡。但是，儘管在行政上，封君已經基本喪失了對封國的干預，但封國在制度、禮儀、經濟等諸多層面的實在性確是確定無疑的。因此，我們認為，在唐朝不開國以前，仍有必要在郡縣旁邊標註封國與封君。',
       '陳代僑郡縣另依本書第十編侨州郡縣考表補充。梁、陳欄中，○所標為梁，△或明確屬陳者用於陳代判定。陳代不再把無實土侨州作為州級政區另列，州名及原有統屬不因此改變；僑郡、僑縣名稱以下劃線標示。若正文未標年代而原本以暗色顯示，一旦由侨置表確認為僑郡縣，以下劃線優先，不再變暗。點擊其註釋可見「原屬」與考表依據。',
-      '方鎮長官另據魯力《魏晉南北朝方鎮年表新編·宋齊梁陳卷》之「陳方鎮年表」。該表以年為經、州為緯，州下列都督、刺史等人物，並記官銜、月份、遷轉及考證。本頁在各州表內以「都督/刺史」逐人分行列出年表原有的人物、時間與官銜；只有本年有可點擊方鎮資料的州，才在州名後按州序標出從{1}重新編起的索引，索引、州名及「都督/刺史」標題均可展開同一份完整考證。方鎮表有長官而本年政區表未列的州，另置「方鎮表另見之州」，只作政治史資料提示，不據此直接增改行政區劃。',
+      '方鎮長官另據魯力《魏晉南北朝方鎮年表新編·宋齊梁陳卷》之「陳方鎮年表」。該表以年為經、州為緯，州下列都督、刺史等人物，並記官銜、月份、遷轉及考證。本頁在各州表內以「都督/刺史」逐人分行列出年表原有的人物、時間與官銜；只有本年有可點擊方鎮資料的州，才在州名後按州序標出從{1}重新編起的索引，索引、州名及「都督/刺史」標題均可展開同一份完整考證。同名州先依正史方鎮的常設大州、當年實轄郡數與上下年沿革連續性判定；仍無法唯一對應者另置「方鎮表另見之州」，只作政治史資料提示，不據此直接增改行政區劃。',
       '明州、利州等正文只知所領縣而所領郡乏考者，表格標為「郡無考」，不使用後世概念「州直領」。地圖治所與可用行政界線以CHGIS V6為主，V4補州界、V5補郡界；沒有坐標者不臆造位置。永定元年至天嘉三年、太建五年至太建十一年改用使用者保存的史圖館相應或最近年份地圖矢量化疆域，其餘年份仍明示採ChinaXMap 572年斷面近似。史圖館固定畫布以建康、江陵、武陵、廣州（番禺）、交趾、海南六處控制點配準至CHGIS／網頁經緯網；江陵本屬後梁，只作為地理錨點，不據此併入陳境。配準後僅在海岸帶依地形底圖校準東南海岸，大陸海岸約束先排除海南，海南只在史圖館原圖判定屬陳時以獨立島形併入，保留瓊州海峽。太建元年廣州叛亂面先依海陸掩膜裁至陸地，再保留在陳境內並另作疊加層。'
     ] : currentDynasty.key==='southern-liang' ? [
       '頁面依據《中國行政區劃通史·三國兩晉南朝卷（下）》第八編，按書中原有次序重建公元502—557年蕭梁州、郡級政區的逐年年末狀態。原書以問號、「前」「後」等表示的斷限仍以「※」保留，不改作確定年份。',
       '梁代實縣目前不做逐年變化：優先採用梁縣考證中的直接關係，其次採用齊末統屬，再以558年陳代統屬補充。744個梁實縣條目中，556個已確認所屬郡並靜態附入，188個多候選或無對應條目留待人工校勘，不強行放入任何郡。',
       '僑州、僑郡、僑縣以下劃線顯示；能由第十編僑州郡縣考表精確匹配者，可點擊註釋查看原屬州郡與考表頁序。梁代保留僑州，不套用南陳“不列無實土僑州”的規則。',
       '宗室王國、郡公與縣級開國爵依蕭梁封爵資料附於同名政區；只有本年能唯一匹配的政區才直接附入，無同名政區或存在多個同名政區者集中列入「未唯一定位的蕭梁封爵」。凡本年郡級政區已附有任何封國，其逐年顯示名由「某某郡」寫作「某某國」，但不改底層郡名、穩定ID、治所與沿革。封君起訖不明、承襲空檔與服喪仍按原頁規則明示。',
-      '都督、刺史等長官依《魏晉南北朝方鎮年表新編》梁方鎮年表逐年附入各州，每位人物獨佔一行；本年有可點擊方鎮資料的州，在州名後按州序標出從{1}重新編起的索引，點擊索引、州名或「都督/刺史」均可查看年表頁序。方鎮表有條目而本年政區表沒有唯一對應州者，另列「方鎮表另見之州」，不據官銜反推行政建置。',
+      '都督、刺史等長官依《魏晉南北朝方鎮年表新編》梁方鎮年表逐年附入各州，每位人物獨佔一行；本年有可點擊方鎮資料的州，在州名後按州序標出從{1}重新編起的索引，點擊索引、州名或「都督/刺史」均可查看年表頁序。同名州先依正史方鎮的常設大州、當年實轄郡數及上下年沿革連續性判定；證據仍不足者才另列「方鎮表另見之州」，不據官銜反推行政建置。',
       '地圖僅顯示534年與555年兩個CHGIS基準斷面：544年以前選用534年圖，545年以後選用555年圖。它們只提供鄰近年份的空間參考，不把單年邊界外推為502—557年逐年精確疆域。',
       '都督／刺史與封國國君的人名色彩取自「梁代職官查詢換算系統」刺史年表：皇弟紅、皇子深紅、庶姓綠、皇弟皇子之庶子藍、嗣王紫、疏屬褐、昭明太子諸子橙、皇太子諸子黃、蕃王洋紅、特封郡王玫紅。色彩按「人物＋年份」逐年套用，同一人物跨年身份變化時保留各年的來源顏色；該年表中當年未見的人物保持原樣。只有同一人物同一年顏色互相衝突時，才不自動著色並等待人工覆核。'
     ] : [
@@ -1431,7 +1470,7 @@
     const snap=buildSnapshot(year);
     const groups=new Map();for(const s of snap.states){if(!groups.has(s.groupLabel))groups.set(s.groupLabel,[]);groups.get(s.groupLabel).push(s);}
     for(const [label,states] of groups){const og=document.createElement('optgroup');og.label=label;for(const s of states){const o=document.createElement('option');o.value=s.filterKey;o.textContent=s.name;og.appendChild(o);}stateSelect.appendChild(og);}
-    if(currentDynasty.key==='southern-liang'&&snap.extraGovernorStates?.length){
+    if(['southern-liang','chen'].includes(currentDynasty.key)&&snap.extraGovernorStates?.length){
       const fixedNames=new Set(snap.states.map((state)=>normalizeName(state.name)));
       const extras=[...new Set(snap.extraGovernorStates.map((record)=>record.state).filter((state)=>state&&!fixedNames.has(normalizeName(state))))];
       if(extras.length){
@@ -1444,7 +1483,7 @@
 
   function render() {
     const year=Number(yearSelect.value);auxInfoRegistry.clear();auxInfoSequence=0;
-    updateLiangGovernorYearbookSwitch(year);
+    updateGovernorYearbookSwitch(year);
     const chenAdministrativeBaseline=currentDynasty.key==='chen'&&year===558;
     const current=buildSnapshot(year), baseline=year===currentDynasty.years[0]||chenAdministrativeBaseline, previous=baseline?current:buildSnapshot(year-1), compared=compareSnapshots(current,previous,year);
     const visible=renderResults(compared.states,compared.virtualFiefs,compared.extraGovernorStates,year), removed=filterRemoved(compared.removedChanges);
@@ -1471,7 +1510,7 @@
     const governorLegend=$('governorLegend'); if(governorLegend) governorLegend.hidden=!hasSouthernLayers;
     const liangColorLegend=$('liangColorLegend');if(liangColorLegend)liangColorLegend.hidden=currentDynasty.key!=='southern-liang';
     if(liangReviewPanel)liangReviewPanel.hidden=currentDynasty.key!=='southern-liang';
-    if(liangGovernorYearbookSwitch)liangGovernorYearbookSwitch.hidden=currentDynasty.key!=='southern-liang';
+    if(governorYearbookSwitch)governorYearbookSwitch.hidden=!['southern-liang','chen'].includes(currentDynasty.key);
     if(liangReviewCount)liangReviewCount.textContent=window.LIANG_COUNTY_OVERLAY?.meta?.manual_review||188;
     searchInput.value='';changedOnly.checked=false;populateYears();
     if(!initialLocationApplied&&requestedDynasty===currentDynasty.key&&requestedYear&&[...yearSelect.options].some((option)=>Number(option.value)===requestedYear))yearSelect.value=String(requestedYear);
@@ -1483,7 +1522,7 @@
   function syncMainLocation() {
     const url=new URL(window.location.href);
     if(currentDynasty.key==='western-jin')url.searchParams.delete('dynasty');else url.searchParams.set('dynasty',currentDynasty.key);
-    if(currentDynasty.key==='southern-liang'){
+    if(['southern-liang','chen'].includes(currentDynasty.key)){
       url.searchParams.set('year',String(yearSelect.value));
       const selected=stateSelect.selectedOptions[0];
       if(stateSelect.value&&selected)url.searchParams.set('state',selected.textContent);else url.searchParams.delete('state');
