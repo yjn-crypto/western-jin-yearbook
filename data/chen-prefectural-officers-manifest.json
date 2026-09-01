@@ -1,0 +1,205 @@
+{
+  "generated_at": "2026-09-01T01:24:53.915Z",
+  "source_master": {
+    "path": "C:/Users/余江南/Documents/ChatGPT/New project/outputs/01a040ca-52aa-7c21-8f57-1cc409b88fb1/master_officials_final.xlsx",
+    "sha256": "53d0a52841bfeab4c503547c63e1fd724e22ca4e524bd66238c8e4344c743402"
+  },
+  "file_count_excluding_manifest": 39,
+  "files": [
+    {
+      "path": "phase7_prompt.md",
+      "bytes": 1288,
+      "sha256": "a09e3f0a9bee3f7095c1134c956707ee602736cb966e5c44ccd85dbf2241a3a3"
+    },
+    {
+      "path": "yearly/557.json",
+      "bytes": 27420,
+      "sha256": "568546fe996fab7d5d224ba8a60becaa2edd5766a6ac1bb4bbbadff3df48ef52"
+    },
+    {
+      "path": "yearly/558.json",
+      "bytes": 20437,
+      "sha256": "f7552f89e047a479cbc154564cfcce587097a1d5f690f37e04154e8cca53da90"
+    },
+    {
+      "path": "yearly/559.json",
+      "bytes": 13960,
+      "sha256": "1cce621f8e9b9f1cae46411f58ce74eed09decb595dd4ae4e16727180f0b5380"
+    },
+    {
+      "path": "yearly/560.json",
+      "bytes": 13922,
+      "sha256": "2107aea184918689c5f950603fb3d6f12c743965dca5058984608eae2de6f65e"
+    },
+    {
+      "path": "yearly/561.json",
+      "bytes": 13676,
+      "sha256": "c68daea0a1a5e8a9da898085b63d127b13797bc5ccbb8948bb474c27d9386cac"
+    },
+    {
+      "path": "yearly/562.json",
+      "bytes": 20782,
+      "sha256": "8c500f0bf4c37624e03db9a678544f8d11c31bbedada50d5ecb4f550a08086d3"
+    },
+    {
+      "path": "yearly/563.json",
+      "bytes": 14367,
+      "sha256": "f9fbf2c84cec28c67ec05aa734f67d8e8130bea2256932d04378bd569facea3f"
+    },
+    {
+      "path": "yearly/564.json",
+      "bytes": 13988,
+      "sha256": "8d595c2bdb89e629052914748c12a714d4ed898498ac7ff3e8b8a654f41f60e2"
+    },
+    {
+      "path": "yearly/565.json",
+      "bytes": 7039,
+      "sha256": "c7701a2ff1f75b18db57e75ac9934b10512574e8e186718b4555d8dd21ee2bd5"
+    },
+    {
+      "path": "yearly/566.json",
+      "bytes": 7260,
+      "sha256": "8b9e1f7159dd770c79f07e36c72c853400a6eb1c3baff249660061acdf7f1272"
+    },
+    {
+      "path": "yearly/567.json",
+      "bytes": 451,
+      "sha256": "3dae4a9e56ae8a565f3c7294a07abff4bbbfba5c3f7b6832d74447f9a5c9699b"
+    },
+    {
+      "path": "yearly/568.json",
+      "bytes": 445,
+      "sha256": "c62214977be53d0ea76d95c57e1c496c4ed3a1ce5a5272ffde54292b87024d9c"
+    },
+    {
+      "path": "yearly/569.json",
+      "bytes": 20754,
+      "sha256": "03acb060df2926829768ff33a84075027eab58a04694a8d3a783f5b84a0bd120"
+    },
+    {
+      "path": "yearly/570.json",
+      "bytes": 7369,
+      "sha256": "a38cc12c3a0078bb24f288f3b4f58a297a5e482ef1edc63740ae6c6de36bba7f"
+    },
+    {
+      "path": "yearly/571.json",
+      "bytes": 7366,
+      "sha256": "f6ac9dc1ed888bee4f3f9d9b059d11382fa0224c97b51b98f1826cc3791077fd"
+    },
+    {
+      "path": "yearly/572.json",
+      "bytes": 14172,
+      "sha256": "a457f5107b2415694b0cc533326036d75f8f2dee22e0353396ce693a740c0ef6"
+    },
+    {
+      "path": "yearly/573.json",
+      "bytes": 7057,
+      "sha256": "0c8365ff2400151e408d1cc86b1bb9fadd9696ca733acf19c300290c553ac615"
+    },
+    {
+      "path": "yearly/574.json",
+      "bytes": 20858,
+      "sha256": "5715ab9a1c4366dbfbab3d6eb8ee1a0d590c3893461d39f46a75a8b358d128e2"
+    },
+    {
+      "path": "yearly/575.json",
+      "bytes": 445,
+      "sha256": "28e66719fba65dc587cf7739800ae8cd63894b5f797b0d904a3926e1f75326de"
+    },
+    {
+      "path": "yearly/576.json",
+      "bytes": 445,
+      "sha256": "f1b9d172804a21ce502f9fcb79b796aaefd942c1c0572e73b1e73f02e34fcf83"
+    },
+    {
+      "path": "yearly/577.json",
+      "bytes": 445,
+      "sha256": "19009bbd9266228e3013b8bf51666b8993e5f3a1090184e2997229303df6eff1"
+    },
+    {
+      "path": "yearly/578.json",
+      "bytes": 445,
+      "sha256": "15be34ff95a6aefca827f5ea8887e13a6c1f3824e559c385d98660a7e09807f4"
+    },
+    {
+      "path": "yearly/579.json",
+      "bytes": 13917,
+      "sha256": "08c6fe24fd327eae83321d52e988a6c5f76b1fc5c2abf8ccc4ba4d35a730b742"
+    },
+    {
+      "path": "yearly/580.json",
+      "bytes": 7279,
+      "sha256": "2fc47f0eac99198f75fed65cd1f03f8565c988c2433ab51bd559b3076cc37940"
+    },
+    {
+      "path": "yearly/581.json",
+      "bytes": 7429,
+      "sha256": "1a47a98781da24f608195990601923c496fd043b92e85f27b53a0126b5df1bcd"
+    },
+    {
+      "path": "yearly/582.json",
+      "bytes": 448,
+      "sha256": "e00447aaf4698fd5948f475543e0862c0fb9dbc3143425c5baab3b18635b5464"
+    },
+    {
+      "path": "yearly/583.json",
+      "bytes": 7419,
+      "sha256": "9633ed74125ac0c41b74b04e69190d8df0ce0c52c0534453ad5df580af755eaf"
+    },
+    {
+      "path": "yearly/584.json",
+      "bytes": 7609,
+      "sha256": "ea82b82126435fed0ccadbe3da10318dce12ae7f5f552ed7a937d46ca9d3a75a"
+    },
+    {
+      "path": "yearly/585.json",
+      "bytes": 445,
+      "sha256": "e51d68fb878ce3bdceb944a06874daf6cbf38f6b0b7b89c4e2ee02aae4560604"
+    },
+    {
+      "path": "yearly/586.json",
+      "bytes": 445,
+      "sha256": "c0b654b9a817798176f9d21e6c36d90b671afb1b52a49ec580ab99c0067837a6"
+    },
+    {
+      "path": "yearly/587.json",
+      "bytes": 445,
+      "sha256": "a80cc16fcace12c61c0ef7ee2a3f58c10a5090fb41adf0fc3d0c24e221f366a4"
+    },
+    {
+      "path": "yearly/588.json",
+      "bytes": 445,
+      "sha256": "5dc483d4f70e6f0afc8a3a335842494bbad40c365b3e0847806f269253636e5f"
+    },
+    {
+      "path": "chen_prefectural_officers_557_588.csv",
+      "bytes": 20755,
+      "sha256": "44bb0729d93ed11455cc856c7092e48698fb2cd1102ba390a6670410b023379b"
+    },
+    {
+      "path": "chen_prefectural_officers_web.json",
+      "bytes": 310163,
+      "sha256": "603f3eb64539c24c68cced0bedb42c7fe78efc1dda3885321ba16d302b4b8694"
+    },
+    {
+      "path": "chen-prefectural-officers.js",
+      "bytes": 310200,
+      "sha256": "1527beedad8a46eeadd700f267f25067a49791d619b5a9d167c6b0ec403325ff"
+    },
+    {
+      "path": "chen_prefectural_officer_links.csv",
+      "bytes": 9032,
+      "sha256": "29e49fd5bc1b28df86cb164f17286d58e0863f6e6c6ac413d70e9fd2efb8a0c7"
+    },
+    {
+      "path": "phase7_projection_audit.xlsx",
+      "bytes": 38327,
+      "sha256": "5092e9d1cb948362c300d41290149bcec5b1fae3e0ac32c5511e5eb5db6ba218"
+    },
+    {
+      "path": "phase7_validation_report.json",
+      "bytes": 3122,
+      "sha256": "8e1af76ae214d2ecb8184ecee74f6d36e24807392757f30095559de2fa25ee87"
+    }
+  ]
+}

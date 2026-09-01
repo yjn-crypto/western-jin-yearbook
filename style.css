@@ -626,11 +626,84 @@ body[data-theme] input:focus { outline-color: color-mix(in srgb, var(--accent) 2
 .governor-extra-summary { display: block; margin-top: 3px; color: var(--muted); font-size: .76rem; line-height: 1.5; }
 .governor-extra-summary p { margin: 0; }
 .governor-extra-summary p + p { margin-top: 2px; }
+
+/* 南陳年末郡級長官：沿用既有郡行，不改州郡縣兩欄結構。 */
+.legend-prefectural-officer {
+  color: #6f4f28;
+  font-family: var(--kai);
+  font-size: .78rem;
+  font-style: normal;
+  font-weight: 700;
+}
+.legend-prefectural-officer.probable { font-style: italic; font-weight: 400; }
+.prefectural-officer-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  margin-top: 6px;
+  padding: 5px 7px;
+  border-left: 3px solid #c2a26f;
+  border-radius: 0 4px 4px 0;
+  background: #faf4e8;
+}
+.prefectural-officer-label {
+  flex: 0 0 auto;
+  color: #6f4f28;
+  font-family: var(--kai);
+  font-size: .68rem;
+  font-weight: 700;
+  line-height: 1.55;
+}
+.prefectural-officer-entries { min-width: 0; }
+.prefectural-officer-entries p { margin: 0; line-height: 1.45; }
+.prefectural-officer-entries p + p { margin-top: 2px; padding-top: 2px; border-top: 1px dotted #decaa8; }
+.fief-detail-button.prefectural-officer-entry {
+  display: inline;
+  margin: 0;
+  color: #4f3d29;
+  font-family: var(--serif);
+  font-size: .76rem;
+  line-height: 1.45;
+}
+.fief-detail-button.prefectural-officer-entry.confirmed { font-style: normal; }
+.fief-detail-button.prefectural-officer-entry.probable { font-style: italic; }
+
+.prefectural-officer-detached-card {
+  background: var(--paper-2);
+  border: 1px solid var(--line);
+  border-left: 5px solid #b58b50;
+  box-shadow: 0 4px 16px rgba(47,37,27,.045);
+}
+.prefectural-officer-detached-card h2 {
+  margin: 0;
+  padding: 13px 16px;
+  background: var(--theme-pale);
+  border-bottom: 1px solid var(--line);
+  font-size: 1.25rem;
+}
+.prefectural-officer-detached-note {
+  margin: 0;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  font-size: .8rem;
+  line-height: 1.65;
+}
+.prefectural-officer-detached-list { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); }
+.prefectural-officer-detached-item { padding: 10px 14px; border-bottom: 1px solid #e4ddd2; }
+.prefectural-officer-detached-item:nth-child(odd) { border-right: 1px solid #e4ddd2; }
+.fief-detail-button.prefectural-officer-detached-button { display: block; margin: 0; color: var(--accent); font-family: var(--serif); font-size: .9rem; font-weight: 700; }
+.fief-detail-button.prefectural-officer-detached-button.confirmed { font-style: normal; }
+.fief-detail-button.prefectural-officer-detached-button.probable { font-style: italic; }
+.prefectural-officer-detached-reason { display: block; margin-top: 4px; color: var(--muted); font-size: .74rem; line-height: 1.5; }
+
 @media (max-width: 650px) {
   .state-governor-box { grid-template-columns: 1fr; gap: 7px; }
   .state-governor-label { justify-self: start; }
   .governor-extra-list { grid-template-columns: 1fr; }
   .governor-extra-item:nth-child(odd) { border-right: 0; }
+  .prefectural-officer-detached-list { grid-template-columns: 1fr; }
+  .prefectural-officer-detached-item:nth-child(odd) { border-right: 0; }
 }
 
 .liang-review-panel {
