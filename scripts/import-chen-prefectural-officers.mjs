@@ -6,10 +6,11 @@ import { fileURLToPath } from 'node:url';
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const siteDir = path.resolve(scriptDir, '..');
 const workspace = path.resolve(siteDir, '..');
+const outputId = '01a040ca-52aa-7c21-8f57-1cc409b88fb1';
 const phase7Dir = path.join(
   workspace,
   'outputs',
-  '01a040ca-52aa-7c21-8f57-1cc409b88fb1',
+  outputId,
   'phase7'
 );
 const sourceJson = path.join(phase7Dir, 'chen_prefectural_officers_web.json');
@@ -30,8 +31,12 @@ if (sourceBytes !== manifestEntry.bytes || sourceHash !== manifestEntry.sha256) 
 }
 
 const data = JSON.parse(fs.readFileSync(sourceJson, 'utf8'));
+const publicManifest = JSON.parse(JSON.stringify(manifest));
+if (publicManifest.source_master) {
+  publicManifest.source_master.path = `outputs/${outputId}/${data.meta.source_master}`;
+}
 fs.copyFileSync(sourceJson, targetJson);
-fs.copyFileSync(sourceManifest, targetManifest);
+fs.writeFileSync(targetManifest, `${JSON.stringify(publicManifest, null, 2)}\n`, 'utf8');
 fs.writeFileSync(targetScript, `window.CHEN_PREFECTURAL_OFFICERS = ${JSON.stringify(data)};\n`, 'utf8');
 
 const importedData = JSON.parse(fs.readFileSync(targetJson, 'utf8'));

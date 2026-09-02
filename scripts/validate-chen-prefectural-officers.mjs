@@ -153,6 +153,11 @@ check('P8-18', 'confirmed正常与probable斜体样式独立', styleSource.inclu
   && styleSource.includes('.prefectural-officer-detached-button.confirmed { font-style: normal; }')
   && styleSource.includes('.prefectural-officer-detached-button.probable { font-style: italic; }'));
 check('P8-19', '全39条都有唯一展示去向', attached.length + detached.length === 39 && targetFailures.length === 0, `attached=${attached.length}; detached=${detached.length}`);
+const publicSourceMasterPath = manifest.source_master?.path || '';
+const containsLocalUserPath = /^[A-Za-z]:[\\/]/.test(publicSourceMasterPath)
+  || /^\/(?:Users|home)\//i.test(publicSourceMasterPath)
+  || /(?:^|[\\/])(?:Users|home)[\\/][^\\/]+/i.test(publicSourceMasterPath);
+check('P8-20', '网站manifest不含本机绝对用户路径', Boolean(publicSourceMasterPath) && !containsLocalUserPath, publicSourceMasterPath);
 
 const failed = checks.filter((item) => item.status === 'FAIL');
 const result = {
