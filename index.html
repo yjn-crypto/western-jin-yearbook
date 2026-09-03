@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>漢魏六朝年末州郡縣表</title>
   <meta name="description" content="依據《中國行政區劃通史》逐年重建漢魏六朝年末州郡縣，並附封國資料。">
-  <link rel="stylesheet" href="style.css?v=20260901.1">
+  <link rel="stylesheet" href="style.css?v=20260902.2">
 </head>
 <body data-theme="metal">
   <header class="site-header">
@@ -42,8 +42,8 @@
           <select id="stateSelect" aria-label="篩選州"><option value="">全部州</option></select>
         </label>
         <label class="search-label">
-          <span>檢索政區或封爵</span>
-          <input id="searchInput" type="search" placeholder="例如：南康、始興、建康" autocomplete="off">
+          <span>檢索政區、官員或封爵</span>
+          <input id="searchInput" type="search" placeholder="例如：丹陽、到仲舉、建康" autocomplete="off">
         </label>
         <label class="check-label">
           <input id="changedOnly" type="checkbox">
@@ -59,7 +59,7 @@
         <span id="fiefLegend"><i class="legend-ruler">某王之二年</i> 國主年次</span>
         <span id="qiaoLegend" hidden><i class="legend-qiao">僑郡／僑縣</i> 下劃線</span>
         <span id="governorLegend" hidden><i class="legend-governor-index">{1}</i> 本年有方鎮資料（逐年重編，可點擊）；<i class="legend-ruler">都督/刺史</i> 逐人分行</span>
-        <span id="prefecturalOfficerLegend" hidden><i class="legend-prefectural-officer">郡守</i> 年末批准記錄；<i class="legend-prefectural-officer probable">斜體</i> probable</span>
+        <span id="localOfficerLegend" hidden><i class="legend-local-officer">地方長官</i> 本年曾任；<i class="legend-local-officer probable">斜體</i> 為推定</span>
         <span id="liangColorLegend" hidden title="皇弟紅、皇子深紅、庶姓綠、皇弟皇子之庶子藍、嗣王紫、疏屬褐、昭明太子諸子橙、皇太子諸子黃、蕃王洋紅、特封郡王玫紅；同一人物跨年按各年身份保留各年顏色，同年顏色衝突者暫不著色。"><i class="liang-color-key">人物色彩</i> 依梁代刺史表逐年身份</span>
       </div>
     </section>
@@ -166,10 +166,10 @@
   <script src="data/chen-data.js"></script>
   <script src="data/chen-fiefs.js"></script>
   <script src="data/chen-governors.js"></script>
-  <script src="data/chen-prefectural-officers.js?v=20260901.1"></script>
+  <script src="data/chen-local-officials.js?v=20260902.2"></script>
   <script src="data/chen-map-dynamic.js?v=20260811"></script>
   <script src="data/chen-territories.js?v=20260824.4"></script>
   <script src="data/chen-map-588.js?v=20260811"></script>
-  <script src="app.js?v=20260901.1"></script>
+  <script src="app.js?v=20260902.2"></script>
 </body>
 </html>

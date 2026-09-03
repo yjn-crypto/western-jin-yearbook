@@ -1,0 +1,35 @@
+{
+  "schema_version": "chen-local-officials-manifest-v1",
+  "generated_at": "2026-09-02T06:51:11.224Z",
+  "source_master": {
+    "file": "master_officials_final.xlsx",
+    "sha256": "53d0a52841bfeab4c503547c63e1fd724e22ca4e524bd66238c8e4344c743402"
+  },
+  "files": [
+    {
+      "path": "data/chen-local-officials-source.json",
+      "bytes": 9579472,
+      "sha256": "5d8f8e6f52ff8dbac60c34cf6ed3253238a2489197df4ccb28ab2bf769a2adc1"
+    },
+    {
+      "path": "data/chen-local-officials.json",
+      "bytes": 4271587,
+      "sha256": "288afbb41ef6f2db10eaf80d0c026d7d3e635bc78883a1bc0874d6409c953c7d"
+    },
+    {
+      "path": "data/chen-local-officials.js",
+      "bytes": 2950448,
+      "sha256": "9e9a1d539b13d6ae27d89e21307cb23e3f45b6d26792b80110bbeca0b1d466c2"
+    },
+    {
+      "path": "reports/chen-local-officials-validation.json",
+      "bytes": 468038,
+      "sha256": "8894a23a7da5eef859ce9830c09d77232e33742d074acc0bd053f4c1ad6b5baa"
+    },
+    {
+      "path": "reports/chen-local-officials-validation.md",
+      "bytes": 15683,
+      "sha256": "c04029ff7858d1cc56b1f89f46f9d301772be592eb316c78fdd77f3488cd58c4"
+    }
+  ]
+}

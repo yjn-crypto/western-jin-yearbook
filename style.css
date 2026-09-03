@@ -627,16 +627,16 @@ body[data-theme] input:focus { outline-color: color-mix(in srgb, var(--accent) 2
 .governor-extra-summary p { margin: 0; }
 .governor-extra-summary p + p { margin-top: 2px; }
 
-/* 南陳年末郡級長官：沿用既有郡行，不改州郡縣兩欄結構。 */
-.legend-prefectural-officer {
+/* 南陳地方長官：沿用既有州郡縣兩欄結構。 */
+.legend-local-officer {
   color: #6f4f28;
   font-family: var(--kai);
   font-size: .78rem;
   font-style: normal;
   font-weight: 700;
 }
-.legend-prefectural-officer.probable { font-style: italic; font-weight: 400; }
-.prefectural-officer-box {
+.legend-local-officer.probable { font-style: italic; font-weight: 400; }
+.local-officer-box {
   display: flex;
   align-items: flex-start;
   gap: 6px;
@@ -646,7 +646,7 @@ body[data-theme] input:focus { outline-color: color-mix(in srgb, var(--accent) 2
   border-radius: 0 4px 4px 0;
   background: #faf4e8;
 }
-.prefectural-officer-label {
+.local-officer-label {
   flex: 0 0 auto;
   color: #6f4f28;
   font-family: var(--kai);
@@ -654,34 +654,38 @@ body[data-theme] input:focus { outline-color: color-mix(in srgb, var(--accent) 2
   font-weight: 700;
   line-height: 1.55;
 }
-.prefectural-officer-entries { min-width: 0; }
-.prefectural-officer-entries p { margin: 0; line-height: 1.45; }
-.prefectural-officer-entries p + p { margin-top: 2px; padding-top: 2px; border-top: 1px dotted #decaa8; }
-.fief-detail-button.prefectural-officer-entry {
+.local-officer-entries { min-width: 0; }
+.local-officer-entries p { margin: 0; line-height: 1.45; }
+.local-officer-entries p + p { margin-top: 2px; padding-top: 2px; border-top: 1px dotted #decaa8; }
+.fief-detail-button.local-officer-entry {
   display: inline;
   margin: 0;
   color: #4f3d29;
   font-family: var(--serif);
-  font-size: .76rem;
+  font-size: .84rem;
   line-height: 1.45;
 }
-.fief-detail-button.prefectural-officer-entry.confirmed { font-style: normal; }
-.fief-detail-button.prefectural-officer-entry.probable { font-style: italic; }
+.fief-detail-button.local-officer-entry.confirmed { font-style: normal; }
+.fief-detail-button.local-officer-entry.probable { font-style: italic; }
+.local-officer-order-note { display: block; margin-top: 4px; color: var(--muted); font-size: .66rem; }
+.county-officer-group { display: inline-flex; flex: 0 1 auto; flex-direction: column; align-items: flex-start; margin: 0 12px 7px 0; vertical-align: top; }
+.county-officer-group > .local-officer-box { max-width: 280px; margin-top: 4px; padding: 4px 6px; }
+.county-officer-group > .local-officer-box .local-officer-label { font-size: .7rem; }
 
-.prefectural-officer-detached-card {
+.local-officer-detached-card {
   background: var(--paper-2);
   border: 1px solid var(--line);
   border-left: 5px solid #b58b50;
   box-shadow: 0 4px 16px rgba(47,37,27,.045);
 }
-.prefectural-officer-detached-card h2 {
+.local-officer-detached-card h2 {
   margin: 0;
   padding: 13px 16px;
   background: var(--theme-pale);
   border-bottom: 1px solid var(--line);
   font-size: 1.25rem;
 }
-.prefectural-officer-detached-note {
+.local-officer-detached-note {
   margin: 0;
   padding: 10px 14px;
   border-bottom: 1px solid var(--line);
@@ -689,21 +693,40 @@ body[data-theme] input:focus { outline-color: color-mix(in srgb, var(--accent) 2
   font-size: .8rem;
   line-height: 1.65;
 }
-.prefectural-officer-detached-list { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); }
-.prefectural-officer-detached-item { padding: 10px 14px; border-bottom: 1px solid #e4ddd2; }
-.prefectural-officer-detached-item:nth-child(odd) { border-right: 1px solid #e4ddd2; }
-.fief-detail-button.prefectural-officer-detached-button { display: block; margin: 0; color: var(--accent); font-family: var(--serif); font-size: .9rem; font-weight: 700; }
-.fief-detail-button.prefectural-officer-detached-button.confirmed { font-style: normal; }
-.fief-detail-button.prefectural-officer-detached-button.probable { font-style: italic; }
-.prefectural-officer-detached-reason { display: block; margin-top: 4px; color: var(--muted); font-size: .74rem; line-height: 1.5; }
+.local-officer-detached-list { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); }
+.local-officer-detached-item { padding: 10px 14px; border-bottom: 1px solid #e4ddd2; }
+.local-officer-detached-item:nth-child(odd) { border-right: 1px solid #e4ddd2; }
+.fief-detail-button.local-officer-detached-button { display: block; margin: 0; color: var(--accent); font-family: var(--serif); font-size: .9rem; font-weight: 700; }
+.fief-detail-button.local-officer-detached-button.confirmed { font-style: normal; }
+.fief-detail-button.local-officer-detached-button.probable { font-style: italic; }
+.local-officer-detached-reason { display: block; margin-top: 4px; color: var(--muted); font-size: .74rem; line-height: 1.5; }
+
+.officer-detail-section { margin: 0; padding: 12px 0; border-top: 1px solid #e4ddd2; }
+.officer-detail-section:first-child { border-top: 0; padding-top: 0; }
+.officer-detail-section h3 { margin: 0 0 7px; color: var(--accent); font-size: .94rem; }
+.officer-detail-section p { margin: 5px 0; line-height: 1.7; white-space: pre-wrap; }
+.officer-source-quote { margin: 8px 0; padding: 10px 12px; border-left: 3px solid #b89b72; background: #faf7f0; color: #40372f; line-height: 1.78; white-space: pre-wrap; }
+.officer-anchor-list { margin: 4px 0 0; padding-left: 1.35rem; }
+.officer-anchor-list li { margin: 4px 0; line-height: 1.65; }
+.officer-research-note p { color: #40372f; }
+.technical-trace { margin-top: 12px; padding: 9px 11px; border: 1px solid #d7cdc0; background: #f7f3eb; }
+.technical-trace > summary { color: var(--muted); cursor: pointer; font-size: .84rem; font-weight: 700; }
+.technical-trace dl { display: grid; grid-template-columns: minmax(150px,auto) 1fr; gap: 5px 12px; margin: 12px 0 0; font-size: .76rem; line-height: 1.55; }
+.technical-trace dt { color: #685c50; font-family: ui-monospace, SFMono-Regular, Consolas, monospace; overflow-wrap: anywhere; }
+.technical-trace dd { min-width: 0; margin: 0; overflow-wrap: anywhere; white-space: pre-wrap; }
+.technical-detached-reason { margin: 10px 0 0; color: var(--muted); font-size: .76rem; line-height: 1.55; }
 
 @media (max-width: 650px) {
   .state-governor-box { grid-template-columns: 1fr; gap: 7px; }
   .state-governor-label { justify-self: start; }
   .governor-extra-list { grid-template-columns: 1fr; }
   .governor-extra-item:nth-child(odd) { border-right: 0; }
-  .prefectural-officer-detached-list { grid-template-columns: 1fr; }
-  .prefectural-officer-detached-item:nth-child(odd) { border-right: 0; }
+  .local-officer-detached-list { grid-template-columns: 1fr; }
+  .local-officer-detached-item:nth-child(odd) { border-right: 0; }
+  .technical-trace dl { grid-template-columns: 1fr; }
+  .local-officer-box { display: block; }
+  .local-officer-label { display: block; margin-bottom: 3px; }
+  .fief-detail-button.local-officer-entry { min-height: 30px; padding: 3px 0; font-size: .86rem; }
 }
 
 .liang-review-panel {
