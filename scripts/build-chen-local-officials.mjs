@@ -4,6 +4,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import vm from 'node:vm';
 import { fileURLToPath } from 'node:url';
+import { projectTenure, PROJECTION_METHODS, projectionExamples } from './chen-local-officials-projection.mjs';
+import { orderAnnualRecords } from './chen-local-officials-order.mjs';
 
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const siteDir = path.resolve(scriptDir, '..');
@@ -17,7 +19,18 @@ const reportJsonPath = path.join(reportDir, 'chen-local-officials-validation.jso
 const reportMarkdownPath = path.join(reportDir, 'chen-local-officials-validation.md');
 
 const source = JSON.parse(fs.readFileSync(sourcePath, 'utf8'));
-const oldData = JSON.parse(fs.readFileSync(oldPath, 'utf8'));
+const baselinePath = path.join(reportDir, 'chen-local-officials-projection-baseline.json');
+const previousData = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
+const baseline = fs.existsSync(baselinePath) ? JSON.parse(fs.readFileSync(baselinePath, 'utf8')) : {
+  description: '投射收缩前发布基线；仅保存比较字段，原始主表仍在 source.json 完整保留',
+  annual_record_count: previousData.meta.annual_record_count,
+  years: Object.fromEntries(Object.entries(previousData.years).map(([year, data]) => [year, data.local_officers.map(r => ({
+    annual_presence_id: r.annual_presence_id, official_id: r.official_id, year: r.year,
+    person: r.person, place: r.place, office: r.office, level: r.administrative_link.target_level,
+    annual_presence_status: r.annual_presence_status,
+  }))])),
+};
+const runChecks = process.argv.includes('--check');
 const text = (value) => value === null || value === undefined ? '' : String(value).trim();
 const number = (value) => value === null || value === undefined || value === ''
   ? null
@@ -60,154 +73,6 @@ function boundaryStatus(main) {
     && text(main['起任确定性']) === 'confirmed'
     && text(main['终止确定性']) === 'confirmed') return 'confirmed';
   return 'probable';
-}
-
-function addBasis(map, year, basis) {
-  if (!Number.isInteger(year) || year < 557 || year > 588) return;
-  if (!map.has(year)) map.set(year, []);
-  const signature = `${basis.type}|${basis.source_field}|${basis.source_value}|${basis.strength}`;
-  if (!map.get(year).some((item) => `${item.type}|${item.source_field}|${item.source_value}|${item.strength}` === signature)) {
-    map.get(year).push(basis);
-  }
-}
-
-function projectTenure(tenure) {
-  const main = tenure.master_fields;
-  const role = text(main['记录角色']);
-  const scope = text(main['朝代范围']);
-  const level = text(main['层级']);
-  const service = text(main['履任状态']);
-  if (!DISPLAY_ROLES.has(role)) return { state: 'alias_not_displayed', records: [] };
-  if (NOT_SERVED.has(service)) return { state: 'excluded_not_served', records: [] };
-  if (!CHEN_SCOPES.has(scope)) return { state: 'outside_chen_scope', records: [] };
-  if (!COUNTY_LEVELS.has(level) && !PREFECTURE_LEVELS.has(level)) return { state: 'unsupported_level', records: [] };
-
-  const basisByYear = new Map();
-  const anchorYears = parseYears(main['年内在任锚']);
-  const adoptedYears = parseYears(main['已采用年末年份']);
-  for (const year of anchorYears) {
-    addBasis(basisByYear, year, {
-      type: 'explicit_in_year_anchor',
-      label: '主表明确在任锚点',
-      strength: 'confirmed',
-      source_field: '年内在任锚',
-      source_value: text(main['年内在任锚']),
-    });
-  }
-  for (const year of adoptedYears) {
-    addBasis(basisByYear, year, {
-      type: 'existing_manual_annual_decision',
-      label: '既有人工逐年采用结论',
-      strength: text(main['年末采用等级']) === 'confirmed' ? 'confirmed' : 'probable',
-      source_field: '已采用年末年份',
-      source_value: text(main['已采用年末年份']),
-    });
-  }
-
-  // “跨朝待分”不据边界扩大为南陈任期；但主表已有的本年在任锚必须保留。
-  if (ANCHOR_ONLY_SCOPES.has(scope)) {
-    const records = [...basisByYear.entries()].sort(([a], [b]) => a - b).map(([year, bases]) => ({
-      year,
-      annual_presence_status: bases.some((basis) => basis.strength === 'confirmed') ? 'confirmed' : 'probable',
-      annual_presence_basis: bases,
-    }));
-    return { state: records.length ? 'projected' : 'unprojectable_no_annual_evidence', records };
-  }
-
-  const sl = number(main['起任下界']);
-  const su = number(main['起任上界']);
-  const el = number(main['卸任或后官下界']);
-  const eu = number(main['卸任或后官上界']);
-  const startValues = [sl, su].filter((value) => value !== null);
-  const endValues = [el, eu].filter((value) => value !== null);
-  const earliestStart = startValues.length ? Math.min(...startValues) : null;
-  const latestStart = startValues.length ? Math.max(...startValues) : null;
-  const earliestEnd = endValues.length ? Math.min(...endValues) : null;
-  const latestEnd = endValues.length ? Math.max(...endValues) : null;
-  const exactStart = sl !== null && su !== null && sl === su;
-  const exactEnd = el !== null && eu !== null && el === eu;
-
-  if (earliestStart !== null) {
-    for (const year of rangeYears(earliestStart, latestStart)) {
-      const confirmed = exactStart
-        && text(main['起任确定性']) === 'confirmed'
-        && !SERVICE_UNCERTAIN.has(service);
-      addBasis(basisByYear, year, {
-        type: exactStart ? 'explicit_appointment_year' : 'possible_appointment_window',
-        label: exactStart ? '明确任命年份' : '主表起任区间覆盖',
-        strength: confirmed ? 'confirmed' : 'probable',
-        source_field: '起任下界/起任上界',
-        source_value: `${sl ?? '空'}—${su ?? '空'}；${text(main['起任确定性']) || '未标'}`,
-      });
-    }
-  }
-
-  if (earliestEnd !== null && service !== 'former') {
-    for (const year of rangeYears(earliestEnd, latestEnd)) {
-      const confirmed = exactEnd
-        && text(main['终止确定性']) === 'confirmed'
-        && !SERVICE_UNCERTAIN.has(service)
-        && (text(main['任次结论等级']) === 'confirmed' || ['actual', 'acting', 'concurrent'].includes(service));
-      addBasis(basisByYear, year, {
-        type: exactEnd ? 'explicit_departure_year' : 'possible_departure_window',
-        label: exactEnd ? '明确卸任或后官年份' : '主表卸任或后官区间覆盖',
-        strength: confirmed ? 'confirmed' : 'probable',
-        source_field: '卸任或后官下界/卸任或后官上界',
-        source_value: `${el ?? '空'}—${eu ?? '空'}；${text(main['终止确定性']) || '未标'}`,
-      });
-    }
-  }
-
-  if (earliestStart !== null && latestEnd !== null && earliestStart <= latestEnd) {
-    for (const year of rangeYears(earliestStart, latestEnd)) {
-      const guaranteed = su !== null && el !== null && year >= su && year <= el;
-      const confirmed = guaranteed && text(main['任次结论等级']) === 'confirmed';
-      addBasis(basisByYear, year, {
-        type: 'tenure_interval_overlap',
-        label: confirmed ? '确定任期覆盖本年' : '推定任期可能覆盖本年',
-        strength: confirmed ? 'confirmed' : 'probable',
-        source_field: '规范任期边界',
-        source_value: `${sl ?? '空'}—${su ?? '空'} / ${el ?? '空'}—${eu ?? '空'}`,
-      });
-    }
-  }
-
-  const existingPresenceYears = [...new Set([...anchorYears, ...adoptedYears])].sort((a, b) => a - b);
-  if (existingPresenceYears.length) {
-    const firstPresence = existingPresenceYears[0];
-    const lastPresence = existingPresenceYears.at(-1);
-    if (earliestStart !== null && earliestStart < firstPresence) {
-      for (const year of rangeYears(earliestStart, firstPresence)) {
-        addBasis(basisByYear, year, {
-          type: 'bounded_to_existing_presence', label: '由既有在任年份与起任边界夹定', strength: 'probable',
-          source_field: '规范任期边界+既有在任年份', source_value: `${earliestStart}—${firstPresence}`,
-        });
-      }
-    }
-    if (latestEnd !== null && latestEnd > lastPresence) {
-      for (const year of rangeYears(lastPresence, latestEnd)) {
-        addBasis(basisByYear, year, {
-          type: 'bounded_from_existing_presence', label: '由既有在任年份与终止边界夹定', strength: 'probable',
-          source_field: '既有在任年份+规范任期边界', source_value: `${lastPresence}—${latestEnd}`,
-        });
-      }
-    }
-    if (firstPresence < lastPresence) {
-      for (const year of rangeYears(firstPresence, lastPresence)) {
-        addBasis(basisByYear, year, {
-          type: 'between_existing_presence_points', label: '两项既有在任年份之间', strength: 'probable',
-          source_field: '既有在任年份', source_value: `${firstPresence}—${lastPresence}`,
-        });
-      }
-    }
-  }
-
-  const records = [...basisByYear.entries()].sort(([a], [b]) => a - b).map(([year, bases]) => ({
-    year,
-    annual_presence_status: bases.some((basis) => basis.strength === 'confirmed') ? 'confirmed' : 'probable',
-    annual_presence_basis: bases,
-  }));
-  return { state: records.length ? 'projected' : 'unprojectable_no_annual_evidence', records };
 }
 
 function activePhase(phases, year) {
@@ -341,15 +206,20 @@ function tenureTime(tenure) {
 const tenureProjection = new Map();
 const sourceDisposition = [];
 for (const tenure of source.tenures) {
-  const result = projectTenure(tenure);
+  const result = projectTenure(tenure, source.tenures);
   tenureProjection.set(tenure.official_id, result);
   sourceDisposition.push({
     official_id: tenure.official_id,
     source_timeline_id: tenure.source_timeline_id,
     state: result.state,
     projected_years: result.records.map((record) => record.year),
+    projection_method: result.projection_method,
+    projection_constraints: result.constraints,
+    ignored_time_evidence: result.ignored_time_evidence,
+    excluded_years: result.excluded_years ?? [],
+    rule0_outside_constraints: result.rule0_outside_constraints ?? [],
     reason: ({
-      projected: '由主表现有年度锚点或任期边界机械投射',
+      projected: '由现有时间证据分类投射；三年窗口仅为上限，受明确边界约束',
       alias_not_displayed: '归并/发布别名仅保留追溯，不重复显示为独立任次',
       outside_chen_scope: `主表朝代范围为“${text(tenure.master_fields['朝代范围']) || '空'}”，未断言属于南陈`,
       excluded_not_served: `主表履任状态为“${text(tenure.master_fields['履任状态'])}”，明确排除实际履任`,
@@ -452,11 +322,15 @@ for (const tenure of projectedTenures) {
       confidence: projection.annual_presence_status,
       tenure_boundary_status: details.tenure_boundary_status,
       annual_presence_basis: projection.annual_presence_basis,
+      projection_method: projection.projection_method,
+      three_year_window_is_cap: true,
+      projection_constraints: projection.projection_constraints,
       reasoning_source: projection.annual_presence_basis,
       display_style: projection.annual_presence_status === 'probable' ? 'italic' : 'normal',
       display_italic: projection.annual_presence_status === 'probable',
       intra_year_order: null,
-      intra_year_order_status: 'unknown',
+      intra_year_order_status: 'unresolved',
+      intra_year_order_basis: [],
       intra_year_order_note: '年内先后未详',
       display_order: null,
       administrative_link: administrativeLink(tenure, projection.year),
@@ -501,54 +375,12 @@ function groupKey(record) {
     : `${link.target_level}|detached|${normalizePlace(record.place, link.target_level)}`;
 }
 
+const orderingGroups = orderAnnualRecords(annualRecords, source.tenures, groupKey);
 for (const year of targetYears) {
   const annual = annualRecords.filter((record) => record.year === year);
-  const groups = new Map();
-  for (const record of annual) {
-    const key = groupKey(record);
-    if (!groups.has(key)) groups.set(key, []);
-    groups.get(key).push(record);
-  }
-  for (const records of groups.values()) {
-    records.sort((left, right) => {
-      const leftDetails = tenureCatalog[left.official_id];
-      const rightDetails = tenureCatalog[right.official_id];
-      const leftStartMonth = leftDetails.tenure_time.start_lower === year && leftDetails.tenure_time.start_upper === year
-        ? monthFromText(leftDetails.tenure_time.original_start) : null;
-      const rightStartMonth = rightDetails.tenure_time.start_lower === year && rightDetails.tenure_time.start_upper === year
-        ? monthFromText(rightDetails.tenure_time.original_start) : null;
-      if (leftStartMonth !== null && rightStartMonth !== null && leftStartMonth !== rightStartMonth) return leftStartMonth - rightStartMonth;
-      const relation = projectedTenures.find((tenure) => tenure.official_id === left.official_id)?.relation_links?.find((edge) =>
-        edge.type === 'PREDECESSOR_CANDIDATE'
-        && edge.from === `tenure:${left.technical_trace.source_timeline_id}`
-        && edge.to === `tenure:${right.technical_trace.source_timeline_id}`);
-      if (relation) return -1;
-      const reverse = projectedTenures.find((tenure) => tenure.official_id === right.official_id)?.relation_links?.find((edge) =>
-        edge.type === 'PREDECESSOR_CANDIDATE'
-        && edge.from === `tenure:${right.technical_trace.source_timeline_id}`
-        && edge.to === `tenure:${left.technical_trace.source_timeline_id}`);
-      if (reverse) return 1;
-      return left.official_id.localeCompare(right.official_id, 'en', { numeric: true });
-    });
-    const allHaveDistinctMonths = records.length > 1 && records.every((record) => {
-      const details = tenureCatalog[record.official_id];
-      return details.tenure_time.start_lower === year && details.tenure_time.start_upper === year
-        && monthFromText(details.tenure_time.original_start) !== null;
-    }) && new Set(records.map((record) => monthFromText(tenureCatalog[record.official_id].tenure_time.original_start))).size === records.length;
-    records.forEach((record, index) => {
-      record.intra_year_order = index + 1;
-      if (records.length === 1) {
-        record.intra_year_order_status = 'single_record';
-        record.intra_year_order_note = '';
-      } else if (allHaveDistinctMonths) {
-        record.intra_year_order_status = 'ordered_by_existing_date_anchor';
-        record.intra_year_order_note = '按主表现有任命月份排列';
-      }
-    });
-  }
   annual.sort((left, right) => compareTuple(adminOrder(left), adminOrder(right))
     || groupKey(left).localeCompare(groupKey(right), 'zh-CN')
-    || left.intra_year_order - right.intra_year_order
+    || (left.group_display_order ?? 999) - (right.group_display_order ?? 999)
     || left.official_id.localeCompare(right.official_id, 'en', { numeric: true }));
   annual.forEach((record, index) => { record.display_order = index + 1; });
 }
@@ -561,7 +393,8 @@ for (const year of targetYears) {
     year,
     list_semantics: 'all_existing_master_tenures_confirmed_or_probable_present_during_year',
     administrative_snapshot_semantics: 'year_end_only_for_geography_not_officers',
-    intra_year_succession_inferred: false,
+    intra_year_succession_inferred: true,
+    intra_year_order_semantics: 'existing_dates_relations_and_adjacent_year_continuity',
     record_count: records.length,
     prefecture_count: records.filter((record) => record.administrative_link.target_level === 'prefecture').length,
     county_count: records.filter((record) => record.administrative_link.target_level === 'county').length,
@@ -588,7 +421,9 @@ const runtimeData = {
     source_workbook: source.source.workbook,
     source_master_sha256: source.source.workbook_sha256,
     source_sheet: '任次主表',
-    projection_rule: 'Project only existing structured annual anchors, adopted annual conclusions, and normalized tenure boundaries; never infer new tenure dates.',
+    projection_rule: 'Prioritize existing annual decisions and anchors; use exclusive temporal evidence classes and capped windows, clipped by existing constraints. No master tenure dates are changed.',
+    three_year_window_is_cap: true,
+    projection_methods: PROJECTION_METHODS,
     display_rule: { confirmed: 'normal', probable: 'italic' },
     preservation: source.preservation,
     disposition_counts: dispositionCounts,
@@ -601,14 +436,14 @@ const runtimeData = {
 };
 
 function oldCounts(year) {
-  const records = oldData.years?.[String(year)]?.prefectural_officers ?? [];
+  const records = baseline.years[String(year)] ?? [];
   return {
     total: records.length,
-    prefecture: records.length,
-    county: 0,
-    places: new Set(records.map((record) => record.place)).size,
-    confirmed: records.filter((record) => record.year_end_status === 'confirmed').length,
-    probable: records.filter((record) => record.year_end_status === 'probable').length,
+    prefecture: records.filter(r => r.level === 'prefecture').length,
+    county: records.filter(r => r.level === 'county').length,
+    places: new Set(records.map(r => r.level + '|' + r.place)).size,
+    confirmed: records.filter(r => r.annual_presence_status === 'confirmed').length,
+    probable: records.filter(r => r.annual_presence_status === 'probable').length,
   };
 }
 
@@ -641,28 +476,74 @@ const missingAnchorPairs = anchorPairs.filter((anchor) => !annualRecords.some((r
 const danyangByYear = targetYears.map((year) => ({
   year,
   records: years[String(year)].local_officers.filter((record) => record.place === '丹阳' && record.office.includes('丹阳尹'))
-    .map((record) => ({ official_id: record.official_id, person: record.person, office: record.office, status: record.annual_presence_status })),
+    .map((record) => ({ official_id: record.official_id, person: record.person, office: record.office, status: record.annual_presence_status,
+      intra_year_order: record.intra_year_order, intra_year_order_status: record.intra_year_order_status,
+      intra_year_order_note: record.intra_year_order_note })),
 }));
+const baselineRecords = Object.values(baseline.years).flat();
+const currentKeys = new Set(annualRecords.map(r => r.annual_presence_id));
+const baselineKeys = new Set(baselineRecords.map(r => r.annual_presence_id));
+const removedRecords = baselineRecords.filter(r => !currentKeys.has(r.annual_presence_id)).map(r => {
+  const projection = tenureProjection.get(r.official_id);
+  const clipped = (projection.constraints || []).filter(c => (c.lower != null && r.year < c.lower) || (c.upper != null && r.year > c.upper));
+  const capped = ['appointment_three_year_cap', 'departure_three_year_cap', 'sighting_plus_minus_three', 'multiple_sighting_union'].includes(projection.projection_method);
+  return { ...r, projection_method: projection.projection_method,
+    removal_reason: clipped.length ? 'existing_constraint' : capped ? 'finite_window_cap' : 'no_usable_time_or_explicit_exclusion',
+    reason: clipped.length ? clipped.map(c => c.label || c.type).join('；') : capped ? '不在本任次有限候选窗口内；不再用宽泛边界或两锚间隔补齐' : '缺少可用年度证据或已有明确排除',
+    constraints: clipped };
+});
+const addedRecords = annualRecords.filter(r => !baselineKeys.has(r.annual_presence_id)).map(r => ({
+  annual_presence_id: r.annual_presence_id, official_id: r.official_id, year: r.year,
+  person: r.person, place: r.place, projection_method: r.projection_method, annual_presence_status: r.annual_presence_status,
+}));
+const projectionMethodCounts = Object.fromEntries(PROJECTION_METHODS.map(method => [method, annualRecords.filter(r => r.projection_method === method).length]));
+const projectionChange = {
+  before: baseline.annual_record_count, after: annualRecords.length,
+  removed_count: removedRecords.length,
+  three_year_cap_removed_count: removedRecords.filter(r => r.removal_reason === 'finite_window_cap').length,
+  constraint_removed_count: removedRecords.filter(r => r.removal_reason === 'existing_constraint').length,
+  added_count: addedRecords.length, by_method: projectionMethodCounts,
+  removed: removedRecords, added: addedRecords,
+  interpretation: '删除数与新增数分别列出；新增有限见任窗口只代表 probable，不是新增历史任期。宽泛未决边界缺乏事件时间时单列 fallback。',
+};
+const multiOrderingGroups = orderingGroups.filter(g => g.record_count > 1);
+const orderingSummary = {
+  multi_groups: multiOrderingGroups.length,
+  resolved_groups: multiOrderingGroups.filter(g => g.resolved).length,
+  partial_groups: multiOrderingGroups.filter(g => g.partial).length,
+  unresolved_groups: multiOrderingGroups.filter(g => !g.resolved && !g.concurrent).length,
+  concurrent_groups: multiOrderingGroups.filter(g => g.concurrent).length,
+  comparable_exact_date_groups: multiOrderingGroups.filter(g => g.exact_date_edges.length).length,
+  requested_exact_date_groups: 10,
+  note: '仅统计现有可比较月日；本轮不运行网页验收，不编造不足的实例。',
+};
 const tests = [
-  { id: 'A', label: '562年由全部有效任次重建', pass: newCounts(562).total > oldCounts(562).total && newCounts(562).prefecture >= 20, detail: { before: oldCounts(562), after: newCounts(562) } },
-  { id: 'B', label: '563年由全部有效任次重建', pass: newCounts(563).total > oldCounts(563).total && newCounts(563).prefecture >= 15, detail: { before: oldCounts(563), after: newCounts(563) } },
+  { id: 'A', label: '562年由全部有效任次重建', pass: newCounts(562).prefecture >= 20, detail: { before: oldCounts(562), after: newCounts(562) } },
+  { id: 'B', label: '563年由全部有效任次重建', pass: newCounts(563).prefecture >= 15, detail: { before: oldCounts(563), after: newCounts(563) } },
   { id: 'C', label: '丹阳尹按主表结构化边界逐年投射', pass: danyangByYear.some((row) => row.records.length > 1) && danyangByYear.flatMap((row) => row.records).length >= 15, detail: { annual_rows: danyangByYear.flatMap((row) => row.records).length } },
   { id: 'D', label: '557—588明确在任锚点全部覆盖', pass: missingAnchorPairs.length === 0, detail: { anchor_pairs: anchorPairs.length, missing: missingAnchorPairs } },
   { id: 'E', label: '502条原始任次及全部追溯数据完整保留', pass: source.preservation.tenure_rows === 502 && source.preservation.distinct_official_ids === 502 && source.preservation.original_backup_rows === 501 && source.preservation.phase6_revision_rows === 11, detail: source.preservation },
   { id: 'F', label: '明确未履任任次无年度投射', pass: sourceDisposition.filter((row) => row.state === 'excluded_not_served').length === 21 && source.tenures.filter((tenure) => NOT_SERVED.has(text(tenure.master_fields['履任状态']))).every((tenure) => !annualRecords.some((record) => record.official_id === tenure.official_id)), detail: { excluded: sourceDisposition.filter((row) => row.state === 'excluded_not_served').length } },
   { id: 'G', label: '同地同年多任保留且不作唯一现任检查', pass: annualRecords.some((record, index) => annualRecords.some((other, otherIndex) => otherIndex > index && other.year === record.year && other.place === record.place && other.administrative_link.target_level === record.administrative_link.target_level)), detail: { multi_record_groups: new Set(annualRecords.map((record) => `${record.year}|${record.administrative_link.target_level}|${record.place}`).filter((key) => annualRecords.filter((record) => `${record.year}|${record.administrative_link.target_level}|${record.place}` === key).length > 1)).size } },
 ];
-assert(tests.every((test) => test.pass), `Validation failed: ${tests.filter((test) => !test.pass).map((test) => test.id).join(', ')}`);
+if (runChecks) assert(tests.every((test) => test.pass), `Validation failed: ${tests.filter((test) => !test.pass).map((test) => test.id).join(', ')}`);
 
 fs.mkdirSync(path.dirname(jsonPath), { recursive: true });
 fs.mkdirSync(reportDir, { recursive: true });
+if (!fs.existsSync(baselinePath)) fs.writeFileSync(baselinePath, `${JSON.stringify(baseline, null, 2)}\n`, 'utf8');
 fs.writeFileSync(jsonPath, `${JSON.stringify(runtimeData, null, 2)}\n`, 'utf8');
 fs.writeFileSync(scriptPath, `window.CHEN_LOCAL_OFFICIALS = ${JSON.stringify(runtimeData)};\n`, 'utf8');
 
 const report = {
   generated_at: new Date().toISOString(),
-  release_gate: tests.every((test) => test.pass) ? 'PASS' : 'FAIL',
+  release_gate: runChecks ? (tests.every((test) => test.pass) ? 'PASS' : 'FAIL') : 'DEFERRED_USER_REQUEST',
   source: source.source,
+  projection_change: projectionChange,
+  ordering_summary: orderingSummary,
+  ordering_groups: orderingGroups,
+  deferred_validation: { status: 'DEFERRED_USER_REQUEST', note: '本轮生成数据与统计；统一验收待用户安排。未执行浏览器验收或全量测试。',
+    synthetic_projection_cases: ['562起任：562—564', '562卸任：560—562', '562见任：559—565', '562起563止：562—563', '562见任563继任：最迟563', '多见任窗口并集不填空档', '人工逐年排除优先'],
+    required_exact_date_group_target: 10 },
   counts: {
     original_tenures: source.preservation.tenure_rows,
     effective_canonical_tenures: source.tenures.filter((tenure) => DISPLAY_ROLES.has(text(tenure.master_fields['记录角色']))).length,
@@ -674,7 +555,7 @@ const report = {
     annual_records: annualRecords.length,
     by_year: Object.fromEntries(targetYears.map((year) => [year, newCounts(year)])),
   },
-  tests,
+  tests: runChecks ? tests : tests.map(({ pass, ...test }) => ({ ...test, status: 'NOT_RUN' })),
   test_a: { before: oldCounts(562), after: newCounts(562), records: years['562'].local_officers },
   test_b: { before: oldCounts(563), after: newCounts(563), records: years['563'].local_officers },
   test_c_danyang_yin: danyangByYear,
@@ -689,9 +570,9 @@ const markdown = `# 南陈郡县地方长官年度投射验证报告
 
 生成时间：${report.generated_at}
 
-验证结果：**${report.release_gate}**
+验证安排：**${report.release_gate}**（依用户要求，正式统一验收待本朝完成后进行）
 
-本次只按 \`master_officials_final.xlsx\` 已有结构化边界、在任锚点及人工逐年结论机械生成，不从史料正文新增任期判断。官员记录表示“本年曾任”，不表示该年最后时点仍在任。
+本次按 \`master_officials_final.xlsx\` 已有边界、在任锚点及人工逐年结论分类计算有限年度窗口。三年为上限，不改变主表任期；不从史料正文新增判断。官员记录表示“本年曾任”，不表示该年最后时点仍在任。
 
 ## 数据保存与投射边界（测试E）
 
@@ -705,6 +586,36 @@ const markdown = `# 南陈郡县地方长官年度投射验证报告
 - 生成年度记录：${report.counts.annual_records}
 
 全部502条任次、501条原始字段备份、232条变更日志、48条旧逐年选择记录和11条第六阶段定向修订均保留在源快照；旧选择记录不再控制网页发布。
+
+## 年度窗口收缩
+
+- 修改前年度记录：${projectionChange.before}
+- 修改后年度记录：${projectionChange.after}
+- 因有限三年窗口删除：${projectionChange.three_year_cap_removed_count}
+- 因已有明确约束裁剪：${projectionChange.constraint_removed_count}
+- 所有移除：${projectionChange.removed_count}；新窗口新增：${projectionChange.added_count}
+
+${projectionChange.interpretation}
+
+| 投射方法 | 年度记录数 |
+| --- | ---: |
+${Object.entries(projectionMethodCounts).map(([method,count]) => `| ${method} | ${count} |`).join('\n')}
+
+单一不确定起任事件若跨多个可能年份，计算各可能事件年份的三年窗口并集，再受现有边界裁剪，不任意挑一个起年。多次见任各自计算前后三年窗口，不自动补齐窗口之间的空档。仅有上限/下限不视为已经发生的任免事件。原有宽泛且 unresolved 的边界在无可用事件信息时单列 fallback，其边界没有被本轮改写。
+
+## 本轮移除的年度显示记录
+
+| 年 | 人名 | 官职 | 原因 | 任次ID |
+| ---: | --- | --- | --- | --- |
+${removedRecords.map(r => `| ${r.year} | ${r.person} | ${r.office} | ${r.reason} | ${r.official_id} |`).join('\n')}
+
+## 年内排序
+
+多任组 ${orderingSummary.multi_groups}；已定序 ${orderingSummary.resolved_groups}；仍有未定顺序 ${orderingSummary.unresolved_groups}（其中部分定序 ${orderingSummary.partial_groups}）；明确并任 ${orderingSummary.concurrent_groups}。有可比较精确日期依据 ${orderingSummary.comparable_exact_date_groups} 组（用户目标10组，若不足保持如实记录）。
+
+${orderingGroups.filter(g => g.record_count > 1).map(g => `- ${g.year} ${g.key}：${g.resolved ? '全部定序' : g.partial ? '部分定序' : '未定序'}；${g.unresolved_reason || '现有约束可建立次序'}`).join('\n')}
+
+详细约束、优先级和未定原因见同名 JSON 的 ordering_groups。精确月日实例只统计现有可比较字段；不足10组时如实报告，不另行考据凑数。本轮没有进行网页排序验收。
 
 ## 562年（测试A）
 
@@ -728,7 +639,7 @@ ${report.test_b.records.map(tableRecord).join('\n')}
 
 | 年 | 记录 |
 | ---: | --- |
-${danyangByYear.map((row) => `| ${row.year} | ${row.records.length ? row.records.map((record) => `${record.person}（${record.status}，${record.official_id}）`).join('；') : '—'} |`).join('\n')}
+${danyangByYear.map((row) => `| ${row.year} | ${row.records.length ? row.records.map((record) => `${record.intra_year_order ?? '?'} ${record.person}（${record.status}，${record.intra_year_order_status}，${record.official_id}）${record.intra_year_order_note || ''}`).join('；') : '—'} |`).join('\n')}
 
 ## 史料锚点（测试D）
 
@@ -745,7 +656,7 @@ ${targetYears.map((year) => { const counts = report.counts.by_year[year]; return
 
 | ID | 检查 | 结果 |
 | --- | --- | --- |
-${tests.map((test) => `| ${test.id} | ${test.label} | ${test.pass ? 'PASS' : 'FAIL'} |`).join('\n')}
+${tests.map((test) => `| ${test.id} | ${test.label} | ${runChecks ? (test.pass ? 'PASS' : 'FAIL') : '未运行（用户要求延后验收）'} |`).join('\n')}
 `;
 fs.writeFileSync(reportMarkdownPath, markdown, 'utf8');
 
@@ -763,7 +674,9 @@ const manifest = {
 fs.writeFileSync(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`, 'utf8');
 
 console.log(JSON.stringify({
-  status: 'PASS',
+  status: runChecks ? 'PASS' : 'BUILT_VALIDATION_DEFERRED',
+  projection_change: { before: projectionChange.before, after: projectionChange.after, removed: projectionChange.removed_count, cap_removed: projectionChange.three_year_cap_removed_count, added: projectionChange.added_count, methods: projectionMethodCounts },
+  ordering: orderingSummary,
   counts: report.counts,
   test_a: report.test_a.after,
   test_b: report.test_b.after,

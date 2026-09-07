@@ -1,6 +1,6 @@
 {
   "schema_version": "chen-local-officials-manifest-v1",
-  "generated_at": "2026-09-02T06:51:11.224Z",
+  "generated_at": "2026-09-07T07:41:32.009Z",
   "source_master": {
     "file": "master_officials_final.xlsx",
     "sha256": "53d0a52841bfeab4c503547c63e1fd724e22ca4e524bd66238c8e4344c743402"
@@ -13,23 +13,23 @@
     },
     {
       "path": "data/chen-local-officials.json",
-      "bytes": 4271587,
-      "sha256": "288afbb41ef6f2db10eaf80d0c026d7d3e635bc78883a1bc0874d6409c953c7d"
+      "bytes": 4951128,
+      "sha256": "ce6be7f7a6bd8d2742271c4794f031bd3e44db6537c689d0c7e790b6399f656a"
     },
     {
       "path": "data/chen-local-officials.js",
-      "bytes": 2950448,
-      "sha256": "9e9a1d539b13d6ae27d89e21307cb23e3f45b6d26792b80110bbeca0b1d466c2"
+      "bytes": 3463369,
+      "sha256": "2aa19cf6ffd7d3773e981ae5c1572a5e6766db5472d5a57c3408684a9eb71463"
     },
     {
       "path": "reports/chen-local-officials-validation.json",
-      "bytes": 468038,
-      "sha256": "8894a23a7da5eef859ce9830c09d77232e33742d074acc0bd053f4c1ad6b5baa"
+      "bytes": 1395029,
+      "sha256": "b7fa0aeb901ea86205a0efcb0203a4b38de828ae3555baec91f2bdaf58759076"
     },
     {
       "path": "reports/chen-local-officials-validation.md",
-      "bytes": 15683,
-      "sha256": "c04029ff7858d1cc56b1f89f46f9d301772be592eb316c78fdd77f3488cd58c4"
+      "bytes": 51611,
+      "sha256": "b9524bdf18b300d7143336e14e60f266c5a33cac4668a28b1a78a921cd2f3233"
     }
   ]
 }
