@@ -4,6 +4,16 @@
   const DATA = window.GOVERNOR_YEARBOOK || window.LIANG_GOVERNOR_YEARBOOK || window.CHEN_GOVERNOR_YEARBOOK || { meta: {}, states: [], rows: [] };
   const dynastyKey = DATA.meta.dynasty_key || 'southern-liang';
   const isLiang = dynastyKey === 'southern-liang';
+  const sourceFormats = isLiang ? null : window.CHEN_YEARBOOK_FORMATS;
+  const sourceRenderer = window.GOVERNOR_SOURCE_FORMAT;
+  const formattedRows = new Map((sourceFormats?.rows || []).map((row) => [row.year, row]));
+  const rows = sourceFormats ? sourceFormats.rows.map((row) => ({
+    ...row,
+    reign: row.reign.text,
+    cells: row.cells.map((cell) => cell.text),
+    auxiliary: row.auxiliary.text,
+    appendix: row.appendix.text,
+  })) : DATA.rows;
   const $ = (id) => document.getElementById(id);
   const yearSelect = $('governorYearSelect');
   const stateSelect = $('governorStateSelect');
@@ -17,6 +27,7 @@
   const params = new URLSearchParams(window.location.search);
   const requestedYear = Number(params.get('year')) || null;
   const requestedState = (params.get('state') || '').trim();
+  if (sourceFormats) table.classList.add('uses-source-format');
 
   const STATE_ALIASES = new Map([
     ['東揚州/會稽郡', ['東揚州', '會稽郡', '會稽']],
@@ -49,7 +60,16 @@
     return aliases.some((alias) => haystack.includes(alias));
   }
 
-  function renderCell(cell, value, sourceColor = null) {
+  function renderCell(cell, value, sourceColor = null, sourceCell = null) {
+    if (sourceCell && sourceRenderer) {
+      sourceRenderer.appendCell(cell, sourceCell);
+      // Excel's unfilled sheet is white; an opaque surface also keeps sticky
+      // headers from showing the scrolled cell text through their background.
+      if (sourceCell.style?.backgroundColor === 'transparent') cell.style.backgroundColor = '#FFFFFF';
+      if (!sourceCell.style?.textAlign) cell.style.textAlign = 'start';
+      cell.classList.toggle('empty-cell', sourceCell.text === '');
+      return;
+    }
     const text = String(value || '');
     cell.replaceChildren();
     cell.style.removeProperty('color');
@@ -76,7 +96,7 @@
   }
 
   function populateControls() {
-    for (const row of DATA.rows) {
+    for (const row of rows) {
       const option = document.createElement('option');
       option.value = String(row.year);
       option.textContent = `${row.reign.replace(/\r?\n/g, '／')}（${row.year}）`;
@@ -159,12 +179,14 @@
     const yearHead = document.createElement('th');
     yearHead.scope = 'col';
     yearHead.className = 'year-column';
-    yearHead.textContent = '紀年（公元）';
+    if (sourceFormats?.headers?.[0]) renderCell(yearHead, '', null, sourceFormats.headers[0]);
+    else yearHead.textContent = '紀年（公元）';
     row.appendChild(yearHead);
     DATA.states.forEach((state, index) => {
       const th = document.createElement('th');
       th.scope = 'col';
-      th.textContent = state.name;
+      if (sourceFormats?.headers?.[index + 1]) renderCell(th, '', null, sourceFormats.headers[index + 1]);
+      else th.textContent = state.name;
       th.dataset.state = state.name;
       if (targetStateIndex === index) th.classList.add('is-target-column');
       row.appendChild(th);
@@ -172,12 +194,15 @@
     const count = document.createElement('th');
     count.scope = 'col';
     count.className = 'count-column';
-    count.textContent = DATA.meta.auxiliary_label || '附加欄';
+    if (sourceFormats?.headers?.[DATA.states.length + 1]) renderCell(count, '', null, sourceFormats.headers[DATA.states.length + 1]);
+    else count.textContent = DATA.meta.auxiliary_label || '附加欄';
     row.appendChild(count);
     const appendix = document.createElement('th');
     appendix.scope = 'col';
     appendix.className = 'appendix-column';
-    appendix.textContent = '附錄';
+    const appendixHeader = sourceFormats?.headers?.find((cell) => cell.address.replace(/\d+$/, '') === sourceFormats.meta.appendix_column);
+    if (appendixHeader) renderCell(appendix, '', null, appendixHeader);
+    else appendix.textContent = '附錄';
     if (focusAppendix) appendix.classList.add('is-target-column');
     row.appendChild(appendix);
     thead.appendChild(row);
@@ -198,7 +223,8 @@
     buildHeader(stateIndex, focusAppendix);
     tbody.replaceChildren();
 
-    for (const record of DATA.rows) {
+    for (const record of rows) {
+      const sourceRecord = formattedRows.get(record.year);
       const tr = document.createElement('tr');
       tr.dataset.year = String(record.year);
       const rowText = [record.reign, ...record.cells, record.auxiliary, record.appendix].join('\n');
@@ -214,10 +240,11 @@
       const yearCell = document.createElement('th');
       yearCell.scope = 'row';
       yearCell.className = 'year-column';
-      yearCell.appendChild(document.createTextNode(`${record.reign.replace(/\r?\n/g, '／')}（${record.year}）`));
+      if (sourceRecord) renderCell(yearCell, record.reign, null, sourceRecord.reign);
+      else yearCell.appendChild(document.createTextNode(`${record.reign.replace(/\r?\n/g, '／')}（${record.year}）`));
       const sourceRow = document.createElement('small');
       sourceRow.className = 'source-row';
-      sourceRow.textContent = `原表第 ${record.source_row} 行`;
+      sourceRow.textContent = `${sourceRecord ? `公元 ${record.year} 年 · ` : ''}原表第 ${record.source_row} 行`;
       yearCell.appendChild(sourceRow);
       tr.appendChild(yearCell);
 
@@ -237,13 +264,13 @@
           td.classList.add('is-target-cell');
           targetCell = td;
         }
-        renderCell(td, value, record.colors?.[index]);
+        renderCell(td, value, record.colors?.[index], sourceRecord?.cells[index]);
         tr.appendChild(td);
       });
 
       const count = document.createElement('td');
       count.className = 'count-column';
-      renderCell(count, record.auxiliary, record.auxiliary_color);
+      renderCell(count, record.auxiliary, record.auxiliary_color, sourceRecord?.auxiliary);
       tr.appendChild(count);
 
       const appendix = document.createElement('td');
@@ -256,7 +283,7 @@
         targetCell = appendix;
         targetAppendixContainsState = appendixHasTarget || state === '附錄';
       }
-      renderCell(appendix, record.appendix, record.appendix_color);
+      renderCell(appendix, record.appendix, record.appendix_color, sourceRecord?.appendix);
       tr.appendChild(appendix);
       tbody.appendChild(tr);
     }
@@ -279,12 +306,12 @@
     const pieces = [];
     let label = '';
     if (year) {
-      const record = DATA.rows.find((item) => item.year === year);
+      const record = rows.find((item) => item.year === year);
       label = '已定位：';
       pieces.push(record ? `${record.reign.replace(/\r?\n/g, '／')}（${year}），原表第${record.source_row}行` : `公元${year}年`);
     } else {
       label = '資料範圍：';
-      pieces.push(`${DATA.rows.length}個紀年行，${DATA.states.length}個固定州列`);
+      pieces.push(`${rows.length}個紀年行，${DATA.states.length}個固定州列`);
     }
     if (state) {
       if (stateIndex >= 0 && targetCell?.dataset.state === '附錄') pieces.push(`州列「${DATA.states[stateIndex].name}」原格為空；本年條目見附錄`);

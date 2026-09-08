@@ -173,6 +173,30 @@
 .governor-yearbook-table .target-text { background: #ffd1d5; color: #7e1320; font-weight: 700; }
 .governor-yearbook-table tbody tr[hidden] { display: none; }
 
+/* Chen cells use workbook font/run styles; navigation highlights are outlines
+   so selecting a year does not recolor the source text or its background. */
+.governor-yearbook-table.uses-source-format .governor-source-format {
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: none;
+  letter-spacing: normal;
+  white-space: pre-wrap;
+}
+.governor-yearbook-table.uses-source-format .governor-source-run {
+  white-space: pre-wrap;
+}
+.governor-yearbook-table.uses-source-format td.is-search-match {
+  box-shadow: inset 0 0 0 2px #aa772d;
+}
+.governor-yearbook-table.uses-source-format th.is-target-column {
+  box-shadow: inset 0 0 0 2px #c62838;
+}
+.governor-yearbook-table.uses-source-format td.is-target-cell::before { content: none; }
+.governor-yearbook-table.uses-source-format .source-row {
+  font: normal .68rem/1.4 sans-serif;
+  text-decoration: none;
+}
+
 .yearbook-method { margin-top: 18px; }
 .yearbook-method p { margin: .55em 0; }
 

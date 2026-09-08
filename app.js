@@ -912,85 +912,51 @@
     const button=createAuxButton('',info,className);appendLiangPersonColors(button,text,year);button.setAttribute('aria-label',text);return button;
   }
 
-  const chenPersonColorCache=new Map();
-  function chenPersonColorData(year) {
-    if(chenPersonColorCache.has(year))return chenPersonColorCache.get(year);
-    const people=new Map(),source=window.CHEN_GOVERNOR_YEARBOOK;
-    const add=(name,aliases=[])=>{
-      if(!/^[\p{Script=Han}]{2,4}$/u.test(name||'')||/[郡州國]|[王侯公]$/.test(name))return;
-      if(!people.has(name))people.set(name,{name,aliases:new Set([name]),colors:new Set()});
-      for(const alias of aliases)if(alias)people.get(name).aliases.add(alias);
-    };
-    for(const record of window.CHEN_FIEFS?.records||[])for(const holder of record.holders||[]){
-      const name=holder.person,aliases=[];
-      if(/^[陳陈]/.test(name||''))for(const phase of record.phases||[]){
-        for(const rank of [record.rank,'王','嗣王','郡王'])aliases.push(`${phase.fief}${rank}${name.slice(1)}`);
-      }
-      add(name,aliases);
-    }
-    for(const tenure of Object.values(window.CHEN_LOCAL_OFFICIALS?.tenures_by_id||{}))add(tenure.person);
-    const addLineName=(line)=>{
-      const name=String(line).trim()
-        .replace(/^(?:閏?[一二三四五六七八九十正冬臘\d]+月[，,\s]*)+/u,'')
-        .replace(/^(?:梁)?[\p{Script=Han}]{1,8}(?:王|侯|公)(?=[陳陈蕭萧])/u,'')
-        .split(/[\s，,。；;：:（）()\[\]、]|閏?[一二三四五六七八九十正冬臘\d]+月|都督|刺史|將軍|長史|司馬|帥軍|進號|徵還|遷|轉|卸|未|為|爲|監|攝|督|鎮|卒|薨|入|反|奔|降|被殺|次年/u)[0];
-      add(name);
-    };
-    for(const row of source?.rows||[])for(const cell of [...row.cells,row.auxiliary,row.appendix])for(const line of String(cell||'').split(/\r?\n/))addLineName(line);
-    for(const record of Object.values(window.CHEN_GOVERNORS?.years||{}).flatMap((row)=>row.records||[]))for(const line of record.summary_lines||[])addLineName(line);
-    const matches=(text)=>{
-      const found=[];
-      for(const person of people.values())for(const alias of person.aliases){
-        const index=text.indexOf(alias);if(index>=0)found.push({person,index,length:alias.length,text:alias});
-      }
-      for(const person of people.values())if(/^[陳陈]/.test(person.name)){
-        const pattern=new RegExp(`[\\p{Script=Han}]{1,5}王${person.name.slice(1)}`,'gu');
-        for(const match of text.matchAll(pattern))found.push({person,index:match.index,length:match[0].length,text:match[0]});
-      }
-      return found.sort((a,b)=>a.index-b.index||b.length-a.length);
-    };
-    const row=source?.rows?.find((item)=>Number(item.year)===Number(year));
-    // Like the Liang layer, a whole-cell source colour belongs only to its first visible person.
-    for(let index=0;index<(row?.cells?.length||0);index++){
-      const color=row.colors?.[index],first=matches(String(row.cells[index]||''))[0];
-      if(color&&first)first.person.colors.add(color);
-    }
-    const categories=new Map((source?.meta?.legends||[]).map((item)=>[item.color,item.label]));
-    for(const person of people.values()){
-      if(!/^[陳陈]/.test(person.name))person.style={color:'#00B050',category:'異姓',source:'按本頁異姓著色規則'};
-      else if(person.colors.size===1){
-        const color=[...person.colors][0];person.style={color,category:categories.get(color)||'年表原色',source:`據南陳刺史年表${year}年`};
-      }
-    }
-    const result={people,matches};chenPersonColorCache.set(year,result);return result;
-  }
-
-  function appendChenPersonColors(container,text,year) {
-    const value=String(text||''),matches=chenPersonColorData(year).matches(value);
+  function appendChenPersonColors(container,text,year,state=null) {
+    const value=String(text||''),matches=window.CHEN_PERSON_FORMATS?.matches(value,year,state)||[];
     let cursor=0;
-    for(const match of matches){
-      if(match.index<cursor)continue;
+    for(const match of matches) {
       if(match.index>cursor)container.appendChild(document.createTextNode(value.slice(cursor,match.index)));
-      const span=document.createElement('span'),style=match.person.style;
-      span.textContent=match.text;
-      if(style){span.className='chen-person-color';span.style.color=style.color;span.dataset.category=style.category;span.title=`${match.person.name}：${style.category}（${style.source}）`;}
+      const span=document.createElement('span');span.className='chen-person-color';
+      if(match.source) {
+        window.GOVERNOR_SOURCE_FORMAT.appendCell(span,match.source.payload);
+        span.style.verticalAlign='baseline';
+        span.dataset.sourceCells=match.source.addresses.join(' ');
+        span.title=`原年表 ${year} 年 ${match.source.addresses.join('、')}：保留姓名原有字元格式`;
+      } else {
+        span.textContent=match.text;
+      }
       container.appendChild(span);cursor=match.index+match.length;
     }
     if(cursor<value.length)container.appendChild(document.createTextNode(value.slice(cursor)));
   }
 
   function createChenColoredAuxButton(text,info,className='',year=null) {
-    const button=createAuxButton('',info,className);appendChenPersonColors(button,text,year);button.setAttribute('aria-label',text);
-    const styles=chenPersonColorData(year).matches(String(text)).map((match)=>match.person.style);
-    const colors=new Set(styles.map((style)=>style?.color));
-    if(styles.length&&colors.size===1&&!colors.has(undefined))button.style.color=styles[0].color;
+    const value=String(text||''),button=createAuxButton('',info,className);
+    const matches=window.CHEN_PERSON_FORMATS?.matches(value,year)||[];
+    const styles=matches.map(match=>window.CHEN_PERSON_FORMATS.fiefStyle(match.person.name,year));
+    let cursor=0;
+    matches.forEach((match,index)=>{
+      if(match.index>cursor)button.appendChild(document.createTextNode(value.slice(cursor,match.index)));
+      const span=document.createElement('span');span.textContent=match.text;
+      const style=styles[index];
+      if(style?.color){span.className='chen-fief-person';span.style.setProperty('--person-color',style.color);span.title=`${match.person.name}：${style.source}`;}
+      button.appendChild(span);cursor=match.index+match.length;
+    });
+    if(cursor<value.length)button.appendChild(document.createTextNode(value.slice(cursor)));
+    const colors=new Set(styles.map(style=>style?.color));
+    if(styles.length&&colors.size===1&&!colors.has(undefined)) {
+      button.classList.add('chen-fief-uniform');
+      button.style.setProperty('--person-color',styles[0].color);
+    }
+    button.setAttribute('aria-label',value);
     return button;
   }
 
   function chenFiefPersonColor(match,year) {
-    const people=match.display?.people||match.holders||[],registry=chenPersonColorData(year).people;
-    const styles=people.map((person)=>registry.get(person)?.style);
-    const colors=new Set(styles.map((style)=>style?.color));
+    const people=match.display?.people||match.holders||[];
+    const styles=people.map(person=>window.CHEN_PERSON_FORMATS?.fiefStyle(typeof person==='string'?person:person.person,year));
+    const colors=new Set(styles.map(style=>style?.color));
     return styles.length&&colors.size===1&&!colors.has(undefined)?styles[0].color:null;
   }
 
@@ -1000,7 +966,7 @@
     const box=document.createElement('section');box.className='state-governor-box';box.setAttribute('aria-label',`${record.state}都督與刺史`);
     const label=document.createElement('button');label.type='button';label.className='state-governor-label';label.textContent='都督/刺史';label.dataset.info=registerAuxInfo(governorInfo(record,year));label.title='展開本年完整方鎮考證與史料';box.appendChild(label);
     const entries=document.createElement('div');entries.className='state-governor-entries';
-    for (const line of lines) {const p=document.createElement('p');if(currentDynasty.key==='southern-liang')appendLiangPersonColors(p,line,year);else appendChenPersonColors(p,line,year);entries.appendChild(p);}
+    for (const line of lines) {const p=document.createElement('p');if(currentDynasty.key==='southern-liang')appendLiangPersonColors(p,line,year);else appendChenPersonColors(p,line,year,record.state);entries.appendChild(p);}
     box.appendChild(entries);return box;
   }
 
@@ -1066,10 +1032,6 @@
     const name=document.createElement(info?'button':'span');
     if (info) { name.type='button'; name.dataset.info=registerAuxInfo(info); name.title='查看本州都督/刺史與方鎮考證'; }
     name.textContent=itemDisplayName(item); name.className=[className,info?'state-governor-name':'',itemDisplaysAsKingdom(item)?'kingdom':'',item.change?'changed':'',item.uncertain?'uncertain':'',item.qiao?'qiao':'',item.timeless&&!item.qiao?'no-date':''].filter(Boolean).join(' '); wrap.appendChild(name);
-    if(currentDynasty.key==='chen'&&item.chenFiefs?.length){
-      const colors=new Set(item.chenFiefs.map((match)=>chenFiefPersonColor(match,Number(yearSelect.value))));
-      if(colors.size===1&&!colors.has(null))name.style.color=[...colors][0];
-    }
     const citation=createCitationButton(item.change); if (citation) wrap.appendChild(citation);
     const annotation=createCitationButton(item.annotation); if (annotation) wrap.appendChild(annotation);
     const qiaoAnnotation=createCitationButton(item.qiaoAnnotation); if (qiaoAnnotation) wrap.appendChild(qiaoAnnotation);
@@ -1181,7 +1143,7 @@
       const item=document.createElement('div');item.className='governor-extra-item';
       item.appendChild(createAuxButton(record.state,governorInfo(record,year),'governor-extra-button'));
       const brief=document.createElement('div');brief.className='governor-extra-summary';
-      for (const line of record.summary_lines||[]) {const p=document.createElement('p');if(currentDynasty.key==='southern-liang')appendLiangPersonColors(p,line,year);else appendChenPersonColors(p,line,year);brief.appendChild(p);}
+      for (const line of record.summary_lines||[]) {const p=document.createElement('p');if(currentDynasty.key==='southern-liang')appendLiangPersonColors(p,line,year);else appendChenPersonColors(p,line,year,record.state);brief.appendChild(p);}
       item.appendChild(brief);
       list.appendChild(item);
     }
@@ -1407,7 +1369,7 @@
     if (stageWidth && stageHeight) {
       yearMapViewport.scrollTo({
         left:Math.max(0,feature.x/currentMap.width*stageWidth-yearMapViewport.clientWidth/2),
-        top:Math.max(0,feature.y/currentMap.height*stageHeight-yearMapViewport.clientHeight/2),
+        top:Math.max(0,feature.y/currentMap.width*stageWidth-yearMapViewport.clientHeight/2),
         behavior:'smooth'
       });
     }
@@ -1552,9 +1514,7 @@
         if(!names.includes(label))names.push(label);
         ids.push(record.id);uncertain.push(Boolean(phase.uncertain||match.display?.uncertain));
       }
-      const colors=matches.map((match)=>chenFiefPersonColor(match,year));
-      const color=colors[0]&&colors.every((value)=>value===colors[0])?colors[0]:null;
-      labels.push({text:names.join('／'),sourceName:feature.entity?.name||matches[0].phase.fief,x:feature.x,y:feature.y,level:feature.level,entityId:feature.entity_id,fiefIds:ids,color,uncertain:uncertain.some(Boolean)});
+      labels.push({text:names.join('／'),sourceName:feature.entity?.name||matches[0].phase.fief,x:feature.x,y:feature.y,level:feature.level,entityId:feature.entity_id,fiefIds:ids,uncertain:uncertain.some(Boolean)});
     };
     for(const feature of resolved.features)append(feature,feature.entity?.chenFiefs||[]);
     for(const match of snapshot.virtualFiefs||[]) {
@@ -1586,52 +1546,112 @@
     return units*fontSize+5;
   }
 
-  function labelCandidates(label) {
-    const {x,y,fontSize,kind}=label,d=kind.includes('area')?fontSize*1.1:fontSize*1.05;
-    if(kind.includes('area'))return [[x,y,'middle'],[x,y-d,'middle'],[x,y+d,'middle']];
-    return [[x+d,y,'start'],[x-d,y,'end'],[x,y-d,'middle'],[x,y+d,'middle'],[x+d*.75,y-d*.72,'start'],[x-d*.75,y+d*.72,'end']];
+  const mapLabelLayouts=new WeakMap();
+
+  function *labelCandidates(label,width,height,plot) {
+    const {x,y,kind}=label,gap=height*.3,d=height*.8;
+    if(kind.includes('area'))yield [x,y,'middle'];
+    yield [x+d,y,'start'];yield [x-d,y,'end'];
+    yield [x,y-height,'middle'];yield [x,y+height,'middle'];
+    // Search outward instead of stacking a failed label back on an occupied seat.
+    // The same coordinate may legitimately carry a state, prefecture and county.
+    // Keep a displaced name near its anchor and bound redraw work. If this
+    // neighbourhood is full, the connected overflow panel keeps it readable.
+    const step=height+gap,maxRadius=Math.min(height*12,Math.hypot(plot[2]-plot[0],plot[3]-plot[1]));
+    for(let radius=step;radius<=maxRadius;radius+=step) {
+      const count=Math.max(8,Math.ceil(2*Math.PI*radius/step));
+      for(let index=0;index<count;index++) {
+        const angle=index/count*Math.PI*2,dx=Math.cos(angle)*radius;
+        yield [x+dx,y+Math.sin(angle)*radius,dx>width*.2?'start':dx<-width*.2?'end':'middle'];
+      }
+    }
   }
 
-  function placeAndDrawLabels(root,labels,level,plot) {
-    const occupied=[];
-    labels.sort((a,b)=>b.priority-a.priority||a.y-b.y||a.x-b.x);
-    for(const label of labels) {
-      const width=labelWidth(label.text,label.fontSize),height=label.fontSize*1.22;
-      let placement=null,overlapPlacement=null;
-      for(const [x,y,anchor] of labelCandidates(label)) {
+  function placeAndDrawLabels(root,labels,plot,scale,baseHeight) {
+    const occupied=new Map(),cellSize=80,gap=2/scale;
+    const cells=(box)=>{
+      const keys=[];
+      for(let x=Math.floor(box[0]/cellSize);x<=Math.floor(box[2]/cellSize);x++)
+        for(let y=Math.floor(box[1]/cellSize);y<=Math.floor(box[3]/cellSize);y++)keys.push(`${x}|${y}`);
+      return keys;
+    };
+    const addBox=(box)=>{for(const key of cells(box)){if(!occupied.has(key))occupied.set(key,[]);occupied.get(key).push(box);}};
+    const collision=(box)=>cells([box[0]-gap,box[1]-gap,box[2]+gap,box[3]+gap]).some((key)=>(occupied.get(key)||[]).some((other)=>!(box[2]+gap<other[0]||other[2]+gap<box[0]||box[3]+gap<other[1]||other[3]+gap<box[1])));
+    // All levels share one collision index, including the regime names below.
+    for(const node of yearMapOverlay.querySelectorAll('.dynamic-regime-label')) {
+      const box=node.getBBox();addBox([box.x,box.y,box.x+box.width,box.y+box.height]);
+    }
+    const leaders=svgNode('g',{class:'map-label-leaders'}),names=svgNode('g',{class:'map-label-names'});
+    root.append(leaders,names);
+    const legendGap=14/scale;
+    let legendX=plot[0]+legendGap,legendY=baseHeight+42/scale,legendRowHeight=0,legendCount=0,renderHeight=baseHeight;
+    labels.sort((a,b)=>b.priority-a.priority||a.y-b.y||a.x-b.x||a.text.localeCompare(b.text));
+    for(const source of labels) {
+      const limits=source.level==='state'?[16,22]:source.level==='prefecture'?[13,16]:[12,13];
+      const fontSize=Math.max(limits[0],Math.min(limits[1],source.fontSize*scale))/scale;
+      const label={...source,fontSize},width=labelWidth(label.text,fontSize)+fontSize*.35,height=fontSize*1.4;
+      let placement=null;
+      for(const [x,y,anchor] of labelCandidates(label,width,height,plot)) {
         const left=anchor==='middle'?x-width/2:anchor==='end'?x-width:x;
         const box=[left,y-height/2,left+width,y+height/2];
-        if(box[0]<plot[0]||box[1]<plot[1]||box[2]>plot[2]||box[3]>plot[3])continue;
-        if(!overlapPlacement)overlapPlacement={x,y,anchor,box};
-        if(occupied.some((other)=>!(box[2]+1<other[0]||other[2]+1<box[0]||box[3]+1<other[1]||other[3]+1<box[1])))continue;
+        if(box[0]<plot[0]||box[1]<plot[1]||box[2]>plot[2]||box[3]>plot[3]||collision(box))continue;
         placement={x,y,anchor,box};break;
       }
-      const crowded=!placement;
+      // A dense overview may exhaust the plot. Pack the remaining names below
+      // the base image and include that panel in both the SVG and PNG bounds.
       if(!placement) {
-        const x=Math.max(plot[0]+width/2,Math.min(plot[2]-width/2,label.x));
-        const y=Math.max(plot[1]+height/2,Math.min(plot[3]-height/2,label.y));
-        placement=overlapPlacement||{x,y,anchor:'middle',box:[x-width/2,y-height/2,x+width/2,y+height/2]};
+        if(legendX+width>plot[2]-legendGap&&legendX>plot[0]+legendGap) {
+          legendX=plot[0]+legendGap;legendY+=legendRowHeight+legendGap;legendRowHeight=0;
+        }
+        placement={x:legendX,y:legendY+height/2,anchor:'start',box:[legendX,legendY,legendX+width,legendY+height]};
+        legendX+=width+legendGap;legendRowHeight=Math.max(legendRowHeight,height);legendCount++;
+        renderHeight=Math.max(renderHeight,legendY+legendRowHeight+legendGap);
       }
-      occupied.push(placement.box);
-      const classes=['dynamic-map-label',`dynamic-${label.kind}-label`];
+      addBox(placement.box);
+      const classes=['dynamic-map-label',`dynamic-${label.kind}-label`,label.entityId?'map-label-link':'map-label-reference'];
       if(label.fief)classes.push('dynamic-fief-label');
       if(label.uncertain)classes.push('is-uncertain');
-      if(crowded)classes.push('map-label-crowded');
-      if(label.entityId)classes.push('map-label-link');
-      else if(label.kind.endsWith('-seat'))classes.push('map-label-reference');
-      const text=svgNode('text',{x:placement.x,y:placement.y,'text-anchor':placement.anchor,class:classes.join(' '),'data-label-level':level},label.text);
-      if(label.color)text.style.fill=label.color;
+      const text=svgNode('text',{x:placement.x,y:placement.y,'text-anchor':placement.anchor,class:classes.join(' '),'data-label-level':label.level},label.text);
+      text.style.fontSize=`${fontSize}px`;text.style.letterSpacing='0';text.style.strokeWidth=`${2.8/scale}px`;
       if(label.fiefIds?.length)text.dataset.fiefIds=label.fiefIds.join(' ');
+      text.setAttribute('tabindex','0');text.setAttribute('role','button');
       if(label.entityId) {
-        text.dataset.entityId=label.entityId;text.setAttribute('tabindex','0');text.setAttribute('role','button');
-        text.setAttribute('aria-label',`定位到正文：${label.text}`);
-        text.appendChild(svgNode('title',{},`點擊定位正文：${label.text}`));
-      } else if(label.kind.endsWith('-seat')) {
-        text.dataset.mapReference=label.text;text.setAttribute('tabindex','0');text.setAttribute('role','button');
+        text.dataset.entityId=label.entityId;text.setAttribute('aria-label',`定位到正文：${label.text}`);
+        text.appendChild(svgNode('title',{},`點擊定位正文：${label.text}${label.coLocated?'（同治所分列標注）':''}`));
+      } else {
+        text.dataset.mapReference=label.text;
         text.appendChild(svgNode('title',{},`${label.text}：地圖參考標記，未與本年正文唯一連接`));
       }
-      root.appendChild(text);
+      const endX=Math.max(placement.box[0],Math.min(placement.box[2],label.x));
+      const endY=Math.max(placement.box[1],Math.min(placement.box[3],label.y));
+      if(Math.hypot(endX-label.x,endY-label.y)>fontSize*.9) {
+        const line=svgNode('line',{x1:label.x,y1:label.y,x2:endX,y2:endY,class:'map-label-leader','data-label-level':label.level,stroke:'#766d5b','stroke-width':.8/scale,'stroke-opacity':.7,'pointer-events':'none'});
+        leaders.appendChild(line);
+        text.addEventListener('mouseenter',()=>line.classList.add('is-active'));
+        text.addEventListener('mouseleave',()=>line.classList.remove('is-active'));
+        text.addEventListener('focus',()=>line.classList.add('is-active'));
+        text.addEventListener('blur',()=>line.classList.remove('is-active'));
+      }
+      names.appendChild(text);
     }
+    if(legendCount) {
+      const panel=svgNode('g',{class:'map-overflow-legend','pointer-events':'none'});
+      panel.appendChild(svgNode('rect',{x:plot[0],y:baseHeight,width:plot[2]-plot[0],height:renderHeight-baseHeight,fill:'#faf6ee',stroke:'#b9aa98','stroke-width':1/scale}));
+      panel.appendChild(svgNode('text',{x:plot[0]+legendGap,y:baseHeight+24/scale,fill:'#665d54','font-size':13/scale},'密集標注（引線對應原位置）'));
+      root.insertBefore(panel,leaders);
+    }
+    return renderHeight;
+  }
+
+  function layoutDynamicMapLabels() {
+    const layout=mapLabelLayouts.get(yearMapOverlay);
+    if(!layout||currentMap?.reference||layout.year!==currentMap?.year)return;
+    layout.layer.replaceChildren();
+    const scale=Math.max(.01,yearMapStage.clientWidth/currentMap.width);
+    const labels=layout.labels.filter((label)=>mapZoom>4||label.level!=='county');
+    currentMap.renderHeight=placeAndDrawLabels(layout.layer,labels,layout.plot,scale,currentMap.height);
+    yearMapOverlay.setAttribute('viewBox',`0 0 ${currentMap.width} ${currentMap.renderHeight}`);
+    yearMapStage.style.paddingBottom=`${(currentMap.renderHeight-currentMap.height)*scale}px`;
   }
 
   function appendHotspots(root,features) {
@@ -1640,6 +1660,24 @@
       circle.dataset.entityId=feature.entity_id;
       circle.appendChild(svgNode('title',{},feature.label));root.appendChild(circle);
     }
+  }
+
+  function snapshotFeatureForMapArea(area,level,features) {
+    const candidates=features.filter((feature)=>feature.level===level&&normalizeName(feature.entity.name)===area.k);
+    const rings=(area.d.match(/M[^M]+/g)||[]).map((ring)=>{
+      const values=ring.match(/-?\d+(?:\.\d+)?/g)||[],points=[];
+      for(let index=0;index+1<values.length;index+=2)points.push([Number(values[index]),Number(values[index+1])]);
+      return points;
+    });
+    const inside=candidates.filter((feature)=>{
+      let contained=false;
+      for(const points of rings)for(let i=0,j=points.length-1;i<points.length;j=i++) {
+        const [x,y]=points[i],[px,py]=points[j];
+        if((y>feature.y)!==(py>feature.y)&&feature.x<(px-x)*(feature.y-y)/(py-y)+x)contained=!contained;
+      }
+      return contained;
+    });
+    return inside.length===1?inside[0]:null;
   }
 
   function renderDynamicMap(year,snapshot,map) {
@@ -1663,11 +1701,14 @@
     drawRegimes(year,root,map);
     for(const area of stateAreas) {
       root.appendChild(svgNode('path',{d:area.d,class:`dynamic-state-boundary${area.s==='CHGIS V5'?' dynamic-supplement-boundary':''}`}));
-      labels.state.push({text:area.n,x:area.x,y:area.y,fontSize:24.5,kind:'state-area',priority:1000});
+      const feature=snapshotFeatureForMapArea(area,'state',resolved.features);
+      labels.state.push({text:feature?.label||area.n,x:area.x,y:area.y,fontSize:24.5,kind:'state-area',priority:1000,entityId:feature?.entity_id});
     }
     for(const area of prefAreas) {
       root.appendChild(svgNode('path',{d:area.d,class:`dynamic-pref-boundary${area.s==='CHGIS V5'?' dynamic-supplement-boundary':''}`}));
-      labels.prefecture.push({text:area.n,x:area.x,y:area.y,fontSize:16.5,kind:'prefecture-area',priority:900});
+      const feature=snapshotFeatureForMapArea(area,'prefecture',resolved.features);
+      const fief=feature&&fiefs.find((label)=>label.entityId===feature.entity_id);
+      labels.prefecture.push({text:fief?.text||feature?.label||area.n,x:area.x,y:area.y,fontSize:16.5,kind:'prefecture-area',priority:900,entityId:feature?.entity_id,fief:Boolean(fief),fiefIds:fief?.fiefIds,uncertain:fief?.uncertain});
     }
     const specs=[['state','state-seat',22.5,560,4.1],['prefecture','prefecture-seat',10.8,500,2.9],['county','county-seat',8.6,400,2]];
     for(const [level,kind,fontSize,priority,radius] of specs)for(const seat of seatsByLevel[level]) {
@@ -1678,30 +1719,40 @@
         else labels[level].push({text:seat.n,x:seat.x,y:seat.y,fontSize,kind,priority});
       }
     }
-    for(const fief of fiefs)labels[fief.level].push({...fief,fontSize:fief.level==='prefecture'?12.5:10.2,kind:`${fief.level}-seat`,priority:1300,fief:true});
+    for(const fief of fiefs)labels[fief.level].push({...fief,fontSize:fief.level==='prefecture'?12.5:10.2,kind:`${fief.level}-seat`,priority:fief.level==='prefecture'?520:420,fief:true});
     appendHotspots(root,resolved.features);
-    // Place clickable names above the seat circles; displaced labels remain usable.
-    for(const level of ['state','prefecture','county'])placeAndDrawLabels(root,labels[level],level,map.plot);
+    const allLabels=[];
+    for(const level of ['state','prefecture','county'])for(const label of labels[level]) {
+      label.level=level;
+      // Keep the area and seat labels: each carries the annual name and the
+      // same stable entity ID, while their geometry remains unchanged.
+      allLabels.push(label);
+    }
+    const seatCounts=new Map();
+    for(const label of allLabels){const key=`${label.x}|${label.y}`;seatCounts.set(key,(seatCounts.get(key)||0)+1);}
+    for(const label of allLabels)label.coLocated=seatCounts.get(`${label.x}|${label.y}`)>1;
+    const layer=svgNode('g',{class:'dynamic-map-label-layer'});root.appendChild(layer);
+    mapLabelLayouts.set(root,{labels:allLabels,plot:map.plot,layer,year});
     return resolved.features;
   }
 
   function applyMapZoom(next,{clientX=null,clientY=null}={}) {
     if(!currentMap)return;
     const oldWidth=yearMapStage.clientWidth||yearMapViewport.clientWidth;
-    const oldHeight=yearMapStage.clientHeight||oldWidth*currentMap.height/currentMap.width;
     const rect=yearMapViewport.getBoundingClientRect();
     const anchorX=clientX==null?yearMapViewport.clientWidth/2:clientX-rect.left;
     const anchorY=clientY==null?yearMapViewport.clientHeight/2:clientY-rect.top;
     const contentX=(yearMapViewport.scrollLeft+anchorX)/oldWidth;
-    const contentY=(yearMapViewport.scrollTop+anchorY)/oldHeight;
+    const contentY=(yearMapViewport.scrollTop+anchorY)/oldWidth;
     mapZoom=Math.min(6,Math.max(1,Number(next)||1));
     yearMapOverlay.classList.toggle('show-all-map-labels',mapZoom>4);
     const fitWidth=Math.max(320,yearMapViewport.clientWidth-2);
     yearMapStage.style.width=`${Math.round(fitWidth*mapZoom)}px`;
     yearMapZoomValue.value=`${Math.round(mapZoom*100)}%`;
+    layoutDynamicMapLabels();
     requestAnimationFrame(()=>{
       yearMapViewport.scrollLeft=Math.max(0,contentX*yearMapStage.clientWidth-anchorX);
-      yearMapViewport.scrollTop=Math.max(0,contentY*yearMapStage.clientHeight-anchorY);
+      yearMapViewport.scrollTop=Math.max(0,contentY*yearMapStage.clientWidth-anchorY);
     });
   }
 
@@ -1719,6 +1770,7 @@
     const liang=currentDynasty.key==='southern-liang';
     yearMapPanel.hidden=!dynamic&&!liang;textMapLinkControl.hidden=!dynamic;
     results.classList.toggle('text-map-link-enabled',Boolean(dynamic&&textMapLinkToggle.checked));
+    yearMapStage.style.paddingBottom='0px';
     if(!dynamic&&!liang){currentMap=null;currentMapFeatures=[];yearMapOverlay.replaceChildren();return;}
     if(liang) {
       const early=year<=544;
@@ -1739,7 +1791,7 @@
     const territoryNote=territory
       ? `${year}年陳境採史圖館${territory.properties.source_year}年圖矢量化${territory.properties.year_relation==='exact'?'':'（最近可用年份）'}；以建康、江陵、武陵、廣州、交趾、海南六處分布式控制點配準CHGIS／經緯網，東南海岸另依地形底圖校準，海南與大陸之間保留瓊州海峽。${year===569?'廣州叛亂區先依海陸掩膜裁至陸地，仍計入陳境，另以綠色叛亂層疊加。':''}`
       : '本年尚無史圖館分期矢量，政權疆域仍以ChinaXMap 572年斷面近似。';
-    yearMapNote.textContent=`${year===557?'557年不反向補造正文行政資料。':'各年共用一份地形底圖，州郡縣、封國及可用邊界按年即時繪製。'}${territoryNote} 州郡縣治所與邊界以CHGIS V6為主、V4／V5補足；缺坐標者不臆測。400%及以下顯示州、郡國名稱；超過400%顯示全部州、郡國、縣名。可連接的名稱及治所圓點可點擊正文；僅有地圖參考標記者會另行說明。588年人工覆核原圖仍可下載。`;
+    yearMapNote.textContent=`${year===557?'557年不反向補造正文行政資料。':'各年共用一份地形底圖，州郡縣、封國及可用邊界按年即時繪製。'}${territoryNote} 州郡縣治所與邊界以CHGIS V6為主、V4／V5補足；缺坐標者不臆測。400%及以下顯示州、郡國名稱；超過400%顯示全部州、郡國、縣名。名稱隨縮放重新避讓，移位標注以細線指回原位置，同治所分列；面與治所均使用本年名稱。總覽過密時，剩餘名稱列於圖下並一併匯出。可連接的名稱及治所圓點可點擊正文；僅有地圖參考標記者會另行說明。588年人工覆核原圖仍可下載。`;
     currentMap={year,width:dynamic.width,height:dynamic.height,uhd:dynamic.map588.uhd};
     yearMapOverlay.setAttribute('viewBox',`0 0 ${dynamic.width} ${dynamic.height}`);
     yearMapOverlay.setAttribute('aria-label',`${year}年州郡縣治所可點擊定位圖層`);
@@ -1755,26 +1807,26 @@
 
   async function exportCurrentYearMap() {
     if(!currentMap)return;
-    if(currentMap.year===588) {
-      const link=document.createElement('a');link.href=currentMap.uhd;link.download='588年_隋陳州郡縣封國地形圖_超高清.png';link.click();return;
-    }
     const button=$('yearMapExport'),oldText=button.textContent;
     button.disabled=true;button.textContent='正在匯出…';
     try {
-      const width=2400,height=2064,canvas=document.createElement('canvas');canvas.width=width;canvas.height=height;
+      layoutDynamicMapLabels();
+      const map={...currentMap},width=2400,height=Math.ceil(width*(map.renderHeight||map.height)/map.width);
+      const canvas=document.createElement('canvas');canvas.width=width;canvas.height=height;
       const context=canvas.getContext('2d');
-      const base=new Image();base.src=yearMapImage.currentSrc||yearMapImage.src;await base.decode();context.drawImage(base,0,0,width,height);
+      const base=new Image();base.src=yearMapImage.currentSrc||yearMapImage.src;
       const clone=yearMapOverlay.cloneNode(true);
       clone.querySelectorAll('.map-hotspot').forEach((node)=>node.remove());
-      if(mapZoom<=4)clone.querySelectorAll('[data-label-level="county"],.map-label-crowded').forEach((node)=>node.remove());
+      if(mapZoom<=4)clone.querySelectorAll('[data-label-level="county"]').forEach((node)=>node.remove());
       clone.setAttribute('width',String(width));clone.setAttribute('height',String(height));
       const defs=svgNode('defs'),style=svgNode('style',{},MAP_EXPORT_STYLE);defs.appendChild(style);clone.insertBefore(defs,clone.firstChild);
+      await base.decode();context.fillStyle='#dce8e8';context.fillRect(0,0,width,height);context.drawImage(base,0,0,width,width*map.height/map.width);
       const blob=new Blob([new XMLSerializer().serializeToString(clone)],{type:'image/svg+xml;charset=utf-8'});
       const url=URL.createObjectURL(blob),overlay=new Image();overlay.src=url;await overlay.decode();context.drawImage(overlay,0,0,width,height);URL.revokeObjectURL(url);
       const png=await new Promise((resolve)=>canvas.toBlob(resolve,'image/png'));
-      const downloadUrl=URL.createObjectURL(png),link=document.createElement('a');link.href=downloadUrl;link.download=`${currentMap.year}年_南陳州郡縣封國動態地圖.png`;link.click();
+      const downloadUrl=URL.createObjectURL(png),link=document.createElement('a');link.href=downloadUrl;link.download=`${map.year}年_南陳州郡縣封國動態地圖.png`;link.click();
       setTimeout(()=>URL.revokeObjectURL(downloadUrl),1000);
-      $('yearMapStatus').textContent=`已匯出${currentMap.year}年2400×2064 PNG；588年另保留9600×8256人工覆核原圖。`;
+      $('yearMapStatus').textContent=`已匯出${map.year}年${width}×${height} PNG；588年另保留9600×8256人工覆核原圖。`;
     } catch(error) {
       console.error(error);$('yearMapStatus').textContent='瀏覽器未能完成PNG匯出；請稍後重試或改用桌面瀏覽器。';
     } finally {button.disabled=false;button.textContent=oldText;}
@@ -1789,7 +1841,7 @@
       '封爵資料只是制度注記。南朝封君通常不到封國，網頁不以爵國名稱反推實際行政機構；只有本年能唯一對應一個南陳郡或縣時，才把爵號附在該政區旁。凡本年郡級政區已按此規則附有任何封國，其逐年顯示名由「某某郡」寫作「某某國」；底層郡名、穩定ID、治所與沿革不改，封國終止後自然恢復顯示為郡。但是，儘管在行政上，封君已經基本喪失了對封國的干預，但封國在制度、禮儀、經濟等諸多層面的實在性確是確定無疑的。因此，我們認為，在唐朝不開國以前，仍有必要在郡縣旁邊標註封國與封君。',
       '陳代僑郡縣另依本書第十編侨州郡縣考表補充。梁、陳欄中，○所標為梁，△或明確屬陳者用於陳代判定。陳代不再把無實土侨州作為州級政區另列，州名及原有統屬不因此改變；僑郡、僑縣名稱以下劃線標示。若正文未標年代而原本以暗色顯示，一旦由侨置表確認為僑郡縣，以下劃線優先，不再變暗。點擊其註釋可見「原屬」與考表依據。',
       '方鎮長官另據魯力《魏晉南北朝方鎮年表新編·宋齊梁陳卷》之「陳方鎮年表」。該表以年為經、州為緯，州下列都督、刺史等人物，並記官銜、月份、遷轉及考證。本頁在各州表內以「都督/刺史」逐人分行列出年表原有的人物、時間與官銜；只有本年有可點擊方鎮資料的州，才在州名後按州序標出從{1}重新編起的索引，索引、州名及「都督/刺史」標題均可展開同一份完整考證。同名州先依正史方鎮的常設大州、當年實轄郡數與上下年沿革連續性判定；仍無法唯一對應者另置「方鎮表另見之州」，只作政治史資料提示，不據此直接增改行政區劃。',
-      '都督／刺史及封國人物的顏色按《南朝刺史、長史、司馬年表》南陳表段逐年套用；整格來源色只對應該格首位可辨認人物，同人同年來源色衝突或陳姓人物本年無對應色時保留原樣。依本頁顯示規則，非陳姓人物統一用異姓綠色。封國持有人顏色一致時，封國名稱與地圖標籤也採相同顏色；多人顏色不同時分別顯示人名色。',
+      '南陳刺史年表直接保留原工作簿每一段文字的字色、字體、字號、粗斜體與換行。正文都督／刺史姓名按本年、州列及姓名對應原表字元格式，不把整格顏色指派給第一人，也不以姓氏規則覆蓋原表顏色。封君另以對應原色顯示姓名與同色系背景框，異姓封君採綠色；郡縣正文名稱不受封君配色影響。原表本年缺少該姓名格式或同一來源有衝突時，不猜配色。地圖郡國、縣國名稱繼續採本年封國顯示規則。',
       '地方長官以master_officials_final.xlsx任次主表為唯一歷史主表，只按既有結構化任期邊界、明確在任錨點、人工逐年裁決及既有職業鏈關係，投射為「本年曾任」記錄，不要求十二月末仍在任，也不從史料文字另行推測任期。缺乏進一步信息時，三年只是推定範圍的上限，不能擴大已有明確任期；起卸任邊界、前後任、相鄰年度延續及既有事件時間只用於收縮範圍或排列年內順序。annual_presence_status為confirmed者用正常字體，probable者用斜體；tenure_boundary_status另行記錄任期邊界確定性，二者不再混用。郡、縣兩級均按穩定ID精確連接；無唯一行政快照實體者完整保留於「本年地方長官未連接記錄」。同地同年可以顯示多任；年內次序優先採用既有精確日期及人工前後任結論，其次使用既有前後任關係與相鄰年度延續，明確並任者不強排先後，仍不能判斷時明示「年內先後未詳」。',
       '明州、利州等正文只知所領縣而所領郡乏考者，表格標為「郡無考」，不使用後世概念「州直領」。地圖治所與可用行政界線以CHGIS V6為主，V4補州界、V5補郡界；沒有坐標者不臆造位置。永定元年至天嘉三年、太建五年至太建十一年改用使用者保存的史圖館相應或最近年份地圖矢量化疆域，其餘年份仍明示採ChinaXMap 572年斷面近似。史圖館固定畫布以建康、江陵、武陵、廣州（番禺）、交趾、海南六處控制點配準至CHGIS／網頁經緯網；江陵本屬後梁，只作為地理錨點，不據此併入陳境。配準後僅在海岸帶依地形底圖校準東南海岸，大陸海岸約束先排除海南，海南只在史圖館原圖判定屬陳時以獨立島形併入，保留瓊州海峽。太建元年廣州叛亂面先依海陸掩膜裁至陸地，再保留在陳境內並另作疊加層。'
     ] : currentDynasty.key==='southern-liang' ? [

@@ -154,8 +154,9 @@ select:focus, input:focus { outline: 2px solid rgba(122,46,46,.25); border-color
 .dynamic-prefecture-dot { fill: #a85e52; stroke: #fff8e8; stroke-width: .6; }
 .dynamic-county-dot { fill: #365f70; }
 .dynamic-map-label { paint-order: stroke; stroke: rgba(255,252,240,.94); stroke-width: 2.3; stroke-linejoin: round; dominant-baseline: central; pointer-events: none; }
-.year-map-overlay:not(.show-all-map-labels) [data-label-level="county"],
-.year-map-overlay:not(.show-all-map-labels) .map-label-crowded { display: none; }
+.year-map-overlay:not(.show-all-map-labels) [data-label-level="county"] { display: none; }
+.map-label-leaders { pointer-events: none; }
+.map-label-leader.is-active { stroke: #7b2948; stroke-opacity: 1; }
 .dynamic-map-label.map-label-link { pointer-events: bounding-box; cursor: pointer; }
 .dynamic-map-label.map-label-reference { pointer-events: bounding-box; cursor: help; }
 .map-label-link:hover,.map-label-link:focus-visible,.map-label-link.is-active { text-decoration: underline; outline: none; stroke: #fff1a8; }
@@ -773,7 +774,7 @@ body[data-theme] input:focus { outline-color: color-mix(in srgb, var(--accent) 2
   font-style: normal;
   font-weight: 700;
 }
-.liang-person-color, .chen-person-color {
+.liang-person-color {
   font-weight: 700;
   text-decoration: underline dotted color-mix(in srgb, currentColor 55%, transparent);
   text-underline-offset: .16em;
@@ -781,6 +782,22 @@ body[data-theme] input:focus { outline-color: color-mix(in srgb, var(--accent) 2
 .liang-person-color[data-category="皇太子諸子"] {
   text-shadow: 0 0 1px #675700, 0 0 2px #675700;
 }
+.chen-person-color { font-weight: inherit; text-decoration: none; }
+.chen-fief-person {
+  color: var(--person-color);
+  background: color-mix(in srgb, var(--person-color) 12%, var(--paper-2));
+  border: 1px solid color-mix(in srgb, var(--person-color) 55%, var(--line));
+  border-radius: 3px;
+  padding: 0 3px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+.fief-detail-button.chen-fief-uniform {
+  color: var(--person-color);
+  background: color-mix(in srgb, var(--person-color) 12%, var(--paper-2));
+  border-color: color-mix(in srgb, var(--person-color) 55%, var(--line));
+}
+.chen-fief-uniform .chen-fief-person { padding: 0; border: 0; background: transparent; }
 
 .liang-governor-yearbook-switch {
   display: flex;
