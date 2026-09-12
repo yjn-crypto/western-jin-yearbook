@@ -170,7 +170,7 @@ const mapContext=vm.createContext({
   clearMapLinkHighlights(){},setMapReadingMode(){},resetMapView(){},
 });
 for(const name of ['yearMapPanel','textMapLinkControl','yearMapStage','yearMapImage','yearMapNote','yearMapUhd','yearMapCsv','yearMapGeoJson','yearMapExport','yearMapLoadUhd'])mapContext[name]=mapNode();
-for(const name of ['normalizeName','itemDisplayName','activeMapRecords','chenTerritoryFeature','chenTerritorySource','drawRegimes','mapDistance','chooseEntitySeat','resolveSnapshotFeatures','dynamicFiefLabels','snapshotFeatureForMapArea','appendHotspots','renderDynamicMap','renderYearMap']) {
+for(const name of ['normalizeName','itemDisplayName','activeMapRecords','chenTerritoryFeature','chenTerritorySource','drawRegimes','mapDistance','chooseEntitySeat','resolveSnapshotFeatures','dynamicFiefLabels','snapshotFeatureForMapArea','appendHotspots','mapTerritoryLabelGuard','renderDynamicMap','renderYearMap']) {
   vm.runInContext(extractFunction(appSource,name),mapContext);
 }
 const renderDynamicMap=mapContext.renderDynamicMap;

@@ -8,8 +8,9 @@ for (const file of ['data/jin-data.js', 'data/chen-data.js', 'data/liang-data.js
   vm.runInContext(fs.readFileSync(file, 'utf8'), context, {filename:file});
 }
 const before = JSON.stringify([context.window.JIN_DATA, context.window.CHEN_DATA, context.window.LIANG_DATA]);
+vm.runInContext(fs.readFileSync('data/chen-qiao-prefaces.js', 'utf8'), context);
 vm.runInContext(fs.readFileSync('source-annotations.js', 'utf8'), context);
-const {displaySource} = context.window.SOURCE_ANNOTATIONS;
+const {displaySource, qiaoSources} = context.window.SOURCE_ANNOTATIONS;
 const entities = new Map(), qiao = [];
 function walk(node) {
   if (!node || typeof node !== 'object') return;
@@ -55,12 +56,35 @@ assert.equal(qiao.length, 39, '侨置标记数量应保留');
 let qiaoSourceCount = 0;
 for (const note of qiao) for (const source of note.sources || []) {
   assert(source.book_page, '侨置页码应保留');
-  assert(displaySource(source).pagesOnly, '侨置来源应仅展示页码');
-  assert.equal(displaySource(source).excerpt, '', '侨置OCR不应显示');
-  assert(displaySource({...source}).pagesOnly, '普通注释入口中的同一侨置来源副本也应隐藏OCR');
+  assert.equal(displaySource(source).origin, source.origin || note.origin, '恢复用户独立整理的原属，不以表格OCR推定');
+  assert.equal(displaySource(source).excerpt, '', '侨置重复表格OCR不应显示');
+  assert.equal(displaySource({...source}).excerpt, '', '普通注释入口中的同一侨置来源副本也应隐藏表格OCR');
   qiaoSourceCount++;
 }
 assert(excerpt('ch_p0002').includes('南琅邪彭城二郡太守'), '侨郡正常沿革中的史书引用应保留');
+const prefectures = [...entities.values()].filter(entity => entity.qiao_annotation && Array.isArray(entity.counties));
+assert.equal(prefectures.length, 13, '覆盖现有全部侨郡，不擅自增加侨置标记');
+for (const entity of entities.values()) {
+  if (!entity.qiao_annotation) continue;
+  const sources = qiaoSources(entity);
+  const originals = entity.qiao_annotation.sources || [];
+  for (const [index, source] of originals.entries()) {
+    assert.equal(sources[index].origin, source.origin || entity.qiao_annotation.origin, `${entity.id} 原属须逐字保留`);
+    assert.equal(displaySource(sources[index], {qiao:true}).excerpt, '', `${entity.id} 重复表格OCR仍需抑制`);
+  }
+  if (Array.isArray(entity.counties)) {
+    assert(sources.some(source => source.qiao_preface && displaySource(source).excerpt), `${entity.id} 应有侨郡说明或明确标注的正文补证`);
+  } else assert.equal(sources.length, originals.length, `${entity.id} 县注释不得加入整段郡说明`);
+}
+const prefaces = context.window.CHEN_QIAO_PREFACES.by_entity;
+assert(prefaces.ch_p0002[0].book_pages.includes(1602), '彭城表前说明跨页应留存两页定位');
+assert(prefaces.ch_p0002[0].excerpt.includes('复立二郡'), '表前说明必须与下一页接合至完整句子');
+assert(prefaces.ch_p0043[0].excerpt.includes('太原郡于彭泽'), '太原注释应选彭泽条而非北方同名侨郡');
+assert(prefaces.ch_p0129.some(source => source.book_page === 1546 && source.excerpt.includes('双头郡')), '西阳双头郡备考须使用真正的1546页来源');
+assert(prefaces.ch_p0147[0].excerpt_label.includes('正文补证'), '1614页OCR缺失不得伪称表前原文');
+assert(prefaces.ch_p0003[0].excerpt_label.includes('正文补证'), '陈留表前OCR缺失不得伪称表前原文');
+assert.equal(displaySource(entities.get('ch_c0181').source).origin || entities.get('ch_c0181').qiao_annotation.origin, '豫州襄城郡');
+assert.equal(displaySource(entities.get('ch_c0182').source).origin || entities.get('ch_c0182').qiao_annotation.origin, '揚州淮南郡');
 
 // Exercise the shared source renderer: both citation and auxiliary dialogs use it.
 function element(tag) {
@@ -73,7 +97,11 @@ vm.runInContext(renderer, context);
 const qiaoSource = qiao.find(note => note.sources?.some(source => source.book_page === 1602)).sources.find(source => source.book_page === 1602);
 const body = element('div');
 context.appendSourceEntry(body, qiaoSource);
-assert.equal(body.children[0].children.length, 1, '侨置来源应只有页码，不能残留原属/人工校勘或摘录待补');
+assert.equal(body.children[0].children.length, 2, '侨置来源恢复页码与原属，不显示重复表格或摘录待补');
+assert.equal(body.children[0].children[1].textContent, `原屬：${qiaoSource.origin}`, '通用注释弹窗必须恢复原属');
+const prefaceBody = element('div');
+context.appendSourceEntry(prefaceBody, prefaces.ch_p0043[0], {qiao:true});
+assert(prefaceBody.children[0].children.some(child => child.textContent.includes('太原郡于彭泽')), '通用弹窗必须显示新增核对过的侨郡说明');
 assert(body.children[0].children[0].textContent.includes('1602') && body.children[0].children[0].textContent.includes('704'));
 const regularBody = element('div');
 context.appendSourceEntry(regularBody, entities.get('ch_p0004').source);
@@ -94,4 +122,4 @@ assert.equal(context.qiaoText({q:true, qi:{qiao_table_page_index:12, original_ju
 assert.equal(context.qiaoText({q:true, qi:{text:'重复的表格文字'}}), '僑置考表頁碼待校。');
 assert.equal(JSON.stringify([context.window.JIN_DATA, context.window.CHEN_DATA, context.window.LIANG_DATA]), before, '不能修改原始OCR和行政数据');
 
-console.log(`Source annotations OK: hierarchy and misplaced paragraphs; ${qiao.length} qiao notes / ${qiaoSourceCount} citations; original data unchanged.`);
+console.log(`Source annotations OK: hierarchy unchanged; ${qiao.length} qiao origins / ${qiaoSourceCount} citations restored; ${prefectures.length} prefecture introductions; original data unchanged.`);

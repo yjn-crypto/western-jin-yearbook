@@ -151,8 +151,8 @@
   function qiaoNote(entity, phase, year) {
     const note = phase?.qiao_annotation || entity?.qiao_annotation;
     if (note) {
-      const sources = Array.isArray(note.sources) ? note.sources : [note.source || phase?.source || entity?.source].filter(Boolean);
-      const label=`${entity.base_name || entity.name || entity.n || '僑置政區'}：僑置考表頁碼`;
+      const sources = window.SOURCE_ANNOTATIONS?.qiaoSources(entity,phase) || (Array.isArray(note.sources) ? note.sources : [note.source || phase?.source || entity?.source].filter(Boolean));
+      const label=`${entity.base_name || entity.name || entity.n || '僑置政區'}：僑置原屬與說明`;
       return makeAnnotation(label, sources, 'qiao-note', label);
     }
     const info=entity?.qi || entity?.qiao_info;
@@ -160,7 +160,8 @@
     const source={
       book_page:info.book_page || null,
       pdf_page:info.pdf_page || null,
-      page_index:info.qiao_table_page_index ?? null
+      page_index:info.qiao_table_page_index ?? null,
+      origin:info.origin || ''
     };
     const label=`${entity.base_name || entity.name || entity.n || '僑置政區'}：僑置考表頁碼`;
     return makeAnnotation(label,[source],'qiao-note',label);
@@ -403,7 +404,7 @@
   function localOfficerSearchText(record) {
     const tenure=localOfficerTenure(record),technical={...(tenure.technical_trace||{}),...(record.technical_trace||{})};
     return [
-      record.person,record.place,record.office,record.full_title,record.level,
+      record.person,window.CHEN_PERSON_FORMATS?.displayName(record.person,record.year)?.text,record.place,record.office,record.full_title,record.level,
       tenure.person,tenure.place,tenure.office,tenure.full_title,tenure.tenure_nature,tenure.tenure_status,
       record.annual_presence_id,record.official_id,record.person_id,localOfficerValue(technical)
     ].join(' ');
@@ -412,7 +413,7 @@
   function localOfficerInfo(record,year,detachedReason='') {
     return {
       kind:'local-officer',
-      title:record.person||'地方長官',
+      title:window.CHEN_PERSON_FORMATS?.displayName(record.person,year)?.text||record.person||'地方長官',
       summary:`${formatYearLabel(year)} · ${record.place} · ${record.office}`,
       record,
       tenure:localOfficerTenure(record),
@@ -937,8 +938,16 @@
     if(cursor<value.length)container.appendChild(document.createTextNode(value.slice(cursor)));
   }
 
-  function createChenColoredAuxButton(text,info,className='',year=null) {
+  function createChenColoredAuxButton(text,info,className='',year=null,people=[]) {
     const value=String(text||''),button=createAuxButton('',info,className);
+    const ownerStyles=people.map(person=>window.CHEN_PERSON_FORMATS?.fiefStyle(typeof person==='string'?person:person.person,year));
+    const ownerColors=new Set(ownerStyles.map(style=>style?.color));
+    if(ownerStyles.length&&ownerColors.size===1&&!ownerColors.has(undefined)) {
+      button.textContent=value;button.classList.add('chen-fief-uniform');
+      button.style.setProperty('--person-color',ownerStyles[0].color);
+      button.title=[info.summary,...ownerStyles.map(style=>style.source)].filter(Boolean).join('；');
+      button.setAttribute('aria-label',value);return button;
+    }
     const matches=window.CHEN_PERSON_FORMATS?.matches(value,year)||[];
     const styles=matches.map(match=>window.CHEN_PERSON_FORMATS.fiefStyle(match.person.name,year));
     let cursor=0;
@@ -951,7 +960,7 @@
     });
     if(cursor<value.length)button.appendChild(document.createTextNode(value.slice(cursor)));
     const colors=new Set(styles.map(style=>style?.color));
-    if(styles.length&&colors.size===1&&!colors.has(undefined)) {
+    if(!people.length&&styles.length&&colors.size===1&&!colors.has(undefined)) {
       button.classList.add('chen-fief-uniform');
       button.style.setProperty('--person-color',styles[0].color);
     }
@@ -983,7 +992,7 @@
   function appendGovernorLine(container,record,line,year) {
     const p=document.createElement('p');
     if(currentDynasty.key==='southern-liang')appendLiangPersonColors(p,line,year);
-    else appendChenPersonColors(p,line,year,record.state);
+    else appendChenPersonColors(p,window.CHEN_PERSON_FORMATS?.decorateText(line,year,record.state)||line,year,record.state);
     const references=governorTitleReferences(record,line,year);
     if(references.length) {
       const note=document.createElement('small');note.className='governor-title-history';
@@ -994,6 +1003,26 @@
     container.appendChild(p);
   }
 
+  function appendLocalOfficerName(container,record,year) {
+    const display=window.CHEN_PERSON_FORMATS?.displayName(record.person,year)||{text:record.person,canonicalName:record.person};
+    const style=window.CHEN_PERSON_FORMATS?.fiefStyle(display.canonicalName,year);
+    const name=document.createElement('span');name.className='chen-local-officer-name';name.textContent=display.text;
+    if(style?.color)name.style.color=style.color;
+    name.title=[display.source,style?.source].filter(Boolean).join('；');
+    container.appendChild(name);return display.text;
+  }
+
+  function createLocalOfficerButton(record,year,className,detachedReason='') {
+    const button=createAuxButton('',localOfficerInfo(record,year,detachedReason),className);
+    button.style.color='#000000';
+    const name=appendLocalOfficerName(button,record,year);
+    button.appendChild(document.createTextNode(`　${record.office}${detachedReason?`（${record.place}）`:''}`));
+    button.dataset.annualPresenceId=record.annual_presence_id;
+    button.dataset.officialId=record.official_id;button.dataset.personId=record.person_id;
+    button.setAttribute('aria-label',`${name}，${record.office}，${detachedReason?`${record.place}，`:''}本年任職${record.annual_presence_status==='probable'?'推定，斜體':'確認，正常字體'}${detachedReason?'，行政區劃未連接':''}`);
+    return button;
+  }
+
   function renderLocalOfficerBox(records,year,labelText='地方長官') {
     if(!records?.length)return null;
     const box=document.createElement('section');box.className='local-officer-box';box.setAttribute('aria-label',`本年曾任${labelText}`);
@@ -1002,11 +1031,7 @@
     for(const record of records) {
       const line=document.createElement('p');
       const cls=['local-officer-entry',record.annual_presence_status].filter(Boolean).join(' ');
-      const button=createAuxButton(`${record.person}　${record.office}`,localOfficerInfo(record,year),cls);
-      button.dataset.annualPresenceId=record.annual_presence_id;
-      button.dataset.officialId=record.official_id;
-      button.dataset.personId=record.person_id;
-      button.setAttribute('aria-label',`${record.person}，${record.office}，本年任職${record.annual_presence_status==='probable'?'推定，斜體':'確認，正常字體'}`);
+      const button=createLocalOfficerButton(record,year,cls);
       line.appendChild(button);entries.appendChild(line);
     }
     if(records.length>1&&records.some((record)=>['unresolved','unknown'].includes(record.intra_year_order_status))){
@@ -1038,7 +1063,7 @@
     } else if (currentDynasty.key==='southern-liang') {
       for (const match of item.liangFiefs||[]) {const cls=['fief-badge','liang-fief-note',match.changed?'changed':'',match.status==='uncertain'?'editorial-uncertain':'',match.status==='mourning'?'mourning':''].filter(Boolean).join(' ');container.appendChild(createLiangColoredAuxButton(liangFiefText(match),liangFiefInfo(match,year),cls,year));}
     } else {
-      for (const match of item.chenFiefs||[]) { const cls=['fief-badge','chen-fief-note',match.changed?'changed':'',match.display?.uncertain?'editorial-uncertain':'',match.display?.mourning?'mourning':''].filter(Boolean).join(' '); container.appendChild(createChenColoredAuxButton(chenFiefText(match),chenFiefInfo(match,year),cls,year)); }
+      for (const match of item.chenFiefs||[]) { const cls=['fief-badge','chen-fief-note',match.changed?'changed':'',match.display?.uncertain?'editorial-uncertain':'',match.display?.mourning?'mourning':''].filter(Boolean).join(' '); container.appendChild(createChenColoredAuxButton(chenFiefText(match),chenFiefInfo(match,year),cls,year,match.display?.people||match.holders||[])); }
     }
   }
 
@@ -1144,7 +1169,7 @@
     const list=document.createElement('div');list.className='virtual-fief-list';
     for (const match of visible) {
       const item=document.createElement('div');item.className='virtual-fief-item';
-      { const cls=['fief-badge',currentDynasty.key==='southern-liang'?'liang-fief-note':'chen-fief-note',match.changed?'changed':'',match.display?.uncertain?'editorial-uncertain':'',match.display?.mourning?'mourning':''].filter(Boolean).join(' '); const label=`${match.phase.fief}國　${activeFiefText(match)}`;item.appendChild(currentDynasty.key==='southern-liang'?createLiangColoredAuxButton(label,activeFiefInfo(match,year),cls,year):createChenColoredAuxButton(label,activeFiefInfo(match,year),cls,year)); }
+      { const cls=['fief-badge',currentDynasty.key==='southern-liang'?'liang-fief-note':'chen-fief-note',match.changed?'changed':'',match.display?.uncertain?'editorial-uncertain':'',match.display?.mourning?'mourning':''].filter(Boolean).join(' '); const label=`${match.phase.fief}國　${activeFiefText(match)}`;item.appendChild(currentDynasty.key==='southern-liang'?createLiangColoredAuxButton(label,activeFiefInfo(match,year),cls,year):createChenColoredAuxButton(label,activeFiefInfo(match,year),cls,year,match.display?.people||match.holders||[])); }
       const reason=document.createElement('span');reason.className='virtual-fief-reason';reason.textContent=match.reason;item.appendChild(reason);list.appendChild(item);
     }
     card.appendChild(list);return card;
@@ -1185,9 +1210,7 @@
     for(const item of visible) {
       const record=item.record,entry=document.createElement('div');entry.className='local-officer-detached-item';
       const cls=['local-officer-detached-button',record.annual_presence_status].filter(Boolean).join(' ');
-      const button=createAuxButton(`${record.person}　${record.office}（${record.place}）`,localOfficerInfo(record,year,item.reason),cls);
-      button.dataset.annualPresenceId=record.annual_presence_id;button.dataset.officialId=record.official_id;button.dataset.personId=record.person_id;
-      button.setAttribute('aria-label',`${record.person}，${record.office}，${record.place}，本年任職${record.annual_presence_status==='probable'?'推定，斜體':'確認，正常字體'}，行政區劃未連接`);
+      const button=createLocalOfficerButton(record,year,cls,item.reason);
       entry.appendChild(button);
       const reason=document.createElement('span');reason.className='local-officer-detached-reason';reason.textContent=item.reason;entry.appendChild(reason);
       list.appendChild(entry);
@@ -1258,7 +1281,7 @@
     const change=citationRegistry.get(Number(number));if(!change)return;
     modalReturnFocus=document.activeElement instanceof HTMLElement?document.activeElement:null;
     $('sourceModalTitle').textContent=`註釋 [${change.number}]`;$('sourceModalSummary').textContent=change.summary;const body=$('sourceModalBody');body.replaceChildren();
-    if(!change.sources.length){const p=document.createElement('p');p.textContent='此項頁碼仍待校勘。';body.appendChild(p);} else for(const source of change.sources){appendSourceEntry(body,source,{pagesOnly:change.kind==='qiao-note'});}
+    if(!change.sources.length){const p=document.createElement('p');p.textContent='此項頁碼仍待校勘。';body.appendChild(p);} else for(const source of change.sources){appendSourceEntry(body,source,{qiao:change.kind==='qiao-note'});}
     sourceModal.hidden=false;document.body.classList.add('modal-open');sourceModalClose.focus();
   }
 
@@ -1266,13 +1289,14 @@
     const article=document.createElement('article');article.className='source-entry';const h=document.createElement('h3');
     h.textContent=source.page_index!=null&&!source.book_page&&!source.pdf_page
       ? `僑置考表原記錄頁序 ${source.page_index}（書內／PDF頁碼待校）`
-      : `${source.book_page?`書內第 ${source.book_page} 頁`:'書內頁碼待校'}（${source.pdf_page?`PDF 第 ${source.pdf_page} 頁`:'PDF頁碼待校'}）`;
+      : `${source.book_page?`書內第 ${(source.book_pages||[source.book_page]).join('、')} 頁`:'書內頁碼待校'}（${source.pdf_page?`PDF 第 ${(source.pdf_pages||[source.pdf_page]).join('、')} 頁`:'PDF頁碼待校'}）`;
     article.appendChild(h);
     const display=window.SOURCE_ANNOTATIONS?.displaySource(source,options)||{excerpt:source.excerpt,pagesOnly:options.pagesOnly};
     if(display.pagesOnly){body.appendChild(article);return;}
-    const p=document.createElement('p');p.textContent=display.excerpt||'摘錄待補。';article.appendChild(p);
-    if(source.origin){const o=document.createElement('p');o.className='qiao-origin';o.textContent=`原屬：${source.origin}`;article.appendChild(o);}
-    if(source.editorial_note){const n=document.createElement('p');n.className='editorial-note';n.textContent=`人工校勘：${source.editorial_note}`;article.appendChild(n);}body.appendChild(article);
+    if(display.origin){const o=document.createElement('p');o.className='qiao-origin';o.textContent=`原屬：${display.origin}`;article.appendChild(o);}
+    if(source.excerpt_label&&display.excerpt){const label=document.createElement('h4');label.textContent=source.excerpt_label;article.appendChild(label);}
+    if(display.excerpt||!display.qiao){const p=document.createElement('p');p.textContent=display.excerpt||'摘錄待補。';article.appendChild(p);}
+    if(display.editorial_note){const n=document.createElement('p');n.className='editorial-note';n.textContent=`人工校勘：${display.editorial_note}`;article.appendChild(n);}body.appendChild(article);
   }
 
   function appendLocalOfficerDetailSection(body,title,value,className='') {
@@ -1288,7 +1312,9 @@
 
   function renderLocalOfficerDetail(body,info) {
     const record=info.record||{},tenure=info.tenure||{},time=tenure.tenure_time||{};
-    appendLocalOfficerDetailSection(body,'人名',record.person||tenure.person||'未標');
+    const nameSection=appendLocalOfficerDetailSection(body,'人名','');
+    const nameLine=nameSection.querySelector('p');nameLine.replaceChildren();
+    appendLocalOfficerName(nameLine,{person:record.person||tenure.person||'未標'},info.year||record.year);
     appendLocalOfficerDetailSection(body,'完整官銜',record.full_title||tenure.full_title||record.office||'未標');
     appendLocalOfficerDetailSection(body,'任職時間',time.display||time.normalized||'任期邊界未詳');
     const annualLabel=record.annual_presence_status==='confirmed'?'confirmed（本年任職可確認，正常字體）':'probable（本年任職為推定，斜體）';
@@ -1640,6 +1666,45 @@
 
   const mapLabelLayouts=new WeakMap();
 
+  function mapTerritoryLabelGuard(path) {
+    const rings=(String(path||'').match(/M[^M]+/g)||[]).map((ring)=>{
+      const values=ring.match(/-?\d+(?:\.\d+)?/g)||[],points=[];
+      for(let i=0;i+1<values.length;i+=2)points.push([Number(values[i]),Number(values[i+1])]);
+      return points;
+    }).filter((points)=>points.length>2);
+    if(!rings.length)return null;
+    const edges=[],grid=new Map(),step=80;
+    for(const points of rings)for(let i=0,j=points.length-1;i<points.length;j=i++) {
+      const [x,y]=points[i],[px,py]=points[j],edge={x,y,px,py,minX:Math.min(x,px),maxX:Math.max(x,px),minY:Math.min(y,py),maxY:Math.max(y,py)};
+      edges.push(edge);
+      for(let gx=Math.floor(edge.minX/step);gx<=Math.floor(edge.maxX/step);gx++)for(let gy=Math.floor(edge.minY/step);gy<=Math.floor(edge.maxY/step);gy++) {
+        const key=`${gx}|${gy}`;if(!grid.has(key))grid.set(key,[]);grid.get(key).push(edge);
+      }
+    }
+    const contains=(x,y)=>{
+      let inside=false;
+      for(const edge of edges)if((edge.y>y)!==(edge.py>y)&&x<(edge.px-edge.x)*(y-edge.y)/(edge.py-edge.y)+edge.x)inside=!inside;
+      return inside;
+    };
+    const intersects=(box)=>{
+      const checked=new Set();
+      for(let gx=Math.floor(box[0]/step);gx<=Math.floor(box[2]/step);gx++)for(let gy=Math.floor(box[1]/step);gy<=Math.floor(box[3]/step);gy++)for(const edge of grid.get(`${gx}|${gy}`)||[]) {
+        if(checked.has(edge))continue;checked.add(edge);
+        if(edge.maxX<box[0]||edge.minX>box[2]||edge.maxY<box[1]||edge.minY>box[3])continue;
+        // Clip this boundary segment against the whole text box, including
+        // tiny islands and concave borders whose corners alone miss a crossing.
+        let enter=0,leave=1;
+        for(const [start,delta,min,max] of [[edge.x,edge.px-edge.x,box[0],box[2]],[edge.y,edge.py-edge.y,box[1],box[3]]]) {
+          if(delta===0){if(start<min||start>max){enter=1;leave=0;break;}}
+          else {const a=(min-start)/delta,b=(max-start)/delta;enter=Math.max(enter,Math.min(a,b));leave=Math.min(leave,Math.max(a,b));}
+        }
+        if(enter<=leave)return true;
+      }
+      return contains(box[0],box[1]);
+    };
+    return {contains,intersects};
+  }
+
   function *labelCandidates(label,width,height,plot) {
     const {x,y,kind}=label,gap=height*.3,d=height*.8;
     if(kind.includes('area'))yield [x,y,'middle'];
@@ -1659,7 +1724,7 @@
     }
   }
 
-  function placeAndDrawLabels(root,labels,plot,scale,baseHeight) {
+  function placeAndDrawLabels(root,labels,plot,scale,baseHeight,territoryGuard=null) {
     const occupied=new Map(),cellSize=80,gap=2/scale;
     const cells=(box)=>{
       const keys=[];
@@ -1669,7 +1734,7 @@
     };
     const addBox=(box)=>{for(const key of cells(box)){if(!occupied.has(key))occupied.set(key,[]);occupied.get(key).push(box);}};
     const collision=(box)=>cells([box[0]-gap,box[1]-gap,box[2]+gap,box[3]+gap]).some((key)=>(occupied.get(key)||[]).some((other)=>!(box[2]+gap<other[0]||other[2]+gap<box[0]||box[3]+gap<other[1]||other[3]+gap<box[1])));
-    // All levels share one collision index, including the regime names below.
+    // Chen labels share the collision index; outside references may overlap.
     for(const node of yearMapOverlay.querySelectorAll('.dynamic-regime-label')) {
       const box=node.getBBox();addBox([box.x,box.y,box.x+box.width,box.y+box.height]);
     }
@@ -1686,9 +1751,16 @@
       for(const [x,y,anchor] of labelCandidates(label,width,height,plot)) {
         const left=anchor==='middle'?x-width/2:anchor==='end'?x-width:x;
         const box=[left,y-height/2,left+width,y+height/2];
-        if(box[0]<plot[0]||box[1]<plot[1]||box[2]>plot[2]||box[3]>plot[3]||collision(box))continue;
+        if(box[0]<plot[0]||box[1]<plot[1]||box[2]>plot[2]||box[3]>plot[3])continue;
+        if(label.outsideChen) {
+          const halo=1.4/scale;
+          if(territoryGuard?.intersects([box[0]-halo,box[1]-halo,box[2]+halo,box[3]+halo]))continue;
+        } else if(collision(box))continue;
         placement={x,y,anchor,box};break;
       }
+      // Do not send northern reference names to the southern overflow panel.
+      // A border label with no room remains available from its original point.
+      if(!placement&&label.outsideChen)continue;
       // A dense overview may exhaust the plot. Pack the remaining names below
       // the base image and include that panel in both the SVG and PNG bounds.
       if(!placement) {
@@ -1699,7 +1771,7 @@
         legendX+=width+legendGap;legendRowHeight=Math.max(legendRowHeight,height);legendCount++;
         renderHeight=Math.max(renderHeight,legendY+legendRowHeight+legendGap);
       }
-      addBox(placement.box);
+      if(!label.outsideChen)addBox(placement.box);
       const classes=['dynamic-map-label',`dynamic-${label.kind}-label`,label.entityId?'map-label-link':'map-label-reference'];
       if(label.fief)classes.push('dynamic-fief-label');
       if(label.uncertain)classes.push('is-uncertain');
@@ -1743,7 +1815,7 @@
     layout.layer.replaceChildren();
     const scale=Math.max(.01,yearMapStage.clientWidth/currentMap.width);
     const labels=layout.labels.filter((label)=>mapLabelVisible(label.level));
-    currentMap.renderHeight=placeAndDrawLabels(layout.layer,labels,layout.plot,scale,currentMap.height);
+    currentMap.renderHeight=placeAndDrawLabels(layout.layer,labels,layout.plot,scale,currentMap.height,layout.territoryGuard);
     yearMapOverlay.setAttribute('viewBox',`0 0 ${currentMap.width} ${currentMap.renderHeight}`);
     yearMapStage.style.paddingBottom=`${(currentMap.renderHeight-currentMap.height)*scale}px`;
     restoreMapSelection();
@@ -1778,6 +1850,7 @@
   }
 
   function renderDynamicMap(year,snapshot,map) {
+    const territoryGuard=mapTerritoryLabelGuard(chenTerritoryFeature(year)?.properties?.svgPath||map.regimes?.chen);
     const stateAreas=activeMapRecords(map.stateAreas,year,190);
     const prefAreas=activeMapRecords(map.prefAreas,year,120);
     const seatsByLevel={
@@ -1823,6 +1896,7 @@
       label.mapKey=label.entityId?`entity:${label.entityId}`:`reference:${level}|${label.x}|${label.y}|${normalizeName(label.sourceName||label.text)}`;
       const feature=label.entityId&&resolved.byId.get(label.entityId);
       if(feature){label.anchorX=feature.x;label.anchorY=feature.y;}
+      label.outsideChen=Boolean(!label.entityId&&!label.fief&&territoryGuard&&!territoryGuard.contains(label.x,label.y));
       // Keep the area and seat labels: each carries the annual name and the
       // same stable entity ID, while their geometry remains unchanged.
       allLabels.push(label);
@@ -1838,7 +1912,7 @@
     for(const label of allLabels){const key=`${label.x}|${label.y}`;seatCounts.set(key,(seatCounts.get(key)||0)+1);}
     for(const label of allLabels)label.coLocated=seatCounts.get(`${label.x}|${label.y}`)>1;
     const layer=svgNode('g',{class:'dynamic-map-label-layer'});root.appendChild(layer);
-    mapLabelLayouts.set(root,{labels:allLabels,plot:map.plot,layer,year});
+    mapLabelLayouts.set(root,{labels:allLabels,plot:map.plot,layer,year,territoryGuard});
     return resolved.features;
   }
 
@@ -1951,7 +2025,7 @@
       '南陳州郡縣列在前；不能與本年南陳實際郡縣唯一對應的王國、郡公國及縣級開國爵，集中列於「未定位／疑似虛封封爵」。這一區並不等同於一律判定虛封：若史料或制度可證其並非虛封（如二王後），將在註記中明示。其後依次列後梁、王琳政權。後梁或王琳政區在其存續期結束後自動消失。',
       '宗室王國只在郡級政區旁標示王號與姓名，不計算元年、二年。郡公附於郡級，開國公侯伯子男附於縣級，標作公國、侯國、伯國、子國、男國。點擊小字可查看封爵年表、承襲與資料限制。封君卒後若襲封年份無明文而親屬關係、卒年可確，原則上以第三年記新封君，中間兩年記世子服喪；史料明載優先。最後可確年份以後材料不足者，以斜體表示存疑。',
       '封爵資料只是制度注記。南朝封君通常不到封國，網頁不以爵國名稱反推實際行政機構；只有本年能唯一對應一個南陳郡或縣時，才把爵號附在該政區旁。凡本年郡級政區已按此規則附有任何封國，其逐年顯示名由「某某郡」寫作「某某國」；底層郡名、穩定ID、治所與沿革不改，封國終止後自然恢復顯示為郡。但是，儘管在行政上，封君已經基本喪失了對封國的干預，但封國在制度、禮儀、經濟等諸多層面的實在性確是確定無疑的。因此，我們認為，在唐朝不開國以前，仍有必要在郡縣旁邊標註封國與封君。',
-      '陳代僑郡縣另依本書第十編侨州郡縣考表補充。梁、陳欄中，○所標為梁，△或明確屬陳者用於陳代判定。陳代不再把無實土侨州作為州級政區另列，州名及原有統屬不因此改變；僑郡、僑縣名稱以下劃線標示。若正文未標年代而原本以暗色顯示，一旦由侨置表確認為僑郡縣，以下劃線優先，不再變暗。僑置註釋暫只顯示原書頁碼及已有的PDF頁碼，表格文字暫停展示；取得原書頁面後可改用原頁圖像呈現。',
+      '陳代僑郡縣另依本書第十編侨州郡縣考表補充。梁、陳欄中，○所標為梁，△或明確屬陳者用於陳代判定。陳代不再把無實土侨州作為州級政區另列，州名及原有統屬不因此改變；僑郡、僑縣名稱以下劃線標示。若正文未標年代而原本以暗色顯示，一旦由侨置表確認為僑郡縣，以下劃線優先，不再變暗。僑置註釋保留已整理的原屬及原書／PDF頁碼；僑郡另列核對過的表前說明，OCR缺失處明示正文補證。重複表格文字仍不展示。',
       '方鎮長官另據魯力《魏晉南北朝方鎮年表新編·宋齊梁陳卷》之「陳方鎮年表」。該表以年為經、州為緯，州下列都督、刺史等人物，並記官銜、月份、遷轉及考證。本頁在各州表內以「都督/刺史」逐人分行列出年表原有的人物、時間與官銜；只有本年有可點擊方鎮資料的州，才在州名後按州序標出從{1}重新編起的索引，索引、州名及「都督/刺史」標題均可展開同一份完整考證。同名州先依正史方鎮的常設大州、當年實轄郡數與上下年沿革連續性判定；仍無法唯一對應者另置「方鎮表另見之州」，只作政治史資料提示，不據此直接增改行政區劃。',
       '本年條目有姓名而省略完整官銜時，另列同一人物、同州的此前官銜參照，明示原載紀年，詳情附該年原文及考證。連續省寫可回溯更早記載，必要時並列中間進號；遇離任、替任、死亡或姓名歧義即停止。本年明載的變動仍優先。',
       '南陳刺史年表與正文都督／刺史僅姓名及緊連姓名的爵號著色，官銜、月份及說明用黑色；原格字體、字號、粗斜體、下劃線、背景和換行保留。非陳姓人物用綠色；陳姓宗室據《陳書》明載父子關係及當年皇位，補足皇弟、皇子等身份色並校驗同父兄弟，嗣王依本表既有承襲與服喪年度。559、566年內易帝者保留原表姓名色；世系未明者保留可確認的原色。懸停姓名可查看依據。封君姓名與背景沿用相應人物色；地圖郡國、縣國名稱仍採本年封國顯示規則。',

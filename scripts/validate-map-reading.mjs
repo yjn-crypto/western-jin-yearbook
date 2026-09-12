@@ -50,7 +50,7 @@ const context=vm.createContext({
   yearMapZoomValue:{},requestAnimationFrame:(callback)=>callback(),
   mapLabelLayouts:new WeakMap(),
 });
-for(const name of ['labelWidth','labelCandidates','placeAndDrawLabels','mapLabelVisible','restoreMapSelection','selectMapKey','clearMapLinkHighlights','layoutDynamicMapLabels','applyMapZoom','ensureMapLabelVisible']) {
+for(const name of ['labelWidth','mapTerritoryLabelGuard','labelCandidates','placeAndDrawLabels','mapLabelVisible','restoreMapSelection','selectMapKey','clearMapLinkHighlights','layoutDynamicMapLabels','applyMapZoom','ensureMapLabelVisible']) {
   // labelCandidates is a generator, so its declaration has a different prefix.
   const code=name==='labelCandidates'?source.slice(source.indexOf('  function *labelCandidates('),source.indexOf('  function placeAndDrawLabels(')):extract(name);
   vm.runInContext(code,context);
@@ -63,6 +63,38 @@ const expected=[
 for(const [zoom,levels] of expected) {
   assert.deepEqual(['state','prefecture','county'].filter((level)=>context.mapLabelVisible(level,zoom)),levels,`${zoom*100}% label boundary`);
 }
+
+// Northern reference names can overlap beside their own points but their
+// complete text boxes must stay outside Chen, even along a narrow coastline.
+const territoryGuard=context.mapTerritoryLabelGuard('M500,200L900,200L900,900L500,900Z');
+assert.equal(territoryGuard.contains(550,500),true);
+assert.equal(territoryGuard.contains(490,500),false);
+assert.equal(territoryGuard.intersects([480,400,520,600]),true,'A label straddling the border must be rejected');
+const narrowGuard=context.mapTerritoryLabelGuard('M490,490L510,490L510,510L490,510Z');
+assert.equal(narrowGuard.intersects([480,480,520,520]),true,'An island entirely inside a label must also be detected');
+assert.equal(narrowGuard.intersects([480,495,520,505]),true,'A narrow border can intersect without containing a text-box corner');
+assert.equal(narrowGuard.intersects([450,450,470,470]),false);
+const holeGuard=context.mapTerritoryLabelGuard('M0,0L100,0L100,100L0,100ZM20,20L80,20L80,80L20,80Z');
+assert.equal(holeGuard.intersects([30,30,70,70]),false,'Even-odd holes must retain the displayed territory geometry');
+const borderLayer=new Node('g'),borderLabels=[0,1].map((index)=>({
+  level:'state',kind:'state-seat',text:'北朝參考州',x:490,y:500,fontSize:18,priority:1000,
+  mapKey:`reference:border-${index}`,outsideChen:true,
+}));
+borderLabels.push({level:'state',kind:'state-seat',text:'陳州',x:490,y:500,fontSize:18,priority:900,entityId:'chen-border',mapKey:'entity:chen-border'});
+const borderHeight=context.placeAndDrawLabels(borderLayer,borderLabels,[0,0,1000,1000],1,1000,territoryGuard);
+const borderNames=borderLayer.querySelectorAll('.dynamic-map-label'),northernNames=borderNames.filter((node)=>node.dataset.mapKey.startsWith('reference:'));
+assert.equal(northernNames.length,2,'Northern references must remain visible, rather than being removed wholesale');
+assert.deepEqual(northernNames.map((node)=>[node.getAttribute('x'),node.getAttribute('y'),node.getAttribute('text-anchor')]),[[469.84,500,'end'],[469.84,500,'end']].map((row)=>row.map(String)),'Northern names are allowed to overlap at their own seat');
+for(const node of northernNames) {
+  const font=Number.parseFloat(node.style.fontSize),width=context.labelWidth(node.textContent,font)+font*.35,height=font*1.4;
+  const x=Number(node.getAttribute('x')),y=Number(node.getAttribute('y')),anchor=node.getAttribute('text-anchor');
+  const left=anchor==='middle'?x-width/2:anchor==='end'?x-width:x;
+  assert.equal(territoryGuard.intersects([left-1.4,y-height/2-1.4,left+width+1.4,y+height/2+1.4]),false,'Whole northern label including its halo must remain outside Chen');
+}
+const chenBorderName=borderNames.find((node)=>node.dataset.entityId==='chen-border');
+assert.ok(chenBorderName,'A matched Chen label near the border must remain visible');
+assert.equal(chenBorderName.getAttribute('text-anchor'),'start','Northern references must not push Chen labels away from their existing placement');
+assert.equal(borderHeight,1000,'Northern crowding must not create a southern overflow panel');
 
 const layer=new Node('g');overlay.appendChild(layer);
 const labels=[];
@@ -188,4 +220,4 @@ assert.equal(reading.mapReadingMode,false);assert.equal(locatedEntity,selectedKe
 assert.equal(readingControl('yearMapLocateText').hidden,true);
 panel.hidden=true;reading.setMapReadingMode(true);assert.equal(reading.mapReadingMode,false,'A hidden map must not enter reading mode');
 
-console.log('地圖驗證通過：300%／700%邊界、封國與溢出標注、1000%上限、文字／點／引線持續聯動、讀圖模式進出與平移後視野保持、Esc及查看正文。');
+console.log('地圖驗證通過：北朝參考文字可重疊且完整字框不侵入陳境、陳標注不受北朝避讓影響、300%／700%邊界、封國與溢出標注、1000%上限、文字／點／引線持續聯動、讀圖模式進出與平移後視野保持、Esc及查看正文。');

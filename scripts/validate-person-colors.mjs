@@ -177,6 +177,46 @@ for (const family of identities.families) for (const period of family.periods) f
 assert.equal(people.identityStyle('陳伯山', 566), null, 'year with intra-year succession uses original formatting instead of full-year familial override');
 assert.equal(people.identityStyle('陳方泰', 583)?.color, '#7030A0', 'existing fief succession supplies violet');
 assert.equal(people.identityStyle('陳法武', 557), null, 'surname alone never proves royal kinship');
+// 2026-09-12 final correction: named kinship, correct title, and colour stay
+// separate; neither a matching surname nor a county marquis proves succession.
+assert.equal(people.fiefStyle('魯覽', 588)?.color, '#00B050', 'actual Pengze holder is green');
+assert.equal(people.fiefStyle('鲁岚', 588)?.color, '#00B050', 'unlisted non-Chen name still green');
+assert.notEqual(people.canonicalName('鲁岚'), people.canonicalName('魯覽'), 'different names are never silently merged');
+assert.equal(people.displayName('鲁岚', 588).text, '鲁岚', 'non-Chen source spelling remains intact');
+assert.equal(people.displayName('魯覽', 588).title, '', 'do not add unsolicited titles to non-Chen names');
+assert.equal(people.decorateText('魯覽、魯廣達 刺史。', 588), '魯覽、魯廣達 刺史。', 'non-Chen prose remains unchanged');
+assert.equal(people.displayName('陈君范', 588).text, '陈君范', 'unknown Chen name keeps original spelling');
+assert.notEqual(people.canonicalName('陈番'), people.canonicalName('陳蕃'), 'different Chen lineage members remain distinct');
+for (const name of ['陳黨', '陳正理', '陳擬', '陳褒', '陳諠', '陳祏', '陳敬雅', '陳敬泰']) {
+  const year = name === '陳擬' ? 558 : 588;
+  assert.equal(people.fiefStyle(name, year)?.color, '#984807', `${name}: named remote clan is brown, including successors to a marquisate`);
+}
+assert.equal(people.fiefStyle('陳方慶', 588)?.color, '#0070C0', 'Linru marquis stays blue');
+assert.equal(people.fiefStyle('陳元基', 588)?.color, '#0070C0', 'Boyi eldest son, no inherited kingship');
+assert.equal(people.fiefStyle('陳番', 588)?.color, '#0070C0', 'Boren eldest son, no inherited kingship');
+assert.equal(people.fiefStyle('陳蕃', 588)?.color, '#C00000', 'Houzhu son is a separate person');
+for (const [name, before, after] of [['陳方泰',563,564],['陳至澤',572,573],['陳孝寬',582,583],['陳鄷',585,586]]) {
+  assert.equal(people.fiefStyle(name, before)?.color, '#0070C0', `${name}: mourning/pre-succession is blue`);
+  assert.equal(people.fiefStyle(name, after)?.color, '#7030A0', `${name}: only effective inherited kingship is purple`);
+}
+assert.equal(people.displayName('陈叔达', 587).text, '義陽王陳叔達');
+assert.equal(people.displayName('陈慧纪', 584).text, '宜黃侯陳慧紀');
+assert.equal(people.displayName('陈正理', 588).text, '遂興侯陳正理');
+assert.equal(people.displayName('陈孝宽', 582).title, '河東國世子');
+assert.equal(people.displayName('陳蕃', 588).title, '吳郡王');
+assert.equal(people.displayName('陳叔忠', 588).title, '', 'unsupported same-name Yongcheng title is not assigned');
+assert.equal(people.decorateText('始興王伯茂 鎮東將軍、刺史。', 563), '始興王陳伯茂 鎮東將軍、刺史。');
+for (const [yearText, year] of Object.entries(governors.years)) for (const record of year.records) for (const line of record.summary_lines) {
+  const decorated = people.decorateText(line, Number(yearText), record.state);
+  for (const match of people.matches(decorated, Number(yearText), record.state)) {
+    if (match.source) assert.equal(match.source.payload.text, match.text, 'new complete names cannot render back to old workbook fragments');
+  }
+  const element = new Element('div'); context.window.appendBody(element, decorated, Number(yearText), record.state);
+  assert.equal(element.textContent, decorated, 'production renderer preserves the decorated title and full name');
+}
+for (const name of Object.keys(identities.remote_relatives)) for (let year = 557; year <= 588; year++) {
+  assert.notEqual(people.fiefStyle(name, year)?.color, '#7030A0', `${year} ${name}: marquis inheritance is never purple`);
+}
 for (const name of ['蕭韶', '蕭泰', '寧逵', '魯天念', '吳世興', '顧覺', '黃偲', '鄧嵩', '熊門超', '呂子廓', '戴智烈']) {
   assert.ok(knownPeople.has(name), `${name}: supplemental source roster is exercised by a real cell`);
 }
@@ -184,3 +224,71 @@ assert.equal(JSON.stringify({ formats, governors, fiefs: context.window.CHEN_FIE
 const chenCorrections = corrected.filter(item => /陳/.test(item.text));
 console.log('PASS: source/body person colours, black official prose, original text/font preservation, and annual royal-family validation.');
 console.log(JSON.stringify({ ...count, distinctSourcePeople: knownPeople.size, chenCorrections }, null, 2));
+
+if (process.argv.includes('--write-color-table')) {
+  const occurrenceYears = new Map(), originalNames = new Map();
+  function addOccurrence(name, year) {
+    if (!/^[陳陈]/u.test(name || '')) return;
+    const canonical = people.canonicalName(name);
+    if (!occurrenceYears.has(canonical)) occurrenceYears.set(canonical, new Set());
+    if (!originalNames.has(canonical)) originalNames.set(canonical, new Set());
+    originalNames.get(canonical).add(name);
+    if (Number.isInteger(Number(year)) && year >= 557 && year <= 588) occurrenceYears.get(canonical).add(Number(year));
+  }
+  for (const row of formats.rows) for (const cell of [...row.cells, row.auxiliary, row.appendix]) {
+    for (const match of people.matches(cell.text, row.year)) addOccurrence(match.person.name, row.year);
+  }
+  for (const [year, data] of Object.entries(governors.years)) for (const record of data.records) for (const line of record.summary_lines) {
+    for (const match of people.matches(line, year, record.state)) addOccurrence(match.person.name, year);
+  }
+  const local = context.window.CHEN_LOCAL_OFFICIALS;
+  for (const tenure of Object.values(local.tenures_by_id)) addOccurrence(tenure.person);
+  for (const [year, data] of Object.entries(local.years)) for (const record of data.local_officers) addOccurrence(record.person, Number(year));
+  for (const record of context.window.CHEN_FIEFS.records) {
+    for (const holder of record.holders) addOccurrence(holder.person);
+    for (let year = 557; year <= 588; year++) {
+      if (!record.phases.some(phase => year >= phase.start && year <= phase.end)) continue;
+      const period = record.display_periods?.find(period => year >= period.start && year <= period.end);
+      if (period) for (const person of period.people || []) addOccurrence(typeof person === 'string' ? person : person.person, year);
+      else for (const holder of record.holders) if (year >= holder.start && year <= holder.end) addOccurrence(holder.person, year);
+    }
+  }
+  const table = [];
+  for (const [name, years] of [...occurrenceYears].sort(([a],[b]) => a.localeCompare(b, 'zh-Hant'))) {
+    let previous;
+    for (const year of [...years].sort((a,b) => a-b)) {
+      const label = people.displayName(name, year), style = people.fiefStyle(name, year);
+      const noIdentity = !style || style.pending && /待核/.test(style.category);
+      const reason = [noIdentity ? '身份未有明確依據，不按陳姓推宗室' : '', style?.pending && !noIdentity ? '身份／承襲年度沿用現表推定' : '', label.pending ? label.source || '爵號未確定' : ''].filter(Boolean).join('；');
+      const row = { name, original: [...originalNames.get(name)].join('／'), start: year, end: year,
+        title: label.title || '未見確定爵號', category: style?.category || '身份待核', color: style?.color || '#000000',
+        evidence: (style?.source || '現有來源未能確認親屬或承襲關係').replace(new RegExp(String(year), 'g'), '該年'),
+        titleEvidence: label.source, url: style?.source_url || (/卷十五/.test(style?.source || '') ? 'https://zh.wikisource.org/zh/陳書/卷15' : /卷十四/.test(style?.source || '') ? 'https://zh.wikisource.org/zh/陳書/卷14' : /卷二十八|同父兄弟/.test(style?.source || '') ? 'https://zh.wikisource.org/zh/陳書/卷28' : ''),
+        pending: Boolean(noIdentity || style?.pending || label.pending), reason };
+      const groupKey = item => JSON.stringify([item.name, item.title, item.category, item.color, item.pending]);
+      if (previous && previous.end + 1 === year && groupKey(previous) === groupKey(row)) {
+        previous.end = year;
+        if (row.titleEvidence !== previous.titleEvidence) previous.titleEvidence = '原年表同年爵號／現有封國有效年度；分年依據見 displayName API';
+      } else { table.push(row); previous = row; }
+    }
+    if (!years.size) table.push({ name, original: [...originalNames.get(name)].join('／'), start:'', end:'', title:'待核', category:'年份／身份待核', color:'#000000', evidence:'具名見現有來源，但無有效顯示年度；未以姓氏推定宗室', titleEvidence:'', url:'', pending:true, reason:'年度或身份未詳' });
+  }
+  const columns = ['人物','原始写法','起年','迄年','年度段','爵号','身份','显示色值','颜色依据','爵号依据','史料链接','是否待核','待核原因','用户修订色值','用户修订身份','用户备注'];
+  const range = row => row.start === '' ? '待核' : row.start === row.end ? String(row.start) : `${row.start}—${row.end}`;
+  const values = row => [row.name,row.original,row.start,row.end,range(row),row.title,row.category,row.color,row.evidence,row.titleEvidence,row.url,row.pending?'是':'否',row.reason,'','',''];
+  const csv = [columns, ...table.map(values)].map(row => row.map(value => `"${String(value ?? '').replaceAll('"','""')}"`).join(',')).join('\r\n');
+  fs.writeFileSync(root + 'reports/chen-royal-colors.csv', '\uFEFF' + csv + '\r\n');
+  const escape = value => String(value ?? '').replaceAll('|','／').replaceAll('\n',' ');
+  const markdown = [
+    '# 陈氏颜色与爵号校对表', '',
+    '2026-09-12。供直接改表使用；CSV 包含证据、爵号来源及三列用户修订空栏。只列现有年表、封国表或地方长官表实际出现的陈姓人物与显示年度，年度不代表新增任期或生卒。未知身份保持黑色待核；已有原表颜色但亲属未核实者仍明确标记待核。', '',
+    '规则：非陈姓全部绿色；卷十五所列远支宗室及明确的袭侯子孙用褐系；紫色仅授予有袭王依据且已到现表承袭阶段的人物，服丧未袭王不紫。陈元基、陈番在卷二十八被称长子，表中按皇子之子蓝色处理，没有改称庶出。陈番与后主子陈蕃保持分离。陈叔忠的同名永城王条与卷二十八“未及封”相冲突，暂不补爵。', '',
+    '史料核对：[《陈书》卷十四](https://zh.wikisource.org/zh/陳書/卷14)（南康王世系及方庆封侯）、[卷十五](https://zh.wikisource.org/zh/陳書/卷15)（远支宗室及县侯）、[卷二十八](https://zh.wikisource.org/zh/陳書/卷28)（帝子、元基与番、孝宽承袭）。方泰564、至泽573、酆586等承袭年度沿用用户既有服丧考定，推定与不确定性列入待核；不重写源任期。', '',
+    `共 ${occurrenceYears.size} 人、${table.length} 个年度段。更新命令：node scripts/validate-person-colors.mjs --write-color-table。`, '',
+    '| 人物 | 原始写法 | 年度段 | 爵号 | 身份 | 色值 | 待核 | 说明 |',
+    '| --- | --- | --- | --- | --- | --- | --- | --- |',
+    ...table.map(row => '| ' + [row.name,row.original,range(row),row.title,row.category,row.color,row.pending?'是':'否',row.reason || row.evidence].map(escape).join(' | ') + ' |'), '',
+  ].join('\n');
+  fs.writeFileSync(root + 'reports/chen-royal-colors.md', markdown);
+  console.log(`Wrote Chen colour review table: ${occurrenceYears.size} people, ${table.length} periods.`);
+}

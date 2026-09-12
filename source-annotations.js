@@ -5,6 +5,8 @@
   const contexts = new WeakMap();
   const qiaoSources = new WeakSet();
   const qiaoKeys = new Set();
+  const qiaoOrigins = new Map();
+  const entityQiaoOrigins = new Map();
   const cache = new WeakMap();
   const equivalents = {
     吳:'吴',興:'兴',揚:'扬',陽:'阳',陰:'阴',寧:'宁',東:'东',縣:'县',國:'国',
@@ -34,10 +36,16 @@
     return `${source?.source_title || ''}|${source?.book_page || ''}|${source?.pdf_page || ''}|${source?.excerpt || ''}`;
   }
 
-  function markQiao(source) {
+  function markQiao(source, origin = '') {
     if (!source || typeof source !== 'object') return;
     qiaoSources.add(source);
     qiaoKeys.add(sourceKey(source));
+    const key = sourceKey(source);
+    if (source.origin || origin) {
+      const value = source.origin || origin;
+      if (!qiaoOrigins.has(key)) qiaoOrigins.set(key, value);
+      else if (qiaoOrigins.get(key) !== value) qiaoOrigins.set(key, '');
+    }
   }
 
   function indexData(data) {
@@ -54,7 +62,10 @@
       }
       if (context && ('excerpt' in node || 'book_page' in node || 'pdf_page' in node)) contexts.set(node, context);
       const qiao = node.qiao_annotation;
-      if (qiao) (qiao.sources || [qiao.source].filter(Boolean)).forEach(markQiao);
+      if (qiao) {
+        if (context && qiao.origin) entityQiaoOrigins.set(context.id, qiao.origin);
+        (qiao.sources || [qiao.source].filter(Boolean)).forEach(source => markQiao(source, qiao.origin));
+      }
       Object.values(node).forEach(value => visit(value, context));
     }
     visit(data, null);
@@ -134,12 +145,31 @@
 
   function displaySource(source, options = {}) {
     if (!source || typeof source !== 'object') return {excerpt:'', pagesOnly:false};
-    const pagesOnly = !!options.pagesOnly || qiaoSources.has(source) || qiaoKeys.has(sourceKey(source));
-    if (pagesOnly) return {excerpt:'', pagesOnly:true};
+    if (options.pagesOnly) return {excerpt:'', pagesOnly:true};
+    const qiao = !!options.qiao || !!source.qiao_preface || qiaoSources.has(source) || qiaoKeys.has(sourceKey(source));
+    if (qiao) {
+      // Keep the user's separately edited affiliation. Table OCR itself is still
+      // suppressed; only the explicit, locally checked introduction extracts pass.
+      const excerpt = source.qiao_preface ? String(source.excerpt || '') : '';
+      const origin = source.origin || entityQiaoOrigins.get(contexts.get(source)?.id) || qiaoOrigins.get(sourceKey(source)) || '';
+      const editorial_note = source.editorial_note || '';
+      return {excerpt, origin, editorial_note, qiao:true, pagesOnly:!excerpt && !origin && !editorial_note};
+    }
     if (!cache.has(source)) cache.set(source, scopedExcerpt(source));
-    return {excerpt:cache.get(source), pagesOnly:false};
+    return {excerpt:cache.get(source), origin:source.origin || '', editorial_note:source.editorial_note || '', pagesOnly:false};
+  }
+
+  function qiaoSourceList(entity, phase) {
+    const note = phase?.qiao_annotation || entity?.qiao_annotation;
+    if (!note) return [];
+    const originals = Array.isArray(note.sources) ? note.sources : [note.source || phase?.source || entity?.source].filter(Boolean);
+    const sources = originals.map(source => ({...source, origin:source.origin || note.origin || ''}));
+    // County notes retain their own affiliation and page references. A parent
+    // prefecture's introduction must never spill into a county's note.
+    if (Array.isArray(entity?.counties)) sources.push(...(global.CHEN_QIAO_PREFACES?.by_entity?.[entity.id] || []));
+    return sources;
   }
 
   [global.JIN_DATA, global.CHEN_DATA, global.LIANG_DATA].filter(Boolean).forEach(indexData);
-  global.SOURCE_ANNOTATIONS = {displaySource, scopedExcerpt, indexData, heading};
+  global.SOURCE_ANNOTATIONS = {displaySource, scopedExcerpt, indexData, heading, qiaoSources:qiaoSourceList};
 })(window);
