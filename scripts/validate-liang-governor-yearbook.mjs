@@ -81,7 +81,71 @@ assert(indexHtml.includes('governorYearbookSwitch'), '主頁年表切換區缺�
 assert(mainApp.includes("currentDynasty.key==='chen'?'chen-governor-yearbook.html':'liang-governor-yearbook.html'"), '梁陳年表深鏈分流缺失');
 assert(mainApp.includes("governorYearbookHref(year,record.state,'detail')"), '刺史詳情深鏈缺失');
 assert(!yearbookApp.includes('filteredByYear'), '年份定位不得隱藏其他年份');
-assert(yearbookApp.includes('record.colors?.[index]'), '年表未按整格字体色渲染');
-assert(!yearbookApp.includes('appendColoredText'), '年表仍在只着色人物姓名');
+assert(yearbookApp.includes('record.colors?.[index]'), '年表缺少原格色作为姓名色来源');
+assert(liangPage.includes('data/liang-person-colors.js'), '梁年表頁未載入明確姓名與年度色');
 
-console.log(JSON.stringify({ reports, deepLinks: '梁陳主頁切換、年份／州定位、返回狀態', display: '完整年表＋整格字体色' }, null, 2));
+class Element {
+  constructor() {
+    this.children = []; this.dataset = {};
+    this.style = { removeProperty(key) { delete this[key]; } };
+    this.classList = { add() {}, remove() {}, toggle() {} };
+  }
+  replaceChildren() { this.children = []; }
+  appendChild(child) { this.children.push(child); return child; }
+  removeAttribute(key) { delete this[key]; }
+  set textContent(value) { this.children = [{ textContent: String(value) }]; }
+  get textContent() { return this.children.map(child => child.textContent).join(''); }
+}
+const colourData = load('liang-person-colors.js', 'LIANG_PERSON_COLORS');
+const context = vm.createContext({ window: { LIANG_PERSON_COLORS: colourData }, document: {
+  createElement: () => new Element(), createTextNode: text => ({ textContent: String(text) }),
+} });
+const renderStart = yearbookApp.indexOf('  function liangNameMatches(');
+const renderEnd = yearbookApp.indexOf('  function populateControls()', renderStart);
+assert(renderStart >= 0 && renderEnd > renderStart, '局部着色渲染函数缺失');
+vm.runInContext('const sourceRenderer = null;\n' + yearbookApp.slice(renderStart, renderEnd) + '\nwindow.renderCell = renderCell;', context);
+function characters(node, inherited = { color: '#000000' }, person = null) {
+  const style = { ...inherited, ...node.style };
+  person = node.dataset?.person || person;
+  return node.children ? node.children.flatMap(child => characters(child, style, person))
+    : node.textContent.split('').map(text => ({ text, color: style.color, person }));
+}
+const coverage = { cells: 0, nonempty: 0, names: 0, colouredNames: 0, blackOfficePhrases: 0 };
+function checkRenderedCell(value, color, year) {
+  value = String(value);
+  const element = new Element(); context.window.renderCell(element, value, color, null, year);
+  coverage.cells++;
+  if (!value) { assert(element.textContent === '—', '原有空格占位符应保留'); return element; }
+  coverage.nonempty++;
+  assert(element.children.map(line => line.textContent).join('\n') === value.replace(/\r\n/g, '\n'), `${year}: 原文及分行改变`);
+  assert(element.style.color === '#000000', `${year}: 官职/说明容器必须为黑色`);
+  for (const line of element.children) {
+    const chars = characters(line);
+    for (const character of chars) if (!character.person) assert(character.color === '#000000', `${year}: 非姓名文字“${character.text}”带色`);
+    for (const node of line.children) if (node.dataset?.person) {
+      coverage.names++;
+      if (node.style.color && node.style.color !== '#000000') coverage.colouredNames++;
+      assert(!/監|刺史|都督|將軍|長史|宣惠|即位|不行|[正一二三四五六七八九十]月/u.test(node.textContent), `${year}: 姓名范围误吞官衔或月份 ${node.textContent}`);
+    }
+    for (const hit of line.textContent.matchAll(/刺史|都督|將軍|長史|監|宣惠|即位|不行/g)) {
+      coverage.blackOfficePhrases++;
+      assert(chars.slice(hit.index, hit.index + hit[0].length).every(item => item.color === '#000000'), `${year}: ${hit[0]}必须黑色`);
+    }
+  }
+  return element;
+}
+for (const row of liang.rows) {
+  row.cells.forEach((value, index) => checkRenderedCell(value, row.colors[index], row.year));
+  checkRenderedCell(row.auxiliary, row.auxiliary_color, row.year);
+  checkRenderedCell(row.appendix, row.appendix_color, row.year);
+}
+const fullTableCoverage = { ...coverage };
+for (const [year, expected] of [[538, '#C00000'], [539, '#FFFF00']]) {
+  const row = liang.rows.find(row => row.year === year);
+  const element = checkRenderedCell(row.cells[0], row.colors[0], year);
+  const name = element.children.flatMap(line => line.children).find(node => node.dataset?.person === '蕭大器');
+  assert(name?.textContent === '宣城王大器' && name.style.color === expected, `${year}: 宣城王大器姓名连爵号及年度色错误`);
+}
+checkRenderedCell('正月衡陽嗣王元簡、二月湘潭侯退、宣惠將軍監州，不行', '#FF0000', 520);
+
+console.log(JSON.stringify({ reports, coverage: fullTableCoverage, directedCases: 3, deepLinks: '梁陳主頁切換、年份／州定位、返回狀態', display: '完整年表；僅明確姓名及相連爵號着色，官銜月份黑色' }, null, 2));

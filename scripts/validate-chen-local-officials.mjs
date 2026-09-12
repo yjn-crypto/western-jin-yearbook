@@ -328,8 +328,17 @@ const reportCountFailures = years.filter((year) => !same(report.counts?.by_year?
 check('REPORT-01', 'report', 'JSON/Markdown报告存在且逐年计数与运行时数据一致',
   fs.existsSync(paths.reportMarkdown) && ['PASS','DEFERRED_USER_REQUEST'].includes(report.release_gate) && reportCountFailures.length === 0,
   `year_failures=${reportCountFailures.length}`);
-check('REPORT-02', 'report', '生成报告的A—G测试全部通过',
-  ['A', 'B', 'C', 'D', 'E', 'F', 'G'].every((id) => report.tests?.some((test) => test.id === id && test.pass === true)));
+// A frozen release may deliberately retain NOT_RUN at the user's request.
+// Keep that historical report intact, but resolve its deferred checks using
+// the equivalent checks actually executed above in this invocation.
+const reportTestChecks = { A:'TEST-562', B:'TEST-563', C:'TEST-C', D:'TEST-D', E:'TEST-E', F:'DATA-13', G:'DATA-16' };
+const reportTestsPassed = Object.entries(reportTestChecks).every(([id, currentId]) => {
+  const archived = report.tests?.find(test => test.id === id);
+  return archived?.pass === true || (report.release_gate === 'DEFERRED_USER_REQUEST' && archived?.status === 'NOT_RUN'
+    && checks.some(item => item.id === currentId && item.status === 'PASS'));
+});
+check('REPORT-02', 'report', '生成报告A—G已通过，或延期项目在本轮对应检查中通过', reportTestsPassed,
+  report.release_gate === 'DEFERRED_USER_REQUEST' ? `保留历史报告的延期状态；本轮重验对应项：${JSON.stringify(reportTestChecks)}` : '');
 check('REPORT-03', 'report', '报告逐条处置表与运行时源处置表一致', same(report.source_disposition, data.source_disposition));
 
 // Front-end static contract. Use --data-only while the UI patch is still under construction.

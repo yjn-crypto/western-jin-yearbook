@@ -56,6 +56,10 @@
   let currentMap = null;
   let currentMapFeatures = [];
   let mapZoom = 1;
+  let activeMapKey = '';
+  let mapReadingMode = false;
+  let mapReadingReturnFocus = null;
+  const mapReadingInertNodes = new Map();
   let mapUhdLoaded = false;
   let mapDrag = null;
   let modalReturnFocus = null;
@@ -148,24 +152,18 @@
     const note = phase?.qiao_annotation || entity?.qiao_annotation;
     if (note) {
       const sources = Array.isArray(note.sources) ? note.sources : [note.source || phase?.source || entity?.source].filter(Boolean);
-      return makeAnnotation(note.summary || '僑置政區註記', sources, 'qiao-note', note.label || note.summary || '僑置政區註記');
+      const label=`${entity.base_name || entity.name || entity.n || '僑置政區'}：僑置考表頁碼`;
+      return makeAnnotation(label, sources, 'qiao-note', label);
     }
     const info=entity?.qi || entity?.qiao_info;
     if (!info) return null;
-    const parts=[];
-    if (info.original_state) parts.push(`原屬州：${info.original_state}`);
-    if (info.original_prefecture) parts.push(`原屬郡：${info.original_prefecture}`);
-    if (info.marker==='liang_only') parts.push('僑置考表：梁有陳無');
-    else if (info.marker==='chen_only') parts.push('僑置考表：陳有梁無');
-    else if (info.marker==='both') parts.push('僑置考表：梁、陳皆有');
-    const summary=parts.join('；') || '僑置政區註記';
-    const origin=[info.original_state,info.original_prefecture].filter(Boolean).join('·');
     const source={
-      book_page:info.qiao_table_page_index || null,
-      excerpt:`《中國行政區劃通史》僑州郡縣考表：${summary}。`,
-      origin
+      book_page:info.book_page || null,
+      pdf_page:info.pdf_page || null,
+      page_index:info.qiao_table_page_index ?? null
     };
-    return makeAnnotation(summary,[source],'qiao-note',summary);
+    const label=`${entity.base_name || entity.name || entity.n || '僑置政區'}：僑置考表頁碼`;
+    return makeAnnotation(label,[source],'qiao-note',label);
   }
 
   // ---------- 西晉封國補充 ----------
@@ -527,6 +525,7 @@
 
   function governorInfo(record,year) {
     const summary=governorSummaryLines(record);
+    const history=summary.flatMap(line=>governorTitleReferences(record,line,year));
     const evidence=record.evidence_lines || [];
     const data=governorData();
     const pageIndexes=[...new Set([...(record.source_page_indexes||[]),record.source_page_index].filter(Boolean))];
@@ -535,6 +534,11 @@
       summary:`${formatYearLabel(year)} · ${record.state}`,
       paragraphs:[
         ...(summary.length ? summary.map((line,index)=>`${index===0?'年表所列：':'　'}${line}`) : ['本年年表未列可考長官。']),
+        ...(history.length ? ['此前官銜記載（按人物、同州逐年回溯；本年變動以上文為準）：', ...history.flatMap(item=>[
+          `${item.yearLabel} · ${item.state}：${item.line}`,
+          item.pages.length ? `該年方鎮年表資料頁序：${item.pages.join('、')}。` : '',
+          ...(item.evidence.length ? ['該年相關考證與史料：',...item.evidence] : [])
+        ]).filter(Boolean)] : []),
         ...((record.editorial_notes||[]).map((t)=>`人工校勘：${t}`)),
         pageIndexes.length ? `方鎮年表資料頁序：${pageIndexes.join('、')}。` : '',
         ...(evidence.length ? ['相關考證與史料：', ...evidence] : [])
@@ -560,7 +564,7 @@
     governorYearbookLink.href=governorYearbookHref(year,'','main');
     governorYearbookLink.textContent=`開啟${label}刺史年表`;
     if(governorYearbookHeading)governorYearbookHeading.textContent=`按原工作簿查看${label}逐年方鎮`;
-    if(governorYearbookDescription)governorYearbookDescription.textContent=`固定州列、附錄、格內換行與原格着色均依《南朝刺史、長史、司馬年表》${label}表段重建；從刺史詳情進入時只定位標紅本年本州，仍保留完整年表。`;
+    if(governorYearbookDescription)governorYearbookDescription.textContent=`固定州列、附錄與格內換行依《南朝刺史、長史、司馬年表》${label}表段重建；僅人名及相連封爵著色，官銜與敘述用黑色；從刺史詳情進入時只定位標紅本年本州，仍保留完整年表。`;
     if(governorYearbookSwitch)governorYearbookSwitch.setAttribute('aria-label',`切換至${label}刺史年表`);
   }
 
@@ -914,17 +918,19 @@
 
   function appendChenPersonColors(container,text,year,state=null) {
     const value=String(text||''),matches=window.CHEN_PERSON_FORMATS?.matches(value,year,state)||[];
+    container.style.color='#000000';
     let cursor=0;
     for(const match of matches) {
       if(match.index>cursor)container.appendChild(document.createTextNode(value.slice(cursor,match.index)));
       const span=document.createElement('span');span.className='chen-person-color';
       if(match.source) {
-        window.GOVERNOR_SOURCE_FORMAT.appendCell(span,match.source.payload);
+        window.GOVERNOR_SOURCE_FORMAT.appendCell(span,match.source.payload,{personMatches:[{...match,index:0}]});
         span.style.verticalAlign='baseline';
         span.dataset.sourceCells=match.source.addresses.join(' ');
-        span.title=`原年表 ${year} 年 ${match.source.addresses.join('、')}：保留姓名原有字元格式`;
+        span.title=match.colorStyle?`${match.person.name}：${match.colorStyle.source}；姓名字體沿用原年表 ${match.source.addresses.join('、')}`:`原年表 ${year} 年 ${match.source.addresses.join('、')}：保留姓名原有字元格式`;
       } else {
         span.textContent=match.text;
+        if(match.colorStyle){span.style.color=match.colorStyle.color;span.title=`${match.person.name}：${match.colorStyle.source}`;}
       }
       container.appendChild(span);cursor=match.index+match.length;
     }
@@ -966,8 +972,26 @@
     const box=document.createElement('section');box.className='state-governor-box';box.setAttribute('aria-label',`${record.state}都督與刺史`);
     const label=document.createElement('button');label.type='button';label.className='state-governor-label';label.textContent='都督/刺史';label.dataset.info=registerAuxInfo(governorInfo(record,year));label.title='展開本年完整方鎮考證與史料';box.appendChild(label);
     const entries=document.createElement('div');entries.className='state-governor-entries';
-    for (const line of lines) {const p=document.createElement('p');if(currentDynasty.key==='southern-liang')appendLiangPersonColors(p,line,year);else appendChenPersonColors(p,line,year,record.state);entries.appendChild(p);}
+    for (const line of lines) appendGovernorLine(entries,record,line,year);
     box.appendChild(entries);return box;
+  }
+
+  function governorTitleReferences(record,line,year) {
+    return window.GOVERNOR_HISTORY?.references(record,line,year,governorData(),currentDynasty.key)||[];
+  }
+
+  function appendGovernorLine(container,record,line,year) {
+    const p=document.createElement('p');
+    if(currentDynasty.key==='southern-liang')appendLiangPersonColors(p,line,year);
+    else appendChenPersonColors(p,line,year,record.state);
+    const references=governorTitleReferences(record,line,year);
+    if(references.length) {
+      const note=document.createElement('small');note.className='governor-title-history';
+      note.textContent=references.map(item=>`官銜參照 · ${item.yearLabel}：${item.line}`).join('\n');
+      note.title='此前同一人物在同州的年表記載；本年遷轉、加官與進號以上文及考證為準。';
+      p.appendChild(note);
+    }
+    container.appendChild(p);
   }
 
   function renderLocalOfficerBox(records,year,labelText='地方長官') {
@@ -1143,7 +1167,7 @@
       const item=document.createElement('div');item.className='governor-extra-item';
       item.appendChild(createAuxButton(record.state,governorInfo(record,year),'governor-extra-button'));
       const brief=document.createElement('div');brief.className='governor-extra-summary';
-      for (const line of record.summary_lines||[]) {const p=document.createElement('p');if(currentDynasty.key==='southern-liang')appendLiangPersonColors(p,line,year);else appendChenPersonColors(p,line,year,record.state);brief.appendChild(p);}
+      for (const line of record.summary_lines||[]) appendGovernorLine(brief,record,line,year);
       item.appendChild(brief);
       list.appendChild(item);
     }
@@ -1234,14 +1258,19 @@
     const change=citationRegistry.get(Number(number));if(!change)return;
     modalReturnFocus=document.activeElement instanceof HTMLElement?document.activeElement:null;
     $('sourceModalTitle').textContent=`註釋 [${change.number}]`;$('sourceModalSummary').textContent=change.summary;const body=$('sourceModalBody');body.replaceChildren();
-    if(!change.sources.length){const p=document.createElement('p');p.textContent='此項頁碼仍待校勘。';body.appendChild(p);} else for(const source of change.sources){appendSourceEntry(body,source);}
+    if(!change.sources.length){const p=document.createElement('p');p.textContent='此項頁碼仍待校勘。';body.appendChild(p);} else for(const source of change.sources){appendSourceEntry(body,source,{pagesOnly:change.kind==='qiao-note'});}
     sourceModal.hidden=false;document.body.classList.add('modal-open');sourceModalClose.focus();
   }
 
-  function appendSourceEntry(body,source) {
+  function appendSourceEntry(body,source,options={}) {
     const article=document.createElement('article');article.className='source-entry';const h=document.createElement('h3');
-    h.textContent=`${source.book_page?`書內第 ${source.book_page} 頁`:'書內頁碼待校'}（${source.pdf_page?`PDF 第 ${source.pdf_page} 頁`:'PDF頁碼待校'}）`;
-    const p=document.createElement('p');p.textContent=source.excerpt||'摘錄待補。';article.append(h,p);
+    h.textContent=source.page_index!=null&&!source.book_page&&!source.pdf_page
+      ? `僑置考表原記錄頁序 ${source.page_index}（書內／PDF頁碼待校）`
+      : `${source.book_page?`書內第 ${source.book_page} 頁`:'書內頁碼待校'}（${source.pdf_page?`PDF 第 ${source.pdf_page} 頁`:'PDF頁碼待校'}）`;
+    article.appendChild(h);
+    const display=window.SOURCE_ANNOTATIONS?.displaySource(source,options)||{excerpt:source.excerpt,pagesOnly:options.pagesOnly};
+    if(display.pagesOnly){body.appendChild(article);return;}
+    const p=document.createElement('p');p.textContent=display.excerpt||'摘錄待補。';article.appendChild(p);
     if(source.origin){const o=document.createElement('p');o.className='qiao-origin';o.textContent=`原屬：${source.origin}`;article.appendChild(o);}
     if(source.editorial_note){const n=document.createElement('p');n.className='editorial-note';n.textContent=`人工校勘：${source.editorial_note}`;article.appendChild(n);}body.appendChild(article);
   }
@@ -1353,7 +1382,31 @@
   }
 
   function clearMapLinkHighlights() {
-    document.querySelectorAll('.map-hotspot.is-active,.map-label-link.is-active,.map-linked-active').forEach((node)=>node.classList.remove('is-active','map-linked-active'));
+    activeMapKey='';restoreMapSelection();
+  }
+
+  function restoreMapSelection() {
+    for(const node of yearMapOverlay.querySelectorAll('[data-map-key]')) {
+      const selected=Boolean(activeMapKey&&node.dataset.mapKey===activeMapKey);
+      node.classList.toggle('is-active',selected);
+      if(node.getAttribute('role')==='button')node.setAttribute('aria-pressed',String(selected));
+    }
+    for(const node of results.querySelectorAll('.name-with-citation[data-entity-id]')) {
+      node.classList.toggle('map-linked-active',activeMapKey===`entity:${node.dataset.entityId}`);
+    }
+    $('yearMapLocateText').hidden=!mapReadingMode||!activeMapKey.startsWith('entity:');
+  }
+
+  function selectMapKey(key) {
+    activeMapKey=key||'';restoreMapSelection();
+  }
+
+  function mapLabelVisible(level,zoom=mapZoom) {
+    return level==='state'||(level==='prefecture'&&zoom>=3)||(level==='county'&&zoom>7);
+  }
+
+  function ensureMapLabelVisible(level,options={}) {
+    if(level&&!mapLabelVisible(level))applyMapZoom(level==='county'?7.1:3,options);
   }
 
   function mapFeatureById(entityId) {
@@ -1362,43 +1415,82 @@
 
   function highlightMapEntity(entityId,{scrollToMap=false}={}) {
     if (yearMapPanel.hidden) return;
-    const feature=mapFeatureById(entityId), hotspot=yearMapOverlay.querySelector(`[data-entity-id="${entityId}"]`);
-    if (!feature || !hotspot) return;
-    clearMapLinkHighlights();hotspot.classList.add('is-active');
+    const feature=mapFeatureById(entityId);
+    if (!feature) return;
+    ensureMapLabelVisible(feature.level);selectMapKey(`entity:${entityId}`);
     const stageWidth=yearMapStage.clientWidth,stageHeight=yearMapStage.clientHeight;
     if (stageWidth && stageHeight) {
-      yearMapViewport.scrollTo({
+      requestAnimationFrame(()=>yearMapViewport.scrollTo({
         left:Math.max(0,feature.x/currentMap.width*stageWidth-yearMapViewport.clientWidth/2),
         top:Math.max(0,feature.y/currentMap.width*stageWidth-yearMapViewport.clientHeight/2),
         behavior:'smooth'
-      });
+      }));
     }
-    if (scrollToMap) yearMapPanel.scrollIntoView({behavior:'smooth',block:'start'});
+    if (scrollToMap&&!mapReadingMode) yearMapPanel.scrollIntoView({behavior:'smooth',block:'start'});
     $('yearMapStatus').textContent=`已在地圖定位：${feature.label}（${feature.level==='state'?'州':feature.level==='prefecture'?'郡級':'縣級'}）`;
   }
 
   function revealTextEntity(entityId) {
     let target=results.querySelector(`.name-with-citation[data-entity-id="${entityId}"]`);
     if (!target && (stateSelect.value || searchInput.value || changedOnly.checked)) {
+      const previousZoom=mapZoom;
       stateSelect.value='';searchInput.value='';changedOnly.checked=false;render();
+      applyMapZoom(previousZoom);
       target=results.querySelector(`.name-with-citation[data-entity-id="${entityId}"]`);
     }
+    selectMapKey(`entity:${entityId}`);
     if (!target) {
       $('yearMapStatus').textContent='此治所已進入地圖，但目前年表沒有可唯一聯動的同一實體。';
       return;
     }
-    clearMapLinkHighlights();target.classList.add('map-linked-active');
-    const hotspot=yearMapOverlay.querySelector(`[data-entity-id="${entityId}"]`);if(hotspot)hotspot.classList.add('is-active');
-    target.scrollIntoView({behavior:'smooth',block:'center'});
-    setTimeout(()=>target.classList.remove('map-linked-active'),2600);
+    if(!mapReadingMode)target.scrollIntoView({behavior:'smooth',block:'center'});
   }
 
   function activateMapTarget(target) {
-    if(target.dataset.entityId)revealTextEntity(target.dataset.entityId);
-    else $('yearMapStatus').textContent=`${target.dataset.mapReference||'此治所'}僅有地圖參考標記，未與本年正文中的唯一政區連接；不另行補配或改名。`;
+    const entityId=target.dataset.entityId,feature=entityId&&mapFeatureById(entityId);
+    const label=feature?.label||target.dataset.mapReference||'此治所';
+    const rect=target.getBoundingClientRect();
+    ensureMapLabelVisible(feature?.level||target.dataset.mapLevel,{clientX:rect.left+rect.width/2,clientY:rect.top+rect.height/2});
+    selectMapKey(target.dataset.mapKey);
+    if(entityId) {
+      $('yearMapStatus').textContent=`已高亮${label}的文字、治所與引線。${mapReadingMode?'可按「查看正文」退出讀圖並定位年表。':'已聯動年表中的同一政區。'}`;
+      if(!mapReadingMode)revealTextEntity(entityId);
+    } else $('yearMapStatus').textContent=`已高亮${label}的文字、位置與引線；此為地圖參考標記，未與本年正文中的唯一政區連接。`;
+  }
+
+  function setMapReadingMode(enabled) {
+    if(enabled===mapReadingMode||enabled&&yearMapPanel.hidden)return;
+    const centerX=(yearMapViewport.scrollLeft+yearMapViewport.clientWidth/2)/yearMapStage.clientWidth;
+    const centerY=(yearMapViewport.scrollTop+yearMapViewport.clientHeight/2)/yearMapStage.clientWidth;
+    mapReadingMode=enabled;
+    if(enabled) {
+      mapReadingReturnFocus=document.activeElement;
+      // Make every sibling outside this panel inert while the map fills the page.
+      for(let child=yearMapPanel;child.parentElement&&child!==document.body;child=child.parentElement) {
+        for(const sibling of child.parentElement.children)if(sibling!==child) {
+          mapReadingInertNodes.set(sibling,sibling.inert);sibling.inert=true;
+        }
+      }
+      yearMapPanel.setAttribute('role','dialog');yearMapPanel.setAttribute('aria-modal','true');
+    } else {
+      for(const [node,inert] of mapReadingInertNodes)node.inert=inert;
+      mapReadingInertNodes.clear();yearMapPanel.removeAttribute('role');yearMapPanel.removeAttribute('aria-modal');
+    }
+    document.body.classList.toggle('map-reading-open',enabled);
+    yearMapPanel.classList.toggle('is-reading',enabled);
+    $('yearMapReading').textContent=enabled?'退出讀圖（Esc）':'讀圖模式';
+    $('yearMapReading').setAttribute('aria-pressed',String(enabled));
+    applyMapZoom(mapZoom);restoreMapSelection();
+    requestAnimationFrame(()=>{
+      yearMapViewport.scrollLeft=Math.max(0,centerX*yearMapStage.clientWidth-yearMapViewport.clientWidth/2);
+      yearMapViewport.scrollTop=Math.max(0,centerY*yearMapStage.clientWidth-yearMapViewport.clientHeight/2);
+      if(enabled)$('yearMapReading').focus({preventScroll:true});
+      else if(mapReadingReturnFocus?.isConnected&&!mapReadingReturnFocus.closest('[inert]'))mapReadingReturnFocus.focus({preventScroll:true});
+    });
   }
 
   const SVG_NS='http://www.w3.org/2000/svg';
+  const MAP_SELECTION_EXPORT_STYLE='.map-label-link.is-active,.map-label-reference.is-active{text-decoration:underline;stroke:#fff1a8}.map-label-leader.is-active{stroke:#9b2f52;stroke-opacity:1;stroke-width:2;vector-effect:non-scaling-stroke}.map-hotspot.is-active{fill:rgba(255,241,153,.42);stroke:#9b2f52;stroke-width:7;vector-effect:non-scaling-stroke}';
   const MAP_EXPORT_STYLE=`
     text{font-family:"Noto Serif CJK TC","Songti TC","PMingLiU",serif}.dynamic-map-title{fill:#302b27;font-size:46px;font-weight:700;letter-spacing:3px}.dynamic-map-subtitle{fill:#665d54;font-size:16px}.dynamic-regime{stroke-width:2.2;fill-opacity:.62;fill-rule:evenodd}.dynamic-rebellion{fill-opacity:.8;stroke-dasharray:12 7}.dynamic-regime-label{fill:#fffdf2;stroke:rgba(40,32,25,.72);stroke-width:2.6;paint-order:stroke;font-size:42px;font-weight:700;letter-spacing:5px}.dynamic-rebellion-label{font-size:23px;letter-spacing:1px}.dynamic-state-boundary{fill:none;stroke:#60392d;stroke-width:2.2}.dynamic-pref-boundary{fill:none;stroke:#776d55;stroke-width:1.1}.dynamic-supplement-boundary{stroke-dasharray:5 4;opacity:.72}.dynamic-state-dot{fill:#6a382d;stroke:#fff8e8;stroke-width:.9}.dynamic-prefecture-dot{fill:#a85e52;stroke:#fff8e8;stroke-width:.6}.dynamic-county-dot{fill:#365f70}.dynamic-map-label{paint-order:stroke;stroke:rgba(255,252,240,.94);stroke-width:2.3;stroke-linejoin:round;dominant-baseline:central}.dynamic-state-area-label{fill:#4d3028;font-size:24.5px;font-weight:700;letter-spacing:2px}.dynamic-state-seat-label{fill:#562f28;font-size:22.5px;font-weight:700}.dynamic-prefecture-area-label{fill:#3f4a38;font-size:16.5px;font-weight:700}.dynamic-prefecture-seat-label{fill:#684a3f;font-size:10.8px}.dynamic-county-seat-label{fill:#264f60;font-size:8.6px}.dynamic-fief-label{fill:#754476;font-weight:700}.is-uncertain{font-style:italic}`;
 
@@ -1612,25 +1704,27 @@
       if(label.fief)classes.push('dynamic-fief-label');
       if(label.uncertain)classes.push('is-uncertain');
       const text=svgNode('text',{x:placement.x,y:placement.y,'text-anchor':placement.anchor,class:classes.join(' '),'data-label-level':label.level},label.text);
+      text.dataset.mapKey=label.mapKey;text.dataset.mapLevel=label.level;
       text.style.fontSize=`${fontSize}px`;text.style.letterSpacing='0';text.style.strokeWidth=`${2.8/scale}px`;
       if(label.fiefIds?.length)text.dataset.fiefIds=label.fiefIds.join(' ');
       text.setAttribute('tabindex','0');text.setAttribute('role','button');
       if(label.entityId) {
-        text.dataset.entityId=label.entityId;text.setAttribute('aria-label',`定位到正文：${label.text}`);
-        text.appendChild(svgNode('title',{},`點擊定位正文：${label.text}${label.coLocated?'（同治所分列標注）':''}`));
+        text.dataset.entityId=label.entityId;text.setAttribute('aria-label',`高亮${label.text}的文字與治所`);
+        text.appendChild(svgNode('title',{},`點擊聯動文字與治所：${label.text}${label.coLocated?'（同治所分列標注）':''}`));
       } else {
         text.dataset.mapReference=label.text;
         text.appendChild(svgNode('title',{},`${label.text}：地圖參考標記，未與本年正文唯一連接`));
       }
-      const endX=Math.max(placement.box[0],Math.min(placement.box[2],label.x));
-      const endY=Math.max(placement.box[1],Math.min(placement.box[3],label.y));
-      if(Math.hypot(endX-label.x,endY-label.y)>fontSize*.9) {
-        const line=svgNode('line',{x1:label.x,y1:label.y,x2:endX,y2:endY,class:'map-label-leader','data-label-level':label.level,stroke:'#766d5b','stroke-width':.8/scale,'stroke-opacity':.7,'pointer-events':'none'});
+      const anchorX=label.anchorX??label.x,anchorY=label.anchorY??label.y;
+      const endX=Math.max(placement.box[0],Math.min(placement.box[2],anchorX));
+      const endY=Math.max(placement.box[1],Math.min(placement.box[3],anchorY));
+      if(Math.hypot(endX-anchorX,endY-anchorY)>fontSize*.9) {
+        const line=svgNode('line',{x1:anchorX,y1:anchorY,x2:endX,y2:endY,class:'map-label-leader','data-label-level':label.level,'data-map-key':label.mapKey,stroke:'#766d5b','stroke-width':.8/scale,'stroke-opacity':.7,'pointer-events':'none'});
         leaders.appendChild(line);
-        text.addEventListener('mouseenter',()=>line.classList.add('is-active'));
-        text.addEventListener('mouseleave',()=>line.classList.remove('is-active'));
-        text.addEventListener('focus',()=>line.classList.add('is-active'));
-        text.addEventListener('blur',()=>line.classList.remove('is-active'));
+        text.addEventListener('mouseenter',()=>line.classList.add('is-hover'));
+        text.addEventListener('mouseleave',()=>line.classList.remove('is-hover'));
+        text.addEventListener('focus',()=>line.classList.add('is-hover'));
+        text.addEventListener('blur',()=>line.classList.remove('is-hover'));
       }
       names.appendChild(text);
     }
@@ -1648,16 +1742,19 @@
     if(!layout||currentMap?.reference||layout.year!==currentMap?.year)return;
     layout.layer.replaceChildren();
     const scale=Math.max(.01,yearMapStage.clientWidth/currentMap.width);
-    const labels=layout.labels.filter((label)=>mapZoom>4||label.level!=='county');
+    const labels=layout.labels.filter((label)=>mapLabelVisible(label.level));
     currentMap.renderHeight=placeAndDrawLabels(layout.layer,labels,layout.plot,scale,currentMap.height);
     yearMapOverlay.setAttribute('viewBox',`0 0 ${currentMap.width} ${currentMap.renderHeight}`);
     yearMapStage.style.paddingBottom=`${(currentMap.renderHeight-currentMap.height)*scale}px`;
+    restoreMapSelection();
   }
 
   function appendHotspots(root,features) {
     for(const feature of features) {
       const circle=svgNode('circle',{cx:feature.x,cy:feature.y,r:feature.level==='state'?20:feature.level==='prefecture'?15:11,class:`map-hotspot map-hotspot-${feature.level}`,tabindex:0,role:'button','aria-label':`定位到${feature.label}`});
-      circle.dataset.entityId=feature.entity_id;
+      circle.dataset.mapKey=feature.mapKey||`entity:${feature.entity_id}`;circle.dataset.mapLevel=feature.level;
+      if(feature.entity_id)circle.dataset.entityId=feature.entity_id;
+      else circle.dataset.mapReference=feature.label;
       circle.appendChild(svgNode('title',{},feature.label));root.appendChild(circle);
     }
   }
@@ -1720,14 +1817,23 @@
       }
     }
     for(const fief of fiefs)labels[fief.level].push({...fief,fontSize:fief.level==='prefecture'?12.5:10.2,kind:`${fief.level}-seat`,priority:fief.level==='prefecture'?520:420,fief:true});
-    appendHotspots(root,resolved.features);
     const allLabels=[];
     for(const level of ['state','prefecture','county'])for(const label of labels[level]) {
       label.level=level;
+      label.mapKey=label.entityId?`entity:${label.entityId}`:`reference:${level}|${label.x}|${label.y}|${normalizeName(label.sourceName||label.text)}`;
+      const feature=label.entityId&&resolved.byId.get(label.entityId);
+      if(feature){label.anchorX=feature.x;label.anchorY=feature.y;}
       // Keep the area and seat labels: each carries the annual name and the
       // same stable entity ID, while their geometry remains unchanged.
       allLabels.push(label);
     }
+    const referencePoints=new Map();
+    for(const label of allLabels)if(!label.entityId&&!referencePoints.has(label.mapKey)) {
+      referencePoints.set(label.mapKey,{mapKey:label.mapKey,label:label.text,x:label.x,y:label.y,level:label.level});
+    }
+    // Higher levels remain clickable at co-located seats; lower levels can also
+    // be selected through their separate labels at the appropriate zoom.
+    appendHotspots(root,[...resolved.features,...referencePoints.values()].sort((a,b)=>({county:0,prefecture:1,state:2}[a.level])-({county:0,prefecture:1,state:2}[b.level])));
     const seatCounts=new Map();
     for(const label of allLabels){const key=`${label.x}|${label.y}`;seatCounts.set(key,(seatCounts.get(key)||0)+1);}
     for(const label of allLabels)label.coLocated=seatCounts.get(`${label.x}|${label.y}`)>1;
@@ -1744,11 +1850,12 @@
     const anchorY=clientY==null?yearMapViewport.clientHeight/2:clientY-rect.top;
     const contentX=(yearMapViewport.scrollLeft+anchorX)/oldWidth;
     const contentY=(yearMapViewport.scrollTop+anchorY)/oldWidth;
-    mapZoom=Math.min(6,Math.max(1,Number(next)||1));
-    yearMapOverlay.classList.toggle('show-all-map-labels',mapZoom>4);
+    mapZoom=Math.min(10,Math.max(1,Math.round((Number(next)||1)*100)/100));
     const fitWidth=Math.max(320,yearMapViewport.clientWidth-2);
     yearMapStage.style.width=`${Math.round(fitWidth*mapZoom)}px`;
     yearMapZoomValue.value=`${Math.round(mapZoom*100)}%`;
+    $('yearMapZoomRange').value=String(Math.round(mapZoom*100));
+    $('yearMapZoomOut').disabled=mapZoom<=1;$('yearMapZoomIn').disabled=mapZoom>=10;
     layoutDynamicMapLabels();
     requestAnimationFrame(()=>{
       yearMapViewport.scrollLeft=Math.max(0,contentX*yearMapStage.clientWidth-anchorX);
@@ -1768,11 +1875,14 @@
   function renderYearMap(year,snapshot) {
     const dynamic=currentDynasty.key==='chen'?window.CHEN_DYNAMIC_MAP:null;
     const liang=currentDynasty.key==='southern-liang';
+    if(currentMap?.year!==year)clearMapLinkHighlights();
+    if(!dynamic&&!liang&&mapReadingMode)setMapReadingMode(false);
     yearMapPanel.hidden=!dynamic&&!liang;textMapLinkControl.hidden=!dynamic;
     results.classList.toggle('text-map-link-enabled',Boolean(dynamic&&textMapLinkToggle.checked));
     yearMapStage.style.paddingBottom='0px';
     if(!dynamic&&!liang){currentMap=null;currentMapFeatures=[];yearMapOverlay.replaceChildren();return;}
     if(liang) {
+      $('yearMapZoomHelp').textContent='100%–1000%；此為原圖參考斷面，原圖內文字隨圖顯示。滾輪縮放，拖曳或聚焦地圖後用方向鍵平移。';
       const early=year<=544;
       const src=early?'assets/maps/reference/liang-534-chgis.png':'assets/maps/reference/liang-555-max-chgis.png';
       const width=early?4800:3960,height=early?4128:4290,referenceYear=early?534:555;
@@ -1787,11 +1897,12 @@
       resetMapView();return;
     }
     yearMapUhd.hidden=false;yearMapCsv.hidden=false;yearMapGeoJson.hidden=false;yearMapExport.hidden=false;
+    $('yearMapZoomHelp').textContent='100%–1000%；低於300%只顯示州名，300%–700%顯示州郡名，超過700%顯示州郡縣名。滾輪縮放，拖曳或聚焦地圖後用方向鍵平移。';
     const territory=chenTerritoryFeature(year);
     const territoryNote=territory
       ? `${year}年陳境採史圖館${territory.properties.source_year}年圖矢量化${territory.properties.year_relation==='exact'?'':'（最近可用年份）'}；以建康、江陵、武陵、廣州、交趾、海南六處分布式控制點配準CHGIS／經緯網，東南海岸另依地形底圖校準，海南與大陸之間保留瓊州海峽。${year===569?'廣州叛亂區先依海陸掩膜裁至陸地，仍計入陳境，另以綠色叛亂層疊加。':''}`
       : '本年尚無史圖館分期矢量，政權疆域仍以ChinaXMap 572年斷面近似。';
-    yearMapNote.textContent=`${year===557?'557年不反向補造正文行政資料。':'各年共用一份地形底圖，州郡縣、封國及可用邊界按年即時繪製。'}${territoryNote} 州郡縣治所與邊界以CHGIS V6為主、V4／V5補足；缺坐標者不臆測。400%及以下顯示州、郡國名稱；超過400%顯示全部州、郡國、縣名。名稱隨縮放重新避讓，移位標注以細線指回原位置，同治所分列；面與治所均使用本年名稱。總覽過密時，剩餘名稱列於圖下並一併匯出。可連接的名稱及治所圓點可點擊正文；僅有地圖參考標記者會另行說明。588年人工覆核原圖仍可下載。`;
+    yearMapNote.textContent=`${year===557?'557年不反向補造正文行政資料。':'各年共用一份地形底圖，州郡縣、封國及可用邊界按年即時繪製。'}${territoryNote} 州郡縣治所與邊界以CHGIS V6為主、V4／V5補足；缺坐標者不臆測。縮放範圍100%–1000%：低於300%只顯示州名；300%至700%（含兩端）顯示州與郡國名；超過700%顯示全部州、郡國、縣名，封國按所屬行政層級同步顯示。名稱隨縮放重新避讓，移位標注以細線指回原位置，同治所分列；面與治所均使用本年名稱。總覽過密時，剩餘名稱列於圖下並一併匯出。點擊名稱或治所會持續高亮對應文字、位置及引線；點選尚未顯示名稱的治所時自動放大至該層級。讀圖模式佔滿視窗並保留圖中位置，可按Esc退出或按「查看正文」定位年表。588年人工覆核原圖仍可下載。`;
     currentMap={year,width:dynamic.width,height:dynamic.height,uhd:dynamic.map588.uhd};
     yearMapOverlay.setAttribute('viewBox',`0 0 ${dynamic.width} ${dynamic.height}`);
     yearMapOverlay.setAttribute('aria-label',`${year}年州郡縣治所可點擊定位圖層`);
@@ -1800,7 +1911,7 @@
     mapUhdLoaded=false;yearMapLoadUhd.hidden=true;
     yearMapImage.src=dynamic.base;
     currentMapFeatures=renderDynamicMap(year,snapshot,dynamic);
-    $('yearMapStatus').textContent=`${year}年以共用地形和年度向量層即時繪製；${currentMapFeatures.length}個年表政區取得可用坐標，可點擊名稱或圓點定位正文。縣名在超過400%時顯示。`;
+    $('yearMapStatus').textContent=`${year}年以共用地形和年度向量層即時繪製；${currentMapFeatures.length}個年表政區取得可用坐標。點擊名稱或圓點可聯動高亮；300%開始顯示郡名，超過700%顯示縣名。`;
     yearMapImage.alt=`公元${year}年南陳與同時期政權州郡縣封國地形圖`;
     resetMapView();
   }
@@ -1816,10 +1927,11 @@
       const context=canvas.getContext('2d');
       const base=new Image();base.src=yearMapImage.currentSrc||yearMapImage.src;
       const clone=yearMapOverlay.cloneNode(true);
-      clone.querySelectorAll('.map-hotspot').forEach((node)=>node.remove());
-      if(mapZoom<=4)clone.querySelectorAll('[data-label-level="county"]').forEach((node)=>node.remove());
+      clone.querySelectorAll('.map-hotspot:not(.is-active)').forEach((node)=>node.remove());
+      clone.querySelectorAll('.is-hover').forEach((node)=>node.classList.remove('is-hover'));
+      clone.querySelectorAll('[data-label-level]').forEach((node)=>{if(!mapLabelVisible(node.dataset.labelLevel))node.remove();});
       clone.setAttribute('width',String(width));clone.setAttribute('height',String(height));
-      const defs=svgNode('defs'),style=svgNode('style',{},MAP_EXPORT_STYLE);defs.appendChild(style);clone.insertBefore(defs,clone.firstChild);
+      const defs=svgNode('defs'),style=svgNode('style',{},MAP_EXPORT_STYLE+MAP_SELECTION_EXPORT_STYLE);defs.appendChild(style);clone.insertBefore(defs,clone.firstChild);
       await base.decode();context.fillStyle='#dce8e8';context.fillRect(0,0,width,height);context.drawImage(base,0,0,width,width*map.height/map.width);
       const blob=new Blob([new XMLSerializer().serializeToString(clone)],{type:'image/svg+xml;charset=utf-8'});
       const url=URL.createObjectURL(blob),overlay=new Image();overlay.src=url;await overlay.decode();context.drawImage(overlay,0,0,width,height);URL.revokeObjectURL(url);
@@ -1839,15 +1951,16 @@
       '南陳州郡縣列在前；不能與本年南陳實際郡縣唯一對應的王國、郡公國及縣級開國爵，集中列於「未定位／疑似虛封封爵」。這一區並不等同於一律判定虛封：若史料或制度可證其並非虛封（如二王後），將在註記中明示。其後依次列後梁、王琳政權。後梁或王琳政區在其存續期結束後自動消失。',
       '宗室王國只在郡級政區旁標示王號與姓名，不計算元年、二年。郡公附於郡級，開國公侯伯子男附於縣級，標作公國、侯國、伯國、子國、男國。點擊小字可查看封爵年表、承襲與資料限制。封君卒後若襲封年份無明文而親屬關係、卒年可確，原則上以第三年記新封君，中間兩年記世子服喪；史料明載優先。最後可確年份以後材料不足者，以斜體表示存疑。',
       '封爵資料只是制度注記。南朝封君通常不到封國，網頁不以爵國名稱反推實際行政機構；只有本年能唯一對應一個南陳郡或縣時，才把爵號附在該政區旁。凡本年郡級政區已按此規則附有任何封國，其逐年顯示名由「某某郡」寫作「某某國」；底層郡名、穩定ID、治所與沿革不改，封國終止後自然恢復顯示為郡。但是，儘管在行政上，封君已經基本喪失了對封國的干預，但封國在制度、禮儀、經濟等諸多層面的實在性確是確定無疑的。因此，我們認為，在唐朝不開國以前，仍有必要在郡縣旁邊標註封國與封君。',
-      '陳代僑郡縣另依本書第十編侨州郡縣考表補充。梁、陳欄中，○所標為梁，△或明確屬陳者用於陳代判定。陳代不再把無實土侨州作為州級政區另列，州名及原有統屬不因此改變；僑郡、僑縣名稱以下劃線標示。若正文未標年代而原本以暗色顯示，一旦由侨置表確認為僑郡縣，以下劃線優先，不再變暗。點擊其註釋可見「原屬」與考表依據。',
+      '陳代僑郡縣另依本書第十編侨州郡縣考表補充。梁、陳欄中，○所標為梁，△或明確屬陳者用於陳代判定。陳代不再把無實土侨州作為州級政區另列，州名及原有統屬不因此改變；僑郡、僑縣名稱以下劃線標示。若正文未標年代而原本以暗色顯示，一旦由侨置表確認為僑郡縣，以下劃線優先，不再變暗。僑置註釋暫只顯示原書頁碼及已有的PDF頁碼，表格文字暫停展示；取得原書頁面後可改用原頁圖像呈現。',
       '方鎮長官另據魯力《魏晉南北朝方鎮年表新編·宋齊梁陳卷》之「陳方鎮年表」。該表以年為經、州為緯，州下列都督、刺史等人物，並記官銜、月份、遷轉及考證。本頁在各州表內以「都督/刺史」逐人分行列出年表原有的人物、時間與官銜；只有本年有可點擊方鎮資料的州，才在州名後按州序標出從{1}重新編起的索引，索引、州名及「都督/刺史」標題均可展開同一份完整考證。同名州先依正史方鎮的常設大州、當年實轄郡數與上下年沿革連續性判定；仍無法唯一對應者另置「方鎮表另見之州」，只作政治史資料提示，不據此直接增改行政區劃。',
-      '南陳刺史年表直接保留原工作簿每一段文字的字色、字體、字號、粗斜體與換行。正文都督／刺史姓名按本年、州列及姓名對應原表字元格式，不把整格顏色指派給第一人，也不以姓氏規則覆蓋原表顏色。封君另以對應原色顯示姓名與同色系背景框，異姓封君採綠色；郡縣正文名稱不受封君配色影響。原表本年缺少該姓名格式或同一來源有衝突時，不猜配色。地圖郡國、縣國名稱繼續採本年封國顯示規則。',
+      '本年條目有姓名而省略完整官銜時，另列同一人物、同州的此前官銜參照，明示原載紀年，詳情附該年原文及考證。連續省寫可回溯更早記載，必要時並列中間進號；遇離任、替任、死亡或姓名歧義即停止。本年明載的變動仍優先。',
+      '南陳刺史年表與正文都督／刺史僅姓名及緊連姓名的爵號著色，官銜、月份及說明用黑色；原格字體、字號、粗斜體、下劃線、背景和換行保留。非陳姓人物用綠色；陳姓宗室據《陳書》明載父子關係及當年皇位，補足皇弟、皇子等身份色並校驗同父兄弟，嗣王依本表既有承襲與服喪年度。559、566年內易帝者保留原表姓名色；世系未明者保留可確認的原色。懸停姓名可查看依據。封君姓名與背景沿用相應人物色；地圖郡國、縣國名稱仍採本年封國顯示規則。',
       '地方長官以master_officials_final.xlsx任次主表為唯一歷史主表，只按既有結構化任期邊界、明確在任錨點、人工逐年裁決及既有職業鏈關係，投射為「本年曾任」記錄，不要求十二月末仍在任，也不從史料文字另行推測任期。缺乏進一步信息時，三年只是推定範圍的上限，不能擴大已有明確任期；起卸任邊界、前後任、相鄰年度延續及既有事件時間只用於收縮範圍或排列年內順序。annual_presence_status為confirmed者用正常字體，probable者用斜體；tenure_boundary_status另行記錄任期邊界確定性，二者不再混用。郡、縣兩級均按穩定ID精確連接；無唯一行政快照實體者完整保留於「本年地方長官未連接記錄」。同地同年可以顯示多任；年內次序優先採用既有精確日期及人工前後任結論，其次使用既有前後任關係與相鄰年度延續，明確並任者不強排先後，仍不能判斷時明示「年內先後未詳」。',
       '明州、利州等正文只知所領縣而所領郡乏考者，表格標為「郡無考」，不使用後世概念「州直領」。地圖治所與可用行政界線以CHGIS V6為主，V4補州界、V5補郡界；沒有坐標者不臆造位置。永定元年至天嘉三年、太建五年至太建十一年改用使用者保存的史圖館相應或最近年份地圖矢量化疆域，其餘年份仍明示採ChinaXMap 572年斷面近似。史圖館固定畫布以建康、江陵、武陵、廣州（番禺）、交趾、海南六處控制點配準至CHGIS／網頁經緯網；江陵本屬後梁，只作為地理錨點，不據此併入陳境。配準後僅在海岸帶依地形底圖校準東南海岸，大陸海岸約束先排除海南，海南只在史圖館原圖判定屬陳時以獨立島形併入，保留瓊州海峽。太建元年廣州叛亂面先依海陸掩膜裁至陸地，再保留在陳境內並另作疊加層。'
     ] : currentDynasty.key==='southern-liang' ? [
       '頁面依據《中國行政區劃通史·三國兩晉南朝卷（下）》第八編，按書中原有次序重建公元502—557年蕭梁州、郡級政區的逐年年末狀態。原書以問號、「前」「後」等表示的斷限仍以「※」保留，不改作確定年份。',
       '梁代實縣目前不做逐年變化：優先採用梁縣考證中的直接關係，其次採用齊末統屬，再以558年陳代統屬補充。744個梁實縣條目中，556個已確認所屬郡並靜態附入，188個多候選或無對應條目留待人工校勘，不強行放入任何郡。',
-      '僑州、僑郡、僑縣以下劃線顯示；能由第十編僑州郡縣考表精確匹配者，可點擊註釋查看原屬州郡與考表頁序。梁代保留僑州，不套用南陳“不列無實土僑州”的規則。',
+      '僑州、僑郡、僑縣以下劃線顯示；能由第十編僑州郡縣考表精確匹配者，可點擊註釋查看已有原書頁碼、PDF頁碼或待校的考表頁序；重複表格文字暫停展示。梁代保留僑州，不套用南陳“不列無實土僑州”的規則。',
       '宗室王國、郡公與縣級開國爵依蕭梁封爵資料附於同名政區；只有本年能唯一匹配的政區才直接附入，無同名政區或存在多個同名政區者集中列入「未唯一定位的蕭梁封爵」。凡本年郡級政區已附有任何封國，其逐年顯示名由「某某郡」寫作「某某國」，但不改底層郡名、穩定ID、治所與沿革。封君起訖不明、承襲空檔與服喪仍按原頁規則明示。',
       '都督、刺史等長官依《魏晉南北朝方鎮年表新編》梁方鎮年表逐年附入各州，每位人物獨佔一行；本年有可點擊方鎮資料的州，在州名後按州序標出從{1}重新編起的索引，點擊索引、州名或「都督/刺史」均可查看年表頁序。同名州先依正史方鎮的常設大州、當年實轄郡數及上下年沿革連續性判定；證據仍不足者才另列「方鎮表另見之州」，不據官銜反推行政建置。',
       '地圖僅顯示534年與555年兩個CHGIS基準斷面：544年以前選用534年圖，545年以後選用555年圖。它們只提供鄰近年份的空間參考，不把單年邊界外推為502—557年逐年精確疆域。',
@@ -1960,8 +2073,31 @@
   });
   $('yearMapZoomIn').addEventListener('click',()=>applyMapZoom(mapZoom*1.25));
   $('yearMapZoomOut').addEventListener('click',()=>applyMapZoom(mapZoom/1.25));
+  $('yearMapZoomRange').addEventListener('input',(event)=>applyMapZoom(Number(event.target.value)/100));
   $('yearMapFit').addEventListener('click',resetMapView);
   $('yearMapReset').addEventListener('click',()=>{resetMapView();clearMapLinkHighlights();});
+  $('yearMapReading').addEventListener('click',()=>setMapReadingMode(!mapReadingMode));
+  $('yearMapLocateText').addEventListener('click',()=>{
+    const entityId=activeMapKey.startsWith('entity:')?activeMapKey.slice(7):'';
+    if(entityId){setMapReadingMode(false);revealTextEntity(entityId);}
+  });
+  document.addEventListener('keydown',(event)=>{
+    if(event.key==='Escape'&&mapReadingMode&&sourceModal.hidden){event.preventDefault();setMapReadingMode(false);}
+    if(event.key==='Tab'&&mapReadingMode) {
+      const controls=[...yearMapPanel.querySelectorAll('button:not(:disabled),a[href],input,[tabindex="0"]')].filter((node)=>!node.closest('[hidden]')&&node.getClientRects().length);
+      const first=controls[0],last=controls.at(-1);
+      if(event.shiftKey&&document.activeElement===first){event.preventDefault();last?.focus();}
+      else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first?.focus();}
+    }
+  });
+  yearMapViewport.addEventListener('keydown',(event)=>{
+    if(event.target!==yearMapViewport)return;
+    const directions={ArrowLeft:[-100,0],ArrowRight:[100,0],ArrowUp:[0,-100],ArrowDown:[0,100]};
+    if(directions[event.key]) {
+      event.preventDefault();const [left,top]=directions[event.key];yearMapViewport.scrollBy({left,top,behavior:'smooth'});
+    } else if(event.key==='+'||event.key==='='){event.preventDefault();applyMapZoom(mapZoom*1.25);}
+    else if(event.key==='-'){event.preventDefault();applyMapZoom(mapZoom/1.25);}
+  });
   yearMapLoadUhd.addEventListener('click',load588Uhd);
   $('yearMapExport').addEventListener('click',exportCurrentYearMap);
   yearMapViewport.addEventListener('wheel',(event)=>{

@@ -88,7 +88,6 @@ assert.match(htmlSource,/id="governorLegend"[^>]*>[\s\S]*?\{1\}[\s\S]*?逐年重
 assert.match(cssSource,/\.governor-index-link\s*\{/,'方鎮索引必須有獨立樣式');
 assert.match(appSource,/else if \(oldRow\.name!==row\.name\)/,'行政變動比較必須繼續使用底層原名');
 assert.match(appSource,/label:itemDisplayName\(row\)/,'動態地圖熱點必須使用逐年顯示名');
-assert.match(appSource,/mapFeaturesWithSnapshotNames\(window\.CHEN_MAP_588\?\.features\|\|\[\],snapshot\)/,'588年地圖熱點必須套用逐年顯示名且保留原ID');
 
 function loadGovernorData(filename,globalName) {
   const context={window:{}};
@@ -130,6 +129,79 @@ assert.equal(southernPrefectureDisplayName(wu588),'吳國','588年吳郡必須�
 const danyang588=chen588Rows.find((row)=>row.name==='丹陽郡');
 assert.ok(danyang588&&!danyang588.chenFiefs.length,'588年丹陽郡應作無封國對照');
 assert.equal(southernPrefectureDisplayName(danyang588),'丹陽郡','無封國的588年丹陽郡必須仍顯示為郡');
+
+// 588 now uses the same annual vector renderer as every other Chen year.
+// Execute that route against the real map seats, instead of requiring the
+// obsolete static-588 helper call to appear in the source.
+vm.runInNewContext(fs.readFileSync(path.join(root,'data/chen-map-dynamic.js'),'utf8'),chenContext);
+function annualWuSnapshot(year) {
+  for(const state of chenContext.window.CHEN_DATA.regimes.chen.states) {
+    const statePhase=activeAt(state.phases,year);if(!statePhase)continue;
+    for(const prefecture of state.prefectures||[]) {
+      const phase=activeAt(prefecture.phases,year);if(!phase)continue;
+      if((phase.name||prefecture.base_name)!=='吳郡')continue;
+      const row={id:prefecture.id,name:phase.name||prefecture.base_name,counties:[],chenFiefs:[],liangFiefs:[]};
+      for(const record of chenContext.window.CHEN_FIEFS.records) {
+        const fiefPhase=activeAt(record.phases,year);
+        if(record.level==='prefecture'&&fiefPhase&&normalizeFiefName(fiefPhase.fief)==='吳')row.chenFiefs.push({record,phase:fiefPhase});
+      }
+      row.displayName=southernPrefectureDisplayName(row);
+      return {states:[{id:state.id,name:statePhase.name||state.base_name||state.name,group:'chen',rows:[row]}],virtualFiefs:[]};
+    }
+  }
+  assert.fail(`${year}年缺少吳郡快照`);
+}
+function mapNode() {
+  return {
+    attributes:{},dataset:{},children:[],style:{},classList:{toggle(){},add(){}},
+    setAttribute(name,value){this.attributes[name]=String(value);},
+    appendChild(child){this.children.push(child);return child;},
+    replaceChildren(...children){this.children=children;},
+    get lastElementChild(){return this.children.at(-1);}
+  };
+}
+const mapControls=new Map(),mapOverlay=mapNode(),mapLayouts=new WeakMap(),dynamicCalls=[];
+const mapContext=vm.createContext({
+  window:chenContext.window,currentDynasty:{key:'chen'},currentMap:null,currentMapFeatures:[],
+  mapReadingMode:false,mapUhdLoaded:false,yearMapOverlay:mapOverlay,mapLabelLayouts:mapLayouts,
+  $:(id)=>{if(!mapControls.has(id))mapControls.set(id,mapNode());return mapControls.get(id);},
+  svgNode:(tag,attributes={},text='')=>{const node=mapNode();node.tag=tag;node.textContent=text;for(const [name,value] of Object.entries(attributes))node.setAttribute(name,value);return node;},
+  results:mapNode(),textMapLinkToggle:{checked:true},
+  clearMapLinkHighlights(){},setMapReadingMode(){},resetMapView(){},
+});
+for(const name of ['yearMapPanel','textMapLinkControl','yearMapStage','yearMapImage','yearMapNote','yearMapUhd','yearMapCsv','yearMapGeoJson','yearMapExport','yearMapLoadUhd'])mapContext[name]=mapNode();
+for(const name of ['normalizeName','itemDisplayName','activeMapRecords','chenTerritoryFeature','chenTerritorySource','drawRegimes','mapDistance','chooseEntitySeat','resolveSnapshotFeatures','dynamicFiefLabels','snapshotFeatureForMapArea','appendHotspots','renderDynamicMap','renderYearMap']) {
+  vm.runInContext(extractFunction(appSource,name),mapContext);
+}
+const renderDynamicMap=mapContext.renderDynamicMap;
+mapContext.renderDynamicMap=(year,snapshot,map)=>{dynamicCalls.push({year,snapshot,map});return renderDynamicMap(year,snapshot,map);};
+const renderedWu=[];
+for(const [year,expectedName] of [[587,'吳郡'],[588,'吳國']]) {
+  const snapshot=annualWuSnapshot(year),row=snapshot.states[0].rows[0];
+  mapContext.renderYearMap(year,snapshot);
+  assert.equal(dynamicCalls.at(-1)?.year,year,`${year}年必須經過動態地圖路徑`);
+  assert.equal(dynamicCalls.at(-1)?.map,chenContext.window.CHEN_DYNAMIC_MAP,`${year}年必須使用共用年度地圖資料`);
+  assert.equal(mapContext.currentMap.year,year);
+  assert.equal(mapContext.yearMapImage.src,chenContext.window.CHEN_DYNAMIC_MAP.base,`${year}年必須使用無內嵌文字的共用底圖`);
+  const feature=mapContext.currentMapFeatures.find(item=>item.entity_id===row.id);
+  assert.ok(feature,`${year}年吳郡必須解析為可點擊政區`);
+  assert.equal(feature.entity_id,row.id,'封國顯示名不得重寫當年政區的原ID');
+  assert.equal(row.name,'吳郡','地圖顯示名不得改寫行政沿革的底層原名');
+  assert.equal(feature.label,expectedName,`${year}年地圖必須使用當年的郡／國名`);
+  const originalSeat=chenContext.window.CHEN_DYNAMIC_MAP.prefSeats.find(seat=>seat.k==='吳'&&Number(seat.b)<=year&&year<=Number(seat.e));
+  assert.deepEqual([feature.x,feature.y],[originalSeat.x,originalSeat.y],'封國改名不得移動原治所坐標');
+  const hotspots=mapOverlay.children.filter(node=>node.dataset.entityId===row.id);
+  assert.equal(hotspots.length,1,'吳郡／吳國須保留唯一的原政區熱點');
+  assert.equal(hotspots[0].dataset.mapKey,`entity:${row.id}`);
+  assert.equal(hotspots[0].attributes['aria-label'],`定位到${expectedName}`);
+  const labels=mapLayouts.get(mapOverlay).labels.filter(label=>label.entityId===row.id);
+  assert.ok(labels.some(label=>label.kind==='prefecture-area'),'郡國面標注須連到當年政區');
+  assert.ok(labels.some(label=>label.kind==='prefecture-seat'),'郡國治所標注須連到當年政區');
+  assert.ok(labels.every(label=>label.text===expectedName&&label.mapKey===`entity:${row.id}`),'面與治所標注必須使用一致的年度名稱和政區ID');
+  assert.ok(labels.every(label=>label.anchorX===originalSeat.x&&label.anchorY===originalSeat.y),'名稱引線必須保留原治所坐標');
+  renderedWu.push(feature);
+}
+assert.deepEqual(renderedWu.map(feature=>[feature.x,feature.y]),[[3630.7,2011.6],[3630.7,2011.6]],'587至588年吳郡改顯示吳國時治所不變');
 
 const datasets=[
   ['南陳',loadGovernorData('chen-governors.js','CHEN_GOVERNORS')],

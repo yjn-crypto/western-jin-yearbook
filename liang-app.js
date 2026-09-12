@@ -37,15 +37,11 @@ for(const arr of countiesByPref.values()) arr.sort((a,b)=>String(a.n||a.name||''
 function qiaoText(e){
   if(!entityQiao(e)) return '';
   const qi=qiaoInfo(e);
-  if(!qi) return '僑置；原屬州、郡尚未完成逐條結構化。';
-  const bits=[];
-  if(qi.original_state) bits.push(`原屬州：${qi.original_state}`);
-  if(qi.original_prefecture) bits.push(`原屬郡：${qi.original_prefecture}`);
-  if(qi.marker==='liang_only') bits.push('侨置表：梁有陳無');
-  else if(qi.marker==='chen_only') bits.push('侨置表：陳有梁無');
-  else if(qi.marker==='both') bits.push('侨置表：梁、陳皆有');
-  if(qi.qiao_table_page_index!=null) bits.push(`侨置表頁序：${qi.qiao_table_page_index}`);
-  return bits.join('；')||'僑置。';
+  if(!qi) return '僑置考表頁碼待校。';
+  if(qi.book_page||qi.pdf_page) return `${qi.book_page?`書內第 ${qi.book_page} 頁`:'書內頁碼待校'}（${qi.pdf_page?`PDF 第 ${qi.pdf_page} 頁`:'PDF頁碼待校'}）`;
+  return qi.qiao_table_page_index!=null
+    ? `僑置考表原記錄頁序 ${qi.qiao_table_page_index}（書內／PDF頁碼待校）`
+    : '僑置考表頁碼待校。';
 }
 function qiaoNote(e){
   const text=qiaoText(e); if(!text) return '';
@@ -229,7 +225,7 @@ for(let y=502;y<=557;y++){
   const o=document.createElement('option');o.value=String(y);o.textContent=`${y}年`;if(y===546)o.selected=true;$('yearSelect').append(o);
 }
 populateStateFilter(546,false);
-$('methodText').textContent='州、郡按《中國行政區劃通史》502—557年逐年重建；梁縣不做逐年變化，梁本文／齊末關係優先，558年陳代統屬補充。744個梁實縣中556個已自動確認所屬郡，188個留待人工判斷。侨州郡縣以下劃線顯示；能由侨置表精確匹配者附原屬州、郡，不能精確匹配者不猜補。封爵層使用服喪／存疑規則；方鎮表與行政區存在與否分層處理。';
+$('methodText').textContent='州、郡按《中國行政區劃通史》502—557年逐年重建；梁縣不做逐年變化，梁本文／齊末關係優先，558年陳代統屬補充。744個梁實縣中556個已自動確認所屬郡，188個留待人工判斷。侨州郡縣以下劃線顯示；僑置說明暫只顯示已有頁碼或原記錄頁序，表格文字暫停展示。封爵層使用服喪／存疑規則；方鎮表與行政區存在與否分層處理。';
 $('reviewCount').textContent=O.meta?.manual_review??RAW.county_review_count??188;
 
 $('yearSelect').addEventListener('change',()=>{populateStateFilter(Number($('yearSelect').value));render()});
