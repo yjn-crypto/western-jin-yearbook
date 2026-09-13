@@ -34,6 +34,7 @@
     };
     for (const name of genealogy().source_people || []) add(name);
     for (const key of ['remote_relatives', 'blue_relatives', 'individual']) for (const name of Object.keys(genealogy()[key] || {})) add(name);
+    for (const [name, override] of Object.entries(genealogy().title_overrides || {})) add(name, [override.title + name]);
     for (const family of genealogy().families || []) for (const child of family.children) add(`陳${child}`);
     for (const record of window.CHEN_FIEFS?.records || []) for (const holder of record.holders || []) {
       const aliases = [];
@@ -172,15 +173,53 @@
 
   function fiefStyle(name, year) {
     const normalized = canonical(name);
+    if (!isNamedHolder(normalized)) return null;
     if (/^[\p{Script=Han}]{2,4}$/u.test(normalized) && !normalized.startsWith('陳')) return { color: '#00B050', category: '異姓', source: '使用者規則：所有非陳姓人物均為綠色' };
     const person = registry(year).people.get(normalized);
     return person ? personStyle(person, year, presentation(person, null, person.name)) : null;
+  }
+
+  const holderName = person => canonical(text(typeof person === 'string' ? person : person?.person).trim().split(/\s+/).at(-1));
+  const isNamedHolder = name => /^[\p{Script=Han}]{2,4}$/u.test(name) && !/未[詳详知明]|不[詳详明]|[無无]名|封君|[繼继]承|某|氏$|^(?:世子|服[喪丧]|[後后]嗣)$/.test(name);
+
+  function fiefRecordStyle(match, year) {
+    const record = match?.record || match;
+    if (!record) return null;
+    year = Number(year);
+    const display = match.display || record.display_periods?.find(period => year >= period.start && year <= period.end);
+    const current = display ? display.people || [] : match.holders || (record.holders || []).filter(holder => year >= holder.start && year <= holder.end);
+    const names = current.map(holderName).filter(isNamedHolder);
+    if (names.length) {
+      const styles = names.map(name => fiefStyle(name, year));
+      const colors = new Set(styles.map(style => style?.color));
+      return colors.size === 1 && !colors.has(undefined) ? { ...styles[0], source: [...new Set(styles.map(style => style.source))].join('；') } : null;
+    }
+    // Unnamed successors inherit only the previous holder's surname category.
+    // Keep their names, dates, and uncertainty unchanged; a later named grant
+    // takes priority, including a change from a non-Chen holder to a Chen holder.
+    const history = [];
+    (record.holders || []).forEach((holder, index) => {
+      const name = holderName(holder);
+      if (isNamedHolder(name) && Number(holder.start) <= year) history.push({ names: [name], start: Number(holder.start), index, kind: 0 });
+    });
+    (record.display_periods || []).forEach((period, index) => {
+      const names = (period.people || []).map(holderName).filter(isNamedHolder);
+      if (names.length && Number(period.start) <= year) history.push({ names, start: Number(period.start), index, kind: 1 });
+    });
+    history.sort((a, b) => b.start - a.start || b.kind - a.kind || b.index - a.index);
+    const previous = history[0];
+    if (!previous || !previous.names.every(name => fiefStyle(name, year)?.color === '#00B050')) return null;
+    const predecessor = previous.names.join('、');
+    return { color: '#00B050', category: '異姓（未詳繼承者）', predecessor,
+      source: `同一封國此前具名封君為${predecessor}；依使用者規則，未詳繼承者沿用異姓綠色，姓名與任期仍保留未詳` };
   }
 
   function displayName(personName, year) {
     const name = canonical(personName), person = registry(year).people.get(name);
     const base = { text: text(personName), title: '', canonicalName: name, source: '', pending: false };
     if (!name.startsWith('陳')) return base;
+    const override = genealogy().title_overrides?.[name];
+    if (override && year >= override.start && year <= override.end) return { ...base, title: override.title, text: override.title + name, source: override.evidence };
     if (!person) return { ...base, pending: true };
     if (genealogy().title_blocks?.[name]) return { ...base, source: genealogy().title_blocks[name], pending: true };
     if ((genealogy().deaths?.[name] ?? Infinity) < Number(year)) return { ...base, source: '本年已卒，不補在任爵號', pending: true };
@@ -231,5 +270,5 @@
     return value;
   }
 
-  window.CHEN_PERSON_FORMATS = { matches, fiefStyle, identityStyle, displayName, decorateText, canonicalName: canonical, ink };
+  window.CHEN_PERSON_FORMATS = { matches, fiefStyle, fiefRecordStyle, identityStyle, displayName, decorateText, canonicalName: canonical, ink };
 })();

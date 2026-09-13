@@ -50,7 +50,7 @@ const context=vm.createContext({
   yearMapZoomValue:{},requestAnimationFrame:(callback)=>callback(),
   mapLabelLayouts:new WeakMap(),
 });
-for(const name of ['labelWidth','mapTerritoryLabelGuard','labelCandidates','placeAndDrawLabels','mapLabelVisible','restoreMapSelection','selectMapKey','clearMapLinkHighlights','layoutDynamicMapLabels','applyMapZoom','ensureMapLabelVisible']) {
+for(const name of ['normalizeName','labelWidth','mapTerritoryLabelGuard','labelCandidates','placeAndDrawLabels','mapLabelVisible','selectMapLabels','restoreMapSelection','selectMapKey','clearMapLinkHighlights','layoutDynamicMapLabels','applyMapZoom','ensureMapLabelVisible']) {
   // labelCandidates is a generator, so its declaration has a different prefix.
   const code=name==='labelCandidates'?source.slice(source.indexOf('  function *labelCandidates('),source.indexOf('  function placeAndDrawLabels(')):extract(name);
   vm.runInContext(code,context);
@@ -63,6 +63,50 @@ const expected=[
 for(const [zoom,levels] of expected) {
   assert.deepEqual(['state','prefecture','county'].filter((level)=>context.mapLabelVisible(level,zoom)),levels,`${zoom*100}% label boundary`);
 }
+
+// The overview chooses the original area text; higher zooms can restore the
+// distinct seat text. Duplicate records at one coordinate never add a field.
+const paired=[];
+for(const level of ['state','prefecture','county'])for(const type of ['area','seat'])paired.push({
+  level,kind:`${level}-${type}`,text:level==='state'?'揚州':level==='prefecture'?'吳郡':'吳縣',
+  x:type==='area'?400:500,y:400,fontSize:18,priority:type==='area'?1000:500,
+  entityId:level,mapKey:`entity:${level}`,
+});
+paired.push({...paired[0]},{...paired[3]});
+for(const [zoom,counts] of [[1,[1,0,0]],[2.99,[1,0,0]],[3,[2,1,0]],[7,[2,1,0]],[7.01,[2,2,2]],[10,[2,2,2]]]) {
+  const chosen=context.selectMapLabels(paired,zoom);
+  assert.deepEqual(['state','prefecture','county'].map((level)=>chosen.filter((label)=>label.level===level).length),counts,`${zoom*100}% area/seat deduplication`);
+  if(zoom<=7)assert.ok(chosen.filter((label)=>label.level===(zoom<3?'state':'prefecture')).every((label)=>label.kind.includes('area')),'Choose existing area text before adding seat text');
+}
+assert.equal(context.selectMapLabels([paired[0],{...paired[0],kind:'state-seat'}],10).length,1,'One entity and coordinate must never gain a second text field');
+assert.equal(context.selectMapLabels([paired[0],{...paired[0],entityId:'another-state',mapKey:'entity:another-state'}],1).length,2,'Different known entities with the same name must remain distinct');
+
+const actualOverlay=new Node('svg'),actualLayouts=new WeakMap(),actualWindow={};
+for(const filename of ['chen-data.js','chen-map-dynamic.js'])vm.runInNewContext(fs.readFileSync(new URL(`../data/${filename}`,import.meta.url),'utf8'),{window:actualWindow});
+const actual=vm.createContext({window:actualWindow,Math,Map,Set,Number,String,Boolean,mapZoom:1,yearMapOverlay:actualOverlay,mapLabelLayouts:actualLayouts,svgNode:(...args)=>new Node(...args)});
+for(const name of ['normalizeName','itemDisplayName','activeMapRecords','chenTerritoryFeature','chenTerritorySource','drawRegimes','mapDistance','chooseEntitySeat','resolveSnapshotFeatures','dynamicFiefLabels','snapshotFeatureForMapArea','appendHotspots','mapTerritoryLabelGuard','mapLabelVisible','selectMapLabels','renderDynamicMap'])vm.runInContext(extract(name),actual);
+const phaseAt=(entity,year)=>(entity.phases||[]).find((phase)=>Number(phase.start)<=year&&year<=Number(phase.end));
+const states=actualWindow.CHEN_DATA.regimes.chen.states.flatMap((entity)=>{
+  const phase=phaseAt(entity,588);if(!phase)return [];
+  return [{id:entity.id,name:phase.name||entity.base_name||entity.name,group:'chen',rows:(entity.prefectures||[]).flatMap((pref)=>{
+    const prefPhase=phaseAt(pref,588);return prefPhase?[{id:pref.id,name:prefPhase.name||pref.base_name,counties:[],chenFiefs:[]}]:[];
+  })}];
+});
+assert.ok(states.length,'The annual fixture must include real Chen states');
+actual.renderDynamicMap(588,{states,virtualFiefs:[]},actualWindow.CHEN_DYNAMIC_MAP);
+const actualLabels=actualLayouts.get(actualOverlay).labels;
+for(const name of ['崖州','豐州']) {
+  const overview=actual.selectMapLabels(actualLabels,1).filter((label)=>label.text===name);
+  assert.equal(overview.length,1,`100% ${name} must have one label`);
+  assert.equal(overview[0].kind,'state-area',`${name} retains its original area text`);
+  const sparse=new Node('g');context.placeAndDrawLabels(sparse,overview,actualWindow.CHEN_DYNAMIC_MAP.plot,1,4128);
+  assert.equal(sparse.querySelectorAll('.map-label-leader').length,0,`${name} needs no leader when its area text has not moved`);
+  assert.equal(actual.selectMapLabels(actualLabels,10).filter((label)=>label.text===name).length,2,`${name} may show area and seat in the full view`);
+}
+const wu=actualLabels.find((label)=>label.kind==='prefecture-area'&&label.text==='吳郡');
+assert.ok(wu?.entityId,'Real Wu area must still connect to its annual entity');
+assert.equal(actual.selectMapLabels(actualLabels,7).filter((label)=>label.entityId===wu.entityId).length,1,'700% real Wu keeps one area label');
+assert.equal(actual.selectMapLabels(actualLabels,7.01).filter((label)=>label.entityId===wu.entityId).length,2,'Above 700% real Wu restores its separate seat label');
 
 // Northern reference names can overlap beside their own points but their
 // complete text boxes must stay outside Chen, even along a narrow coastline.
@@ -220,4 +264,4 @@ assert.equal(reading.mapReadingMode,false);assert.equal(locatedEntity,selectedKe
 assert.equal(readingControl('yearMapLocateText').hidden,true);
 panel.hidden=true;reading.setMapReadingMode(true);assert.equal(reading.mapReadingMode,false,'A hidden map must not enter reading mode');
 
-console.log('地圖驗證通過：北朝參考文字可重疊且完整字框不侵入陳境、陳標注不受北朝避讓影響、300%／700%邊界、封國與溢出標注、1000%上限、文字／點／引線持續聯動、讀圖模式進出與平移後視野保持、Esc及查看正文。');
+console.log('地圖驗證通過：分級去重、崖州／豐州原位文字不畫多餘引線、同名不同實體保留、北朝參考字框不侵入陳境、300%／700%邊界、封國與溢出標注、1000%上限、文字／點／引線持續聯動、讀圖模式與視野保持。');

@@ -803,7 +803,9 @@ body[data-theme] input:focus { outline-color: color-mix(in srgb, var(--accent) 2
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
 }
-.fief-detail-button.chen-fief-uniform {
+.fief-detail-button.chen-fief-uniform,
+.fief-detail-button.fief-badge.chen-fief-uniform,
+.fief-detail-button.fief-badge.chen-fief-uniform:hover {
   color: var(--person-color);
   background: color-mix(in srgb, var(--person-color) 12%, var(--paper-2));
   border-color: color-mix(in srgb, var(--person-color) 55%, var(--line));

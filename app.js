@@ -289,10 +289,12 @@
     const {record,phase,holders,reason,display}=match;
     const holderRows=(record.holders||[]).map((h)=>`${h.title || record.label}：${h.person || '未詳'}${h.time_text ? `（${h.time_text}）` : ''}`);
     const editorialNotes=activeChenEditorialNotes(record,year);
+    const familyColor=window.CHEN_PERSON_FORMATS?.fiefRecordStyle(match,year);
     return {
       title:record.kind==='prince'?'南陳宗室王國資料':'南陳開國爵資料',
       summary:`${phase.fief}國：${chenFiefText(match)}`,
       paragraphs:[
+        familyColor?.predecessor?`封君顏色：${familyColor.source}`:'',
         `所選年份：${formatYearLabel(year)}。表列封國存續：${phase.raw || `${phase.start}—${phase.end}`}。`,
         `本年狀態：${chenFiefText(match)}。${display?.mourning?'本年按服喪期處理。':''}${display?.inferred?'本年起訖屬本文依考據規則推定。':''}${display?.uncertain?'本年資料不足，按存疑規則以斜體顯示。':''}`,
         ...editorialNotes.map((t)=>`本文考據註記：${t}`),
@@ -385,10 +387,25 @@
 
   // ---------- 南陳地方長官：本年曾任，不以十二月末仍在任為條件 ----------
   function localOfficerRecords(year) {
-    const records=window.CHEN_LOCAL_OFFICIALS?.years?.[String(year)]?.local_officers||[];
-    return records
-      .filter((record)=>Number(record.year)===Number(year)&&['confirmed','probable'].includes(record.annual_presence_status))
-      .sort((left,right)=>Number(left.display_order)-Number(right.display_order));
+    const originals=window.CHEN_LOCAL_OFFICIALS?.years?.[String(year)]?.local_officers||[];
+    let records=originals.filter((record)=>Number(record.year)===Number(year)&&['confirmed','probable'].includes(record.annual_presence_status));
+    // The user identified these two 588 rows as one appointment to the dual
+    // prefecture. Keep both source IDs; do not generalize to other years/names.
+    if(Number(year)===588) {
+      const pair=records.filter((record)=>['CS-0431','CS-0438'].includes(record.official_id));
+      if(pair.length===2&&pair.every((record)=>record.person_id==='PER-CC650C22182B')) {
+        const primary=pair.find((record)=>record.official_id==='CS-0431');
+        const combined={...primary,place:'南琅邪、彭城二郡',office:'琅邪彭城二郡太守',
+          display_correction:'依使用者校訂：588年陳祗的琅邪太守、彭城太守合為琅邪彭城二郡太守，列於揚州下。原始兩筆記錄及任期推定保留。',
+          combined_source_ids:pair.map((record)=>({annual_presence_id:record.annual_presence_id,official_id:record.official_id,evidence_mapping_id:record.technical_trace?.evidence_mapping_id})),
+          administrative_link:{...primary.administrative_link,target_level:'prefecture',link_status:'user_corrected_dual_prefecture',link_method:'explicit_user_correction',
+            attach_to_snapshot:true,hierarchy_active_in_year:true,state_assignment_asserted:true,
+            state_id:'ch_s0001',state_name:'揚州',state_order:1,prefecture_id:'ch_p0002',prefecture_name:'南琅邪、彭城二郡',prefecture_order:2,
+            normalized_place_key:'南琅邪彭城二郡',active_candidate_count:1,global_candidate_count:1,candidate_ids:['ch_p0002']}};
+        records=records.filter((record)=>!pair.includes(record)).concat(combined);
+      }
+    }
+    return records.sort((left,right)=>Number(left.display_order)-Number(right.display_order));
   }
 
   function localOfficerValue(value) {
@@ -938,9 +955,10 @@
     if(cursor<value.length)container.appendChild(document.createTextNode(value.slice(cursor)));
   }
 
-  function createChenColoredAuxButton(text,info,className='',year=null,people=[]) {
+  function createChenColoredAuxButton(text,info,className='',year=null,people=[],fiefMatch=null) {
     const value=String(text||''),button=createAuxButton('',info,className);
-    const ownerStyles=people.map(person=>window.CHEN_PERSON_FORMATS?.fiefStyle(typeof person==='string'?person:person.person,year));
+    const familyStyle=fiefMatch&&window.CHEN_PERSON_FORMATS?.fiefRecordStyle(fiefMatch,year);
+    const ownerStyles=familyStyle?[familyStyle]:people.map(person=>window.CHEN_PERSON_FORMATS?.fiefStyle(typeof person==='string'?person:person.person,year));
     const ownerColors=new Set(ownerStyles.map(style=>style?.color));
     if(ownerStyles.length&&ownerColors.size===1&&!ownerColors.has(undefined)) {
       button.textContent=value;button.classList.add('chen-fief-uniform');
@@ -969,6 +987,8 @@
   }
 
   function chenFiefPersonColor(match,year) {
+    const familyStyle=window.CHEN_PERSON_FORMATS?.fiefRecordStyle(match,year);
+    if(familyStyle?.color)return familyStyle.color;
     const people=match.display?.people||match.holders||[];
     const styles=people.map(person=>window.CHEN_PERSON_FORMATS?.fiefStyle(typeof person==='string'?person:person.person,year));
     const colors=new Set(styles.map(style=>style?.color));
@@ -1063,7 +1083,7 @@
     } else if (currentDynasty.key==='southern-liang') {
       for (const match of item.liangFiefs||[]) {const cls=['fief-badge','liang-fief-note',match.changed?'changed':'',match.status==='uncertain'?'editorial-uncertain':'',match.status==='mourning'?'mourning':''].filter(Boolean).join(' ');container.appendChild(createLiangColoredAuxButton(liangFiefText(match),liangFiefInfo(match,year),cls,year));}
     } else {
-      for (const match of item.chenFiefs||[]) { const cls=['fief-badge','chen-fief-note',match.changed?'changed':'',match.display?.uncertain?'editorial-uncertain':'',match.display?.mourning?'mourning':''].filter(Boolean).join(' '); container.appendChild(createChenColoredAuxButton(chenFiefText(match),chenFiefInfo(match,year),cls,year,match.display?.people||match.holders||[])); }
+      for (const match of item.chenFiefs||[]) { const cls=['fief-badge','chen-fief-note',match.changed?'changed':'',match.display?.uncertain?'editorial-uncertain':'',match.display?.mourning?'mourning':''].filter(Boolean).join(' '); container.appendChild(createChenColoredAuxButton(chenFiefText(match),chenFiefInfo(match,year),cls,year,match.display?.people||match.holders||[],match)); }
     }
   }
 
@@ -1169,7 +1189,7 @@
     const list=document.createElement('div');list.className='virtual-fief-list';
     for (const match of visible) {
       const item=document.createElement('div');item.className='virtual-fief-item';
-      { const cls=['fief-badge',currentDynasty.key==='southern-liang'?'liang-fief-note':'chen-fief-note',match.changed?'changed':'',match.display?.uncertain?'editorial-uncertain':'',match.display?.mourning?'mourning':''].filter(Boolean).join(' '); const label=`${match.phase.fief}國　${activeFiefText(match)}`;item.appendChild(currentDynasty.key==='southern-liang'?createLiangColoredAuxButton(label,activeFiefInfo(match,year),cls,year):createChenColoredAuxButton(label,activeFiefInfo(match,year),cls,year,match.display?.people||match.holders||[])); }
+      { const cls=['fief-badge',currentDynasty.key==='southern-liang'?'liang-fief-note':'chen-fief-note',match.changed?'changed':'',match.display?.uncertain?'editorial-uncertain':'',match.display?.mourning?'mourning':''].filter(Boolean).join(' '); const label=`${match.phase.fief}國　${activeFiefText(match)}`;item.appendChild(currentDynasty.key==='southern-liang'?createLiangColoredAuxButton(label,activeFiefInfo(match,year),cls,year):createChenColoredAuxButton(label,activeFiefInfo(match,year),cls,year,match.display?.people||match.holders||[],match)); }
       const reason=document.createElement('span');reason.className='virtual-fief-reason';reason.textContent=match.reason;item.appendChild(reason);list.appendChild(item);
     }
     card.appendChild(list);return card;
@@ -1347,7 +1367,7 @@
       .filter((item)=>typeof item==='string'&&item.trim())
       .map((item)=>item.trim())
       .filter((item,index,items)=>items.indexOf(item)===index);
-    appendLocalOfficerDetailSection(body,'綜合考證',[tenure.comprehensive_analysis,...(tenure.research_notes||[]),...orderNotes],'officer-research-note');
+    appendLocalOfficerDetailSection(body,'綜合考證',[record.display_correction,tenure.comprehensive_analysis,...(tenure.research_notes||[]),...orderNotes],'officer-research-note');
     const career=tenure.career_links||{},careerLines=[];
     if(career.career_chain_text)careerLines.push(career.career_chain_text);
     const careerLabels={previous_roles:'上一官',next_roles:'下一官',predecessor_candidates:'前任候選',successor_candidates:'繼任候選',unresolved_links:'未定關係'};
@@ -1361,6 +1381,7 @@
       annual_presence_id:record.annual_presence_id,
       official_id:record.official_id,
       person_id:record.person_id,
+      ...(record.combined_source_ids?{combined_source_ids:record.combined_source_ids}:{}),
       year_end_decision_id:trace.year_end_decision_id||trace.legacy_year_end_decision_ids,
       evidence_id:trace.evidence_id||trace.evidence_ids,
       evidence_mapping_id:trace.evidence_mapping_id||trace.evidence_mapping_ids,
@@ -1790,7 +1811,10 @@
       const anchorX=label.anchorX??label.x,anchorY=label.anchorY??label.y;
       const endX=Math.max(placement.box[0],Math.min(placement.box[2],anchorX));
       const endY=Math.max(placement.box[1],Math.min(placement.box[3],anchorY));
-      if(Math.hypot(endX-anchorX,endY-anchorY)>fontSize*.9) {
+      const sourceEndX=Math.max(placement.box[0],Math.min(placement.box[2],label.x));
+      const sourceEndY=Math.max(placement.box[1],Math.min(placement.box[3],label.y));
+      const displacedArea=!label.kind.includes('area')||Math.hypot(sourceEndX-label.x,sourceEndY-label.y)>fontSize*.9;
+      if(displacedArea&&Math.hypot(endX-anchorX,endY-anchorY)>fontSize*.9) {
         const line=svgNode('line',{x1:anchorX,y1:anchorY,x2:endX,y2:endY,class:'map-label-leader','data-label-level':label.level,'data-map-key':label.mapKey,stroke:'#766d5b','stroke-width':.8/scale,'stroke-opacity':.7,'pointer-events':'none'});
         leaders.appendChild(line);
         text.addEventListener('mouseenter',()=>line.classList.add('is-hover'));
@@ -1809,12 +1833,31 @@
     return renderHeight;
   }
 
+  function selectMapLabels(labels,zoom=mapZoom) {
+    const selected=[],groups=new Set(),points=new Map();
+    const candidates=labels.filter((label)=>mapLabelVisible(label.level,zoom)).sort((a,b)=>
+      Number(Boolean(b.entityId))-Number(Boolean(a.entityId))||Number(b.kind.includes('area'))-Number(a.kind.includes('area'))||b.priority-a.priority);
+    for(const label of candidates) {
+      const pointKey=`${label.level}|${Number(label.x).toFixed(1)}|${Number(label.y).toFixed(1)}|${normalizeName(label.sourceName||label.text)}`;
+      const ids=points.get(pointKey);
+      if(ids&&(ids.has(label.entityId||'')||!label.entityId||ids.has('')))continue;
+      const group=label.entityId?`entity:${label.entityId}`:label.mapGroup||label.mapKey;
+      const single=label.level==='state'?zoom<3:label.level==='prefecture'?zoom<=7:false;
+      const groupKey=`${label.level}|${group}|${single?'single':label.kind.includes('area')?'area':'seat'}`;
+      if(groups.has(groupKey))continue;
+      groups.add(groupKey);
+      if(!points.has(pointKey))points.set(pointKey,new Set());
+      points.get(pointKey).add(label.entityId||'');selected.push(label);
+    }
+    return selected;
+  }
+
   function layoutDynamicMapLabels() {
     const layout=mapLabelLayouts.get(yearMapOverlay);
     if(!layout||currentMap?.reference||layout.year!==currentMap?.year)return;
     layout.layer.replaceChildren();
     const scale=Math.max(.01,yearMapStage.clientWidth/currentMap.width);
-    const labels=layout.labels.filter((label)=>mapLabelVisible(label.level));
+    const labels=selectMapLabels(layout.labels);
     currentMap.renderHeight=placeAndDrawLabels(layout.layer,labels,layout.plot,scale,currentMap.height,layout.territoryGuard);
     yearMapOverlay.setAttribute('viewBox',`0 0 ${currentMap.width} ${currentMap.renderHeight}`);
     yearMapStage.style.paddingBottom=`${(currentMap.renderHeight-currentMap.height)*scale}px`;
@@ -1864,6 +1907,7 @@
     const seatKey=(level,x,y,name)=>`${level}|${Math.round(x)}|${Math.round(y)}|${normalizeName(name)}`;
     const suppressed=new Set(fiefs.map((item)=>seatKey(item.level,item.x,item.y,item.sourceName)));
     const labels={state:[],prefecture:[],county:[]};
+    const areaGroups=new Map();
     const root=yearMapOverlay;
     root.replaceChildren();
     root.appendChild(svgNode('text',{x:650,y:92,class:'dynamic-map-title'},`公元${year}年　南陳與同時期政權州郡縣封國`));
@@ -1872,13 +1916,17 @@
     for(const area of stateAreas) {
       root.appendChild(svgNode('path',{d:area.d,class:`dynamic-state-boundary${area.s==='CHGIS V5'?' dynamic-supplement-boundary':''}`}));
       const feature=snapshotFeatureForMapArea(area,'state',resolved.features);
-      labels.state.push({text:feature?.label||area.n,x:area.x,y:area.y,fontSize:24.5,kind:'state-area',priority:1000,entityId:feature?.entity_id});
+      const mapGroup=feature?`entity:${feature.entity_id}`:`reference:state-area:${area.i}`;
+      areaGroups.set(area,mapGroup);
+      labels.state.push({text:feature?.label||area.n,x:area.x,y:area.y,fontSize:24.5,kind:'state-area',priority:1000,entityId:feature?.entity_id,mapGroup});
     }
     for(const area of prefAreas) {
       root.appendChild(svgNode('path',{d:area.d,class:`dynamic-pref-boundary${area.s==='CHGIS V5'?' dynamic-supplement-boundary':''}`}));
       const feature=snapshotFeatureForMapArea(area,'prefecture',resolved.features);
       const fief=feature&&fiefs.find((label)=>label.entityId===feature.entity_id);
-      labels.prefecture.push({text:fief?.text||feature?.label||area.n,x:area.x,y:area.y,fontSize:16.5,kind:'prefecture-area',priority:900,entityId:feature?.entity_id,fief:Boolean(fief),fiefIds:fief?.fiefIds,uncertain:fief?.uncertain});
+      const mapGroup=feature?`entity:${feature.entity_id}`:`reference:prefecture-area:${area.i}`;
+      areaGroups.set(area,mapGroup);
+      labels.prefecture.push({text:fief?.text||feature?.label||area.n,x:area.x,y:area.y,fontSize:16.5,kind:'prefecture-area',priority:900,entityId:feature?.entity_id,mapGroup,fief:Boolean(fief),fiefIds:fief?.fiefIds,uncertain:fief?.uncertain});
     }
     const specs=[['state','state-seat',22.5,560,4.1],['prefecture','prefecture-seat',10.8,500,2.9],['county','county-seat',8.6,400,2]];
     for(const [level,kind,fontSize,priority,radius] of specs)for(const seat of seatsByLevel[level]) {
@@ -1886,7 +1934,11 @@
       if(!suppressed.has(seatKey(level,seat.x,seat.y,seat.n))) {
         const linked=featuresAtSeat(seat,level);
         if(linked.length)for(const feature of linked)labels[level].push({text:feature.label,x:seat.x,y:seat.y,fontSize,kind,priority,entityId:feature.entity_id});
-        else labels[level].push({text:seat.n,x:seat.x,y:seat.y,fontSize,kind,priority});
+        else {
+          const areas=level==='state'?stateAreas:level==='prefecture'?prefAreas:[];
+          const area=areas.find((item)=>item.k===seat.k&&snapshotFeatureForMapArea(item,level,[{level,x:seat.x,y:seat.y,entity:{name:seat.n}}]));
+          labels[level].push({text:seat.n,x:seat.x,y:seat.y,fontSize,kind,priority,mapGroup:area&&areaGroups.get(area)});
+        }
       }
     }
     for(const fief of fiefs)labels[fief.level].push({...fief,fontSize:fief.level==='prefecture'?12.5:10.2,kind:`${fief.level}-seat`,priority:fief.level==='prefecture'?520:420,fief:true});
@@ -1897,8 +1949,8 @@
       const feature=label.entityId&&resolved.byId.get(label.entityId);
       if(feature){label.anchorX=feature.x;label.anchorY=feature.y;}
       label.outsideChen=Boolean(!label.entityId&&!label.fief&&territoryGuard&&!territoryGuard.contains(label.x,label.y));
-      // Keep the area and seat labels: each carries the annual name and the
-      // same stable entity ID, while their geometry remains unchanged.
+      // Keep both geometries available; the zoom level selects one or both
+      // label types without changing the annual entity or the original seat.
       allLabels.push(label);
     }
     const referencePoints=new Map();

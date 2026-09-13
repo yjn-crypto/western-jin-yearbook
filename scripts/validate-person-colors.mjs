@@ -185,7 +185,23 @@ assert.notEqual(people.canonicalName('鲁岚'), people.canonicalName('魯覽'), 
 assert.equal(people.displayName('鲁岚', 588).text, '鲁岚', 'non-Chen source spelling remains intact');
 assert.equal(people.displayName('魯覽', 588).title, '', 'do not add unsolicited titles to non-Chen names');
 assert.equal(people.decorateText('魯覽、魯廣達 刺史。', 588), '魯覽、魯廣達 刺史。', 'non-Chen prose remains unchanged');
-assert.equal(people.displayName('陈君范', 588).text, '陈君范', 'unknown Chen name keeps original spelling');
+assert.equal(people.displayName('陈君范', 588).text, '鄱陽國世子陳君范', 'user-specified title is shown without changing source data');
+assert.equal(people.fiefStyle('陈君范', 588)?.color, '#7030A0', 'user-specified Shizi exception uses violet');
+assert.equal(people.fiefStyle('陈仲华', 588)?.color, '#00B050', 'user-specified Chen Zhonghua exception uses green');
+assert.match(people.identityStyle('陈君范', 588).source, /使用者2026-09-13/);
+for (const marker of ['封君未詳', '姓名未詳', '？', '陳氏', '某氏', '世子', '服喪', '後嗣']) assert.equal(people.fiefStyle(marker, 588), null, `${marker}: placeholder is not a non-Chen name`);
+const byFiefId = id => context.window.CHEN_FIEFS.records.find(record => record.id === id);
+const pengze = context.window.CHEN_FIEFS.records.find(record => record.holders.some(holder => holder.person === '魯覽'));
+for (const year of [563, 565, 588]) assert.equal(people.fiefRecordStyle(pengze, year)?.color, '#00B050', `${year}: mourning and uncertain Lu Lan remain green`);
+assert.equal(people.fiefRecordStyle(byFiefId('chen_fief_0026'), 588)?.predecessor, '馬明', 'pre-Chen deceased holder can supply surname of unnamed successors');
+const transition = { holders: [{ person: '周某甲', start: 560, end: 569 }, { person: '陳方慶', start: 570, end: 579 }], display_periods: [{ start: 580, end: 588, people: [], text: '侯國·封君未詳' }] };
+transition.holders[0].person = '周文育';
+assert.equal(people.fiefRecordStyle(transition, 588), null, 'a later named Chen grant stops inherited non-Chen color');
+assert.equal(people.fiefRecordStyle({ ...transition, holders: transition.holders.slice(0, 1) }, 588)?.predecessor, '周文育', 'unnamed successor gets only predecessor surname category');
+assert.equal(people.fiefRecordStyle({ holders: [{ person: '周文育', start: 588, end: 588 }], display_periods: [{ start: 580, end: 587, people: [] }] }, 585), null, 'a future grant is never used to color an earlier unnamed holder');
+const fiefCss = fs.readFileSync(root + 'style.css', 'utf8');
+assert.match(fiefCss, /\.fief-detail-button\.fief-badge\.chen-fief-uniform,\s*\.fief-detail-button\.fief-badge\.chen-fief-uniform:hover\s*\{[^}]*color: var\(--person-color\)/, 'whole-box identity color wins over uncertainty, mourning, and hover');
+assert.match(fiefCss, /\.chen-fief-note\.editorial-uncertain[^}]*font-style:\s*italic/, 'uncertainty retains its separate italic display');
 assert.notEqual(people.canonicalName('陈番'), people.canonicalName('陳蕃'), 'different Chen lineage members remain distinct');
 for (const name of ['陳黨', '陳正理', '陳擬', '陳褒', '陳諠', '陳祏', '陳敬雅', '陳敬泰']) {
   const year = name === '陳擬' ? 558 : 588;
@@ -281,8 +297,8 @@ if (process.argv.includes('--write-color-table')) {
   const escape = value => String(value ?? '').replaceAll('|','／').replaceAll('\n',' ');
   const markdown = [
     '# 陈氏颜色与爵号校对表', '',
-    '2026-09-12。供直接改表使用；CSV 包含证据、爵号来源及三列用户修订空栏。只列现有年表、封国表或地方长官表实际出现的陈姓人物与显示年度，年度不代表新增任期或生卒。未知身份保持黑色待核；已有原表颜色但亲属未核实者仍明确标记待核。', '',
-    '规则：非陈姓全部绿色；卷十五所列远支宗室及明确的袭侯子孙用褐系；紫色仅授予有袭王依据且已到现表承袭阶段的人物，服丧未袭王不紫。陈元基、陈番在卷二十八被称长子，表中按皇子之子蓝色处理，没有改称庶出。陈番与后主子陈蕃保持分离。陈叔忠的同名永城王条与卷二十八“未及封”相冲突，暂不补爵。', '',
+    '2026-09-13。供直接改表使用；CSV 包含证据、爵号来源及三列用户修订空栏。只列现有年表、封国表或地方长官表实际出现的陈姓人物与显示年度，年度不代表新增任期或生卒。未知身份保持黑色待核；已有原表颜色但亲属未核实者仍明确标记待核。', '',
+    '规则：非陈姓全部绿色；卷十五所列远支宗室及明确的袭侯子孙用褐系；紫色一般授予有袭王依据且已到现表承袭阶段的人物，服丧未袭王不紫。本次用户明确指定例外：鄱阳国世子陈君范用嗣王紫色，子国陈仲华用异姓绿色；这是显示修订，不新增已袭王的史料判定。陈元基、陈番在卷二十八被称长子，表中按皇子之子蓝色处理，没有改称庶出。陈番与后主子陈蕃保持分离。陈叔忠的同名永城王条与卷二十八“未及封”相冲突，暂不补爵。', '',
     '史料核对：[《陈书》卷十四](https://zh.wikisource.org/zh/陳書/卷14)（南康王世系及方庆封侯）、[卷十五](https://zh.wikisource.org/zh/陳書/卷15)（远支宗室及县侯）、[卷二十八](https://zh.wikisource.org/zh/陳書/卷28)（帝子、元基与番、孝宽承袭）。方泰564、至泽573、酆586等承袭年度沿用用户既有服丧考定，推定与不确定性列入待核；不重写源任期。', '',
     `共 ${occurrenceYears.size} 人、${table.length} 个年度段。更新命令：node scripts/validate-person-colors.mjs --write-color-table。`, '',
     '| 人物 | 原始写法 | 年度段 | 爵号 | 身份 | 色值 | 待核 | 说明 |',

@@ -11,9 +11,9 @@
       periods: [{ start: 582, end: 588, category: '皇子', color: '#C00000' }] },
   ];
   window.CHEN_ROYAL_IDENTITIES = {
-    meta: { version: '2026-09-12-final', source_title: '《陳書》卷十四、十五、二十八及原年表',
+    meta: { version: '2026-09-13-touchup', source_title: '《陳書》卷十四、十五、二十八及原年表',
       source_urls: ['https://zh.wikisource.org/zh/陳書/卷14', 'https://zh.wikisource.org/zh/陳書/卷15', 'https://zh.wikisource.org/zh/陳書/卷28'],
-      policy: '非陳姓綠色。卷十五明載遠支宗室及其子用褐系；紫色須有襲王記載與本年有效承襲記錄，服喪未襲王、縣侯不得紫。已證父子關係而未襲王的皇子之子用藍色，不將長子擅稱庶出。559、566年內易帝不作整年同父歸一；582依即位後身份。原文、原字體及既有任期資料不改。' },
+      policy: '非陳姓綠色。卷十五明載遠支宗室及其子用褐系；紫色須有襲王記載與本年有效承襲記錄，服喪未襲王、縣侯不得紫；例外依使用者2026-09-13指定，鄱陽國世子陳君范用嗣王紫色，陳仲華用異姓綠色。已證父子關係而未襲王的皇子之子用藍色，不將長子擅稱庶出。559、566年內易帝不作整年同父歸一；582依即位後身份。原文、原字體及既有任期資料不改。' },
     families,
     // Reviewed names occurring in the workbook and governor summaries. These
     // are text-recognition keys, not claims of kinship or new appointments.
@@ -33,6 +33,8 @@
     // Reigning emperors are excluded from familial automatic colours.
     emperors: [{ name: '陳霸先', start: 557, end: 559 }, { name: '陳蒨', start: 559, end: 566 }, { name: '陳伯宗', start: 566, end: 568 }, { name: '陳頊', start: 569, end: 582 }, { name: '陳叔寶', start: 582, end: 588 }],
     individual: {
+      陳君范: [{ start: 557, end: 588, category: '嗣王色（鄱陽國世子；使用者指定）', color: '#7030A0', evidence: '使用者2026-09-13明確指定：鄱陽國世子陳君范，使用嗣王紫色；此為展示特例，不新增已襲王的史料判定' }],
+      陳仲華: [{ start: 557, end: 588, category: '異姓（使用者指定）', color: '#00B050', evidence: '使用者2026-09-13明確指定：子國陳仲華使用異姓綠色' }],
       陳頊: [{ start: 557, end: 558, category: '始興嗣王（遙襲封）', color: '#7030A0', evidence: '《陳書》卷二、卷二十八明載襲封始興王' }, { start: 560, end: 565, category: '皇弟', color: '#FF0000' }, { start: 567, end: 568, category: '始封王（非皇弟皇子）', color: '#D99694' }],
       陳昌: [{ start: 557, end: 559, category: '皇子', color: '#C00000', evidence: '《陳書》卷十四：高祖第六子' }, { start: 560, end: 560, category: '皇弟（當年詔議稱謂）', color: '#FF0000', evidence: '《陳書》卷十四天嘉元年奏議稱第六皇弟昌' }],
       陳曇朗: [{ start: 557, end: 561, category: '南康嗣王（朝廷遙襲封；561年始知遇害）', color: '#7030A0', evidence: '《陳書》卷十四明載遙襲南康王；朝廷天嘉二年始聞凶問' }],
@@ -59,6 +61,7 @@
       陳鄷: { father: '陳伯謀', category: '皇子之子（本年未襲王）', evidence: '《陳書》卷二十八：伯謀子酆嗣；具體年度沿用既有封國紀年', source_url: 'https://zh.wikisource.org/zh/陳書/卷28' },
     },
     title_blocks: { 陳叔忠: '《陳書》卷二十八明列高宗子叔忠未及封；現封國表的永城王同名條未能對證，暫不補爵號' },
+    title_overrides: { 陳君范: { start: 557, end: 588, title: '鄱陽國世子', evidence: '使用者2026-09-13明確指定姓名顯示為鄱陽國世子陳君范；不改任期與來源文字' } },
     // These relatives have stable kinship categories. Fill a missing annual
     // name colour from a dated workbook sample, keeping its precise shade.
     stable_relatives: {
