@@ -551,7 +551,7 @@
       title:'都督/刺史與方鎮史料',
       summary:`${formatYearLabel(year)} · ${record.state}`,
       paragraphs:[
-        ...(summary.length ? summary.map((line,index)=>`${index===0?'年表所列：':'　'}${line}`) : ['本年年表未列可考長官。']),
+        ...(summary.length ? summary.map((line,index)=>`${index===0?(record.supplement_source?'本年所列：':'年表所列：'):'　'}${line}`) : ['本年年表未列可考長官。']),
         ...(history.length ? ['此前官銜記載（按人物、同州逐年回溯；本年變動以上文為準）：', ...history.flatMap(item=>[
           `${item.yearLabel} · ${item.state}：${item.line}`,
           item.pages.length ? `該年方鎮年表資料頁序：${item.pages.join('、')}。` : '',
@@ -561,7 +561,7 @@
         pageIndexes.length ? `方鎮年表資料頁序：${pageIndexes.join('、')}。` : '',
         ...(evidence.length ? ['相關考證與史料：', ...evidence] : [])
       ].filter(Boolean),
-      sourceLabel:data?.meta?.source || '魯力《魏晉南北朝方鎮年表新編·宋齊梁陳卷》方鎮年表',
+      sourceLabel:[data?.meta?.source || '魯力《魏晉南北朝方鎮年表新編·宋齊梁陳卷》方鎮年表',record.supplement_source].filter(Boolean).join('；'),
       actionLabel:['southern-liang','chen'].includes(currentDynasty.key) ? `在${currentDynasty.label}刺史年表定位${record.state}` : '',
       actionUrl:['southern-liang','chen'].includes(currentDynasty.key) ? governorYearbookHref(year,record.state,'detail') : ''
     };
@@ -1400,7 +1400,8 @@
       administrative_link:record.administrative_link,
       source_row:trace.master_source_row,
       source_row_sha256:trace.source_row_sha256,
-      master_sha256:window.CHEN_LOCAL_OFFICIALS?.meta?.source_master_sha256
+      ...(trace.source_label?{supplement_source:trace.source_label}:{}),
+      master_sha256:record.projection_method==='user_year_specific_supplement'?'不適用：本條為使用者588年專項補訂，未寫回原Excel':window.CHEN_LOCAL_OFFICIALS?.meta?.source_master_sha256
     };
     for(const [key,value] of Object.entries(technicalEntries)){
       const dt=document.createElement('dt');dt.textContent=key;const dd=document.createElement('dd');dd.textContent=localOfficerValue(value);dl.append(dt,dd);
