@@ -1,0 +1,410 @@
+{
+  "status": "pass",
+  "scope": "502—557共56年；實際執行app的州郡快照及共用縣掛接模型",
+  "checks": [
+    "海鹽549吳郡武原並見，548/550分屬舊新郡",
+    "決口臨水529改名同年雙列",
+    "湖熟535省廢當年仍列，536不列",
+    "昆山535始列，不提前至534",
+    "新安郡梁安人工527起列且保留不確定",
+    "僅州5條未偽造郡，仍有待考出口",
+    "三郡549已見；武原550返揚，吳郡549不重複"
+  ],
+  "unique_county_records_ever_attached": 578,
+  "unique_county_records_never_attached": 166,
+  "note": "記錄數不等於歷史實縣總數；改名、改屬年可有多個顯示項。待考條目列出不表示本年確實存在。",
+  "rows": [
+    {
+      "year": 502,
+      "attached_display_entries": 456,
+      "attached_county_records": 456,
+      "pending_assignments": 233,
+      "pending_county_records": 233
+    },
+    {
+      "year": 503,
+      "attached_display_entries": 457,
+      "attached_county_records": 457,
+      "pending_assignments": 233,
+      "pending_county_records": 233
+    },
+    {
+      "year": 504,
+      "attached_display_entries": 454,
+      "attached_county_records": 454,
+      "pending_assignments": 237,
+      "pending_county_records": 237
+    },
+    {
+      "year": 505,
+      "attached_display_entries": 447,
+      "attached_county_records": 447,
+      "pending_assignments": 244,
+      "pending_county_records": 244
+    },
+    {
+      "year": 506,
+      "attached_display_entries": 447,
+      "attached_county_records": 447,
+      "pending_assignments": 244,
+      "pending_county_records": 244
+    },
+    {
+      "year": 507,
+      "attached_display_entries": 474,
+      "attached_county_records": 473,
+      "pending_assignments": 220,
+      "pending_county_records": 220
+    },
+    {
+      "year": 508,
+      "attached_display_entries": 474,
+      "attached_county_records": 474,
+      "pending_assignments": 219,
+      "pending_county_records": 219
+    },
+    {
+      "year": 509,
+      "attached_display_entries": 483,
+      "attached_county_records": 483,
+      "pending_assignments": 213,
+      "pending_county_records": 213
+    },
+    {
+      "year": 510,
+      "attached_display_entries": 483,
+      "attached_county_records": 483,
+      "pending_assignments": 213,
+      "pending_county_records": 213
+    },
+    {
+      "year": 511,
+      "attached_display_entries": 483,
+      "attached_county_records": 483,
+      "pending_assignments": 213,
+      "pending_county_records": 213
+    },
+    {
+      "year": 512,
+      "attached_display_entries": 483,
+      "attached_county_records": 483,
+      "pending_assignments": 213,
+      "pending_county_records": 213
+    },
+    {
+      "year": 513,
+      "attached_display_entries": 483,
+      "attached_county_records": 483,
+      "pending_assignments": 213,
+      "pending_county_records": 213
+    },
+    {
+      "year": 514,
+      "attached_display_entries": 483,
+      "attached_county_records": 483,
+      "pending_assignments": 213,
+      "pending_county_records": 213
+    },
+    {
+      "year": 515,
+      "attached_display_entries": 483,
+      "attached_county_records": 483,
+      "pending_assignments": 213,
+      "pending_county_records": 213
+    },
+    {
+      "year": 516,
+      "attached_display_entries": 483,
+      "attached_county_records": 483,
+      "pending_assignments": 213,
+      "pending_county_records": 213
+    },
+    {
+      "year": 517,
+      "attached_display_entries": 483,
+      "attached_county_records": 483,
+      "pending_assignments": 213,
+      "pending_county_records": 213
+    },
+    {
+      "year": 518,
+      "attached_display_entries": 483,
+      "attached_county_records": 483,
+      "pending_assignments": 213,
+      "pending_county_records": 213
+    },
+    {
+      "year": 519,
+      "attached_display_entries": 486,
+      "attached_county_records": 486,
+      "pending_assignments": 211,
+      "pending_county_records": 211
+    },
+    {
+      "year": 520,
+      "attached_display_entries": 486,
+      "attached_county_records": 486,
+      "pending_assignments": 211,
+      "pending_county_records": 211
+    },
+    {
+      "year": 521,
+      "attached_display_entries": 487,
+      "attached_county_records": 487,
+      "pending_assignments": 210,
+      "pending_county_records": 210
+    },
+    {
+      "year": 522,
+      "attached_display_entries": 484,
+      "attached_county_records": 484,
+      "pending_assignments": 213,
+      "pending_county_records": 213
+    },
+    {
+      "year": 523,
+      "attached_display_entries": 476,
+      "attached_county_records": 476,
+      "pending_assignments": 221,
+      "pending_county_records": 221
+    },
+    {
+      "year": 524,
+      "attached_display_entries": 462,
+      "attached_county_records": 462,
+      "pending_assignments": 235,
+      "pending_county_records": 235
+    },
+    {
+      "year": 525,
+      "attached_display_entries": 467,
+      "attached_county_records": 467,
+      "pending_assignments": 234,
+      "pending_county_records": 234
+    },
+    {
+      "year": 526,
+      "attached_display_entries": 471,
+      "attached_county_records": 471,
+      "pending_assignments": 239,
+      "pending_county_records": 239
+    },
+    {
+      "year": 527,
+      "attached_display_entries": 488,
+      "attached_county_records": 488,
+      "pending_assignments": 230,
+      "pending_county_records": 230
+    },
+    {
+      "year": 528,
+      "attached_display_entries": 504,
+      "attached_county_records": 504,
+      "pending_assignments": 218,
+      "pending_county_records": 218
+    },
+    {
+      "year": 529,
+      "attached_display_entries": 506,
+      "attached_county_records": 504,
+      "pending_assignments": 218,
+      "pending_county_records": 218
+    },
+    {
+      "year": 530,
+      "attached_display_entries": 504,
+      "attached_county_records": 504,
+      "pending_assignments": 218,
+      "pending_county_records": 218
+    },
+    {
+      "year": 531,
+      "attached_display_entries": 504,
+      "attached_county_records": 504,
+      "pending_assignments": 218,
+      "pending_county_records": 218
+    },
+    {
+      "year": 532,
+      "attached_display_entries": 504,
+      "attached_county_records": 504,
+      "pending_assignments": 219,
+      "pending_county_records": 219
+    },
+    {
+      "year": 533,
+      "attached_display_entries": 504,
+      "attached_county_records": 504,
+      "pending_assignments": 218,
+      "pending_county_records": 218
+    },
+    {
+      "year": 534,
+      "attached_display_entries": 493,
+      "attached_county_records": 493,
+      "pending_assignments": 222,
+      "pending_county_records": 222
+    },
+    {
+      "year": 535,
+      "attached_display_entries": 495,
+      "attached_county_records": 495,
+      "pending_assignments": 226,
+      "pending_county_records": 226
+    },
+    {
+      "year": 536,
+      "attached_display_entries": 502,
+      "attached_county_records": 502,
+      "pending_assignments": 217,
+      "pending_county_records": 217
+    },
+    {
+      "year": 537,
+      "attached_display_entries": 502,
+      "attached_county_records": 502,
+      "pending_assignments": 219,
+      "pending_county_records": 219
+    },
+    {
+      "year": 538,
+      "attached_display_entries": 502,
+      "attached_county_records": 502,
+      "pending_assignments": 219,
+      "pending_county_records": 219
+    },
+    {
+      "year": 539,
+      "attached_display_entries": 503,
+      "attached_county_records": 503,
+      "pending_assignments": 219,
+      "pending_county_records": 219
+    },
+    {
+      "year": 540,
+      "attached_display_entries": 508,
+      "attached_county_records": 508,
+      "pending_assignments": 216,
+      "pending_county_records": 216
+    },
+    {
+      "year": 541,
+      "attached_display_entries": 488,
+      "attached_county_records": 488,
+      "pending_assignments": 236,
+      "pending_county_records": 236
+    },
+    {
+      "year": 542,
+      "attached_display_entries": 486,
+      "attached_county_records": 486,
+      "pending_assignments": 239,
+      "pending_county_records": 239
+    },
+    {
+      "year": 543,
+      "attached_display_entries": 486,
+      "attached_county_records": 486,
+      "pending_assignments": 239,
+      "pending_county_records": 239
+    },
+    {
+      "year": 544,
+      "attached_display_entries": 487,
+      "attached_county_records": 487,
+      "pending_assignments": 239,
+      "pending_county_records": 239
+    },
+    {
+      "year": 545,
+      "attached_display_entries": 487,
+      "attached_county_records": 487,
+      "pending_assignments": 239,
+      "pending_county_records": 239
+    },
+    {
+      "year": 546,
+      "attached_display_entries": 494,
+      "attached_county_records": 494,
+      "pending_assignments": 232,
+      "pending_county_records": 232
+    },
+    {
+      "year": 547,
+      "attached_display_entries": 493,
+      "attached_county_records": 493,
+      "pending_assignments": 235,
+      "pending_county_records": 235
+    },
+    {
+      "year": 548,
+      "attached_display_entries": 489,
+      "attached_county_records": 489,
+      "pending_assignments": 239,
+      "pending_county_records": 239
+    },
+    {
+      "year": 549,
+      "attached_display_entries": 479,
+      "attached_county_records": 476,
+      "pending_assignments": 251,
+      "pending_county_records": 250
+    },
+    {
+      "year": 550,
+      "attached_display_entries": 439,
+      "attached_county_records": 439,
+      "pending_assignments": 270,
+      "pending_county_records": 270
+    },
+    {
+      "year": 551,
+      "attached_display_entries": 435,
+      "attached_county_records": 435,
+      "pending_assignments": 270,
+      "pending_county_records": 270
+    },
+    {
+      "year": 552,
+      "attached_display_entries": 416,
+      "attached_county_records": 416,
+      "pending_assignments": 290,
+      "pending_county_records": 290
+    },
+    {
+      "year": 553,
+      "attached_display_entries": 415,
+      "attached_county_records": 414,
+      "pending_assignments": 286,
+      "pending_county_records": 286
+    },
+    {
+      "year": 554,
+      "attached_display_entries": 375,
+      "attached_county_records": 375,
+      "pending_assignments": 325,
+      "pending_county_records": 325
+    },
+    {
+      "year": 555,
+      "attached_display_entries": 344,
+      "attached_county_records": 344,
+      "pending_assignments": 352,
+      "pending_county_records": 352
+    },
+    {
+      "year": 556,
+      "attached_display_entries": 352,
+      "attached_county_records": 352,
+      "pending_assignments": 344,
+      "pending_county_records": 344
+    },
+    {
+      "year": 557,
+      "attached_display_entries": 358,
+      "attached_county_records": 358,
+      "pending_assignments": 340,
+      "pending_county_records": 340
+    }
+  ]
+}

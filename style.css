@@ -109,6 +109,7 @@ select:focus, input:focus { outline: 2px solid rgba(122,46,46,.25); border-color
 .year-map-heading h2 { margin: 0; color: var(--accent); font-size: 1.28rem; }
 .year-map-kicker { margin: 0 0 2px; color: var(--muted); font-size: .76rem; letter-spacing: .12em; }
 .year-map-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.year-map-actions [hidden] { display: none; }
 .year-map-actions a,.year-map-actions button {
   display: inline-block;
   padding: 6px 10px;
@@ -858,3 +859,9 @@ body[data-theme] input:focus { outline-color: color-mix(in srgb, var(--accent) 2
   line-height: 1.65;
   white-space: pre-line;
 }
+.liang-review-links{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center}
+.liang-pending-counties{margin:24px 0;border-top:1px solid var(--line,#c9c0ae);padding:16px 20px;background:#fffdf7}
+.liang-pending-counties>summary{font-size:1.12rem;font-weight:700;cursor:pointer}
+.liang-pending-counties>p{line-height:1.7;margin:10px 0}
+.liang-pending-county-link{font:inherit;color:inherit;background:transparent;border:0;border-bottom:1px dotted currentColor;cursor:pointer;padding:0}
+.liang-local-officer-name{font-weight:600}

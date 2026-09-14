@@ -1,0 +1,507 @@
+{
+  "status": "pass",
+  "officials_file": "data/liang-officials-reviewed.json",
+  "tenure_count": 29,
+  "annual_record_count": 30,
+  "excluded_count": 8,
+  "citation_count": 80,
+  "sources": {
+    "梁书": {
+      "filename": "【二十四史】08：梁书 (姚思廉) (z-library.sk, 1lib.sk, z-lib.sk).epub",
+      "sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee",
+      "paragraphs": 2704
+    },
+    "陈书": {
+      "filename": "【二十四史】09：陈书 (姚思廉) (z-library.sk, 1lib.sk, z-lib.sk).epub",
+      "sha256": "46124feb6a153a6365fecaf1741ce0fd231d441348d8f7120e1c1d405df83303",
+      "paragraphs": 1445
+    }
+  },
+  "limitations": [
+    "Verifies transcription and evidence locators, not the historical interpretation of appointments, service, or calendar conversion.",
+    "Uses complete supplied EPUBs locally; does not export source paragraphs or upload them."
+  ],
+  "failures": [],
+  "checks": [
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[0].evidence[0]",
+      "paragraph_id": "LS-C16-P0025",
+      "book": "梁书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[0].evidence[1]",
+      "paragraph_id": "LS-C16-P0019",
+      "book": "梁书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[1].evidence[0]",
+      "paragraph_id": "LS-C16-P0026",
+      "book": "梁书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[1].evidence[1]",
+      "paragraph_id": "LS-C16-P0025",
+      "book": "梁书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[2].evidence[0]",
+      "paragraph_id": "LS-C20-P0013",
+      "book": "梁书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[2].evidence[1]",
+      "paragraph_id": "LS-C20-P0010",
+      "book": "梁书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[3].evidence[0]",
+      "paragraph_id": "LS-C19-P0020",
+      "book": "梁书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[3].evidence[1]",
+      "paragraph_id": "LS-C19-P0019",
+      "book": "梁书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[4].evidence[0]",
+      "paragraph_id": "LS-C19-P0021",
+      "book": "梁书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[5].evidence[0]",
+      "paragraph_id": "LS-C19-P0021",
+      "book": "梁书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[5].evidence[1]",
+      "paragraph_id": "LS-C19-P0021",
+      "book": "梁书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[5].evidence[2]",
+      "paragraph_id": "LS-C19-P0022",
+      "book": "梁书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[6].evidence[0]",
+      "paragraph_id": "LS-C14-P0011",
+      "book": "梁书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[6].evidence[1]",
+      "paragraph_id": "LS-C14-P0007",
+      "book": "梁书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[7].evidence[0]",
+      "paragraph_id": "LS-C55-P0029",
+      "book": "梁书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[7].evidence[1]",
+      "paragraph_id": "LS-C55-P0026",
+      "book": "梁书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[7].evidence[2]",
+      "paragraph_id": "LS-C55-P0029",
+      "book": "梁书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[8].evidence[0]",
+      "paragraph_id": "LS-C53-P0066",
+      "book": "梁书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[9].evidence[0]",
+      "paragraph_id": "LS-C51-P0006",
+      "book": "梁书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[9].evidence[1]",
+      "paragraph_id": "LS-C51-P0006",
+      "book": "梁书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[10].evidence[0]",
+      "paragraph_id": "LS-C37-P0018",
+      "book": "梁书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[10].evidence[1]",
+      "paragraph_id": "LS-C37-P0015",
+      "book": "梁书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[11].evidence[0]",
+      "paragraph_id": "LS-C39-P0009",
+      "book": "梁书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[11].evidence[1]",
+      "paragraph_id": "LS-C39-P0009",
+      "book": "梁书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[11].evidence[2]",
+      "paragraph_id": "LS-C39-P0009",
+      "book": "梁书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[12].evidence[0]",
+      "paragraph_id": "LS-C07-P0005",
+      "book": "梁书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[12].evidence[1]",
+      "paragraph_id": "LS-C07-P0005",
+      "book": "梁书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[13].evidence[0]",
+      "paragraph_id": "LS-C08-P0004",
+      "book": "梁书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[13].evidence[1]",
+      "paragraph_id": "LS-C08-P0004",
+      "book": "梁书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[13].evidence[2]",
+      "paragraph_id": "LS-C08-P0004",
+      "book": "梁书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[14].evidence[0]",
+      "paragraph_id": "LS-C08-P0005",
+      "book": "梁书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[14].evidence[1]",
+      "paragraph_id": "LS-C08-P0005",
+      "book": "梁书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[15].evidence[0]",
+      "paragraph_id": "LS-C08-P0005",
+      "book": "梁书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[15].evidence[1]",
+      "paragraph_id": "LS-C08-P0005",
+      "book": "梁书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[16].evidence[0]",
+      "paragraph_id": "LS-C29-P0034",
+      "book": "梁书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[17].evidence[0]",
+      "paragraph_id": "LS-C43-P0047",
+      "book": "梁书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[17].evidence[1]",
+      "paragraph_id": "LS-C43-P0051",
+      "book": "梁书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[17].evidence[2]",
+      "paragraph_id": "LS-C43-P0052",
+      "book": "梁书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[18].evidence[0]",
+      "paragraph_id": "CS-C35-P0036",
+      "book": "陈书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[18].evidence[1]",
+      "paragraph_id": "CS-C35-P0036",
+      "book": "陈书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[18].evidence[2]",
+      "paragraph_id": "CS-C35-P0037",
+      "book": "陈书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[19].evidence[0]",
+      "paragraph_id": "CS-C16-P0004",
+      "book": "陈书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[19].evidence[1]",
+      "paragraph_id": "CS-C16-P0003",
+      "book": "陈书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[20].evidence[0]",
+      "paragraph_id": "CS-C11-P0014",
+      "book": "陈书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[21].evidence[0]",
+      "paragraph_id": "CS-C36-P0010",
+      "book": "陈书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[21].evidence[1]",
+      "paragraph_id": "CS-C36-P0009",
+      "book": "陈书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[22].evidence[0]",
+      "paragraph_id": "CS-C36-P0019",
+      "book": "陈书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[22].evidence[1]",
+      "paragraph_id": "CS-C36-P0017",
+      "book": "陈书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[22].evidence[2]",
+      "paragraph_id": "CS-C36-P0019",
+      "book": "陈书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[23].evidence[0]",
+      "paragraph_id": "CS-C36-P0027",
+      "book": "陈书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[23].evidence[1]",
+      "paragraph_id": "CS-C36-P0024",
+      "book": "陈书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[24].evidence[0]",
+      "paragraph_id": "CS-C18-P0023",
+      "book": "陈书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[24].evidence[1]",
+      "paragraph_id": "CS-C18-P0023",
+      "book": "陈书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[25].evidence[0]",
+      "paragraph_id": "LS-C52-P0056",
+      "book": "梁书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[25].evidence[1]",
+      "paragraph_id": "LS-C52-P0056",
+      "book": "梁书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[25].evidence[2]",
+      "paragraph_id": "LS-C52-P0052",
+      "book": "梁书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[26].evidence[0]",
+      "paragraph_id": "LS-C55-P0016",
+      "book": "梁书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[26].evidence[1]",
+      "paragraph_id": "LS-C55-P0016",
+      "book": "梁书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[26].evidence[2]",
+      "paragraph_id": "LS-C55-P0016",
+      "book": "梁书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[26].evidence[3]",
+      "paragraph_id": "LS-C55-P0008",
+      "book": "梁书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[27].evidence[0]",
+      "paragraph_id": "LS-C23-P0012",
+      "book": "梁书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[27].evidence[1]",
+      "paragraph_id": "LS-C23-P0012",
+      "book": "梁书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[27].evidence[2]",
+      "paragraph_id": "LS-C23-P0009",
+      "book": "梁书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[27].evidence[3]",
+      "paragraph_id": "LS-C23-P0012",
+      "book": "梁书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[28].evidence[0]",
+      "paragraph_id": "LS-C23-P0012",
+      "book": "梁书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.records[28].evidence[1]",
+      "paragraph_id": "LS-C23-P0012",
+      "book": "梁书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.excluded[0].evidence[0]",
+      "paragraph_id": "CS-C11-P0014",
+      "book": "陈书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.excluded[1].evidence[0]",
+      "paragraph_id": "CS-C13-P0031",
+      "book": "陈书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.excluded[2].evidence[0]",
+      "paragraph_id": "LS-C19-P0026",
+      "book": "梁书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.excluded[3].evidence[0]",
+      "paragraph_id": "LS-C21-P0023",
+      "book": "梁书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.excluded[4].evidence[0]",
+      "paragraph_id": "LS-C58-P0082",
+      "book": "梁书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.excluded[5].evidence[0]",
+      "paragraph_id": "LS-C55-P0028",
+      "book": "梁书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.excluded[6].evidence[0]",
+      "paragraph_id": "LS-C16-P0025",
+      "book": "梁书"
+    },
+    {
+      "document": "liang-officials-reviewed.json",
+      "json_path": "$.excluded[7].evidence[0]",
+      "paragraph_id": "LS-C55-P0006",
+      "book": "梁书"
+    },
+    {
+      "document": "liang-geography-reviewed.json",
+      "json_path": "$.records[0].evidence[0]",
+      "paragraph_id": "LS-C58-P0075",
+      "book": "梁书"
+    },
+    {
+      "document": "liang-geography-reviewed.json",
+      "json_path": "$.records[0].evidence[1]",
+      "paragraph_id": "LS-C58-P0075",
+      "book": "梁书"
+    },
+    {
+      "document": "liang-geography-reviewed.json",
+      "json_path": "$.records[1].evidence[0]",
+      "paragraph_id": "LS-C58-P0079",
+      "book": "梁书"
+    },
+    {
+      "document": "liang-geography-reviewed.json",
+      "json_path": "$.records[2].evidence[0]",
+      "paragraph_id": "LS-C58-P0079",
+      "book": "梁书"
+    },
+    {
+      "document": "liang-geography-reviewed.json",
+      "json_path": "$.year_evidence[0]",
+      "paragraph_id": "LS-C58-P0070",
+      "book": "梁书"
+    },
+    {
+      "document": "liang-geography-reviewed.json",
+      "json_path": "$.year_evidence[1]",
+      "paragraph_id": "LS-C58-P0082",
+      "book": "梁书"
+    }
+  ]
+}

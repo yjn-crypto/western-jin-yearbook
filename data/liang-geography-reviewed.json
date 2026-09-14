@@ -1,0 +1,133 @@
+{
+  "schema_version": "liang-epub-geography-evidence-v1",
+  "reviewed_on": "2026-09-13",
+  "records": [
+    {
+      "name": "武原郡",
+      "year": 549,
+      "month": 6,
+      "action": "established_by_hou_jing",
+      "counties": [
+        "海盐",
+        "胥浦"
+      ],
+      "evidence": [
+        {
+          "book": "梁书",
+          "volume": 56,
+          "chapter": "列传第五十",
+          "paragraph_id": "LS-C58-P0075",
+          "epub_member": "OEBPS/text00005.html",
+          "chapter_anchor": null,
+          "chapter_paragraph": 75,
+          "file_paragraph": 75,
+          "quote": "六月，景以仪同郭元建为尚书仆射、北道行台、总江北诸军事，镇新秦。",
+          "quote_start": 0,
+          "quote_end": 32,
+          "role": "month_context",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        },
+        {
+          "book": "梁书",
+          "volume": 56,
+          "chapter": "列传第五十",
+          "paragraph_id": "LS-C58-P0075",
+          "epub_member": "OEBPS/text00005.html",
+          "chapter_anchor": null,
+          "chapter_paragraph": 75,
+          "file_paragraph": 75,
+          "quote": "景乃分吴郡海盐、胥浦二县为武原郡。",
+          "quote_start": 86,
+          "quote_end": 103,
+          "role": "office_and_time",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        }
+      ]
+    },
+    {
+      "name": "临江郡",
+      "year": 549,
+      "month": 11,
+      "action": "established_by_hou_jing",
+      "counties": [
+        "钱塘"
+      ],
+      "evidence": [
+        {
+          "book": "梁书",
+          "volume": 56,
+          "chapter": "列传第五十",
+          "paragraph_id": "LS-C58-P0079",
+          "epub_member": "OEBPS/text00005.html",
+          "chapter_anchor": null,
+          "chapter_paragraph": 79,
+          "file_paragraph": 79,
+          "quote": "十一月，宋子仙攻钱塘，戴僧易降。景以钱塘为临江郡，富阳为富春郡。",
+          "quote_start": 0,
+          "quote_end": 32,
+          "role": "office_and_time",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        }
+      ]
+    },
+    {
+      "name": "富春郡",
+      "year": 549,
+      "month": 11,
+      "action": "established_by_hou_jing",
+      "counties": [
+        "富阳"
+      ],
+      "evidence": [
+        {
+          "book": "梁书",
+          "volume": 56,
+          "chapter": "列传第五十",
+          "paragraph_id": "LS-C58-P0079",
+          "epub_member": "OEBPS/text00005.html",
+          "chapter_anchor": null,
+          "chapter_paragraph": 79,
+          "file_paragraph": 79,
+          "quote": "十一月，宋子仙攻钱塘，戴僧易降。景以钱塘为临江郡，富阳为富春郡。",
+          "quote_start": 0,
+          "quote_end": 32,
+          "role": "office_and_time",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        }
+      ]
+    }
+  ],
+  "year_explanation": "《梁书》卷五十六侯景传连续叙事，P0070五月高祖崩指549，P0075六月及P0079十一月在后；P0082才进入大宝元年550。故三郡均始置549，不是550。行为主体侯景，勿写作梁廷主动设置。",
+  "year_evidence": [
+    {
+      "book": "梁书",
+      "volume": 56,
+      "chapter": "列传第五十",
+      "paragraph_id": "LS-C58-P0070",
+      "epub_member": "OEBPS/text00005.html",
+      "chapter_anchor": null,
+      "chapter_paragraph": 70,
+      "file_paragraph": 70,
+      "quote": "五月，高祖崩于文德殿。",
+      "quote_start": 0,
+      "quote_end": 11,
+      "role": "lower_context",
+      "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+    },
+    {
+      "book": "梁书",
+      "volume": 56,
+      "chapter": "列传第五十",
+      "paragraph_id": "LS-C58-P0082",
+      "epub_member": "OEBPS/text00005.html",
+      "chapter_anchor": null,
+      "chapter_paragraph": 82,
+      "file_paragraph": 82,
+      "quote": "大宝元年正月，景矫诏自加班剑四十人，",
+      "quote_start": 0,
+      "quote_end": 18,
+      "role": "next_year_context",
+      "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+    }
+  ]
+}

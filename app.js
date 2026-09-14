@@ -157,11 +157,15 @@
     }
     const info=entity?.qi || entity?.qiao_info;
     if (!info) return null;
+    const verifiedPage=currentDynasty.key==='southern-liang'
+      ? window.LIANG_QIAO_SOURCES?.pages?.[String(info.qiao_table_page_index)] : null;
     const source={
-      book_page:info.book_page || null,
-      pdf_page:info.pdf_page || null,
+      book_page:verifiedPage?.book_page || info.book_page || null,
+      pdf_page:verifiedPage?.pdf_page || info.pdf_page || null,
       page_index:info.qiao_table_page_index ?? null,
-      origin:info.origin || ''
+      origin:info.origin || '',
+      source_title:verifiedPage?.source_title||'',
+      editorial_note:verifiedPage?'○為梁有陳無，△為梁無陳有，無標為梁陳共有；符號不表示全朝每年存續。此處已校合頁碼，同名侨置關係仍須逐條覆核。':''
     };
     const label=`${entity.base_name || entity.name || entity.n || '僑置政區'}：僑置考表頁碼`;
     return makeAnnotation(label,[source],'qiao-note',label);
@@ -386,7 +390,13 @@
   }
 
   // ---------- 南陳地方長官：本年曾任，不以十二月末仍在任為條件 ----------
+  function localOfficerData() {
+    return currentDynasty.key==='southern-liang' ? window.LIANG_LOCAL_OFFICIALS : window.CHEN_LOCAL_OFFICIALS;
+  }
+
   function localOfficerRecords(year) {
+    if(currentDynasty.key==='southern-liang')return (window.LIANG_LOCAL_OFFICIALS?.years?.[String(year)]?.local_officers||[])
+      .filter(record=>Number(record.year)===Number(year)&&['confirmed','probable'].includes(record.annual_presence_status));
     const originals=window.CHEN_LOCAL_OFFICIALS?.years?.[String(year)]?.local_officers||[];
     let records=originals.filter((record)=>Number(record.year)===Number(year)&&['confirmed','probable'].includes(record.annual_presence_status));
     // The user identified these two 588 rows as one appointment to the dual
@@ -415,13 +425,13 @@
   }
 
   function localOfficerTenure(record) {
-    return window.CHEN_LOCAL_OFFICIALS?.tenures_by_id?.[record.official_id]||{};
+    return localOfficerData()?.tenures_by_id?.[record.official_id]||{};
   }
 
   function localOfficerSearchText(record) {
     const tenure=localOfficerTenure(record),technical={...(tenure.technical_trace||{}),...(record.technical_trace||{})};
     return [
-      record.person,window.CHEN_PERSON_FORMATS?.displayName(record.person,record.year)?.text,record.place,record.office,record.full_title,record.level,
+      record.person,currentDynasty.key==='chen'?window.CHEN_PERSON_FORMATS?.displayName(record.person,record.year)?.text:'',record.place,record.office,record.full_title,record.level,
       tenure.person,tenure.place,tenure.office,tenure.full_title,tenure.tenure_nature,tenure.tenure_status,
       record.annual_presence_id,record.official_id,record.person_id,localOfficerValue(technical)
     ].join(' ');
@@ -430,7 +440,7 @@
   function localOfficerInfo(record,year,detachedReason='') {
     return {
       kind:'local-officer',
-      title:window.CHEN_PERSON_FORMATS?.displayName(record.person,year)?.text||record.person||'地方長官',
+      title:(currentDynasty.key==='chen'?window.CHEN_PERSON_FORMATS?.displayName(record.person,year)?.text:'')||record.person||'地方長官',
       summary:`${formatYearLabel(year)} · ${record.place} · ${record.office}`,
       record,
       tenure:localOfficerTenure(record),
@@ -472,7 +482,8 @@
       if(link.attach_to_snapshot!==true||link.hierarchy_active_in_year!==true||link.state_assignment_asserted!==true) {
         detached.push({record,reason:localOfficerDetachedReason(record)});continue;
       }
-      const stateTargets=states.filter((state)=>state.group==='chen'&&state.id===link.state_id);
+      const targetGroup=currentDynasty.key==='southern-liang'?'liang':'chen';
+      const stateTargets=states.filter((state)=>state.group===targetGroup&&state.id===link.state_id);
       const rowTargets=stateTargets.flatMap((state)=>state.rows.filter((row)=>row.id===link.prefecture_id));
       if(stateTargets.length!==1||rowTargets.length!==1) {
         detached.push({record,reason:localOfficerDetachedReason(record)});continue;
@@ -497,7 +508,14 @@
   }
 
   function governorRecords(year) {
-    return governorData()?.years?.[String(year)]?.records || [];
+    const records=governorData()?.years?.[String(year)]?.records || [];
+    if(currentDynasty.key!=='southern-liang')return records;
+    return records.map((record,index)=>{
+      const source=window.LIANG_GOVERNOR_SOURCES?.years?.[String(year)]?.[index];
+      if(!source||source.state!==record.state||source.original_source_page_index!==record.source_page_index
+        ||JSON.stringify(source.original_summary_lines)!==JSON.stringify(record.summary_lines))return {...record,source_alignment_pending:true};
+      return {...record,...source,summary_lines:record.summary_lines};
+    });
   }
 
   function governorSummaryLines(record) {
@@ -558,7 +576,11 @@
           ...(item.evidence.length ? ['該年相關考證與史料：',...item.evidence] : [])
         ]).filter(Boolean)] : []),
         ...((record.editorial_notes||[]).map((t)=>`人工校勘：${t}`)),
-        pageIndexes.length ? `方鎮年表資料頁序：${pageIndexes.join('、')}。` : '',
+        record.dating_note||'',
+        record.source_alignment_pending?'本條摘要尚未與新OCR唯一校合，原有頁序保留待核。':'',
+        pageIndexes.length ? (currentDynasty.key==='southern-liang'
+          ? `方鎮年表PDF第${pageIndexes.map(p=>Number(p)+1).join('、')}頁（OCR頁索引從0起：${pageIndexes.join('、')}）。`
+          : `方鎮年表資料頁序：${pageIndexes.join('、')}。`) : '',
         ...(evidence.length ? ['相關考證與史料：', ...evidence] : [])
       ].filter(Boolean),
       sourceLabel:[data?.meta?.source || '魯力《魏晉南北朝方鎮年表新編·宋齊梁陳卷》方鎮年表',record.supplement_source].filter(Boolean).join('；'),
@@ -726,12 +748,13 @@
         group:'liang',groupLabel:'蕭梁',region:stateEntity.r||'',uncertain:!!sp.uncertain,qiao:!!stateEntity.q,
         source:liangSource(sp.name||stateEntity.n,sp),entity:stateEntity,phase:sp,rows:[]
       };
-      for (const prefEntity of stateEntity.p||[]) {
+      for (const originalPrefEntity of stateEntity.p||[]) {
+        const prefEntity=window.LIANG_COUNTY_MODEL?.correctedPrefecture(originalPrefEntity)||originalPrefEntity;
         const pp=activePhase(prefEntity,year);if(!pp)continue;
         const prefName=pp.name||prefEntity.n;
         const row={
           id:prefEntity.id,name:prefName,order:effectiveOrder(prefEntity,pp,year),uncertain:!!pp.uncertain,qiao:!!prefEntity.q,
-          source:liangSource(prefName,pp),entity:prefEntity,phase:pp,directCounties:false,unknownPrefecture:false,
+          source:pp.source||liangSource(prefName,pp),entity:prefEntity,phase:pp,directCounties:false,unknownPrefecture:false,
           kingdom:false,ruler:null,fiveRankFiefs:[],chenFiefs:[],liangFiefs:[],counties:[]
         };
         const counties=liangCountyIndex.get(normalizeName(prefName))||[];
@@ -750,10 +773,12 @@
       state.rows.sort((a,b)=>a.order-b.order);states.push(state);
     }
     states.sort((a,b)=>a.order-b.order);
+    const reviewedCounties=window.LIANG_COUNTY_MODEL?.attachCounties(states,year);
     const virtualFiefs=attachLiangFiefs(states,year);
     applySouthernPrefectureDisplayNames(states);
     const extraGovernorStates=attachGovernors(states,year,'liang');
-    return {states,virtualFiefs,extraGovernorStates};
+    const detachedLocalOfficers=attachLocalOfficers(states,year);
+    return {states,virtualFiefs,extraGovernorStates,detachedLocalOfficers,pendingCountyAssignments:reviewedCounties?.pending||[]};
   }
 
   function buildChenRegimeStates(regimeKey,year,groupOrder) {
@@ -849,6 +874,7 @@
           if (!old) county.change=makeChange(`${county.name}為本年新增、復置、改名或改隸至${rowName || state.name}`,[county.source],'county',`${state.name}·${rowName || '州直領'}：${county.name}`);
           else if (old.name!==county.name) county.change=makeChange(`${old.name}改稱${county.name}`,[county.source,old.source],'county',`${state.name}·${rowName || '州直領'}：${old.name}→${county.name}`);
           county.annotation=yearNote(county.entity,year);
+          if(county.reviewedAssignment)county.annotation=makeAnnotation(`${county.name}：縣郡歸屬與人工裁決`,[county.source],'editorial-note',`${county.name}：歸屬與時段`);
           county.qiaoAnnotation=qiaoNote(county.entity,county.phase,year);
         }
         if (oldRow) {
@@ -876,7 +902,7 @@
     const register=(change)=>{if(!change||change.number)return; change.number=++number; citationRegistry.set(number,change);};
     for (const state of current.states) { register(state.change); register(state.annotation); register(state.qiaoAnnotation); for (const row of state.rows) {register(row.change); register(row.annotation); register(row.qiaoAnnotation); for (const c of row.counties) {register(c.change); register(c.annotation); register(c.qiaoAnnotation);}} }
     for (const c of removedChanges) register(c);
-    return {states:current.states,virtualFiefs:current.virtualFiefs,extraGovernorStates:current.extraGovernorStates||[],detachedLocalOfficers:current.detachedLocalOfficers||[],removedChanges};
+    return {states:current.states,virtualFiefs:current.virtualFiefs,extraGovernorStates:current.extraGovernorStates||[],detachedLocalOfficers:current.detachedLocalOfficers||[],pendingCountyAssignments:current.pendingCountyAssignments||[],removedChanges};
   }
 
   function createCitationButton(change) {
@@ -1024,6 +1050,10 @@
   }
 
   function appendLocalOfficerName(container,record,year) {
+    if(currentDynasty.key==='southern-liang'){
+      const name=document.createElement('span');name.className='liang-local-officer-name';
+      appendLiangPersonColors(name,record.person,year);container.appendChild(name);return record.person;
+    }
     const display=window.CHEN_PERSON_FORMATS?.displayName(record.person,year)||{text:record.person,canonicalName:record.person};
     const style=window.CHEN_PERSON_FORMATS?.fiefStyle(display.canonicalName,year);
     const name=document.createElement('span');name.className='chen-local-officer-name';name.textContent=display.text;
@@ -1036,16 +1066,17 @@
     const button=createAuxButton('',localOfficerInfo(record,year,detachedReason),className);
     button.style.color='#000000';
     const name=appendLocalOfficerName(button,record,year);
-    button.appendChild(document.createTextNode(`　${record.office}${detachedReason?`（${record.place}）`:''}`));
+    const appointmentOnly=currentDynasty.key==='southern-liang'&&record.tenure_status==='appointment_only';
+    button.appendChild(document.createTextNode(`　${record.office}${appointmentOnly?'〔授官〕':''}${detachedReason?`（${record.place}）`:''}`));
     button.dataset.annualPresenceId=record.annual_presence_id;
     button.dataset.officialId=record.official_id;button.dataset.personId=record.person_id;
-    button.setAttribute('aria-label',`${name}，${record.office}，${detachedReason?`${record.place}，`:''}本年任職${record.annual_presence_status==='probable'?'推定，斜體':'確認，正常字體'}${detachedReason?'，行政區劃未連接':''}`);
+    button.setAttribute('aria-label',`${name}，${record.office}，${detachedReason?`${record.place}，`:''}${appointmentOnly?'本年授官確認，實際履任未詳':`本年任職${record.annual_presence_status==='probable'?'推定，斜體':'確認，正常字體'}`}${detachedReason?'，行政區劃未連接':''}`);
     return button;
   }
 
   function renderLocalOfficerBox(records,year,labelText='地方長官') {
     if(!records?.length)return null;
-    const box=document.createElement('section');box.className='local-officer-box';box.setAttribute('aria-label',`本年曾任${labelText}`);
+    const box=document.createElement('section');box.className='local-officer-box';box.setAttribute('aria-label',`${currentDynasty.key==='southern-liang'?'本年見載':'本年曾任'}${labelText}`);
     const label=document.createElement('span');label.className='local-officer-label';label.textContent=labelText;box.appendChild(label);
     const entries=document.createElement('div');entries.className='local-officer-entries';
     for(const record of records) {
@@ -1157,7 +1188,7 @@
       const officerBox=renderLocalOfficerBox(row.localOfficers,year,'郡級長官');if(officerBox)td1.appendChild(officerBox);
       const ref=document.createElement('span');ref.className='source-ref';
       ref.textContent=currentDynasty.key==='southern-liang'
-        ? `沿革：${row.phase?.raw||'梁代縣級歸屬靜態附入'}`
+        ? `沿革：${row.phase?.raw||'梁代沿革待核'}`
         : row.source?.book_page?`沿革：書內第 ${row.source.book_page} 頁`:'沿革：頁碼待校';
       td1.appendChild(ref);
       if (!row.counties.length) {
@@ -1225,7 +1256,9 @@
     if(!visible.length||stateSelect.value||changedOnly.checked)return null;
     const card=document.createElement('article');card.className='local-officer-detached-card';
     const h=document.createElement('h2');h.textContent='本年地方長官未連接記錄';card.appendChild(h);
-    const note=document.createElement('p');note.className='local-officer-detached-note';note.textContent='下列人物依主表可確認或推定在本年曾任其職，但無法與本年行政區劃快照中的唯一州、郡或縣實體精確連接。記錄完整保留，不據名稱猜配。';card.appendChild(note);
+    const note=document.createElement('p');note.className='local-officer-detached-note';note.textContent=currentDynasty.key==='southern-liang'
+      ? '下列人物依《梁書》《陳書》有本年授官或在任記載，但本年沒有可唯一連接的州郡縣；原文、履任狀態及繫年依據仍可點閱。'
+      : '下列人物依主表可確認或推定在本年曾任其職，但無法與本年行政區劃快照中的唯一州、郡或縣實體精確連接。記錄完整保留，不據名稱猜配。';card.appendChild(note);
     const list=document.createElement('div');list.className='local-officer-detached-list';
     for(const item of visible) {
       const record=item.record,entry=document.createElement('div');entry.className='local-officer-detached-item';
@@ -1238,7 +1271,28 @@
     card.appendChild(list);return card;
   }
 
-  function renderResults(states,virtualFiefs,extraGovernorStates,detachedLocalOfficers,year) {
+  function renderPendingLiangCounties(items,year) {
+    const query=normalizeName(searchInput.value.trim()),selected=stateSelect.value;
+    if(selected||changedOnly.checked)return null;
+    const visible=(items||[]).filter(item=>!query||normalizeName([
+      item.assignment.name,item.assignment.prefecture_name,item.assignment.state_name,item.source.excerpt
+    ].join(' ')).includes(query));
+    if(!visible.length)return null;
+    const card=document.createElement('details');card.className='liang-pending-counties';card.open=!!query;
+    const summary=document.createElement('summary');summary.textContent=`本年未掛接的縣條目（${visible.length}個時段）`;card.appendChild(summary);
+    const note=document.createElement('p');note.textContent='這些縣條目保留了人工意見或待核時段，尚未唯一接入本年政區；列在此處不表示本年確實存在。';card.appendChild(note);
+    for(const item of visible){
+      const row=document.createElement('p');
+      row.appendChild(createAuxButton(`${item.assignment.name} · ${item.assignment.prefecture_name||item.assignment.state_name||'歸屬未定'}`,{
+        title:'縣郡歸屬與時段待核',summary:`${formatYearLabel(year)} · ${item.assignment.name}`,
+        paragraphs:[item.reason],sources:[item.source]
+      },'liang-pending-county-link'));
+      const reason=document.createElement('span');reason.textContent=`　${item.reason}`;row.appendChild(reason);card.appendChild(row);
+    }
+    return card;
+  }
+
+  function renderResults(states,virtualFiefs,extraGovernorStates,detachedLocalOfficers,year,pendingCountyAssignments=[]) {
     results.replaceChildren();
     const filtered=states.filter(stateMatches).map(filteredStateCopy).filter((s)=>s.rows.length || !normalizeName(searchInput.value.trim()));
     if (currentDynasty.key==='western-jin') {
@@ -1250,11 +1304,13 @@
       if (filtered.length) {
         const section=document.createElement('section');section.className='regime-section';
         const heading=document.createElement('h2');heading.className='regime-heading';heading.textContent='蕭梁州郡縣';
-        const small=document.createElement('small');small.textContent='502—557年逐年州郡；梁實縣靜態附入';heading.appendChild(small);section.appendChild(heading);
+        const small=document.createElement('small');small.textContent='502—557年逐年州郡；縣依校勘時段隨郡列示';heading.appendChild(small);section.appendChild(heading);
         for(const state of filtered)section.appendChild(renderState(state,year));results.appendChild(section);anything=true;
       }
       const extraGovernors=renderExtraGovernorStates(extraGovernorStates,year);if(extraGovernors){results.appendChild(extraGovernors);anything=true;}
+      const detached=renderDetachedLocalOfficers(detachedLocalOfficers,year);if(detached){results.appendChild(detached);anything=true;}
       const virtual=renderVirtualFiefs(virtualFiefs,year);if(virtual){results.appendChild(virtual);anything=true;}
+      const pending=renderPendingLiangCounties(pendingCountyAssignments,year);if(pending){results.appendChild(pending);anything=true;}
       if(!anything)results.innerHTML='<div class="no-results">沒有符合目前條件的政區或封爵。</div>';
       return filtered;
     }
@@ -1307,9 +1363,9 @@
 
   function appendSourceEntry(body,source,options={}) {
     const article=document.createElement('article');article.className='source-entry';const h=document.createElement('h3');
-    h.textContent=source.page_index!=null&&!source.book_page&&!source.pdf_page
+    h.textContent=source.source_label || (source.page_index!=null&&!source.book_page&&!source.pdf_page
       ? `僑置考表原記錄頁序 ${source.page_index}（書內／PDF頁碼待校）`
-      : `${source.book_page?`書內第 ${(source.book_pages||[source.book_page]).join('、')} 頁`:'書內頁碼待校'}（${source.pdf_page?`PDF 第 ${(source.pdf_pages||[source.pdf_page]).join('、')} 頁`:'PDF頁碼待校'}）`;
+      : `${source.book_page?`書內第 ${(source.book_pages||[source.book_page]).join('、')} 頁`:'書內頁碼待校'}（${source.pdf_page?`PDF 第 ${(source.pdf_pages||[source.pdf_page]).join('、')} 頁`:'PDF頁碼待校'}）`);
     article.appendChild(h);
     const display=window.SOURCE_ANNOTATIONS?.displaySource(source,options)||{excerpt:source.excerpt,pagesOnly:options.pagesOnly};
     if(display.pagesOnly){body.appendChild(article);return;}
@@ -1337,7 +1393,9 @@
     appendLocalOfficerName(nameLine,{person:record.person||tenure.person||'未標'},info.year||record.year);
     appendLocalOfficerDetailSection(body,'完整官銜',record.full_title||tenure.full_title||record.office||'未標');
     appendLocalOfficerDetailSection(body,'任職時間',time.display||time.normalized||'任期邊界未詳');
-    const annualLabel=record.annual_presence_status==='confirmed'?'confirmed（本年任職可確認，正常字體）':'probable（本年任職為推定，斜體）';
+    if(currentDynasty.key==='southern-liang'&&tenure.source_citation)appendLocalOfficerDetailSection(body,'史料出處',tenure.source_citation);
+    const annualLabel=currentDynasty.key==='southern-liang'?'confirmed（本年原典記載可確認；是否實際履任見下項）'
+      :record.annual_presence_status==='confirmed'?'confirmed（本年任職可確認，正常字體）':'probable（本年任職為推定，斜體）';
     const boundaryLabels={confirmed:'confirmed（任期起止邊界已確認）',probable:'probable（任期邊界為推定）',unknown:'unknown（任期邊界未詳）'};
     appendLocalOfficerDetailSection(body,'確定性',[`本年任職：${annualLabel}`,`任期邊界：${boundaryLabels[record.tenure_boundary_status]||record.tenure_boundary_status||'unknown（未詳）'}`]);
     appendLocalOfficerDetailSection(body,'任職性質',[tenure.tenure_nature||'未另標',tenure.tenure_status?`履任狀態：${tenure.tenure_status}`:'']);
@@ -1401,7 +1459,8 @@
       source_row:trace.master_source_row,
       source_row_sha256:trace.source_row_sha256,
       ...(trace.source_label?{supplement_source:trace.source_label}:{}),
-      master_sha256:record.projection_method==='user_year_specific_supplement'?'不適用：本條為使用者588年專項補訂，未寫回原Excel':window.CHEN_LOCAL_OFFICIALS?.meta?.source_master_sha256
+      ...(currentDynasty.key==='southern-liang'?{epub_trace:trace}:{}),
+      master_sha256:record.projection_method==='user_year_specific_supplement'?'不適用：本條為使用者588年專項補訂，未寫回原Excel':localOfficerData()?.meta?.source_master_sha256
     };
     for(const [key,value] of Object.entries(technicalEntries)){
       const dt=document.createElement('dt');dt.textContent=key;const dd=document.createElement('dd');dd.textContent=localOfficerValue(value);dl.append(dt,dd);
@@ -2086,10 +2145,11 @@
       '明州、利州等正文只知所領縣而所領郡乏考者，表格標為「郡無考」，不使用後世概念「州直領」。地圖治所與可用行政界線以CHGIS V6為主，V4補州界、V5補郡界；沒有坐標者不臆造位置。永定元年至天嘉三年、太建五年至太建十一年改用使用者保存的史圖館相應或最近年份地圖矢量化疆域，其餘年份仍明示採ChinaXMap 572年斷面近似。史圖館固定畫布以建康、江陵、武陵、廣州（番禺）、交趾、海南六處控制點配準至CHGIS／網頁經緯網；江陵本屬後梁，只作為地理錨點，不據此併入陳境。配準後僅在海岸帶依地形底圖校準東南海岸，大陸海岸約束先排除海南，海南只在史圖館原圖判定屬陳時以獨立島形併入，保留瓊州海峽。太建元年廣州叛亂面先依海陸掩膜裁至陸地，再保留在陳境內並另作疊加層。'
     ] : currentDynasty.key==='southern-liang' ? [
       '頁面依據《中國行政區劃通史·三國兩晉南朝卷（下）》第八編，按書中原有次序重建公元502—557年蕭梁州、郡級政區的逐年年末狀態。原書以問號、「前」「後」等表示的斷限仍以「※」保留，不改作確定年份。',
-      '梁代實縣目前不做逐年變化：優先採用梁縣考證中的直接關係，其次採用齊末統屬，再以558年陳代統屬補充。744個梁實縣條目中，556個已確認所屬郡並靜態附入，188個多候選或無對應條目留待人工校勘，不強行放入任何郡。',
-      '僑州、僑郡、僑縣以下劃線顯示；能由第十編僑州郡縣考表精確匹配者，可點擊註釋查看已有原書頁碼、PDF頁碼或待校的考表頁序；重複表格文字暫停展示。梁代保留僑州，不套用南陳“不列無實土僑州”的規則。',
+      '744條梁實縣以《蕭梁未確認縣郡歸屬_機器複核.xlsx》及其中後加人工裁決為依據，縣直接隨郡列示。已知建縣、改名、改屬、得失及省廢時段分別生效，按人工表保留改屬／省廢當年；這一縣級沿革口徑與州郡年末快照有別。表中502、557等展示界不是一律確定的建廢年，人工暫定與年代存疑仍以※顯示。只接入同年、同地域且唯一對應的郡；只知州、同名郡多候選及年代未能投射者可在頁末查閱原意見。',
+      '僑州、僑郡、僑縣以下劃線顯示；第十編的○指梁有陳無，△指梁無陳有，無標指梁陳共有，均不能推為全朝逐年存續。本輪補校舊標記所引15個頁面的書內／PDF頁碼，並按江陽郡考釋撤去東江陽郡漢安、綿水兩條實縣的同名誤配下劃線。其他舊侨置匹配仍待逐條複核，尚未完成全部侨州郡縣的重建。',
       '宗室王國、郡公與縣級開國爵依蕭梁封爵資料附於同名政區；只有本年能唯一匹配的政區才直接附入，無同名政區或存在多個同名政區者集中列入「未唯一定位的蕭梁封爵」。凡本年郡級政區已附有任何封國，其逐年顯示名由「某某郡」寫作「某某國」，但不改底層郡名、穩定ID、治所與沿革。封君起訖不明、承襲空檔與服喪仍按原頁規則明示。',
       '都督、刺史等長官依《魏晉南北朝方鎮年表新編》梁方鎮年表逐年附入各州，每位人物獨佔一行；本年有可點擊方鎮資料的州，在州名後按州序標出從{1}重新編起的索引，點擊索引、州名或「都督/刺史」均可查看年表頁序。同名州先依正史方鎮的常設大州、當年實轄郡數及上下年沿革連續性判定；證據仍不足者才另列「方鎮表另見之州」，不據官銜反推行政建置。',
+      '方鎮表首年列全朝可考州名是目錄體例，並非該年俱存；末年可能集中年不詳人物，不能一律視為當年確任。本輪校合原有逐年摘要並補錄考證，繫年疑問保留原書按語。郡縣長官第一批據《梁書》《陳書》逐條審核：只發布有年度證據的任次，未行、不拜、贈官等另存待核或排除。官員表示「本年有授官或在任記載」；〔授官〕只確認任命，實際履任未詳；不擴充成完整連續任期；同年多任不憑排列順序推前後。',
       '地圖僅顯示534年與555年兩個CHGIS基準斷面：544年以前選用534年圖，545年以後選用555年圖。它們只提供鄰近年份的空間參考，不把單年邊界外推為502—557年逐年精確疆域。',
       '都督／刺史與封國國君的人名色彩取自「梁代職官查詢換算系統」刺史年表：皇弟紅、皇子深紅、庶姓綠、皇弟皇子之庶子藍、嗣王紫、疏屬褐、昭明太子諸子橙、皇太子諸子黃、蕃王洋紅、特封郡王玫紅。色彩按「人物＋年份」逐年套用，同一人物跨年身份變化時保留各年的來源顏色；該年表中當年未見的人物保持原樣。只有同一人物同一年顏色互相衝突時，才不自動著色並等待人工覆核。'
     ] : [
@@ -2101,7 +2161,7 @@
     $('footerText').textContent=currentDynasty.key==='chen'
       ? '資料依據：《中國行政區劃通史·三國兩晉南朝卷（下）》南朝陳政區；master_officials_final.xlsx任次主表及既有人工裁決、證據映射；魯力《魏晉南北朝方鎮年表新編·宋齊梁陳卷》方鎮長官；史圖館中國歷代疆域變遷地圖；封爵資料另見頁面說明。'
       : currentDynasty.key==='southern-liang'
-        ? '資料依據：《中國行政區劃通史·三國兩晉南朝卷（下）》蕭梁政區；《魏晉南北朝方鎮年表新編》梁方鎮年表；封爵與僑置資料見頁面說明。'
+        ? '資料依據：《中國行政區劃通史·三國兩晉南朝卷（下）》；縣郡人工複核工作簿；魯力《魏晉南北朝方鎮年表新編》；《梁書》《陳書》EPUB。首輪範圍、制度研究與待補資料見頁面連結。'
         : '資料依據：《中國行政區劃通史·三國兩晉南朝卷（上）》西晉州郡縣沿革。';
   }
 
@@ -2131,16 +2191,19 @@
     updateGovernorYearbookSwitch(year);
     const chenAdministrativeBaseline=currentDynasty.key==='chen'&&year===558;
     const current=buildSnapshot(year), baseline=year===currentDynasty.years[0]||chenAdministrativeBaseline, previous=baseline?current:buildSnapshot(year-1), compared=compareSnapshots(current,previous,year);
-    const visible=renderResults(compared.states,compared.virtualFiefs,compared.extraGovernorStates,compared.detachedLocalOfficers,year), removed=filterRemoved(compared.removedChanges);
+    const visible=renderResults(compared.states,compared.virtualFiefs,compared.extraGovernorStates,compared.detachedLocalOfficers,year,compared.pendingCountyAssignments), removed=filterRemoved(compared.removedChanges);
     renderSummary(visible,removed);renderChangePanel(visible,removed);
     renderYearMap(year,current);
     $('statusText').textContent=currentDynasty.key==='chen'&&year===557
       ? `永定元年（557）只顯示史圖館矢量化疆域；現有《中國行政區劃通史》州郡縣資料從558年開始，故本年不反向補造行政區劃表。本年${localOfficerRecords(year).length}條地方長官記錄保留在「未連接記錄」區，不反向補造行政隸屬。`
       : baseline
       ? `${formatYearLabel(year)}為${currentDynasty.label}行政資料起始年，不以缺失的前一年判定變動；州、郡、縣保留原書次序。`
-      : `${formatYearLabel(year)}所示為年末狀態；與${formatYearLabel(year-1)}年末相比的行政區劃變動以加粗及註釋標示。${currentDynasty.key==='chen'?'陳代資料屬OCR初抽取與輯考重建；各州「都督/刺史」逐人分行列示，州名後的{n}為本年從1重編的可點擊方鎮資料索引，後梁、王琳只在政權存續年份顯示。':currentDynasty.key==='southern-liang'?`蕭梁州郡逐年重建；556個已確認梁實縣靜態附入，另有${window.LIANG_COUNTY_OVERLAY?.meta?.manual_review||188}個待人工判斷。各州「都督/刺史」逐人分行列示，州名後的{n}為本年從1重編的可點擊方鎮資料索引。`:''}`;
+      : `${formatYearLabel(year)}所示為年末狀態；與${formatYearLabel(year-1)}年末相比的行政區劃變動以加粗及註釋標示。${currentDynasty.key==='chen'?'陳代資料屬OCR初抽取與輯考重建；各州「都督/刺史」逐人分行列示，州名後的{n}為本年從1重編的可點擊方鎮資料索引，後梁、王琳只在政權存續年份顯示。':''}`;
+    if(currentDynasty.key==='southern-liang')$('statusText').textContent=`${formatYearLabel(year)}：州郡依沿革逐年列示；縣隨郡列示，按人工表保留改屬、省廢當年，新郡縣不提前顯示。${localOfficerRecords(year).length}條郡縣長官為本年見載；〔授官〕的實際履任未詳，任期邊界另見原文；※為歸屬、年代或辨字存疑。`;
     const title=currentDynasty.key==='chen'
       ? `南陳·${formatYearLabel(year)}州郡縣表`
+      : currentDynasty.key==='southern-liang'
+      ? `蕭梁·${formatYearLabel(year)}州郡縣表`
       : `${currentDynasty.label}·${formatYearLabel(year)}年末州郡縣表`;
     document.title=title;$('pageTitle').textContent=title;
   }
@@ -2156,11 +2219,13 @@
     const hasSouthernLayers=currentDynasty.key==='chen'||currentDynasty.key==='southern-liang';
     const qiaoLegend=$('qiaoLegend'); if(qiaoLegend) qiaoLegend.hidden=!hasSouthernLayers;
     const governorLegend=$('governorLegend'); if(governorLegend) governorLegend.hidden=!hasSouthernLayers;
-    if(localOfficerLegend)localOfficerLegend.hidden=currentDynasty.key!=='chen';
+    if(localOfficerLegend){localOfficerLegend.hidden=!hasSouthernLayers;localOfficerLegend.innerHTML=currentDynasty.key==='southern-liang'
+      ?'<i class="legend-local-officer">地方長官</i> 本年見載；〔授官〕履任未詳'
+      :'<i class="legend-local-officer">地方長官</i> 本年曾任；<i class="legend-local-officer probable">斜體</i> 為推定';}
     const liangColorLegend=$('liangColorLegend');if(liangColorLegend)liangColorLegend.hidden=currentDynasty.key!=='southern-liang';
     if(liangReviewPanel)liangReviewPanel.hidden=currentDynasty.key!=='southern-liang';
     if(governorYearbookSwitch)governorYearbookSwitch.hidden=!['southern-liang','chen'].includes(currentDynasty.key);
-    if(liangReviewCount)liangReviewCount.textContent=window.LIANG_COUNTY_OVERLAY?.meta?.manual_review||188;
+    if(liangReviewCount)liangReviewCount.textContent=window.LIANG_COUNTY_REVIEWED?.meta?.manual_records??0;
     searchInput.value='';changedOnly.checked=false;populateYears();
     if(!initialLocationApplied&&requestedDynasty===currentDynasty.key&&requestedYear&&[...yearSelect.options].some((option)=>Number(option.value)===requestedYear))yearSelect.value=String(requestedYear);
     populateStates(Number(yearSelect.value));

@@ -1,0 +1,328 @@
+{
+  "meta": {
+    "source": "魯力《魏晉南北朝方鎮年表新編·宋齊梁陳卷》（2023）",
+    "source_filename": "15366762.pdf_by_PaddleOCR-VL-1.6.json",
+    "source_sha256": "033eea8e97f3e654d3db3e12042458bff1255d9af4d2ad199fdff7bf634d793e",
+    "governors_sha256": "beebb79bc808e94cca6951dde740ab270c918508d423f7f538ca2658cab918b0",
+    "page_index_base": 0,
+    "pdf_page_rule": "page_index + 1",
+    "total_records": 1049,
+    "matched_records": 1010,
+    "unmatched_records": 39,
+    "rule": "僅補充已存在的逐年方鎮条目；第一年全部州名目錄不新增為本年政區，末年集中繫年不改為確任。"
+  },
+  "unmatched": [
+    {
+      "year": 502,
+      "state": "南徐州",
+      "source_page_index": 393,
+      "candidate_count": 1,
+      "matching_count": 0,
+      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+    },
+    {
+      "year": 502,
+      "state": "郢州",
+      "source_page_index": 404,
+      "candidate_count": 1,
+      "matching_count": 0,
+      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+    },
+    {
+      "year": 502,
+      "state": "北益州",
+      "source_page_index": 409,
+      "candidate_count": 1,
+      "matching_count": 0,
+      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+    },
+    {
+      "year": 504,
+      "state": "司州",
+      "source_page_index": 424,
+      "candidate_count": 1,
+      "matching_count": 0,
+      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+    },
+    {
+      "year": 504,
+      "state": "梁州",
+      "source_page_index": 425,
+      "candidate_count": 1,
+      "matching_count": 0,
+      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+    },
+    {
+      "year": 507,
+      "state": "南徐州",
+      "source_page_index": 433,
+      "candidate_count": 1,
+      "matching_count": 0,
+      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+    },
+    {
+      "year": 507,
+      "state": "南兗州",
+      "source_page_index": 433,
+      "candidate_count": 1,
+      "matching_count": 0,
+      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+    },
+    {
+      "year": 507,
+      "state": "湘州",
+      "source_page_index": 435,
+      "candidate_count": 1,
+      "matching_count": 0,
+      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+    },
+    {
+      "year": 508,
+      "state": "南徐州",
+      "source_page_index": 436,
+      "candidate_count": 1,
+      "matching_count": 0,
+      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+    },
+    {
+      "year": 508,
+      "state": "江州",
+      "source_page_index": 436,
+      "candidate_count": 1,
+      "matching_count": 0,
+      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+    },
+    {
+      "year": 508,
+      "state": "司州",
+      "source_page_index": 439,
+      "candidate_count": 1,
+      "matching_count": 0,
+      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+    },
+    {
+      "year": 513,
+      "state": "郢州",
+      "source_page_index": 453,
+      "candidate_count": 1,
+      "matching_count": 0,
+      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+    },
+    {
+      "year": 516,
+      "state": "梁州",
+      "source_page_index": 463,
+      "candidate_count": 1,
+      "matching_count": 0,
+      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+    },
+    {
+      "year": 517,
+      "state": "雍州",
+      "source_page_index": 465,
+      "candidate_count": 1,
+      "matching_count": 0,
+      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+    },
+    {
+      "year": 520,
+      "state": "南徐州",
+      "source_page_index": 473,
+      "candidate_count": 1,
+      "matching_count": 0,
+      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+    },
+    {
+      "year": 520,
+      "state": "郢州",
+      "source_page_index": 474,
+      "candidate_count": 1,
+      "matching_count": 0,
+      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+    },
+    {
+      "year": 520,
+      "state": "益州",
+      "source_page_index": 474,
+      "candidate_count": 1,
+      "matching_count": 0,
+      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+    },
+    {
+      "year": 526,
+      "state": "豫州",
+      "source_page_index": 489,
+      "candidate_count": 1,
+      "matching_count": 0,
+      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+    },
+    {
+      "year": 531,
+      "state": "梁州",
+      "source_page_index": 504,
+      "candidate_count": 1,
+      "matching_count": 0,
+      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+    },
+    {
+      "year": 537,
+      "state": "青州",
+      "source_page_index": 521,
+      "candidate_count": 1,
+      "matching_count": 0,
+      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+    },
+    {
+      "year": 541,
+      "state": "郢州",
+      "source_page_index": 530,
+      "candidate_count": 1,
+      "matching_count": 0,
+      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+    },
+    {
+      "year": 543,
+      "state": "衡州",
+      "source_page_index": 535,
+      "candidate_count": 1,
+      "matching_count": 0,
+      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+    },
+    {
+      "year": 547,
+      "state": "北兗州",
+      "source_page_index": 544,
+      "candidate_count": 1,
+      "matching_count": 0,
+      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+    },
+    {
+      "year": 547,
+      "state": "南豫州",
+      "source_page_index": 544,
+      "candidate_count": 1,
+      "matching_count": 0,
+      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+    },
+    {
+      "year": 549,
+      "state": "信州",
+      "source_page_index": 566,
+      "candidate_count": 1,
+      "matching_count": 0,
+      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+    },
+    {
+      "year": 550,
+      "state": "義州",
+      "source_page_index": 571,
+      "candidate_count": 1,
+      "matching_count": 0,
+      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+    },
+    {
+      "year": 551,
+      "state": "東徐州",
+      "source_page_index": 580,
+      "candidate_count": 1,
+      "matching_count": 0,
+      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+    },
+    {
+      "year": 551,
+      "state": "巴州",
+      "source_page_index": 582,
+      "candidate_count": 1,
+      "matching_count": 0,
+      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+    },
+    {
+      "year": 551,
+      "state": "梁州",
+      "source_page_index": 583,
+      "candidate_count": 2,
+      "matching_count": 0,
+      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+    },
+    {
+      "year": 552,
+      "state": "江州",
+      "source_page_index": 587,
+      "candidate_count": 1,
+      "matching_count": 0,
+      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+    },
+    {
+      "year": 552,
+      "state": "高州",
+      "source_page_index": 587,
+      "candidate_count": 2,
+      "matching_count": 0,
+      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+    },
+    {
+      "year": 552,
+      "state": "南豫州",
+      "source_page_index": 588,
+      "candidate_count": 1,
+      "matching_count": 0,
+      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+    },
+    {
+      "year": 552,
+      "state": "青州",
+      "source_page_index": 589,
+      "candidate_count": 1,
+      "matching_count": 0,
+      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+    },
+    {
+      "year": 554,
+      "state": "揚州",
+      "source_page_index": 603,
+      "candidate_count": 1,
+      "matching_count": 0,
+      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+    },
+    {
+      "year": 555,
+      "state": "北徐州",
+      "source_page_index": 612,
+      "candidate_count": 1,
+      "matching_count": 0,
+      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+    },
+    {
+      "year": 555,
+      "state": "南豫州",
+      "source_page_index": 612,
+      "candidate_count": 1,
+      "matching_count": 0,
+      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+    },
+    {
+      "year": 556,
+      "state": "南徐州",
+      "source_page_index": 617,
+      "candidate_count": 1,
+      "matching_count": 0,
+      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+    },
+    {
+      "year": 556,
+      "state": "高州",
+      "source_page_index": 618,
+      "candidate_count": 2,
+      "matching_count": 0,
+      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+    },
+    {
+      "year": 557,
+      "state": "南豫州",
+      "source_page_index": 623,
+      "candidate_count": 1,
+      "matching_count": 0,
+      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+    }
+  ]
+}

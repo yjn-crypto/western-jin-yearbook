@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>漢魏六朝年末州郡縣表</title>
   <meta name="description" content="依據《中國行政區劃通史》逐年重建漢魏六朝年末州郡縣，並附封國資料。">
-  <link rel="stylesheet" href="style.css?v=20260913.1">
+  <link rel="stylesheet" href="style.css?v=20260914.1">
 </head>
 <body data-theme="metal">
   <header class="site-header">
@@ -116,9 +116,13 @@
     <section id="liangReviewPanel" class="liang-review-panel" hidden>
       <div>
         <h2>縣級人工校勘</h2>
-        <p><strong id="liangReviewCount">188</strong> 個梁實縣條目尚未唯一確認所屬郡；它們不會被強行放入任何郡。</p>
+        <p>已讀入 <strong id="liangReviewCount">87</strong> 條人工意見。縣隨郡列示，改屬／省廢當年保留；暫定歸屬及年代疑點以※標示，尚未掛接者另列於頁末。</p>
       </div>
-      <a href="data/蕭梁未確認縣郡歸屬.xlsx" download>下載人工判斷 Excel</a>
+      <div class="liang-review-links">
+        <a href="reports/liang-first-round.md">首輪完成項與待補資料</a>
+        <a href="reports/liang-institutions-research.md">地方行政與封爵制度研究</a>
+        <a href="data/liang-county-reviewed.json" download>下載縣郡校勘資料</a>
+      </div>
     </section>
 
     <section id="textMapLinkControl" class="text-map-link-control" hidden aria-label="文字與地圖聯動設定">
@@ -164,6 +168,12 @@
   <script src="data/liang-data.js"></script>
   <script src="data/liang-governors.js"></script>
   <script src="data/liang-county-overlay.js"></script>
+  <script src="data/liang-county-reviewed.js"></script>
+  <script src="data/liang-administrative-corrections.js"></script>
+  <script src="data/liang-qiao-sources.js"></script>
+  <script src="data/liang-governor-sources.js"></script>
+  <script src="data/liang-local-officials.js"></script>
+  <script src="liang-county-model.js"></script>
   <script src="data/liang-fiefs.js"></script>
   <script src="data/liang-person-colors.js"></script>
   <script src="data/chen-data.js"></script>
@@ -182,6 +192,6 @@
   <script src="data/chen-qiao-prefaces.js?v=20260912.3"></script>
   <script src="source-annotations.js?v=20260912.3"></script>
   <script src="governor-history.js?v=20260912.1"></script>
-  <script src="app.js?v=20260913.2"></script>
+  <script src="app.js?v=20260914.1"></script>
 </body>
 </html>

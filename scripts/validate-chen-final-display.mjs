@@ -38,6 +38,7 @@ context.createAuxButton = (text, info, className) => {
   element.className = className; element.title = info.summary; return element;
 };
 context.localOfficerInfo = record => ({summary: record.person});
+context.currentDynasty = {key:'chen',label:'南陳'};
 for (const name of ['appendChenPersonColors', 'createChenColoredAuxButton', 'appendLocalOfficerName',
   'createLocalOfficerButton', 'activeChenDisplay', 'chenFiefText', 'localOfficerRecords',
   'localOfficerDetachedReason', 'sortLocalOfficers', 'attachLocalOfficers']) vm.runInContext(extract(name), context);

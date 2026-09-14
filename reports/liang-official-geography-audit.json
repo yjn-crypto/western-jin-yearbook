@@ -1,0 +1,657 @@
+{
+  "meta": {
+    "schema_version": "liang-epub-officials-reviewed-v1",
+    "title": "萧梁郡县长官：EPUB原典首轮精校",
+    "reviewed_on": "2026-09-13",
+    "scope_years": [
+      502,
+      557
+    ],
+    "record_count": 29,
+    "annual_record_count": 30,
+    "reviewed_exclusion_count": 8,
+    "annual_semantics": "annual_evidence_not_year_end_current",
+    "projection_rule": "Only explicitly reviewed annual_presence_years are visible. Never expand start/end bounds, relative vagueness, or infer ±3 years.",
+    "scope_note": "首批样本，不代表两书全部任次或任何一年任官完备。appointment_only仅证明有年授官；appointment_with_service_context另有履任叙事但未必有当年抵郡日期；served用于明确在任事件。",
+    "locator_note": "chapter_paragraph counts all nonempty HTML p blocks from TOC chapter start, including headings; file_paragraph counts every p in the member.",
+    "source_books": [
+      {
+        "book": "LS",
+        "source_filename": "【二十四史】08：梁书 (姚思廉) (z-library.sk, 1lib.sk, z-lib.sk).epub",
+        "sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee",
+        "paragraph_count": 2704,
+        "candidate_count": 552
+      },
+      {
+        "book": "CS",
+        "source_filename": "【二十四史】09：陈书 (姚思廉) (z-library.sk, 1lib.sk, z-lib.sk).epub",
+        "sha256": "46124feb6a153a6365fecaf1741ce0fd231d441348d8f7120e1c1d405df83303",
+        "paragraph_count": 1445,
+        "candidate_count": 346
+      }
+    ],
+    "privacy": "Complete corpus and candidate indices stay local; this selected dataset uses short public-domain historical quotations.",
+    "geography_rule": "Original place names are preserved. Bind independently to entity IDs; ambiguous or unmatched names remain unbound, never pick first same-name result.",
+    "independent_review": {
+      "reviewed_on": "2026-09-13",
+      "record_count": 29,
+      "result": "29条纪年锚经全文上下文复核；6条改为仅任命见载；撤除萧子显推定精确卒年；补王志南郡后官边界出处。",
+      "changed_tenure_status_ids": [
+        "LIANG-EPUB-0005",
+        "LIANG-EPUB-0007",
+        "LIANG-EPUB-0020",
+        "LIANG-EPUB-0025",
+        "LIANG-EPUB-0028",
+        "LIANG-EPUB-0029"
+      ],
+      "date_precision_correction_ids": [
+        "LIANG-EPUB-0011"
+      ],
+      "evidence_completion_ids": [
+        "LIANG-EPUB-0028"
+      ],
+      "scope": "Only this reviewed JSON and the institutional research report were edited; build_reviewed_officials.py still represents first-pass decisions and must not overwrite this review."
+    },
+    "source_master_sha256": "1eb074e2dde64e172a2b84a7649a159f070bbc15fc89f4b8a5d249895421e257",
+    "build_method": "reviewed_annual_anchors_and_unique_active_entity",
+    "link_note": "同名而多候選或不存在者保留獨立任次。唯一連接只表示對應目前政區底表，底表的年代不確仍保留。",
+    "attached_annual_records": 24,
+    "detached_annual_records": 6
+  },
+  "records": [
+    {
+      "annual_presence_id": "LIANG-EPUB-0001-503",
+      "person": "任昉",
+      "place": "义兴",
+      "year": 503,
+      "target_level": "prefecture",
+      "link_status": "unique_active_entity",
+      "link_method": "exact_normalized_name_unique_in_year",
+      "attach_to_snapshot": true,
+      "hierarchy_active_in_year": true,
+      "state_assignment_asserted": true,
+      "active_candidate_count": 1,
+      "candidate_ids": [
+        "liang_s0007_p004"
+      ],
+      "state_id": "liang_s0007",
+      "state_name": "南徐州",
+      "prefecture_id": "liang_s0007_p004",
+      "prefecture_name": "義興郡",
+      "geography_uncertain": true
+    },
+    {
+      "annual_presence_id": "LIANG-EPUB-0002-507",
+      "person": "任昉",
+      "place": "新安",
+      "year": 507,
+      "target_level": "prefecture",
+      "link_status": "unique_active_entity",
+      "link_method": "exact_normalized_name_unique_in_year",
+      "attach_to_snapshot": true,
+      "hierarchy_active_in_year": true,
+      "state_assignment_asserted": true,
+      "active_candidate_count": 1,
+      "candidate_ids": [
+        "liang_s0001_p012"
+      ],
+      "state_id": "liang_s0001",
+      "state_name": "揚州",
+      "prefecture_id": "liang_s0001_p012",
+      "prefecture_name": "新安郡",
+      "geography_uncertain": false
+    },
+    {
+      "annual_presence_id": "LIANG-EPUB-0003-503",
+      "person": "冯道根",
+      "place": "南梁",
+      "year": 503,
+      "target_level": "prefecture",
+      "link_status": "no_active_entity",
+      "link_method": "exact_normalized_name_unique_in_year",
+      "attach_to_snapshot": false,
+      "hierarchy_active_in_year": false,
+      "state_assignment_asserted": false,
+      "active_candidate_count": 0,
+      "candidate_ids": []
+    },
+    {
+      "annual_presence_id": "LIANG-EPUB-0004-502",
+      "person": "张齐",
+      "place": "历阳",
+      "year": 502,
+      "target_level": "prefecture",
+      "link_status": "unique_active_entity",
+      "link_method": "exact_normalized_name_unique_in_year",
+      "attach_to_snapshot": true,
+      "hierarchy_active_in_year": true,
+      "state_assignment_asserted": true,
+      "active_candidate_count": 1,
+      "candidate_ids": [
+        "liang_s0019_p008"
+      ],
+      "state_id": "liang_s0019",
+      "state_name": "南豫州",
+      "prefecture_id": "liang_s0019_p008",
+      "prefecture_name": "歷陽郡",
+      "geography_uncertain": true
+    },
+    {
+      "annual_presence_id": "LIANG-EPUB-0005-503",
+      "person": "张齐",
+      "place": "天门",
+      "year": 503,
+      "target_level": "prefecture",
+      "link_status": "unique_active_entity",
+      "link_method": "exact_normalized_name_unique_in_year",
+      "attach_to_snapshot": true,
+      "hierarchy_active_in_year": true,
+      "state_assignment_asserted": true,
+      "active_candidate_count": 1,
+      "candidate_ids": [
+        "liang_s0055_p003"
+      ],
+      "state_id": "liang_s0055",
+      "state_name": "荊州",
+      "prefecture_id": "liang_s0055_p003",
+      "prefecture_name": "天門郡",
+      "geography_uncertain": false
+    },
+    {
+      "annual_presence_id": "LIANG-EPUB-0006-508",
+      "person": "张齐",
+      "place": "巴西",
+      "year": 508,
+      "target_level": "prefecture",
+      "link_status": "no_active_entity",
+      "link_method": "exact_normalized_name_unique_in_year",
+      "attach_to_snapshot": false,
+      "hierarchy_active_in_year": false,
+      "state_assignment_asserted": false,
+      "active_candidate_count": 0,
+      "candidate_ids": []
+    },
+    {
+      "annual_presence_id": "LIANG-EPUB-0007-503",
+      "person": "柳忱",
+      "place": "南郡",
+      "year": 503,
+      "target_level": "prefecture",
+      "link_status": "unique_active_entity",
+      "link_method": "exact_normalized_name_unique_in_year",
+      "attach_to_snapshot": true,
+      "hierarchy_active_in_year": true,
+      "state_assignment_asserted": true,
+      "active_candidate_count": 1,
+      "candidate_ids": [
+        "liang_s0055_p001"
+      ],
+      "state_id": "liang_s0055",
+      "state_name": "荊州",
+      "prefecture_id": "liang_s0055_p001",
+      "prefecture_name": "南郡",
+      "geography_uncertain": false
+    },
+    {
+      "annual_presence_id": "LIANG-EPUB-0008-507",
+      "person": "孙谦",
+      "place": "零陵",
+      "year": 507,
+      "target_level": "prefecture",
+      "link_status": "unique_active_entity",
+      "link_method": "exact_normalized_name_unique_in_year",
+      "attach_to_snapshot": true,
+      "hierarchy_active_in_year": true,
+      "state_assignment_asserted": true,
+      "active_candidate_count": 1,
+      "candidate_ids": [
+        "liang_s0115_p004"
+      ],
+      "state_id": "liang_s0115",
+      "state_name": "湘州",
+      "prefecture_id": "liang_s0115_p004",
+      "prefecture_name": "零陵郡",
+      "geography_uncertain": false
+    },
+    {
+      "annual_presence_id": "LIANG-EPUB-0009-505",
+      "person": "柳恽",
+      "place": "吴兴",
+      "year": 505,
+      "target_level": "prefecture",
+      "link_status": "unique_active_entity",
+      "link_method": "exact_normalized_name_unique_in_year",
+      "attach_to_snapshot": true,
+      "hierarchy_active_in_year": true,
+      "state_assignment_asserted": true,
+      "active_candidate_count": 1,
+      "candidate_ids": [
+        "liang_s0001_p008"
+      ],
+      "state_id": "liang_s0001",
+      "state_name": "揚州",
+      "prefecture_id": "liang_s0001_p008",
+      "prefecture_name": "吳興郡",
+      "geography_uncertain": false
+    },
+    {
+      "annual_presence_id": "LIANG-EPUB-0010-504",
+      "person": "丘迟",
+      "place": "永嘉",
+      "year": 504,
+      "target_level": "prefecture",
+      "link_status": "unique_active_entity",
+      "link_method": "exact_normalized_name_unique_in_year",
+      "attach_to_snapshot": true,
+      "hierarchy_active_in_year": true,
+      "state_assignment_asserted": true,
+      "active_candidate_count": 1,
+      "candidate_ids": [
+        "liang_s0001_p016"
+      ],
+      "state_id": "liang_s0001",
+      "state_name": "揚州",
+      "prefecture_id": "liang_s0001_p016",
+      "prefecture_name": "永嘉郡",
+      "geography_uncertain": false
+    },
+    {
+      "annual_presence_id": "LIANG-EPUB-0011-537",
+      "person": "萧子显",
+      "place": "吴兴",
+      "year": 537,
+      "target_level": "prefecture",
+      "link_status": "unique_active_entity",
+      "link_method": "exact_normalized_name_unique_in_year",
+      "attach_to_snapshot": true,
+      "hierarchy_active_in_year": true,
+      "state_assignment_asserted": true,
+      "active_candidate_count": 1,
+      "candidate_ids": [
+        "liang_s0001_p008"
+      ],
+      "state_id": "liang_s0001",
+      "state_name": "揚州",
+      "prefecture_id": "liang_s0001_p008",
+      "prefecture_name": "吳興郡",
+      "geography_uncertain": false
+    },
+    {
+      "annual_presence_id": "LIANG-EPUB-0012-523",
+      "person": "何敬容",
+      "place": "吴郡",
+      "year": 523,
+      "target_level": "prefecture",
+      "link_status": "unique_active_entity",
+      "link_method": "exact_normalized_name_unique_in_year",
+      "attach_to_snapshot": true,
+      "hierarchy_active_in_year": true,
+      "state_assignment_asserted": true,
+      "active_candidate_count": 1,
+      "candidate_ids": [
+        "liang_s0001_p004"
+      ],
+      "state_id": "liang_s0001",
+      "state_name": "揚州",
+      "prefecture_id": "liang_s0001_p004",
+      "prefecture_name": "吳郡",
+      "geography_uncertain": false
+    },
+    {
+      "annual_presence_id": "LIANG-EPUB-0013-550",
+      "person": "周弘直",
+      "place": "衡阳",
+      "year": 550,
+      "target_level": "prefecture",
+      "link_status": "unique_active_entity",
+      "link_method": "exact_normalized_name_unique_in_year",
+      "attach_to_snapshot": true,
+      "hierarchy_active_in_year": true,
+      "state_assignment_asserted": true,
+      "active_candidate_count": 1,
+      "candidate_ids": [
+        "liang_s0115_p003"
+      ],
+      "state_id": "liang_s0115",
+      "state_name": "湘州",
+      "prefecture_id": "liang_s0115_p003",
+      "prefecture_name": "衡陽郡",
+      "geography_uncertain": false
+    },
+    {
+      "annual_presence_id": "LIANG-EPUB-0014-555",
+      "person": "裴之横",
+      "place": "吴兴",
+      "year": 555,
+      "target_level": "prefecture",
+      "link_status": "no_active_entity",
+      "link_method": "exact_normalized_name_unique_in_year",
+      "attach_to_snapshot": false,
+      "hierarchy_active_in_year": false,
+      "state_assignment_asserted": false,
+      "active_candidate_count": 0,
+      "candidate_ids": []
+    },
+    {
+      "annual_presence_id": "LIANG-EPUB-0015-555",
+      "person": "韦载",
+      "place": "义兴",
+      "year": 555,
+      "target_level": "prefecture",
+      "link_status": "unique_active_entity",
+      "link_method": "exact_normalized_name_unique_in_year",
+      "attach_to_snapshot": true,
+      "hierarchy_active_in_year": true,
+      "state_assignment_asserted": true,
+      "active_candidate_count": 1,
+      "candidate_ids": [
+        "liang_s0007_p004"
+      ],
+      "state_id": "liang_s0007",
+      "state_name": "南徐州",
+      "prefecture_id": "liang_s0007_p004",
+      "prefecture_name": "義興郡",
+      "geography_uncertain": true
+    },
+    {
+      "annual_presence_id": "LIANG-EPUB-0016-555",
+      "person": "周文育",
+      "place": "晋陵",
+      "year": 555,
+      "target_level": "prefecture",
+      "link_status": "unique_active_entity",
+      "link_method": "exact_normalized_name_unique_in_year",
+      "attach_to_snapshot": true,
+      "hierarchy_active_in_year": true,
+      "state_assignment_asserted": true,
+      "active_candidate_count": 1,
+      "candidate_ids": [
+        "liang_s0007_p001"
+      ],
+      "state_id": "liang_s0007",
+      "state_name": "南徐州",
+      "prefecture_id": "liang_s0007_p001",
+      "prefecture_name": "晉陵郡",
+      "geography_uncertain": true
+    },
+    {
+      "annual_presence_id": "LIANG-EPUB-0017-535",
+      "person": "王筠",
+      "place": "广晋",
+      "year": 535,
+      "target_level": "county",
+      "link_status": "unique_active_entity",
+      "link_method": "exact_normalized_name_unique_in_year",
+      "attach_to_snapshot": true,
+      "hierarchy_active_in_year": true,
+      "state_assignment_asserted": true,
+      "active_candidate_count": 1,
+      "candidate_ids": [
+        "lc_0127"
+      ],
+      "state_id": "liang_s0008",
+      "state_name": "江州",
+      "prefecture_id": "liang_s0008_p007",
+      "prefecture_name": "鄱陽郡",
+      "county_id": "lc_0127",
+      "county_name": "廣晉",
+      "geography_uncertain": false
+    },
+    {
+      "annual_presence_id": "LIANG-EPUB-0018-535",
+      "person": "刘潜",
+      "place": "阳羡",
+      "year": 535,
+      "target_level": "county",
+      "link_status": "unique_active_entity",
+      "link_method": "exact_normalized_name_unique_in_year",
+      "attach_to_snapshot": true,
+      "hierarchy_active_in_year": true,
+      "state_assignment_asserted": true,
+      "active_candidate_count": 1,
+      "candidate_ids": [
+        "lc_0084"
+      ],
+      "state_id": "liang_s0007",
+      "state_name": "南徐州",
+      "prefecture_id": "liang_s0007_p004",
+      "prefecture_name": "義興郡",
+      "county_id": "lc_0084",
+      "county_name": "陽羨",
+      "geography_uncertain": true
+    },
+    {
+      "annual_presence_id": "LIANG-EPUB-0019-547",
+      "person": "岑之敬",
+      "place": "南沙",
+      "year": 547,
+      "target_level": "county",
+      "link_status": "unique_active_entity",
+      "link_method": "exact_normalized_name_unique_in_year",
+      "attach_to_snapshot": true,
+      "hierarchy_active_in_year": true,
+      "state_assignment_asserted": true,
+      "active_candidate_count": 1,
+      "candidate_ids": [
+        "lc_0079"
+      ],
+      "state_id": "liang_s0007",
+      "state_name": "南徐州",
+      "prefecture_id": "liang_s0007_p001",
+      "prefecture_name": "晉陵郡",
+      "county_id": "lc_0079",
+      "county_name": "南沙",
+      "geography_uncertain": true
+    },
+    {
+      "annual_presence_id": "LIANG-EPUB-0020-555",
+      "person": "陈拟",
+      "place": "义兴",
+      "year": 555,
+      "target_level": "prefecture",
+      "link_status": "unique_active_entity",
+      "link_method": "exact_normalized_name_unique_in_year",
+      "attach_to_snapshot": true,
+      "hierarchy_active_in_year": true,
+      "state_assignment_asserted": true,
+      "active_candidate_count": 1,
+      "candidate_ids": [
+        "liang_s0007_p004"
+      ],
+      "state_id": "liang_s0007",
+      "state_name": "南徐州",
+      "prefecture_id": "liang_s0007_p004",
+      "prefecture_name": "義興郡",
+      "geography_uncertain": true
+    },
+    {
+      "annual_presence_id": "LIANG-EPUB-0021-555",
+      "person": "程灵洗",
+      "place": "兰陵",
+      "year": 555,
+      "target_level": "prefecture",
+      "link_status": "no_active_entity",
+      "link_method": "exact_normalized_name_unique_in_year",
+      "attach_to_snapshot": false,
+      "hierarchy_active_in_year": false,
+      "state_assignment_asserted": false,
+      "active_candidate_count": 0,
+      "candidate_ids": []
+    },
+    {
+      "annual_presence_id": "LIANG-EPUB-0022-556",
+      "person": "周迪",
+      "place": "临川",
+      "year": 556,
+      "target_level": "prefecture",
+      "link_status": "unique_active_entity",
+      "link_method": "exact_normalized_name_unique_in_year",
+      "attach_to_snapshot": true,
+      "hierarchy_active_in_year": true,
+      "state_assignment_asserted": true,
+      "active_candidate_count": 1,
+      "candidate_ids": [
+        "liang_s0008_p008"
+      ],
+      "state_id": "liang_s0008",
+      "state_name": "江州",
+      "prefecture_id": "liang_s0008_p008",
+      "prefecture_name": "臨川郡",
+      "geography_uncertain": false
+    },
+    {
+      "annual_presence_id": "LIANG-EPUB-0023-556",
+      "person": "留异",
+      "place": "东阳",
+      "year": 556,
+      "target_level": "prefecture",
+      "link_status": "unique_active_entity",
+      "link_method": "exact_normalized_name_unique_in_year",
+      "attach_to_snapshot": true,
+      "hierarchy_active_in_year": true,
+      "state_assignment_asserted": true,
+      "active_candidate_count": 1,
+      "candidate_ids": [
+        "liang_s0001_p015"
+      ],
+      "state_id": "liang_s0001",
+      "state_name": "揚州",
+      "prefecture_id": "liang_s0001_p015",
+      "prefecture_name": "東陽郡",
+      "geography_uncertain": true
+    },
+    {
+      "annual_presence_id": "LIANG-EPUB-0024-555",
+      "person": "陈宝应",
+      "place": "晋安",
+      "year": 555,
+      "target_level": "prefecture",
+      "link_status": "unique_active_entity",
+      "link_method": "exact_normalized_name_unique_in_year",
+      "attach_to_snapshot": true,
+      "hierarchy_active_in_year": true,
+      "state_assignment_asserted": true,
+      "active_candidate_count": 1,
+      "candidate_ids": [
+        "liang_s0008_p005"
+      ],
+      "state_id": "liang_s0008",
+      "state_name": "江州",
+      "prefecture_id": "liang_s0008_p005",
+      "prefecture_name": "晉安郡",
+      "geography_uncertain": false
+    },
+    {
+      "annual_presence_id": "LIANG-EPUB-0025-556",
+      "person": "袁枢",
+      "place": "吴兴",
+      "year": 556,
+      "target_level": "prefecture",
+      "link_status": "unique_active_entity",
+      "link_method": "exact_normalized_name_unique_in_year",
+      "attach_to_snapshot": true,
+      "hierarchy_active_in_year": true,
+      "state_assignment_asserted": true,
+      "active_candidate_count": 1,
+      "candidate_ids": [
+        "liang_s0001_p008"
+      ],
+      "state_id": "liang_s0001",
+      "state_name": "揚州",
+      "prefecture_id": "liang_s0001_p008",
+      "prefecture_name": "吳興郡",
+      "geography_uncertain": false
+    },
+    {
+      "annual_presence_id": "LIANG-EPUB-0026-534",
+      "person": "谢征",
+      "place": "南兰陵",
+      "year": 534,
+      "target_level": "prefecture",
+      "link_status": "no_active_entity",
+      "link_method": "exact_normalized_name_unique_in_year",
+      "attach_to_snapshot": false,
+      "hierarchy_active_in_year": false,
+      "state_assignment_asserted": false,
+      "active_candidate_count": 0,
+      "candidate_ids": []
+    },
+    {
+      "annual_presence_id": "LIANG-EPUB-0026-536",
+      "person": "谢征",
+      "place": "南兰陵",
+      "year": 536,
+      "target_level": "prefecture",
+      "link_status": "no_active_entity",
+      "link_method": "exact_normalized_name_unique_in_year",
+      "attach_to_snapshot": false,
+      "hierarchy_active_in_year": false,
+      "state_assignment_asserted": false,
+      "active_candidate_count": 0,
+      "candidate_ids": []
+    },
+    {
+      "annual_presence_id": "LIANG-EPUB-0027-509",
+      "person": "沈瑀",
+      "place": "寻阳",
+      "year": 509,
+      "target_level": "prefecture",
+      "link_status": "unique_active_entity",
+      "link_method": "exact_normalized_name_unique_in_year",
+      "attach_to_snapshot": true,
+      "hierarchy_active_in_year": true,
+      "state_assignment_asserted": true,
+      "active_candidate_count": 1,
+      "candidate_ids": [
+        "liang_s0008_p001"
+      ],
+      "state_id": "liang_s0008",
+      "state_name": "江州",
+      "prefecture_id": "liang_s0008_p001",
+      "prefecture_name": "尋陽郡",
+      "geography_uncertain": false
+    },
+    {
+      "annual_presence_id": "LIANG-EPUB-0028-507",
+      "person": "王志",
+      "place": "南郡",
+      "year": 507,
+      "target_level": "prefecture",
+      "link_status": "unique_active_entity",
+      "link_method": "exact_normalized_name_unique_in_year",
+      "attach_to_snapshot": true,
+      "hierarchy_active_in_year": true,
+      "state_assignment_asserted": true,
+      "active_candidate_count": 1,
+      "candidate_ids": [
+        "liang_s0055_p001"
+      ],
+      "state_id": "liang_s0055",
+      "state_name": "荊州",
+      "prefecture_id": "liang_s0055_p001",
+      "prefecture_name": "南郡",
+      "geography_uncertain": false
+    },
+    {
+      "annual_presence_id": "LIANG-EPUB-0029-508",
+      "person": "王志",
+      "place": "江夏",
+      "year": 508,
+      "target_level": "prefecture",
+      "link_status": "unique_active_entity",
+      "link_method": "exact_normalized_name_unique_in_year",
+      "attach_to_snapshot": true,
+      "hierarchy_active_in_year": true,
+      "state_assignment_asserted": true,
+      "active_candidate_count": 1,
+      "candidate_ids": [
+        "liang_s0058_p001"
+      ],
+      "state_id": "liang_s0058",
+      "state_name": "郢州",
+      "prefecture_id": "liang_s0058_p001",
+      "prefecture_name": "江夏郡",
+      "geography_uncertain": false
+    }
+  ]
+}
