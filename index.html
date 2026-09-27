@@ -83,6 +83,7 @@
           <a id="yearMapUhd" href="assets/maps/chen-588-terrain-map-uhd.png" download>下載588年超高清 PNG</a>
           <a id="yearMapCsv" href="data/chen-map-588.csv" download>下載588年 CSV</a>
           <a id="yearMapGeoJson" href="data/chen-territories.geojson" download>下載史圖館分期疆域 GeoJSON</a>
+          <a id="liangMapReference555" href="assets/maps/reference/liang-555-max-chgis.png" target="_blank" hidden>555年參考原圖</a>
           <button id="yearMapExport" type="button">匯出當前年份 PNG</button>
         </div>
       </header>
@@ -142,6 +143,11 @@
       <a id="governorYearbookLink" href="liang-governor-yearbook.html">開啟刺史年表</a>
     </section>
 
+    <details id="liangMapMissing" class="method-note" hidden>
+      <summary id="liangMapMissingTitle">本年尚未定位的政區</summary>
+      <p>缺坐標或同名仍有歧義的條目保留在正文；以下入口可查看沿革和來源。未定位不等同虛封。</p>
+      <div id="liangMapMissingItems"></div>
+    </details>
     <section id="results" class="results" aria-live="polite"></section>
 
     <section class="method-note">
@@ -165,17 +171,24 @@
   <script src="data/jin-data.js"></script>
   <script src="data/princes.js"></script>
   <script src="data/five-rank-fiefs.js"></script>
-  <script src="data/liang-data.js"></script>
-  <script src="data/liang-governors.js"></script>
-  <script src="data/liang-county-overlay.js"></script>
-  <script src="data/liang-county-reviewed.js"></script>
-  <script src="data/liang-administrative-corrections.js"></script>
-  <script src="data/liang-qiao-sources.js"></script>
-  <script src="data/liang-governor-sources.js"></script>
-  <script src="data/liang-local-officials.js"></script>
-  <script src="liang-county-model.js"></script>
-  <script src="data/liang-fiefs.js"></script>
-  <script src="data/liang-person-colors.js"></script>
+  <script src="data/liang-data.js?v=20260927.1"></script>
+  <script src="data/liang-governors.js?v=20260927.1"></script>
+  <script src="data/liang-county-overlay.js?v=20260927.1"></script>
+  <script src="data/liang-county-reviewed.js?v=20260927.1"></script>
+  <script src="data/liang-administrative-corrections.js?v=20260927.1"></script>
+  <script src="data/liang-entity-links.js?v=20260927.1"></script>
+  <script src="data/liang-qiao-sources.js?v=20260927.1"></script>
+  <script src="data/liang-governor-sources.js?v=20260927.1"></script>
+  <script src="data/liang-governor-links.js?v=20260927.1"></script>
+  <script src="data/liang-local-officials.js?v=20260927.1"></script>
+  <script src="liang-county-model.js?v=20260927.1"></script>
+  <script src="data/liang-fiefs.js?v=20260927.1"></script>
+  <script src="data/liang-person-colors.js?v=20260927.1"></script>
+  <script src="data/liang-person-evidence.js?v=20260927.1"></script>
+  <script src="liang-fief-rules.js?v=20260927.1"></script>
+  <script src="liang-person-formats.js?v=20260927.1"></script>
+  <script src="data/liang-map-dynamic.js?v=20260927.1"></script>
+  <script src="liang-map-model.js?v=20260927.2"></script>
   <script src="data/chen-data.js"></script>
   <script src="data/chen-fiefs.js"></script>
   <script src="data/chen-governors.js"></script>
@@ -192,6 +205,6 @@
   <script src="data/chen-qiao-prefaces.js?v=20260912.3"></script>
   <script src="source-annotations.js?v=20260912.3"></script>
   <script src="governor-history.js?v=20260912.1"></script>
-  <script src="app.js?v=20260914.1"></script>
+  <script src="app.js?v=20260927.3"></script>
 </body>
 </html>

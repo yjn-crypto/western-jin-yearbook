@@ -1,0 +1,39 @@
+{
+  "checked_on": "2026-09-27",
+  "files": [
+    {
+      "file": "15366762.pdf_by_PaddleOCR-VL-1.6.json"
+    },
+    {
+      "file": "15366762.pdf_by_PaddleOCR-VL-1.6.md"
+    },
+    {
+      "file": "【二十四史】08：梁书 (姚思廉) (z-library.sk, 1lib.sk, z-lib.sk).epub"
+    },
+    {
+      "file": "【二十四史】09：陈书 (姚思廉) (z-library.sk, 1lib.sk, z-lib.sk).epub"
+    },
+    {
+      "file": "中国行政区划通史：三国两晋南朝卷Ⅰ(1).pdf_by_PaddleOCR-VL-1.6.json"
+    },
+    {
+      "file": "中国行政区划通史：三国两晋南朝卷Ⅰ(1).pdf_by_PaddleOCR-VL-1.6.md"
+    },
+    {
+      "file": "中国行政区划通史：三国两晋南朝卷Ⅱ(1).pdf_by_PaddleOCR-VL-1.6.json"
+    },
+    {
+      "file": "中国行政区划通史：三国两晋南朝卷Ⅱ(1).pdf_by_PaddleOCR-VL-1.6.md"
+    },
+    {
+      "file": "蕭梁未確認縣郡歸屬_機器複核.xlsx"
+    }
+  ],
+  "chgis_inventory": "liang-chgis-inventory.json",
+  "not_found_in_source_directory_and_downloads": [
+    "南朝刺史、長史、司馬年表.xlsx",
+    "通史上下卷及方镇年表原版PDF/原页图像"
+  ],
+  "scope_note": "无原页图像不影响现有Markdown/JSON文字考证；不能声称已逐页核对版面。",
+  "publication_note": "公开清单仅列资料文件名和缺项；本机路径、大小及文件指纹不随本清单发布。"
+}

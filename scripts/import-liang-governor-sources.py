@@ -10,27 +10,37 @@ import hashlib
 import json
 import re
 from pathlib import Path
+from liang_source_paths import find_source
 
 ROOT = Path(__file__).resolve().parents[1]
 EQUIVALENTS = dict(re.findall(r"([\u3400-\u9fff]):'([\u3400-\u9fff])'", (ROOT / 'source-annotations.js').read_text()))
-EQUIVALENTS.update({'荆': '荊', '兖': '兗', '徵': '征', '醜': '丑'})
+EQUIVALENTS.update({'荊': '荆', '兗': '兖', '徵': '征', '醜': '丑'})
+# The display's place-name table is deliberately small. Source alignment also
+# compares officers and military titles; use explicit orthographic equivalents,
+# never fuzzy matching or omission of unmatched characters.
+TITLE_EQUIVALENTS = dict(zip(
+    '諸將虜進號沒綜呂鎮敗綱緣彥繪壯鮑橫茲辯車騎嚴還蠻',
+    '诸将虏进号没综吕镇败纲缘彦绘壮鲍横兹辩车骑严还蛮'))
 
 
 def read_js(path, name):
     return json.loads(re.sub(rf'^\s*window\.{name}\s*=\s*', '', path.read_text()).strip().removesuffix(';'))
 
 
-def normalize(text):
+def normalize(text, include_titles=True):
     # Explicit character equivalents used by the existing source annotation UI.
-    mapping = EQUIVALENTS
+    mapping = {**EQUIVALENTS, **TITLE_EQUIVALENTS} if include_titles else EQUIVALENTS
     text = text.replace('荊', '荆').replace('兗', '兖')
     return re.sub(r'[^\u3400-\u9fff0-9]', '', ''.join(mapping.get(c, c) for c in text))
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('ocr_json', type=Path)
+    parser.add_argument('ocr_json', type=Path, nargs='?', help='Explicit OCR file (takes precedence over --source-dir)')
+    parser.add_argument('--source-dir', type=Path, help='Otherwise search Downloads/年表资料, then Downloads')
     args = parser.parse_args()
+    if args.ocr_json is None:
+        args.ocr_json = find_source('15366762.pdf_by_PaddleOCR-VL-1.6.json', args.source_dir)
     source_bytes = args.ocr_json.read_bytes()
     pages = json.loads(source_bytes)
     sections, current, year, in_liang = [], None, None, False
@@ -64,7 +74,7 @@ def main():
                 if index not in current['page_indexes']:
                     current['page_indexes'].append(index)
     governors = read_js(ROOT / 'data/liang-governors.js', 'LIANG_GOVERNORS')
-    result, unmatched = {}, []
+    result, unmatched, newly_aligned = {}, [], []
     for year_key, annual in governors['years'].items():
         result[year_key] = []
         for record in annual['records']:
@@ -81,7 +91,19 @@ def main():
                 result[year_key].append(None)
                 continue
             section = matches[0]
-            evidence = [p for p in section['paragraphs'] if normalize(p) not in summaries]
+            legacy_summaries = [normalize(x, False) for x in record['summary_lines'] if normalize(x, False)]
+            normalized_pairs = sorted({f'{c}→{TITLE_EQUIVALENTS[c]}' for c in ''.join(record['summary_lines']) + ''.join(section['paragraphs']) if c in TITLE_EQUIVALENTS})
+            if not all(x in normalize(''.join(section['paragraphs']), False) for x in legacy_summaries):
+                newly_aligned.append({'year': int(year_key), 'state': record['state'],
+                    'source_page_index': record.get('source_page_index'),
+                    'source_page_indexes': section['page_indexes'],
+                    'candidate_count': len(candidates), 'matching_count': len(matches),
+                    'normalization_pairs': normalized_pairs,
+                    'reason': '年、州、原頁碼及全部摘要經明列繁簡等價字逐字校合；未採模糊匹配，同名州仍以原頁碼分別定位。',
+                    'original_summary_lines': record['summary_lines']})
+            # Some OCR summaries already contain a quotation/editor's note.
+            # Keep that provenance visible rather than dropping it as a summary.
+            evidence = [p for p in section['paragraphs'] if normalize(p) not in summaries or '《' in p or re.search(r'按[：:]', p)]
             notes = [m[0] for p in evidence for m in re.finditer(r'按[：:].*', p, re.S)]
             uncertain = any(re.search(r'年不[詳详]|始任.*不[詳详]|[斷断]於此|列於此', n) for n in notes)
             result[year_key].append({
@@ -94,6 +116,7 @@ def main():
                 'evidence_lines': evidence,
                 'dating_note': ('本州考證含年不詳或編者繫年；各人物的實際任職年限須分別核讀，所在年不是全部任期的確證。' if uncertain else ''),
                 'source_verified': 'unique_year_state_and_summary_alignment',
+                'source_alignment_note': '僅核合此處原文及定位，不表示已確認全部人物實際履任或編者繫年。',
             })
     data = {'meta': {'source': '魯力《魏晉南北朝方鎮年表新編·宋齊梁陳卷》（2023）',
                      'source_filename': args.ocr_json.name,
@@ -103,12 +126,13 @@ def main():
                      'total_records': sum(len(x) for x in result.values()),
                      'matched_records': sum(sum(x is not None for x in rows) for rows in result.values()),
                      'unmatched_records': len(unmatched),
+                     'orthographic_alignment_repairs': len(newly_aligned),
                      'rule': '僅補充已存在的逐年方鎮条目；第一年全部州名目錄不新增為本年政區，末年集中繫年不改為確任。'},
             'years': result, 'unmatched': unmatched}
     dest = ROOT / 'data/liang-governor-sources.js'
     dest.write_text('window.LIANG_GOVERNOR_SOURCES = ' + json.dumps(data, ensure_ascii=False, indent=2) + ';\n')
     report = ROOT / 'reports/liang-governor-source-audit.json'
-    report.write_text(json.dumps({'meta': data['meta'], 'unmatched': unmatched}, ensure_ascii=False, indent=2) + '\n')
+    report.write_text(json.dumps({'meta': data['meta'], 'unmatched': unmatched, 'newly_aligned': newly_aligned}, ensure_ascii=False, indent=2) + '\n')
     print(json.dumps(data['meta'], ensure_ascii=False))
 
 

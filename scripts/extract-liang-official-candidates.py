@@ -2,7 +2,8 @@
 """Extract local-only, traceable official candidates from supplied history EPUBs.
 
 Stdlib only. No network access. Candidates are recall-oriented, not assertions.
-Run: python3 scripts/extract-liang-official-candidates.py --source-dir ~/Downloads
+Run: python3 scripts/extract-liang-official-candidates.py
+Defaults to ~/Downloads/年表资料, then ~/Downloads; --source-dir takes precedence.
 The source books and complete extracted paragraphs must not be committed/uploaded.
 """
 import argparse
@@ -13,6 +14,7 @@ import zipfile
 from html.parser import HTMLParser
 from pathlib import Path, PurePosixPath
 from xml.etree import ElementTree as ET
+from liang_source_paths import find_source
 
 
 class Paragraphs(HTMLParser):
@@ -116,16 +118,17 @@ def extract(path, code, out):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument('--source-dir', type=Path, default=Path.home()/'Downloads')
+    ap.add_argument('--source-dir', type=Path, help='Explicit source directory; disables default directory discovery')
     ap.add_argument('--output-dir', type=Path, default=Path(__file__).resolve().parents[1]/'work'/'epub')
     args = ap.parse_args()
     args.output_dir.mkdir(parents=True, exist_ok=True)
     result = []
     for title, code in [('梁书','LS'),('陈书','CS')]:
-        matches = list(args.source_dir.glob(f'*{title}*.epub'))
-        if len(matches) != 1:
-            raise SystemExit(f'Expected exactly one {title} EPUB; found {len(matches)}')
-        result.append(extract(matches[0], code, args.output_dir))
+        try:
+            source = find_source(f'*{title}*.epub', args.source_dir)
+        except (FileNotFoundError, ValueError) as exc:
+            raise SystemExit(str(exc))
+        result.append(extract(source, code, args.output_dir))
     (args.output_dir/'extraction-manifest.json').write_text(json.dumps(result,ensure_ascii=False,indent=2))
     print(json.dumps(result,ensure_ascii=False,indent=2))
 

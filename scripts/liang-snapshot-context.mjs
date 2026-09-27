@@ -14,7 +14,7 @@ export function createLiangContext() {
   const context = vm.createContext({window: {}});
   for (const file of ['data/liang-data.js', 'data/liang-county-overlay.js',
     'data/liang-county-reviewed.js', 'data/liang-administrative-corrections.js',
-    'data/liang-qiao-sources.js', 'liang-county-model.js']) {
+    'data/liang-qiao-sources.js', 'data/liang-entity-links.js', 'liang-county-model.js']) {
     vm.runInContext(fs.readFileSync(new URL(file,root),'utf8'),context,{filename:file});
   }
   vm.runInContext(`let liangCountyIndex=null,liangCountyMethodIndex=null;
