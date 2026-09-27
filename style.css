@@ -29,6 +29,8 @@ body {
   border-bottom: 4px solid #c8ad7f;
 }
 .header-inner { max-width: 1240px; margin: 0 auto; padding: 34px 24px 30px; }
+.github-link { float: right; margin: 0 0 12px 16px; color: inherit; font-size: .9rem; text-underline-offset: .2em; }
+.github-link:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
 .eyebrow { margin: 0 0 6px; font-size: .82rem; letter-spacing: .18em; opacity: .8; }
 h1 { margin: 0; font-size: clamp(2rem, 4vw, 3.25rem); font-weight: 700; letter-spacing: .08em; }
 .subtitle { margin: 8px 0 0; opacity: .9; }

@@ -1,0 +1,66 @@
+{
+  "archive": "/Users/yujiangnan/Downloads/CHGIS数据.zip",
+  "archive_bytes": 617077144,
+  "sources": [
+    {
+      "id": "chgis-1",
+      "archive": "dataverse_files-v6.zip",
+      "member": "v6_time_cnty_pts_utf_wgs84.zip",
+      "dbf": "v6_time_cnty_pts_utf_wgs84.dbf",
+      "sha256": "3b431d2e587bcb738e632385703824d252e0b4744ddd726fc5eb10364dd2d8c5",
+      "dbf_sha256": "e782572a2af83fa246d608ffb13729835d535f3c010eee79ce0545f5430eb616",
+      "version": "CHGIS V6",
+      "projection": "GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137,298.257223563]],PRIMEM[\"Greenwich\",0],UNIT[\"Degree\",0.017453292519943295]]",
+      "coordinate_basis": "WGS84 SHP/DBF",
+      "imported": 1736
+    },
+    {
+      "id": "chgis-2",
+      "archive": "dataverse_files (2)-v6.zip",
+      "member": "v6_time_pref_pts_utf_wgs84.zip",
+      "dbf": "v6_time_pref_pts_utf_wgs84.dbf",
+      "sha256": "48f6a50bcc3dd9cf4391efab2153f0e333f2040a08cf96c4d4b950cf9977d1fc",
+      "dbf_sha256": "02419ecdf0fc848d852be984c4bd6f24e119e336a19c7f50743106f2a1dec3f1",
+      "version": "CHGIS V6",
+      "projection": "GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137,298.257223563]],PRIMEM[\"Greenwich\",0],UNIT[\"Degree\",0.017453292519943295]]",
+      "coordinate_basis": "WGS84 SHP/DBF",
+      "imported": 720
+    },
+    {
+      "id": "chgis-3",
+      "archive": "dataverse_files (1)-v6.zip",
+      "member": "v6_time_pref_pgn_utf_wgs84.zip",
+      "dbf": "v6_time_pref_pgn_utf_wgs84.dbf",
+      "sha256": "d3aa9f397916f3ca017b9b6379854796846e2348d7303afc47375984a7e12f72",
+      "dbf_sha256": "261ffd0c28cb9c1e98630a3434f9458d80dec2c2dc7bc8fd8296d85bceffa197",
+      "version": "CHGIS V6",
+      "projection": "GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137,298.257223563]],PRIMEM[\"Greenwich\",0],UNIT[\"Degree\",0.017453292519943295]]",
+      "coordinate_basis": "WGS84 SHP/DBF",
+      "imported": 157
+    },
+    {
+      "id": "chgis-4",
+      "archive": "v4_time_prov_pts_utf.zip",
+      "member": null,
+      "dbf": "v4_time_prov_pts_utf.dbf",
+      "sha256": "ef7cbbf6675fb528eae51ff64440b3a1fb680893d1b403fd2c91b3892fdf9c73",
+      "dbf_sha256": "2bea26c48c273f7d917ba421431a6d890debafca3f7925e3c885c7e38bf9a3a6",
+      "version": "CHGIS V4",
+      "projection": "PROJCS[\"Xian_1980_GK_Zone_19\",GEOGCS[\"GCS_Xian_1980\",DATUM[\"D_Xian_1980\",SPHEROID[\"Xian_1980\",6378140.0,298.257]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Gauss_Kruger\"],PARAMETER[\"False_Easting\",19500000.0],PARAMETER[\"False_Northing\",0.0],PARAMETER[\"Central_Meridian\",111.0],PARAMETER[\"Scale_Factor\",1.0],PARAMETER[\"Latitude_Of_Origin\",0.0],UNIT[\"Meter\",1.0]]",
+      "coordinate_basis": "DBF X_COORD/Y_COORD geographic attributes; projected SHP not used",
+      "imported": 33
+    }
+  ],
+  "counts": {
+    "stateSeats": 190,
+    "prefSeats": 563,
+    "countySeats": 1736,
+    "prefAreas": 157
+  },
+  "limitations": [
+    "CHGIS start/end years and BEG_RULE/END_RULE are preserved; a match is a geographic reference, not new evidence for Liang administration.",
+    "Region rectangles constrain name matching only; they are not historical boundaries. Multiple surviving candidates remain unlocated.",
+    "No Liang political territory reconstructed. V4 geographic attributes may have datum offsets; no claim of survey accuracy.",
+    "Source reference maps at 534/555 are separate from annual layers."
+  ]
+}

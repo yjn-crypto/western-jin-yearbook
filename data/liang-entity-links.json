@@ -1,0 +1,1197 @@
+{
+  "meta": {
+    "version": 1,
+    "source_sha256": "6ffbfe4cbc519e1b6ad5d66fca18e93ae880340f076b13b1b77b9de3039951ca",
+    "policy": "原744縣、753時段、87人工意見不改；新增層只補有正文依據的實體與連接。地域是資料編排分區，不一定等於所屬州的分區。跨分區必須有逐條實體ID和來源。",
+    "date_policy": "新增郡按正文沿革分段；文獻始見年不冒充設置年，推定續存與未明邊界保留※。不從第十編○△符號生成全朝時段。",
+    "compound_policy": "二郡合題按原書合題行連接，不拆成兩個郡，不據此斷言某縣只屬其中一郡。"
+  },
+  "supplemental_prefectures": [
+    {
+      "id": "liang_s0007_q_lanling",
+      "state_id": "liang_s0007",
+      "n": "蘭陵郡",
+      "o": 0.5,
+      "q": true,
+      "qi": null,
+      "research_source": {
+        "source_label": "《中國行政區劃通史》下卷第八編 · 南徐州蘭陵郡",
+        "source_filename": "中国行政区划通史：三国两晋南朝卷Ⅱ(1).pdf_by_PaddleOCR-VL-1.6.md",
+        "source_sha256": "6ffbfe4cbc519e1b6ad5d66fca18e93ae880340f076b13b1b77b9de3039951ca",
+        "markdown_lines": [
+          10852,
+          10856
+        ],
+        "excerpt": " $ \\underline{\\text{南徐州}} $，侨寄京口（今江苏镇江市）。萧齐有南徐州，梁承之。改南琅邪郡为南琅邪、（南）彭城二郡；天监六年（507）自晋陵郡析置信义郡；太平二年又自晋陵郡析置江阴郡。\n\n## （一） $ \\underline{\\text{兰陵郡}} $，侨寄延陵（今江苏镇江市）\n\n按：齐末南徐州领有南东海侨郡，领丹徒、武进二实县。《梁书》卷2《武帝纪中》：天监元年四月，“改南东海为兰陵郡”。梁又改武进县为兰陵县。则梁兰陵侨郡领丹徒、兰陵二实县。",
+        "editorial_note": "502年四月改南東海為蘭陵。丹徒是實縣，不能因其所屬為侨郡而標作侨縣。蘭陵縣改名確年仍未明，本輪只確立郡實體及丹徒的連接。",
+        "verification": "text_verified_original_page_pending"
+      },
+      "ph": [
+        {
+          "start": 502,
+          "end": 557,
+          "name": "蘭陵郡",
+          "uncertain": false,
+          "raw": "502—557（正文沿革補入）",
+          "source": {
+            "source_label": "《中國行政區劃通史》下卷第八編 · 南徐州蘭陵郡",
+            "source_filename": "中国行政区划通史：三国两晋南朝卷Ⅱ(1).pdf_by_PaddleOCR-VL-1.6.md",
+            "source_sha256": "6ffbfe4cbc519e1b6ad5d66fca18e93ae880340f076b13b1b77b9de3039951ca",
+            "markdown_lines": [
+              10852,
+              10856
+            ],
+            "excerpt": " $ \\underline{\\text{南徐州}} $，侨寄京口（今江苏镇江市）。萧齐有南徐州，梁承之。改南琅邪郡为南琅邪、（南）彭城二郡；天监六年（507）自晋陵郡析置信义郡；太平二年又自晋陵郡析置江阴郡。\n\n## （一） $ \\underline{\\text{兰陵郡}} $，侨寄延陵（今江苏镇江市）\n\n按：齐末南徐州领有南东海侨郡，领丹徒、武进二实县。《梁书》卷2《武帝纪中》：天监元年四月，“改南东海为兰陵郡”。梁又改武进县为兰陵县。则梁兰陵侨郡领丹徒、兰陵二实县。",
+            "editorial_note": "502年四月改南東海為蘭陵。丹徒是實縣，不能因其所屬為侨郡而標作侨縣。蘭陵縣改名確年仍未明，本輪只確立郡實體及丹徒的連接。",
+            "verification": "text_verified_original_page_pending"
+          }
+        }
+      ]
+    },
+    {
+      "id": "liang_s0007_q_langye",
+      "state_id": "liang_s0007",
+      "n": "南琅邪郡",
+      "o": 6,
+      "q": true,
+      "qi": null,
+      "research_source": {
+        "source_label": "《中國行政區劃通史》下卷第八編 · 南徐州南琅邪、（南）彭城二郡及江乘縣",
+        "source_filename": "中国行政区划通史：三国两晋南朝卷Ⅱ(1).pdf_by_PaddleOCR-VL-1.6.md",
+        "source_sha256": "6ffbfe4cbc519e1b6ad5d66fca18e93ae880340f076b13b1b77b9de3039951ca",
+        "markdown_lines": [
+          10876,
+          10878
+        ],
+        "excerpt": "（六） $ \\underline{\\text{南琅邪、（南）彭城二郡}} $，寄治白下城（今江苏南京市北金川门外，幕府山南麓）\n\n按：齐末南徐州领有南琅邪侨郡，领江乘实县。《梁书》卷3《武帝纪下》：大同三年“夏四月丁卯，以南琅邪、彭城二郡太守河东王誉为南徐州刺史”。则梁改南琅邪侨郡为南琅邪（南）彭城二郡，亦领江乘县。",
+        "editorial_note": "南琅邪承齊舊，537年始見二郡合題，分設確年不詳。502—536以舊名附列並標※；537以後合題亦保留始年不詳，不以537斷言分設年。江乘依原縣表535年省廢當年仍列。",
+        "verification": "text_verified_original_page_pending"
+      },
+      "ph": [
+        {
+          "start": 502,
+          "end": 536,
+          "name": "南琅邪郡",
+          "uncertain": true,
+          "raw": "502—536（正文沿革補入）",
+          "source": {
+            "source_label": "《中國行政區劃通史》下卷第八編 · 南徐州南琅邪、（南）彭城二郡及江乘縣",
+            "source_filename": "中国行政区划通史：三国两晋南朝卷Ⅱ(1).pdf_by_PaddleOCR-VL-1.6.md",
+            "source_sha256": "6ffbfe4cbc519e1b6ad5d66fca18e93ae880340f076b13b1b77b9de3039951ca",
+            "markdown_lines": [
+              10876,
+              10878
+            ],
+            "excerpt": "（六） $ \\underline{\\text{南琅邪、（南）彭城二郡}} $，寄治白下城（今江苏南京市北金川门外，幕府山南麓）\n\n按：齐末南徐州领有南琅邪侨郡，领江乘实县。《梁书》卷3《武帝纪下》：大同三年“夏四月丁卯，以南琅邪、彭城二郡太守河东王誉为南徐州刺史”。则梁改南琅邪侨郡为南琅邪（南）彭城二郡，亦领江乘县。",
+            "editorial_note": "南琅邪承齊舊，537年始見二郡合題，分設確年不詳。502—536以舊名附列並標※；537以後合題亦保留始年不詳，不以537斷言分設年。江乘依原縣表535年省廢當年仍列。",
+            "verification": "text_verified_original_page_pending"
+          }
+        }
+      ]
+    },
+    {
+      "id": "liang_s0007_q_langye_pengcheng",
+      "state_id": "liang_s0007",
+      "n": "南琅邪、（南）彭城二郡",
+      "o": 6,
+      "q": true,
+      "qi": null,
+      "research_source": {
+        "source_label": "《中國行政區劃通史》下卷第八編 · 南徐州南琅邪、（南）彭城二郡及江乘縣",
+        "source_filename": "中国行政区划通史：三国两晋南朝卷Ⅱ(1).pdf_by_PaddleOCR-VL-1.6.md",
+        "source_sha256": "6ffbfe4cbc519e1b6ad5d66fca18e93ae880340f076b13b1b77b9de3039951ca",
+        "markdown_lines": [
+          10876,
+          10878
+        ],
+        "excerpt": "（六） $ \\underline{\\text{南琅邪、（南）彭城二郡}} $，寄治白下城（今江苏南京市北金川门外，幕府山南麓）\n\n按：齐末南徐州领有南琅邪侨郡，领江乘实县。《梁书》卷3《武帝纪下》：大同三年“夏四月丁卯，以南琅邪、彭城二郡太守河东王誉为南徐州刺史”。则梁改南琅邪侨郡为南琅邪（南）彭城二郡，亦领江乘县。",
+        "editorial_note": "南琅邪承齊舊，537年始見二郡合題，分設確年不詳。502—536以舊名附列並標※；537以後合題亦保留始年不詳，不以537斷言分設年。江乘依原縣表535年省廢當年仍列。",
+        "verification": "text_verified_original_page_pending"
+      },
+      "ph": [
+        {
+          "start": 537,
+          "end": 557,
+          "name": "南琅邪、（南）彭城二郡",
+          "uncertain": true,
+          "raw": "537—557（正文沿革補入）",
+          "source": {
+            "source_label": "《中國行政區劃通史》下卷第八編 · 南徐州南琅邪、（南）彭城二郡及江乘縣",
+            "source_filename": "中国行政区划通史：三国两晋南朝卷Ⅱ(1).pdf_by_PaddleOCR-VL-1.6.md",
+            "source_sha256": "6ffbfe4cbc519e1b6ad5d66fca18e93ae880340f076b13b1b77b9de3039951ca",
+            "markdown_lines": [
+              10876,
+              10878
+            ],
+            "excerpt": "（六） $ \\underline{\\text{南琅邪、（南）彭城二郡}} $，寄治白下城（今江苏南京市北金川门外，幕府山南麓）\n\n按：齐末南徐州领有南琅邪侨郡，领江乘实县。《梁书》卷3《武帝纪下》：大同三年“夏四月丁卯，以南琅邪、彭城二郡太守河东王誉为南徐州刺史”。则梁改南琅邪侨郡为南琅邪（南）彭城二郡，亦领江乘县。",
+            "editorial_note": "南琅邪承齊舊，537年始見二郡合題，分設確年不詳。502—536以舊名附列並標※；537以後合題亦保留始年不詳，不以537斷言分設年。江乘依原縣表535年省廢當年仍列。",
+            "verification": "text_verified_original_page_pending"
+          }
+        }
+      ]
+    },
+    {
+      "id": "liang_s0015_q_qin",
+      "state_id": "liang_s0015",
+      "n": "秦郡",
+      "o": 2.5,
+      "q": true,
+      "qi": null,
+      "research_source": {
+        "source_label": "《中國行政區劃通史》下卷第八編 · 南兗州、西兗州秦郡",
+        "source_filename": "中国行政区划通史：三国两晋南朝卷Ⅱ(1).pdf_by_PaddleOCR-VL-1.6.md",
+        "source_sha256": "6ffbfe4cbc519e1b6ad5d66fca18e93ae880340f076b13b1b77b9de3039951ca",
+        "markdown_lines": [
+          11660,
+          11662
+        ],
+        "excerpt": "（三） $ \\underline{\\text{秦郡}} $，侨寄六合（今江苏南京市六合区）\n\n按：《梁书》卷56《侯景传》：大宝元年七月，“景以秦郡为西兖州，阳平郡为北兖州”。则大宝元年秦郡移置西兖州。秦郡领六合、堂邑二实县。",
+        "editorial_note": "秦郡550年移置西兗州，555年陷；按政區年末口徑不在555年續列。",
+        "verification": "text_verified_original_page_pending"
+      },
+      "ph": [
+        {
+          "start": 502,
+          "end": 549,
+          "name": "秦郡",
+          "uncertain": false,
+          "raw": "502—549（正文沿革補入）",
+          "source": {
+            "source_label": "《中國行政區劃通史》下卷第八編 · 南兗州、西兗州秦郡",
+            "source_filename": "中国行政区划通史：三国两晋南朝卷Ⅱ(1).pdf_by_PaddleOCR-VL-1.6.md",
+            "source_sha256": "6ffbfe4cbc519e1b6ad5d66fca18e93ae880340f076b13b1b77b9de3039951ca",
+            "markdown_lines": [
+              11660,
+              11662
+            ],
+            "excerpt": "（三） $ \\underline{\\text{秦郡}} $，侨寄六合（今江苏南京市六合区）\n\n按：《梁书》卷56《侯景传》：大宝元年七月，“景以秦郡为西兖州，阳平郡为北兖州”。则大宝元年秦郡移置西兖州。秦郡领六合、堂邑二实县。",
+            "editorial_note": "秦郡550年移置西兗州，555年陷；按政區年末口徑不在555年續列。",
+            "verification": "text_verified_original_page_pending"
+          }
+        }
+      ]
+    },
+    {
+      "id": "liang_s0018_q_qin",
+      "state_id": "liang_s0018",
+      "n": "秦郡",
+      "o": 1,
+      "q": true,
+      "qi": null,
+      "research_source": {
+        "source_label": "《中國行政區劃通史》下卷第八編 · 西兗州秦郡",
+        "source_filename": "中国行政区划通史：三国两晋南朝卷Ⅱ(1).pdf_by_PaddleOCR-VL-1.6.md",
+        "source_sha256": "6ffbfe4cbc519e1b6ad5d66fca18e93ae880340f076b13b1b77b9de3039951ca",
+        "markdown_lines": [
+          11700,
+          11704
+        ],
+        "excerpt": " $ \\underline{\\text{西兖州}} $，治 $ \\underline{\\text{尉氏}} $（今江苏南京市六合区）。《梁书》卷56《侯景传》：大宝元年七月，“景以秦郡为西兖州，阳平郡为北兖州”。《北齐书》卷4《文宣纪》：天保六年（梁绍泰元年，555）十一月，“东南道行台赵彦深获秦郡等五城，户二万余，所在安辑之”。则西兖州大宝元年置，绍泰元年没。\n\n秦郡，侨寄六合（今江苏南京市六合区）\n\n按：据本州考证，秦郡本南兖州属郡，领六合、堂邑二实县。据本州考证，大宝元年七月来属，绍泰元年没。",
+        "editorial_note": "秦郡550年移置西兗州，555年陷；按政區年末口徑不在555年續列。",
+        "verification": "text_verified_original_page_pending"
+      },
+      "ph": [
+        {
+          "start": 550,
+          "end": 554,
+          "name": "秦郡",
+          "uncertain": false,
+          "raw": "550—554（正文沿革補入）",
+          "source": {
+            "source_label": "《中國行政區劃通史》下卷第八編 · 西兗州秦郡",
+            "source_filename": "中国行政区划通史：三国两晋南朝卷Ⅱ(1).pdf_by_PaddleOCR-VL-1.6.md",
+            "source_sha256": "6ffbfe4cbc519e1b6ad5d66fca18e93ae880340f076b13b1b77b9de3039951ca",
+            "markdown_lines": [
+              11700,
+              11704
+            ],
+            "excerpt": " $ \\underline{\\text{西兖州}} $，治 $ \\underline{\\text{尉氏}} $（今江苏南京市六合区）。《梁书》卷56《侯景传》：大宝元年七月，“景以秦郡为西兖州，阳平郡为北兖州”。《北齐书》卷4《文宣纪》：天保六年（梁绍泰元年，555）十一月，“东南道行台赵彦深获秦郡等五城，户二万余，所在安辑之”。则西兖州大宝元年置，绍泰元年没。\n\n秦郡，侨寄六合（今江苏南京市六合区）\n\n按：据本州考证，秦郡本南兖州属郡，领六合、堂邑二实县。据本州考证，大宝元年七月来属，绍泰元年没。",
+            "editorial_note": "秦郡550年移置西兗州，555年陷；按政區年末口徑不在555年續列。",
+            "verification": "text_verified_original_page_pending"
+          }
+        }
+      ]
+    },
+    {
+      "id": "liang_s0017_q_shanyang",
+      "state_id": "liang_s0017",
+      "n": "山陽郡",
+      "o": 0.5,
+      "q": true,
+      "qi": null,
+      "research_source": {
+        "source_label": "《中國行政區劃通史》下卷第八編 · 北兗州山陽郡",
+        "source_filename": "中国行政区划通史：三国两晋南朝卷Ⅱ(1).pdf_by_PaddleOCR-VL-1.6.md",
+        "source_sha256": "6ffbfe4cbc519e1b6ad5d66fca18e93ae880340f076b13b1b77b9de3039951ca",
+        "markdown_lines": [
+          11688,
+          11692
+        ],
+        "excerpt": " $ \\underline{\\text{北兖州}}  $，寄治淮阴（今江苏淮安市淮阴区西南甘罗城）。齐末有北兖侨州，所领皆侨郡县。梁承齐之北兖州，然渐领实郡、实县。《梁书》卷3《武帝纪下》：太清元年（547）“冬十一月，魏遣大将军慕容绍宗等至寒山。丙午，大战，渊明败绩，及北兖州刺史胡贵孙等并陷魏。绍宗进围潼州”。《梁书》卷56《侯景传》：太清三年三月，“初，北兖州刺史定襄侯祗与湘潭侯退，及前潼州刺史郭凤同起兵，将赴援。至是，凤谋以淮阴应景，祗等力不能制，并奔于魏。景以萧弄璋为北兖州刺史，州民发兵拒之，景遣厢公丘子英、直阁将军羊海率众赴援，海斩子英，率其军降于魏，魏遂据其淮阴”。然《地形志》中淮州：“萧衍置，魏因之。治淮阴城。”似梁即于淮阴置淮州，故《补梁志》卷1淮州条、《北齐志》卷5淮州条均以为梁改北兖州为淮州，为东魏所承袭。然此于《梁书》中无载，且据上文考证，直至太清三年淮阴失陷，尚称为北兖州。又，《隋志》下江都郡山阳：“后魏淮阴郡，东魏改为淮州。”此与《梁书》所载合。今从《梁书》、《隋志》。《梁书》卷56《侯景传》：大宝元年七月，“景以秦郡为西兖州，阳平郡为北兖州”。此盖淮阴失陷，故移北兖州治于阳平郡。旋又没。\n\n## （一） $ \\underline{\\text{山阳郡}} $，寄治山阳（今江苏淮安市）\n\n按：齐末南兖州领有山阳侨郡，领实县四。《梁政区建置表》以之为北兖州属郡，今从之。太清三年没。",
+        "editorial_note": "太清三年失守，郡層年末口徑止548；縣表山陽549終年仍保留於原資料。齊末屬南兗州，梁移北兗州確年不詳；此處承正文郡屬作附列，整段標※，不視502為已考定轉州年。",
+        "verification": "text_verified_original_page_pending"
+      },
+      "ph": [
+        {
+          "start": 502,
+          "end": 548,
+          "name": "山陽郡",
+          "uncertain": true,
+          "raw": "502—548（正文沿革補入）",
+          "source": {
+            "source_label": "《中國行政區劃通史》下卷第八編 · 北兗州山陽郡",
+            "source_filename": "中国行政区划通史：三国两晋南朝卷Ⅱ(1).pdf_by_PaddleOCR-VL-1.6.md",
+            "source_sha256": "6ffbfe4cbc519e1b6ad5d66fca18e93ae880340f076b13b1b77b9de3039951ca",
+            "markdown_lines": [
+              11688,
+              11692
+            ],
+            "excerpt": " $ \\underline{\\text{北兖州}}  $，寄治淮阴（今江苏淮安市淮阴区西南甘罗城）。齐末有北兖侨州，所领皆侨郡县。梁承齐之北兖州，然渐领实郡、实县。《梁书》卷3《武帝纪下》：太清元年（547）“冬十一月，魏遣大将军慕容绍宗等至寒山。丙午，大战，渊明败绩，及北兖州刺史胡贵孙等并陷魏。绍宗进围潼州”。《梁书》卷56《侯景传》：太清三年三月，“初，北兖州刺史定襄侯祗与湘潭侯退，及前潼州刺史郭凤同起兵，将赴援。至是，凤谋以淮阴应景，祗等力不能制，并奔于魏。景以萧弄璋为北兖州刺史，州民发兵拒之，景遣厢公丘子英、直阁将军羊海率众赴援，海斩子英，率其军降于魏，魏遂据其淮阴”。然《地形志》中淮州：“萧衍置，魏因之。治淮阴城。”似梁即于淮阴置淮州，故《补梁志》卷1淮州条、《北齐志》卷5淮州条均以为梁改北兖州为淮州，为东魏所承袭。然此于《梁书》中无载，且据上文考证，直至太清三年淮阴失陷，尚称为北兖州。又，《隋志》下江都郡山阳：“后魏淮阴郡，东魏改为淮州。”此与《梁书》所载合。今从《梁书》、《隋志》。《梁书》卷56《侯景传》：大宝元年七月，“景以秦郡为西兖州，阳平郡为北兖州”。此盖淮阴失陷，故移北兖州治于阳平郡。旋又没。\n\n## （一） $ \\underline{\\text{山阳郡}} $，寄治山阳（今江苏淮安市）\n\n按：齐末南兖州领有山阳侨郡，领实县四。《梁政区建置表》以之为北兖州属郡，今从之。太清三年没。",
+            "editorial_note": "太清三年失守，郡層年末口徑止548；縣表山陽549終年仍保留於原資料。齊末屬南兗州，梁移北兗州確年不詳；此處承正文郡屬作附列，整段標※，不視502為已考定轉州年。",
+            "verification": "text_verified_original_page_pending"
+          }
+        }
+      ]
+    },
+    {
+      "id": "liang_s0043_q_beihai",
+      "state_id": "liang_s0043",
+      "n": "北海郡",
+      "o": 0.5,
+      "q": true,
+      "qi": null,
+      "research_source": {
+        "source_label": "《中國行政區劃通史》下卷第八編 · 青冀二州北海郡",
+        "source_filename": "中国行政区划通史：三国两晋南朝卷Ⅱ(1).pdf_by_PaddleOCR-VL-1.6.md",
+        "source_sha256": "6ffbfe4cbc519e1b6ad5d66fca18e93ae880340f076b13b1b77b9de3039951ca",
+        "markdown_lines": [
+          12398,
+          12404
+        ],
+        "excerpt": "## 九、 $ \\underline{\\text{青、冀二州}} $所辖实郡沿革\n\n $ \\underline{\\text{青、冀二州}}  $，侨寄郁洲（今江苏连云港市东云台山一带）。齐末有青、冀二州，为双头州。《梁书》卷16《张稷传》：“出为使持节、散骑常侍、都督青冀二州诸军事、安北将军、青冀二州刺史。”是梁承齐旧，仍有青、冀二州。《梁书》卷3《武帝纪下》：大同四年“八月甲辰，诏‘南兖、北徐、西徐、东徐、青、冀、南北青、武、仁、潼、睢等十二州，既经饥馑，曲赦逋租宿责，勿收今年三调’”。《梁书》卷3《武帝纪下》：太清三年四月，“青、冀二州刺史明少遐、东徐州刺史湛海珍、北青州刺史王奉伯各举州附于魏”。《地形志》中海州：“刘子业置青州，武定七年改。”《地形志》所言刘子业置者，盖误。据《宋志》当为宋明帝立。然“武定七年改”与《梁书》所载之太清三年没契合。今从之。\n\n## （一） $ \\underline{\\text{北海郡}} $，寄治都昌（今江苏连云港市东云台山一带）\n\n按：《地形志》中海州东海郡：“萧衍改置北海郡，武定七年复。”此言恐误。齐末青、冀二州已有北海侨郡，领赣榆实县一，梁承之。此处不当言“萧衍改置”，当是武定七年改梁之北海郡为东海郡。",
+        "editorial_note": "正文說明承齊侨郡，549年四月州沒；郡層年末口徑止548。",
+        "verification": "text_verified_original_page_pending"
+      },
+      "ph": [
+        {
+          "start": 502,
+          "end": 548,
+          "name": "北海郡",
+          "uncertain": false,
+          "raw": "502—548（正文沿革補入）",
+          "source": {
+            "source_label": "《中國行政區劃通史》下卷第八編 · 青冀二州北海郡",
+            "source_filename": "中国行政区划通史：三国两晋南朝卷Ⅱ(1).pdf_by_PaddleOCR-VL-1.6.md",
+            "source_sha256": "6ffbfe4cbc519e1b6ad5d66fca18e93ae880340f076b13b1b77b9de3039951ca",
+            "markdown_lines": [
+              12398,
+              12404
+            ],
+            "excerpt": "## 九、 $ \\underline{\\text{青、冀二州}} $所辖实郡沿革\n\n $ \\underline{\\text{青、冀二州}}  $，侨寄郁洲（今江苏连云港市东云台山一带）。齐末有青、冀二州，为双头州。《梁书》卷16《张稷传》：“出为使持节、散骑常侍、都督青冀二州诸军事、安北将军、青冀二州刺史。”是梁承齐旧，仍有青、冀二州。《梁书》卷3《武帝纪下》：大同四年“八月甲辰，诏‘南兖、北徐、西徐、东徐、青、冀、南北青、武、仁、潼、睢等十二州，既经饥馑，曲赦逋租宿责，勿收今年三调’”。《梁书》卷3《武帝纪下》：太清三年四月，“青、冀二州刺史明少遐、东徐州刺史湛海珍、北青州刺史王奉伯各举州附于魏”。《地形志》中海州：“刘子业置青州，武定七年改。”《地形志》所言刘子业置者，盖误。据《宋志》当为宋明帝立。然“武定七年改”与《梁书》所载之太清三年没契合。今从之。\n\n## （一） $ \\underline{\\text{北海郡}} $，寄治都昌（今江苏连云港市东云台山一带）\n\n按：《地形志》中海州东海郡：“萧衍改置北海郡，武定七年复。”此言恐误。齐末青、冀二州已有北海侨郡，领赣榆实县一，梁承之。此处不当言“萧衍改置”，当是武定七年改梁之北海郡为东海郡。",
+            "editorial_note": "正文說明承齊侨郡，549年四月州沒；郡層年末口徑止548。",
+            "verification": "text_verified_original_page_pending"
+          }
+        }
+      ]
+    },
+    {
+      "id": "liang_s0043_q_beidonghai",
+      "state_id": "liang_s0043",
+      "n": "北東海郡",
+      "o": 3.5,
+      "q": true,
+      "qi": null,
+      "research_source": {
+        "source_label": "《中國行政區劃通史》下卷第八編 · 青冀二州北東海郡",
+        "source_filename": "中国行政区划通史：三国两晋南朝卷Ⅱ(1).pdf_by_PaddleOCR-VL-1.6.md",
+        "source_sha256": "6ffbfe4cbc519e1b6ad5d66fca18e93ae880340f076b13b1b77b9de3039951ca",
+        "markdown_lines": [
+          12414,
+          12416
+        ],
+        "excerpt": "## （四） $ \\underline{\\text{北东海郡}} $，寄治连口（今江苏涟水县东）\n\n按：《地形志》中海州海西郡：“萧鸾置东海郡，武定七年改。”《地形志》所言东海郡，当即为齐末之北东海侨郡，所领厚丘为实县。《地形志》中海州海西郡临海：“萧衍置，魏因之。”则梁北东海侨郡又领有临海县。",
+        "editorial_note": "正文承齊北東海侨郡並記梁增臨海縣；縣起年沿用複核表，不以侨置標記推年。",
+        "verification": "text_verified_original_page_pending"
+      },
+      "ph": [
+        {
+          "start": 502,
+          "end": 548,
+          "name": "北東海郡",
+          "uncertain": false,
+          "raw": "502—548（正文沿革補入）",
+          "source": {
+            "source_label": "《中國行政區劃通史》下卷第八編 · 青冀二州北東海郡",
+            "source_filename": "中国行政区划通史：三国两晋南朝卷Ⅱ(1).pdf_by_PaddleOCR-VL-1.6.md",
+            "source_sha256": "6ffbfe4cbc519e1b6ad5d66fca18e93ae880340f076b13b1b77b9de3039951ca",
+            "markdown_lines": [
+              12414,
+              12416
+            ],
+            "excerpt": "## （四） $ \\underline{\\text{北东海郡}} $，寄治连口（今江苏涟水县东）\n\n按：《地形志》中海州海西郡：“萧鸾置东海郡，武定七年改。”《地形志》所言东海郡，当即为齐末之北东海侨郡，所领厚丘为实县。《地形志》中海州海西郡临海：“萧衍置，魏因之。”则梁北东海侨郡又领有临海县。",
+            "editorial_note": "正文承齊北東海侨郡並記梁增臨海縣；縣起年沿用複核表，不以侨置標記推年。",
+            "verification": "text_verified_original_page_pending"
+          }
+        }
+      ]
+    },
+    {
+      "id": "liang_s0139_q_xidangqu",
+      "state_id": "liang_s0139",
+      "n": "西宕渠郡",
+      "o": 10.5,
+      "q": true,
+      "qi": null,
+      "research_source": {
+        "source_label": "《中國行政區劃通史》下卷第八編 · 益州、新州西宕渠郡",
+        "source_filename": "中国行政区划通史：三国两晋南朝卷Ⅱ(1).pdf_by_PaddleOCR-VL-1.6.md",
+        "source_sha256": "6ffbfe4cbc519e1b6ad5d66fca18e93ae880340f076b13b1b77b9de3039951ca",
+        "markdown_lines": [
+          16134,
+          16136
+        ],
+        "excerpt": "## （十三） $ \\underline{\\text{西宕渠郡}} $，寄治通泉（今四川射洪县洋溪镇附近）\n\n按：齐末益州领有西宕渠侨郡，梁承之。《隋志》上新城郡通泉：“旧曰通泉，置西宕渠郡。西魏改郡、县俱曰涌泉。”则梁之西宕渠侨郡领通泉实县。据新州西宕渠郡考证，承圣元年移属新州。",
+        "editorial_note": "承齊舊；552移新州，553隨州而沒；依現有蜀地郡層553終年口徑。",
+        "verification": "text_verified_original_page_pending"
+      },
+      "ph": [
+        {
+          "start": 502,
+          "end": 551,
+          "name": "西宕渠郡",
+          "uncertain": false,
+          "raw": "502—551（正文沿革補入）",
+          "source": {
+            "source_label": "《中國行政區劃通史》下卷第八編 · 益州、新州西宕渠郡",
+            "source_filename": "中国行政区划通史：三国两晋南朝卷Ⅱ(1).pdf_by_PaddleOCR-VL-1.6.md",
+            "source_sha256": "6ffbfe4cbc519e1b6ad5d66fca18e93ae880340f076b13b1b77b9de3039951ca",
+            "markdown_lines": [
+              16134,
+              16136
+            ],
+            "excerpt": "## （十三） $ \\underline{\\text{西宕渠郡}} $，寄治通泉（今四川射洪县洋溪镇附近）\n\n按：齐末益州领有西宕渠侨郡，梁承之。《隋志》上新城郡通泉：“旧曰通泉，置西宕渠郡。西魏改郡、县俱曰涌泉。”则梁之西宕渠侨郡领通泉实县。据新州西宕渠郡考证，承圣元年移属新州。",
+            "editorial_note": "承齊舊；552移新州，553隨州而沒；依現有蜀地郡層553終年口徑。",
+            "verification": "text_verified_original_page_pending"
+          }
+        }
+      ]
+    },
+    {
+      "id": "liang_s0144_q_xidangqu",
+      "state_id": "liang_s0144",
+      "n": "西宕渠郡",
+      "o": 6,
+      "q": true,
+      "qi": null,
+      "research_source": {
+        "source_label": "《中國行政區劃通史》下卷第八編 · 新州西宕渠郡",
+        "source_filename": "中国行政区划通史：三国两晋南朝卷Ⅱ(1).pdf_by_PaddleOCR-VL-1.6.md",
+        "source_sha256": "6ffbfe4cbc519e1b6ad5d66fca18e93ae880340f076b13b1b77b9de3039951ca",
+        "markdown_lines": [
+          16250,
+          16252
+        ],
+        "excerpt": "（六） $ \\underline{\\text{西宕渠郡}} $，侨寄通泉（今四川射洪县洋溪镇附近）\n\n按：西宕渠侨郡本益州属郡。《补梁志》卷4列为新州属郡。或是承圣元年置新州时来属，以地望揆之亦合。今从之。",
+        "editorial_note": "承齊舊；552移新州，553隨州而沒；依現有蜀地郡層553終年口徑。",
+        "verification": "text_verified_original_page_pending"
+      },
+      "ph": [
+        {
+          "start": 552,
+          "end": 553,
+          "name": "西宕渠郡",
+          "uncertain": true,
+          "raw": "552—553（正文沿革補入）",
+          "source": {
+            "source_label": "《中國行政區劃通史》下卷第八編 · 新州西宕渠郡",
+            "source_filename": "中国行政区划通史：三国两晋南朝卷Ⅱ(1).pdf_by_PaddleOCR-VL-1.6.md",
+            "source_sha256": "6ffbfe4cbc519e1b6ad5d66fca18e93ae880340f076b13b1b77b9de3039951ca",
+            "markdown_lines": [
+              16250,
+              16252
+            ],
+            "excerpt": "（六） $ \\underline{\\text{西宕渠郡}} $，侨寄通泉（今四川射洪县洋溪镇附近）\n\n按：西宕渠侨郡本益州属郡。《补梁志》卷4列为新州属郡。或是承圣元年置新州时来属，以地望揆之亦合。今从之。",
+            "editorial_note": "承齊舊；552移新州，553隨州而沒；依現有蜀地郡層553終年口徑。",
+            "verification": "text_verified_original_page_pending"
+          }
+        }
+      ]
+    },
+    {
+      "id": "liang_s0005_p_dongyang",
+      "state_id": "liang_s0005",
+      "n": "東陽郡",
+      "o": 1,
+      "q": false,
+      "qi": null,
+      "research_source": {
+        "source_label": "《中國行政區劃通史》下卷第八編 · 婺州、縉州東陽郡",
+        "source_filename": "中国行政区划通史：三国两晋南朝卷Ⅱ(1).pdf_by_PaddleOCR-VL-1.6.md",
+        "source_sha256": "6ffbfe4cbc519e1b6ad5d66fca18e93ae880340f076b13b1b77b9de3039951ca",
+        "markdown_lines": [
+          10838,
+          10844
+        ],
+        "excerpt": "婺州（553前—556前，556前—557前缙州），治长山（今浙江金华市）。\n\n《通鉴》卷165承圣二年十月：“己酉，王僧辩至姑孰，遣婺州刺史侯填……筑垒东关，以待齐师。”胡三省注曰：“东阳郡，梁置婺州。”《陈书》卷35《留异传》：“绍泰二年，以应接之功，除持节、通直散骑常侍、信武将军、缙州刺史，领东阳太守。”《一统志》卷299金华府：“三国吴宝鼎元年于长山县置东阳郡，晋及宋、齐因之，梁末置缙州，陈改置金华郡。”则承圣二年前置婺州于东阳，绍泰二年前又改为缙州。据扬州东阳郡考证，太平二年前，东阳郡移属扬州，则疑缙州暂废。\n\n东阳郡（553前—557前）——治长山（今浙江金华市）\n\n按：南齐扬州领有东阳郡，萧梁承之。据本州考证，普通五年移属东扬州，承圣二年前于东阳郡置婺州，乃改属焉。然《陈书》卷1《高祖纪上》，太平二年八月，梁朝策陈霸先曰：“今授公相国，以南豫州之陈留、南丹阳、宣城，扬州之吴兴、东阳、新安、新宁，南徐州之义兴，江州之鄱阳、临川十郡，封公为陈公。”则太平二年八月前，东阳郡复移属扬州。",
+        "editorial_note": "553前、557前不是502起年。僅在553年婺州、556年縉州兩個文獻錨年附東陽，不由單年記錄補滿554—555。557揚州復屬有當年策文。這些是本年有見，不是設州年或年末隸屬已全部考定；其他轉屬確年仍待考。",
+        "verification": "text_verified_original_page_pending"
+      },
+      "ph": [
+        {
+          "start": 553,
+          "end": 553,
+          "name": "東陽郡",
+          "uncertain": true,
+          "raw": "553（本年文獻有婺州，非確定建州年）",
+          "source": {
+            "source_label": "《中國行政區劃通史》下卷第八編 · 婺州、縉州東陽郡",
+            "source_filename": "中国行政区划通史：三国两晋南朝卷Ⅱ(1).pdf_by_PaddleOCR-VL-1.6.md",
+            "source_sha256": "6ffbfe4cbc519e1b6ad5d66fca18e93ae880340f076b13b1b77b9de3039951ca",
+            "markdown_lines": [
+              10838,
+              10844
+            ],
+            "excerpt": "婺州（553前—556前，556前—557前缙州），治长山（今浙江金华市）。\n\n《通鉴》卷165承圣二年十月：“己酉，王僧辩至姑孰，遣婺州刺史侯填……筑垒东关，以待齐师。”胡三省注曰：“东阳郡，梁置婺州。”《陈书》卷35《留异传》：“绍泰二年，以应接之功，除持节、通直散骑常侍、信武将军、缙州刺史，领东阳太守。”《一统志》卷299金华府：“三国吴宝鼎元年于长山县置东阳郡，晋及宋、齐因之，梁末置缙州，陈改置金华郡。”则承圣二年前置婺州于东阳，绍泰二年前又改为缙州。据扬州东阳郡考证，太平二年前，东阳郡移属扬州，则疑缙州暂废。\n\n东阳郡（553前—557前）——治长山（今浙江金华市）\n\n按：南齐扬州领有东阳郡，萧梁承之。据本州考证，普通五年移属东扬州，承圣二年前于东阳郡置婺州，乃改属焉。然《陈书》卷1《高祖纪上》，太平二年八月，梁朝策陈霸先曰：“今授公相国，以南豫州之陈留、南丹阳、宣城，扬州之吴兴、东阳、新安、新宁，南徐州之义兴，江州之鄱阳、临川十郡，封公为陈公。”则太平二年八月前，东阳郡复移属扬州。",
+            "editorial_note": "553前、557前不是502起年。僅在553年婺州、556年縉州兩個文獻錨年附東陽，不由單年記錄補滿554—555。557揚州復屬有當年策文。這些是本年有見，不是設州年或年末隸屬已全部考定；其他轉屬確年仍待考。",
+            "verification": "text_verified_original_page_pending"
+          }
+        },
+        {
+          "start": 556,
+          "end": 556,
+          "name": "東陽郡",
+          "uncertain": true,
+          "raw": "556（本年文獻有縉州刺史領東陽太守，非確定轉屬年）",
+          "source": {
+            "source_label": "《中國行政區劃通史》下卷第八編 · 婺州、縉州東陽郡",
+            "source_filename": "中国行政区划通史：三国两晋南朝卷Ⅱ(1).pdf_by_PaddleOCR-VL-1.6.md",
+            "source_sha256": "6ffbfe4cbc519e1b6ad5d66fca18e93ae880340f076b13b1b77b9de3039951ca",
+            "markdown_lines": [
+              10838,
+              10844
+            ],
+            "excerpt": "婺州（553前—556前，556前—557前缙州），治长山（今浙江金华市）。\n\n《通鉴》卷165承圣二年十月：“己酉，王僧辩至姑孰，遣婺州刺史侯填……筑垒东关，以待齐师。”胡三省注曰：“东阳郡，梁置婺州。”《陈书》卷35《留异传》：“绍泰二年，以应接之功，除持节、通直散骑常侍、信武将军、缙州刺史，领东阳太守。”《一统志》卷299金华府：“三国吴宝鼎元年于长山县置东阳郡，晋及宋、齐因之，梁末置缙州，陈改置金华郡。”则承圣二年前置婺州于东阳，绍泰二年前又改为缙州。据扬州东阳郡考证，太平二年前，东阳郡移属扬州，则疑缙州暂废。\n\n东阳郡（553前—557前）——治长山（今浙江金华市）\n\n按：南齐扬州领有东阳郡，萧梁承之。据本州考证，普通五年移属东扬州，承圣二年前于东阳郡置婺州，乃改属焉。然《陈书》卷1《高祖纪上》，太平二年八月，梁朝策陈霸先曰：“今授公相国，以南豫州之陈留、南丹阳、宣城，扬州之吴兴、东阳、新安、新宁，南徐州之义兴，江州之鄱阳、临川十郡，封公为陈公。”则太平二年八月前，东阳郡复移属扬州。",
+            "editorial_note": "553前、557前不是502起年。僅在553年婺州、556年縉州兩個文獻錨年附東陽，不由單年記錄補滿554—555。557揚州復屬有當年策文。這些是本年有見，不是設州年或年末隸屬已全部考定；其他轉屬確年仍待考。",
+            "verification": "text_verified_original_page_pending"
+          }
+        }
+      ]
+    }
+  ],
+  "county_links": [
+    {
+      "id": "LR-0072-S01-E502",
+      "county_id": "lc_0072",
+      "assignment_id": "LR-0072-S01",
+      "start": 502,
+      "end": 557,
+      "prefecture_ids": [
+        "liang_s0007_q_lanling"
+      ],
+      "source": {
+        "source_label": "《中國行政區劃通史》下卷第八編 · 南徐州蘭陵郡",
+        "source_filename": "中国行政区划通史：三国两晋南朝卷Ⅱ(1).pdf_by_PaddleOCR-VL-1.6.md",
+        "source_sha256": "6ffbfe4cbc519e1b6ad5d66fca18e93ae880340f076b13b1b77b9de3039951ca",
+        "markdown_lines": [
+          10852,
+          10856
+        ],
+        "excerpt": " $ \\underline{\\text{南徐州}} $，侨寄京口（今江苏镇江市）。萧齐有南徐州，梁承之。改南琅邪郡为南琅邪、（南）彭城二郡；天监六年（507）自晋陵郡析置信义郡；太平二年又自晋陵郡析置江阴郡。\n\n## （一） $ \\underline{\\text{兰陵郡}} $，侨寄延陵（今江苏镇江市）\n\n按：齐末南徐州领有南东海侨郡，领丹徒、武进二实县。《梁书》卷2《武帝纪中》：天监元年四月，“改南东海为兰陵郡”。梁又改武进县为兰陵县。则梁兰陵侨郡领丹徒、兰陵二实县。",
+        "editorial_note": "502年四月改南東海為蘭陵。丹徒是實縣，不能因其所屬為侨郡而標作侨縣。蘭陵縣改名確年仍未明，本輪只確立郡實體及丹徒的連接。",
+        "verification": "text_verified_original_page_pending"
+      },
+      "reason": "南東海為蘭陵郡舊名；正文明确改名，不是同名搜索。",
+      "override_machine_hold": false,
+      "uncertain": false
+    },
+    {
+      "id": "LC-0088-S01-E502",
+      "county_id": "lc_0088",
+      "assignment_id": "LC-0088-S01",
+      "start": 502,
+      "end": 535,
+      "prefecture_ids": [
+        "liang_s0007_q_langye"
+      ],
+      "source": {
+        "source_label": "《中國行政區劃通史》下卷第八編 · 南徐州南琅邪、（南）彭城二郡及江乘縣",
+        "source_filename": "中国行政区划通史：三国两晋南朝卷Ⅱ(1).pdf_by_PaddleOCR-VL-1.6.md",
+        "source_sha256": "6ffbfe4cbc519e1b6ad5d66fca18e93ae880340f076b13b1b77b9de3039951ca",
+        "markdown_lines": [
+          10876,
+          10878
+        ],
+        "excerpt": "（六） $ \\underline{\\text{南琅邪、（南）彭城二郡}} $，寄治白下城（今江苏南京市北金川门外，幕府山南麓）\n\n按：齐末南徐州领有南琅邪侨郡，领江乘实县。《梁书》卷3《武帝纪下》：大同三年“夏四月丁卯，以南琅邪、彭城二郡太守河东王誉为南徐州刺史”。则梁改南琅邪侨郡为南琅邪（南）彭城二郡，亦领江乘县。",
+        "editorial_note": "南琅邪承齊舊，537年始見二郡合題，分設確年不詳。502—536以舊名附列並標※；537以後合題亦保留始年不詳，不以537斷言分設年。江乘依原縣表535年省廢當年仍列。",
+        "verification": "text_verified_original_page_pending"
+      },
+      "reason": "江乘附南琅邪郡，原機器義興郡為錯配；縣535終年保留。",
+      "override_machine_hold": true,
+      "uncertain": true
+    },
+    {
+      "id": "LR-0204-S01-E502",
+      "county_id": "lc_0204",
+      "assignment_id": "LR-0204-S01",
+      "start": 502,
+      "end": 554,
+      "prefecture_ids": [
+        "liang_s0015_q_qin",
+        "liang_s0018_q_qin"
+      ],
+      "source": {
+        "source_label": "《中國行政區劃通史》下卷第八編 · 西兗州秦郡",
+        "source_filename": "中国行政区划通史：三国两晋南朝卷Ⅱ(1).pdf_by_PaddleOCR-VL-1.6.md",
+        "source_sha256": "6ffbfe4cbc519e1b6ad5d66fca18e93ae880340f076b13b1b77b9de3039951ca",
+        "markdown_lines": [
+          11700,
+          11704
+        ],
+        "excerpt": " $ \\underline{\\text{西兖州}} $，治 $ \\underline{\\text{尉氏}} $（今江苏南京市六合区）。《梁书》卷56《侯景传》：大宝元年七月，“景以秦郡为西兖州，阳平郡为北兖州”。《北齐书》卷4《文宣纪》：天保六年（梁绍泰元年，555）十一月，“东南道行台赵彦深获秦郡等五城，户二万余，所在安辑之”。则西兖州大宝元年置，绍泰元年没。\n\n秦郡，侨寄六合（今江苏南京市六合区）\n\n按：据本州考证，秦郡本南兖州属郡，领六合、堂邑二实县。据本州考证，大宝元年七月来属，绍泰元年没。",
+        "editorial_note": "秦郡550年移置西兗州，555年陷；按政區年末口徑不在555年續列。",
+        "verification": "text_verified_original_page_pending"
+      },
+      "reason": "六合附秦郡，按南兗州至西兗州沿革連接。",
+      "override_machine_hold": false,
+      "uncertain": false
+    },
+    {
+      "id": "LC-0169-S01-E502",
+      "county_id": "lc_0169",
+      "assignment_id": "LC-0169-S01",
+      "start": 502,
+      "end": 548,
+      "prefecture_ids": [
+        "liang_s0017_q_shanyang"
+      ],
+      "source": {
+        "source_label": "《中國行政區劃通史》下卷第八編 · 北兗州山陽郡",
+        "source_filename": "中国行政区划通史：三国两晋南朝卷Ⅱ(1).pdf_by_PaddleOCR-VL-1.6.md",
+        "source_sha256": "6ffbfe4cbc519e1b6ad5d66fca18e93ae880340f076b13b1b77b9de3039951ca",
+        "markdown_lines": [
+          11688,
+          11692
+        ],
+        "excerpt": " $ \\underline{\\text{北兖州}}  $，寄治淮阴（今江苏淮安市淮阴区西南甘罗城）。齐末有北兖侨州，所领皆侨郡县。梁承齐之北兖州，然渐领实郡、实县。《梁书》卷3《武帝纪下》：太清元年（547）“冬十一月，魏遣大将军慕容绍宗等至寒山。丙午，大战，渊明败绩，及北兖州刺史胡贵孙等并陷魏。绍宗进围潼州”。《梁书》卷56《侯景传》：太清三年三月，“初，北兖州刺史定襄侯祗与湘潭侯退，及前潼州刺史郭凤同起兵，将赴援。至是，凤谋以淮阴应景，祗等力不能制，并奔于魏。景以萧弄璋为北兖州刺史，州民发兵拒之，景遣厢公丘子英、直阁将军羊海率众赴援，海斩子英，率其军降于魏，魏遂据其淮阴”。然《地形志》中淮州：“萧衍置，魏因之。治淮阴城。”似梁即于淮阴置淮州，故《补梁志》卷1淮州条、《北齐志》卷5淮州条均以为梁改北兖州为淮州，为东魏所承袭。然此于《梁书》中无载，且据上文考证，直至太清三年淮阴失陷，尚称为北兖州。又，《隋志》下江都郡山阳：“后魏淮阴郡，东魏改为淮州。”此与《梁书》所载合。今从《梁书》、《隋志》。《梁书》卷56《侯景传》：大宝元年七月，“景以秦郡为西兖州，阳平郡为北兖州”。此盖淮阴失陷，故移北兖州治于阳平郡。旋又没。\n\n## （一） $ \\underline{\\text{山阳郡}} $，寄治山阳（今江苏淮安市）\n\n按：齐末南兖州领有山阳侨郡，领实县四。《梁政区建置表》以之为北兖州属郡，今从之。太清三年没。",
+        "editorial_note": "太清三年失守，郡層年末口徑止548；縣表山陽549終年仍保留於原資料。齊末屬南兗州，梁移北兗州確年不詳；此處承正文郡屬作附列，整段標※，不視502為已考定轉州年。",
+        "verification": "text_verified_original_page_pending"
+      },
+      "reason": "原機器海陵郡與正文山陽郡衝突，依本地域正文侨郡改正。",
+      "override_machine_hold": true,
+      "uncertain": false
+    },
+    {
+      "id": "LC-0170-S01-E502",
+      "county_id": "lc_0170",
+      "assignment_id": "LC-0170-S01",
+      "start": 502,
+      "end": 548,
+      "prefecture_ids": [
+        "liang_s0017_q_shanyang"
+      ],
+      "source": {
+        "source_label": "《中國行政區劃通史》下卷第八編 · 北兗州山陽郡",
+        "source_filename": "中国行政区划通史：三国两晋南朝卷Ⅱ(1).pdf_by_PaddleOCR-VL-1.6.md",
+        "source_sha256": "6ffbfe4cbc519e1b6ad5d66fca18e93ae880340f076b13b1b77b9de3039951ca",
+        "markdown_lines": [
+          11688,
+          11692
+        ],
+        "excerpt": " $ \\underline{\\text{北兖州}}  $，寄治淮阴（今江苏淮安市淮阴区西南甘罗城）。齐末有北兖侨州，所领皆侨郡县。梁承齐之北兖州，然渐领实郡、实县。《梁书》卷3《武帝纪下》：太清元年（547）“冬十一月，魏遣大将军慕容绍宗等至寒山。丙午，大战，渊明败绩，及北兖州刺史胡贵孙等并陷魏。绍宗进围潼州”。《梁书》卷56《侯景传》：太清三年三月，“初，北兖州刺史定襄侯祗与湘潭侯退，及前潼州刺史郭凤同起兵，将赴援。至是，凤谋以淮阴应景，祗等力不能制，并奔于魏。景以萧弄璋为北兖州刺史，州民发兵拒之，景遣厢公丘子英、直阁将军羊海率众赴援，海斩子英，率其军降于魏，魏遂据其淮阴”。然《地形志》中淮州：“萧衍置，魏因之。治淮阴城。”似梁即于淮阴置淮州，故《补梁志》卷1淮州条、《北齐志》卷5淮州条均以为梁改北兖州为淮州，为东魏所承袭。然此于《梁书》中无载，且据上文考证，直至太清三年淮阴失陷，尚称为北兖州。又，《隋志》下江都郡山阳：“后魏淮阴郡，东魏改为淮州。”此与《梁书》所载合。今从《梁书》、《隋志》。《梁书》卷56《侯景传》：大宝元年七月，“景以秦郡为西兖州，阳平郡为北兖州”。此盖淮阴失陷，故移北兖州治于阳平郡。旋又没。\n\n## （一） $ \\underline{\\text{山阳郡}} $，寄治山阳（今江苏淮安市）\n\n按：齐末南兖州领有山阳侨郡，领实县四。《梁政区建置表》以之为北兖州属郡，今从之。太清三年没。",
+        "editorial_note": "太清三年失守，郡層年末口徑止548；縣表山陽549終年仍保留於原資料。齊末屬南兗州，梁移北兗州確年不詳；此處承正文郡屬作附列，整段標※，不視502為已考定轉州年。",
+        "verification": "text_verified_original_page_pending"
+      },
+      "reason": "原機器海陵郡與正文山陽郡衝突，依本地域正文侨郡改正。",
+      "override_machine_hold": true,
+      "uncertain": false
+    },
+    {
+      "id": "LR-0213-S01-E502",
+      "county_id": "lc_0213",
+      "assignment_id": "LR-0213-S01",
+      "start": 502,
+      "end": 548,
+      "prefecture_ids": [
+        "liang_s0043_q_beihai"
+      ],
+      "source": {
+        "source_label": "《中國行政區劃通史》下卷第八編 · 青冀二州北海郡",
+        "source_filename": "中国行政区划通史：三国两晋南朝卷Ⅱ(1).pdf_by_PaddleOCR-VL-1.6.md",
+        "source_sha256": "6ffbfe4cbc519e1b6ad5d66fca18e93ae880340f076b13b1b77b9de3039951ca",
+        "markdown_lines": [
+          12398,
+          12404
+        ],
+        "excerpt": "## 九、 $ \\underline{\\text{青、冀二州}} $所辖实郡沿革\n\n $ \\underline{\\text{青、冀二州}}  $，侨寄郁洲（今江苏连云港市东云台山一带）。齐末有青、冀二州，为双头州。《梁书》卷16《张稷传》：“出为使持节、散骑常侍、都督青冀二州诸军事、安北将军、青冀二州刺史。”是梁承齐旧，仍有青、冀二州。《梁书》卷3《武帝纪下》：大同四年“八月甲辰，诏‘南兖、北徐、西徐、东徐、青、冀、南北青、武、仁、潼、睢等十二州，既经饥馑，曲赦逋租宿责，勿收今年三调’”。《梁书》卷3《武帝纪下》：太清三年四月，“青、冀二州刺史明少遐、东徐州刺史湛海珍、北青州刺史王奉伯各举州附于魏”。《地形志》中海州：“刘子业置青州，武定七年改。”《地形志》所言刘子业置者，盖误。据《宋志》当为宋明帝立。然“武定七年改”与《梁书》所载之太清三年没契合。今从之。\n\n## （一） $ \\underline{\\text{北海郡}} $，寄治都昌（今江苏连云港市东云台山一带）\n\n按：《地形志》中海州东海郡：“萧衍改置北海郡，武定七年复。”此言恐误。齐末青、冀二州已有北海侨郡，领赣榆实县一，梁承之。此处不当言“萧衍改置”，当是武定七年改梁之北海郡为东海郡。",
+        "editorial_note": "正文說明承齊侨郡，549年四月州沒；郡層年末口徑止548。",
+        "verification": "text_verified_original_page_pending"
+      },
+      "reason": "本地域北海侨郡領贛榆，原郡行漏提取。",
+      "override_machine_hold": false,
+      "uncertain": false
+    },
+    {
+      "id": "LR-0220-S01-E502",
+      "county_id": "lc_0220",
+      "assignment_id": "LR-0220-S01",
+      "start": 502,
+      "end": 548,
+      "prefecture_ids": [
+        "liang_s0043_q_beidonghai"
+      ],
+      "source": {
+        "source_label": "《中國行政區劃通史》下卷第八編 · 青冀二州北東海郡",
+        "source_filename": "中国行政区划通史：三国两晋南朝卷Ⅱ(1).pdf_by_PaddleOCR-VL-1.6.md",
+        "source_sha256": "6ffbfe4cbc519e1b6ad5d66fca18e93ae880340f076b13b1b77b9de3039951ca",
+        "markdown_lines": [
+          12414,
+          12416
+        ],
+        "excerpt": "## （四） $ \\underline{\\text{北东海郡}} $，寄治连口（今江苏涟水县东）\n\n按：《地形志》中海州海西郡：“萧鸾置东海郡，武定七年改。”《地形志》所言东海郡，当即为齐末之北东海侨郡，所领厚丘为实县。《地形志》中海州海西郡临海：“萧衍置，魏因之。”则梁北东海侨郡又领有临海县。",
+        "editorial_note": "正文承齊北東海侨郡並記梁增臨海縣；縣起年沿用複核表，不以侨置標記推年。",
+        "verification": "text_verified_original_page_pending"
+      },
+      "reason": "臨海附青冀二州北東海郡，與南徐州南東海分開。",
+      "override_machine_hold": false,
+      "uncertain": false
+    },
+    {
+      "id": "LR-0721-S01-E502",
+      "county_id": "lc_0721",
+      "assignment_id": "LR-0721-S01",
+      "start": 502,
+      "end": 553,
+      "prefecture_ids": [
+        "liang_s0139_q_xidangqu",
+        "liang_s0144_q_xidangqu"
+      ],
+      "source": {
+        "source_label": "《中國行政區劃通史》下卷第八編 · 益州、新州西宕渠郡",
+        "source_filename": "中国行政区划通史：三国两晋南朝卷Ⅱ(1).pdf_by_PaddleOCR-VL-1.6.md",
+        "source_sha256": "6ffbfe4cbc519e1b6ad5d66fca18e93ae880340f076b13b1b77b9de3039951ca",
+        "markdown_lines": [
+          16134,
+          16136
+        ],
+        "excerpt": "## （十三） $ \\underline{\\text{西宕渠郡}} $，寄治通泉（今四川射洪县洋溪镇附近）\n\n按：齐末益州领有西宕渠侨郡，梁承之。《隋志》上新城郡通泉：“旧曰通泉，置西宕渠郡。西魏改郡、县俱曰涌泉。”则梁之西宕渠侨郡领通泉实县。据新州西宕渠郡考证，承圣元年移属新州。",
+        "editorial_note": "承齊舊；552移新州，553隨州而沒；依現有蜀地郡層553終年口徑。",
+        "verification": "text_verified_original_page_pending"
+      },
+      "reason": "通泉所附西宕渠侨郡依正文及州地域定位。",
+      "override_machine_hold": false,
+      "uncertain": false
+    },
+    {
+      "id": "LR-0315-S01-E502",
+      "county_id": "lc_0315",
+      "assignment_id": "LR-0315-S01",
+      "start": 502,
+      "end": 557,
+      "prefecture_ids": [
+        "liang_s0115_p001"
+      ],
+      "source": {
+        "source_label": "《中國行政區劃通史》下卷第八編 · 江漢吳昌縣",
+        "source_filename": "中国行政区划通史：三国两晋南朝卷Ⅱ(1).pdf_by_PaddleOCR-VL-1.6.md",
+        "source_sha256": "6ffbfe4cbc519e1b6ad5d66fca18e93ae880340f076b13b1b77b9de3039951ca",
+        "markdown_lines": [
+          13374,
+          13376
+        ],
+        "excerpt": "### 47. 吴昌\n\n按：齐末湘州长沙郡领有吴昌县。《隋志》下巴陵郡罗：“开皇九年废吴昌、湘滨二县入。”则梁有吴昌县。",
+        "editorial_note": "縣條雖編入江漢，正文明确齊末湘州長沙郡；不能用資料分區阻擋。",
+        "verification": "text_verified_original_page_pending"
+      },
+      "reason": "原書县條所在分區與州郡分區不同；正文明記長沙郡。",
+      "override_machine_hold": false,
+      "uncertain": false
+    },
+    {
+      "id": "LR-0598-S01-E502",
+      "county_id": "lc_0598",
+      "assignment_id": "LR-0598-S01",
+      "start": 502,
+      "end": 557,
+      "prefecture_ids": [
+        "liang_s0058_p009"
+      ],
+      "source": {
+        "source_label": "縣郡複核工作簿 · 剩余人工判断第63行",
+        "excerpt": "人工确认：巴陵郡。縣表屬沅湘資料分區，州郡表的郢州巴陵郡列江漢；保留人工郡屬，僅解除資料分區造成的阻擋。",
+        "editorial_note": "有效時段仍與原縣時段及郢州巴陵郡時段相交，不因連接補出新郡年。"
+      },
+      "reason": "人工明定巴陵郡；跨資料分區的具名實體對應。",
+      "override_machine_hold": false,
+      "uncertain": false
+    },
+    {
+      "id": "LR-0617-S01-E502",
+      "county_id": "lc_0617",
+      "assignment_id": "LR-0617-S01",
+      "start": 502,
+      "end": 557,
+      "prefecture_ids": [
+        "liang_s0058_p009"
+      ],
+      "source": {
+        "source_label": "縣郡複核工作簿 · 剩余人工判断第65行",
+        "excerpt": "人工确认：巴陵郡。縣表屬沅湘資料分區，州郡表的郢州巴陵郡列江漢；保留人工郡屬，僅解除資料分區造成的阻擋。",
+        "editorial_note": "有效時段仍與原縣時段及郢州巴陵郡時段相交，不因連接補出新郡年。"
+      },
+      "reason": "人工明定巴陵郡；跨資料分區的具名實體對應。",
+      "override_machine_hold": false,
+      "uncertain": false
+    },
+    {
+      "id": "LC-0703-S01-E502",
+      "county_id": "lc_0703",
+      "assignment_id": "LC-0703-S01",
+      "start": 502,
+      "end": 553,
+      "prefecture_ids": [
+        "liang_s0139_p017",
+        "liang_s0143_p003"
+      ],
+      "source": {
+        "source_label": "《中國行政區劃通史》下卷第八編 · 蜀中泰昌、北井縣",
+        "source_filename": "中国行政区划通史：三国两晋南朝卷Ⅱ(1).pdf_by_PaddleOCR-VL-1.6.md",
+        "source_sha256": "6ffbfe4cbc519e1b6ad5d66fca18e93ae880340f076b13b1b77b9de3039951ca",
+        "markdown_lines": [
+          16440,
+          16446
+        ],
+        "excerpt": "### 9. 泰昌\n\n按：《舆地广记》卷33《夔州路》同下州大宁监中下大昌县：“本泰昌，晋太康初分秭归置，属建平郡。宋、齐因之。后周避文帝名，改曰建昌。”则梁亦当有此县。\n\n### 10. 北井\n\n按：《舆地广记》卷33《夔州路》同下州大宁监中下大昌县：“故北井县，晋属建平郡。宋、齐、梁因之。后周省入。”则梁有北井县。",
+        "editorial_note": "兩縣在夔州路大昌，屬治巫的建平郡；不是寧州南中同名建平郡。依既有益州502—522、信州523—553兩郡段連接。",
+        "verification": "text_verified_original_page_pending"
+      },
+      "reason": "按原書地域及附郡上下文排除寧州同名建平。",
+      "override_machine_hold": false,
+      "uncertain": false
+    },
+    {
+      "id": "LC-0704-S01-E502",
+      "county_id": "lc_0704",
+      "assignment_id": "LC-0704-S01",
+      "start": 502,
+      "end": 553,
+      "prefecture_ids": [
+        "liang_s0139_p017",
+        "liang_s0143_p003"
+      ],
+      "source": {
+        "source_label": "《中國行政區劃通史》下卷第八編 · 蜀中泰昌、北井縣",
+        "source_filename": "中国行政区划通史：三国两晋南朝卷Ⅱ(1).pdf_by_PaddleOCR-VL-1.6.md",
+        "source_sha256": "6ffbfe4cbc519e1b6ad5d66fca18e93ae880340f076b13b1b77b9de3039951ca",
+        "markdown_lines": [
+          16440,
+          16446
+        ],
+        "excerpt": "### 9. 泰昌\n\n按：《舆地广记》卷33《夔州路》同下州大宁监中下大昌县：“本泰昌，晋太康初分秭归置，属建平郡。宋、齐因之。后周避文帝名，改曰建昌。”则梁亦当有此县。\n\n### 10. 北井\n\n按：《舆地广记》卷33《夔州路》同下州大宁监中下大昌县：“故北井县，晋属建平郡。宋、齐、梁因之。后周省入。”则梁有北井县。",
+        "editorial_note": "兩縣在夔州路大昌，屬治巫的建平郡；不是寧州南中同名建平郡。依既有益州502—522、信州523—553兩郡段連接。",
+        "verification": "text_verified_original_page_pending"
+      },
+      "reason": "按原書地域及附郡上下文排除寧州同名建平。",
+      "override_machine_hold": false,
+      "uncertain": false
+    },
+    {
+      "id": "LC-0242-S01-E528",
+      "county_id": "lc_0242",
+      "assignment_id": "LC-0242-S01",
+      "start": 528,
+      "end": 548,
+      "prefecture_ids": [
+        "liang_s0042_p001"
+      ],
+      "source": {
+        "source_label": "《中國行政區劃通史》下卷第八編 · 淮北陳州雙頭郡及附縣",
+        "source_filename": "中国行政区划通史：三国两晋南朝卷Ⅱ(1).pdf_by_PaddleOCR-VL-1.6.md",
+        "source_sha256": "6ffbfe4cbc519e1b6ad5d66fca18e93ae880340f076b13b1b77b9de3039951ca",
+        "markdown_lines": [
+          12560,
+          12570
+        ],
+        "excerpt": "### 30. 宋\n\n按：《地形志》中颍州汝阴、弋阳二郡宋：“萧衍置，魏因之。”据陈州考证，宋当为陈州汝阴、弋阳二郡属县。\n\n### 31. 新息\n\n按：《地形志》中颍州汝阴、弋阳二郡新息：“萧衍置新息”。据陈州考证，新息当为陈州汝阴、弋阳二郡属县。\n\n### 32. 期思\n\n按：《地形志》中颍州汝阴、弋阳二郡期思：“萧衍置，魏因之。”据陈州考证，期思当为陈州汝阴、弋阳二郡属县。",
+        "editorial_note": "原書結論與底表均為二郡合題，直接附同地域合題實體；未拆分到單郡。528—548與原有陳州郡段相交。",
+        "verification": "text_verified_original_page_pending"
+      },
+      "reason": "合題行已存在，無須人工拆郡；原機器僅因合題而攔截。",
+      "override_machine_hold": true,
+      "uncertain": false
+    },
+    {
+      "id": "LC-0243-S01-E528",
+      "county_id": "lc_0243",
+      "assignment_id": "LC-0243-S01",
+      "start": 528,
+      "end": 548,
+      "prefecture_ids": [
+        "liang_s0042_p001"
+      ],
+      "source": {
+        "source_label": "《中國行政區劃通史》下卷第八編 · 淮北陳州雙頭郡及附縣",
+        "source_filename": "中国行政区划通史：三国两晋南朝卷Ⅱ(1).pdf_by_PaddleOCR-VL-1.6.md",
+        "source_sha256": "6ffbfe4cbc519e1b6ad5d66fca18e93ae880340f076b13b1b77b9de3039951ca",
+        "markdown_lines": [
+          12560,
+          12570
+        ],
+        "excerpt": "### 30. 宋\n\n按：《地形志》中颍州汝阴、弋阳二郡宋：“萧衍置，魏因之。”据陈州考证，宋当为陈州汝阴、弋阳二郡属县。\n\n### 31. 新息\n\n按：《地形志》中颍州汝阴、弋阳二郡新息：“萧衍置新息”。据陈州考证，新息当为陈州汝阴、弋阳二郡属县。\n\n### 32. 期思\n\n按：《地形志》中颍州汝阴、弋阳二郡期思：“萧衍置，魏因之。”据陈州考证，期思当为陈州汝阴、弋阳二郡属县。",
+        "editorial_note": "原書結論與底表均為二郡合題，直接附同地域合題實體；未拆分到單郡。528—548與原有陳州郡段相交。",
+        "verification": "text_verified_original_page_pending"
+      },
+      "reason": "合題行已存在，無須人工拆郡；原機器僅因合題而攔截。",
+      "override_machine_hold": true,
+      "uncertain": false
+    },
+    {
+      "id": "LC-0244-S01-E528",
+      "county_id": "lc_0244",
+      "assignment_id": "LC-0244-S01",
+      "start": 528,
+      "end": 548,
+      "prefecture_ids": [
+        "liang_s0042_p001"
+      ],
+      "source": {
+        "source_label": "《中國行政區劃通史》下卷第八編 · 淮北陳州雙頭郡及附縣",
+        "source_filename": "中国行政区划通史：三国两晋南朝卷Ⅱ(1).pdf_by_PaddleOCR-VL-1.6.md",
+        "source_sha256": "6ffbfe4cbc519e1b6ad5d66fca18e93ae880340f076b13b1b77b9de3039951ca",
+        "markdown_lines": [
+          12560,
+          12570
+        ],
+        "excerpt": "### 30. 宋\n\n按：《地形志》中颍州汝阴、弋阳二郡宋：“萧衍置，魏因之。”据陈州考证，宋当为陈州汝阴、弋阳二郡属县。\n\n### 31. 新息\n\n按：《地形志》中颍州汝阴、弋阳二郡新息：“萧衍置新息”。据陈州考证，新息当为陈州汝阴、弋阳二郡属县。\n\n### 32. 期思\n\n按：《地形志》中颍州汝阴、弋阳二郡期思：“萧衍置，魏因之。”据陈州考证，期思当为陈州汝阴、弋阳二郡属县。",
+        "editorial_note": "原書結論與底表均為二郡合題，直接附同地域合題實體；未拆分到單郡。528—548與原有陳州郡段相交。",
+        "verification": "text_verified_original_page_pending"
+      },
+      "reason": "合題行已存在，無須人工拆郡；原機器僅因合題而攔截。",
+      "override_machine_hold": true,
+      "uncertain": false
+    },
+    {
+      "id": "LC-0245-S01-E528",
+      "county_id": "lc_0245",
+      "assignment_id": "LC-0245-S01",
+      "start": 528,
+      "end": 548,
+      "prefecture_ids": [
+        "liang_s0042_p002"
+      ],
+      "source": {
+        "source_label": "《中國行政區劃通史》下卷第八編 · 淮北陳州雙頭郡及附縣",
+        "source_filename": "中国行政区划通史：三国两晋南朝卷Ⅱ(1).pdf_by_PaddleOCR-VL-1.6.md",
+        "source_sha256": "6ffbfe4cbc519e1b6ad5d66fca18e93ae880340f076b13b1b77b9de3039951ca",
+        "markdown_lines": [
+          12572,
+          12584
+        ],
+        "excerpt": "### 33. 梁兴\n\n按：《地形志》中颍州财丘、梁兴二郡梁兴：“萧衍置，魏因之。”据陈州考证，梁兴当为陈州财丘、梁兴二郡属县。\n\n### 34. 梁城\n\n按：《地形志》中颍州财丘、梁兴二郡梁城：“萧衍置，魏因之。”据陈州考\n\n证，梁城当为陈州财丘、梁兴二郡属县。\n\n### 35. 汝阳\n\n按：《地形志》中颍州财丘、梁兴二郡汝阳：“萧衍置，魏因之。”据陈州考证，汝阳当为陈州财丘、梁兴二郡属县。",
+        "editorial_note": "原書結論與底表均為二郡合題，直接附同地域合題實體；未拆分到單郡。528—548與原有陳州郡段相交。",
+        "verification": "text_verified_original_page_pending"
+      },
+      "reason": "合題行已存在，無須人工拆郡；原機器僅因合題而攔截。",
+      "override_machine_hold": true,
+      "uncertain": false
+    },
+    {
+      "id": "LC-0247-S01-E528",
+      "county_id": "lc_0247",
+      "assignment_id": "LC-0247-S01",
+      "start": 528,
+      "end": 548,
+      "prefecture_ids": [
+        "liang_s0042_p002"
+      ],
+      "source": {
+        "source_label": "《中國行政區劃通史》下卷第八編 · 淮北陳州雙頭郡及附縣",
+        "source_filename": "中国行政区划通史：三国两晋南朝卷Ⅱ(1).pdf_by_PaddleOCR-VL-1.6.md",
+        "source_sha256": "6ffbfe4cbc519e1b6ad5d66fca18e93ae880340f076b13b1b77b9de3039951ca",
+        "markdown_lines": [
+          12572,
+          12584
+        ],
+        "excerpt": "### 33. 梁兴\n\n按：《地形志》中颍州财丘、梁兴二郡梁兴：“萧衍置，魏因之。”据陈州考证，梁兴当为陈州财丘、梁兴二郡属县。\n\n### 34. 梁城\n\n按：《地形志》中颍州财丘、梁兴二郡梁城：“萧衍置，魏因之。”据陈州考\n\n证，梁城当为陈州财丘、梁兴二郡属县。\n\n### 35. 汝阳\n\n按：《地形志》中颍州财丘、梁兴二郡汝阳：“萧衍置，魏因之。”据陈州考证，汝阳当为陈州财丘、梁兴二郡属县。",
+        "editorial_note": "原書結論與底表均為二郡合題，直接附同地域合題實體；未拆分到單郡。528—548與原有陳州郡段相交。",
+        "verification": "text_verified_original_page_pending"
+      },
+      "reason": "合題行已存在，無須人工拆郡；原機器僅因合題而攔截。",
+      "override_machine_hold": true,
+      "uncertain": false
+    },
+    {
+      "id": "LC-0251-S01-E528",
+      "county_id": "lc_0251",
+      "assignment_id": "LC-0251-S01",
+      "start": 528,
+      "end": 548,
+      "prefecture_ids": [
+        "liang_s0042_p004"
+      ],
+      "source": {
+        "source_label": "《中國行政區劃通史》下卷第八編 · 淮北陳州雙頭郡及附縣",
+        "source_filename": "中国行政区划通史：三国两晋南朝卷Ⅱ(1).pdf_by_PaddleOCR-VL-1.6.md",
+        "source_sha256": "6ffbfe4cbc519e1b6ad5d66fca18e93ae880340f076b13b1b77b9de3039951ca",
+        "markdown_lines": [
+          12598,
+          12604
+        ],
+        "excerpt": "### 39. 清河\n\n按：《地形志》中颍州清河、南阳二郡清河：“萧衍置，魏因之。”据陈州考证，清河当为陈州清河、南阳二郡属县。\n\n### 40. 汝南\n\n按：《地形志》中颖州清河、南阳二郡汝南：“萧衍置，魏因之。”据陈州考证，汝南当为陈州清河、南阳二郡属县。",
+        "editorial_note": "原書結論與底表均為二郡合題，直接附同地域合題實體；未拆分到單郡。528—548與原有陳州郡段相交。",
+        "verification": "text_verified_original_page_pending"
+      },
+      "reason": "合題行已存在，無須人工拆郡；原機器僅因合題而攔截。",
+      "override_machine_hold": true,
+      "uncertain": false
+    },
+    {
+      "id": "LC-0252-S01-E528",
+      "county_id": "lc_0252",
+      "assignment_id": "LC-0252-S01",
+      "start": 528,
+      "end": 548,
+      "prefecture_ids": [
+        "liang_s0042_p004"
+      ],
+      "source": {
+        "source_label": "《中國行政區劃通史》下卷第八編 · 淮北陳州雙頭郡及附縣",
+        "source_filename": "中国行政区划通史：三国两晋南朝卷Ⅱ(1).pdf_by_PaddleOCR-VL-1.6.md",
+        "source_sha256": "6ffbfe4cbc519e1b6ad5d66fca18e93ae880340f076b13b1b77b9de3039951ca",
+        "markdown_lines": [
+          12598,
+          12604
+        ],
+        "excerpt": "### 39. 清河\n\n按：《地形志》中颍州清河、南阳二郡清河：“萧衍置，魏因之。”据陈州考证，清河当为陈州清河、南阳二郡属县。\n\n### 40. 汝南\n\n按：《地形志》中颖州清河、南阳二郡汝南：“萧衍置，魏因之。”据陈州考证，汝南当为陈州清河、南阳二郡属县。",
+        "editorial_note": "原書結論與底表均為二郡合題，直接附同地域合題實體；未拆分到單郡。528—548與原有陳州郡段相交。",
+        "verification": "text_verified_original_page_pending"
+      },
+      "reason": "合題行已存在，無須人工拆郡；原機器僅因合題而攔截。",
+      "override_machine_hold": true,
+      "uncertain": false
+    },
+    {
+      "id": "LC-0254-S01-E528",
+      "county_id": "lc_0254",
+      "assignment_id": "LC-0254-S01",
+      "start": 528,
+      "end": 548,
+      "prefecture_ids": [
+        "liang_s0042_p007"
+      ],
+      "source": {
+        "source_label": "《中國行政區劃通史》下卷第八編 · 淮北陳州雙頭郡及附縣",
+        "source_filename": "中国行政区划通史：三国两晋南朝卷Ⅱ(1).pdf_by_PaddleOCR-VL-1.6.md",
+        "source_sha256": "6ffbfe4cbc519e1b6ad5d66fca18e93ae880340f076b13b1b77b9de3039951ca",
+        "markdown_lines": [
+          12610,
+          12612
+        ],
+        "excerpt": "### 42. 鲖阳\n\n按：《地形志》中颍州新蔡、南陈留二郡鲖阳：“萧衍置，魏因之。”据陈州考证，鲖阳当为陈州新蔡、南陈留二郡属县。",
+        "editorial_note": "原書結論與底表均為二郡合題，直接附同地域合題實體；未拆分到單郡。528—548與原有陳州郡段相交。",
+        "verification": "text_verified_original_page_pending"
+      },
+      "reason": "合題行已存在，無須人工拆郡；原機器僅因合題而攔截。",
+      "override_machine_hold": true,
+      "uncertain": false
+    },
+    {
+      "id": "LC-0255-S01-E528",
+      "county_id": "lc_0255",
+      "assignment_id": "LC-0255-S01",
+      "start": 528,
+      "end": 548,
+      "prefecture_ids": [
+        "liang_s0042_p008"
+      ],
+      "source": {
+        "source_label": "《中國行政區劃通史》下卷第八編 · 淮北陳州雙頭郡及附縣",
+        "source_filename": "中国行政区划通史：三国两晋南朝卷Ⅱ(1).pdf_by_PaddleOCR-VL-1.6.md",
+        "source_sha256": "6ffbfe4cbc519e1b6ad5d66fca18e93ae880340f076b13b1b77b9de3039951ca",
+        "markdown_lines": [
+          12614,
+          12620
+        ],
+        "excerpt": "### 43. 临淮\n\n按：《地形志》中颍州荥阳、北通二郡临淮：“萧衍置，魏因之。”据陈州考证，临淮当为陈州荥阳、北通二郡属县。\n\n### 44. 汝阴\n\n按：《地形志》中颍州荥阳、北通二郡汝阴：“萧衍置，魏因之。”据陈州考证，汝阴当为陈州荥阳、北通二郡属县。",
+        "editorial_note": "原書結論與底表均為二郡合題，直接附同地域合題實體；未拆分到單郡。528—548與原有陳州郡段相交。",
+        "verification": "text_verified_original_page_pending"
+      },
+      "reason": "合題行已存在，無須人工拆郡；原機器僅因合題而攔截。",
+      "override_machine_hold": true,
+      "uncertain": false
+    },
+    {
+      "id": "LC-0256-S01-E528",
+      "county_id": "lc_0256",
+      "assignment_id": "LC-0256-S01",
+      "start": 528,
+      "end": 548,
+      "prefecture_ids": [
+        "liang_s0042_p008"
+      ],
+      "source": {
+        "source_label": "《中國行政區劃通史》下卷第八編 · 淮北陳州雙頭郡及附縣",
+        "source_filename": "中国行政区划通史：三国两晋南朝卷Ⅱ(1).pdf_by_PaddleOCR-VL-1.6.md",
+        "source_sha256": "6ffbfe4cbc519e1b6ad5d66fca18e93ae880340f076b13b1b77b9de3039951ca",
+        "markdown_lines": [
+          12614,
+          12620
+        ],
+        "excerpt": "### 43. 临淮\n\n按：《地形志》中颍州荥阳、北通二郡临淮：“萧衍置，魏因之。”据陈州考证，临淮当为陈州荥阳、北通二郡属县。\n\n### 44. 汝阴\n\n按：《地形志》中颍州荥阳、北通二郡汝阴：“萧衍置，魏因之。”据陈州考证，汝阴当为陈州荥阳、北通二郡属县。",
+        "editorial_note": "原書結論與底表均為二郡合題，直接附同地域合題實體；未拆分到單郡。528—548與原有陳州郡段相交。",
+        "verification": "text_verified_original_page_pending"
+      },
+      "reason": "合題行已存在，無須人工拆郡；原機器僅因合題而攔截。",
+      "override_machine_hold": true,
+      "uncertain": false
+    },
+    {
+      "id": "LC-0258-S01-E528",
+      "county_id": "lc_0258",
+      "assignment_id": "LC-0258-S01",
+      "start": 528,
+      "end": 548,
+      "prefecture_ids": [
+        "liang_s0042_p005"
+      ],
+      "source": {
+        "source_label": "《中國行政區劃通史》下卷第八編 · 淮北陳州雙頭郡及附縣",
+        "source_filename": "中国行政区划通史：三国两晋南朝卷Ⅱ(1).pdf_by_PaddleOCR-VL-1.6.md",
+        "source_sha256": "6ffbfe4cbc519e1b6ad5d66fca18e93ae880340f076b13b1b77b9de3039951ca",
+        "markdown_lines": [
+          12628,
+          12630
+        ],
+        "excerpt": "### 46. 新息\n\n按：《地形志》中颍州汝南、太原二郡新息：“萧衍置，魏因之。”据陈州考证，新息当为陈州汝南、太原二郡属县。",
+        "editorial_note": "原書結論與底表均為二郡合題，直接附同地域合題實體；未拆分到單郡。528—548與原有陳州郡段相交。",
+        "verification": "text_verified_original_page_pending"
+      },
+      "reason": "合題行已存在，無須人工拆郡；原機器僅因合題而攔截。",
+      "override_machine_hold": true,
+      "uncertain": false
+    },
+    {
+      "id": "LR-0248-S01-E528",
+      "county_id": "lc_0248",
+      "assignment_id": "LR-0248-S01",
+      "start": 528,
+      "end": 548,
+      "prefecture_ids": [
+        "liang_s0042_p003"
+      ],
+      "source": {
+        "source_label": "《中國行政區劃通史》下卷第八編 · 西恆農、陳南／陳留二郡及胡城、南頓",
+        "source_filename": "中国行政区划通史：三国两晋南朝卷Ⅱ(1).pdf_by_PaddleOCR-VL-1.6.md",
+        "source_sha256": "6ffbfe4cbc519e1b6ad5d66fca18e93ae880340f076b13b1b77b9de3039951ca",
+        "markdown_lines": [
+          12586,
+          12592
+        ],
+        "excerpt": "### 36. 胡城\n\n按：《地形志》中颍州西恒农、陈南二郡胡城：“萧衍置，魏因之。”据陈州考证，胡城当为陈州西恒农、陈留二郡属县。\n\n### 37. 南顿\n\n按：《地形志》中颍州西恒农、陈南二郡南顿：“萧衍置，魏因之。”据陈州考证，南顿当为陈州西恒农、陈留二郡属县。",
+        "editorial_note": "原書引文陳南、作者結論陳留有異；人工確認西恆農、陳留雙頭郡。本層以相同地域、治胡城及二縣上下文確認是底表合題實體，保留異文與人工原文。",
+        "verification": "text_verified_original_page_pending"
+      },
+      "reason": "陳南／陳留異文的定向實體映射；不改人工雙頭郡結論。",
+      "override_machine_hold": false,
+      "uncertain": false
+    },
+    {
+      "id": "LR-0249-S01-E528",
+      "county_id": "lc_0249",
+      "assignment_id": "LR-0249-S01",
+      "start": 528,
+      "end": 548,
+      "prefecture_ids": [
+        "liang_s0042_p003"
+      ],
+      "source": {
+        "source_label": "《中國行政區劃通史》下卷第八編 · 西恆農、陳南／陳留二郡及胡城、南頓",
+        "source_filename": "中国行政区划通史：三国两晋南朝卷Ⅱ(1).pdf_by_PaddleOCR-VL-1.6.md",
+        "source_sha256": "6ffbfe4cbc519e1b6ad5d66fca18e93ae880340f076b13b1b77b9de3039951ca",
+        "markdown_lines": [
+          12586,
+          12592
+        ],
+        "excerpt": "### 36. 胡城\n\n按：《地形志》中颍州西恒农、陈南二郡胡城：“萧衍置，魏因之。”据陈州考证，胡城当为陈州西恒农、陈留二郡属县。\n\n### 37. 南顿\n\n按：《地形志》中颍州西恒农、陈南二郡南顿：“萧衍置，魏因之。”据陈州考证，南顿当为陈州西恒农、陈留二郡属县。",
+        "editorial_note": "原書引文陳南、作者結論陳留有異；人工確認西恆農、陳留雙頭郡。本層以相同地域、治胡城及二縣上下文確認是底表合題實體，保留異文與人工原文。",
+        "verification": "text_verified_original_page_pending"
+      },
+      "reason": "陳南／陳留異文的定向實體映射；不改人工雙頭郡結論。",
+      "override_machine_hold": false,
+      "uncertain": false
+    },
+    {
+      "id": "LR-0250-S01-E528",
+      "county_id": "lc_0250",
+      "assignment_id": "LR-0250-S01",
+      "start": 528,
+      "end": 548,
+      "prefecture_ids": [
+        "liang_s0042_p010"
+      ],
+      "source": {
+        "source_label": "《中國行政區劃通史》下卷第八編 · 陳州東、汝南二郡及濟陽",
+        "source_filename": "中国行政区划通史：三国两晋南朝卷Ⅱ(1).pdf_by_PaddleOCR-VL-1.6.md",
+        "source_sha256": "6ffbfe4cbc519e1b6ad5d66fca18e93ae880340f076b13b1b77b9de3039951ca",
+        "markdown_lines": [
+          12394,
+          12396
+        ],
+        "excerpt": "（十）东、汝南二郡（528—548）——治济阳（疑在今安徽界首市及阜阳、太和、临泉三县境）\n\n按：《地形志》中颍州列有东、汝南二郡，然不注为梁置抑或为魏置。《补梁志》卷1陈州条以为是梁置，《梁政区建置表》同，姑从之。\n\n### 38. 济阳\n\n按：《地形志》中颍州东郡、汝南二郡济阳：“萧衍置，魏因之。”以地望揆之，济阳当为陈州属县。",
+        "editorial_note": "人工暫系東郡，底表以東、汝南合題列示；附該合題行並保留暫系※，不改為確屬汝南郡。",
+        "verification": "text_verified_original_page_pending",
+        "additional_markdown_lines": [
+          12594,
+          12596
+        ]
+      },
+      "reason": "人工暫系的東郡為此合題郡一部；保留暫系。",
+      "override_machine_hold": false,
+      "uncertain": true
+    },
+    {
+      "id": "LR-0729-S01-E502",
+      "county_id": "lc_0729",
+      "assignment_id": "LR-0729-S01",
+      "start": 502,
+      "end": 553,
+      "prefecture_ids": [
+        "liang_s0139_p019",
+        "liang_s0149_p001"
+      ],
+      "source": {
+        "source_label": "《中國行政區劃通史》下卷第八編 · 益州巴西、梓潼二郡及涪縣",
+        "source_filename": "中国行政区划通史：三国两晋南朝卷Ⅱ(1).pdf_by_PaddleOCR-VL-1.6.md",
+        "source_sha256": "6ffbfe4cbc519e1b6ad5d66fca18e93ae880340f076b13b1b77b9de3039951ca",
+        "markdown_lines": [
+          16170,
+          16172
+        ],
+        "excerpt": "#### （二十二）巴西、梓潼二郡（502—551）——治涪（今四川绵阳市东）\n\n按：齐末益州领有梓潼郡，《梁书》卷11《庾域传》：“天监初，封广牧县子，后军司马。出为宁朔将军，巴西、梓潼二郡太守。”卷17《张齐传》：“（天监）十四年，迁信武将军，巴西、梓潼二郡太守。”卷30《顾协传》：“侍西丰侯正德读。正德为巴西、梓潼郡，协除所部安都令。”卷55《武陵王纪传》：“高祖崩后，纪乃僭号于蜀。改年曰天正……以巴西、梓潼二郡太守永丰侯揭为征西大将军、益州刺史，封秦郡王。”则梁改旧日之梓潼郡为巴西、梓潼二郡，为双头郡。据西益、潼二州考证，巴西、梓潼二郡于承圣元年移属西益、潼二州。",
+        "editorial_note": "治涪的巴西、梓潼雙頭郡，與巴漢地區治閬中的北巴西郡不同。人工確認涪屬巴西，於合題行列示，不改判為梓潼單郡。",
+        "verification": "text_verified_original_page_pending"
+      },
+      "reason": "依治所涪和蜀中上下文連接雙頭郡。",
+      "override_machine_hold": false,
+      "uncertain": false
+    }
+  ],
+  "research_notes": [
+    {
+      "county_id": "lc_0073",
+      "status": "name_date_pending",
+      "source": {
+        "source_label": "《中國行政區劃通史》下卷第八編 · 南徐州南琅邪、（南）彭城二郡及江乘縣",
+        "source_filename": "中国行政区划通史：三国两晋南朝卷Ⅱ(1).pdf_by_PaddleOCR-VL-1.6.md",
+        "source_sha256": "6ffbfe4cbc519e1b6ad5d66fca18e93ae880340f076b13b1b77b9de3039951ca",
+        "markdown_lines": [
+          10876,
+          10878
+        ],
+        "excerpt": "（六） $ \\underline{\\text{南琅邪、（南）彭城二郡}} $，寄治白下城（今江苏南京市北金川门外，幕府山南麓）\n\n按：齐末南徐州领有南琅邪侨郡，领江乘实县。《梁书》卷3《武帝纪下》：大同三年“夏四月丁卯，以南琅邪、彭城二郡太守河东王誉为南徐州刺史”。则梁改南琅邪侨郡为南琅邪（南）彭城二郡，亦领江乘县。",
+        "editorial_note": "南琅邪承齊舊，537年始見二郡合題，分設確年不詳。502—536以舊名附列並標※；537以後合題亦保留始年不詳，不以537斷言分設年。江乘依原縣表535年省廢當年仍列。",
+        "verification": "text_verified_original_page_pending"
+      },
+      "note": "蘭陵縣屬蘭陵侨郡已可辨明，但武進改蘭陵的確年正文未載，原待考入口保留，不假定502已改縣名。"
+    }
+  ]
+}

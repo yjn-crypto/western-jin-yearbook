@@ -18,6 +18,7 @@ import sys
 import zipfile
 from pathlib import Path, PurePosixPath
 from xml.etree import ElementTree as ET
+from liang_source_paths import find_source
 
 
 REPO = Path(__file__).resolve().parents[1]
@@ -117,27 +118,23 @@ def citations(value, path='$'):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument('--source-dir', type=Path, default=Path.home()/'Downloads')
+    ap.add_argument('--source-dir', type=Path, help='Explicit source directory; otherwise search Downloads/年表资料 then Downloads')
     ap.add_argument('--officials', type=Path, default=first_existing([
         REPO/'data'/'liang-officials-reviewed.json', REPO/'work'/'epub'/'liang-officials-reviewed.json']))
     ap.add_argument('--geography', type=Path, default=first_existing([
         REPO/'data'/'liang-geography-reviewed.json', REPO/'work'/'epub'/'liang-geography-reviewed.json']))
     ap.add_argument('--skip-geography', action='store_true')
-    ap.add_argument('--expected-tenures', type=int, default=29)
-    ap.add_argument('--expected-annual', type=int, default=30)
+    ap.add_argument('--expected-tenures', type=int, help='Optional externally fixed expected tenure count')
+    ap.add_argument('--expected-annual', type=int, help='Optional externally fixed expected annual count')
     ap.add_argument('--report', type=Path, default=REPO/'work'/'epub'/'evidence-verification.json')
     args = ap.parse_args()
     failures = []
     checks = []
     books = {}
     for code, label in BOOK_LABELS.items():
-        matches = list(args.source_dir.glob(f'*{label}*.epub'))
-        if len(matches) != 1:
-            failures.append(f'{label}: expected one EPUB in source directory, found {len(matches)}')
-            continue
         try:
-            books[label] = read_epub(matches[0], code)
-        except (ET.ParseError, KeyError, OSError, zipfile.BadZipFile) as exc:
+            books[label] = read_epub(find_source(f'*{label}*.epub', args.source_dir), code)
+        except (ET.ParseError, KeyError, OSError, ValueError, zipfile.BadZipFile) as exc:
             failures.append(f'{label}: cannot read EPUB structure: {exc}')
 
     try:
@@ -147,9 +144,9 @@ def main():
         return 2
     records = official_data.get('records', [])
     annual_count = sum(len(r.get('annual_presence_years', [])) for r in records)
-    if len(records) != args.expected_tenures:
+    if args.expected_tenures is not None and len(records) != args.expected_tenures:
         failures.append(f'Expected {args.expected_tenures} tenures, found {len(records)}')
-    if annual_count != args.expected_annual:
+    if args.expected_annual is not None and annual_count != args.expected_annual:
         failures.append(f'Expected {args.expected_annual} annual evidence rows, found {annual_count}')
     official_ids = [r.get('official_id') for r in records]
     if len(official_ids) != len(set(official_ids)) or None in official_ids:

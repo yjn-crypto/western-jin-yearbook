@@ -1,18 +1,18 @@
 {
   "meta": {
     "schema_version": "liang-epub-officials-reviewed-v1",
-    "title": "萧梁郡县长官：EPUB原典首轮精校",
-    "reviewed_on": "2026-09-13",
+    "title": "萧梁郡县长官：EPUB原典分批精校",
+    "reviewed_on": "2026-09-27",
     "scope_years": [
       502,
       557
     ],
-    "record_count": 29,
-    "annual_record_count": 30,
-    "reviewed_exclusion_count": 8,
+    "record_count": 61,
+    "annual_record_count": 66,
+    "reviewed_exclusion_count": 10,
     "annual_semantics": "annual_evidence_not_year_end_current",
     "projection_rule": "Only explicitly reviewed annual_presence_years are visible. Never expand start/end bounds, relative vagueness, or infer ±3 years.",
-    "scope_note": "首批样本，不代表两书全部任次或任何一年任官完备。appointment_only仅证明有年授官；appointment_with_service_context另有履任叙事但未必有当年抵郡日期；served用于明确在任事件。",
+    "scope_note": "分批整理，尚未覆盖两书全部任次。原首批29条的独立审校保留；续批区分授官与在任，不把间隔年自动补齐。",
     "locator_note": "chapter_paragraph counts all nonempty HTML p blocks from TOC chapter start, including headings; file_paragraph counts every p in the member.",
     "source_books": [
       {
@@ -51,6 +51,45 @@
         "LIANG-EPUB-0028"
       ],
       "scope": "Only this reviewed JSON and the institutional research report were edited; build_reviewed_officials.py still represents first-pass decisions and must not overwrite this review."
+    },
+    "continuation_review": {
+      "date": "2026-09-27",
+      "added_ids": [
+        "LIANG-EPUB-0030",
+        "LIANG-EPUB-0031",
+        "LIANG-EPUB-0032",
+        "LIANG-EPUB-0033",
+        "LIANG-EPUB-0034",
+        "LIANG-EPUB-0035",
+        "LIANG-EPUB-0036",
+        "LIANG-EPUB-0037",
+        "LIANG-EPUB-0038",
+        "LIANG-EPUB-0039",
+        "LIANG-EPUB-0040",
+        "LIANG-EPUB-0041",
+        "LIANG-EPUB-0042",
+        "LIANG-EPUB-0043",
+        "LIANG-EPUB-0044",
+        "LIANG-EPUB-0045",
+        "LIANG-EPUB-0046",
+        "LIANG-EPUB-0047",
+        "LIANG-EPUB-0048",
+        "LIANG-EPUB-0049",
+        "LIANG-EPUB-0050",
+        "LIANG-EPUB-0051",
+        "LIANG-EPUB-0052",
+        "LIANG-EPUB-0053",
+        "LIANG-EPUB-0054",
+        "LIANG-EPUB-0055",
+        "LIANG-EPUB-0056",
+        "LIANG-EPUB-0057",
+        "LIANG-EPUB-0058",
+        "LIANG-EPUB-0059",
+        "LIANG-EPUB-0060",
+        "LIANG-EPUB-0061"
+      ],
+      "rule": "Explicit source-era anchors only; preserve the independent review of records 0001–0029.",
+      "remaining": "未穷尽898个候选段落；缺具体年、同名及摄任材料仍需继续考证。"
     }
   },
   "records": [
@@ -2176,6 +2215,2455 @@
       ],
       "publication_eligibility": "annual_evidence_only_after_geography_matching",
       "can_infer_between_anchor_years": false
+    },
+    {
+      "official_id": "LIANG-EPUB-0030",
+      "person_id": "LIANG-EPUB-PERSON-王骞",
+      "person": "王骞",
+      "person_aliases": [
+        "王騫",
+        "王玄成"
+      ],
+      "place": "东阳",
+      "place_id": null,
+      "geography_match_status": "unmatched_requires_independent_geography_id",
+      "office": "东阳太守",
+      "full_title": "东阳太守",
+      "level": "郡级正任",
+      "dynasty": "梁",
+      "tenure_nature": "正任",
+      "tenure_status": "appointment_only",
+      "review_status": "reviewed_context_continuation_2026_09_27",
+      "annual_presence_years": [
+        505
+      ],
+      "annual_status_by_year": {
+        "505": "appointment_only"
+      },
+      "event_type": "dated_appointment",
+      "annual_semantics": "本年见载该职；授官与在任证据分别注明，不表示年末现任，不补中间年",
+      "original_time": "天监四年",
+      "tenure_time": {
+        "start_lower": 505,
+        "start_upper": 505,
+        "end_lower": null,
+        "end_upper": null,
+        "start_status": "exact_year",
+        "end_status": "unknown",
+        "start_semantics": "documented_appointment_year_not_arrival_year",
+        "end_semantics": "unknown_end_year"
+      },
+      "time_explanation": "天监四年为505。只取明确授东阳之年；“寻徙吴郡”不另定为505。",
+      "evidence": [
+        {
+          "book": "梁书",
+          "volume": 7,
+          "chapter": "列传第一",
+          "paragraph_id": "LS-C09-P0019",
+          "epub_member": "OEBPS/text00000.html",
+          "chapter_anchor": "filepos0000207790",
+          "chapter_paragraph": 19,
+          "file_paragraph": 415,
+          "quote": "天监四年，出为东阳太守，寻徙吴郡。",
+          "quote_start": 147,
+          "quote_end": 164,
+          "role": "office_and_time",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        },
+        {
+          "book": "梁书",
+          "volume": 7,
+          "chapter": "列传第一",
+          "paragraph_id": "LS-C09-P0018",
+          "epub_member": "OEBPS/text00000.html",
+          "chapter_anchor": "filepos0000207790",
+          "chapter_paragraph": 18,
+          "file_paragraph": 414,
+          "quote": "父骞，字思寂，本名玄成，与齐高帝偏讳同，故改焉。",
+          "quote_start": 0,
+          "quote_end": 24,
+          "role": "person_identity",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        },
+        {
+          "book": "梁书",
+          "volume": 7,
+          "chapter": "列传第一",
+          "paragraph_id": "LS-C09-P0015",
+          "epub_member": "OEBPS/text00000.html",
+          "chapter_anchor": "filepos0000207790",
+          "chapter_paragraph": 15,
+          "file_paragraph": 411,
+          "quote": "太宗简皇后王氏，讳灵宾，琅邪临沂人也。",
+          "quote_start": 0,
+          "quote_end": 19,
+          "role": "family_context",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        }
+      ],
+      "research_notes": [],
+      "publication_eligibility": "annual_evidence_only_after_geography_matching",
+      "can_infer_between_anchor_years": false
+    },
+    {
+      "official_id": "LIANG-EPUB-0031",
+      "person_id": "LIANG-EPUB-PERSON-宗夬",
+      "person": "宗夬",
+      "person_aliases": [],
+      "place": "东海",
+      "place_id": null,
+      "geography_match_status": "unmatched_requires_independent_geography_id",
+      "office": "东海太守",
+      "full_title": "征虏长史、东海太守",
+      "level": "郡级正任",
+      "dynasty": "梁",
+      "tenure_nature": "正任",
+      "tenure_status": "appointment_only",
+      "review_status": "reviewed_context_continuation_2026_09_27",
+      "annual_presence_years": [
+        502
+      ],
+      "annual_status_by_year": {
+        "502": "appointment_only"
+      },
+      "event_type": "dated_appointment",
+      "annual_semantics": "本年见载该职；授官与在任证据分别注明，不表示年末现任，不补中间年",
+      "original_time": "天监元年",
+      "tenure_time": {
+        "start_lower": 502,
+        "start_upper": 502,
+        "end_lower": 503,
+        "end_upper": 503,
+        "start_status": "exact_year",
+        "end_status": "exact_year",
+        "start_semantics": "documented_appointment_year_not_arrival_year",
+        "end_semantics": "explicit_departure_or_death_year"
+      },
+      "time_explanation": "元年为502，二年503为改官边界；只投授官锚502。原文东海不擅改为南东海。",
+      "evidence": [
+        {
+          "book": "梁书",
+          "volume": 19,
+          "chapter": "列传第十三",
+          "paragraph_id": "LS-C21-P0005",
+          "epub_member": "OEBPS/text00001.html",
+          "chapter_anchor": "filepos0000405796",
+          "chapter_paragraph": 5,
+          "file_paragraph": 389,
+          "quote": "天监元年，迁征虏长史、东海太守，将军如故。二年，征为太子右卫率。",
+          "quote_start": 161,
+          "quote_end": 193,
+          "role": "office_and_time",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        },
+        {
+          "book": "梁书",
+          "volume": 19,
+          "chapter": "列传第十三",
+          "paragraph_id": "LS-C21-P0003",
+          "epub_member": "OEBPS/text00001.html",
+          "chapter_anchor": "filepos0000405796",
+          "chapter_paragraph": 3,
+          "file_paragraph": 387,
+          "quote": "宗夬，字明扬，南阳涅阳人也，世居江陵。",
+          "quote_start": 0,
+          "quote_end": 19,
+          "role": "person_identity",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        }
+      ],
+      "research_notes": [],
+      "publication_eligibility": "annual_evidence_only_after_geography_matching",
+      "can_infer_between_anchor_years": false
+    },
+    {
+      "official_id": "LIANG-EPUB-0032",
+      "person_id": "LIANG-EPUB-PERSON-朱僧勇",
+      "person": "朱僧勇",
+      "person_aliases": [
+        "硃僧勇"
+      ],
+      "place": "宣城",
+      "place_id": null,
+      "geography_match_status": "unmatched_requires_independent_geography_id",
+      "office": "宣城太守",
+      "full_title": "宣城太守",
+      "level": "郡级正任",
+      "dynasty": "梁",
+      "tenure_nature": "正任",
+      "tenure_status": "served",
+      "review_status": "reviewed_context_continuation_2026_09_27",
+      "annual_presence_years": [
+        510
+      ],
+      "annual_status_by_year": {
+        "510": "served"
+      },
+      "event_type": "dated_death_in_office",
+      "annual_semantics": "本年见载该职；授官与在任证据分别注明，不表示年末现任，不补中间年",
+      "original_time": "天监九年",
+      "tenure_time": {
+        "start_lower": null,
+        "start_upper": null,
+        "end_lower": 510,
+        "end_upper": 510,
+        "start_status": "unknown",
+        "end_status": "exact_year",
+        "start_semantics": "unknown_start_year",
+        "end_semantics": "explicit_departure_or_death_year"
+      },
+      "time_explanation": "九年为510；遇害事件直接以宣城太守称之，证明本年在任及终任，不推定起任年。",
+      "evidence": [
+        {
+          "book": "梁书",
+          "volume": 21,
+          "chapter": "列传第十五",
+          "paragraph_id": "LS-C23-P0080",
+          "epub_member": "OEBPS/text00001.html",
+          "chapter_anchor": "filepos0000429106",
+          "chapter_paragraph": 80,
+          "file_paragraph": 521,
+          "quote": "天监九年，宣城郡吏吴承伯挟祅道聚众攻宣城，杀太守硃僧勇。",
+          "quote_start": 0,
+          "quote_end": 28,
+          "role": "office_and_time",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        }
+      ],
+      "research_notes": [],
+      "publication_eligibility": "annual_evidence_only_after_geography_matching",
+      "can_infer_between_anchor_years": false
+    },
+    {
+      "official_id": "LIANG-EPUB-0033",
+      "person_id": "LIANG-EPUB-PERSON-蔡撙",
+      "person": "蔡撙",
+      "person_aliases": [],
+      "place": "吴兴",
+      "place_id": null,
+      "geography_match_status": "unmatched_requires_independent_geography_id",
+      "office": "吴兴太守",
+      "full_title": "吴兴太守",
+      "level": "郡级正任",
+      "dynasty": "梁",
+      "tenure_nature": "正任",
+      "tenure_status": "served",
+      "review_status": "reviewed_context_continuation_2026_09_27",
+      "annual_presence_years": [
+        510
+      ],
+      "annual_status_by_year": {
+        "510": "served"
+      },
+      "event_type": "dated_in_office_attestation",
+      "annual_semantics": "本年见载该职；授官与在任证据分别注明，不表示年末现任，不补中间年",
+      "original_time": "天监九年",
+      "tenure_time": {
+        "start_lower": null,
+        "start_upper": null,
+        "end_lower": null,
+        "end_upper": null,
+        "start_status": "unknown",
+        "end_status": "unknown",
+        "start_semantics": "unknown_start_year",
+        "end_semantics": "unknown_end_year"
+      },
+      "time_explanation": "510年守吴兴事件，与上段吴兴太守官衔合读；本条仅投在任事件锚。",
+      "evidence": [
+        {
+          "book": "梁书",
+          "volume": 21,
+          "chapter": "列传第十五",
+          "paragraph_id": "LS-C23-P0080",
+          "epub_member": "OEBPS/text00001.html",
+          "chapter_anchor": "filepos0000429106",
+          "chapter_paragraph": 80,
+          "file_paragraph": 521,
+          "quote": "天监九年，宣城郡吏吴承伯挟祅道聚众攻宣城，杀太守硃僧勇。因转屠旁县，逾山寇吴兴，所过皆残破，众有二万，奄袭郡城。东道不习兵革，吏民恇扰奔散，并请撙避之。撙坚守不动，募勇敢固郡。",
+          "quote_start": 0,
+          "quote_end": 88,
+          "role": "office_and_time",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        },
+        {
+          "book": "梁书",
+          "volume": 21,
+          "chapter": "列传第十五",
+          "paragraph_id": "LS-C23-P0078",
+          "epub_member": "OEBPS/text00001.html",
+          "chapter_anchor": "filepos0000429106",
+          "chapter_paragraph": 78,
+          "file_paragraph": 519,
+          "quote": "蔡撙，字景节，济阳考城人。",
+          "quote_start": 0,
+          "quote_end": 13,
+          "role": "person_identity",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        },
+        {
+          "book": "梁书",
+          "volume": 21,
+          "chapter": "列传第十五",
+          "paragraph_id": "LS-C23-P0079",
+          "epub_member": "OEBPS/text00001.html",
+          "chapter_anchor": "filepos0000429106",
+          "chapter_paragraph": 79,
+          "file_paragraph": 520,
+          "quote": "复为侍中，吴兴太守。",
+          "quote_start": 131,
+          "quote_end": 141,
+          "role": "office_context",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        }
+      ],
+      "research_notes": [],
+      "publication_eligibility": "annual_evidence_only_after_geography_matching",
+      "can_infer_between_anchor_years": false
+    },
+    {
+      "official_id": "LIANG-EPUB-0034",
+      "person_id": "LIANG-EPUB-PERSON-蔡撙",
+      "person": "蔡撙",
+      "person_aliases": [],
+      "place": "吴郡",
+      "place_id": null,
+      "geography_match_status": "unmatched_requires_independent_geography_id",
+      "office": "吴郡太守",
+      "full_title": "宣毅将军、吴郡太守",
+      "level": "郡级正任",
+      "dynasty": "梁",
+      "tenure_nature": "正任",
+      "tenure_status": "appointment_only",
+      "review_status": "reviewed_context_continuation_2026_09_27",
+      "annual_presence_years": [
+        521
+      ],
+      "annual_status_by_year": {
+        "521": "appointment_only"
+      },
+      "event_type": "dated_appointment",
+      "annual_semantics": "本年见载该职；授官与在任证据分别注明，不表示年末现任，不补中间年",
+      "original_time": "普通二年",
+      "tenure_time": {
+        "start_lower": 521,
+        "start_upper": 521,
+        "end_lower": null,
+        "end_upper": null,
+        "start_status": "exact_year",
+        "end_status": "unknown",
+        "start_semantics": "documented_appointment_year_not_arrival_year",
+        "end_semantics": "unknown_end_year"
+      },
+      "time_explanation": "普通元年为520，二年521。后文四年卒未明书卒郡，不以卒年扩大本任期。",
+      "evidence": [
+        {
+          "book": "梁书",
+          "volume": 21,
+          "chapter": "列传第十五",
+          "paragraph_id": "LS-C23-P0080",
+          "epub_member": "OEBPS/text00001.html",
+          "chapter_anchor": "filepos0000429106",
+          "chapter_paragraph": 80,
+          "file_paragraph": 521,
+          "quote": "普通二年，出为宣毅将军、吴郡太守。",
+          "quote_start": 200,
+          "quote_end": 217,
+          "role": "office_and_time",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        },
+        {
+          "book": "梁书",
+          "volume": 21,
+          "chapter": "列传第十五",
+          "paragraph_id": "LS-C23-P0078",
+          "epub_member": "OEBPS/text00001.html",
+          "chapter_anchor": "filepos0000429106",
+          "chapter_paragraph": 78,
+          "file_paragraph": 519,
+          "quote": "蔡撙，字景节，济阳考城人。",
+          "quote_start": 0,
+          "quote_end": 13,
+          "role": "person_identity",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        }
+      ],
+      "research_notes": [],
+      "publication_eligibility": "annual_evidence_only_after_geography_matching",
+      "can_infer_between_anchor_years": false
+    },
+    {
+      "official_id": "LIANG-EPUB-0035",
+      "person_id": "LIANG-EPUB-PERSON-白涡",
+      "person": "白涡",
+      "person_aliases": [
+        "白渦"
+      ],
+      "place": "武陵",
+      "place_id": null,
+      "geography_match_status": "unmatched_requires_independent_geography_id",
+      "office": "武陵太守",
+      "full_title": "武陵太守",
+      "level": "郡级正任",
+      "dynasty": "梁",
+      "tenure_nature": "正任",
+      "tenure_status": "served",
+      "review_status": "reviewed_context_continuation_2026_09_27",
+      "annual_presence_years": [
+        524
+      ],
+      "annual_status_by_year": {
+        "524": "served"
+      },
+      "event_type": "dated_in_office_attestation",
+      "annual_semantics": "本年见载该职；授官与在任证据分别注明，不表示年末现任，不补中间年",
+      "original_time": "普通五年",
+      "tenure_time": {
+        "start_lower": null,
+        "start_upper": null,
+        "end_lower": null,
+        "end_upper": null,
+        "start_status": "unknown",
+        "end_status": "unknown",
+        "start_semantics": "unknown_start_year",
+        "end_semantics": "unknown_end_year"
+      },
+      "time_explanation": "普通五年524，文书事件直接称武陵太守；不能把本段周舍免官或卒年归给白涡。",
+      "evidence": [
+        {
+          "book": "梁书",
+          "volume": 25,
+          "chapter": "列传第十九",
+          "paragraph_id": "LS-C27-P0009",
+          "epub_member": "OEBPS/text00002.html",
+          "chapter_anchor": "filepos0000509265",
+          "chapter_paragraph": 9,
+          "file_paragraph": 118,
+          "quote": "普通五年，南津获武陵太守白涡书，许遗舍面钱百万，津司以闻。",
+          "quote_start": 0,
+          "quote_end": 29,
+          "role": "office_and_time",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        }
+      ],
+      "research_notes": [],
+      "publication_eligibility": "annual_evidence_only_after_geography_matching",
+      "can_infer_between_anchor_years": false
+    },
+    {
+      "official_id": "LIANG-EPUB-0036",
+      "person_id": "LIANG-EPUB-PERSON-萧琛",
+      "person": "萧琛",
+      "person_aliases": [],
+      "place": "宣城",
+      "place_id": null,
+      "geography_match_status": "unmatched_requires_independent_geography_id",
+      "office": "宣城太守",
+      "full_title": "宣城太守",
+      "level": "郡级正任",
+      "dynasty": "梁",
+      "tenure_nature": "正任",
+      "tenure_status": "appointment_with_service_context",
+      "review_status": "reviewed_context_continuation_2026_09_27",
+      "annual_presence_years": [
+        502
+      ],
+      "annual_status_by_year": {
+        "502": "appointment_with_service_context"
+      },
+      "event_type": "dated_appointment",
+      "annual_semantics": "本年见载该职；授官与在任证据分别注明，不表示年末现任，不补中间年",
+      "original_time": "天监元年",
+      "tenure_time": {
+        "start_lower": 502,
+        "start_upper": 502,
+        "end_lower": null,
+        "end_upper": null,
+        "start_status": "exact_year",
+        "end_status": "unknown",
+        "start_semantics": "documented_appointment_year_not_arrival_year",
+        "end_semantics": "unknown_end_year"
+      },
+      "time_explanation": "元年502同句授官；次段在宣城取书叙事证明曾到任，但不到日不详。",
+      "evidence": [
+        {
+          "book": "梁书",
+          "volume": 26,
+          "chapter": "列传第二十",
+          "paragraph_id": "LS-C28-P0026",
+          "epub_member": "OEBPS/text00002.html",
+          "chapter_anchor": "filepos0000531967",
+          "chapter_paragraph": 26,
+          "file_paragraph": 180,
+          "quote": "天监元年，迁庶子，出为宣城太守。",
+          "quote_start": 79,
+          "quote_end": 95,
+          "role": "office_and_time",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        },
+        {
+          "book": "梁书",
+          "volume": 26,
+          "chapter": "列传第二十",
+          "paragraph_id": "LS-C28-P0021",
+          "epub_member": "OEBPS/text00002.html",
+          "chapter_anchor": "filepos0000531967",
+          "chapter_paragraph": 21,
+          "file_paragraph": 175,
+          "quote": "萧琛，字彦瑜，兰陵人。",
+          "quote_start": 0,
+          "quote_end": 11,
+          "role": "person_identity",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        },
+        {
+          "book": "梁书",
+          "volume": 26,
+          "chapter": "列传第二十",
+          "paragraph_id": "LS-C28-P0027",
+          "epub_member": "OEBPS/text00002.html",
+          "chapter_anchor": "filepos0000531967",
+          "chapter_paragraph": 27,
+          "file_paragraph": 181,
+          "quote": "始琛在宣城，有北僧南度，惟赉一葫芦，中有《汉书序传》。",
+          "quote_start": 0,
+          "quote_end": 27,
+          "role": "service_context",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        }
+      ],
+      "research_notes": [],
+      "publication_eligibility": "annual_evidence_only_after_geography_matching",
+      "can_infer_between_anchor_years": false
+    },
+    {
+      "official_id": "LIANG-EPUB-0037",
+      "person_id": "LIANG-EPUB-PERSON-萧琛",
+      "person": "萧琛",
+      "person_aliases": [],
+      "place": "江夏",
+      "place_id": null,
+      "geography_match_status": "unmatched_requires_independent_geography_id",
+      "office": "江夏太守",
+      "full_title": "宁远将军、平西长史、江夏太守",
+      "level": "郡级正任",
+      "dynasty": "梁",
+      "tenure_nature": "正任",
+      "tenure_status": "appointment_only",
+      "review_status": "reviewed_context_continuation_2026_09_27",
+      "annual_presence_years": [
+        510
+      ],
+      "annual_status_by_year": {
+        "510": "appointment_only"
+      },
+      "event_type": "dated_appointment",
+      "annual_semantics": "本年见载该职；授官与在任证据分别注明，不表示年末现任，不补中间年",
+      "original_time": "天监九年",
+      "tenure_time": {
+        "start_lower": 510,
+        "start_upper": 510,
+        "end_lower": null,
+        "end_upper": null,
+        "start_status": "exact_year",
+        "end_status": "unknown",
+        "start_semantics": "documented_appointment_year_not_arrival_year",
+        "end_semantics": "unknown_end_year"
+      },
+      "time_explanation": "同段起于天监元年，九年承天监为510；只证本年授江夏。",
+      "evidence": [
+        {
+          "book": "梁书",
+          "volume": 26,
+          "chapter": "列传第二十",
+          "paragraph_id": "LS-C28-P0026",
+          "epub_member": "OEBPS/text00002.html",
+          "chapter_anchor": "filepos0000531967",
+          "chapter_paragraph": 26,
+          "file_paragraph": 180,
+          "quote": "三年，除太子中庶子、散骑常侍。九年，出为宁远将军、平西长史、江夏太守。",
+          "quote_start": 110,
+          "quote_end": 145,
+          "role": "office_and_time",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        },
+        {
+          "book": "梁书",
+          "volume": 26,
+          "chapter": "列传第二十",
+          "paragraph_id": "LS-C28-P0026",
+          "epub_member": "OEBPS/text00002.html",
+          "chapter_anchor": "filepos0000531967",
+          "chapter_paragraph": 26,
+          "file_paragraph": 180,
+          "quote": "天监元年，迁庶子，出为宣城太守。",
+          "quote_start": 79,
+          "quote_end": 95,
+          "role": "era_context",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        },
+        {
+          "book": "梁书",
+          "volume": 26,
+          "chapter": "列传第二十",
+          "paragraph_id": "LS-C28-P0021",
+          "epub_member": "OEBPS/text00002.html",
+          "chapter_anchor": "filepos0000531967",
+          "chapter_paragraph": 21,
+          "file_paragraph": 175,
+          "quote": "萧琛，字彦瑜，兰陵人。",
+          "quote_start": 0,
+          "quote_end": 11,
+          "role": "person_identity",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        }
+      ],
+      "research_notes": [],
+      "publication_eligibility": "annual_evidence_only_after_geography_matching",
+      "can_infer_between_anchor_years": false
+    },
+    {
+      "official_id": "LIANG-EPUB-0038",
+      "person_id": "LIANG-EPUB-PERSON-萧琛",
+      "person": "萧琛",
+      "person_aliases": [],
+      "place": "晋陵",
+      "place_id": null,
+      "geography_match_status": "unmatched_requires_independent_geography_id",
+      "office": "晋陵太守",
+      "full_title": "云麾将军、晋陵太守",
+      "level": "郡级正任",
+      "dynasty": "梁",
+      "tenure_nature": "正任",
+      "tenure_status": "appointment_only",
+      "review_status": "reviewed_context_continuation_2026_09_27",
+      "annual_presence_years": [
+        529
+      ],
+      "annual_status_by_year": {
+        "529": "appointment_only"
+      },
+      "event_type": "dated_appointment",
+      "annual_semantics": "本年见载该职；授官与在任证据分别注明，不表示年末现任，不补中间年",
+      "original_time": "中大通元年",
+      "tenure_time": {
+        "start_lower": 529,
+        "start_upper": 529,
+        "end_lower": null,
+        "end_upper": null,
+        "start_status": "exact_year",
+        "end_status": "unknown",
+        "start_semantics": "documented_appointment_year_not_arrival_year",
+        "end_semantics": "unknown_end_year"
+      },
+      "time_explanation": "中大通元年529授官；以疾自解没有独立抵郡语，不作已证履任。随后卒年也不硬定为529。",
+      "evidence": [
+        {
+          "book": "梁书",
+          "volume": 26,
+          "chapter": "列传第二十",
+          "paragraph_id": "LS-C28-P0033",
+          "epub_member": "OEBPS/text00002.html",
+          "chapter_anchor": "filepos0000531967",
+          "chapter_paragraph": 33,
+          "file_paragraph": 187,
+          "quote": "中大通元年，为云麾将军、晋陵太守，秩中二千石。以疾自解，改授侍中、特进、金紫光禄大夫。",
+          "quote_start": 24,
+          "quote_end": 67,
+          "role": "office_and_time",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        },
+        {
+          "book": "梁书",
+          "volume": 26,
+          "chapter": "列传第二十",
+          "paragraph_id": "LS-C28-P0021",
+          "epub_member": "OEBPS/text00002.html",
+          "chapter_anchor": "filepos0000531967",
+          "chapter_paragraph": 21,
+          "file_paragraph": 175,
+          "quote": "萧琛，字彦瑜，兰陵人。",
+          "quote_start": 0,
+          "quote_end": 11,
+          "role": "person_identity",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        }
+      ],
+      "research_notes": [],
+      "publication_eligibility": "annual_evidence_only_after_geography_matching",
+      "can_infer_between_anchor_years": false
+    },
+    {
+      "official_id": "LIANG-EPUB-0039",
+      "person_id": "LIANG-EPUB-PERSON-陆杲",
+      "person": "陆杲",
+      "person_aliases": [],
+      "place": "义兴",
+      "place_id": null,
+      "geography_match_status": "unmatched_requires_independent_geography_id",
+      "office": "义兴太守",
+      "full_title": "义兴太守",
+      "level": "郡级正任",
+      "dynasty": "梁",
+      "tenure_nature": "正任",
+      "tenure_status": "appointment_with_service_context",
+      "review_status": "reviewed_context_continuation_2026_09_27",
+      "annual_presence_years": [
+        509
+      ],
+      "annual_status_by_year": {
+        "509": "appointment_with_service_context"
+      },
+      "event_type": "dated_appointment",
+      "annual_semantics": "本年见载该职；授官与在任证据分别注明，不表示年末现任，不补中间年",
+      "original_time": "天监八年",
+      "tenure_time": {
+        "start_lower": 509,
+        "start_upper": 509,
+        "end_lower": null,
+        "end_upper": null,
+        "start_status": "exact_year",
+        "end_status": "unknown",
+        "start_semantics": "documented_appointment_year_not_arrival_year",
+        "end_semantics": "unknown_end_year"
+      },
+      "time_explanation": "本传先列天监元年、五年，续列六年八年，八年即509；有在郡政绩，抵郡日期不详。",
+      "evidence": [
+        {
+          "book": "梁书",
+          "volume": 26,
+          "chapter": "列传第二十",
+          "paragraph_id": "LS-C28-P0040",
+          "epub_member": "OEBPS/text00002.html",
+          "chapter_anchor": "filepos0000531967",
+          "chapter_paragraph": 40,
+          "file_paragraph": 194,
+          "quote": "八年，出为义兴太守，在郡宽惠，为民下所称。",
+          "quote_start": 21,
+          "quote_end": 42,
+          "role": "office_and_time",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        },
+        {
+          "book": "梁书",
+          "volume": 26,
+          "chapter": "列传第二十",
+          "paragraph_id": "LS-C28-P0034",
+          "epub_member": "OEBPS/text00002.html",
+          "chapter_anchor": "filepos0000531967",
+          "chapter_paragraph": 34,
+          "file_paragraph": 188,
+          "quote": "陆杲，字明霞，吴郡吴人。",
+          "quote_start": 0,
+          "quote_end": 12,
+          "role": "person_identity",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        },
+        {
+          "book": "梁书",
+          "volume": 26,
+          "chapter": "列传第二十",
+          "paragraph_id": "LS-C28-P0036",
+          "epub_member": "OEBPS/text00002.html",
+          "chapter_anchor": "filepos0000531967",
+          "chapter_paragraph": 36,
+          "file_paragraph": 190,
+          "quote": "天监元年，除抚军长史，母忧去职。",
+          "quote_start": 20,
+          "quote_end": 36,
+          "role": "era_context",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        }
+      ],
+      "research_notes": [],
+      "publication_eligibility": "annual_evidence_only_after_geography_matching",
+      "can_infer_between_anchor_years": false
+    },
+    {
+      "official_id": "LIANG-EPUB-0040",
+      "person_id": "LIANG-EPUB-PERSON-陆杲",
+      "person": "陆杲",
+      "person_aliases": [],
+      "place": "临川",
+      "place_id": null,
+      "geography_match_status": "unmatched_requires_independent_geography_id",
+      "office": "临川内史",
+      "full_title": "仁威将军、临川内史",
+      "level": "郡级正任",
+      "dynasty": "梁",
+      "tenure_nature": "正任",
+      "tenure_status": "appointment_only",
+      "review_status": "reviewed_context_continuation_2026_09_27",
+      "annual_presence_years": [
+        521
+      ],
+      "annual_status_by_year": {
+        "521": "appointment_only"
+      },
+      "event_type": "dated_appointment",
+      "annual_semantics": "本年见载该职；授官与在任证据分别注明，不表示年末现任，不补中间年",
+      "original_time": "普通二年",
+      "tenure_time": {
+        "start_lower": 521,
+        "start_upper": 521,
+        "end_lower": 524,
+        "end_upper": 524,
+        "start_status": "exact_year",
+        "end_status": "exact_year",
+        "start_semantics": "documented_appointment_year_not_arrival_year",
+        "end_semantics": "explicit_departure_or_death_year"
+      },
+      "time_explanation": "普通二年521授官，五年524改官；不投522、523。",
+      "evidence": [
+        {
+          "book": "梁书",
+          "volume": 26,
+          "chapter": "列传第二十",
+          "paragraph_id": "LS-C28-P0040",
+          "epub_member": "OEBPS/text00002.html",
+          "chapter_anchor": "filepos0000531967",
+          "chapter_paragraph": 40,
+          "file_paragraph": 194,
+          "quote": "普通二年，出为仁威将军、临川内史。五年，入为金紫光禄大夫，又领扬州大中正。",
+          "quote_start": 110,
+          "quote_end": 147,
+          "role": "office_and_time",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        },
+        {
+          "book": "梁书",
+          "volume": 26,
+          "chapter": "列传第二十",
+          "paragraph_id": "LS-C28-P0034",
+          "epub_member": "OEBPS/text00002.html",
+          "chapter_anchor": "filepos0000531967",
+          "chapter_paragraph": 34,
+          "file_paragraph": 188,
+          "quote": "陆杲，字明霞，吴郡吴人。",
+          "quote_start": 0,
+          "quote_end": 12,
+          "role": "person_identity",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        }
+      ],
+      "research_notes": [],
+      "publication_eligibility": "annual_evidence_only_after_geography_matching",
+      "can_infer_between_anchor_years": false
+    },
+    {
+      "official_id": "LIANG-EPUB-0041",
+      "person_id": "LIANG-EPUB-PERSON-夏侯亶",
+      "person": "夏侯亶",
+      "person_aliases": [],
+      "place": "宣城",
+      "place_id": null,
+      "geography_match_status": "unmatched_requires_independent_geography_id",
+      "office": "宣城太守",
+      "full_title": "宣城太守",
+      "level": "郡级正任",
+      "dynasty": "梁",
+      "tenure_nature": "正任",
+      "tenure_status": "appointment_only",
+      "review_status": "reviewed_context_continuation_2026_09_27",
+      "annual_presence_years": [
+        502
+      ],
+      "annual_status_by_year": {
+        "502": "appointment_only"
+      },
+      "event_type": "dated_appointment",
+      "annual_semantics": "本年见载该职；授官与在任证据分别注明，不表示年末现任，不补中间年",
+      "original_time": "天监元年",
+      "tenure_time": {
+        "start_lower": 502,
+        "start_upper": 502,
+        "end_lower": null,
+        "end_upper": null,
+        "start_status": "exact_year",
+        "end_status": "unknown",
+        "start_semantics": "documented_appointment_year_not_arrival_year",
+        "end_semantics": "unknown_end_year"
+      },
+      "time_explanation": "元年502明确授官；“寻入”不够定终任年月。",
+      "evidence": [
+        {
+          "book": "梁书",
+          "volume": 28,
+          "chapter": "列传第二十二",
+          "paragraph_id": "LS-C30-P0023",
+          "epub_member": "OEBPS/text00002.html",
+          "chapter_anchor": "filepos0000564022",
+          "chapter_paragraph": 23,
+          "file_paragraph": 258,
+          "quote": "天监元年，出为宣城太守。寻入为散骑常侍，领右骁骑将军。",
+          "quote_start": 169,
+          "quote_end": 196,
+          "role": "office_and_time",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        },
+        {
+          "book": "梁书",
+          "volume": 28,
+          "chapter": "列传第二十二",
+          "paragraph_id": "LS-C30-P0023",
+          "epub_member": "OEBPS/text00002.html",
+          "chapter_anchor": "filepos0000564022",
+          "chapter_paragraph": 23,
+          "file_paragraph": 258,
+          "quote": "夏侯亶，字世龙，车骑将军详长子也。",
+          "quote_start": 0,
+          "quote_end": 17,
+          "role": "person_identity",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        }
+      ],
+      "research_notes": [],
+      "publication_eligibility": "annual_evidence_only_after_geography_matching",
+      "can_infer_between_anchor_years": false
+    },
+    {
+      "official_id": "LIANG-EPUB-0042",
+      "person_id": "LIANG-EPUB-PERSON-夏侯亶",
+      "person": "夏侯亶",
+      "person_aliases": [],
+      "place": "南郡",
+      "place_id": null,
+      "geography_match_status": "unmatched_requires_independent_geography_id",
+      "office": "南郡太守",
+      "full_title": "平西始兴王长史、南郡太守",
+      "level": "郡级正任",
+      "dynasty": "梁",
+      "tenure_nature": "正任",
+      "tenure_status": "appointment_only",
+      "review_status": "reviewed_context_continuation_2026_09_27",
+      "annual_presence_years": [
+        507
+      ],
+      "annual_status_by_year": {
+        "507": "appointment_only"
+      },
+      "event_type": "dated_appointment",
+      "annual_semantics": "本年见载该职；授官与在任证据分别注明，不表示年末现任，不补中间年",
+      "original_time": "天监六年",
+      "tenure_time": {
+        "start_lower": 507,
+        "start_upper": 507,
+        "end_lower": null,
+        "end_upper": null,
+        "start_status": "exact_year",
+        "end_status": "unknown",
+        "start_semantics": "documented_appointment_year_not_arrival_year",
+        "end_semantics": "unknown_end_year"
+      },
+      "time_explanation": "六年承本段天监为507；父忧解职未单独纪年，不确定终任年或抵郡日。",
+      "evidence": [
+        {
+          "book": "梁书",
+          "volume": 28,
+          "chapter": "列传第二十二",
+          "paragraph_id": "LS-C30-P0023",
+          "epub_member": "OEBPS/text00002.html",
+          "chapter_anchor": "filepos0000564022",
+          "chapter_paragraph": 23,
+          "file_paragraph": 258,
+          "quote": "六年，出为平西始兴王长史、南郡太守，父忧解职。",
+          "quote_start": 196,
+          "quote_end": 219,
+          "role": "office_and_time",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        },
+        {
+          "book": "梁书",
+          "volume": 28,
+          "chapter": "列传第二十二",
+          "paragraph_id": "LS-C30-P0023",
+          "epub_member": "OEBPS/text00002.html",
+          "chapter_anchor": "filepos0000564022",
+          "chapter_paragraph": 23,
+          "file_paragraph": 258,
+          "quote": "天监元年，出为宣城太守。",
+          "quote_start": 169,
+          "quote_end": 181,
+          "role": "era_context",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        },
+        {
+          "book": "梁书",
+          "volume": 28,
+          "chapter": "列传第二十二",
+          "paragraph_id": "LS-C30-P0023",
+          "epub_member": "OEBPS/text00002.html",
+          "chapter_anchor": "filepos0000564022",
+          "chapter_paragraph": 23,
+          "file_paragraph": 258,
+          "quote": "夏侯亶，字世龙，车骑将军详长子也。",
+          "quote_start": 0,
+          "quote_end": 17,
+          "role": "person_identity",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        }
+      ],
+      "research_notes": [],
+      "publication_eligibility": "annual_evidence_only_after_geography_matching",
+      "can_infer_between_anchor_years": false
+    },
+    {
+      "official_id": "LIANG-EPUB-0043",
+      "person_id": "LIANG-EPUB-PERSON-夏侯亶",
+      "person": "夏侯亶",
+      "person_aliases": [],
+      "place": "安陆",
+      "place_id": null,
+      "geography_match_status": "unmatched_requires_independent_geography_id",
+      "office": "安陆太守",
+      "full_title": "持节、督司州诸军事、信武将军、司州刺史，领安陆太守",
+      "level": "郡级正任",
+      "dynasty": "梁",
+      "tenure_nature": "兼领",
+      "tenure_status": "appointment_only",
+      "review_status": "reviewed_context_continuation_2026_09_27",
+      "annual_presence_years": [
+        509
+      ],
+      "annual_status_by_year": {
+        "509": "appointment_only"
+      },
+      "event_type": "dated_appointment",
+      "annual_semantics": "本年见载该职；授官与在任证据分别注明，不表示年末现任，不补中间年",
+      "original_time": "天监八年",
+      "tenure_time": {
+        "start_lower": 509,
+        "start_upper": 509,
+        "end_lower": null,
+        "end_upper": null,
+        "start_status": "exact_year",
+        "end_status": "unknown",
+        "start_semantics": "documented_appointment_year_not_arrival_year",
+        "end_semantics": "unknown_end_year"
+      },
+      "time_explanation": "八年承天监为509；兼领安陆。居州叙事不能单独证明到安陆郡履太守职，保留授官见载。",
+      "evidence": [
+        {
+          "book": "梁书",
+          "volume": 28,
+          "chapter": "列传第二十二",
+          "paragraph_id": "LS-C30-P0023",
+          "epub_member": "OEBPS/text00002.html",
+          "chapter_anchor": "filepos0000564022",
+          "chapter_paragraph": 23,
+          "file_paragraph": 258,
+          "quote": "八年，起为持节、督司州诸军事、信武将军、司州刺史，领安陆太守。服阕，袭封豊城县公。居州甚有威惠，为边人所悦服。",
+          "quote_start": 236,
+          "quote_end": 291,
+          "role": "office_and_time",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        },
+        {
+          "book": "梁书",
+          "volume": 28,
+          "chapter": "列传第二十二",
+          "paragraph_id": "LS-C30-P0023",
+          "epub_member": "OEBPS/text00002.html",
+          "chapter_anchor": "filepos0000564022",
+          "chapter_paragraph": 23,
+          "file_paragraph": 258,
+          "quote": "天监元年，出为宣城太守。",
+          "quote_start": 169,
+          "quote_end": 181,
+          "role": "era_context",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        },
+        {
+          "book": "梁书",
+          "volume": 28,
+          "chapter": "列传第二十二",
+          "paragraph_id": "LS-C30-P0023",
+          "epub_member": "OEBPS/text00002.html",
+          "chapter_anchor": "filepos0000564022",
+          "chapter_paragraph": 23,
+          "file_paragraph": 258,
+          "quote": "夏侯亶，字世龙，车骑将军详长子也。",
+          "quote_start": 0,
+          "quote_end": 17,
+          "role": "person_identity",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        }
+      ],
+      "research_notes": [],
+      "publication_eligibility": "annual_evidence_only_after_geography_matching",
+      "can_infer_between_anchor_years": false
+    },
+    {
+      "official_id": "LIANG-EPUB-0044",
+      "person_id": "LIANG-EPUB-PERSON-夏侯亶",
+      "person": "夏侯亶",
+      "person_aliases": [],
+      "place": "江夏",
+      "place_id": null,
+      "geography_match_status": "unmatched_requires_independent_geography_id",
+      "office": "江夏太守",
+      "full_title": "信武将军、安西长史、江夏太守",
+      "level": "郡级正任",
+      "dynasty": "梁",
+      "tenure_nature": "正任",
+      "tenure_status": "appointment_only",
+      "review_status": "reviewed_context_continuation_2026_09_27",
+      "annual_presence_years": [
+        516
+      ],
+      "annual_status_by_year": {
+        "516": "appointment_only"
+      },
+      "event_type": "dated_appointment",
+      "annual_semantics": "本年见载该职；授官与在任证据分别注明，不表示年末现任，不补中间年",
+      "original_time": "天监十五年",
+      "tenure_time": {
+        "start_lower": 516,
+        "start_upper": 516,
+        "end_lower": 518,
+        "end_upper": 518,
+        "start_status": "exact_year",
+        "end_status": "exact_year",
+        "start_semantics": "documented_appointment_year_not_arrival_year",
+        "end_semantics": "explicit_departure_or_death_year"
+      },
+      "time_explanation": "上段连续天监纪年，十五年516授江夏、十七年518改官；不补517。",
+      "evidence": [
+        {
+          "book": "梁书",
+          "volume": 28,
+          "chapter": "列传第二十二",
+          "paragraph_id": "LS-C30-P0024",
+          "epub_member": "OEBPS/text00002.html",
+          "chapter_anchor": "filepos0000564022",
+          "chapter_paragraph": 24,
+          "file_paragraph": 259,
+          "quote": "十五年，出为信武将军、安西长史、江夏太守。十七年，入为通直散骑常侍、太子右卫率，",
+          "quote_start": 0,
+          "quote_end": 40,
+          "role": "office_and_time",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        },
+        {
+          "book": "梁书",
+          "volume": 28,
+          "chapter": "列传第二十二",
+          "paragraph_id": "LS-C30-P0023",
+          "epub_member": "OEBPS/text00002.html",
+          "chapter_anchor": "filepos0000564022",
+          "chapter_paragraph": 23,
+          "file_paragraph": 258,
+          "quote": "天监元年，出为宣城太守。",
+          "quote_start": 169,
+          "quote_end": 181,
+          "role": "era_context",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        },
+        {
+          "book": "梁书",
+          "volume": 28,
+          "chapter": "列传第二十二",
+          "paragraph_id": "LS-C30-P0023",
+          "epub_member": "OEBPS/text00002.html",
+          "chapter_anchor": "filepos0000564022",
+          "chapter_paragraph": 23,
+          "file_paragraph": 258,
+          "quote": "夏侯亶，字世龙，车骑将军详长子也。",
+          "quote_start": 0,
+          "quote_end": 17,
+          "role": "person_identity",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        }
+      ],
+      "research_notes": [],
+      "publication_eligibility": "annual_evidence_only_after_geography_matching",
+      "can_infer_between_anchor_years": false
+    },
+    {
+      "official_id": "LIANG-EPUB-0045",
+      "person_id": "LIANG-EPUB-PERSON-韦放",
+      "person": "韦放",
+      "person_aliases": [],
+      "place": "盱眙",
+      "place_id": null,
+      "geography_match_status": "unmatched_requires_independent_geography_id",
+      "office": "盱眙太守",
+      "full_title": "盱眙太守",
+      "level": "郡级正任",
+      "dynasty": "梁",
+      "tenure_nature": "正任",
+      "tenure_status": "appointment_only",
+      "review_status": "reviewed_context_continuation_2026_09_27",
+      "annual_presence_years": [
+        502
+      ],
+      "annual_status_by_year": {
+        "502": "appointment_only"
+      },
+      "event_type": "dated_appointment",
+      "annual_semantics": "本年见载该职；授官与在任证据分别注明，不表示年末现任，不补中间年",
+      "original_time": "天监元年",
+      "tenure_time": {
+        "start_lower": 502,
+        "start_upper": 502,
+        "end_lower": null,
+        "end_upper": null,
+        "start_status": "exact_year",
+        "end_status": "unknown",
+        "start_semantics": "documented_appointment_year_not_arrival_year",
+        "end_semantics": "unknown_end_year"
+      },
+      "time_explanation": "元年502为盱眙授官锚；后文“还除”不提供独立终任年。",
+      "evidence": [
+        {
+          "book": "梁书",
+          "volume": 28,
+          "chapter": "列传第二十二",
+          "paragraph_id": "LS-C30-P0037",
+          "epub_member": "OEBPS/text00002.html",
+          "chapter_anchor": "filepos0000564022",
+          "chapter_paragraph": 37,
+          "file_paragraph": 272,
+          "quote": "天监元年，为盱眙太守，还除通直郎，",
+          "quote_start": 57,
+          "quote_end": 74,
+          "role": "office_and_time",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        },
+        {
+          "book": "梁书",
+          "volume": 28,
+          "chapter": "列传第二十二",
+          "paragraph_id": "LS-C30-P0037",
+          "epub_member": "OEBPS/text00002.html",
+          "chapter_anchor": "filepos0000564022",
+          "chapter_paragraph": 37,
+          "file_paragraph": 272,
+          "quote": "韦放，字元直，车骑将军睿之子。",
+          "quote_start": 0,
+          "quote_end": 15,
+          "role": "person_identity",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        }
+      ],
+      "research_notes": [],
+      "publication_eligibility": "annual_evidence_only_after_geography_matching",
+      "can_infer_between_anchor_years": false
+    },
+    {
+      "official_id": "LIANG-EPUB-0046",
+      "person_id": "LIANG-EPUB-PERSON-徐摛",
+      "person": "徐摛",
+      "person_aliases": [],
+      "place": "新安",
+      "place_id": null,
+      "geography_match_status": "unmatched_requires_independent_geography_id",
+      "office": "新安太守",
+      "full_title": "新安太守",
+      "level": "郡级正任",
+      "dynasty": "梁",
+      "tenure_nature": "正任",
+      "tenure_status": "appointment_with_service_context",
+      "review_status": "reviewed_context_continuation_2026_09_27",
+      "annual_presence_years": [
+        531
+      ],
+      "annual_status_by_year": {
+        "531": "appointment_with_service_context"
+      },
+      "event_type": "dated_appointment",
+      "annual_semantics": "本年见载该职；授官与在任证据分别注明，不表示年末现任，不补中间年",
+      "original_time": "中大通三年",
+      "tenure_time": {
+        "start_lower": 531,
+        "start_upper": 531,
+        "end_lower": null,
+        "end_upper": null,
+        "start_status": "exact_year",
+        "end_status": "unknown",
+        "start_semantics": "documented_appointment_year_not_arrival_year",
+        "end_semantics": "unknown_end_year"
+      },
+      "time_explanation": "中大通三年531授官并有至郡语；不以“期月”推定后续完整年度任期。",
+      "evidence": [
+        {
+          "book": "梁书",
+          "volume": 30,
+          "chapter": "列传第二十四",
+          "paragraph_id": "LS-C32-P0023",
+          "epub_member": "OEBPS/text00002.html",
+          "chapter_anchor": "filepos0000601170",
+          "chapter_paragraph": 23,
+          "file_paragraph": 340,
+          "quote": "中大通三年，遂出为新安太守。至郡，为治清静，教民礼义，劝课农桑，期月之中，风俗便改。",
+          "quote_start": 204,
+          "quote_end": 246,
+          "role": "office_and_time",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        },
+        {
+          "book": "梁书",
+          "volume": 30,
+          "chapter": "列传第二十四",
+          "paragraph_id": "LS-C32-P0022",
+          "epub_member": "OEBPS/text00002.html",
+          "chapter_anchor": "filepos0000601170",
+          "chapter_paragraph": 22,
+          "file_paragraph": 339,
+          "quote": "徐摛，字士秀，东海郯人也。",
+          "quote_start": 0,
+          "quote_end": 13,
+          "role": "person_identity",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        }
+      ],
+      "research_notes": [],
+      "publication_eligibility": "annual_evidence_only_after_geography_matching",
+      "can_infer_between_anchor_years": false
+    },
+    {
+      "official_id": "LIANG-EPUB-0047",
+      "person_id": "LIANG-EPUB-PERSON-萧子恪",
+      "person": "萧子恪",
+      "person_aliases": [],
+      "place": "吴郡",
+      "place_id": null,
+      "geography_match_status": "unmatched_requires_independent_geography_id",
+      "office": "吴郡太守",
+      "full_title": "宁远将军、吴郡太守",
+      "level": "郡级正任",
+      "dynasty": "梁",
+      "tenure_nature": "正任",
+      "tenure_status": "appointment_with_service_context",
+      "review_status": "reviewed_context_continuation_2026_09_27",
+      "annual_presence_years": [
+        528,
+        529
+      ],
+      "annual_status_by_year": {
+        "528": "appointment_with_service_context",
+        "529": "served"
+      },
+      "event_type": "dated_appointment_and_death",
+      "annual_semantics": "本年见载该职；授官与在任证据分别注明，不表示年末现任，不补中间年",
+      "original_time": "大通二年授官、三年卒郡",
+      "tenure_time": {
+        "start_lower": 528,
+        "start_upper": 528,
+        "end_lower": 529,
+        "end_upper": 529,
+        "start_status": "exact_year",
+        "end_status": "exact_year",
+        "start_semantics": "documented_appointment_year_not_arrival_year",
+        "end_semantics": "explicit_departure_or_death_year"
+      },
+      "time_explanation": "大通二年528授官；三年529卒于郡舍，是另一明确在任锚。同年另有中大通改元，不把“三年”读作中大通三年531。",
+      "evidence": [
+        {
+          "book": "梁书",
+          "volume": 35,
+          "chapter": "列传第二十九",
+          "paragraph_id": "LS-C37-P0007",
+          "epub_member": "OEBPS/text00003.html",
+          "chapter_anchor": null,
+          "chapter_paragraph": 7,
+          "file_paragraph": 7,
+          "quote": "大通二年，出为宁远将军、吴郡太守。三年，卒于郡舍，时年五十二。",
+          "quote_start": 83,
+          "quote_end": 114,
+          "role": "office_and_time",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        },
+        {
+          "book": "梁书",
+          "volume": 35,
+          "chapter": "列传第二十九",
+          "paragraph_id": "LS-C37-P0003",
+          "epub_member": "OEBPS/text00003.html",
+          "chapter_anchor": null,
+          "chapter_paragraph": 3,
+          "file_paragraph": 3,
+          "quote": "萧子恪，字景冲，兰陵人，齐豫章文献王嶷第二子也。",
+          "quote_start": 0,
+          "quote_end": 24,
+          "role": "person_identity",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        }
+      ],
+      "research_notes": [],
+      "publication_eligibility": "annual_evidence_only_after_geography_matching",
+      "can_infer_between_anchor_years": false
+    },
+    {
+      "official_id": "LIANG-EPUB-0048",
+      "person_id": "LIANG-EPUB-PERSON-王褒",
+      "person": "王褒",
+      "person_aliases": [],
+      "place": "南平",
+      "place_id": null,
+      "geography_match_status": "unmatched_requires_independent_geography_id",
+      "office": "南平内史",
+      "full_title": "忠武将军、南平内史",
+      "level": "郡级正任",
+      "dynasty": "梁",
+      "tenure_nature": "正任",
+      "tenure_status": "appointment_only",
+      "review_status": "reviewed_context_continuation_2026_09_27",
+      "annual_presence_years": [
+        551
+      ],
+      "annual_status_by_year": {
+        "551": "appointment_only"
+      },
+      "event_type": "dated_appointment",
+      "annual_semantics": "本年见载该职；授官与在任证据分别注明，不表示年末现任，不补中间年",
+      "original_time": "大宝二年",
+      "tenure_time": {
+        "start_lower": 551,
+        "start_upper": 551,
+        "end_lower": null,
+        "end_upper": null,
+        "start_status": "exact_year",
+        "end_status": "unknown",
+        "start_semantics": "documented_appointment_year_not_arrival_year",
+        "end_semantics": "unknown_end_year"
+      },
+      "time_explanation": "大宝二年551。既至指到江陵，不能当作已到南平履任；保留任命见载。",
+      "evidence": [
+        {
+          "book": "梁书",
+          "volume": 41,
+          "chapter": "列传第三十五",
+          "paragraph_id": "LS-C43-P0009",
+          "epub_member": "OEBPS/text00003.html",
+          "chapter_anchor": "filepos0000799163",
+          "chapter_paragraph": 9,
+          "file_paragraph": 236,
+          "quote": "大宝二年，世祖命征褒赴江陵，既至，以为忠武将军、南平内史，俄迁吏部尚书、侍中。",
+          "quote_start": 139,
+          "quote_end": 178,
+          "role": "office_and_time",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        },
+        {
+          "book": "梁书",
+          "volume": 41,
+          "chapter": "列传第三十五",
+          "paragraph_id": "LS-C43-P0009",
+          "epub_member": "OEBPS/text00003.html",
+          "chapter_anchor": "filepos0000799163",
+          "chapter_paragraph": 9,
+          "file_paragraph": 236,
+          "quote": "子褒，字子汉，七岁能属文。",
+          "quote_start": 0,
+          "quote_end": 13,
+          "role": "person_identity",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        },
+        {
+          "book": "梁书",
+          "volume": 41,
+          "chapter": "列传第三十五",
+          "paragraph_id": "LS-C43-P0004",
+          "epub_member": "OEBPS/text00003.html",
+          "chapter_anchor": "filepos0000799163",
+          "chapter_paragraph": 4,
+          "file_paragraph": 231,
+          "quote": "王规，字威明，琅邪临沂人。",
+          "quote_start": 0,
+          "quote_end": 13,
+          "role": "father_identity",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        }
+      ],
+      "research_notes": [],
+      "publication_eligibility": "annual_evidence_only_after_geography_matching",
+      "can_infer_between_anchor_years": false
+    },
+    {
+      "official_id": "LIANG-EPUB-0049",
+      "person_id": "LIANG-EPUB-PERSON-褚球",
+      "person": "褚球",
+      "person_aliases": [],
+      "place": "南兰陵",
+      "place_id": null,
+      "geography_match_status": "unmatched_requires_independent_geography_id",
+      "office": "南兰陵太守",
+      "full_title": "北中郎长史、南兰陵太守",
+      "level": "郡级正任",
+      "dynasty": "梁",
+      "tenure_nature": "正任",
+      "tenure_status": "appointment_only",
+      "review_status": "reviewed_context_continuation_2026_09_27",
+      "annual_presence_years": [
+        523
+      ],
+      "annual_status_by_year": {
+        "523": "appointment_only"
+      },
+      "event_type": "dated_appointment",
+      "annual_semantics": "本年见载该职；授官与在任证据分别注明，不表示年末现任，不补中间年",
+      "original_time": "普通四年",
+      "tenure_time": {
+        "start_lower": 523,
+        "start_upper": 523,
+        "end_lower": null,
+        "end_upper": null,
+        "start_status": "exact_year",
+        "end_status": "unknown",
+        "start_semantics": "documented_appointment_year_not_arrival_year",
+        "end_semantics": "unknown_end_year"
+      },
+      "time_explanation": "普通四年523授官，未另载到任或终任日期；不与本传后来未具年的再次南兰陵任职合并。",
+      "evidence": [
+        {
+          "book": "梁书",
+          "volume": 41,
+          "chapter": "列传第三十五",
+          "paragraph_id": "LS-C43-P0040",
+          "epub_member": "OEBPS/text00003.html",
+          "chapter_anchor": "filepos0000799163",
+          "chapter_paragraph": 40,
+          "file_paragraph": 267,
+          "quote": "普通四年，出为北中郎长史、南兰陵太守；入为通直散骑常侍，领羽林监。",
+          "quote_start": 115,
+          "quote_end": 148,
+          "role": "office_and_time",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        },
+        {
+          "book": "梁书",
+          "volume": 41,
+          "chapter": "列传第三十五",
+          "paragraph_id": "LS-C43-P0039",
+          "epub_member": "OEBPS/text00003.html",
+          "chapter_anchor": "filepos0000799163",
+          "chapter_paragraph": 39,
+          "file_paragraph": 266,
+          "quote": "褚球，字仲宝，河南阳翟人。",
+          "quote_start": 0,
+          "quote_end": 13,
+          "role": "person_identity",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        }
+      ],
+      "research_notes": [],
+      "publication_eligibility": "annual_evidence_only_after_geography_matching",
+      "can_infer_between_anchor_years": false
+    },
+    {
+      "official_id": "LIANG-EPUB-0050",
+      "person_id": "LIANG-EPUB-PERSON-刘孺",
+      "person": "刘孺",
+      "person_aliases": [],
+      "place": "江夏",
+      "place_id": null,
+      "geography_match_status": "unmatched_requires_independent_geography_id",
+      "office": "江夏太守",
+      "full_title": "仁威临川王长史、江夏太守，加贞威将军",
+      "level": "郡级正任",
+      "dynasty": "梁",
+      "tenure_nature": "正任",
+      "tenure_status": "appointment_only",
+      "review_status": "reviewed_context_continuation_2026_09_27",
+      "annual_presence_years": [
+        532
+      ],
+      "annual_status_by_year": {
+        "532": "appointment_only"
+      },
+      "event_type": "dated_appointment",
+      "annual_semantics": "本年见载该职；授官与在任证据分别注明，不表示年末现任，不补中间年",
+      "original_time": "中大通四年",
+      "tenure_time": {
+        "start_lower": 532,
+        "start_upper": 532,
+        "end_lower": null,
+        "end_upper": null,
+        "start_status": "exact_year",
+        "end_status": "unknown",
+        "start_semantics": "documented_appointment_year_not_arrival_year",
+        "end_semantics": "unknown_end_year"
+      },
+      "time_explanation": "中大通四年532明确授官；次年司徒左长史“未拜”修饰后一官，不否定江夏任命。",
+      "evidence": [
+        {
+          "book": "梁书",
+          "volume": 41,
+          "chapter": "列传第三十五",
+          "paragraph_id": "LS-C43-P0044",
+          "epub_member": "OEBPS/text00003.html",
+          "chapter_anchor": "filepos0000799163",
+          "chapter_paragraph": 44,
+          "file_paragraph": 271,
+          "quote": "中大通四年，出为仁威临川王长史、江夏太守，加贞威将军。",
+          "quote_start": 141,
+          "quote_end": 168,
+          "role": "office_and_time",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        },
+        {
+          "book": "梁书",
+          "volume": 41,
+          "chapter": "列传第三十五",
+          "paragraph_id": "LS-C43-P0041",
+          "epub_member": "OEBPS/text00003.html",
+          "chapter_anchor": "filepos0000799163",
+          "chapter_paragraph": 41,
+          "file_paragraph": 268,
+          "quote": "刘孺，字孝稚，彭城安上里人也。",
+          "quote_start": 0,
+          "quote_end": 15,
+          "role": "person_identity",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        }
+      ],
+      "research_notes": [],
+      "publication_eligibility": "annual_evidence_only_after_geography_matching",
+      "can_infer_between_anchor_years": false
+    },
+    {
+      "official_id": "LIANG-EPUB-0051",
+      "person_id": "LIANG-EPUB-PERSON-刘孺",
+      "person": "刘孺",
+      "person_aliases": [],
+      "place": "晋陵",
+      "place_id": null,
+      "geography_match_status": "unmatched_requires_independent_geography_id",
+      "office": "晋陵太守",
+      "full_title": "明威将军、晋陵太守",
+      "level": "郡级正任",
+      "dynasty": "梁",
+      "tenure_nature": "正任",
+      "tenure_status": "appointment_with_service_context",
+      "review_status": "reviewed_context_continuation_2026_09_27",
+      "annual_presence_years": [
+        539
+      ],
+      "annual_status_by_year": {
+        "539": "appointment_with_service_context"
+      },
+      "event_type": "dated_appointment",
+      "annual_semantics": "本年见载该职；授官与在任证据分别注明，不表示年末现任，不补中间年",
+      "original_time": "大同五年",
+      "tenure_time": {
+        "start_lower": 539,
+        "start_upper": 539,
+        "end_lower": 541,
+        "end_upper": 541,
+        "start_status": "exact_year",
+        "end_status": "exact_year",
+        "start_semantics": "documented_appointment_year_not_arrival_year",
+        "end_semantics": "explicit_departure_or_death_year"
+      },
+      "time_explanation": "大同五年539授官并有在郡事迹；七年541改官边界，不补540。",
+      "evidence": [
+        {
+          "book": "梁书",
+          "volume": 41,
+          "chapter": "列传第三十五",
+          "paragraph_id": "LS-C43-P0044",
+          "epub_member": "OEBPS/text00003.html",
+          "chapter_anchor": "filepos0000799163",
+          "chapter_paragraph": 44,
+          "file_paragraph": 271,
+          "quote": "大同五年，守吏部尚书。其年，出为明威将军、晋陵太守。在郡和理，为吏民所称。七年，入为侍中，领右军。",
+          "quote_start": 199,
+          "quote_end": 248,
+          "role": "office_and_time",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        },
+        {
+          "book": "梁书",
+          "volume": 41,
+          "chapter": "列传第三十五",
+          "paragraph_id": "LS-C43-P0041",
+          "epub_member": "OEBPS/text00003.html",
+          "chapter_anchor": "filepos0000799163",
+          "chapter_paragraph": 41,
+          "file_paragraph": 268,
+          "quote": "刘孺，字孝稚，彭城安上里人也。",
+          "quote_start": 0,
+          "quote_end": 15,
+          "role": "person_identity",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        }
+      ],
+      "research_notes": [],
+      "publication_eligibility": "annual_evidence_only_after_geography_matching",
+      "can_infer_between_anchor_years": false
+    },
+    {
+      "official_id": "LIANG-EPUB-0052",
+      "person_id": "LIANG-EPUB-PERSON-刘潜",
+      "person": "刘潜",
+      "person_aliases": [
+        "刘孝仪",
+        "劉潛",
+        "劉孝儀"
+      ],
+      "place": "临海",
+      "place_id": null,
+      "geography_match_status": "unmatched_requires_independent_geography_id",
+      "office": "临海太守",
+      "full_title": "伏波将军、临海太守",
+      "level": "郡级正任",
+      "dynasty": "梁",
+      "tenure_nature": "正任",
+      "tenure_status": "appointment_with_service_context",
+      "review_status": "reviewed_context_continuation_2026_09_27",
+      "annual_presence_years": [
+        544
+      ],
+      "annual_status_by_year": {
+        "544": "appointment_with_service_context"
+      },
+      "event_type": "dated_appointment",
+      "annual_semantics": "本年见载该职；授官与在任证据分别注明，不表示年末现任，不补中间年",
+      "original_time": "大同十年",
+      "tenure_time": {
+        "start_lower": 544,
+        "start_upper": 544,
+        "end_lower": 546,
+        "end_upper": 546,
+        "start_status": "exact_year",
+        "end_status": "exact_year",
+        "start_semantics": "documented_appointment_year_not_arrival_year",
+        "end_semantics": "explicit_departure_or_death_year"
+      },
+      "time_explanation": "前段大同三年续至十年，换算544；有下车治理。中大同元年546改官，仅作边界，不补545。",
+      "evidence": [
+        {
+          "book": "梁书",
+          "volume": 41,
+          "chapter": "列传第三十五",
+          "paragraph_id": "LS-C43-P0054",
+          "epub_member": "OEBPS/text00003.html",
+          "chapter_anchor": "filepos0000799163",
+          "chapter_paragraph": 54,
+          "file_paragraph": 281,
+          "quote": "十年，出为伏波将军、临海太守。是时政网疏阔，百姓多不遵禁。孝仪下车，宣示条制，励精绥抚，境内翕然，风俗大革。中大同元年，入守都官尚书。",
+          "quote_start": 27,
+          "quote_end": 94,
+          "role": "office_and_time",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        },
+        {
+          "book": "梁书",
+          "volume": 41,
+          "chapter": "列传第三十五",
+          "paragraph_id": "LS-C43-P0051",
+          "epub_member": "OEBPS/text00003.html",
+          "chapter_anchor": "filepos0000799163",
+          "chapter_paragraph": 51,
+          "file_paragraph": 278,
+          "quote": "刘潜，字孝仪，秘书监孝绰弟也。",
+          "quote_start": 0,
+          "quote_end": 15,
+          "role": "person_identity",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        },
+        {
+          "book": "梁书",
+          "volume": 41,
+          "chapter": "列传第三十五",
+          "paragraph_id": "LS-C43-P0052",
+          "epub_member": "OEBPS/text00003.html",
+          "chapter_anchor": "filepos0000799163",
+          "chapter_paragraph": 52,
+          "file_paragraph": 279,
+          "quote": "大同三年，迁中书郎，以公事左迁安西谘议参军，兼散骑常侍。",
+          "quote_start": 44,
+          "quote_end": 72,
+          "role": "era_context",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        }
+      ],
+      "research_notes": [],
+      "publication_eligibility": "annual_evidence_only_after_geography_matching",
+      "can_infer_between_anchor_years": false
+    },
+    {
+      "official_id": "LIANG-EPUB-0053",
+      "person_id": "LIANG-EPUB-PERSON-刘潜",
+      "person": "刘潜",
+      "person_aliases": [
+        "刘孝仪",
+        "劉潛",
+        "劉孝儀"
+      ],
+      "place": "豫章",
+      "place_id": null,
+      "geography_match_status": "unmatched_requires_independent_geography_id",
+      "office": "豫章内史",
+      "full_title": "明威将军、豫章内史",
+      "level": "郡级正任",
+      "dynasty": "梁",
+      "tenure_nature": "正任",
+      "tenure_status": "appointment_with_service_context",
+      "review_status": "reviewed_context_continuation_2026_09_27",
+      "annual_presence_years": [
+        547,
+        548,
+        549
+      ],
+      "annual_status_by_year": {
+        "547": "appointment_with_service_context",
+        "548": "served",
+        "549": "served"
+      },
+      "event_type": "dated_appointment_and_service",
+      "annual_semantics": "本年见载该职；授官与在任证据分别注明，不表示年末现任，不补中间年",
+      "original_time": "太清元年授官、二年遣兵、三年失郡",
+      "tenure_time": {
+        "start_lower": 547,
+        "start_upper": 547,
+        "end_lower": 549,
+        "end_upper": 549,
+        "start_status": "exact_year",
+        "end_status": "exact_year",
+        "start_semantics": "documented_appointment_year_not_arrival_year",
+        "end_semantics": "explicit_departure_or_death_year"
+      },
+      "time_explanation": "547授官、548遣郡兵、549失郡均有逐年语句，三锚不是在起止之间插值；庄铁为前历阳太守，不投其549历阳在任。",
+      "evidence": [
+        {
+          "book": "梁书",
+          "volume": 41,
+          "chapter": "列传第三十五",
+          "paragraph_id": "LS-C43-P0054",
+          "epub_member": "OEBPS/text00003.html",
+          "chapter_anchor": "filepos0000799163",
+          "chapter_paragraph": 54,
+          "file_paragraph": 281,
+          "quote": "太清元年，出为明威将军、豫章内史。二年，侯景寇京邑，孝仪遣子励帅郡兵三千人，随前衡州刺史韦粲入援。三年，宫城不守，孝仪为前历阳太守庄铁所逼，失郡。",
+          "quote_start": 94,
+          "quote_end": 167,
+          "role": "office_and_time",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        },
+        {
+          "book": "梁书",
+          "volume": 41,
+          "chapter": "列传第三十五",
+          "paragraph_id": "LS-C43-P0051",
+          "epub_member": "OEBPS/text00003.html",
+          "chapter_anchor": "filepos0000799163",
+          "chapter_paragraph": 51,
+          "file_paragraph": 278,
+          "quote": "刘潜，字孝仪，秘书监孝绰弟也。",
+          "quote_start": 0,
+          "quote_end": 15,
+          "role": "person_identity",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        }
+      ],
+      "research_notes": [],
+      "publication_eligibility": "annual_evidence_only_after_geography_matching",
+      "can_infer_between_anchor_years": false
+    },
+    {
+      "official_id": "LIANG-EPUB-0054",
+      "person_id": "LIANG-EPUB-PERSON-张嵊",
+      "person": "张嵊",
+      "person_aliases": [],
+      "place": "吴兴",
+      "place_id": null,
+      "geography_match_status": "unmatched_requires_independent_geography_id",
+      "office": "吴兴太守",
+      "full_title": "吴兴太守",
+      "level": "郡级正任",
+      "dynasty": "梁",
+      "tenure_nature": "正任",
+      "tenure_status": "served",
+      "review_status": "reviewed_context_continuation_2026_09_27",
+      "annual_presence_years": [
+        548,
+        549
+      ],
+      "annual_status_by_year": {
+        "548": "served",
+        "549": "served"
+      },
+      "event_type": "dated_in_office_attestation",
+      "annual_semantics": "本年见载该职；授官与在任证据分别注明，不表示年末现任，不补中间年",
+      "original_time": "中大同元年后授官、太清二三年在任",
+      "tenure_time": {
+        "start_lower": null,
+        "start_upper": null,
+        "end_lower": 549,
+        "end_upper": 549,
+        "start_status": "unknown",
+        "end_status": "exact_year",
+        "start_semantics": "unknown_start_year",
+        "end_semantics": "explicit_departure_or_death_year"
+      },
+      "time_explanation": "中大同元年546明确系于太府卿，随后“俄迁吴兴”不硬定同年；548率郡兵赴援、549守郡被俘分别有纪年，只投二锚，不补546、547。549被害由本段连续三年叙事定位。",
+      "evidence": [
+        {
+          "book": "梁书",
+          "volume": 43,
+          "chapter": "列传第三十七",
+          "paragraph_id": "LS-C45-P0017",
+          "epub_member": "OEBPS/text00003.html",
+          "chapter_anchor": "filepos0000832303",
+          "chapter_paragraph": 17,
+          "file_paragraph": 328,
+          "quote": "中大同元年，征为太府卿，俄迁吴兴太守。",
+          "quote_start": 126,
+          "quote_end": 145,
+          "role": "office_and_time",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        },
+        {
+          "book": "梁书",
+          "volume": 43,
+          "chapter": "列传第三十七",
+          "paragraph_id": "LS-C45-P0017",
+          "epub_member": "OEBPS/text00003.html",
+          "chapter_anchor": "filepos0000832303",
+          "chapter_paragraph": 17,
+          "file_paragraph": 328,
+          "quote": "张嵊，字四山，镇北将军稷之子也。",
+          "quote_start": 0,
+          "quote_end": 16,
+          "role": "person_identity",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        },
+        {
+          "book": "梁书",
+          "volume": 43,
+          "chapter": "列传第三十七",
+          "paragraph_id": "LS-C45-P0018",
+          "epub_member": "OEBPS/text00003.html",
+          "chapter_anchor": "filepos0000832303",
+          "chapter_paragraph": 18,
+          "file_paragraph": 329,
+          "quote": "太清二年，侯景围京城，嵊遣弟伊率郡兵数千人赴援。三年，宫城陷，御史中丞沈浚违难东归。",
+          "quote_start": 0,
+          "quote_end": 42,
+          "role": "annual_service",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        },
+        {
+          "book": "梁书",
+          "volume": 43,
+          "chapter": "列传第三十七",
+          "paragraph_id": "LS-C45-P0018",
+          "epub_member": "OEBPS/text00003.html",
+          "chapter_anchor": "filepos0000832303",
+          "chapter_paragraph": 18,
+          "file_paragraph": 329,
+          "quote": "乃执嵊以送景，景刑之于都市，子弟同遇害者十余人，时年六十二。",
+          "quote_start": 355,
+          "quote_end": 385,
+          "role": "death_context",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        }
+      ],
+      "research_notes": [],
+      "publication_eligibility": "annual_evidence_only_after_geography_matching",
+      "can_infer_between_anchor_years": false
+    },
+    {
+      "official_id": "LIANG-EPUB-0055",
+      "person_id": "LIANG-EPUB-PERSON-胡僧祐",
+      "person": "胡僧祐",
+      "person_aliases": [
+        "胡僧佑"
+      ],
+      "place": "南天水",
+      "place_id": null,
+      "geography_match_status": "unmatched_requires_independent_geography_id",
+      "office": "南天水太守",
+      "full_title": "南天水、天门二郡太守",
+      "level": "郡级正任",
+      "dynasty": "梁",
+      "tenure_nature": "二郡并领",
+      "tenure_status": "appointment_with_service_context",
+      "review_status": "reviewed_context_continuation_2026_09_27",
+      "annual_presence_years": [
+        529
+      ],
+      "annual_status_by_year": {
+        "529": "appointment_with_service_context"
+      },
+      "event_type": "dated_appointment",
+      "annual_semantics": "本年见载该职；授官与在任证据分别注明，不表示年末现任，不补中间年",
+      "original_time": "中大通元年",
+      "tenure_time": {
+        "start_lower": 529,
+        "start_upper": 529,
+        "end_lower": null,
+        "end_upper": null,
+        "start_status": "exact_year",
+        "end_status": "unknown",
+        "start_semantics": "documented_appointment_year_not_arrival_year",
+        "end_semantics": "unknown_end_year"
+      },
+      "time_explanation": "中大通元年529，二郡并授，分别保存郡官记录并共用原句；有善政语，不由此倒推抵郡日。",
+      "evidence": [
+        {
+          "book": "梁书",
+          "volume": 46,
+          "chapter": "列传第四十",
+          "paragraph_id": "LS-C48-P0003",
+          "epub_member": "OEBPS/text00003.html",
+          "chapter_anchor": "filepos0000880160",
+          "chapter_paragraph": 3,
+          "file_paragraph": 401,
+          "quote": "中大通元年，陈庆之送魏北海王元颢入洛阳，僧祐又得还国，除南天水、天门二郡太守，有善政。",
+          "quote_start": 77,
+          "quote_end": 120,
+          "role": "office_and_time",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        },
+        {
+          "book": "梁书",
+          "volume": 46,
+          "chapter": "列传第四十",
+          "paragraph_id": "LS-C48-P0003",
+          "epub_member": "OEBPS/text00003.html",
+          "chapter_anchor": "filepos0000880160",
+          "chapter_paragraph": 3,
+          "file_paragraph": 401,
+          "quote": "胡僧祐，字愿果，南阳冠军人。",
+          "quote_start": 0,
+          "quote_end": 14,
+          "role": "person_identity",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        }
+      ],
+      "research_notes": [],
+      "publication_eligibility": "annual_evidence_only_after_geography_matching",
+      "can_infer_between_anchor_years": false
+    },
+    {
+      "official_id": "LIANG-EPUB-0056",
+      "person_id": "LIANG-EPUB-PERSON-胡僧祐",
+      "person": "胡僧祐",
+      "person_aliases": [
+        "胡僧佑"
+      ],
+      "place": "天门",
+      "place_id": null,
+      "geography_match_status": "unmatched_requires_independent_geography_id",
+      "office": "天门太守",
+      "full_title": "南天水、天门二郡太守",
+      "level": "郡级正任",
+      "dynasty": "梁",
+      "tenure_nature": "二郡并领",
+      "tenure_status": "appointment_with_service_context",
+      "review_status": "reviewed_context_continuation_2026_09_27",
+      "annual_presence_years": [
+        529
+      ],
+      "annual_status_by_year": {
+        "529": "appointment_with_service_context"
+      },
+      "event_type": "dated_appointment",
+      "annual_semantics": "本年见载该职；授官与在任证据分别注明，不表示年末现任，不补中间年",
+      "original_time": "中大通元年",
+      "tenure_time": {
+        "start_lower": 529,
+        "start_upper": 529,
+        "end_lower": null,
+        "end_upper": null,
+        "start_status": "exact_year",
+        "end_status": "unknown",
+        "start_semantics": "documented_appointment_year_not_arrival_year",
+        "end_semantics": "unknown_end_year"
+      },
+      "time_explanation": "中大通元年529，二郡并授，分别保存郡官记录并共用原句；有善政语，不由此倒推抵郡日。",
+      "evidence": [
+        {
+          "book": "梁书",
+          "volume": 46,
+          "chapter": "列传第四十",
+          "paragraph_id": "LS-C48-P0003",
+          "epub_member": "OEBPS/text00003.html",
+          "chapter_anchor": "filepos0000880160",
+          "chapter_paragraph": 3,
+          "file_paragraph": 401,
+          "quote": "中大通元年，陈庆之送魏北海王元颢入洛阳，僧祐又得还国，除南天水、天门二郡太守，有善政。",
+          "quote_start": 77,
+          "quote_end": 120,
+          "role": "office_and_time",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        },
+        {
+          "book": "梁书",
+          "volume": 46,
+          "chapter": "列传第四十",
+          "paragraph_id": "LS-C48-P0003",
+          "epub_member": "OEBPS/text00003.html",
+          "chapter_anchor": "filepos0000880160",
+          "chapter_paragraph": 3,
+          "file_paragraph": 401,
+          "quote": "胡僧祐，字愿果，南阳冠军人。",
+          "quote_start": 0,
+          "quote_end": 14,
+          "role": "person_identity",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        }
+      ],
+      "research_notes": [],
+      "publication_eligibility": "annual_evidence_only_after_geography_matching",
+      "can_infer_between_anchor_years": false
+    },
+    {
+      "official_id": "LIANG-EPUB-0057",
+      "person_id": "LIANG-EPUB-PERSON-萧正德",
+      "person": "萧正德",
+      "person_aliases": [],
+      "place": "吴郡",
+      "place_id": null,
+      "geography_match_status": "unmatched_requires_independent_geography_id",
+      "office": "吴郡太守",
+      "full_title": "信武将军、吴郡太守",
+      "level": "郡级正任",
+      "dynasty": "梁",
+      "tenure_nature": "正任",
+      "tenure_status": "appointment_only",
+      "review_status": "reviewed_context_continuation_2026_09_27",
+      "annual_presence_years": [
+        532
+      ],
+      "annual_status_by_year": {
+        "532": "appointment_only"
+      },
+      "event_type": "dated_appointment",
+      "annual_semantics": "本年见载该职；授官与在任证据分别注明，不表示年末现任，不补中间年",
+      "original_time": "中大通四年",
+      "tenure_time": {
+        "start_lower": 532,
+        "start_upper": 532,
+        "end_lower": null,
+        "end_upper": null,
+        "start_status": "exact_year",
+        "end_status": "unknown",
+        "start_semantics": "documented_appointment_year_not_arrival_year",
+        "end_semantics": "unknown_end_year"
+      },
+      "time_explanation": "中大通四年532明确授官；后文封临贺王不强定与授太守同年。",
+      "evidence": [
+        {
+          "book": "梁书",
+          "volume": 55,
+          "chapter": "列传第四十九",
+          "paragraph_id": "LS-C57-P0023",
+          "epub_member": "OEBPS/text00004.html",
+          "chapter_anchor": "filepos0001139842",
+          "chapter_paragraph": 23,
+          "file_paragraph": 541,
+          "quote": "中大通四年，为信武将军、吴郡太守。",
+          "quote_start": 0,
+          "quote_end": 17,
+          "role": "office_and_time",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        },
+        {
+          "book": "梁书",
+          "volume": 55,
+          "chapter": "列传第四十九",
+          "paragraph_id": "LS-C57-P0022",
+          "epub_member": "OEBPS/text00004.html",
+          "chapter_anchor": "filepos0001139842",
+          "chapter_paragraph": 22,
+          "file_paragraph": 540,
+          "quote": "临贺王正德，字公和，临川靖惠王第三子也。",
+          "quote_start": 0,
+          "quote_end": 20,
+          "role": "person_identity",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        }
+      ],
+      "research_notes": [],
+      "publication_eligibility": "annual_evidence_only_after_geography_matching",
+      "can_infer_between_anchor_years": false
+    },
+    {
+      "official_id": "LIANG-EPUB-0058",
+      "person_id": "LIANG-EPUB-PERSON-周炅",
+      "person": "周炅",
+      "person_aliases": [],
+      "place": "弋阳",
+      "place_id": null,
+      "geography_match_status": "unmatched_requires_independent_geography_id",
+      "office": "弋阳太守",
+      "full_title": "弋阳太守",
+      "level": "郡级正任",
+      "dynasty": "梁",
+      "tenure_nature": "正任",
+      "tenure_status": "appointment_only",
+      "review_status": "reviewed_context_continuation_2026_09_27",
+      "annual_presence_years": [
+        547
+      ],
+      "annual_status_by_year": {
+        "547": "appointment_only"
+      },
+      "event_type": "dated_appointment",
+      "annual_semantics": "本年见载该职；授官与在任证据分别注明，不表示年末现任，不补中间年",
+      "original_time": "太清元年",
+      "tenure_time": {
+        "start_lower": 547,
+        "start_upper": 547,
+        "end_lower": null,
+        "end_upper": null,
+        "start_status": "exact_year",
+        "end_status": "unknown",
+        "start_semantics": "documented_appointment_year_not_arrival_year",
+        "end_semantics": "unknown_end_year"
+      },
+      "time_explanation": "太清元年547授弋阳；后文侯景之乱改西阳没有确年，不一并投547。",
+      "evidence": [
+        {
+          "book": "陈书",
+          "volume": 13,
+          "chapter": "列传第七",
+          "paragraph_id": "CS-C14-P0024",
+          "epub_member": "OEBPS/text00001.html",
+          "chapter_anchor": "filepos0000253404",
+          "chapter_paragraph": 24,
+          "file_paragraph": 61,
+          "quote": "太清元年，出为弋阳太守。",
+          "quote_start": 82,
+          "quote_end": 94,
+          "role": "office_and_time",
+          "epub_sha256": "46124feb6a153a6365fecaf1741ce0fd231d441348d8f7120e1c1d405df83303"
+        },
+        {
+          "book": "陈书",
+          "volume": 13,
+          "chapter": "列传第七",
+          "paragraph_id": "CS-C14-P0024",
+          "epub_member": "OEBPS/text00001.html",
+          "chapter_anchor": "filepos0000253404",
+          "chapter_paragraph": 24,
+          "file_paragraph": 61,
+          "quote": "周炅，字文昭，汝南安城人也。",
+          "quote_start": 0,
+          "quote_end": 14,
+          "role": "person_identity",
+          "epub_sha256": "46124feb6a153a6365fecaf1741ce0fd231d441348d8f7120e1c1d405df83303"
+        }
+      ],
+      "research_notes": [],
+      "publication_eligibility": "annual_evidence_only_after_geography_matching",
+      "can_infer_between_anchor_years": false
+    },
+    {
+      "official_id": "LIANG-EPUB-0059",
+      "person_id": "LIANG-EPUB-PERSON-明绍世",
+      "person": "明绍世",
+      "person_aliases": [],
+      "place": "历阳",
+      "place_id": null,
+      "geography_match_status": "unmatched_requires_independent_geography_id",
+      "office": "历阳太守",
+      "full_title": "历阳太守",
+      "level": "郡级正任",
+      "dynasty": "梁",
+      "tenure_nature": "正任",
+      "tenure_status": "served",
+      "review_status": "reviewed_context_continuation_2026_09_27",
+      "annual_presence_years": [
+        525
+      ],
+      "annual_status_by_year": {
+        "525": "served"
+      },
+      "event_type": "dated_in_office_attestation",
+      "annual_semantics": "本年见载该职；授官与在任证据分别注明，不表示年末现任，不补中间年",
+      "original_time": "普通六年",
+      "tenure_time": {
+        "start_lower": null,
+        "start_upper": null,
+        "end_lower": null,
+        "end_upper": null,
+        "start_status": "unknown",
+        "end_status": "unknown",
+        "start_semantics": "unknown_start_year",
+        "end_semantics": "unknown_end_year"
+      },
+      "time_explanation": "前段明确普通三年、五年，六年承普通为525。北伐时以现官称名，是在任锚，不据此确定初授年。",
+      "evidence": [
+        {
+          "book": "梁书",
+          "volume": 28,
+          "chapter": "列传第二十二",
+          "paragraph_id": "LS-C30-P0025",
+          "epub_member": "OEBPS/text00002.html",
+          "chapter_anchor": "filepos0000564022",
+          "chapter_paragraph": 25,
+          "file_paragraph": 260,
+          "quote": "六年，大举北伐。先遣豫州刺史裴邃帅谯州刺史湛僧智、历阳太守明绍世、南谯太守鱼弘、晋熙太守张澄，并世之骁将，自南道伐寿阳城，",
+          "quote_start": 0,
+          "quote_end": 61,
+          "role": "office_and_time",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        },
+        {
+          "book": "梁书",
+          "volume": 28,
+          "chapter": "列传第二十二",
+          "paragraph_id": "LS-C30-P0024",
+          "epub_member": "OEBPS/text00002.html",
+          "chapter_anchor": "filepos0000564022",
+          "chapter_paragraph": 24,
+          "file_paragraph": 259,
+          "quote": "普通三年，入为散骑常侍，领右骁骑将军，转太府卿，常侍如故。以公事免，未几，优诏复职。五年，迁中护军。",
+          "quote_start": 84,
+          "quote_end": 134,
+          "role": "era_context",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        }
+      ],
+      "research_notes": [],
+      "publication_eligibility": "annual_evidence_only_after_geography_matching",
+      "can_infer_between_anchor_years": false
+    },
+    {
+      "official_id": "LIANG-EPUB-0060",
+      "person_id": "LIANG-EPUB-PERSON-鱼弘",
+      "person": "鱼弘",
+      "person_aliases": [],
+      "place": "南谯",
+      "place_id": null,
+      "geography_match_status": "unmatched_requires_independent_geography_id",
+      "office": "南谯太守",
+      "full_title": "南谯太守",
+      "level": "郡级正任",
+      "dynasty": "梁",
+      "tenure_nature": "正任",
+      "tenure_status": "served",
+      "review_status": "reviewed_context_continuation_2026_09_27",
+      "annual_presence_years": [
+        525
+      ],
+      "annual_status_by_year": {
+        "525": "served"
+      },
+      "event_type": "dated_in_office_attestation",
+      "annual_semantics": "本年见载该职；授官与在任证据分别注明，不表示年末现任，不补中间年",
+      "original_time": "普通六年",
+      "tenure_time": {
+        "start_lower": null,
+        "start_upper": null,
+        "end_lower": null,
+        "end_upper": null,
+        "start_status": "unknown",
+        "end_status": "unknown",
+        "start_semantics": "unknown_start_year",
+        "end_semantics": "unknown_end_year"
+      },
+      "time_explanation": "前段明确普通三年、五年，六年承普通为525。北伐时以现官称名，是在任锚，不据此确定初授年。",
+      "evidence": [
+        {
+          "book": "梁书",
+          "volume": 28,
+          "chapter": "列传第二十二",
+          "paragraph_id": "LS-C30-P0025",
+          "epub_member": "OEBPS/text00002.html",
+          "chapter_anchor": "filepos0000564022",
+          "chapter_paragraph": 25,
+          "file_paragraph": 260,
+          "quote": "六年，大举北伐。先遣豫州刺史裴邃帅谯州刺史湛僧智、历阳太守明绍世、南谯太守鱼弘、晋熙太守张澄，并世之骁将，自南道伐寿阳城，",
+          "quote_start": 0,
+          "quote_end": 61,
+          "role": "office_and_time",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        },
+        {
+          "book": "梁书",
+          "volume": 28,
+          "chapter": "列传第二十二",
+          "paragraph_id": "LS-C30-P0024",
+          "epub_member": "OEBPS/text00002.html",
+          "chapter_anchor": "filepos0000564022",
+          "chapter_paragraph": 24,
+          "file_paragraph": 259,
+          "quote": "普通三年，入为散骑常侍，领右骁骑将军，转太府卿，常侍如故。以公事免，未几，优诏复职。五年，迁中护军。",
+          "quote_start": 84,
+          "quote_end": 134,
+          "role": "era_context",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        }
+      ],
+      "research_notes": [],
+      "publication_eligibility": "annual_evidence_only_after_geography_matching",
+      "can_infer_between_anchor_years": false
+    },
+    {
+      "official_id": "LIANG-EPUB-0061",
+      "person_id": "LIANG-EPUB-PERSON-张澄",
+      "person": "张澄",
+      "person_aliases": [],
+      "place": "晋熙",
+      "place_id": null,
+      "geography_match_status": "unmatched_requires_independent_geography_id",
+      "office": "晋熙太守",
+      "full_title": "晋熙太守",
+      "level": "郡级正任",
+      "dynasty": "梁",
+      "tenure_nature": "正任",
+      "tenure_status": "served",
+      "review_status": "reviewed_context_continuation_2026_09_27",
+      "annual_presence_years": [
+        525
+      ],
+      "annual_status_by_year": {
+        "525": "served"
+      },
+      "event_type": "dated_in_office_attestation",
+      "annual_semantics": "本年见载该职；授官与在任证据分别注明，不表示年末现任，不补中间年",
+      "original_time": "普通六年",
+      "tenure_time": {
+        "start_lower": null,
+        "start_upper": null,
+        "end_lower": null,
+        "end_upper": null,
+        "start_status": "unknown",
+        "end_status": "unknown",
+        "start_semantics": "unknown_start_year",
+        "end_semantics": "unknown_end_year"
+      },
+      "time_explanation": "前段明确普通三年、五年，六年承普通为525。北伐时以现官称名，是在任锚，不据此确定初授年。",
+      "evidence": [
+        {
+          "book": "梁书",
+          "volume": 28,
+          "chapter": "列传第二十二",
+          "paragraph_id": "LS-C30-P0025",
+          "epub_member": "OEBPS/text00002.html",
+          "chapter_anchor": "filepos0000564022",
+          "chapter_paragraph": 25,
+          "file_paragraph": 260,
+          "quote": "六年，大举北伐。先遣豫州刺史裴邃帅谯州刺史湛僧智、历阳太守明绍世、南谯太守鱼弘、晋熙太守张澄，并世之骁将，自南道伐寿阳城，",
+          "quote_start": 0,
+          "quote_end": 61,
+          "role": "office_and_time",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        },
+        {
+          "book": "梁书",
+          "volume": 28,
+          "chapter": "列传第二十二",
+          "paragraph_id": "LS-C30-P0024",
+          "epub_member": "OEBPS/text00002.html",
+          "chapter_anchor": "filepos0000564022",
+          "chapter_paragraph": 24,
+          "file_paragraph": 259,
+          "quote": "普通三年，入为散骑常侍，领右骁骑将军，转太府卿，常侍如故。以公事免，未几，优诏复职。五年，迁中护军。",
+          "quote_start": 84,
+          "quote_end": 134,
+          "role": "era_context",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        }
+      ],
+      "research_notes": [],
+      "publication_eligibility": "annual_evidence_only_after_geography_matching",
+      "can_infer_between_anchor_years": false
     }
   ],
   "excluded": [
@@ -2366,6 +4854,54 @@
           "quote": "出为辅国长史、会稽郡丞、行郡府事。",
           "quote_start": 130,
           "quote_end": 147,
+          "role": "office_and_time",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        }
+      ]
+    },
+    {
+      "person": "王筠",
+      "office": "永嘉太守",
+      "reason_code": "not_served",
+      "reason": "546授而以疾固辞；是文士王筠，不与535遇害的广晋令王筠合并。",
+      "annual_presence_years": [],
+      "evidence": [
+        {
+          "book": "梁书",
+          "volume": 33,
+          "chapter": "列传第二十七",
+          "paragraph_id": "LS-C35-P0057",
+          "epub_member": "OEBPS/text00002.html",
+          "chapter_anchor": "filepos0000640495",
+          "chapter_paragraph": 57,
+          "file_paragraph": 451,
+          "quote": "中大同元年，出为明威将军、永嘉太守，以疾固辞，徙为光禄大夫，",
+          "quote_start": 79,
+          "quote_end": 109,
+          "role": "office_and_time",
+          "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
+        }
+      ]
+    },
+    {
+      "person": "褚球",
+      "office": "江夏太守",
+      "reason_code": "not_served",
+      "reason": "中大同546明确不赴职，不投江夏在任；不影响523南兰陵授官。",
+      "annual_presence_years": [],
+      "evidence": [
+        {
+          "book": "梁书",
+          "volume": 41,
+          "chapter": "列传第三十五",
+          "paragraph_id": "LS-C43-P0040",
+          "epub_member": "OEBPS/text00003.html",
+          "chapter_anchor": "filepos0000799163",
+          "chapter_paragraph": 40,
+          "file_paragraph": 267,
+          "quote": "中大同中，出为仁威临川王长史、江夏太守，以疾不赴职。",
+          "quote_start": 165,
+          "quote_end": 191,
           "role": "office_and_time",
           "epub_sha256": "ae59d3364722c0b66a76ed4f5b5e688a33770ca0cf856d848b640cd48de67bee"
         }

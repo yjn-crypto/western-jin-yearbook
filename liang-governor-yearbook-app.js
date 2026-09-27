@@ -61,39 +61,7 @@
   }
 
   function liangNameMatches(value, year, sourceColor) {
-    const candidates = [];
-    const removeDate = value => value.replace(/^(?:閏?[一二三四五六七八九十正冬臘\d]+月[前後]?\s*)+/u, '');
-    for (const person of window.LIANG_PERSON_COLORS?.people || []) {
-      const aliases = new Set([person.name, ...(person.aliases || []).map(removeDate)]);
-      if (person.name.startsWith('蕭')) for (const alias of [...aliases]) {
-        const given = person.name.slice(1);
-        if (alias !== person.name && alias.endsWith(given)) aliases.add(alias.slice(0, -given.length) + person.name);
-      }
-      // Extend a reviewed name with an explicitly written adjacent title at a
-      // clause start. Do not absorb office prefixes or dates into the name.
-      for (const segment of value.split(/[\n\r；;，,。]| {2,}/)) {
-        const start = removeDate(segment.trim());
-        for (const name of [person.name, ...(person.name.startsWith('蕭') ? [person.name.slice(1)] : [])]) {
-          const index = start.indexOf(name), prefix = index > 0 ? start.slice(0, index) : '';
-          if (/^[\p{Script=Han}]{1,5}(?:嗣王|蕃王|王|侯|公|世子)$/u.test(prefix)
-            && !/將軍|刺史|都督|長史|宣惠|持節|監/.test(prefix)) aliases.add(prefix + name);
-        }
-      }
-      const annual = person.years?.[String(year)];
-      const color = annual?.color || sourceColor;
-      for (const alias of aliases) {
-        if (!alias) continue;
-        let from = 0, index;
-        while ((index = value.indexOf(alias, from)) !== -1) {
-          candidates.push({ index, length: alias.length, text: alias, person, color,
-            source: annual ? `${year}年既有人物色` : '原工作簿本格字色（僅套用於姓名）' });
-          from = index + alias.length;
-        }
-      }
-    }
-    candidates.sort((a, b) => a.index - b.index || b.length - a.length);
-    let end = -1;
-    return candidates.filter(match => { if (match.index < end) return false; end = match.index + match.length; return true; });
+    return window.LIANG_PERSON_FORMATS?.matches(value,year)||[];
   }
 
   function appendLiangCellText(element, value, year, sourceColor) {
@@ -347,7 +315,7 @@
 
   function updateStatus({ year, state, stateIndex, query, visibleRows, matchedRows, targetCell, targetAppendixContainsState }) {
     if (isLiang && year === 557) {
-      status.innerHTML = '<strong>原表梁段未收557年：</strong> 工作簿將「太平二年／永定元年」置於後接南陳表段；本頁遵守只取蕭梁表段的範圍，不跨表抄入。下方仍顯示502—556年完整梁表。';
+      status.innerHTML = '<strong>557年見原工作簿南陳過渡行：</strong>「太平二年／永定元年」位於原表第321行。<a href="chen-governor-yearbook.html?year=557">開啟557年南陳過渡行及原表出處</a>。梁段502—556年的原有分段保持不變。';
       return;
     }
     const pieces = [];

@@ -7,322 +7,813 @@
     "page_index_base": 0,
     "pdf_page_rule": "page_index + 1",
     "total_records": 1049,
-    "matched_records": 1010,
-    "unmatched_records": 39,
+    "matched_records": 1049,
+    "unmatched_records": 0,
+    "orthographic_alignment_repairs": 39,
     "rule": "僅補充已存在的逐年方鎮条目；第一年全部州名目錄不新增為本年政區，末年集中繫年不改為確任。"
   },
-  "unmatched": [
+  "unmatched": [],
+  "newly_aligned": [
     {
       "year": 502,
       "state": "南徐州",
       "source_page_index": 393,
+      "source_page_indexes": [
+        393
+      ],
       "candidate_count": 1,
-      "matching_count": 0,
-      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+      "matching_count": 1,
+      "normalization_pairs": [
+        "將→将",
+        "虜→虏",
+        "號→号",
+        "諸→诸",
+        "進→进"
+      ],
+      "reason": "年、州、原頁碼及全部摘要經明列繁簡等價字逐字校合；未採模糊匹配，同名州仍以原頁碼分別定位。",
+      "original_summary_lines": [
+        "安成王秀 都督南徐兗二州諸軍事、徵虜將軍、南徐州刺史。"
+      ]
     },
     {
       "year": 502,
       "state": "郢州",
       "source_page_index": 404,
+      "source_page_indexes": [
+        404
+      ],
       "candidate_count": 1,
-      "matching_count": 0,
-      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+      "matching_count": 1,
+      "normalization_pairs": [
+        "將→将",
+        "號→号",
+        "諸→诸",
+        "進→进"
+      ],
+      "reason": "年、州、原頁碼及全部摘要經明列繁簡等價字逐字校合；未採模糊匹配，同名州仍以原頁碼分別定位。",
+      "original_summary_lines": [
+        "曹景宗 都督郢司二州諸軍事、左將軍、郢州刺史。進號平西將軍。"
+      ]
     },
     {
       "year": 502,
       "state": "北益州",
       "source_page_index": 409,
+      "source_page_indexes": [
+        409,
+        410
+      ],
       "candidate_count": 1,
-      "matching_count": 0,
-      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+      "matching_count": 1,
+      "normalization_pairs": [
+        "將→将",
+        "沒→没",
+        "號→号",
+        "進→进"
+      ],
+      "reason": "年、州、原頁碼及全部摘要經明列繁簡等價字逐字校合；未採模糊匹配，同名州仍以原頁碼分別定位。",
+      "original_summary_lines": [
+        "改爲沙州，是年沒於西魏。"
+      ]
     },
     {
       "year": 504,
       "state": "司州",
       "source_page_index": 424,
+      "source_page_indexes": [
+        424,
+        425
+      ],
       "candidate_count": 1,
-      "matching_count": 0,
-      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+      "matching_count": 1,
+      "normalization_pairs": [
+        "將→将",
+        "沒→没",
+        "諸→诸",
+        "騎→骑"
+      ],
+      "reason": "年、州、原頁碼及全部摘要經明列繁簡等價字逐字校合；未採模糊匹配，同名州仍以原頁碼分別定位。",
+      "original_summary_lines": [
+        "蔡道恭 卒。義陽沒於魏，以南義陽置司州。"
+      ]
     },
     {
       "year": 504,
       "state": "梁州",
       "source_page_index": 425,
+      "source_page_indexes": [
+        425
+      ],
       "candidate_count": 1,
-      "matching_count": 0,
-      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+      "matching_count": 1,
+      "normalization_pairs": [
+        "將→将",
+        "沒→没",
+        "虜→虏",
+        "諸→诸",
+        "鎮→镇"
+      ],
+      "reason": "年、州、原頁碼及全部摘要經明列繁簡等價字逐字校合；未採模糊匹配，同名州仍以原頁碼分別定位。",
+      "original_summary_lines": [
+        "莊丘黑卒。漢中沒於魏。",
+        "王珍國 都督梁秦二州諸軍事、徵虜將軍、南秦梁二州刺史。"
+      ]
     },
     {
       "year": 507,
       "state": "南徐州",
       "source_page_index": 433,
+      "source_page_indexes": [
+        433
+      ],
       "candidate_count": 1,
-      "matching_count": 0,
-      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+      "matching_count": 1,
+      "normalization_pairs": [
+        "綜→综"
+      ],
+      "reason": "年、州、原頁碼及全部摘要經明列繁簡等價字逐字校合；未採模糊匹配，同名州仍以原頁碼分別定位。",
+      "original_summary_lines": [
+        "#### 豫章王綜"
+      ]
     },
     {
       "year": 507,
       "state": "南兗州",
       "source_page_index": 433,
+      "source_page_indexes": [
+        433
+      ],
       "candidate_count": 1,
-      "matching_count": 0,
-      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+      "matching_count": 1,
+      "normalization_pairs": [
+        "呂→吕",
+        "將→将",
+        "諸→诸"
+      ],
+      "reason": "年、州、原頁碼及全部摘要經明列繁簡等價字逐字校合；未採模糊匹配，同名州仍以原頁碼分別定位。",
+      "original_summary_lines": [
+        "昌義之 督南兗兗徐青冀五州諸軍事、輔國將軍、南兗州刺史。免。",
+        "呂僧珍 平北將軍、刺史。"
+      ]
     },
     {
       "year": 507,
       "state": "湘州",
       "source_page_index": 435,
+      "source_page_indexes": [
+        435
+      ],
       "candidate_count": 1,
-      "matching_count": 0,
-      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+      "matching_count": 1,
+      "normalization_pairs": [
+        "將→将",
+        "諸→诸",
+        "車→车",
+        "騎→骑"
+      ],
+      "reason": "年、州、原頁碼及全部摘要經明列繁簡等價字逐字校合；未採模糊匹配，同名州仍以原頁碼分別定位。",
+      "original_summary_lines": [
+        "夏侯詳",
+        "柳惔 安南將軍、刺史。卒。",
+        "柳忱 督湘州諸軍事、輔國將軍、湘州刺史。"
+      ]
     },
     {
       "year": 508,
       "state": "南徐州",
       "source_page_index": 436,
+      "source_page_indexes": [
+        436
+      ],
       "candidate_count": 1,
-      "matching_count": 0,
-      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+      "matching_count": 1,
+      "normalization_pairs": [
+        "綜→综"
+      ],
+      "reason": "年、州、原頁碼及全部摘要經明列繁簡等價字逐字校合；未採模糊匹配，同名州仍以原頁碼分別定位。",
+      "original_summary_lines": [
+        "豫章王綜"
+      ]
     },
     {
       "year": 508,
       "state": "江州",
       "source_page_index": 436,
+      "source_page_indexes": [
+        436,
+        437
+      ],
       "candidate_count": 1,
-      "matching_count": 0,
-      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+      "matching_count": 1,
+      "normalization_pairs": [
+        "將→将",
+        "諸→诸"
+      ],
+      "reason": "年、州、原頁碼及全部摘要經明列繁簡等價字逐字校合；未採模糊匹配，同名州仍以原頁碼分別定位。",
+      "original_summary_lines": [
+        "安成王秀 遷荊州。",
+        "曹景宗 安南將軍、刺史。卒。",
+        "蕭穎達都督江州諸軍事、信威將軍、江州刺史。"
+      ]
     },
     {
       "year": 508,
       "state": "司州",
       "source_page_index": 439,
+      "source_page_indexes": [
+        439,
+        440
+      ],
       "candidate_count": 1,
-      "matching_count": 0,
-      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+      "matching_count": 1,
+      "normalization_pairs": [
+        "將→将",
+        "敗→败",
+        "號→号",
+        "進→进",
+        "還→还",
+        "鎮→镇",
+        "騎→骑"
+      ],
+      "reason": "年、州、原頁碼及全部摘要經明列繁簡等價字逐字校合；未採模糊匹配，同名州仍以原頁碼分別定位。",
+      "original_summary_lines": [
+        "#### 馬仙琕",
+        "白早生 鎮北將軍、刺史。敗死。"
+      ]
     },
     {
       "year": 513,
       "state": "郢州",
       "source_page_index": 453,
+      "source_page_indexes": [
+        453
+      ],
       "candidate_count": 1,
-      "matching_count": 0,
-      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+      "matching_count": 1,
+      "normalization_pairs": [
+        "綜→综"
+      ],
+      "reason": "年、州、原頁碼及全部摘要經明列繁簡等價字逐字校合；未採模糊匹配，同名州仍以原頁碼分別定位。",
+      "original_summary_lines": [
+        "豫章王綜"
+      ]
     },
     {
       "year": 516,
       "state": "梁州",
       "source_page_index": 463,
+      "source_page_indexes": [
+        463
+      ],
       "candidate_count": 1,
-      "matching_count": 0,
-      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+      "matching_count": 1,
+      "normalization_pairs": [
+        "將→将",
+        "敗→败",
+        "虜→虏",
+        "諸→诸",
+        "進→进",
+        "騎→骑"
+      ],
+      "reason": "年、州、原頁碼及全部摘要經明列繁簡等價字逐字校合；未採模糊匹配，同名州仍以原頁碼分別定位。",
+      "original_summary_lines": [
+        "任太洪 敗死。"
+      ]
     },
     {
       "year": 517,
       "state": "雍州",
       "source_page_index": 465,
+      "source_page_indexes": [
+        465
+      ],
       "candidate_count": 1,
-      "matching_count": 0,
-      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+      "matching_count": 1,
+      "normalization_pairs": [
+        "將→将",
+        "蠻→蛮",
+        "諸→诸",
+        "鎮→镇"
+      ],
+      "reason": "年、州、原頁碼及全部摘要經明列繁簡等價字逐字校合；未採模糊匹配，同名州仍以原頁碼分別定位。",
+      "original_summary_lines": [
+        "安成王秀 都督雍梁南北秦四州郢州之竟陵司州之隨郡諸軍事、鎮北將軍、寧蠻校尉、雍州刺史。"
+      ]
     },
     {
       "year": 520,
       "state": "南徐州",
       "source_page_index": 473,
+      "source_page_indexes": [
+        473
+      ],
       "candidate_count": 1,
-      "matching_count": 0,
-      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+      "matching_count": 1,
+      "normalization_pairs": [
+        "綜→综"
+      ],
+      "reason": "年、州、原頁碼及全部摘要經明列繁簡等價字逐字校合；未採模糊匹配，同名州仍以原頁碼分別定位。",
+      "original_summary_lines": [
+        "#### 豫章王綜"
+      ]
     },
     {
       "year": 520,
       "state": "郢州",
       "source_page_index": 474,
+      "source_page_indexes": [
+        474
+      ],
       "candidate_count": 1,
-      "matching_count": 0,
-      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+      "matching_count": 1,
+      "normalization_pairs": [
+        "將→将",
+        "諸→诸"
+      ],
+      "reason": "年、州、原頁碼及全部摘要經明列繁簡等價字逐字校合；未採模糊匹配，同名州仍以原頁碼分別定位。",
+      "original_summary_lines": [
+        "蕭昺 都督郢司霍三州諸軍事、安西將軍、郢州刺史。"
+      ]
     },
     {
       "year": 520,
       "state": "益州",
       "source_page_index": 474,
+      "source_page_indexes": [
+        474
+      ],
       "candidate_count": 1,
-      "matching_count": 0,
-      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+      "matching_count": 1,
+      "normalization_pairs": [
+        "將→将",
+        "綱→纲",
+        "諸→诸"
+      ],
+      "reason": "年、州、原頁碼及全部摘要經明列繁簡等價字逐字校合；未採模糊匹配，同名州仍以原頁碼分別定位。",
+      "original_summary_lines": [
+        "晉安王綱 都督益寧雍梁南北秦沙七州諸軍事、平西將軍、益州刺史。未拜。"
+      ]
     },
     {
       "year": 526,
       "state": "豫州",
       "source_page_index": 489,
+      "source_page_indexes": [
+        489,
+        490
+      ],
       "candidate_count": 1,
-      "matching_count": 0,
-      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+      "matching_count": 1,
+      "normalization_pairs": [
+        "將→将",
+        "緣→缘",
+        "諸→诸",
+        "進→进",
+        "鎮→镇"
+      ],
+      "reason": "年、州、原頁碼及全部摘要經明列繁簡等價字逐字校合；未採模糊匹配，同名州仍以原頁碼分別定位。",
+      "original_summary_lines": [
+        "夏侯亶 都督豫州緣淮南豫霍義定五州諸軍事、雲麾將軍、豫南豫二州刺史。"
+      ]
     },
     {
       "year": 531,
       "state": "梁州",
       "source_page_index": 504,
+      "source_page_indexes": [
+        504
+      ],
       "candidate_count": 1,
-      "matching_count": 0,
-      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+      "matching_count": 1,
+      "normalization_pairs": [
+        "將→将",
+        "號→号",
+        "進→进"
+      ],
+      "reason": "年、州、原頁碼及全部摘要經明列繁簡等價字逐字校合；未採模糊匹配，同名州仍以原頁碼分別定位。",
+      "original_summary_lines": [
+        "淳於文成 光烈將軍、梁州刺史。"
+      ]
     },
     {
       "year": 537,
       "state": "青州",
       "source_page_index": 521,
+      "source_page_indexes": [
+        521,
+        522
+      ],
       "candidate_count": 1,
-      "matching_count": 0,
-      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+      "matching_count": 1,
+      "normalization_pairs": [
+        "彥→彦"
+      ],
+      "reason": "年、州、原頁碼及全部摘要經明列繁簡等價字逐字校合；未採模糊匹配，同名州仍以原頁碼分別定位。",
+      "original_summary_lines": [
+        "徐子彥 青冀二州刺史。"
+      ]
     },
     {
       "year": 541,
       "state": "郢州",
       "source_page_index": 530,
+      "source_page_indexes": [
+        530
+      ],
       "candidate_count": 1,
-      "matching_count": 0,
-      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+      "matching_count": 1,
+      "normalization_pairs": [
+        "將→将",
+        "繪→绘",
+        "諸→诸",
+        "車→车"
+      ],
+      "reason": "年、州、原頁碼及全部摘要經明列繁簡等價字逐字校合；未採模糊匹配，同名州仍以原頁碼分別定位。",
+      "original_summary_lines": [
+        "邵陵王繪",
+        "羊鴉仁 都督南北司豫楚四州諸軍事、輕車將軍、北司州刺史。"
+      ]
     },
     {
       "year": 543,
       "state": "衡州",
       "source_page_index": 535,
+      "source_page_indexes": [
+        535,
+        536
+      ],
       "candidate_count": 1,
-      "matching_count": 0,
-      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+      "matching_count": 1,
+      "normalization_pairs": [
+        "壯→壮",
+        "將→将"
+      ],
+      "reason": "年、州、原頁碼及全部摘要經明列繁簡等價字逐字校合；未採模糊匹配，同名州仍以原頁碼分別定位。",
+      "original_summary_lines": [
+        "蘭欽 遷廣州。",
+        "羊侃 壯武將軍、刺史。"
+      ]
     },
     {
       "year": 547,
       "state": "北兗州",
       "source_page_index": 544,
+      "source_page_indexes": [
+        544
+      ],
       "candidate_count": 1,
-      "matching_count": 0,
-      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+      "matching_count": 1,
+      "normalization_pairs": [
+        "沒→没"
+      ],
+      "reason": "年、州、原頁碼及全部摘要經明列繁簡等價字逐字校合；未採模糊匹配，同名州仍以原頁碼分別定位。",
+      "original_summary_lines": [
+        "胡貴孫 刺史。十一月，沒東魏。"
+      ]
     },
     {
       "year": 547,
       "state": "南豫州",
       "source_page_index": 544,
+      "source_page_indexes": [
+        544,
+        545
+      ],
       "candidate_count": 1,
-      "matching_count": 0,
-      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+      "matching_count": 1,
+      "normalization_pairs": [
+        "將→将",
+        "敗→败",
+        "沒→没",
+        "諸→诸",
+        "進→进"
+      ],
+      "reason": "年、州、原頁碼及全部摘要經明列繁簡等價字逐字校合；未採模糊匹配，同名州仍以原頁碼分別定位。",
+      "original_summary_lines": [
+        "蕭淵明 八月，北伐。十一月，沒東魏。",
+        "鄱陽王範 十二月 安北將軍 刺史",
+        "鄱陽王範 十二月，安北將軍、刺史。"
+      ]
     },
     {
       "year": 549,
       "state": "信州",
       "source_page_index": 566,
+      "source_page_indexes": [
+        566
+      ],
       "candidate_count": 1,
-      "matching_count": 0,
-      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+      "matching_count": 1,
+      "normalization_pairs": [
+        "將→将",
+        "敗→败",
+        "辯→辩",
+        "鮑→鲍"
+      ],
+      "reason": "年、州、原頁碼及全部摘要經明列繁簡等價字逐字校合；未採模糊匹配，同名州仍以原頁碼分別定位。",
+      "original_summary_lines": [
+        "桂陽王慥 被殺。",
+        "鮑泉 刺史。"
+      ]
     },
     {
       "year": 550,
       "state": "義州",
       "source_page_index": 571,
+      "source_page_indexes": [
+        571
+      ],
       "candidate_count": 1,
-      "matching_count": 0,
-      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+      "matching_count": 1,
+      "normalization_pairs": [
+        "將→将"
+      ],
+      "reason": "年、州、原頁碼及全部摘要經明列繁簡等價字逐字校合；未採模糊匹配，同名州仍以原頁碼分別定位。",
+      "original_summary_lines": [
+        "周文育 雄信將軍、刺史。"
+      ]
     },
     {
       "year": 551,
       "state": "東徐州",
       "source_page_index": 580,
+      "source_page_indexes": [
+        580,
+        581
+      ],
       "candidate_count": 1,
-      "matching_count": 0,
-      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+      "matching_count": 1,
+      "normalization_pairs": [
+        "將→将",
+        "橫→横",
+        "辯→辩",
+        "騎→骑"
+      ],
+      "reason": "年、州、原頁碼及全部摘要經明列繁簡等價字逐字校合；未採模糊匹配，同名州仍以原頁碼分別定位。",
+      "original_summary_lines": [
+        "裴之橫 平北將軍、刺史，湘東王署。"
+      ]
     },
     {
       "year": 551,
       "state": "巴州",
       "source_page_index": 582,
+      "source_page_indexes": [
+        582
+      ],
       "candidate_count": 1,
-      "matching_count": 0,
-      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+      "matching_count": 1,
+      "normalization_pairs": [
+        "將→将",
+        "敗→败",
+        "諸→诸",
+        "辯→辩",
+        "進→进",
+        "騎→骑"
+      ],
+      "reason": "年、州、原頁碼及全部摘要經明列繁簡等價字逐字校合；未採模糊匹配，同名州仍以原頁碼分別定位。",
+      "original_summary_lines": [
+        "王珣",
+        "淳於量 都督巴州諸軍事、信威將軍、巴州刺史，湘東王署。"
+      ]
     },
     {
       "year": 551,
       "state": "梁州",
       "source_page_index": 583,
+      "source_page_indexes": [
+        583
+      ],
       "candidate_count": 2,
-      "matching_count": 0,
-      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+      "matching_count": 1,
+      "normalization_pairs": [
+        "茲→兹"
+      ],
+      "reason": "年、州、原頁碼及全部摘要經明列繁簡等價字逐字校合；未採模糊匹配，同名州仍以原頁碼分別定位。",
+      "original_summary_lines": [
+        "馬嵩仁 刺史。附齊。",
+        "徐陵《梁貞陽侯重與王太尉書》(《文苑英華》卷六七七)：“立茲幼弱，非曰大勲，滅我宗祊，何所逃釁？今復遣前吉州刺史馬嵩仁至彼，更具往懷，想不逺而復無貽祗悔也。”按：馬嵩仁見是年義州條。《重與王太尉書》“梁州”作“吉州”，二州皆乏考，未知孰是。"
+      ]
     },
     {
       "year": 552,
       "state": "江州",
       "source_page_index": 587,
+      "source_page_indexes": [
+        587
+      ],
       "candidate_count": 1,
-      "matching_count": 0,
-      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+      "matching_count": 1,
+      "normalization_pairs": [
+        "嚴→严",
+        "將→将",
+        "敗→败",
+        "諸→诸",
+        "辯→辩",
+        "進→进",
+        "鎮→镇",
+        "騎→骑"
+      ],
+      "reason": "年、州、原頁碼及全部摘要經明列繁簡等價字逐字校合；未採模糊匹配，同名州仍以原頁碼分別定位。",
+      "original_summary_lines": [
+        "王僧辯五月，進司徒、鎮衛將軍。九月，遷揚州。",
+        "杜崱 督江州諸軍事、江州刺史。",
+        "周炅 都督江定二州諸軍事、戎昭將軍、江州刺史。"
+      ]
     },
     {
       "year": 552,
       "state": "高州",
       "source_page_index": 587,
+      "source_page_indexes": [
+        587,
+        588
+      ],
       "candidate_count": 2,
-      "matching_count": 0,
-      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+      "matching_count": 1,
+      "normalization_pairs": [
+        "壯→壮",
+        "將→将",
+        "騎→骑"
+      ],
+      "reason": "年、州、原頁碼及全部摘要經明列繁簡等價字逐字校合；未採模糊匹配，同名州仍以原頁碼分別定位。",
+      "original_summary_lines": [
+        "周迪 壯武將軍、刺史。"
+      ]
     },
     {
       "year": 552,
       "state": "南豫州",
       "source_page_index": 588,
+      "source_page_indexes": [
+        588
+      ],
       "candidate_count": 1,
-      "matching_count": 0,
-      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+      "matching_count": 1,
+      "normalization_pairs": [
+        "鎮→镇"
+      ],
+      "reason": "年、州、原頁碼及全部摘要經明列繁簡等價字逐字校合；未採模糊匹配，同名州仍以原頁碼分別定位。",
+      "original_summary_lines": [
+        "侯瑱 刺史，鎮姑熟。"
+      ]
     },
     {
       "year": 552,
       "state": "青州",
       "source_page_index": 589,
+      "source_page_indexes": [
+        589
+      ],
       "candidate_count": 1,
-      "matching_count": 0,
-      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+      "matching_count": 1,
+      "normalization_pairs": [
+        "將→将",
+        "敗→败",
+        "沒→没",
+        "諸→诸",
+        "騎→骑"
+      ],
+      "reason": "年、州、原頁碼及全部摘要經明列繁簡等價字逐字校合；未採模糊匹配，同名州仍以原頁碼分別定位。",
+      "original_summary_lines": [
+        "羊鵾 都督青冀二州諸軍事、明威將軍、青州刺史，領東陽太守。《梁書》卷三九《羊鵾傳》：“及景敗……鵾以稍入刺殺之。世祖以鵾爲持節、通直散騎常侍、都督青冀二州諸軍事、明威將軍、青州刺史……又領東陽太守。徵陸納，加散騎常侍。”按：太清三年青冀二州已沒於東魏，此後任二州都督、刺史者皆當遙領。"
+      ]
     },
     {
       "year": 554,
       "state": "揚州",
       "source_page_index": 603,
+      "source_page_indexes": [
+        603
+      ],
       "candidate_count": 1,
-      "matching_count": 0,
-      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+      "matching_count": 1,
+      "normalization_pairs": [
+        "將→将",
+        "諸→诸",
+        "車→车",
+        "辯→辩",
+        "鎮→镇",
+        "騎→骑"
+      ],
+      "reason": "年、州、原頁碼及全部摘要經明列繁簡等價字逐字校合；未採模糊匹配，同名州仍以原頁碼分別定位。",
+      "original_summary_lines": [
+        "王僧辯 加太尉、車騎大將軍。"
+      ]
     },
     {
       "year": 555,
       "state": "北徐州",
       "source_page_index": 612,
+      "source_page_indexes": [
+        612
+      ],
       "candidate_count": 1,
-      "matching_count": 0,
-      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+      "matching_count": 1,
+      "normalization_pairs": [
+        "將→将",
+        "橫→横",
+        "鎮→镇"
+      ],
+      "reason": "年、州、原頁碼及全部摘要經明列繁簡等價字逐字校合；未採模糊匹配，同名州仍以原頁碼分別定位。",
+      "original_summary_lines": [
+        "裴之橫 鎮北將軍、刺史。戰死。"
+      ]
     },
     {
       "year": 555,
       "state": "南豫州",
       "source_page_index": 612,
+      "source_page_indexes": [
+        612
+      ],
       "candidate_count": 1,
-      "matching_count": 0,
-      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+      "matching_count": 1,
+      "normalization_pairs": [
+        "嚴→严",
+        "將→将",
+        "號→号",
+        "諸→诸",
+        "車→车",
+        "辯→辩",
+        "進→进",
+        "還→还",
+        "鎮→镇"
+      ],
+      "reason": "年、州、原頁碼及全部摘要經明列繁簡等價字逐字校合；未採模糊匹配，同名州仍以原頁碼分別定位。",
+      "original_summary_lines": [
+        "侯瑱 遷江州。",
+        "杜龕 鎮南將軍、都督南豫州諸軍事、南豫州刺史。未任。",
+        "任約徵南將軍、刺史。進號徵南大將軍。降齊。",
+        "周文育 都督南豫州諸軍事、嚴威將軍、南豫州刺史。還京。",
+        "胡穎都督南豫州諸軍事、輕車將軍、南豫州刺史。"
+      ]
     },
     {
       "year": 556,
       "state": "南徐州",
       "source_page_index": 617,
+      "source_page_indexes": [
+        617
+      ],
       "candidate_count": 1,
-      "matching_count": 0,
-      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+      "matching_count": 1,
+      "normalization_pairs": [
+        "將→将",
+        "敗→败",
+        "號→号",
+        "諸→诸",
+        "進→进",
+        "還→还",
+        "鎮→镇",
+        "騎→骑"
+      ],
+      "reason": "年、州、原頁碼及全部摘要經明列繁簡等價字逐字校合；未採模糊匹配，同名州仍以原頁碼分別定位。",
+      "original_summary_lines": [
+        "陳霸先 解南徐州。",
+        "陳曇朗 爲質於齊。",
+        "侯安都 都督南徐州諸軍事、仁威將軍、南徐州刺史。進號平南將軍。"
+      ]
     },
     {
       "year": 556,
       "state": "高州",
       "source_page_index": 618,
+      "source_page_indexes": [
+        618
+      ],
       "candidate_count": 2,
-      "matching_count": 0,
-      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+      "matching_count": 1,
+      "normalization_pairs": [
+        "將→将",
+        "諸→诸",
+        "鎮→镇",
+        "騎→骑"
+      ],
+      "reason": "年、州、原頁碼及全部摘要經明列繁簡等價字逐字校合；未採模糊匹配，同名州仍以原頁碼分別定位。",
+      "original_summary_lines": [
+        "黃法氍 都督高州諸軍事、信武將軍、高州刺史，鎮巴山。"
+      ]
     },
     {
       "year": 557,
       "state": "南豫州",
       "source_page_index": 623,
+      "source_page_indexes": [
+        623
+      ],
       "candidate_count": 1,
-      "matching_count": 0,
-      "reason": "年、州及全部摘要未能唯一校合；保留舊記錄，不拼接鄰州史料。"
+      "matching_count": 1,
+      "normalization_pairs": [
+        "將→将",
+        "虜→虏",
+        "號→号",
+        "鎮→镇"
+      ],
+      "reason": "年、州、原頁碼及全部摘要經明列繁簡等價字逐字校合；未採模糊匹配，同名州仍以原頁碼分別定位。",
+      "original_summary_lines": [
+        "徐度 鎮西將軍、刺史。"
+      ]
     }
   ]
 }

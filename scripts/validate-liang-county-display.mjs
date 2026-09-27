@@ -9,10 +9,16 @@ for(let year=502;year<=557;year++){
   const flat=flatten(snap),seen=new Set();
   for(const {state,row,county} of flat){
     const a=county.reviewedAssignment;
-    assert(a&&a.display_allowed);
+    assert(a&&(a.display_allowed||county.entityLink?.override_machine_hold));
     assert(year>=a.start&&year<=a.end);
-    assert.equal(state.region,a.region);
-    assert.equal(ctx.window.LIANG_COUNTY_MODEL.key(row.name),ctx.window.LIANG_COUNTY_MODEL.key(a.prefecture_name));
+    if(county.entityLink){
+      assert(county.entityLink.prefecture_ids.includes(row.id));
+      assert(year>=county.entityLink.start&&year<=county.entityLink.end);
+      assert(county.entityLink.source?.source_label);
+    }else{
+      assert.equal(state.region,a.region);
+      assert.equal(ctx.window.LIANG_COUNTY_MODEL.key(row.name),ctx.window.LIANG_COUNTY_MODEL.key(a.prefecture_name));
+    }
     assert.equal(county.name,a.name);
     const unique=`${state.id}|${row.id}|${county.id}|${county.name}`;
     assert(!seen.has(unique),`${year}: duplicate attachment ${unique}`);seen.add(unique);allAttached.add(county.id);

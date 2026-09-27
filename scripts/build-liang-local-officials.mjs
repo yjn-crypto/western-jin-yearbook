@@ -15,7 +15,7 @@ const key=value=>String(value||'').replace(/[\u3400-\u9fff]/g,c=>equivalents[c]|
 const meta={...source.meta,source_master_sha256:crypto.createHash('sha256').update(input).digest('hex'),
   build_method:'reviewed_annual_anchors_and_unique_active_entity',
   link_note:'同名而多候選或不存在者保留獨立任次。唯一連接只表示對應目前政區底表，底表的年代不確仍保留。'};
-const output={meta,tenures_by_id:{},years:{}};
+const output={meta,tenures_by_id:{},years:{},research_records:source.excluded||[]};
 const audit=[];
 for(const record of source.records){
   assert(!output.tenures_by_id[record.official_id],`Duplicate tenure ${record.official_id}`);
@@ -49,7 +49,7 @@ for(const record of source.records){
     const annual={annual_presence_id:`${record.official_id}-${year}`,official_id:record.official_id,
       person_id:record.person_id,person:record.person,place:record.place,office:record.office,
       full_title:record.full_title,level:record.level,year,annual_presence_status:'confirmed',
-      tenure_status:record.tenure_status,annual_semantics:'本年有授官或在任證據，履任狀態另列',
+      tenure_status:record.annual_status_by_year?.[String(year)]||record.tenure_status,annual_semantics:'本年有授官或在任證據，履任狀態另列',
       tenure_boundary_status:'unknown',annual_presence_basis:[{label:'原典年度證據',source_value:record.time_explanation}],
       projection_method:'reviewed_annual_anchor',display_order:Number(record.official_id.split('-').at(-1)),
       intra_year_order:null,intra_year_order_status:'unknown',

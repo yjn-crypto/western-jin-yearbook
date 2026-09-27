@@ -1,0 +1,5944 @@
+{
+  "summary": {
+    "baseline_commit": "cafbfc17d97806b8fd940890aebfcce05489156c",
+    "county_records": 744,
+    "assignment_records": 753,
+    "manual_records": 87,
+    "before_ever_attached": 578,
+    "after_ever_attached": 606,
+    "before_never_attached": 166,
+    "after_never_attached": 138,
+    "newly_attached": 28,
+    "categories": {
+      "年代或沿革邊界未定": {
+        "total": 52,
+        "resolved": 0
+      },
+      "州郡底表缺實體或異名": {
+        "total": 55,
+        "resolved": 9
+      },
+      "來源或舊歸屬衝突": {
+        "total": 27,
+        "resolved": 3
+      },
+      "同地域同名或階段重疊": {
+        "total": 5,
+        "resolved": 2
+      },
+      "合題實體連接": {
+        "total": 11,
+        "resolved": 11
+      },
+      "僅知州，郡未詳": {
+        "total": 5,
+        "resolved": 0
+      },
+      "資料分區不一致": {
+        "total": 9,
+        "resolved": 3
+      },
+      "來源重複待整理": {
+        "total": 2,
+        "resolved": 0
+      }
+    },
+    "checks": "一次502—557統計掃描，附具名實體、同名建平、東陽階段、海鹽549、湖熟535、崑山535、江乘535、侨郡實縣、人工暫系與僅州五條針對性檢查；未作全站回歸。",
+    "post_check_refinement": "來源截取補足原文；山陽轉州未定保留※；東陽中段改為僅553、556兩個文獻錨年，554—555留待考；未重跑測試。全期曾掛接606、未掛接138的集合不受影響。554、555年度收尾前統計另存，現值留空。"
+  },
+  "yearly": [
+    {
+      "year": 502,
+      "before": 456,
+      "after": 470,
+      "pending": 219
+    },
+    {
+      "year": 503,
+      "before": 457,
+      "after": 471,
+      "pending": 219
+    },
+    {
+      "year": 504,
+      "before": 454,
+      "after": 468,
+      "pending": 223
+    },
+    {
+      "year": 505,
+      "before": 447,
+      "after": 461,
+      "pending": 230
+    },
+    {
+      "year": 506,
+      "before": 447,
+      "after": 461,
+      "pending": 230
+    },
+    {
+      "year": 507,
+      "before": 474,
+      "after": 488,
+      "pending": 206
+    },
+    {
+      "year": 508,
+      "before": 474,
+      "after": 488,
+      "pending": 205
+    },
+    {
+      "year": 509,
+      "before": 483,
+      "after": 497,
+      "pending": 199
+    },
+    {
+      "year": 510,
+      "before": 483,
+      "after": 497,
+      "pending": 199
+    },
+    {
+      "year": 511,
+      "before": 483,
+      "after": 497,
+      "pending": 199
+    },
+    {
+      "year": 512,
+      "before": 483,
+      "after": 497,
+      "pending": 199
+    },
+    {
+      "year": 513,
+      "before": 483,
+      "after": 497,
+      "pending": 199
+    },
+    {
+      "year": 514,
+      "before": 483,
+      "after": 497,
+      "pending": 199
+    },
+    {
+      "year": 515,
+      "before": 483,
+      "after": 497,
+      "pending": 199
+    },
+    {
+      "year": 516,
+      "before": 483,
+      "after": 497,
+      "pending": 199
+    },
+    {
+      "year": 517,
+      "before": 483,
+      "after": 497,
+      "pending": 199
+    },
+    {
+      "year": 518,
+      "before": 483,
+      "after": 497,
+      "pending": 199
+    },
+    {
+      "year": 519,
+      "before": 486,
+      "after": 500,
+      "pending": 197
+    },
+    {
+      "year": 520,
+      "before": 486,
+      "after": 500,
+      "pending": 197
+    },
+    {
+      "year": 521,
+      "before": 487,
+      "after": 501,
+      "pending": 196
+    },
+    {
+      "year": 522,
+      "before": 484,
+      "after": 498,
+      "pending": 199
+    },
+    {
+      "year": 523,
+      "before": 476,
+      "after": 490,
+      "pending": 207
+    },
+    {
+      "year": 524,
+      "before": 462,
+      "after": 485,
+      "pending": 212
+    },
+    {
+      "year": 525,
+      "before": 467,
+      "after": 490,
+      "pending": 211
+    },
+    {
+      "year": 526,
+      "before": 471,
+      "after": 494,
+      "pending": 216
+    },
+    {
+      "year": 527,
+      "before": 488,
+      "after": 511,
+      "pending": 207
+    },
+    {
+      "year": 528,
+      "before": 504,
+      "after": 541,
+      "pending": 181
+    },
+    {
+      "year": 529,
+      "before": 506,
+      "after": 543,
+      "pending": 181
+    },
+    {
+      "year": 530,
+      "before": 504,
+      "after": 541,
+      "pending": 181
+    },
+    {
+      "year": 531,
+      "before": 504,
+      "after": 541,
+      "pending": 181
+    },
+    {
+      "year": 532,
+      "before": 504,
+      "after": 541,
+      "pending": 182
+    },
+    {
+      "year": 533,
+      "before": 504,
+      "after": 541,
+      "pending": 181
+    },
+    {
+      "year": 534,
+      "before": 493,
+      "after": 530,
+      "pending": 185
+    },
+    {
+      "year": 535,
+      "before": 495,
+      "after": 532,
+      "pending": 189
+    },
+    {
+      "year": 536,
+      "before": 502,
+      "after": 538,
+      "pending": 181
+    },
+    {
+      "year": 537,
+      "before": 502,
+      "after": 538,
+      "pending": 183
+    },
+    {
+      "year": 538,
+      "before": 502,
+      "after": 538,
+      "pending": 183
+    },
+    {
+      "year": 539,
+      "before": 503,
+      "after": 539,
+      "pending": 183
+    },
+    {
+      "year": 540,
+      "before": 508,
+      "after": 544,
+      "pending": 180
+    },
+    {
+      "year": 541,
+      "before": 488,
+      "after": 524,
+      "pending": 200
+    },
+    {
+      "year": 542,
+      "before": 486,
+      "after": 522,
+      "pending": 203
+    },
+    {
+      "year": 543,
+      "before": 486,
+      "after": 522,
+      "pending": 203
+    },
+    {
+      "year": 544,
+      "before": 487,
+      "after": 523,
+      "pending": 203
+    },
+    {
+      "year": 545,
+      "before": 487,
+      "after": 523,
+      "pending": 203
+    },
+    {
+      "year": 546,
+      "before": 494,
+      "after": 530,
+      "pending": 196
+    },
+    {
+      "year": 547,
+      "before": 493,
+      "after": 529,
+      "pending": 199
+    },
+    {
+      "year": 548,
+      "before": 489,
+      "after": 525,
+      "pending": 203
+    },
+    {
+      "year": 549,
+      "before": 479,
+      "after": 497,
+      "pending": 233
+    },
+    {
+      "year": 550,
+      "before": 439,
+      "after": 457,
+      "pending": 252
+    },
+    {
+      "year": 551,
+      "before": 435,
+      "after": 453,
+      "pending": 252
+    },
+    {
+      "year": 552,
+      "before": 416,
+      "after": 434,
+      "pending": 272
+    },
+    {
+      "year": 553,
+      "before": 415,
+      "after": 424,
+      "pending": 277
+    },
+    {
+      "year": 554,
+      "before": 375,
+      "after": null,
+      "pending": null,
+      "after_refinement_status": "本年東陽行已撤除；收尾後未重新掃描。",
+      "before_refinement_counts": {
+        "after": 380,
+        "pending": 320
+      }
+    },
+    {
+      "year": 555,
+      "before": 344,
+      "after": null,
+      "pending": null,
+      "after_refinement_status": "本年東陽行已撤除；收尾後未重新掃描。",
+      "before_refinement_counts": {
+        "after": 348,
+        "pending": 348
+      }
+    },
+    {
+      "year": 556,
+      "before": 352,
+      "after": 356,
+      "pending": 340
+    },
+    {
+      "year": 557,
+      "before": 358,
+      "after": 362,
+      "pending": 336
+    }
+  ],
+  "records": [
+    {
+      "county_id": "lc_0015",
+      "record_id": "LC-0015",
+      "name": "胥浦",
+      "region": "江表",
+      "category": "年代或沿革邊界未定",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LC-0015-S01",
+          "prefecture": "吳郡",
+          "state": null,
+          "start": 527,
+          "end": 549,
+          "display_allowed": false
+        },
+        {
+          "id": "LC-0015-S02",
+          "prefecture": "武原郡",
+          "state": null,
+          "start": 549,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "建县时间未定：原文大通六年有误；既有存考姑置大通元年后，549年已有县；不能把范围下限当作确定建县年。；建县时间未定：原文大通六年有误；既有存考姑置大通元年后，549年已有县；不能把范围下限当作确定建县年。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 16,
+        "page_index": 273,
+        "evidence_record_ids": "LC-0015；LR-0014",
+        "excerpt": "保留原核准；归属沿用原核准；本轮已检查建置、终止、更名、改属与得失纪年。；改属郡：太清三年六月分吴郡海盐、胥浦为武原郡；建县时间范围：原文大通六年有误；既有存考姑置大通元年后，549年已有县"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0037",
+      "record_id": "LC-0037",
+      "name": "故鄣",
+      "region": "江表",
+      "category": "年代或沿革邊界未定",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LC-0037-S01",
+          "prefecture": "吳興郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "LC-0189明言梁末故鄣与广德置广梁郡，确年未载。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 38,
+        "page_index": 275,
+        "evidence_record_ids": "LC-0037",
+        "excerpt": "保留原核准；归属沿用原核准；本轮已检查建置、终止、更名、改属与得失纪年。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0046",
+      "record_id": "LR-0046",
+      "name": "壽昌",
+      "region": "江表",
+      "category": "年代或沿革邊界未定",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0046-S01",
+          "prefecture": "新安郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "齐末吴郡至梁新安郡的具体转属年未载；当前采用既有梁期结论，旧属年段仍待补。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 47,
+        "page_index": 276,
+        "evidence_record_ids": "LR-0046",
+        "excerpt": "本轮机器确认；既有存考结论明言梁寿昌属新安；齐末吴郡作为前期背景保留。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0047",
+      "record_id": "LR-0047",
+      "name": "黎陽",
+      "region": "江表",
+      "category": "年代或沿革邊界未定",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0047-S01",
+          "prefecture": "新寧郡",
+          "state": null,
+          "start": 553,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "建县时间未定：承圣中复置（承圣年号范围552—555，非确年）；不能把范围下限当作确定建县年。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 48,
+        "page_index": 276,
+        "evidence_record_ids": "LR-0047；LR-0042",
+        "excerpt": "本轮机器确认；摘要明确梁承圣中复置黎阳县、属新宁郡；晋新安郡不构成梁期竞争候选。；建县时间范围：承圣中复置（承圣年号范围552—555，非确年）；所属郡存续下限：同地域LR-0042记新宁郡承圣二年（553）置"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0068",
+      "record_id": "LC-0068",
+      "name": "信義",
+      "region": "江表",
+      "category": "年代或沿革邊界未定",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LC-0068-S01",
+          "prefecture": null,
+          "state": null,
+          "start": 507,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "原确认会稽郡为汉代背景，不能继续作为梁郡；吴郡可参考LR-0012，但本条梁所属尚未直证。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 69,
+        "page_index": 278,
+        "evidence_record_ids": "LC-0068；LR-0011；LR-0012",
+        "excerpt": "原核准归属复核；旧确认会稽郡来自汉娄县地，按规则②不能作为梁郡；507建县明确，梁郡仍需核对。；建县：天监六年分娄县置信义县"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0072",
+      "record_id": "LR-0072",
+      "name": "丹徒",
+      "region": "江表",
+      "category": "州郡底表缺實體或異名",
+      "resolved": true,
+      "assignments": [
+        {
+          "id": "LR-0072-S01",
+          "prefecture": "南東海郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 73,
+        "page_index": 279,
+        "evidence_record_ids": "LR-0072",
+        "excerpt": "本轮机器确认；摘要明确南齐南徐州南东海郡领丹徒，梁承旧；实县可属侨郡。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [
+        "LR-0072-S01-E502"
+      ],
+      "resolution": "南東海為蘭陵郡舊名；正文明确改名，不是同名搜索。",
+      "remaining_note": "已至少在有郡段的年度連接；不表示所有年度或建廢年皆已解決。"
+    },
+    {
+      "county_id": "lc_0073",
+      "record_id": "LC-0073",
+      "name": "蘭陵",
+      "region": "江表",
+      "category": "來源或舊歸屬衝突",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LC-0073-S01",
+          "prefecture": "義興郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "原核准附带疑点：原确认义兴郡，但正文旧武进属南东海侨郡；疑同名县错配，需另核归属。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 74,
+        "page_index": 279,
+        "evidence_record_ids": "LC-0073",
+        "excerpt": "保留原核准；归属沿用原核准；本轮已检查建置、终止、更名、改属与得失纪年。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0088",
+      "record_id": "LC-0088",
+      "name": "江乘",
+      "region": "江表",
+      "category": "來源或舊歸屬衝突",
+      "resolved": true,
+      "assignments": [
+        {
+          "id": "LC-0088-S01",
+          "prefecture": "義興郡",
+          "state": null,
+          "start": 502,
+          "end": 535,
+          "display_allowed": false
+        }
+      ],
+      "issues": "原核准附带疑点：本条江乘原确认义兴郡，正文却为南琅邪郡；535终年可先采纳，郡属需复核。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 89,
+        "page_index": 280,
+        "evidence_record_ids": "LC-0088；LC-0006",
+        "excerpt": "保留原核准；归属沿用原核准；本轮已检查建置、终止、更名、改属与得失纪年。；省废县：据同夏条，大同元年省并入同夏县"
+      },
+      "entity_link_ids": [
+        "LC-0088-S01-E502"
+      ],
+      "resolution": "江乘附南琅邪郡，原機器義興郡為錯配；縣535終年保留。",
+      "remaining_note": "已至少在有郡段的年度連接；不表示所有年度或建廢年皆已解決。"
+    },
+    {
+      "county_id": "lc_0096",
+      "record_id": "LC-0096",
+      "name": "彭澤",
+      "region": "江表",
+      "category": "來源或舊歸屬衝突",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LC-0096-S01",
+          "prefecture": "尋陽郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "原核准附带疑点：正文明确梁时移太原郡，原确认仍寻阳；转属年未载。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 97,
+        "page_index": 281,
+        "evidence_record_ids": "LC-0096",
+        "excerpt": "保留原核准；归属沿用原核准；本轮已检查建置、终止、更名、改属与得失纪年。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0106",
+      "record_id": "LC-0106",
+      "name": "高昌",
+      "region": "江表",
+      "category": "年代或沿革邊界未定",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LC-0106-S01",
+          "prefecture": "廬陵郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "梁高昌并入石阳，未载省并确年。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 107,
+        "page_index": 282,
+        "evidence_record_ids": "LC-0106",
+        "excerpt": "保留原核准；归属沿用原核准；本轮已检查建置、终止、更名、改属与得失纪年。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0142",
+      "record_id": "LC-0142",
+      "name": "豫寧",
+      "region": "江表",
+      "category": "年代或沿革邊界未定",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LC-0142-S01",
+          "prefecture": "豫章郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "梁末割五县置豫宁郡，未给确切改属年。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 143,
+        "page_index": 286,
+        "evidence_record_ids": "LC-0142",
+        "excerpt": "保留原核准；归属沿用原核准；本轮已检查建置、终止、更名、改属与得失纪年。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0143",
+      "record_id": "LC-0143",
+      "name": "艾",
+      "region": "江表",
+      "category": "年代或沿革邊界未定",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LC-0143-S01",
+          "prefecture": "豫章郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "随LC-0142所述梁末改属豫宁郡，确年未载。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 144,
+        "page_index": 286,
+        "evidence_record_ids": "LC-0143",
+        "excerpt": "保留原核准；归属沿用原核准；本轮已检查建置、终止、更名、改属与得失纪年。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0144",
+      "record_id": "LC-0144",
+      "name": "永修",
+      "region": "江表",
+      "category": "年代或沿革邊界未定",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LC-0144-S01",
+          "prefecture": "豫章郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "随LC-0142所述梁末改属豫宁郡，确年未载。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 145,
+        "page_index": 286,
+        "evidence_record_ids": "LC-0144",
+        "excerpt": "保留原核准；归属沿用原核准；本轮已检查建置、终止、更名、改属与得失纪年。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0145",
+      "record_id": "LC-0145",
+      "name": "新吳",
+      "region": "江表",
+      "category": "年代或沿革邊界未定",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LC-0145-S01",
+          "prefecture": "豫章郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "随LC-0142所述梁末改属豫宁郡，确年未载。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 146,
+        "page_index": 286,
+        "evidence_record_ids": "LC-0145",
+        "excerpt": "保留原核准；归属沿用原核准；本轮已检查建置、终止、更名、改属与得失纪年。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0146",
+      "record_id": "LC-0146",
+      "name": "建昌",
+      "region": "江表",
+      "category": "年代或沿革邊界未定",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LC-0146-S01",
+          "prefecture": "豫章郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "随LC-0142所述梁末改属豫宁郡，确年未载。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 147,
+        "page_index": 286,
+        "evidence_record_ids": "LC-0146",
+        "excerpt": "保留原核准；归属沿用原核准；本轮已检查建置、终止、更名、改属与得失纪年。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0160",
+      "record_id": "LR-0160",
+      "name": "竹塘",
+      "region": "淮南",
+      "category": "年代或沿革邊界未定",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0160-S01",
+          "prefecture": "神農郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "广业郡寻改神农郡，确年未载；导入须依郡名存续分期，不能将两郡视为同时并属。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 161,
+        "page_index": 300,
+        "evidence_record_ids": "LR-0160；LR-0161；LC-0162",
+        "excerpt": "本轮机器确认；据LR-0161及LC-0162交叉引文恢复竹塘依据；梁析置竹塘、三归，置广业郡，寻改神农郡。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0161",
+      "record_id": "LR-0161",
+      "name": "三歸",
+      "region": "淮南",
+      "category": "年代或沿革邊界未定",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0161-S01",
+          "prefecture": "神農郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "广业郡寻改神农郡，确年未载；导入须依郡名存续分期，不能将两郡视为同时并属。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 162,
+        "page_index": 300,
+        "evidence_record_ids": "LR-0161",
+        "excerpt": "本轮机器确认；原引文明确梁析置三归并置广业郡，寻改神农郡；尾句竹塘不能覆盖本县。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0169",
+      "record_id": "LC-0169",
+      "name": "山陽",
+      "region": "淮南",
+      "category": "來源或舊歸屬衝突",
+      "resolved": true,
+      "assignments": [
+        {
+          "id": "LC-0169-S01",
+          "prefecture": "海陵郡",
+          "state": null,
+          "start": 502,
+          "end": 549,
+          "display_allowed": false
+        }
+      ],
+      "issues": "原核准附带疑点：原确认海陵郡，正文为山阳侨郡；549终年可先采纳。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 170,
+        "page_index": 301,
+        "evidence_record_ids": "LC-0169",
+        "excerpt": "保留原核准；归属沿用原核准；本轮已检查建置、终止、更名、改属与得失纪年。；梁辖得失：太清三年（549）没"
+      },
+      "entity_link_ids": [
+        "LC-0169-S01-E502"
+      ],
+      "resolution": "原機器海陵郡與正文山陽郡衝突，依本地域正文侨郡改正。",
+      "remaining_note": "已至少在有郡段的年度連接；不表示所有年度或建廢年皆已解決。"
+    },
+    {
+      "county_id": "lc_0170",
+      "record_id": "LC-0170",
+      "name": "鹽城",
+      "region": "淮南",
+      "category": "來源或舊歸屬衝突",
+      "resolved": true,
+      "assignments": [
+        {
+          "id": "LC-0170-S01",
+          "prefecture": "海陵郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "原核准附带疑点：原确认海陵郡，正文为山阳侨郡；归属存在矛盾。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 171,
+        "page_index": 301,
+        "evidence_record_ids": "LC-0170",
+        "excerpt": "保留原核准；归属沿用原核准；本轮已检查建置、终止、更名、改属与得失纪年。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [
+        "LC-0170-S01-E502"
+      ],
+      "resolution": "原機器海陵郡與正文山陽郡衝突，依本地域正文侨郡改正。",
+      "remaining_note": "已至少在有郡段的年度連接；不表示所有年度或建廢年皆已解決。"
+    },
+    {
+      "county_id": "lc_0177",
+      "record_id": "LR-0177",
+      "name": "蓼",
+      "region": "淮南",
+      "category": "州郡底表缺實體或異名",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0177-S01",
+          "prefecture": "新蔡郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 178,
+        "page_index": 301,
+        "evidence_record_ids": "LR-0177",
+        "excerpt": "本轮机器确认；摘要虽截断，已明确《补梁志》建州新蔡郡下列蓼县。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0178",
+      "record_id": "LR-0178",
+      "name": "光城",
+      "region": "淮南",
+      "category": "州郡底表缺實體或異名",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0178-S01",
+          "prefecture": "光城左郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 179,
+        "page_index": 302,
+        "evidence_record_ids": "LR-0178",
+        "excerpt": "本轮机器确认；齐末光城左郡明确领光城，梁亦存；汉西阳属江夏不影响梁判断。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0179",
+      "record_id": "LC-0179",
+      "name": "東新蔡",
+      "region": "淮南",
+      "category": "同地域同名或階段重疊",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LC-0179-S01",
+          "prefecture": "弋陽郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "同地域本年有多個同名郡，未能唯一連接。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 180,
+        "page_index": 302,
+        "evidence_record_ids": "LC-0179",
+        "excerpt": "保留原核准；归属沿用原核准；本轮已检查建置、终止、更名、改属与得失纪年。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0181",
+      "record_id": "LR-0181",
+      "name": "定城",
+      "region": "淮南",
+      "category": "州郡底表缺實體或異名",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0181-S01",
+          "prefecture": "定城郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 182,
+        "page_index": 302,
+        "evidence_record_ids": "LR-0181；LR-0182",
+        "excerpt": "本轮机器确认；LR-0182首段为定城县错接摘要，明言《补梁志》定城郡治定城，按原存考姑从。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0182",
+      "record_id": "LR-0182",
+      "name": "烏江",
+      "region": "淮南",
+      "category": "年代或沿革邊界未定",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0182-S01",
+          "prefecture": "江都郡",
+          "state": null,
+          "start": 502,
+          "end": 549,
+          "display_allowed": false
+        }
+      ],
+      "issues": "临江改江都的改郡年未载；549没北年可直接使用，前期郡名需配合郡层。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 183,
+        "page_index": 302,
+        "evidence_record_ids": "LR-0182",
+        "excerpt": "本轮机器确认；目标县段落明确梁改临江郡为江都郡，乌江县承旧；定城县段落另作交叉依据。；梁辖得失：太清三年七月合州沦陷、乌江当没"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0186",
+      "record_id": "LC-0186",
+      "name": "新蔡",
+      "region": "淮南",
+      "category": "來源或舊歸屬衝突",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LC-0186-S01",
+          "prefecture": "廬江郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "原核准附带疑点：正文梁新蔡置北沛郡，原确认庐江郡；需确认其梁郡。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 187,
+        "page_index": 302,
+        "evidence_record_ids": "LC-0186",
+        "excerpt": "保留原核准；归属沿用原核准；本轮已检查建置、终止、更名、改属与得失纪年。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0187",
+      "record_id": "LR-0187",
+      "name": "於湖",
+      "region": "淮南",
+      "category": "州郡底表缺實體或異名",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0187-S01",
+          "prefecture": "淮南郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 188,
+        "page_index": 302,
+        "evidence_record_ids": "LR-0187",
+        "excerpt": "本轮机器确认；摘要开头明确齐末淮南侨郡领于湖实县，梁承旧；不因侨郡而排除实县。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0189",
+      "record_id": "LC-0189",
+      "name": "廣德",
+      "region": "淮南",
+      "category": "年代或沿革邊界未定",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LC-0189-S01",
+          "prefecture": "宣城郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "梁末广德改属广梁郡，确年未载。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 190,
+        "page_index": 303,
+        "evidence_record_ids": "LC-0189",
+        "excerpt": "保留原核准；归属沿用原核准；本轮已检查建置、终止、更名、改属与得失纪年。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0204",
+      "record_id": "LR-0204",
+      "name": "六合",
+      "region": "淮南",
+      "category": "州郡底表缺實體或異名",
+      "resolved": true,
+      "assignments": [
+        {
+          "id": "LR-0204-S01",
+          "prefecture": "秦郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 205,
+        "page_index": 304,
+        "evidence_record_ids": "LR-0204",
+        "excerpt": "本轮机器确认；既有存考结论明确从《补梁志》秦州秦郡；不重新裁断所引两书分歧。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [
+        "LR-0204-S01-E502"
+      ],
+      "resolution": "六合附秦郡，按南兗州至西兗州沿革連接。",
+      "remaining_note": "已至少在有郡段的年度連接；不表示所有年度或建廢年皆已解決。"
+    },
+    {
+      "county_id": "lc_0206",
+      "record_id": "LR-0206",
+      "name": "壽陽",
+      "region": "淮南",
+      "category": "州郡底表缺實體或異名",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0206-S01",
+          "prefecture": "梁郡",
+          "state": null,
+          "start": 526,
+          "end": 557,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 207,
+        "page_index": 305,
+        "evidence_record_ids": "LR-0206",
+        "excerpt": "仍需归属复核；仅记普通七年克寿阳城，未明确梁时郡属；攻城年不作为建县年。；梁辖得失：普通七年十一月梁军克寿阳城"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0213",
+      "record_id": "LR-0213",
+      "name": "贛榆",
+      "region": "淮北",
+      "category": "州郡底表缺實體或異名",
+      "resolved": true,
+      "assignments": [
+        {
+          "id": "LR-0213-S01",
+          "prefecture": "北海郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 214,
+        "page_index": 313,
+        "evidence_record_ids": "LR-0213",
+        "excerpt": "本轮机器确认；明确齐末青冀二州北海侨郡领赣榆，梁承旧，直至地入魏。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [
+        "LR-0213-S01-E502"
+      ],
+      "resolution": "本地域北海侨郡領贛榆，原郡行漏提取。",
+      "remaining_note": "已至少在有郡段的年度連接；不表示所有年度或建廢年皆已解決。"
+    },
+    {
+      "county_id": "lc_0214",
+      "record_id": "LR-0214",
+      "name": "招遠",
+      "region": "淮北",
+      "category": "州郡底表缺實體或異名",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0214-S01",
+          "prefecture": "東莞、琅琊二郡",
+          "state": null,
+          "start": 502,
+          "end": 549,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 215,
+        "page_index": 314,
+        "evidence_record_ids": "LR-0214",
+        "excerpt": "仍需归属复核；县名改为招远、549年复旧可以处理；《地形志》魏琅邪郡标题不直接证明梁郡。；县名终止：武定七年（549）复／改"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0215",
+      "record_id": "LR-0215",
+      "name": "海安",
+      "region": "淮北",
+      "category": "州郡底表缺實體或異名",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0215-S01",
+          "prefecture": "東莞、琅琊二郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 216,
+        "page_index": 314,
+        "evidence_record_ids": "LR-0215",
+        "excerpt": "仍需归属复核；本县在淮北青冀二州；齐陈东官候选是岭南同名，不能取交集。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0219",
+      "record_id": "LR-0219",
+      "name": "高密",
+      "region": "淮北",
+      "category": "州郡底表缺實體或異名",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0219-S01",
+          "prefecture": "齊郡",
+          "state": null,
+          "start": 502,
+          "end": 549,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 220,
+        "page_index": 314,
+        "evidence_record_ids": "LR-0219",
+        "excerpt": "本轮机器确认；摘要明确梁高密为青冀二州侨齐郡属县。；县名终止：武定七年（549）复／改"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0220",
+      "record_id": "LR-0220",
+      "name": "臨海",
+      "region": "淮北",
+      "category": "州郡底表缺實體或異名",
+      "resolved": true,
+      "assignments": [
+        {
+          "id": "LR-0220-S01",
+          "prefecture": "北東海郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 221,
+        "page_index": 314,
+        "evidence_record_ids": "LR-0220",
+        "excerpt": "本轮机器确认；摘要明确梁临海为北东海侨郡属县；齐陈临海郡候选属于另一地域，不能机械取交集。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [
+        "LR-0220-S01-E502"
+      ],
+      "resolution": "臨海附青冀二州北東海郡，與南徐州南東海分開。",
+      "remaining_note": "已至少在有郡段的年度連接；不表示所有年度或建廢年皆已解決。"
+    },
+    {
+      "county_id": "lc_0222",
+      "record_id": "LR-0222",
+      "name": "渦陽",
+      "region": "淮北",
+      "category": "州郡底表缺實體或異名",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0222-S01",
+          "prefecture": "譙郡",
+          "state": null,
+          "start": 527,
+          "end": 548,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 223,
+        "page_index": 314,
+        "evidence_record_ids": "LR-0222",
+        "excerpt": "仍需归属复核；梁辖527—548可以确定，材料只证西徐州治而未载郡名。；梁辖得失：大通元年（527）得涡阳；太清二年（548）陷没"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0226",
+      "record_id": "LR-0226",
+      "name": "平原",
+      "region": "淮北",
+      "category": "年代或沿革邊界未定",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0226-S01",
+          "prefecture": "宿預郡",
+          "state": null,
+          "start": 509,
+          "end": 549,
+          "display_allowed": false
+        }
+      ],
+      "issues": "509年只是梁得此地的最早界，平原、清河何年分置未明。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 227,
+        "page_index": 315,
+        "evidence_record_ids": "LR-0226",
+        "excerpt": "仍需归属复核；材料明确东徐州平原县及549年改并，但未给梁所属郡。；梁辖得失：天监八年（509）得宿豫置东徐州；太清三年（549）没"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0227",
+      "record_id": "LR-0227",
+      "name": "清河",
+      "region": "淮北",
+      "category": "年代或沿革邊界未定",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0227-S01",
+          "prefecture": "宿預郡",
+          "state": null,
+          "start": 509,
+          "end": 549,
+          "display_allowed": false
+        }
+      ],
+      "issues": "509年只是梁得此地的最早界，平原、清河何年分置未明。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 228,
+        "page_index": 315,
+        "evidence_record_ids": "LR-0227；LR-0226",
+        "excerpt": "仍需归属复核；可从同表平原条继承东徐州及549年改并事件，未载梁郡。；梁辖得失：天监八年（509）得宿豫置东徐州；太清三年（549）没"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0236",
+      "record_id": "LR-0236",
+      "name": "譙",
+      "region": "淮北",
+      "category": "州郡底表缺實體或異名",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0236-S01",
+          "prefecture": "譙郡",
+          "state": null,
+          "start": 532,
+          "end": 532,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 237,
+        "page_index": 316,
+        "evidence_record_ids": "LR-0236",
+        "excerpt": "仍需归属复核；梁辖532年内可定；谯为州治并不能直接推出郡名。；梁辖得失：中大通四年得南兖州，困守谯城七月而没"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0237",
+      "record_id": "LR-0237",
+      "name": "下蔡",
+      "region": "淮北",
+      "category": "年代或沿革邊界未定",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0237-S01",
+          "prefecture": "汴郡",
+          "state": null,
+          "start": 527,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "大通中得地只给范围，不能把527当作确定取得年。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 238,
+        "page_index": 316,
+        "evidence_record_ids": "LR-0237",
+        "excerpt": "本轮机器确认；摘要明确梁得下蔡，置汴州及汴郡；大通中得地仅记范围。；得地时间范围：大通中得下蔡（527—529）"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0239",
+      "record_id": "LR-0239",
+      "name": "淮陽",
+      "region": "淮北",
+      "category": "年代或沿革邊界未定",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0239-S01",
+          "prefecture": "南濟陰郡",
+          "state": "睢州",
+          "start": 502,
+          "end": 550,
+          "display_allowed": false
+        }
+      ],
+      "issues": "武定中更名没有确年；550仅作最晚界，不填确定终年。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 240,
+        "page_index": 316,
+        "evidence_record_ids": "LR-0239",
+        "excerpt": "仍需归属复核；只记睢州及武定中改淮阳，梁郡与确切更名年均不明；韶阳为异地候选。；县名终止范围：武定中改淮阳（武定范围543—550）"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0241",
+      "record_id": "LR-0241",
+      "name": "寧陵",
+      "region": "淮北",
+      "category": "州郡底表缺實體或異名",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0241-S01",
+          "prefecture": "潁川郡",
+          "state": null,
+          "start": 502,
+          "end": 548,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 242,
+        "page_index": 316,
+        "evidence_record_ids": "LR-0241",
+        "excerpt": "本轮机器确认；摘要明确梁宁陵属陈州颍川郡；武定六年改名另设县名止年。；县名终止：武定六年（548）改宁陵为肥阳"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0242",
+      "record_id": "LC-0242",
+      "name": "宋",
+      "region": "淮北",
+      "category": "合題實體連接",
+      "resolved": true,
+      "assignments": [
+        {
+          "id": "LC-0242-S01",
+          "prefecture": null,
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "原核准郡值为二郡合题，尚未拆成唯一郡；本轮保留，导入前不可把整段当成单一郡名。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 243,
+        "page_index": 316,
+        "evidence_record_ids": "LC-0242",
+        "excerpt": "原核准复合郡待拆；原表复合二郡原文保留；规范郡字段暂空，未重新裁断历史归属。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [
+        "LC-0242-S01-E528"
+      ],
+      "resolution": "合題行已存在，無須人工拆郡；原機器僅因合題而攔截。",
+      "remaining_note": "已至少在有郡段的年度連接；不表示所有年度或建廢年皆已解決。"
+    },
+    {
+      "county_id": "lc_0243",
+      "record_id": "LC-0243",
+      "name": "新息",
+      "region": "淮北",
+      "category": "合題實體連接",
+      "resolved": true,
+      "assignments": [
+        {
+          "id": "LC-0243-S01",
+          "prefecture": null,
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "原核准郡值为二郡合题，尚未拆成唯一郡；本轮保留，导入前不可把整段当成单一郡名。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 244,
+        "page_index": 316,
+        "evidence_record_ids": "LC-0243",
+        "excerpt": "原核准复合郡待拆；原表复合二郡原文保留；规范郡字段暂空，未重新裁断历史归属。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [
+        "LC-0243-S01-E528"
+      ],
+      "resolution": "合題行已存在，無須人工拆郡；原機器僅因合題而攔截。",
+      "remaining_note": "已至少在有郡段的年度連接；不表示所有年度或建廢年皆已解決。"
+    },
+    {
+      "county_id": "lc_0244",
+      "record_id": "LC-0244",
+      "name": "期思",
+      "region": "淮北",
+      "category": "合題實體連接",
+      "resolved": true,
+      "assignments": [
+        {
+          "id": "LC-0244-S01",
+          "prefecture": null,
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "原核准郡值为二郡合题，尚未拆成唯一郡；本轮保留，导入前不可把整段当成单一郡名。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 245,
+        "page_index": 316,
+        "evidence_record_ids": "LC-0244",
+        "excerpt": "原核准复合郡待拆；原表复合二郡原文保留；规范郡字段暂空，未重新裁断历史归属。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [
+        "LC-0244-S01-E528"
+      ],
+      "resolution": "合題行已存在，無須人工拆郡；原機器僅因合題而攔截。",
+      "remaining_note": "已至少在有郡段的年度連接；不表示所有年度或建廢年皆已解決。"
+    },
+    {
+      "county_id": "lc_0245",
+      "record_id": "LC-0245",
+      "name": "梁興",
+      "region": "淮北",
+      "category": "合題實體連接",
+      "resolved": true,
+      "assignments": [
+        {
+          "id": "LC-0245-S01",
+          "prefecture": null,
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "原核准郡值为二郡合题，尚未拆成唯一郡；本轮保留，导入前不可把整段当成单一郡名。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 246,
+        "page_index": 316,
+        "evidence_record_ids": "LC-0245",
+        "excerpt": "原核准复合郡待拆；原表复合二郡原文保留；规范郡字段暂空，未重新裁断历史归属。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [
+        "LC-0245-S01-E528"
+      ],
+      "resolution": "合題行已存在，無須人工拆郡；原機器僅因合題而攔截。",
+      "remaining_note": "已至少在有郡段的年度連接；不表示所有年度或建廢年皆已解決。"
+    },
+    {
+      "county_id": "lc_0247",
+      "record_id": "LC-0247",
+      "name": "汝陽",
+      "region": "淮北",
+      "category": "合題實體連接",
+      "resolved": true,
+      "assignments": [
+        {
+          "id": "LC-0247-S01",
+          "prefecture": null,
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "原核准郡值为二郡合题，尚未拆成唯一郡；本轮保留，导入前不可把整段当成单一郡名。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 248,
+        "page_index": 317,
+        "evidence_record_ids": "LC-0247",
+        "excerpt": "原核准复合郡待拆；原表复合二郡原文保留；规范郡字段暂空，未重新裁断历史归属。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [
+        "LC-0247-S01-E528"
+      ],
+      "resolution": "合題行已存在，無須人工拆郡；原機器僅因合題而攔截。",
+      "remaining_note": "已至少在有郡段的年度連接；不表示所有年度或建廢年皆已解決。"
+    },
+    {
+      "county_id": "lc_0248",
+      "record_id": "LR-0248",
+      "name": "胡城",
+      "region": "淮北",
+      "category": "州郡底表缺實體或異名",
+      "resolved": true,
+      "assignments": [
+        {
+          "id": "LR-0248-S01",
+          "prefecture": "西恆農、陳留二郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 249,
+        "page_index": 317,
+        "evidence_record_ids": "LR-0248",
+        "excerpt": "仍需归属复核；原文陈南与作者总结陈留有异，且二郡合题未分。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [
+        "LR-0248-S01-E528"
+      ],
+      "resolution": "陳南／陳留異文的定向實體映射；不改人工雙頭郡結論。",
+      "remaining_note": "已至少在有郡段的年度連接；不表示所有年度或建廢年皆已解決。"
+    },
+    {
+      "county_id": "lc_0249",
+      "record_id": "LR-0249",
+      "name": "南頓",
+      "region": "淮北",
+      "category": "州郡底表缺實體或異名",
+      "resolved": true,
+      "assignments": [
+        {
+          "id": "LR-0249-S01",
+          "prefecture": "西恆農、陳留二郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 250,
+        "page_index": 317,
+        "evidence_record_ids": "LR-0249",
+        "excerpt": "仍需归属复核；原文陈南与作者总结陈留有异，且二郡合题未分。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [
+        "LR-0249-S01-E528"
+      ],
+      "resolution": "陳南／陳留異文的定向實體映射；不改人工雙頭郡結論。",
+      "remaining_note": "已至少在有郡段的年度連接；不表示所有年度或建廢年皆已解決。"
+    },
+    {
+      "county_id": "lc_0250",
+      "record_id": "LR-0250",
+      "name": "濟陽",
+      "region": "淮北",
+      "category": "州郡底表缺實體或異名",
+      "resolved": true,
+      "assignments": [
+        {
+          "id": "LR-0250-S01",
+          "prefecture": "東郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 251,
+        "page_index": 317,
+        "evidence_record_ids": "LR-0250",
+        "excerpt": "仍需归属复核；魏东郡、汝南二郡合题；仅确定梁陈州，尚不能单独归郡。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [
+        "LR-0250-S01-E528"
+      ],
+      "resolution": "人工暫系的東郡為此合題郡一部；保留暫系。",
+      "remaining_note": "已至少在有郡段的年度連接；不表示所有年度或建廢年皆已解決。"
+    },
+    {
+      "county_id": "lc_0251",
+      "record_id": "LC-0251",
+      "name": "清河",
+      "region": "淮北",
+      "category": "合題實體連接",
+      "resolved": true,
+      "assignments": [
+        {
+          "id": "LC-0251-S01",
+          "prefecture": null,
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "原核准郡值为二郡合题，尚未拆成唯一郡；本轮保留，导入前不可把整段当成单一郡名。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 252,
+        "page_index": 317,
+        "evidence_record_ids": "LC-0251",
+        "excerpt": "原核准复合郡待拆；原表复合二郡原文保留；规范郡字段暂空，未重新裁断历史归属。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [
+        "LC-0251-S01-E528"
+      ],
+      "resolution": "合題行已存在，無須人工拆郡；原機器僅因合題而攔截。",
+      "remaining_note": "已至少在有郡段的年度連接；不表示所有年度或建廢年皆已解決。"
+    },
+    {
+      "county_id": "lc_0252",
+      "record_id": "LC-0252",
+      "name": "汝南",
+      "region": "淮北",
+      "category": "合題實體連接",
+      "resolved": true,
+      "assignments": [
+        {
+          "id": "LC-0252-S01",
+          "prefecture": null,
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "原核准郡值为二郡合题，尚未拆成唯一郡；本轮保留，导入前不可把整段当成单一郡名。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 253,
+        "page_index": 317,
+        "evidence_record_ids": "LC-0252",
+        "excerpt": "原核准复合郡待拆；原表复合二郡原文保留；规范郡字段暂空，未重新裁断历史归属。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [
+        "LC-0252-S01-E528"
+      ],
+      "resolution": "合題行已存在，無須人工拆郡；原機器僅因合題而攔截。",
+      "remaining_note": "已至少在有郡段的年度連接；不表示所有年度或建廢年皆已解決。"
+    },
+    {
+      "county_id": "lc_0254",
+      "record_id": "LC-0254",
+      "name": "鮦陽",
+      "region": "淮北",
+      "category": "合題實體連接",
+      "resolved": true,
+      "assignments": [
+        {
+          "id": "LC-0254-S01",
+          "prefecture": null,
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "原核准郡值为二郡合题，尚未拆成唯一郡；本轮保留，导入前不可把整段当成单一郡名。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 255,
+        "page_index": 317,
+        "evidence_record_ids": "LC-0254",
+        "excerpt": "原核准复合郡待拆；原表复合二郡原文保留；规范郡字段暂空，未重新裁断历史归属。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [
+        "LC-0254-S01-E528"
+      ],
+      "resolution": "合題行已存在，無須人工拆郡；原機器僅因合題而攔截。",
+      "remaining_note": "已至少在有郡段的年度連接；不表示所有年度或建廢年皆已解決。"
+    },
+    {
+      "county_id": "lc_0255",
+      "record_id": "LC-0255",
+      "name": "臨淮",
+      "region": "淮北",
+      "category": "合題實體連接",
+      "resolved": true,
+      "assignments": [
+        {
+          "id": "LC-0255-S01",
+          "prefecture": null,
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "原核准郡值为二郡合题，尚未拆成唯一郡；本轮保留，导入前不可把整段当成单一郡名。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 256,
+        "page_index": 317,
+        "evidence_record_ids": "LC-0255",
+        "excerpt": "原核准复合郡待拆；原表复合二郡原文保留；规范郡字段暂空，未重新裁断历史归属。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [
+        "LC-0255-S01-E528"
+      ],
+      "resolution": "合題行已存在，無須人工拆郡；原機器僅因合題而攔截。",
+      "remaining_note": "已至少在有郡段的年度連接；不表示所有年度或建廢年皆已解決。"
+    },
+    {
+      "county_id": "lc_0256",
+      "record_id": "LC-0256",
+      "name": "汝陰",
+      "region": "淮北",
+      "category": "合題實體連接",
+      "resolved": true,
+      "assignments": [
+        {
+          "id": "LC-0256-S01",
+          "prefecture": null,
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "原核准郡值为二郡合题，尚未拆成唯一郡；本轮保留，导入前不可把整段当成单一郡名。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 257,
+        "page_index": 317,
+        "evidence_record_ids": "LC-0256",
+        "excerpt": "原核准复合郡待拆；原表复合二郡原文保留；规范郡字段暂空，未重新裁断历史归属。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [
+        "LC-0256-S01-E528"
+      ],
+      "resolution": "合題行已存在，無須人工拆郡；原機器僅因合題而攔截。",
+      "remaining_note": "已至少在有郡段的年度連接；不表示所有年度或建廢年皆已解決。"
+    },
+    {
+      "county_id": "lc_0258",
+      "record_id": "LC-0258",
+      "name": "新息",
+      "region": "淮北",
+      "category": "合題實體連接",
+      "resolved": true,
+      "assignments": [
+        {
+          "id": "LC-0258-S01",
+          "prefecture": null,
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "原核准郡值为二郡合题，尚未拆成唯一郡；本轮保留，导入前不可把整段当成单一郡名。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 259,
+        "page_index": 318,
+        "evidence_record_ids": "LC-0258",
+        "excerpt": "原核准复合郡待拆；原表复合二郡原文保留；规范郡字段暂空，未重新裁断历史归属。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [
+        "LC-0258-S01-E528"
+      ],
+      "resolution": "合題行已存在，無須人工拆郡；原機器僅因合題而攔截。",
+      "remaining_note": "已至少在有郡段的年度連接；不表示所有年度或建廢年皆已解決。"
+    },
+    {
+      "county_id": "lc_0264",
+      "record_id": "LR-0264",
+      "name": "上蔡",
+      "region": "河南",
+      "category": "年代或沿革邊界未定",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0264-S01",
+          "prefecture": "汝南郡",
+          "state": null,
+          "start": 547,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "旋没／半年后没没有足够月日换算为确定结束年；保留终年空白。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 265,
+        "page_index": 321,
+        "evidence_record_ids": "LR-0264",
+        "excerpt": "仍需归属复核；可确定547年梁得上蔡，旋没未给确年；魏汝南郡不能径定为梁郡。；梁辖得失：太清元年（547）得地"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0265",
+      "record_id": "LC-0265",
+      "name": "南新息",
+      "region": "河南",
+      "category": "州郡底表缺實體或異名",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LC-0265-S01",
+          "prefecture": "汝南郡",
+          "state": null,
+          "start": 527,
+          "end": 549,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 266,
+        "page_index": 321,
+        "evidence_record_ids": "LC-0265",
+        "excerpt": "保留原核准；归属沿用原核准；本轮已检查建置、终止、更名、改属与得失纪年。；梁辖得失：《地形志》孝昌三年（527）陷、武定七年（549）没"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0266",
+      "record_id": "LR-0266",
+      "name": "真陽",
+      "region": "河南",
+      "category": "州郡底表缺實體或異名",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0266-S01",
+          "prefecture": "淮川郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 267,
+        "page_index": 321,
+        "evidence_record_ids": "LR-0266",
+        "excerpt": "仍需归属复核；只记梁淮州及魏淮川郡；武昌为异地真阳候选，梁郡仍待核。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0267",
+      "record_id": "LR-0267",
+      "name": "梁興",
+      "region": "河南",
+      "category": "州郡底表缺實體或異名",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0267-S01",
+          "prefecture": "淮川郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 268,
+        "page_index": 321,
+        "evidence_record_ids": "LR-0267",
+        "excerpt": "仍需归属复核；只记梁淮州及魏淮川郡，未有明确梁期郡属。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0268",
+      "record_id": "LR-0268",
+      "name": "項",
+      "region": "河南",
+      "category": "僅知州，郡未詳",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0268-S01",
+          "prefecture": null,
+          "state": "殷州",
+          "start": 547,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "旋没／半年后没没有足够月日换算为确定结束年；保留终年空白。；人工只確定所屬州，郡無考；保留州層線索，不虛造郡名。",
+      "original_pending_reasons": [
+        "人工意見僅定位到州，所屬郡仍未詳。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 269,
+        "page_index": 321,
+        "evidence_record_ids": "LR-0268",
+        "excerpt": "仍需归属复核；只记547年项县为殷州治，半年后没；不足推出郡名或精确结束年。；梁辖得失：太清元年（547）得地"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0280",
+      "record_id": "LR-0280",
+      "name": "安鄉",
+      "region": "江漢",
+      "category": "資料分區不一致",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0280-S01",
+          "prefecture": "義陽郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 281,
+        "page_index": 340,
+        "evidence_record_ids": "LR-0280",
+        "excerpt": "仍需归属复核；摘要截断，只有隋志旧义阳郡；尚不能确认梁时统属。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "現有同名候選可能確為另一地區，須讀正文所屬州或補正歷史郡名；不可跨區自動取第一郡。"
+    },
+    {
+      "county_id": "lc_0285",
+      "record_id": "LR-0285",
+      "name": "旌陽",
+      "region": "江漢",
+      "category": "年代或沿革邊界未定",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0285-S01",
+          "prefecture": "武寧郡",
+          "state": null,
+          "start": 502,
+          "end": 554,
+          "display_allowed": false
+        }
+      ],
+      "issues": "旌阳改名惠怀时点不详；不能以554年没北当作更名年。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 286,
+        "page_index": 341,
+        "evidence_record_ids": "LR-0285",
+        "excerpt": "仍需归属复核；554年没北可处理；旌阳改惠怀未给年，且未明确梁所属郡。；梁辖得失：承圣三年（554）没北"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0296",
+      "record_id": "LC-0296",
+      "name": "州陵",
+      "region": "江漢",
+      "category": "來源或舊歸屬衝突",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LC-0296-S01",
+          "prefecture": "巴陵郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "原核准附带疑点：正文郢州州城郡治州陵，原确认巴陵；需确认时段。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 297,
+        "page_index": 342,
+        "evidence_record_ids": "LC-0296",
+        "excerpt": "保留原核准；归属沿用原核准；本轮已检查建置、终止、更名、改属与得失纪年。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0302",
+      "record_id": "LR-0302",
+      "name": "下雋",
+      "region": "江漢",
+      "category": "年代或沿革邊界未定",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0302-S01",
+          "prefecture": "上雋郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "由齐末巴陵至梁上隽的时点未载；不得填入虚构转属年。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 303,
+        "page_index": 343,
+        "evidence_record_ids": "LR-0302",
+        "excerpt": "本轮机器确认；摘要明确梁下隽隶上隽郡并为郡治；巴陵为齐末旧属。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0315",
+      "record_id": "LR-0315",
+      "name": "吳昌",
+      "region": "江漢",
+      "category": "資料分區不一致",
+      "resolved": true,
+      "assignments": [
+        {
+          "id": "LR-0315-S01",
+          "prefecture": "長沙郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 316,
+        "page_index": 344,
+        "evidence_record_ids": "LR-0315",
+        "excerpt": "本轮机器确认；齐末长沙郡领吴昌明确，隋前仍有该县；依齐末统属默认。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [
+        "LR-0315-S01-E502"
+      ],
+      "resolution": "原書县條所在分區與州郡分區不同；正文明記長沙郡。",
+      "remaining_note": "已至少在有郡段的年度連接；不表示所有年度或建廢年皆已解決。"
+    },
+    {
+      "county_id": "lc_0325",
+      "record_id": "LC-0325",
+      "name": "建昌",
+      "region": "江漢",
+      "category": "來源或舊歸屬衝突",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LC-0325-S01",
+          "prefecture": "襄陽郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "原核准附带疑点：正文梁置南阳郡建昌县，原确认襄阳；疑同名错配。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 326,
+        "page_index": 345,
+        "evidence_record_ids": "LC-0325",
+        "excerpt": "保留原核准；归属沿用原核准；本轮已检查建置、终止、更名、改属与得失纪年。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0328",
+      "record_id": "LR-0328",
+      "name": "中聶陽",
+      "region": "江漢",
+      "category": "年代或沿革邊界未定",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0328-S01",
+          "prefecture": "梁寧郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "中聂阳与滠阳为既有考证推定对应，尚未给名称变动和郡属切换年。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 329,
+        "page_index": 345,
+        "evidence_record_ids": "LR-0328",
+        "excerpt": "本轮机器确认；依既有考证，中聂阳当即梁宁郡滠阳；安蛮左郡为齐末背景，保留原文推定性质。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0329",
+      "record_id": "LC-0329",
+      "name": "義陽",
+      "region": "江漢",
+      "category": "來源或舊歸屬衝突",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LC-0329-S01",
+          "prefecture": "北義陽郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "原核准附带疑点：正文结论梁楚州汝阳郡，原确认北义阳；字段与结论不符。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 330,
+        "page_index": 345,
+        "evidence_record_ids": "LC-0329",
+        "excerpt": "保留原核准；归属沿用原核准；本轮已检查建置、终止、更名、改属与得失纪年。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0335",
+      "record_id": "LR-0335",
+      "name": "淮安",
+      "region": "江漢",
+      "category": "年代或沿革邊界未定",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0335-S01",
+          "prefecture": "上川郡",
+          "state": null,
+          "start": 535,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "535年前是否已有淮安县及其旧属郡未详；当前535限制仅用于上川郡关系。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 336,
+        "page_index": 346,
+        "evidence_record_ids": "LR-0335",
+        "excerpt": "本轮机器确认；摘要明言梁置华州及上川郡、治淮安；535年是郡置年，不是建县年。；置郡（非建县）：大同元年（535）置华州、上川郡，治淮安"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0337",
+      "record_id": "LR-0337",
+      "name": "定陽",
+      "region": "江漢",
+      "category": "僅知州，郡未詳",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0337-S01",
+          "prefecture": null,
+          "state": "北郢州",
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "人工只確定所屬州，郡無考；保留州層線索，不虛造郡名。",
+      "original_pending_reasons": [
+        "人工意見僅定位到州，所屬郡仍未詳。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 338,
+        "page_index": 346,
+        "evidence_record_ids": "LR-0337",
+        "excerpt": "仍需归属复核；本条北郢州定阳，齐陈东阳郡候选属江表另一同名县。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0338",
+      "record_id": "LC-0338",
+      "name": "平林",
+      "region": "江漢",
+      "category": "州郡底表缺實體或異名",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LC-0338-S01",
+          "prefecture": "上明郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 339,
+        "page_index": 346,
+        "evidence_record_ids": "LC-0338",
+        "excerpt": "保留原核准；归属沿用原核准；本轮已检查建置、终止、更名、改属与得失纪年。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0339",
+      "record_id": "LC-0339",
+      "name": "建寧",
+      "region": "江漢",
+      "category": "資料分區不一致",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LC-0339-S01",
+          "prefecture": "建寧郡",
+          "state": null,
+          "start": 502,
+          "end": 550,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 340,
+        "page_index": 346,
+        "evidence_record_ids": "LC-0339",
+        "excerpt": "保留原核准；归属沿用原核准；本轮已检查建置、终止、更名、改属与得失纪年。；梁辖得失：大宝元年（550）没；郡改属州（非建县）：天监十三年（514）建宁郡移属定州"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "現有同名候選可能確為另一地區，須讀正文所屬州或補正歷史郡名；不可跨區自動取第一郡。"
+    },
+    {
+      "county_id": "lc_0340",
+      "record_id": "LC-0340",
+      "name": "陽武",
+      "region": "江漢",
+      "category": "資料分區不一致",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LC-0340-S01",
+          "prefecture": "建寧郡",
+          "state": null,
+          "start": 502,
+          "end": 550,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 341,
+        "page_index": 346,
+        "evidence_record_ids": "LC-0340",
+        "excerpt": "保留原核准；归属沿用原核准；本轮已检查建置、终止、更名、改属与得失纪年。；梁辖得失：大宝元年（550）没；郡改属州（非建县）：天监十三年（514）建宁郡移属定州"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "現有同名候選可能確為另一地區，須讀正文所屬州或補正歷史郡名；不可跨區自動取第一郡。"
+    },
+    {
+      "county_id": "lc_0341",
+      "record_id": "LR-0341",
+      "name": "信安",
+      "region": "江漢",
+      "category": "州郡底表缺實體或異名",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0341-S01",
+          "prefecture": "建寧左郡",
+          "state": "定州",
+          "start": 502,
+          "end": 557,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 342,
+        "page_index": 346,
+        "evidence_record_ids": "LR-0341",
+        "excerpt": "仍需归属复核；本条麻城信安，齐陈东阳郡候选属江表另一同名县。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0342",
+      "record_id": "LR-0342",
+      "name": "北西陽",
+      "region": "江漢",
+      "category": "州郡底表缺實體或異名",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0342-S01",
+          "prefecture": "建寧左郡",
+          "state": "定州",
+          "start": 502,
+          "end": 557,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 343,
+        "page_index": 346,
+        "evidence_record_ids": "LR-0342",
+        "excerpt": "仍需归属复核；只证北西阳县存在及陈废县，未载梁所属郡。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0346",
+      "record_id": "LR-0346",
+      "name": "孝昌",
+      "region": "江漢",
+      "category": "州郡底表缺實體或異名",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0346-S01",
+          "prefecture": "南義陽郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 347,
+        "page_index": 347,
+        "evidence_record_ids": "LR-0346",
+        "excerpt": "本轮机器确认；摘要明确齐末司州南义阳侨郡领孝昌，梁承旧。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0351",
+      "record_id": "LR-0351",
+      "name": "曲陵",
+      "region": "江漢",
+      "category": "年代或沿革邊界未定",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0351-S01",
+          "prefecture": "曲陽郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "齐末永宁左郡转为梁曲阳郡的时点未载。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 352,
+        "page_index": 347,
+        "evidence_record_ids": "LR-0351",
+        "excerpt": "本轮机器确认；摘要明确梁置曲阳郡、曲陵为治；齐末永宁左郡是旧属背景。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0354",
+      "record_id": "LC-0354",
+      "name": "平氏",
+      "region": "江漢",
+      "category": "來源或舊歸屬衝突",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LC-0354-S01",
+          "prefecture": "齊安郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "原核准附带疑点：正文齐末淮南侨郡领平氏，原确认齐安；需核对。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 355,
+        "page_index": 347,
+        "evidence_record_ids": "LC-0354",
+        "excerpt": "保留原核准；归属沿用原核准；本轮已检查建置、终止、更名、改属与得失纪年。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0361",
+      "record_id": "LR-0361",
+      "name": "都",
+      "region": "江漢",
+      "category": "州郡底表缺實體或異名",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0361-S01",
+          "prefecture": "馮翊郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 362,
+        "page_index": 348,
+        "evidence_record_ids": "LR-0361",
+        "excerpt": "本轮机器确认；摘要明确齐末雍州冯翊侨郡领都县，梁承旧；不将OCR县名郡字当作郡级单位。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0362",
+      "record_id": "LR-0362",
+      "name": "棘陽",
+      "region": "江漢",
+      "category": "州郡底表缺實體或異名",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0362-S01",
+          "prefecture": "河南郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 363,
+        "page_index": 348,
+        "evidence_record_ids": "LR-0362",
+        "excerpt": "本轮机器确认；摘要明确齐雍州河南侨郡领棘阳，并已判隋志新野说属汉晋旧规，不能混为梁属。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0371",
+      "record_id": "LC-0371",
+      "name": "武當",
+      "region": "江漢",
+      "category": "來源或舊歸屬衝突",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LC-0371-S01",
+          "prefecture": "新野郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "原核准附带疑点：正文齐末始平侨郡领武当，原确认新野；需核对。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 372,
+        "page_index": 349,
+        "evidence_record_ids": "LC-0371",
+        "excerpt": "保留原核准；归属沿用原核准；本轮已检查建置、终止、更名、改属与得失纪年。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0392",
+      "record_id": "LC-0392",
+      "name": "熙潭",
+      "region": "嶺南",
+      "category": "年代或沿革邊界未定",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LC-0392-S01",
+          "prefecture": "新會郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "始成改熙潭记梁陈间，缺新名启用年。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 393,
+        "page_index": 372,
+        "evidence_record_ids": "LC-0392",
+        "excerpt": "保留原核准；归属沿用原核准；本轮已检查建置、终止、更名、改属与得失纪年。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0394",
+      "record_id": "LC-0394",
+      "name": "懷集",
+      "region": "嶺南",
+      "category": "年代或沿革邊界未定",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LC-0394-S01",
+          "prefecture": "新會郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "招集改怀集记梁陈间，缺新名启用年。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 395,
+        "page_index": 372,
+        "evidence_record_ids": "LC-0394",
+        "excerpt": "保留原核准；归属沿用原核准；本轮已检查建置、终止、更名、改属与得失纪年。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0395",
+      "record_id": "LC-0395",
+      "name": "新建",
+      "region": "嶺南",
+      "category": "年代或沿革邊界未定",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LC-0395-S01",
+          "prefecture": "新會郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "新熙改新建记梁陈间，缺新名启用年。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 396,
+        "page_index": 372,
+        "evidence_record_ids": "LC-0395",
+        "excerpt": "保留原核准；归属沿用原核准；本轮已检查建置、终止、更名、改属与得失纪年。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0396",
+      "record_id": "LC-0396",
+      "name": "化召",
+      "region": "嶺南",
+      "category": "年代或沿革邊界未定",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LC-0396-S01",
+          "prefecture": "新會郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "化召始置记梁陈间，缺始年。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 397,
+        "page_index": 372,
+        "evidence_record_ids": "LC-0396",
+        "excerpt": "保留原核准；归属沿用原核准；本轮已检查建置、终止、更名、改属与得失纪年。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0408",
+      "record_id": "LC-0408",
+      "name": "安懷",
+      "region": "嶺南",
+      "category": "來源或舊歸屬衝突",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LC-0408-S01",
+          "prefecture": "郁林郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "原核准附带疑点：正文《补梁志》列梁化郡，原确认郁林；名称与郡属时段需核对。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 409,
+        "page_index": 374,
+        "evidence_record_ids": "LC-0408",
+        "excerpt": "保留原核准；归属沿用原核准；本轮已检查建置、终止、更名、改属与得失纪年。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0422",
+      "record_id": "LC-0422",
+      "name": "銅陵",
+      "region": "嶺南",
+      "category": "年代或沿革邊界未定",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LC-0422-S01",
+          "prefecture": "新寧郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "龙潭改铜陵记梁陈间，缺新名启用年。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 423,
+        "page_index": 375,
+        "evidence_record_ids": "LC-0422",
+        "excerpt": "保留原核准；归属沿用原核准；本轮已检查建置、终止、更名、改属与得失纪年。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0430",
+      "record_id": "LC-0430",
+      "name": "高涼",
+      "region": "嶺南",
+      "category": "年代或沿革邊界未定",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LC-0430-S01",
+          "prefecture": "高涼郡",
+          "state": null,
+          "start": 527,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "高凉县名记梁大通中由思平改，范围内确年未定。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 431,
+        "page_index": 376,
+        "evidence_record_ids": "LC-0430",
+        "excerpt": "保留原核准；归属沿用原核准；本轮已检查建置、终止、更名、改属与得失纪年。；更名时间范围：梁大通中思平改高凉（527—529）"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0443",
+      "record_id": "LC-0443",
+      "name": "安化",
+      "region": "嶺南",
+      "category": "來源或舊歸屬衝突",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LC-0443-S01",
+          "prefecture": "桂林郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "原核准附带疑点：正文梁宋隆郡领安化，原确认桂林；字段与结论不符。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 444,
+        "page_index": 377,
+        "evidence_record_ids": "LC-0443",
+        "excerpt": "保留原核准；归属沿用原核准；本轮已检查建置、终止、更名、改属与得失纪年。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0455",
+      "record_id": "LR-0455",
+      "name": "梁泰",
+      "region": "嶺南",
+      "category": "來源重複待整理",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0455-S01",
+          "prefecture": "梁泰郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "与LR-0464为梁泰县同一引文重复；归属可定，网页导入前应确认合并，不擅删原记录。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 456,
+        "page_index": 378,
+        "evidence_record_ids": "LR-0455",
+        "excerpt": "本轮机器确认；引文明言梁置梁泰郡及县；与LR-0464同段重复，保留两记录并提示后续去重。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0464",
+      "record_id": "LR-0464",
+      "name": "梁泰",
+      "region": "嶺南",
+      "category": "來源重複待整理",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0464-S01",
+          "prefecture": "梁泰郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "与LR-0455为梁泰县同一引文重复；归属可定，网页导入前应确认合并，不擅删原记录。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 465,
+        "page_index": 379,
+        "evidence_record_ids": "LR-0464",
+        "excerpt": "本轮机器确认；引文明言梁置梁泰郡及县；与LR-0455同段重复，保留两记录并提示后续去重。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0474",
+      "record_id": "LR-0474",
+      "name": "開陽",
+      "region": "嶺南",
+      "category": "州郡底表缺實體或異名",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0474-S01",
+          "prefecture": "永熙郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 475,
+        "page_index": 380,
+        "evidence_record_ids": "LR-0474",
+        "excerpt": "仍需归属复核；开阳、平原、罗阳多郡同条；仅确定双州，缺一对一县郡映射。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0475",
+      "record_id": "LR-0475",
+      "name": "龍鄉",
+      "region": "嶺南",
+      "category": "年代或沿革邊界未定",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0475-S01",
+          "prefecture": "廣熙郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "摘要在梁分广熙郡置处截断；当前广熙默认仅为候选，后期新郡及转换时点需补。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 476,
+        "page_index": 380,
+        "evidence_record_ids": "LR-0475",
+        "excerpt": "本轮机器确认；齐末广熙郡领龙乡明确；汉端溪属苍梧是早期背景；截断的梁分郡后续另留疑点。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0477",
+      "record_id": "LC-0477",
+      "name": "義倫",
+      "region": "嶺南",
+      "category": "州郡底表缺實體或異名",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LC-0477-S01",
+          "prefecture": "珠崖郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 478,
+        "page_index": 381,
+        "evidence_record_ids": "LC-0477",
+        "excerpt": "保留原核准；归属沿用原核准；本轮已检查建置、终止、更名、改属与得失纪年。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0478",
+      "record_id": "LR-0478",
+      "name": "武德",
+      "region": "嶺南",
+      "category": "州郡底表缺實體或異名",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0478-S01",
+          "prefecture": "珠崖郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 479,
+        "page_index": 381,
+        "evidence_record_ids": "LR-0478",
+        "excerpt": "本轮机器确认；既有存考明确从《补梁志》崖州珠崖郡武德县。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0481",
+      "record_id": "LC-0481",
+      "name": "安基",
+      "region": "嶺南",
+      "category": "來源或舊歸屬衝突",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LC-0481-S01",
+          "prefecture": "永平郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "原核准附带疑点：梁安基置建陵郡，原确认永平；未有转换年。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 482,
+        "page_index": 381,
+        "evidence_record_ids": "LC-0481",
+        "excerpt": "保留原核准；归属沿用原核准；本轮已检查建置、终止、更名、改属与得失纪年。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0486",
+      "record_id": "LC-0486",
+      "name": "領方",
+      "region": "嶺南",
+      "category": "來源或舊歸屬衝突",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LC-0486-S01",
+          "prefecture": "郁林郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "原核准附带疑点：梁于领方置领方郡，原确认郁林；未有转换年。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 487,
+        "page_index": 382,
+        "evidence_record_ids": "LC-0486",
+        "excerpt": "保留原核准；归属沿用原核准；本轮已检查建置、终止、更名、改属与得失纪年。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0494",
+      "record_id": "LR-0494",
+      "name": "簡陽",
+      "region": "嶺南",
+      "category": "年代或沿革邊界未定",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0494-S01",
+          "prefecture": "簡陽郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "宁浦分简阳郡的确年未载，依据本来为疑、姑列，不能标成史料确定。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 495,
+        "page_index": 382,
+        "evidence_record_ids": "LR-0494",
+        "excerpt": "本轮机器确认；既有存考结论为梁简阳隶简阳郡，保留疑、姑列的推定性质；宁浦为旧属。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0495",
+      "record_id": "LR-0495",
+      "name": "平山",
+      "region": "嶺南",
+      "category": "年代或沿革邊界未定",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0495-S01",
+          "prefecture": "樂陽郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "宁浦转乐阳郡时点未载；不得把前者删出前期沿革。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 496,
+        "page_index": 382,
+        "evidence_record_ids": "LR-0495",
+        "excerpt": "本轮机器确认；正文明确梁置乐阳郡治平山县；晋宁浦只是旧属。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0503",
+      "record_id": "LR-0503",
+      "name": "豪靜",
+      "region": "嶺南",
+      "category": "州郡底表缺實體或異名",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0503-S01",
+          "prefecture": "開江、武城二郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 504,
+        "page_index": 383,
+        "evidence_record_ids": "LR-0503",
+        "excerpt": "仍需归属复核；梁置开江、武城二郡，豪静未被唯一分配。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0530",
+      "record_id": "LC-0530",
+      "name": "高興",
+      "region": "嶺南",
+      "category": "同地域同名或階段重疊",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LC-0530-S01",
+          "prefecture": "高興郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "同地域本年有多個同名郡，未能唯一連接。",
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 531,
+        "page_index": 386,
+        "evidence_record_ids": "LC-0530",
+        "excerpt": "保留原核准；归属沿用原核准；本轮已检查建置、终止、更名、改属与得失纪年。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0540",
+      "record_id": "LC-0540",
+      "name": "齊康",
+      "region": "嶺南",
+      "category": "同地域同名或階段重疊",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LC-0540-S01",
+          "prefecture": "齊康郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "同地域本年有多個同名郡，未能唯一連接。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 541,
+        "page_index": 387,
+        "evidence_record_ids": "LC-0540",
+        "excerpt": "保留原核准；归属沿用原核准；本轮已检查建置、终止、更名、改属与得失纪年。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0541",
+      "record_id": "LC-0541",
+      "name": "徐聞",
+      "region": "嶺南",
+      "category": "年代或沿革邊界未定",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LC-0541-S01",
+          "prefecture": "合浦郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "徐闻梁陈间并齐康，未给具体终年。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 542,
+        "page_index": 387,
+        "evidence_record_ids": "LC-0541",
+        "excerpt": "保留原核准；归属沿用原核准；本轮已检查建置、终止、更名、改属与得失纪年。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0546",
+      "record_id": "LC-0546",
+      "name": "百梁",
+      "region": "嶺南",
+      "category": "年代或沿革邊界未定",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LC-0546-S01",
+          "prefecture": "百梁郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "百梁郡及县疑于梁陈间废，未给确年。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 547,
+        "page_index": 388,
+        "evidence_record_ids": "LC-0546",
+        "excerpt": "保留原核准；归属沿用原核准；本轮已检查建置、终止、更名、改属与得失纪年。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0547",
+      "record_id": "LC-0547",
+      "name": "始昌",
+      "region": "嶺南",
+      "category": "年代或沿革邊界未定",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LC-0547-S01",
+          "prefecture": "百梁郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "引LC-0546梁陈间废县，未给确年。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 548,
+        "page_index": 388,
+        "evidence_record_ids": "LC-0547",
+        "excerpt": "保留原核准；归属沿用原核准；本轮已检查建置、终止、更名、改属与得失纪年。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0548",
+      "record_id": "LC-0548",
+      "name": "宋西",
+      "region": "嶺南",
+      "category": "年代或沿革邊界未定",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LC-0548-S01",
+          "prefecture": "百梁郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "引LC-0546梁陈间废县，未给确年。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 549,
+        "page_index": 388,
+        "evidence_record_ids": "LC-0548",
+        "excerpt": "保留原核准；归属沿用原核准；本轮已检查建置、终止、更名、改属与得失纪年。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0559",
+      "record_id": "LR-0559",
+      "name": "安平",
+      "region": "嶺南",
+      "category": "州郡底表缺實體或異名",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0559-S01",
+          "prefecture": "寧海郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 560,
+        "page_index": 389,
+        "evidence_record_ids": "LR-0559",
+        "excerpt": "本轮机器确认；引文明言梁安平县置黄州及宁海郡。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0562",
+      "record_id": "LR-0562",
+      "name": "金寧",
+      "region": "嶺南",
+      "category": "州郡底表缺實體或異名",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0562-S01",
+          "prefecture": "日南郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 563,
+        "page_index": 389,
+        "evidence_record_ids": "LR-0562",
+        "excerpt": "仍需归属复核；只证梁金宁县及利州；州名不能作为所属郡。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0563",
+      "record_id": "LR-0563",
+      "name": "交谷",
+      "region": "嶺南",
+      "category": "州郡底表缺實體或異名",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0563-S01",
+          "prefecture": "日南郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 564,
+        "page_index": 389,
+        "evidence_record_ids": "LR-0563",
+        "excerpt": "仍需归属复核；只证梁交谷县及明州；州名不能作为所属郡。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0570",
+      "record_id": "LR-0570",
+      "name": "安遠",
+      "region": "嶺南",
+      "category": "州郡底表缺實體或異名",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0570-S01",
+          "prefecture": "日南郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 571,
+        "page_index": 390,
+        "evidence_record_ids": "LR-0570",
+        "excerpt": "仍需归属复核；本条越裳一带安远，南海、桂林、南康等同名候选不能定位到本县；日南为隋属。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0580",
+      "record_id": "LR-0580",
+      "name": "梁化",
+      "region": "嶺南",
+      "category": "年代或沿革邊界未定",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0580-S01",
+          "prefecture": "梁化郡",
+          "state": null,
+          "start": 542,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "542年前长安县存在，但本表未明确旧属郡；需补旧名对应郡后生成此前时段。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 581,
+        "page_index": 391,
+        "evidence_record_ids": "LR-0580",
+        "excerpt": "本轮机器确认；正文明确大同八年置梁化郡并改长安为梁化县；始兴候选为另一梁化县。；更名及置郡：大同八年（542）长安改梁化，并置梁化郡"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0585",
+      "record_id": "LC-0585",
+      "name": "翁源",
+      "region": "嶺南",
+      "category": "年代或沿革邊界未定",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LC-0585-S01",
+          "prefecture": "清遠郡",
+          "state": null,
+          "start": 552,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "建县时间未定：承圣末置翁源（年号范围552—555；末并非唯一年份）；不能把范围下限当作确定建县年。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 586,
+        "page_index": 392,
+        "evidence_record_ids": "LC-0585",
+        "excerpt": "保留原核准；归属沿用原核准；本轮已检查建置、终止、更名、改属与得失纪年。；建县时间范围：承圣末置翁源（年号范围552—555；末并非唯一年份）"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0587",
+      "record_id": "LR-0587",
+      "name": "中宿",
+      "region": "嶺南",
+      "category": "年代或沿革邊界未定",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0587-S01",
+          "prefecture": "清遠郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "始兴转清远郡的梁期年份未载，导入须配合两郡存续记录。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 588,
+        "page_index": 392,
+        "evidence_record_ids": "LR-0587",
+        "excerpt": "本轮机器确认；正文明确梁置清远郡、中宿县属之；始兴为齐末旧属。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0589",
+      "record_id": "LC-0589",
+      "name": "含洭",
+      "region": "嶺南",
+      "category": "來源或舊歸屬衝突",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LC-0589-S01",
+          "prefecture": "始興郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "原核准附带疑点：梁含洭置阳山郡，原确认始兴；需结合阳山郡时间。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 590,
+        "page_index": 392,
+        "evidence_record_ids": "LC-0589",
+        "excerpt": "保留原核准；归属沿用原核准；本轮已检查建置、终止、更名、改属与得失纪年。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0591",
+      "record_id": "LC-0591",
+      "name": "桂陽",
+      "region": "嶺南",
+      "category": "來源或舊歸屬衝突",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LC-0591-S01",
+          "prefecture": "始興郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "原核准附带疑点：梁桂阳置阳山郡，原确认始兴；需结合阳山郡时间。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 592,
+        "page_index": 392,
+        "evidence_record_ids": "LC-0591",
+        "excerpt": "保留原核准；归属沿用原核准；本轮已检查建置、终止、更名、改属与得失纪年。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0598",
+      "record_id": "LR-0598",
+      "name": "湘濱",
+      "region": "沅湘",
+      "category": "資料分區不一致",
+      "resolved": true,
+      "assignments": [
+        {
+          "id": "LR-0598-S01",
+          "prefecture": "巴陵郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 599,
+        "page_index": 396,
+        "evidence_record_ids": "LR-0598",
+        "excerpt": "仍需归属复核；摘要明确湘滨县存在，但未载梁郡；巴陵只是隋志罗县标题。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [
+        "LR-0598-S01-E502"
+      ],
+      "resolution": "人工明定巴陵郡；跨資料分區的具名實體對應。",
+      "remaining_note": "已至少在有郡段的年度連接；不表示所有年度或建廢年皆已解決。"
+    },
+    {
+      "county_id": "lc_0616",
+      "record_id": "LR-0616",
+      "name": "湘潭",
+      "region": "沅湘",
+      "category": "年代或沿革邊界未定",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0616-S01",
+          "prefecture": "衡陽郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "建县时间未定：天监中置湘潭县（502—519，非确年）；不能把范围下限当作确定建县年。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 617,
+        "page_index": 397,
+        "evidence_record_ids": "LR-0616",
+        "excerpt": "仍需归属复核；天监中析阴山置湘潭可作时间范围；未载梁所属郡。；建县时间范围：天监中置湘潭县（502—519，非确年）"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0617",
+      "record_id": "LR-0617",
+      "name": "重華",
+      "region": "沅湘",
+      "category": "資料分區不一致",
+      "resolved": true,
+      "assignments": [
+        {
+          "id": "LR-0617-S01",
+          "prefecture": "巴陵郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 618,
+        "page_index": 397,
+        "evidence_record_ids": "LR-0617",
+        "excerpt": "仍需归属复核；只记梁置重华、隋废，缺梁郡。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [
+        "LR-0617-S01-E502"
+      ],
+      "resolution": "人工明定巴陵郡；跨資料分區的具名實體對應。",
+      "remaining_note": "已至少在有郡段的年度連接；不表示所有年度或建廢年皆已解決。"
+    },
+    {
+      "county_id": "lc_0622",
+      "record_id": "LC-0622",
+      "name": "觀陽",
+      "region": "沅湘",
+      "category": "年代或沿革邊界未定",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LC-0622-S01",
+          "prefecture": "零陵郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "观阳与灌阳记梁陈间字讹，缺名称转换年。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 623,
+        "page_index": 398,
+        "evidence_record_ids": "LC-0622",
+        "excerpt": "保留原核准；归属沿用原核准；本轮已检查建置、终止、更名、改属与得失纪年。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0634",
+      "record_id": "LR-0634",
+      "name": "扶夷",
+      "region": "沅湘",
+      "category": "年代或沿革邊界未定",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0634-S01",
+          "prefecture": "邵陵郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "梁陈间改扶为扶夷，没有确切改名年。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 635,
+        "page_index": 399,
+        "evidence_record_ids": "LR-0634",
+        "excerpt": "本轮机器确认；正文说明邵陵郡夫夷县历宋齐延续至梁陈；扶夷名称更改时点未详。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0636",
+      "record_id": "LR-0636",
+      "name": "均陽",
+      "region": "巴漢",
+      "category": "州郡底表缺實體或異名",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0636-S01",
+          "prefecture": "淅陽郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 637,
+        "page_index": 417,
+        "evidence_record_ids": "LR-0636",
+        "excerpt": "仍需归属复核；只记梁置均阳，淅阳为隋志标题，不直接反投梁郡。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0642",
+      "record_id": "LR-0642",
+      "name": "晉安",
+      "region": "巴漢",
+      "category": "州郡底表缺實體或異名",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0642-S01",
+          "prefecture": "新巴郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 643,
+        "page_index": 418,
+        "evidence_record_ids": "LR-0642",
+        "excerpt": "本轮机器确认；齐末梁州新巴郡领晋安明确；陈南安候选属于江表同名县，不能混用。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0645",
+      "record_id": "LC-0645",
+      "name": "上廉",
+      "region": "巴漢",
+      "category": "年代或沿革邊界未定",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LC-0645-S01",
+          "prefecture": "上庸郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "梁初上廉后改吉阳，缺更名年，不能全梁一律使用上廉旧名。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 646,
+        "page_index": 418,
+        "evidence_record_ids": "LC-0645",
+        "excerpt": "保留原核准；归属沿用原核准；本轮已检查建置、终止、更名、改属与得失纪年。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0647",
+      "record_id": "LC-0647",
+      "name": "上津",
+      "region": "巴漢",
+      "category": "州郡底表缺實體或異名",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LC-0647-S01",
+          "prefecture": "上津郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 648,
+        "page_index": 418,
+        "evidence_record_ids": "LC-0647",
+        "excerpt": "保留原核准；归属沿用原核准；本轮已检查建置、终止、更名、改属与得失纪年。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0648",
+      "record_id": "LR-0648",
+      "name": "武功",
+      "region": "巴漢",
+      "category": "州郡底表缺實體或異名",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0648-S01",
+          "prefecture": "南始平郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 649,
+        "page_index": 418,
+        "evidence_record_ids": "LR-0648",
+        "excerpt": "本轮机器确认；同一引文明言梁改齐兴为南始平郡，复有武功、武阳二县；后文兴州为另一事项。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0649",
+      "record_id": "LR-0649",
+      "name": "武陽",
+      "region": "巴漢",
+      "category": "州郡底表缺實體或異名",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0649-S01",
+          "prefecture": "南始平郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 650,
+        "page_index": 418,
+        "evidence_record_ids": "LR-0649；LR-0648",
+        "excerpt": "本轮机器确认；通过LR-0648武功县所引同段补足武阳、南始平郡关系，排除蜀中犍为等候选。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0650",
+      "record_id": "LR-0650",
+      "name": "房陵",
+      "region": "巴漢",
+      "category": "州郡底表缺實體或異名",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0650-S01",
+          "prefecture": "南新城郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 651,
+        "page_index": 419,
+        "evidence_record_ids": "LR-0650",
+        "excerpt": "仍需归属复核；齐末房陵郡与隋志旧新城郡关系未明，梁末置岐州没有交代郡的更改时点。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0651",
+      "record_id": "LR-0651",
+      "name": "安城",
+      "region": "巴漢",
+      "category": "州郡底表缺實體或異名",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0651-S01",
+          "prefecture": "房陵郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 652,
+        "page_index": 419,
+        "evidence_record_ids": "LR-0651",
+        "excerpt": "仍需归属复核；本县在房陵竹山区域；新平左郡仅同名匹配，不能直接采纳。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0654",
+      "record_id": "LC-0654",
+      "name": "閬中",
+      "region": "巴漢",
+      "category": "來源或舊歸屬衝突",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LC-0654-S01",
+          "prefecture": "北巴西郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "原核准附带疑点：正文梁置北巴郡，原确认北巴西，郡名是否阶段变化需核。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 655,
+        "page_index": 419,
+        "evidence_record_ids": "LC-0654",
+        "excerpt": "保留原核准；归属沿用原核准；本轮已检查建置、终止、更名、改属与得失纪年。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0659",
+      "record_id": "LR-0659",
+      "name": "南部",
+      "region": "巴漢",
+      "category": "州郡底表缺實體或異名",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0659-S01",
+          "prefecture": "巴西郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 660,
+        "page_index": 419,
+        "evidence_record_ids": "LR-0659",
+        "excerpt": "仍需归属复核；只记南充国更名南部，西魏新安郡不能反投为梁郡。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0662",
+      "record_id": "LR-0662",
+      "name": "曾口",
+      "region": "巴漢",
+      "category": "州郡底表缺實體或異名",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0662-S01",
+          "prefecture": "清化郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 663,
+        "page_index": 420,
+        "evidence_record_ids": "LR-0662",
+        "excerpt": "仍需归属复核；只记梁置曾口，清化为隋志标题，不直接反投梁郡。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0663",
+      "record_id": "LR-0663",
+      "name": "其章",
+      "region": "巴漢",
+      "category": "州郡底表缺實體或異名",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0663-S01",
+          "prefecture": "清化郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 664,
+        "page_index": 420,
+        "evidence_record_ids": "LR-0663",
+        "excerpt": "仍需归属复核；只记梁置其章，清化为隋志标题，不直接反投梁郡。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0665",
+      "record_id": "LC-0665",
+      "name": "平州",
+      "region": "巴漢",
+      "category": "年代或沿革邊界未定",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LC-0665-S01",
+          "prefecture": "遂寧郡",
+          "state": null,
+          "start": 525,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "原表与引文为平州，结语作平川；本轮不改名，年份525可单独采纳。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 666,
+        "page_index": 420,
+        "evidence_record_ids": "LC-0665",
+        "excerpt": "保留原核准；归属沿用原核准；本轮已检查建置、终止、更名、改属与得失纪年。；建县：普通六年（525）置平州县"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0668",
+      "record_id": "LC-0668",
+      "name": "池川",
+      "region": "巴漢",
+      "category": "年代或沿革邊界未定",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LC-0668-S01",
+          "prefecture": "木門郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "大通六年年号有误，建县年留空，等待确认原文或既有裁定。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 669,
+        "page_index": 420,
+        "evidence_record_ids": "LC-0668；LC-0015",
+        "excerpt": "保留原核准；归属沿用原核准；本轮已检查建置、终止、更名、改属与得失纪年。；异常年号（不换算）：梁大通六年置池川"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0671",
+      "record_id": "LC-0671",
+      "name": "綏安",
+      "region": "巴漢",
+      "category": "年代或沿革邊界未定",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LC-0671-S01",
+          "prefecture": "景陽郡",
+          "state": null,
+          "start": 535,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "建县时间未定：大同中置绥安（535—546，非确年）；不能把范围下限当作确定建县年。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 672,
+        "page_index": 421,
+        "evidence_record_ids": "LC-0671",
+        "excerpt": "保留原核准；归属沿用原核准；本轮已检查建置、终止、更名、改属与得失纪年。；建县时间范围：大同中置绥安（535—546，非确年）"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0672",
+      "record_id": "LR-0672",
+      "name": "宕渠",
+      "region": "巴漢",
+      "category": "州郡底表缺實體或異名",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0672-S01",
+          "prefecture": "境陽郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 673,
+        "page_index": 421,
+        "evidence_record_ids": "LR-0672",
+        "excerpt": "本轮机器确认；引文明言梁置宕渠县并置境阳郡。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0674",
+      "record_id": "LR-0674",
+      "name": "大寅",
+      "region": "巴漢",
+      "category": "州郡底表缺實體或異名",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0674-S01",
+          "prefecture": "巴西郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 675,
+        "page_index": 421,
+        "evidence_record_ids": "LR-0674",
+        "excerpt": "仍需归属复核；天监元年建县可定；阆中为析出县，未明确大寅所归郡。；建县：天监元年（502）置县"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0678",
+      "record_id": "LR-0678",
+      "name": "鄰山",
+      "region": "巴漢",
+      "category": "僅知州，郡未詳",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0678-S01",
+          "prefecture": null,
+          "state": "鄰州",
+          "start": 537,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "人工只確定所屬州，郡無考；保留州層線索，不虛造郡名。",
+      "original_pending_reasons": [
+        "人工意見僅定位到州，所屬郡仍未詳。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 679,
+        "page_index": 421,
+        "evidence_record_ids": "LR-0678",
+        "excerpt": "仍需归属复核；537年梁置邻州和邻山，邻山郡系后魏改置，不能移作梁郡。；建县：大同三年（537）置邻山／邻水"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0679",
+      "record_id": "LR-0679",
+      "name": "鄰水",
+      "region": "巴漢",
+      "category": "僅知州，郡未詳",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0679-S01",
+          "prefecture": null,
+          "state": "鄰州",
+          "start": 537,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "人工只確定所屬州，郡無考；保留州層線索，不虛造郡名。",
+      "original_pending_reasons": [
+        "人工意見僅定位到州，所屬郡仍未詳。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 680,
+        "page_index": 421,
+        "evidence_record_ids": "LR-0679",
+        "excerpt": "仍需归属复核；537年建县可定，寄理州城仅为治所信息，未载梁所属郡。；建县：大同三年（537）置邻山／邻水"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0681",
+      "record_id": "LR-0681",
+      "name": "東鄉",
+      "region": "巴漢",
+      "category": "州郡底表缺實體或異名",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0681-S01",
+          "prefecture": "通川郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 682,
+        "page_index": 422,
+        "evidence_record_ids": "LR-0681",
+        "excerpt": "仍需归属复核；只以东乡侯证县存在，通川为隋志标题，不能径定梁郡。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0684",
+      "record_id": "LR-0684",
+      "name": "臨江",
+      "region": "巴漢",
+      "category": "年代或沿革邊界未定",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0684-S01",
+          "prefecture": "臨江郡",
+          "state": null,
+          "start": 540,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "540年前临江县旧属尚不明确；不得因此声称县在540年前不存在。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 685,
+        "page_index": 422,
+        "evidence_record_ids": "LR-0684",
+        "excerpt": "本轮机器确认；正文明确梁临江县立临江郡；大同六年为置郡年，不是建县年。；置郡（非建县）：大同六年（540）立临江郡于临江县"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0685",
+      "record_id": "LR-0685",
+      "name": "南安",
+      "region": "巴漢",
+      "category": "資料分區不一致",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0685-S01",
+          "prefecture": "南安郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 686,
+        "page_index": 422,
+        "evidence_record_ids": "LR-0685",
+        "excerpt": "本轮机器确认；既有存考明确安州南安郡治南安；其他南安同名候选不适用于此地。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "現有同名候選可能確為另一地區，須讀正文所屬州或補正歷史郡名；不可跨區自動取第一郡。"
+    },
+    {
+      "county_id": "lc_0686",
+      "record_id": "LR-0686",
+      "name": "梁安",
+      "region": "巴漢",
+      "category": "僅知州，郡未詳",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0686-S01",
+          "prefecture": null,
+          "state": "南梁州",
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "人工只確定所屬州，郡無考；保留州層線索，不虛造郡名。",
+      "original_pending_reasons": [
+        "人工意見僅定位到州，所屬郡仍未詳。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 687,
+        "page_index": 422,
+        "evidence_record_ids": "LR-0686",
+        "excerpt": "仍需归属复核；只记梁安属南梁州，未给郡名。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0688",
+      "record_id": "LR-0688",
+      "name": "白水",
+      "region": "巴漢",
+      "category": "州郡底表缺實體或異名",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0688-S01",
+          "prefecture": "普安郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 689,
+        "page_index": 422,
+        "evidence_record_ids": "LR-0688",
+        "excerpt": "仍需归属复核；与同地域LC-0657白水非当然同县，晋寿候选未获本条正文确认。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0689",
+      "record_id": "LR-0689",
+      "name": "華陽",
+      "region": "巴漢",
+      "category": "州郡底表缺實體或異名",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0689-S01",
+          "prefecture": "普安郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 690,
+        "page_index": 422,
+        "evidence_record_ids": "LR-0689",
+        "excerpt": "仍需归属复核；只记旧华阳、西魏改名，未给梁郡。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0691",
+      "record_id": "LC-0691",
+      "name": "漢陽",
+      "region": "巴漢",
+      "category": "來源或舊歸屬衝突",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LC-0691-S01",
+          "prefecture": "新城郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "原核准附带疑点：正文汉阳属魏明郡，原确认新城；字段与结论不符。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 692,
+        "page_index": 423,
+        "evidence_record_ids": "LC-0691",
+        "excerpt": "保留原核准；归属沿用原核准；本轮已检查建置、终止、更名、改属与得失纪年。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0692",
+      "record_id": "LC-0692",
+      "name": "寧都",
+      "region": "巴漢",
+      "category": "來源或舊歸屬衝突",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LC-0692-S01",
+          "prefecture": "安康郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "原核准附带疑点：正文引汉阳条魏明郡，原确认安康；需核对。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 693,
+        "page_index": 423,
+        "evidence_record_ids": "LC-0692",
+        "excerpt": "保留原核准；归属沿用原核准；本轮已检查建置、终止、更名、改属与得失纪年。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0694",
+      "record_id": "LC-0694",
+      "name": "梁廣",
+      "region": "巴漢",
+      "category": "年代或沿革邊界未定",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LC-0694-S01",
+          "prefecture": "大谷郡",
+          "state": null,
+          "start": 535,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "535只是既有存考得地的下限，准确建县和得地年份均未给。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 695,
+        "page_index": 423,
+        "evidence_record_ids": "LC-0694",
+        "excerpt": "保留原核准；归属沿用原核准；本轮已检查建置、终止、更名、改属与得失纪年。；否定旧纪年及得地下限：普通六年（525）置县原存考判误；梁得大谷郡在大同元年后"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0702",
+      "record_id": "LR-0702",
+      "name": "巫",
+      "region": "蜀中（含南中）",
+      "category": "年代或沿革邊界未定",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0702-S01",
+          "prefecture": "建平郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "既有存考引文同时记梁武帝废建平郡，但未给年份和此后郡属。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 703,
+        "page_index": 436,
+        "evidence_record_ids": "LR-0702",
+        "excerpt": "本轮机器确认；齐末建平郡领巫明确；云南候选为错误取词；梁武帝废郡时点另留人工。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0703",
+      "record_id": "LC-0703",
+      "name": "泰昌",
+      "region": "蜀中（含南中）",
+      "category": "同地域同名或階段重疊",
+      "resolved": true,
+      "assignments": [
+        {
+          "id": "LC-0703-S01",
+          "prefecture": "建平郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "同地域本年有多個同名郡，未能唯一連接。",
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 704,
+        "page_index": 436,
+        "evidence_record_ids": "LC-0703",
+        "excerpt": "保留原核准；归属沿用原核准；本轮已检查建置、终止、更名、改属与得失纪年。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [
+        "LC-0703-S01-E502"
+      ],
+      "resolution": "按原書地域及附郡上下文排除寧州同名建平。",
+      "remaining_note": "已至少在有郡段的年度連接；不表示所有年度或建廢年皆已解決。"
+    },
+    {
+      "county_id": "lc_0704",
+      "record_id": "LC-0704",
+      "name": "北井",
+      "region": "蜀中（含南中）",
+      "category": "同地域同名或階段重疊",
+      "resolved": true,
+      "assignments": [
+        {
+          "id": "LC-0704-S01",
+          "prefecture": "建平郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "同地域本年有多個同名郡，未能唯一連接。",
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 705,
+        "page_index": 436,
+        "evidence_record_ids": "LC-0704",
+        "excerpt": "保留原核准；归属沿用原核准；本轮已检查建置、终止、更名、改属与得失纪年。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [
+        "LC-0704-S01-E502"
+      ],
+      "resolution": "按原書地域及附郡上下文排除寧州同名建平。",
+      "remaining_note": "已至少在有郡段的年度連接；不表示所有年度或建廢年皆已解決。"
+    },
+    {
+      "county_id": "lc_0710",
+      "record_id": "LC-0710",
+      "name": "新都",
+      "region": "蜀中（含南中）",
+      "category": "來源或舊歸屬衝突",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LC-0710-S01",
+          "prefecture": "廣漢郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "原核准附带疑点：梁新都置始康郡，原确认广汉；需确认转属时段。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 711,
+        "page_index": 437,
+        "evidence_record_ids": "LC-0710",
+        "excerpt": "保留原核准；归属沿用原核准；本轮已检查建置、终止、更名、改属与得失纪年。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0711",
+      "record_id": "LC-0711",
+      "name": "江原",
+      "region": "蜀中（含南中）",
+      "category": "來源或舊歸屬衝突",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LC-0711-S01",
+          "prefecture": "廣漢郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "原核准附带疑点：正文齐晋原、后江原，原确认广汉；疑错配。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 712,
+        "page_index": 437,
+        "evidence_record_ids": "LC-0711",
+        "excerpt": "保留原核准；归属沿用原核准；本轮已检查建置、终止、更名、改属与得失纪年。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0712",
+      "record_id": "LC-0712",
+      "name": "廣都",
+      "region": "蜀中（含南中）",
+      "category": "來源或舊歸屬衝突",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LC-0712-S01",
+          "prefecture": "廣漢郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "原核准附带疑点：正文宁蜀侨郡领广都，原确认广汉；需核对。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 713,
+        "page_index": 437,
+        "evidence_record_ids": "LC-0712",
+        "excerpt": "保留原核准；归属沿用原核准；本轮已检查建置、终止、更名、改属与得失纪年。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0717",
+      "record_id": "LR-0717",
+      "name": "僰道",
+      "region": "蜀中（含南中）",
+      "category": "州郡底表缺實體或異名",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0717-S01",
+          "prefecture": "犍為郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 718,
+        "page_index": 437,
+        "evidence_record_ids": "LR-0717",
+        "excerpt": "本轮机器确认；齐末犍为郡领僰道明确，隋仍存县，依齐末统属默认。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0718",
+      "record_id": "LC-0718",
+      "name": "南廣",
+      "region": "蜀中（含南中）",
+      "category": "來源或舊歸屬衝突",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LC-0718-S01",
+          "prefecture": "南廣郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "原核准附带疑点：正文梁南广置六同郡，原确认南广；疑同名错配。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 719,
+        "page_index": 438,
+        "evidence_record_ids": "LC-0718",
+        "excerpt": "保留原核准；归属沿用原核准；本轮已检查建置、终止、更名、改属与得失纪年。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0721",
+      "record_id": "LR-0721",
+      "name": "通泉",
+      "region": "蜀中（含南中）",
+      "category": "州郡底表缺實體或異名",
+      "resolved": true,
+      "assignments": [
+        {
+          "id": "LR-0721-S01",
+          "prefecture": "西宕渠郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 722,
+        "page_index": 438,
+        "evidence_record_ids": "LR-0721",
+        "excerpt": "本轮机器确认；摘要结论明确梁西宕渠侨郡领通泉实县。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [
+        "LR-0721-S01-E502"
+      ],
+      "resolution": "通泉所附西宕渠侨郡依正文及州地域定位。",
+      "remaining_note": "已至少在有郡段的年度連接；不表示所有年度或建廢年皆已解決。"
+    },
+    {
+      "county_id": "lc_0729",
+      "record_id": "LR-0729",
+      "name": "涪",
+      "region": "蜀中（含南中）",
+      "category": "州郡底表缺實體或異名",
+      "resolved": true,
+      "assignments": [
+        {
+          "id": "LR-0729-S01",
+          "prefecture": "巴西郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 730,
+        "page_index": 439,
+        "evidence_record_ids": "LR-0729",
+        "excerpt": "仍需归属复核；齐末梓潼领涪与隋志旧巴西郡间的梁期变动不明。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [
+        "LR-0729-S01-E502"
+      ],
+      "resolution": "依治所涪和蜀中上下文連接雙頭郡。",
+      "remaining_note": "已至少在有郡段的年度連接；不表示所有年度或建廢年皆已解決。"
+    },
+    {
+      "county_id": "lc_0730",
+      "record_id": "LR-0730",
+      "name": "孱亭",
+      "region": "蜀中（含南中）",
+      "category": "州郡底表缺實體或異名",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0730-S01",
+          "prefecture": "金山郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 731,
+        "page_index": 439,
+        "evidence_record_ids": "LR-0730",
+        "excerpt": "仍需归属复核；只记孱亭及西魏改名，未载梁郡。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0731",
+      "record_id": "LR-0731",
+      "name": "益昌",
+      "region": "蜀中（含南中）",
+      "category": "州郡底表缺實體或異名",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0731-S01",
+          "prefecture": "金山郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 732,
+        "page_index": 439,
+        "evidence_record_ids": "LR-0731",
+        "excerpt": "仍需归属复核；旧益昌、晋兴两县未给梁郡；金山仅隋志标题。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0732",
+      "record_id": "LC-0732",
+      "name": "晉興",
+      "region": "蜀中（含南中）",
+      "category": "來源或舊歸屬衝突",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LC-0732-S01",
+          "prefecture": "東遂寧郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "原核准附带疑点：本条晋兴引用LR-0731益昌条，非LC-0724的东遂宁郡晋兴，存在同名县错配风险。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 733,
+        "page_index": 439,
+        "evidence_record_ids": "LC-0732",
+        "excerpt": "保留原核准；归属沿用原核准；本轮已检查建置、终止、更名、改属与得失纪年。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0733",
+      "record_id": "LR-0733",
+      "name": "長楊",
+      "region": "蜀中（含南中）",
+      "category": "資料分區不一致",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0733-S01",
+          "prefecture": "晉熙郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 734,
+        "page_index": 439,
+        "evidence_record_ids": "LR-0733",
+        "excerpt": "本轮机器确认；同条明确旧晋熙郡及长杨、南武都，后周合并；依既有梁存考，不取隋蜀郡标题。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "現有同名候選可能確為另一地區，須讀正文所屬州或補正歷史郡名；不可跨區自動取第一郡。"
+    },
+    {
+      "county_id": "lc_0734",
+      "record_id": "LR-0734",
+      "name": "南武都",
+      "region": "蜀中（含南中）",
+      "category": "資料分區不一致",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LR-0734-S01",
+          "prefecture": "晉熙郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": true
+        }
+      ],
+      "issues": "",
+      "original_pending_reasons": [
+        "所定郡在本年、同地域的政區底表未見；仍保留人工意見，不反推郡的存在。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 735,
+        "page_index": 439,
+        "evidence_record_ids": "LR-0734；LR-0733",
+        "excerpt": "本轮机器确认；通过LR-0733同段引用补足南武都与晋熙郡关系。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "現有同名候選可能確為另一地區，須讀正文所屬州或補正歷史郡名；不可跨區自動取第一郡。"
+    },
+    {
+      "county_id": "lc_0735",
+      "record_id": "LC-0735",
+      "name": "綿竹",
+      "region": "蜀中（含南中）",
+      "category": "來源或舊歸屬衝突",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LC-0735-S01",
+          "prefecture": "汶山郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "原核准附带疑点：正文南阴平侨郡领绵竹，原确认汶山；需核对。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 736,
+        "page_index": 439,
+        "evidence_record_ids": "LC-0735",
+        "excerpt": "保留原核准；归属沿用原核准；本轮已检查建置、终止、更名、改属与得失纪年。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0739",
+      "record_id": "LC-0739",
+      "name": "味",
+      "region": "蜀中（含南中）",
+      "category": "來源或舊歸屬衝突",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LC-0739-S01",
+          "prefecture": "齊基郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "梁末入蛮，失去梁辖年不详。；原核准附带疑点：正文齐末宁州建宁郡领味，原确认齐基；字段不符。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 740,
+        "page_index": 440,
+        "evidence_record_ids": "LC-0739",
+        "excerpt": "保留原核准；归属沿用原核准；本轮已检查建置、终止、更名、改属与得失纪年。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    },
+    {
+      "county_id": "lc_0744",
+      "record_id": "LC-0744",
+      "name": "西中",
+      "region": "蜀中（含南中）",
+      "category": "年代或沿革邊界未定",
+      "resolved": false,
+      "assignments": [
+        {
+          "id": "LC-0744-S01",
+          "prefecture": "興古郡",
+          "state": null,
+          "start": 502,
+          "end": 557,
+          "display_allowed": false
+        }
+      ],
+      "issues": "梁末废县，确切废县年不详。",
+      "original_pending_reasons": [
+        "本條年代或資料仍待覆核，未投射到年度郡縣。"
+      ],
+      "source": {
+        "workbook": "蕭梁未確認縣郡歸屬_機器複核.xlsx",
+        "sheet": "复核总表",
+        "row": 745,
+        "page_index": 440,
+        "evidence_record_ids": "LC-0744",
+        "excerpt": "保留原核准；归属沿用原核准；本轮已检查建置、终止、更名、改属与得失纪年。；逐条已查；未采用官员任职、封爵、祥瑞及梁后州郡变化作为梁县建废年。"
+      },
+      "entity_link_ids": [],
+      "resolution": "",
+      "remaining_note": "保留可検索待考入口，原文及人工意見完整保留。"
+    }
+  ]
+}

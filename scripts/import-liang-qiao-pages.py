@@ -10,14 +10,18 @@ import hashlib
 import json
 import re
 from pathlib import Path
+from liang_source_paths import find_source
 
 ROOT = Path(__file__).resolve().parents[1]
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('ocr_json', type=Path)
+    parser.add_argument('ocr_json', type=Path, nargs='?')
+    parser.add_argument('--source-dir', type=Path)
     args = parser.parse_args()
+    if args.ocr_json is None:
+        args.ocr_json = find_source('*三国两晋南朝卷Ⅱ*.json', args.source_dir)
     raw = args.ocr_json.read_bytes()
     pages = json.loads(raw)
     text = (ROOT / 'data/liang-data.js').read_text()

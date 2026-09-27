@@ -301,10 +301,14 @@ def build(input_path):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("workbook", type=Path)
+    parser.add_argument("workbook", type=Path, nargs='?')
+    parser.add_argument('--source-dir', type=Path)
     parser.add_argument("--output", type=Path, default=ROOT / "data/liang-county-reviewed.json")
     parser.add_argument("--report", type=Path, default=ROOT / "docs/liang-county-import-report.md")
     args = parser.parse_args()
+    if args.workbook is None:
+        from liang_source_paths import find_source
+        args.workbook = find_source('蕭梁未確認縣郡歸屬*.xlsx', args.source_dir)
     data = build(args.workbook)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
