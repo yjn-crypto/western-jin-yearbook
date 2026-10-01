@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>漢魏六朝年末州郡縣表</title>
   <meta name="description" content="依據《中國行政區劃通史》逐年重建漢魏六朝年末州郡縣，並附封國資料。">
-  <link rel="stylesheet" href="style.css?v=20261001.5">
+  <link rel="stylesheet" href="style.css?v=20261001.6">
 </head>
 <body data-theme="metal">
   <header class="site-header">
@@ -50,6 +50,15 @@
           <input id="changedOnly" type="checkbox">
           <span>只看本年有變動者</span>
         </label>
+      </div>
+      <div id="jinMapVersionControl" class="jin-map-version-control">
+        <label for="jinMapVersion">西晉地圖版本</label>
+        <select id="jinMapVersion" aria-label="西晉地圖版本">
+          <option value="annual">逐年復原（試驗版）</option>
+          <option value="legacy">修改前原版（289、308年）</option>
+        </select>
+        <a id="jinMapRestore" href="?year=289&amp;jinmap=legacy">切回修改前地圖</a>
+        <span>試驗版涵蓋266–316年；縣界為擬合，疆域待考區另作提示。</span>
       </div>
       <div class="legend" aria-label="圖例">
         <span><i class="legend-normal">郡縣</i> 宋體類字體</span>
@@ -103,6 +112,7 @@
       </div>
       <p id="yearMapLegend" class="map-symbol-legend">◎ 州治　⊙ 郡治　● 縣治；範圍名較大且限於對應界內，治所名較小。封國文字及治所符號沿用正文當年封君色，未詳或顏色有歧義者為黑色。底圖填色表示政權，邊界線粗細表示層級；選中項以淡黃底與下劃線提示。</p>
       <p id="jinMapLegend" class="map-symbol-legend" hidden><span class="jin-boundary-key jin-province-key">州界</span>　<span class="jin-boundary-key jin-kingdom-key">國界</span>　<span class="jin-boundary-key jin-member-key">國內郡界</span>；彩色面表示郡級及以上封國。◎ 州治　⊙ 郡治　● 縣治；較大字為界內範圍名，小字為治所名。斜體、※表示封國資料推定，斜線填充或虛線表示範圍、歸屬推定。另列的小字封爵不表示占有整個行政縣。地圖研究與正文沿革有分歧時各自保留。</p>
+      <p id="jinAnnualLegend" class="map-symbol-legend" hidden><span class="jin-boundary-key jin-county-key">擬合縣界</span> 超過700%顯示；橙色斜線表示局部控制、爭奪或僅存名義建置，不能視作全境實控。疆域依年末記錄校正，失地不沿用後期全盛版圖。懸停區域可查看來源與擬合說明。</p>
       <div id="mapBoundaryResearch" class="map-symbol-legend" hidden></div>
       <div id="yearMapViewport" class="year-map-viewport" tabindex="0" role="region" aria-label="地圖瀏覽區" aria-describedby="yearMapZoomHelp">
         <div id="yearMapStage" class="year-map-stage">
@@ -178,7 +188,8 @@
   <script src="data/jin-map-snapshots.js?v=20261001.2"></script>
   <script src="jin-map-model.js?v=20261001.5"></script>
   <script src="data/jin-map-label-anchors.js?v=20261001.5"></script>
-  <script src="jin-map-view.js?v=20261001.5"></script>
+  <script src="jin-map-view.js?v=20261001.6"></script>
+  <script src="jin-annual-map-model.js?v=20261001.6"></script>
   <script src="data/liang-data.js?v=20260927.1"></script>
   <script src="data/liang-governors.js?v=20260927.1"></script>
   <script src="data/liang-county-overlay.js?v=20260927.1"></script>
@@ -215,6 +226,6 @@
   <script src="data/chen-qiao-prefaces.js?v=20260912.3"></script>
   <script src="source-annotations.js?v=20260912.3"></script>
   <script src="governor-history.js?v=20260912.1"></script>
-  <script src="app.js?v=20261001.5"></script>
+  <script src="app.js?v=20261001.6"></script>
 </body>
 </html>

@@ -40,6 +40,7 @@
   const yearMapGeoJson = $('yearMapGeoJson');
   const yearMapExport = $('yearMapExport');
   const yearMapNote = $('yearMapNote');
+  const jinMapVersion = $('jinMapVersion');
   const textMapLinkControl = $('textMapLinkControl');
   const textMapLinkToggle = $('textMapLinkToggle');
   const liangReviewPanel = $('liangReviewPanel');
@@ -66,9 +67,10 @@
   let mapDrag = null;
   let modalReturnFocus = null;
   const initialParams = new URLSearchParams(window.location.search);
-  const requestedDynasty = initialParams.get('dynasty');
+  const requestedDynasty = initialParams.get('dynasty') || 'western-jin';
   const requestedYear = Number(initialParams.get('year')) || null;
   const requestedState = initialParams.get('state') || '';
+  if(jinMapVersion)jinMapVersion.value=initialParams.get('jinmap')==='legacy'?'legacy':'annual';
   const EXTRA_GOVERNOR_FILTER_PREFIX = 'governor-extra:';
   let initialLocationApplied = false;
 
@@ -2014,6 +2016,9 @@
     if(!layout||currentMap?.reference||layout.year!==currentMap?.year)return;
     layout.layer.replaceChildren();
     const scale=Math.max(.01,yearMapStage.clientWidth/currentMap.width);
+    for(const boundary of yearMapOverlay.querySelectorAll('[data-boundary-level]')){
+      boundary.style.display=mapLabelVisible(boundary.dataset.boundaryLevel)?'':'none';
+    }
     for(const symbol of yearMapOverlay.querySelectorAll('[data-seat-level]')) {
       const level=symbol.dataset.seatLevel,outer=symbol.children[0],inner=symbol.children[1];
       if(currentMap?.dynasty==='western-jin')symbol.style.display=mapLabelVisible(level)?'':'none';
@@ -2248,7 +2253,7 @@
     $('mapBoundaryResearch').hidden=true;$('liangMapMissing').hidden=true;$('liangMapReference555').hidden=true;
     yearMapPanel.hidden=false;textMapLinkControl.hidden=false;
     results.classList.toggle('text-map-link-enabled',Boolean(textMapLinkToggle.checked));
-    currentMap={year,width:map.width,height:map.height,dynasty:'western-jin'};mapUhdLoaded=false;
+    currentMap={year,width:map.width,height:map.height,dynasty:'western-jin',trial:Boolean(map.trial)};mapUhdLoaded=false;
     yearMapStage.style.paddingBottom='0px';
     yearMapOverlay.setAttribute('viewBox',`0 0 ${map.width} ${map.height}`);
     yearMapOverlay.setAttribute('aria-label',`${year}年西晉州郡封國圖`);
@@ -2257,6 +2262,7 @@
     $('yearMapTitle').textContent=map.title||`${year}年西晉州郡與封國`;
     $('yearMapZoomHelp').textContent='100%–1000%；低於300%顯示州名，300%–700%顯示州與郡國範圍名，超過700%加上縣名及治所名。小字封爵另列。';
     yearMapNote.textContent=map.note||'CHGIS與原圖矢量成果接合；多郡王國合併著色，內部郡界淡化。文字位置不是郡治。';
+    if($('jinAnnualLegend'))$('jinAnnualLegend').hidden=!map.trial;
     for(const link of [yearMapUhd,yearMapCsv,yearMapGeoJson]) {
       link.hidden=true;link.removeAttribute('href');link.removeAttribute('download');
     }
@@ -2266,7 +2272,7 @@
     appendHotspots(yearMapOverlay,rendered.features.filter(f=>f.coordinate_role==='administrative_seat'));
     const layer=svgNode('g',{class:'dynamic-map-label-layer'});yearMapOverlay.appendChild(layer);
     mapLabelLayouts.set(yearMapOverlay,{labels:rendered.labels,plot:map.plot,layer,year,territoryGuard:null});
-    $('yearMapStatus').textContent=`${year}年：${map.geojson.features.length}筆地理要素。封國邊界與支郡來自本斷面研究，CHGIS治所與原圖文字錨點分列。`;
+    $('yearMapStatus').textContent=map.status||`${year}年：${map.geojson.features.length}筆地理要素。封國邊界與支郡來自本斷面研究，CHGIS治所與原圖文字錨點分列。`;
     resetMapView();
   }
 
@@ -2274,7 +2280,35 @@
     const request=++jinMapRequest;
     $('yearMapLegend').hidden=currentDynasty.key==='western-jin';
     $('jinMapLegend').hidden=currentDynasty.key!=='western-jin';
+    if($('jinAnnualLegend'))$('jinAnnualLegend').hidden=true;
     if(currentDynasty.key==='western-jin') {
+      if(jinMapVersion?.value==='annual'&&window.JIN_ANNUAL_MAP_MODEL){
+        currentMap=null;currentMapFeatures=[];mapLabelLayouts.delete(yearMapOverlay);yearMapOverlay.replaceChildren();
+        yearMapPanel.hidden=false;textMapLinkControl.hidden=true;
+        for(const control of [yearMapExport,yearMapCsv,yearMapGeoJson,yearMapUhd,yearMapLoadUhd])control.hidden=true;
+        yearMapImage.removeAttribute('src');yearMapImage.alt=`正在載入${year}年西晉年度試驗圖`;
+        $('yearMapTitle').textContent=`${year}年西晉年度復原 · 試驗版`;
+        $('yearMapStatus').textContent='正在載入本年政區、疆域與封國…';yearMapNote.textContent='縣界為縣治約束擬合；可在上方切回修改前原版。';
+        $('mapBoundaryResearch').hidden=true;$('liangMapMissing').hidden=true;$('liangMapReference555').hidden=true;
+        const load=url=>{
+          if(!jinMapCache.has(url))jinMapCache.set(url,fetch(url).then(response=>{
+            if(!response.ok)throw new Error(`HTTP ${response.status}`);return response.json();
+          }).catch(error=>{jinMapCache.delete(url);throw error;}));
+          return jinMapCache.get(url);
+        };
+        load(window.JIN_ANNUAL_MAP_MODEL.DATA_URL).then(async bundle=>{
+          const entry=bundle.years?.[String(year)];
+          if(!entry)throw new Error(`No annual geography for ${year}`);
+          const [slice,shards]=await Promise.all([
+            entry.features?entry:load(entry.data_url+'?v=20261001.6'),
+            Promise.all((entry.geometry_urls||[]).map(url=>load(url+'?v=20261001.6')))
+          ]);
+          const annualBundle={...bundle,geometries:Object.assign({},bundle.geometries,...shards.map(shard=>shard.geometries))};
+          if(request===jinMapRequest)renderJinSnapshotMap(year,snapshot,window.JIN_ANNUAL_MAP_MODEL.hydrate(annualBundle,year,slice));
+        }).catch(error=>{
+          if(request===jinMapRequest){$('yearMapStatus').textContent='年度試驗圖載入失敗，請重選年份重試，或切回修改前原版。';console.error(error);}
+        });return;
+      }
       const jin=window.JIN_SNAPSHOT_MAPS?.years?.[String(year)];
       if(jin&&window.JIN_MAP_VIEW){
         if(jin.geojson){renderJinSnapshotMap(year,snapshot,jin);return;}
@@ -2468,6 +2502,7 @@
 
   function switchDynasty() {
     currentDynasty=DYNASTIES[dynastySelect.value]||DYNASTIES['western-jin'];document.body.dataset.theme=currentDynasty.theme;
+    if($('jinMapVersionControl'))$('jinMapVersionControl').hidden=currentDynasty.key!=='western-jin';
     $('pageTitle').textContent=currentDynasty.key==='chen'?`${currentDynasty.label}州郡縣表`:`${currentDynasty.label}年末州郡縣表`;$('pageSubtitle').textContent=currentDynasty.subtitle;
     $('fiefLegend').innerHTML=currentDynasty.key==='chen'
       ? '<i class="legend-ruler">始興王·某某／侯國·某某</i> 南朝封爵；郡級附爵者顯示為「某某國」；<i class="legend-ruler fief-uncertain-legend">斜體</i> 承襲存疑'
@@ -2494,17 +2529,20 @@
   function syncMainLocation() {
     const url=new URL(window.location.href);
     if(currentDynasty.key==='western-jin')url.searchParams.delete('dynasty');else url.searchParams.set('dynasty',currentDynasty.key);
-    if(['southern-liang','chen'].includes(currentDynasty.key)){
+    if(['western-jin','southern-liang','chen'].includes(currentDynasty.key)){
       url.searchParams.set('year',String(yearSelect.value));
       const selected=stateSelect.selectedOptions[0];
       if(stateSelect.value&&selected)url.searchParams.set('state',selected.textContent);else url.searchParams.delete('state');
     }else{
       url.searchParams.delete('year');url.searchParams.delete('state');
     }
+    if(currentDynasty.key==='western-jin'&&jinMapVersion?.value==='legacy')url.searchParams.set('jinmap','legacy');else url.searchParams.delete('jinmap');
+    if($('jinMapRestore'))$('jinMapRestore').href=`?year=${[289,308].includes(Number(yearSelect.value))?yearSelect.value:289}&jinmap=legacy`;
     history.replaceState(null,'',url);
   }
 
   dynastySelect.addEventListener('change',switchDynasty);
+  jinMapVersion?.addEventListener('change',()=>{clearMapLinkHighlights();syncMainLocation();render();});
   yearSelect.addEventListener('change',()=>{populateStates(Number(yearSelect.value));syncMainLocation();render();});
   stateSelect.addEventListener('change',()=>{syncMainLocation();render();});searchInput.addEventListener('input',render);changedOnly.addEventListener('change',render);
   document.addEventListener('click',(event)=>{

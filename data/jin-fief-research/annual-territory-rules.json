@@ -1,0 +1,1351 @@
+{
+  "meta": {
+    "version": "2026-10-01.1",
+    "year_range": [
+      266,
+      316
+    ],
+    "date_rule": "年末：失陷当年覆写军事状态；同年反复易手标contested。",
+    "purpose": "行政沿革图的实际控制提示与例外；不是精确的51年战线矢量库。",
+    "contract": "rules按county_ids > prefecture_ids > state_ids匹配；同粒度优先最具体年段；status partial/contested/nominal不等于确定实控，不能据此绘成无标记实体面。",
+    "administrative_source_untouched": true,
+    "coverage_limit": "未命中规则只说明未另标控制异常，不证明所有行政县全境均稳定受晋统治。",
+    "boundary_limit": "现有县治与估计县域不能当史料确认县界；史料缺年时不内插为真实战线。"
+  },
+  "sources": [
+    {
+      "id": "jin003",
+      "title": "《晋书》卷3《武帝纪》",
+      "url": "https://zh.wikisource.org/wiki/晉書/卷003",
+      "type": "primary",
+      "verified": "2026-10-01",
+      "topics": [
+        "268郁林战事",
+        "269赦交趾九真日南",
+        "271交趾三郡失陷",
+        "279末凉州复平",
+        "280灭吴"
+      ],
+      "excerpt": "太康元年三月孙皓降晋；此前吴为独立政权。"
+    },
+    {
+      "id": "jin057",
+      "title": "《晋书》卷57《陶璜传》",
+      "url": "https://zh.wikisource.org/zh-hant/晉書/卷057",
+      "type": "primary",
+      "verified": "2026-10-01",
+      "topics": [
+        "交趾归附",
+        "九真李祚据守",
+        "陶璜克交趾",
+        "吴亡后交州归晋"
+      ],
+      "excerpt": "交趾、九真有晋据守与吴进攻；郡名不代表同时全境实控。"
+    },
+    {
+      "id": "jin005",
+      "title": "《晋书》卷5《怀帝纪》《愍帝纪》",
+      "url": "https://zh.wikisource.org/wiki/晉書/卷005",
+      "type": "primary",
+      "verified": "2026-10-01",
+      "topics": [
+        "307并州独保晋阳",
+        "308平阳失陷",
+        "310汲河内失陷",
+        "311洛阳长安失陷",
+        "312长安复得",
+        "313梁州失陷",
+        "314幽州失陷",
+        "315湘州平定",
+        "316长安晋阳失陷"
+      ],
+      "excerpt": "永嘉与建兴诸年分列失陷、复得及局部据守。"
+    },
+    {
+      "id": "jin063",
+      "title": "《晋书》卷63《李矩传》《段匹磾传》《魏浚传》",
+      "url": "https://zh.wikisource.org/wiki/晉書/卷063",
+      "type": "primary",
+      "verified": "2026-10-01",
+      "topics": [
+        "荥阳密县据点",
+        "郭默河内据守",
+        "314后幽州段匹磾",
+        "洛阳城外晋据点"
+      ],
+      "excerpt": "洛阳失陷后李矩、魏浚、郭默等仍有坞堡据守。"
+    },
+    {
+      "id": "jin081",
+      "title": "《晋书》卷81《王逊传》",
+      "url": "https://zh.wikisource.org/wiki/晉書/卷081",
+      "type": "primary",
+      "verified": "2026-10-01",
+      "topics": [
+        "306至310宁州危局",
+        "王逊至任年代",
+        "宁州非全为李雄所有"
+      ],
+      "excerpt": "李毅卒后其女与百余人据守，王逊到任后重建秩序。"
+    },
+    {
+      "id": "huayang008",
+      "title": "《华阳国志》卷8《大同志》",
+      "url": "https://zh.wikisource.org/zh/華陽國志/卷八",
+      "type": "primary",
+      "verified": "2026-10-01",
+      "topics": [
+        "301广汉失陷",
+        "302梓潼巴西失陷",
+        "303成都失陷",
+        "成都多郡国范围"
+      ],
+      "excerpt": "李特进围广汉得城，罗尚退守郫水以南。"
+    },
+    {
+      "id": "jin121",
+      "title": "《晋书》卷121《李雄载记》",
+      "url": "https://zh.wikisource.org/wiki/晉書/卷121",
+      "type": "primary",
+      "verified": "2026-10-01",
+      "topics": [
+        "成都王304",
+        "蜀地渐次攻取",
+        "巴西梓潼反复",
+        "不能以称王年等同全益州丧失"
+      ],
+      "excerpt": "成都、汉中、巴西、梓潼与南中依次争夺。"
+    },
+    {
+      "id": "tongjian088",
+      "title": "《资治通鉴》卷88、89（《通鉴纪事本末》同段交叉核验）",
+      "url": "https://zh.wikisource.org/wiki/通鑑紀事本末_(四庫全書本)/卷13下",
+      "type": "primary",
+      "verified": "2026-10-01",
+      "topics": [
+        "313梁州州城失陷",
+        "314汉中归成",
+        "汉嘉涪陵异文",
+        "313乐浪带方张统撤迁"
+      ],
+      "excerpt": "313胡子序弃梁州城；314张咸逐杨难敌而以地归成。",
+      "related_urls": [
+        "https://zh.wikisource.org/zh-hant/資治通鑑/卷088",
+        "https://zh.wikisource.org/zh-hant/資治通鑑/卷089"
+      ]
+    },
+    {
+      "id": "tongjian086",
+      "title": "《资治通鉴》卷86（胡三省音注）",
+      "url": "https://zh.wikisource.org/zh/資治通鑒_(胡三省音注)/卷086",
+      "type": "primary",
+      "verified": "2026-10-01",
+      "topics": [
+        "307李钊宁州求刺史",
+        "交州救宁州",
+        "308诸郡战事"
+      ],
+      "excerpt": "宁州仍有晋吏民求援，不能等同全州已归成。"
+    },
+    {
+      "id": "samguk017",
+      "title": "《三国史记》卷17《高句丽本纪·美川王》",
+      "url": "https://zh.wikisource.org/wiki/三國史記/卷17",
+      "type": "primary",
+      "verified": "2026-10-01",
+      "topics": [
+        "311西安平",
+        "313乐浪",
+        "314带方",
+        "315玄菟"
+      ],
+      "excerpt": "311袭取西安平；313侵乐浪；314南侵带方；315破玄菟城。"
+    },
+    {
+      "id": "book-annual",
+      "title": "《中国行政区划通史·三国两晋南朝卷（上）》年度州郡县沿革",
+      "type": "local_research_book",
+      "book_pages": [
+        592,
+        765
+      ],
+      "local_file": "中国行政区划通史：三国两晋南朝卷Ⅰ(1).pdf_by_PaddleOCR-VL-1.6.md",
+      "projection": "data/jin-data.js",
+      "excerpt": "州郡县有效年段及源文；军事失陷需再以原典核验年末状态。"
+    },
+    {
+      "id": "book-frontier",
+      "title": "《中国行政区划通史·三国两晋南朝卷（上）》第一章疆域变迁·西晋疆域变迁",
+      "type": "local_research_book",
+      "local_file": "中国行政区划通史：三国两晋南朝卷Ⅰ(1).pdf_by_PaddleOCR-VL-1.6.md",
+      "ocr_lines": [
+        1053,
+        1084
+      ],
+      "excerpt": "统一以前晋吴对峙；统一以后各地失陷、复得并不同时。"
+    },
+    {
+      "id": "book-jing",
+      "title": "《中国行政区划通史》荆州、江夏与建平郡考证",
+      "type": "local_research_book",
+      "book_pages": [
+        704,
+        729
+      ],
+      "projection_entities": [
+        "s16",
+        "p160",
+        "p171",
+        "p188"
+      ],
+      "excerpt": "晋吴各置江夏、建平；280后合并，县属比郡名更细。"
+    },
+    {
+      "id": "book-si",
+      "title": "《中国行政区划通史》司州及荥阳、弘农考证",
+      "type": "local_research_book",
+      "book_pages": [
+        592,
+        599
+      ],
+      "projection_entities": [
+        "s01",
+        "p002",
+        "p003"
+      ],
+      "excerpt": "311司州大部失陷；荥阳弘农未与洛阳同时丧失。"
+    },
+    {
+      "id": "book-yi",
+      "title": "《中国行政区划通史》梁州益州逐郡考证",
+      "type": "local_research_book",
+      "book_pages": [
+        659,
+        677
+      ],
+      "projection_entities": [
+        "p101",
+        "p102",
+        "p103",
+        "p108",
+        "p115",
+        "p116",
+        "p117",
+        "p118",
+        "p119",
+        "p127",
+        "p128",
+        "p129"
+      ],
+      "excerpt": "蜀北先失，巴东涪陵仍列晋，江阳犍为至311失陷。"
+    },
+    {
+      "id": "book-bing",
+      "title": "《中国行政区划通史》并州沿革及太原国考证",
+      "type": "local_research_book",
+      "book_pages": [
+        637,
+        642
+      ],
+      "projection_entities": [
+        "s07",
+        "p065"
+      ],
+      "excerpt": "307以后并州大部失陷，晋阳及阳曲据点反复存续。"
+    },
+    {
+      "id": "book-ji",
+      "title": "《中国行政区划通史》兖豫冀幽青诸州沿革",
+      "type": "local_research_book",
+      "book_pages": [
+        604,
+        635,
+        683
+      ],
+      "projection_entities": [
+        "s02",
+        "s03",
+        "s04",
+        "s05",
+        "s14"
+      ],
+      "excerpt": "313冀青及兖豫大部失陷为作者拟定，仍有泰山谯鲁等例外。"
+    },
+    {
+      "id": "jin004",
+      "title": "《晋书》卷4《惠帝纪》",
+      "url": "https://zh.wikisource.org/zh/晉書/卷004",
+      "topics": [
+        "300赵廞据成都",
+        "303石冰封云之乱",
+        "304扬徐平",
+        "305陈敏反",
+        "296至299齐万年之乱"
+      ],
+      "excerpt": "三月，陈敏攻石冰，斩之，扬、徐二州平。"
+    },
+    {
+      "id": "jin100",
+      "title": "《晋书》卷100《张昌传》《陈敏传》",
+      "url": "https://zh.wikisource.org/zh-hant/晉書/卷100",
+      "topics": [
+        "张昌石冰",
+        "陈敏据江东",
+        "陈恢南寇江州",
+        "307陈敏平"
+      ],
+      "excerpt": "遂据有吴越之地。"
+    }
+  ],
+  "rules": [
+    {
+      "id": "wu-south-before-unification",
+      "start": 266,
+      "end": 279,
+      "status": "external",
+      "reason": "灭吴以前交广主体为孙吴；另列交趾等晋据点例外，不将289南方全境面前移。",
+      "certainty": "high",
+      "source_ids": [
+        "jin003",
+        "jin057",
+        "book-frontier"
+      ],
+      "state_ids": [
+        "s20",
+        "s21"
+      ]
+    },
+    {
+      "id": "wu-jingzhou-before-unification",
+      "start": 266,
+      "end": 279,
+      "status": "external",
+      "reason": "晋吴对峙，南郡宜都武陵天门及湘南诸郡在280归晋；按年度县属裁定北部晋土。",
+      "certainty": "high",
+      "source_ids": [
+        "jin003",
+        "book-jing"
+      ],
+      "prefecture_ids": [
+        "p161",
+        "p162",
+        "p172",
+        "p173",
+        "p174",
+        "p175",
+        "p176",
+        "p177",
+        "p178",
+        "p179",
+        "p180",
+        "p181",
+        "p182"
+      ]
+    },
+    {
+      "id": "wu-yangzhou-before-unification",
+      "start": 266,
+      "end": 279,
+      "status": "external",
+      "reason": "晋扬州治寿春；江东丹阳吴会等直到280灭吴归晋。",
+      "certainty": "high",
+      "source_ids": [
+        "jin003",
+        "book-annual"
+      ],
+      "prefecture_ids": [
+        "p189",
+        "p190",
+        "p191",
+        "p192",
+        "p193",
+        "p194",
+        "p195",
+        "p196",
+        "p197",
+        "p198",
+        "p199",
+        "p200",
+        "p201",
+        "p202",
+        "p203",
+        "p204"
+      ]
+    },
+    {
+      "id": "split-jiangxia",
+      "start": 266,
+      "end": 279,
+      "status": "partial",
+      "reason": "晋江夏只领安陆石阳鄳南新市平春，云杜竟陵至280来属；不能用统一后的郡面代表统一前实控。",
+      "certainty": "high",
+      "source_ids": [
+        "book-jing"
+      ],
+      "prefecture_ids": [
+        "p160"
+      ],
+      "supporting_county_ids": [
+        "c1103",
+        "c1104",
+        "c1105",
+        "c1106",
+        "c1107"
+      ]
+    },
+    {
+      "id": "split-jiangxia-wu-counties",
+      "start": 266,
+      "end": 279,
+      "status": "external",
+      "reason": "云杜竟陵当年在吴；280才归晋江夏。",
+      "certainty": "high",
+      "source_ids": [
+        "book-jing"
+      ],
+      "county_ids": [
+        "c1108",
+        "c1109"
+      ]
+    },
+    {
+      "id": "split-jianping",
+      "start": 275,
+      "end": 279,
+      "status": "partial",
+      "reason": "原书校勘咸宁元年晋建平郡仅北井一县，吴建平领巫秭归等；280合并。",
+      "certainty": "high",
+      "source_ids": [
+        "book-jing"
+      ],
+      "prefecture_ids": [
+        "p171"
+      ],
+      "supporting_county_ids": [
+        "c1203"
+      ]
+    },
+    {
+      "id": "split-jianping-wu-counties",
+      "start": 266,
+      "end": 279,
+      "status": "external",
+      "reason": "巫泰昌信陵兴山建始秭归沙渠不作为此时晋建平县境。",
+      "certainty": "high",
+      "source_ids": [
+        "book-jing"
+      ],
+      "county_ids": [
+        "c1202",
+        "c1204",
+        "c1205",
+        "c1206",
+        "c1207",
+        "c1208",
+        "c1209"
+      ]
+    },
+    {
+      "id": "split-lujiang",
+      "start": 266,
+      "end": 279,
+      "status": "partial",
+      "reason": "晋庐江北部为六安龙舒灊等，舒皖居巢临湖等280来属；年度县属应重新合郡。",
+      "certainty": "high",
+      "source_ids": [
+        "book-annual"
+      ],
+      "prefecture_ids": [
+        "p188"
+      ],
+      "supporting_county_ids": [
+        "c1323",
+        "c1324",
+        "c1325",
+        "c1332",
+        "c1333",
+        "c1334",
+        "c1335",
+        "c1336"
+      ]
+    },
+    {
+      "id": "lujiang-wu-counties",
+      "start": 266,
+      "end": 279,
+      "status": "external",
+      "reason": "舒居巢皖等280灭吴归晋；阳泉属于跨晋郡转属，不以phases.start=280一律判吴。",
+      "certainty": "high",
+      "source_ids": [
+        "book-annual"
+      ],
+      "county_ids": [
+        "c1322",
+        "c1326",
+        "c1327",
+        "c1329",
+        "c1330"
+      ]
+    },
+    {
+      "id": "jiaozhi-jin-enclave",
+      "start": 266,
+      "end": 270,
+      "status": "partial",
+      "reason": "交趾呂兴附魏后由晋任太守据守，268击退吴军；原书年度表未收此段，补为晋据点而非后期交州全境。",
+      "certainty": "high",
+      "source_ids": [
+        "jin003",
+        "jin057",
+        "book-frontier"
+      ],
+      "prefecture_ids": [
+        "p229"
+      ],
+      "marker_only": true
+    },
+    {
+      "id": "jiuzhen-jin-enclave",
+      "start": 268,
+      "end": 270,
+      "status": "partial",
+      "reason": "268九真附杨稷，董元任太守；晋吴争夺，不以289九真郡面前推为已确认疆界。",
+      "certainty": "high",
+      "source_ids": [
+        "jin003",
+        "jin057",
+        "book-frontier"
+      ],
+      "prefecture_ids": [
+        "p232"
+      ],
+      "marker_only": true
+    },
+    {
+      "id": "rinan-jin-enclave",
+      "start": 268,
+      "end": 270,
+      "status": "contested",
+      "reason": "269晋诏涉及日南，271失；边界与据守程度未明，另用晋据点注记而不染满后期日南郡面。",
+      "certainty": "medium",
+      "source_ids": [
+        "jin003",
+        "book-frontier"
+      ],
+      "prefecture_ids": [
+        "p234"
+      ],
+      "marker_only": true
+    },
+    {
+      "id": "yulin-jin-enclave",
+      "start": 268,
+      "end": 270,
+      "status": "partial",
+      "reason": "268郁林附杨稷，毛炅为太守；271吴夺回。仅作晋据点，不复制后期郁林郡界。",
+      "certainty": "high",
+      "source_ids": [
+        "jin003",
+        "jin057",
+        "book-frontier"
+      ],
+      "prefecture_ids": [
+        "p237"
+      ],
+      "marker_only": true
+    },
+    {
+      "id": "jiaozhi-enclaves-lost",
+      "start": 271,
+      "end": 279,
+      "status": "external",
+      "reason": "271交趾九真等晋据点为吴攻取，直到280吴亡归晋；年末不能延续此前据守。",
+      "certainty": "high",
+      "source_ids": [
+        "jin003",
+        "jin057"
+      ],
+      "prefecture_ids": [
+        "p229",
+        "p232",
+        "p234",
+        "p237"
+      ]
+    },
+    {
+      "id": "qiwanian-uprising",
+      "start": 296,
+      "end": 298,
+      "status": "contested",
+      "reason": "齐万年与诸羌活动于清水冯翊北地等；战事涉及秦雍多地但不能据此断言全州易主。",
+      "certainty": "medium",
+      "source_ids": [
+        "book-frontier"
+      ],
+      "state_ids": [
+        "s08",
+        "s10"
+      ]
+    },
+    {
+      "id": "guanghan-lost",
+      "start": 301,
+      "end": 316,
+      "status": "lost",
+      "reason": "301十月李特围得广汉，年度行政phase末年含301，年末军事状态另覆写为失陷。",
+      "certainty": "high",
+      "source_ids": [
+        "huayang008",
+        "book-yi"
+      ],
+      "prefecture_ids": [
+        "p103"
+      ]
+    },
+    {
+      "id": "zitong-baxi-lost-first",
+      "start": 302,
+      "end": 309,
+      "status": "lost",
+      "reason": "302春梓潼守张演弃仓而走，巴西郡丞举郡降，失陷从本年计算。",
+      "certainty": "high",
+      "source_ids": [
+        "book-yi",
+        "jin121"
+      ],
+      "prefecture_ids": [
+        "p102",
+        "p108"
+      ]
+    },
+    {
+      "id": "zitong-baxi-return",
+      "start": 310,
+      "end": 310,
+      "status": "contested",
+      "reason": "原书按华阳国志定310暂复，帝纪又载309梓潼归顺、310四月李雄复陷；当年多次易手不作稳定整郡实控。",
+      "certainty": "medium",
+      "source_ids": [
+        "jin005",
+        "jin121",
+        "book-yi"
+      ],
+      "prefecture_ids": [
+        "p102",
+        "p108"
+      ]
+    },
+    {
+      "id": "zitong-baxi-lost-again",
+      "start": 311,
+      "end": 316,
+      "status": "lost",
+      "reason": "311李骧克涪城杀梓潼太守，巴西梓潼复为李雄有；短期复得不跨年延续。",
+      "certainty": "high",
+      "source_ids": [
+        "jin005",
+        "jin121",
+        "book-yi"
+      ],
+      "prefecture_ids": [
+        "p102",
+        "p108"
+      ]
+    },
+    {
+      "id": "chengdu-lost",
+      "start": 303,
+      "end": 316,
+      "status": "lost",
+      "reason": "303年底罗尚弃成都，304李雄称成都王；不能到304以后仍把成都国画为晋实控。",
+      "certainty": "high",
+      "source_ids": [
+        "jin121",
+        "book-yi"
+      ],
+      "prefecture_ids": [
+        "p115"
+      ]
+    },
+    {
+      "id": "wenshan-uncertain",
+      "start": 303,
+      "end": 316,
+      "status": "contested",
+      "reason": "原书疑303汶山失陷；成都以北战事有据，缺少全郡易主与复得年度，保持待考状态。",
+      "certainty": "medium",
+      "source_ids": [
+        "book-yi",
+        "book-frontier"
+      ],
+      "prefecture_ids": [
+        "p117"
+      ]
+    },
+    {
+      "id": "hanjia-contradiction",
+      "start": 303,
+      "end": 316,
+      "status": "contested",
+      "reason": "西晋章疑303汉嘉失陷，疆域章又载314为成有，而东晋章记323汉嘉太守降李骧；证据矛盾，不直接断言303以后全郡确定归成。",
+      "certainty": "low",
+      "source_ids": [
+        "book-yi",
+        "book-frontier",
+        "tongjian088"
+      ],
+      "prefecture_ids": [
+        "p118"
+      ]
+    },
+    {
+      "id": "jiangyang-qianwei-ba-lost",
+      "start": 311,
+      "end": 316,
+      "status": "lost",
+      "reason": "311初犍为江阳及巴郡先后失陷，成都失陷并非益州全失；此前这些郡仍由晋守。",
+      "certainty": "high",
+      "source_ids": [
+        "book-yi",
+        "jin121"
+      ],
+      "prefecture_ids": [
+        "p116",
+        "p119",
+        "p129"
+      ]
+    },
+    {
+      "id": "fuling-contradiction",
+      "start": 314,
+      "end": 316,
+      "status": "contested",
+      "reason": "年度表涪陵p128仍列晋至316，但通鉴314正月称汉嘉涪陵汉中之地皆成有；作为争议实控边缘，避免仅凭名义沿革确定仍属晋。",
+      "certainty": "medium",
+      "source_ids": [
+        "tongjian088",
+        "book-yi",
+        "book-frontier"
+      ],
+      "prefecture_ids": [
+        "p128"
+      ]
+    },
+    {
+      "id": "hanzhong-seat-lost",
+      "start": 313,
+      "end": 316,
+      "status": "lost",
+      "reason": "313杨难敌杨虎逼梁州，胡子序弃州城；314张咸等以汉中归成。只对汉中郡核准失陷，不以州名直接涂掉魏兴上庸新城。",
+      "certainty": "high",
+      "source_ids": [
+        "jin005",
+        "tongjian088"
+      ],
+      "prefecture_ids": [
+        "p101"
+      ]
+    },
+    {
+      "id": "liang-east-uncertain",
+      "start": 313,
+      "end": 316,
+      "status": "nominal",
+      "reason": "仅知313梁州州城失陷，缺少魏兴上庸新城全部县境同时沦陷证据；其313前后名义沿革与实际战线需另考。",
+      "certainty": "medium",
+      "source_ids": [
+        "jin005",
+        "book-yi"
+      ],
+      "prefecture_ids": [
+        "p109",
+        "p112",
+        "p113",
+        "p114"
+      ]
+    },
+    {
+      "id": "bingzhou-mainly-lost",
+      "start": 307,
+      "end": 315,
+      "status": "partial",
+      "reason": "307帝纪记并州诸郡陷而刘琨独保晋阳；太原国行政面仍存不能等同全部实控。",
+      "certainty": "high",
+      "source_ids": [
+        "jin005",
+        "book-bing"
+      ],
+      "state_ids": [
+        "s07"
+      ]
+    },
+    {
+      "id": "taiyuan-only-strongholds",
+      "start": 307,
+      "end": 315,
+      "status": "partial",
+      "reason": "刘琨晋阳据点及312以后阳曲为可核实晋军活动核心；太原国其余县境不能画为完整稳定实控。",
+      "certainty": "high",
+      "source_ids": [
+        "jin005",
+        "book-bing"
+      ],
+      "prefecture_ids": [
+        "p065"
+      ],
+      "supporting_county_ids": [
+        "c0461",
+        "c0462"
+      ]
+    },
+    {
+      "id": "taiyuan-jinyang-battle",
+      "start": 312,
+      "end": 312,
+      "status": "contested",
+      "reason": "312晋阳高乔降刘粲、刘琨奔常山，后借拓跋军反攻并保阳曲；当年据点反复。",
+      "certainty": "high",
+      "source_ids": [
+        "jin005"
+      ],
+      "county_ids": [
+        "c0461"
+      ]
+    },
+    {
+      "id": "bingzhou-final-loss",
+      "start": 316,
+      "end": 316,
+      "status": "lost",
+      "reason": "316十一月并州叛降石勒、十二月刘琨奔蓟，年末不再画晋阳为晋实控。",
+      "certainty": "high",
+      "source_ids": [
+        "jin005",
+        "book-bing"
+      ],
+      "state_ids": [
+        "s07"
+      ]
+    },
+    {
+      "id": "pingyang-loss",
+      "start": 308,
+      "end": 316,
+      "status": "lost",
+      "reason": "308七月平阳守宋抽奔洛阳，十月刘渊以平阳为帝都。",
+      "certainty": "high",
+      "source_ids": [
+        "jin005",
+        "book-frontier"
+      ],
+      "prefecture_ids": [
+        "p005"
+      ]
+    },
+    {
+      "id": "hedong-fighting",
+      "start": 308,
+      "end": 316,
+      "status": "contested",
+      "reason": "308河东守路述战死；其后晋将仍有河东名号及黄河两岸据点，不能把全境定为单一稳定控制。",
+      "certainty": "medium",
+      "source_ids": [
+        "jin005",
+        "jin063"
+      ],
+      "prefecture_ids": [
+        "p006"
+      ]
+    },
+    {
+      "id": "jixian-henei-loss",
+      "start": 310,
+      "end": 316,
+      "status": "partial",
+      "reason": "310汲郡太守被执、河内降石勒，但郭默等河内据点续存，城陷不足推出全部县境归属。",
+      "certainty": "high",
+      "source_ids": [
+        "jin005",
+        "jin063"
+      ],
+      "prefecture_ids": [
+        "p007",
+        "p008"
+      ]
+    },
+    {
+      "id": "luoyang-loss",
+      "start": 311,
+      "end": 316,
+      "status": "lost",
+      "reason": "311六月洛阳陷，怀帝被俘；随后周边晋坞堡存续不等同洛阳城未失。",
+      "certainty": "high",
+      "source_ids": [
+        "jin005",
+        "jin063"
+      ],
+      "county_ids": [
+        "c0001"
+      ]
+    },
+    {
+      "id": "sizhou-collapsed",
+      "start": 311,
+      "end": 316,
+      "status": "nominal",
+      "reason": "洛阳陷后司州行政名义不能当成统一实控，荥阳弘农仍有晋据点，另从具体郡县证据判断。",
+      "certainty": "high",
+      "source_ids": [
+        "jin005",
+        "jin063",
+        "book-si"
+      ],
+      "state_ids": [
+        "s01"
+      ]
+    },
+    {
+      "id": "xingyang-hongnong-jin-strongholds",
+      "start": 311,
+      "end": 316,
+      "status": "partial",
+      "reason": "李矩屯新郑密县一带，弘农晋将仍守；保留晋据点与辖名，不宣称两个郡的所有县稳定实控。",
+      "certainty": "high",
+      "source_ids": [
+        "jin063",
+        "book-si"
+      ],
+      "prefecture_ids": [
+        "p002",
+        "p003"
+      ]
+    },
+    {
+      "id": "changan-first-loss",
+      "start": 311,
+      "end": 311,
+      "status": "lost",
+      "reason": "311八月长安陷，南阳王模被杀，年末该城不为晋守。",
+      "certainty": "high",
+      "source_ids": [
+        "jin005"
+      ],
+      "county_ids": [
+        "c0506"
+      ]
+    },
+    {
+      "id": "jingzhao-during-first-loss",
+      "start": 311,
+      "end": 311,
+      "status": "contested",
+      "reason": "长安陷后关中晋将反攻，不能据京兆行政表整郡涂作稳定晋土。",
+      "certainty": "high",
+      "source_ids": [
+        "jin005"
+      ],
+      "prefecture_ids": [
+        "p071"
+      ]
+    },
+    {
+      "id": "changan-recovered",
+      "start": 312,
+      "end": 315,
+      "status": "partial",
+      "reason": "312关中晋将复得长安并奉秦王邺，313称帝；只确认京师与据点，关中诸县仍有拉锯。",
+      "certainty": "high",
+      "source_ids": [
+        "jin005",
+        "book-frontier"
+      ],
+      "prefecture_ids": [
+        "p071"
+      ],
+      "supporting_county_ids": [
+        "c0506"
+      ]
+    },
+    {
+      "id": "fengyi-capture",
+      "start": 315,
+      "end": 316,
+      "status": "contested",
+      "reason": "315十月刘聪陷冯翊，太守梁肃奔万年；316仍有冯翊兵赴难，表明需要区分郡治与余部。",
+      "certainty": "high",
+      "source_ids": [
+        "jin005"
+      ],
+      "prefecture_ids": [
+        "p072"
+      ]
+    },
+    {
+      "id": "beidi-loss",
+      "start": 316,
+      "end": 316,
+      "status": "lost",
+      "reason": "316七月北地守麴昌奔长安，渭北诸城溃。",
+      "certainty": "high",
+      "source_ids": [
+        "jin005"
+      ],
+      "prefecture_ids": [
+        "p076"
+      ]
+    },
+    {
+      "id": "changan-final-loss",
+      "start": 316,
+      "end": 316,
+      "status": "lost",
+      "reason": "316十一月愍帝出降，长安失陷；西晋覆亡不表示江南凉州同时归敌。",
+      "certainty": "high",
+      "source_ids": [
+        "jin005"
+      ],
+      "county_ids": [
+        "c0506"
+      ]
+    },
+    {
+      "id": "guanzhong-after-surrender",
+      "start": 316,
+      "end": 316,
+      "status": "contested",
+      "reason": "316年末关中政权崩溃；郡县与晋将余部范围证据不齐，用待考而非继续整片实控。",
+      "certainty": "high",
+      "source_ids": [
+        "jin005",
+        "book-frontier"
+      ],
+      "prefecture_ids": [
+        "p071",
+        "p073",
+        "p074",
+        "p075",
+        "p077"
+      ]
+    },
+    {
+      "id": "jizhou-campaigns",
+      "start": 309,
+      "end": 312,
+      "status": "contested",
+      "reason": "309石勒破冀州诸壁，312据襄国及入信都；不能等待州行政phase313结束才反映实控破碎。",
+      "certainty": "high",
+      "source_ids": [
+        "jin005",
+        "book-frontier"
+      ],
+      "state_ids": [
+        "s04"
+      ]
+    },
+    {
+      "id": "jizhou-mostly-lost",
+      "start": 313,
+      "end": 316,
+      "status": "nominal",
+      "reason": "原书以313拟定冀州多郡陷于石勒，但乐陵邵续等晋据点仍存；只按有证据的城郡显示，不能一州同年全无晋土。",
+      "certainty": "medium",
+      "source_ids": [
+        "jin005",
+        "jin063",
+        "book-ji"
+      ],
+      "state_ids": [
+        "s04"
+      ]
+    },
+    {
+      "id": "yanzhou-yuzhou-collapse",
+      "start": 313,
+      "end": 316,
+      "status": "nominal",
+      "reason": "313兖豫大部失陷为原书概括；泰山谯鲁弋阳安丰为原书保留例外，逐县战线未定。",
+      "certainty": "medium",
+      "source_ids": [
+        "jin005",
+        "book-ji"
+      ],
+      "state_ids": [
+        "s02",
+        "s03"
+      ]
+    },
+    {
+      "id": "qingshou-cao-ni",
+      "start": 311,
+      "end": 316,
+      "status": "contested",
+      "reason": "曹嶷据青州，与石勒及晋势力相争；原书以313概括沦陷，缺少全部郡县同日易主证据。",
+      "certainty": "medium",
+      "source_ids": [
+        "jin005",
+        "jin063",
+        "book-frontier"
+      ],
+      "state_ids": [
+        "s14"
+      ]
+    },
+    {
+      "id": "youzhou-after-wangjun",
+      "start": 314,
+      "end": 316,
+      "status": "contested",
+      "reason": "314石勒杀王浚并陷蓟，之后段匹磾仍领幽州并有晋据点，不能全幽州同画归石勒。",
+      "certainty": "high",
+      "source_ids": [
+        "jin005",
+        "jin063"
+      ],
+      "state_ids": [
+        "s05"
+      ]
+    },
+    {
+      "id": "western-anping-loss",
+      "start": 311,
+      "end": 316,
+      "status": "lost",
+      "reason": "三国史记美川王十二年（311）袭取辽东西安平，仅覆写这个县，不牵连整个辽东郡。",
+      "certainty": "high",
+      "source_ids": [
+        "samguk017"
+      ],
+      "county_ids": [
+        "c0442"
+      ]
+    },
+    {
+      "id": "lelang-daifang-disruption",
+      "start": 313,
+      "end": 316,
+      "status": "contested",
+      "reason": "313张统率千余家撤迁辽西（通鉴），三国史记313侵乐浪314侵带方；行政表仍列至316而实际控制显著受损，全部边界不确定。",
+      "certainty": "high",
+      "source_ids": [
+        "samguk017",
+        "book-frontier",
+        "tongjian088"
+      ],
+      "prefecture_ids": [
+        "p062",
+        "p064"
+      ]
+    },
+    {
+      "id": "xuantu-city-sacked",
+      "start": 315,
+      "end": 316,
+      "status": "contested",
+      "reason": "315高句丽破玄菟城；破城与全郡永久易主不同，不能直接推出整个玄菟郡消失。",
+      "certainty": "high",
+      "source_ids": [
+        "samguk017"
+      ],
+      "prefecture_ids": [
+        "p063"
+      ]
+    },
+    {
+      "id": "xiangzhou-du-tao",
+      "start": 311,
+      "end": 314,
+      "status": "contested",
+      "reason": "311杜弢据长沙并掠零桂邵陵衡阳，315八月陶侃平之；具体县境反复，不把湘州所有年皆画成稳定晋土。",
+      "certainty": "high",
+      "source_ids": [
+        "jin005"
+      ],
+      "state_ids": [
+        "s18"
+      ]
+    },
+    {
+      "id": "ningzhou-uncertain-control",
+      "start": 306,
+      "end": 310,
+      "status": "partial",
+      "reason": "李毅卒后李秀等据守，州境饥疫并有夷寇与李雄逼迫；王逊310至311到任年代有异，不能视整宁州稳定实控。",
+      "certainty": "high",
+      "source_ids": [
+        "jin081",
+        "tongjian086"
+      ],
+      "state_ids": [
+        "s13"
+      ]
+    },
+    {
+      "id": "pingyi-defection",
+      "start": 316,
+      "end": 316,
+      "status": "partial",
+      "reason": "316五月平夷太守雷照率平夷等家户降李雄；可确认太守军户归附，户口迁徙不能确定全郡土地失去，故只记局部控制异常。",
+      "certainty": "medium",
+      "source_ids": [
+        "jin005"
+      ],
+      "prefecture_ids": [
+        "p138"
+      ]
+    },
+    {
+      "id": "chengdu-zhao-xin-300",
+      "start": 300,
+      "end": 300,
+      "status": "contested",
+      "prefecture_ids": [
+        "p115"
+      ],
+      "reason": "300十二月益州刺史赵廞据成都反；301正月李特杀赵廞后晋遣罗尚入蜀。只确认成都中心异常，不能确定全成都国县界控制。",
+      "certainty": "high",
+      "source_ids": [
+        "jin004",
+        "huayang008"
+      ]
+    },
+    {
+      "id": "shi-bing-feng-yun-303",
+      "start": 303,
+      "end": 303,
+      "status": "contested",
+      "state_ids": [
+        "s17",
+        "s15"
+      ],
+      "reason": "303石冰扰扬州、封云寇徐州，年底义军收复江东而石冰北退临淮寿春；304三月才记扬徐平。争夺提示不代表扬徐全州年末归叛军。",
+      "certainty": "high",
+      "source_ids": [
+        "jin004",
+        "jin100"
+      ]
+    },
+    {
+      "id": "chen-min-jiangdong-305-306",
+      "start": 305,
+      "end": 306,
+      "status": "contested",
+      "state_ids": [
+        "s17",
+        "s19"
+      ],
+      "reason": "305十二月陈敏举兵据江东，陈恢南寇江州，307被周玘顾荣等平定。实际割据重点为吴越和历阳江州部分地区，不能据州名画整扬江两州都失去晋据点。",
+      "certainty": "high",
+      "source_ids": [
+        "jin004",
+        "jin100"
+      ]
+    }
+  ],
+  "extra_entities": [
+    {
+      "id": "early-p229",
+      "entity_id": "p229",
+      "name": "交趾晋据点",
+      "start": 266,
+      "end": 270,
+      "status": "partial",
+      "coordinate": [
+        106.388896,
+        21.029748
+      ],
+      "coordinate_role": "original_map_layout_anchor_not_historical_seat",
+      "marker_only": true,
+      "source_ids": [
+        "jin003",
+        "jin057"
+      ],
+      "reason": "年度行政表不含此段；只补历史注记，不借用289郡面宣称确定实控边界。"
+    },
+    {
+      "id": "early-p232",
+      "entity_id": "p232",
+      "name": "九真晋据点",
+      "start": 268,
+      "end": 270,
+      "status": "partial",
+      "coordinate": [
+        105.611517,
+        19.745754
+      ],
+      "coordinate_role": "original_map_layout_anchor_not_historical_seat",
+      "marker_only": true,
+      "source_ids": [
+        "jin003",
+        "jin057"
+      ],
+      "reason": "年度行政表不含此段；只补历史注记，不借用289郡面宣称确定实控边界。"
+    },
+    {
+      "id": "early-p234",
+      "entity_id": "p234",
+      "name": "日南晋活动区（待考）",
+      "start": 268,
+      "end": 270,
+      "status": "contested",
+      "coordinate": [
+        106.715066,
+        17.103709
+      ],
+      "coordinate_role": "original_map_layout_anchor_not_historical_seat",
+      "marker_only": true,
+      "source_ids": [
+        "jin003"
+      ],
+      "reason": "年度行政表不含此段；只补历史注记，不借用289郡面宣称确定实控边界。"
+    },
+    {
+      "id": "early-p237",
+      "entity_id": "p237",
+      "name": "郁林晋据点",
+      "start": 268,
+      "end": 270,
+      "status": "partial",
+      "coordinate": [
+        109.926575,
+        23.215336
+      ],
+      "coordinate_role": "original_map_layout_anchor_not_historical_seat",
+      "marker_only": true,
+      "source_ids": [
+        "jin003",
+        "jin057"
+      ],
+      "reason": "年度行政表不含此段；只补历史注记，不借用289郡面宣称确定实控边界。"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "jiaozhou-before-280",
+      "reason": "交趾晋据守早年源文有264/265/268不同叙述，交趾从266显示据点；九真日南郁林安全起点定268；精确县属与沿边山地未证。"
+    },
+    {
+      "id": "hanjia-fuling",
+      "reason": "西晋年度章、疆域章、东晋章互异；保留争议而不强行推出303或314后完整排除。"
+    },
+    {
+      "id": "313-regional-collapse",
+      "reason": "晋书山东郡邑相继陷的概括不是所有郡县同时失陷，邵续段匹磾刘琨李矩等据点须逐一研究。"
+    },
+    {
+      "id": "early-jianping",
+      "reason": "原书北井269为建平都尉，年度郡表275才启用；本轮不把都尉编造为已建郡面。"
+    },
+    {
+      "id": "zhangtong-lelang",
+      "reason": "乐浪带方313张统撤迁常见记述；三国史记本身313/314只说侵掠，本轮使用contested，不断定每县同时完全被吞并。"
+    },
+    {
+      "id": "western-frontier-270-278-296-298",
+      "reason": "树机能与齐万年之乱影响秦凉雍部分地区；本轮已核年末279凉州恢复、299齐万年被获，但尚缺270—278和296—298的逐城逐县实控证据，未编造逐年反军边界。",
+      "source_ids": [
+        "jin003",
+        "jin004"
+      ]
+    }
+  ]
+}
