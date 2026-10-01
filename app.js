@@ -55,6 +55,8 @@
   let currentDynasty = DYNASTIES['western-jin'];
   let currentMap = null;
   let currentMapFeatures = [];
+  const jinMapCache = new Map();
+  let jinMapRequest = 0;
   let mapZoom = 1;
   let activeMapKey = '';
   let mapReadingMode = false;
@@ -1607,7 +1609,8 @@
     ensureMapLabelVisible(feature?.level||target.dataset.mapLevel,{clientX:rect.left+rect.width/2,clientY:rect.top+rect.height/2});
     selectMapKey(target.dataset.mapKey);
     if(entityId) {
-      $('yearMapStatus').textContent=`已高亮${label}的文字、治所與引線。${mapReadingMode?'可按「查看正文」退出讀圖並定位年表。':'已聯動年表中的同一政區。'}`;
+      const locationWord=currentMap?.dynasty==='western-jin'&&/not_seat|文字/.test(feature?.coordinate_role||'')?'地圖標注位置':'治所';
+      $('yearMapStatus').textContent=`已高亮${label}的文字、${locationWord}與引線。${mapReadingMode?'可按「查看正文」退出讀圖並定位年表。':'已聯動年表中的同一政區。'}`;
       if(!mapReadingMode)revealTextEntity(entityId);
     } else $('yearMapStatus').textContent=`已高亮${label}的文字、位置與引線；此為地圖參考標記，未與本年正文中的唯一政區連接。`;
   }
@@ -1907,7 +1910,7 @@
     labels.sort((a,b)=>b.priority-a.priority||a.y-b.y||a.x-b.x||a.text.localeCompare(b.text));
     for(const source of labels) {
       const isArea=source.kind.includes('area');
-      const limits=isArea?(source.level==='state'?[22,28]:[17,21]):(source.level==='county'?[11,12]:[12,13]);
+      const limits=source.smallAnnotation?[9,10]:isArea?(source.level==='state'?[22,28]:[17,21]):(source.level==='county'?[11,12]:[12,13]);
       const fontSize=Math.max(limits[0],Math.min(limits[1],source.fontSize*scale))/scale;
       const label={...source,fontSize},width=labelWidth(label.text,fontSize)+fontSize*.35,height=fontSize*1.4;
       let placement=null;
@@ -1948,8 +1951,8 @@
       if(label.fiefIds?.length)text.dataset.fiefIds=label.fiefIds.join(' ');
       text.setAttribute('tabindex','0');text.setAttribute('role','button');
       if(label.entityId) {
-        text.dataset.entityId=label.entityId;text.setAttribute('aria-label',`高亮${label.text}的文字與治所`);
-        text.appendChild(svgNode('title',{},`點擊聯動文字與治所：${label.text}${label.coLocated?'（同治所分列標注）':''}${label.colorSource?'；'+label.colorSource:''}`));
+        text.dataset.entityId=label.entityId;text.setAttribute('aria-label',`高亮${label.text}的文字與${label.isTextAnchor?'地圖標注位置':'治所'}`);
+        text.appendChild(svgNode('title',{},`點擊聯動文字與${label.isTextAnchor?'地圖標注位置（非治所）':'治所'}：${label.text}${label.coLocated?'（同治所分列標注）':''}${label.colorSource?'；'+label.colorSource:''}`));
       } else {
         text.dataset.mapReference=label.text;
         text.appendChild(svgNode('title',{},`${label.text}：地圖參考標記，未與本年正文唯一連接`));
@@ -1984,12 +1987,13 @@
     const candidates=labels.filter((label)=>mapLabelVisible(label.level,zoom)).sort((a,b)=>
       Number(Boolean(b.entityId))-Number(Boolean(a.entityId))||Number(b.kind.includes('area'))-Number(a.kind.includes('area'))||b.priority-a.priority);
     for(const label of candidates) {
-      const pointKey=`${label.level}|${Number(label.x).toFixed(1)}|${Number(label.y).toFixed(1)}|${normalizeName(label.sourceName||label.text)}`;
+      const labelIdentity=label.labelIdentity||'';
+      const pointKey=`${label.level}|${Number(label.x).toFixed(1)}|${Number(label.y).toFixed(1)}|${normalizeName(label.sourceName||label.text)}|${labelIdentity}`;
       const ids=points.get(pointKey);
       if(ids&&(ids.has(label.entityId||'')||!label.entityId||ids.has('')))continue;
       const group=label.entityId?`entity:${label.entityId}`:label.mapGroup||label.mapKey;
       const single=label.level==='state'?zoom<3:label.level==='prefecture'?zoom<=7:false;
-      const groupKey=`${label.level}|${group}|${single?'single':label.kind.includes('area')?'area':'seat'}`;
+      const groupKey=`${label.level}|${group}|${single?'single':label.kind.includes('area')?'area':'seat'}|${labelIdentity}`;
       if(groups.has(groupKey))continue;
       groups.add(groupKey);
       if(!points.has(pointKey))points.set(pointKey,new Set());
@@ -2005,6 +2009,7 @@
     const scale=Math.max(.01,yearMapStage.clientWidth/currentMap.width);
     for(const symbol of yearMapOverlay.querySelectorAll('[data-seat-level]')) {
       const level=symbol.dataset.seatLevel,outer=symbol.children[0],inner=symbol.children[1];
+      if(currentMap?.dynasty==='western-jin')symbol.style.display=mapLabelVisible(level)?'':'none';
       if(!outer)continue;
       outer.setAttribute('r',String((level==='state'?4.8:level==='prefecture'?3.5:1.7)/scale));
       outer.style.strokeWidth=`${(level==='county'?.5:1.1)/scale}`;
@@ -2231,7 +2236,59 @@
     const link=document.createElement('a');link.href=currentMap.uhd;link.download='588年_隋陳州郡縣封國地形圖_超高清.png';link.click();
   }
 
+  function renderJinSnapshotMap(year,snapshot,map) {
+    if(currentMap?.year!==year)clearMapLinkHighlights();
+    $('mapBoundaryResearch').hidden=true;$('liangMapMissing').hidden=true;$('liangMapReference555').hidden=true;
+    yearMapPanel.hidden=false;textMapLinkControl.hidden=false;
+    results.classList.toggle('text-map-link-enabled',Boolean(textMapLinkToggle.checked));
+    currentMap={year,width:map.width,height:map.height,dynasty:'western-jin'};mapUhdLoaded=false;
+    yearMapStage.style.paddingBottom='0px';
+    yearMapOverlay.setAttribute('viewBox',`0 0 ${map.width} ${map.height}`);
+    yearMapOverlay.setAttribute('aria-label',`${year}年西晉州郡封國圖`);
+    const base=`<svg xmlns="http://www.w3.org/2000/svg" width="${map.width}" height="${map.height}"><rect width="100%" height="100%" fill="#f7f3e9"/></svg>`;
+    yearMapImage.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(base);yearMapImage.alt=`${year}年西晉封國地圖底色`;
+    $('yearMapTitle').textContent=map.title||`${year}年西晉州郡與封國`;
+    $('yearMapZoomHelp').textContent='100%–1000%；300%起顯示郡國名，超過700%顯示縣級封國。只提供已研究斷面，不外推其他年份。';
+    yearMapNote.textContent=map.note||'CHGIS與原圖矢量成果接合；多郡王國合併著色，內部郡界淡化。文字位置不是郡治。';
+    for(const link of [yearMapUhd,yearMapCsv,yearMapGeoJson]) {
+      link.hidden=true;link.removeAttribute('href');link.removeAttribute('download');
+    }
+    yearMapExport.hidden=true;yearMapLoadUhd.hidden=true;
+    const rendered=window.JIN_MAP_VIEW.draw(map,yearMapOverlay,{svgNode,seatSymbol:mapSeatSymbol,areaGuard:mapTerritoryLabelGuard});
+    currentMapFeatures=rendered.features;
+    appendHotspots(yearMapOverlay,rendered.features.filter(f=>f.coordinate_role==='administrative_seat'));
+    const layer=svgNode('g',{class:'dynamic-map-label-layer'});yearMapOverlay.appendChild(layer);
+    mapLabelLayouts.set(yearMapOverlay,{labels:rendered.labels,plot:map.plot,layer,year,territoryGuard:null});
+    $('yearMapStatus').textContent=`${year}年：${map.geojson.features.length}筆地理要素。封國邊界與支郡來自本斷面研究，CHGIS治所與原圖文字錨點分列。`;
+    resetMapView();
+  }
+
   function renderYearMap(year,snapshot) {
+    const request=++jinMapRequest;
+    $('yearMapLegend').hidden=currentDynasty.key==='western-jin';
+    $('jinMapLegend').hidden=currentDynasty.key!=='western-jin';
+    if(currentDynasty.key==='western-jin') {
+      const jin=window.JIN_SNAPSHOT_MAPS?.years?.[String(year)];
+      if(jin&&window.JIN_MAP_VIEW){
+        if(jin.geojson){renderJinSnapshotMap(year,snapshot,jin);return;}
+        currentMap=null;currentMapFeatures=[];mapLabelLayouts.delete(yearMapOverlay);yearMapOverlay.replaceChildren();
+        yearMapPanel.hidden=false;textMapLinkControl.hidden=true;yearMapExport.hidden=true;yearMapCsv.hidden=true;
+        yearMapGeoJson.hidden=true;yearMapUhd.hidden=true;yearMapLoadUhd.hidden=true;
+        yearMapImage.removeAttribute('src');yearMapImage.alt=`正在載入${year}年西晉地圖`;
+        yearMapNote.textContent=jin.note||'';
+        $('yearMapZoomHelp').textContent='地圖載入後可縮放、查看封國及聯動正文。';
+        $('mapBoundaryResearch').hidden=true;$('liangMapReference555').hidden=true;
+        $('yearMapTitle').textContent=jin.title;$('yearMapStatus').textContent=`正在載入${year}年地圖…`;
+        if(!jinMapCache.has(jin.data_url))jinMapCache.set(jin.data_url,fetch(jin.data_url).then(response=>{
+          if(!response.ok)throw new Error(`HTTP ${response.status}`);return response.json();
+        }).catch(error=>{jinMapCache.delete(jin.data_url);throw error;}));
+        jinMapCache.get(jin.data_url).then(geojson=>{
+          if(request===jinMapRequest)renderJinSnapshotMap(year,snapshot,{...jin,geojson});
+        }).catch(error=>{
+          if(request===jinMapRequest){$('yearMapStatus').textContent='本年地圖載入失敗，請重新選擇年份重試。';console.error(error);}
+        });return;
+      }
+    }
     const liang=currentDynasty.key==='southern-liang';
     $('mapBoundaryResearch').hidden=true;
     const dynamic=liang?window.LIANG_DYNAMIC_MAP:currentDynasty.key==='chen'?window.CHEN_DYNAMIC_MAP:null;
@@ -2253,6 +2310,7 @@
         $('yearMapZoomHelp').textContent='100%–1000%；300%起顯示郡名，超過700%顯示縣名；名稱、治所與正文可聯動。';
         yearMapNote.textContent='年度治所和參考郡界取自新提供的CHGIS V6，州治以V4地理坐標欄補充。名稱按年表所屬地域窗口與本年有效資料匹配；同名仍有多個候選者保留未定位。這些匹配供地理參考，不能代替行政沿革考證，郡界亦不等同梁朝疆域。各筆起止年、CHGIS判年規則、來源ID及匹配方法隨CSV／GeoJSON匯出；V4坐標未作測量級基準轉換。534／555年原圖另列，不外推為其他年份疆域。';
         yearMapUhd.hidden=false;yearMapUhd.href='assets/maps/reference/liang-534-chgis.png';yearMapUhd.textContent='下載534年參考原圖';
+        yearMapUhd.setAttribute('download','');
         yearMapCsv.hidden=false;yearMapCsv.textContent='下載本年已連接治所 CSV';
         yearMapGeoJson.hidden=false;yearMapGeoJson.textContent='下載本年已連接治所 GeoJSON';
         yearMapExport.hidden=false;yearMapLoadUhd.hidden=true;mapUhdLoaded=false;
@@ -2296,7 +2354,7 @@
   }
 
   async function exportCurrentYearMap() {
-    if(!currentMap)return;
+    if(!currentMap||currentMap.dynasty==='western-jin')return;
     const button=$('yearMapExport'),oldText=button.textContent;
     button.disabled=true;button.textContent='正在匯出…';
     try {

@@ -101,7 +101,8 @@
         <output id="yearMapZoomValue" aria-live="polite">100%</output>
         <span id="yearMapZoomHelp">100%–1000%；低於300%只顯示州名，300%–700%顯示州郡名，超過700%顯示州郡縣名。滾輪縮放，拖曳或聚焦地圖後用方向鍵平移。</span>
       </div>
-      <p class="map-symbol-legend">◎ 州治　⊙ 郡治　● 縣治；範圍名較大且限於對應界內，治所名較小。封國文字及治所符號沿用正文當年封君色，未詳或顏色有歧義者為黑色。底圖填色表示政權，邊界線粗細表示層級；選中項以淡黃底與下劃線提示。</p>
+      <p id="yearMapLegend" class="map-symbol-legend">◎ 州治　⊙ 郡治　● 縣治；範圍名較大且限於對應界內，治所名較小。封國文字及治所符號沿用正文當年封君色，未詳或顏色有歧義者為黑色。底圖填色表示政權，邊界線粗細表示層級；選中項以淡黃底與下劃線提示。</p>
+      <p id="jinMapLegend" class="map-symbol-legend" hidden>◎ 州治　⊙ 郡治　● 縣治；治所與原圖文字位置分列。彩色面表示封國，國中郡界淡化；斜線、虛線及※表示範圍或歸屬推定。小字封爵不表示占有整個行政縣。地圖研究與正文沿革有分歧時各自保留，只有明確對應的政區才聯動。</p>
       <div id="mapBoundaryResearch" class="map-symbol-legend" hidden></div>
       <div id="yearMapViewport" class="year-map-viewport" tabindex="0" role="region" aria-label="地圖瀏覽區" aria-describedby="yearMapZoomHelp">
         <div id="yearMapStage" class="year-map-stage">
@@ -174,6 +175,9 @@
   <script src="data/jin-data.js"></script>
   <script src="data/princes.js"></script>
   <script src="data/five-rank-fiefs.js"></script>
+  <script src="data/jin-map-snapshots.js?v=20261001.2"></script>
+  <script src="jin-map-model.js?v=20261001.2"></script>
+  <script src="jin-map-view.js?v=20261001.2"></script>
   <script src="data/liang-data.js?v=20260927.1"></script>
   <script src="data/liang-governors.js?v=20260927.1"></script>
   <script src="data/liang-county-overlay.js?v=20260927.1"></script>
@@ -210,6 +214,6 @@
   <script src="data/chen-qiao-prefaces.js?v=20260912.3"></script>
   <script src="source-annotations.js?v=20260912.3"></script>
   <script src="governor-history.js?v=20260912.1"></script>
-  <script src="app.js?v=20261001.1"></script>
+  <script src="app.js?v=20261001.2"></script>
 </body>
 </html>

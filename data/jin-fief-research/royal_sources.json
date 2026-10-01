@@ -1,0 +1,255 @@
+{
+  "retrieval_date": "2026-10-01",
+  "sources": [
+    {
+      "id": "WP_ROYALS",
+      "title": "晋朝藩王列表",
+      "kind": "维基百科二手汇总",
+      "url": "https://zh.wikipedia.org/wiki/晉朝藩王列表",
+      "refs": [
+        "turn5view0"
+      ],
+      "retrieved": true,
+      "use": "逐系覆盖、年表线索；逾年称元、错配年号、推算终年均需原典复核",
+      "local": "royal_wikipedia.html"
+    },
+    {
+      "id": "GU_2018",
+      "title": "顾江龙：太康十年分封与杨骏的兴灭",
+      "kind": "同行评议论文",
+      "journal": "华东师范大学学报（哲学社会科学版）",
+      "year": 2018,
+      "volume": 50,
+      "issue": 4,
+      "pages": "61–71",
+      "doi": "10.16382/j.cnki.1000-5579.2018.04.007",
+      "url": "https://xbzs.ecnu.edu.cn/CN/html/2018-4-61.htm",
+      "refs": [
+        "turn5view1",
+        "turn6view0"
+      ],
+      "retrieved": true,
+      "use": "289多郡王国整体制度；豫章十郡等成员为作者研究推定，不是同年原诏逐郡名单",
+      "local": "gu_2018.html"
+    },
+    {
+      "id": "JINSHU_003",
+      "title": "晋书·武帝纪",
+      "kind": "原始文献（维基文库转录）",
+      "url": "https://zh.wikisource.org/zh-hans/晉書/卷003",
+      "refs": [
+        "turn22view0"
+      ],
+      "retrieved": true,
+      "use": "289年10–11月分封顺序、逐年薨迁",
+      "local": "jinshu_003.txt"
+    },
+    {
+      "id": "JINSHU_005",
+      "title": "晋书·怀帝纪、愍帝纪",
+      "kind": "原始文献（维基文库转录）",
+      "url": "https://zh.wikisource.org/zh-hans/晉書/卷005",
+      "refs": [
+        "turn56view0"
+      ],
+      "retrieved": true,
+      "use": "308清河覃死亡、年末长沙硕临淮鲜授封；307/309及312校时",
+      "local": "jinshu_005.txt"
+    },
+    {
+      "id": "JINSHU_014",
+      "title": "晋书·地理志上",
+      "kind": "原始文献（维基文库转录）",
+      "url": "https://zh.wikisource.org/zh-hans/晉書/卷014",
+      "refs": [
+        "turn65view0"
+      ],
+      "retrieved": true,
+      "use": "北方郡县名义建置；不是无冲突的单一年切片（武邑省还长乐实际出自太平寰宇记63）",
+      "local": "jinshu_014.txt"
+    },
+    {
+      "id": "JINSHU_015",
+      "title": "晋书·地理志下",
+      "kind": "原始文献（维基文库转录）",
+      "url": "https://zh.wikisource.org/zh-hans/晉書/卷015",
+      "refs": [
+        "turn65view1"
+      ],
+      "retrieved": true,
+      "use": "成都在荆州析县、308附近行政建置",
+      "local": "jinshu_015.txt"
+    },
+    {
+      "id": "JINSHU_037",
+      "title": "晋书·宗室传",
+      "kind": "原始文献（维基文库转录）",
+      "url": "https://zh.wikisource.org/zh-hans/晉書/卷037",
+      "refs": [
+        "turn22view1"
+      ],
+      "retrieved": true,
+      "use": "宗室旁支各王改封、继嗣与增县",
+      "local": "jinshu_037.txt"
+    },
+    {
+      "id": "JINSHU_038",
+      "title": "晋书·宣五王、文六王传",
+      "kind": "原始文献（维基文库转录）",
+      "url": "https://zh.wikisource.org/zh-hans/晉書/卷038",
+      "refs": [
+        "turn22view2"
+      ],
+      "retrieved": true,
+      "use": "琅邪东莞、梁陈、燕增封和吴王兄弟系",
+      "local": "jinshu_038.txt"
+    },
+    {
+      "id": "JINSHU_053",
+      "title": "晋书·愍怀太子传",
+      "kind": "原始文献（维基文库转录）",
+      "url": "https://zh.wikisource.org/zh-hans/晉書/卷053",
+      "refs": [
+        "turn54view0"
+      ],
+      "retrieved": true,
+      "use": "289广陵王遹兼淮陵五万户",
+      "local": "jinshu_053.txt"
+    },
+    {
+      "id": "JINSHU_059",
+      "title": "晋书·八王传",
+      "kind": "原始文献（维基文库转录）",
+      "url": "https://zh.wikisource.org/zh-hans/晉書/卷059",
+      "refs": [
+        "turn22view4"
+      ],
+      "retrieved": true,
+      "use": "汝南、楚、齐、长沙、成都、河间、东海改封增封",
+      "local": "jinshu_059.txt"
+    },
+    {
+      "id": "JINSHU_064",
+      "title": "晋书·武十三王等传",
+      "kind": "原始文献（维基文库转录）",
+      "url": "https://zh.wikisource.org/zh-hans/晉書/卷064",
+      "refs": [
+        "turn22view3"
+      ],
+      "retrieved": true,
+      "use": "秦、汉、淮南、清河、吴、豫章等系，吴三郡明载",
+      "local": "jinshu_064.txt"
+    },
+    {
+      "id": "HUAYANG_008",
+      "title": "华阳国志卷八·大同志",
+      "kind": "原始文献（带后人校释的网络版本）",
+      "url": "https://zh.wikisource.org/wiki/華陽國志/卷八",
+      "refs": [
+        "turn54view1"
+      ],
+      "retrieved": true,
+      "use": "289成都所封蜀、广汉、犍为、汶山四郡",
+      "local": "huayang_008.txt"
+    },
+    {
+      "id": "SONGSHU_035",
+      "title": "宋书卷三十五·州郡志一",
+      "kind": "原始文献（维基文库转录）",
+      "url": "https://zh.wikisource.org/wiki/宋書/卷35",
+      "refs": [
+        "turn63view0",
+        "turn64view0"
+      ],
+      "retrieved": true,
+      "use": "东莞277合琅邪、289复立；彭城蕃薛两县变更"
+    },
+    {
+      "id": "CHGIS_XIANG",
+      "title": "CHGIS/TGAZ 项县 hvd_82047",
+      "kind": "CHGIS官方时序条目",
+      "url": "https://tgaz.fudan.edu.cn/tgaz/placename/hvd_82047",
+      "refs": [
+        "turn60view0"
+      ],
+      "retrieved": true,
+      "use": "项县253–276陈郡，277–301梁国，302–555陈郡；支持289梁合陈但308恢复陈"
+    },
+    {
+      "id": "CHGIS_ZHU",
+      "title": "CHGIS/TGAZ 著县 hvd_45076",
+      "kind": "CHGIS官方时序条目",
+      "url": "https://tgaz.fudan.edu.cn/tgaz/placename/hvd_45076",
+      "refs": [
+        "turn60view1"
+      ],
+      "retrieved": true,
+      "use": "记著县265–555属济南郡，与283并齐的废郡解释冲突；按用户CHGIS优先保留冲突"
+    },
+    {
+      "id": "USER_EVIDENCE",
+      "title": "晋书_西晋诸侯王封国_穷尽提取证据库.xlsx",
+      "kind": "用户先前研究文件",
+      "retrieved": true,
+      "local": "../input/晋书_西晋诸侯王封国_穷尽提取证据库.xlsx",
+      "use": "恢复先前关注的梁陈、燕渔阳、齐济南等关系；其中AI评注不视作原典或用户确认"
+    },
+    {
+      "id": "YAO_HU_2010",
+      "title": "姚乐、胡阿祥：略论两晋统县政区长官之官名问题",
+      "kind": "论文（未直接取得全文）",
+      "year": 2010,
+      "book": "中古文明论集",
+      "editor": "严耀中",
+      "publisher": "天津古籍出版社",
+      "pages": "27–44",
+      "retrieved": false,
+      "via": "GU_2018",
+      "use": "仅记录顾文所引研究史，不声称已经直接审阅"
+    },
+    {
+      "id": "GU_TAIKANG_2018",
+      "title": "顾江龙：《太康地记》考——兼论王隐《晋书·地道记》和《元康地记》",
+      "kind": "论文（未直接取得全文）",
+      "year": 2018,
+      "journal": "文史",
+      "issue": "第4辑（总125辑）",
+      "pages": "91–116",
+      "retrieved": false,
+      "use": "书目线索；不把搜索摘要当独立证据"
+    },
+    {
+      "id": "JINSHU_063",
+      "title": "晋书卷63·邵续传",
+      "kind": "原始文献",
+      "url": "https://zh.wikisource.org/zh-hans/晉書/卷063",
+      "refs": [
+        "turn70view0"
+      ],
+      "retrieved": true,
+      "use": "318年前后武邑内史邵存，避免把省还长乐机械理解为裁撤郡级"
+    },
+    {
+      "id": "CHGIS_XIYANG_COUNTY",
+      "title": "CHGIS/TGAZ 西阳县 hvd_82563",
+      "kind": "CHGIS官方时序条目",
+      "url": "https://tgaz.fudan.edu.cn/tgaz/placename/hvd_82563",
+      "refs": [
+        "turn69view0"
+      ],
+      "retrieved": true,
+      "use": "-206–317河南光山旧西阳县，可作308西阳国约位，不断言王国治所"
+    },
+    {
+      "id": "WP_WUYI",
+      "title": "武邑郡",
+      "kind": "维基百科二手汇总及原典引文",
+      "url": "https://zh.wikipedia.org/wiki/武邑郡",
+      "refs": [
+        "turn68view1"
+      ],
+      "retrieved": true,
+      "use": "引太平寰宇记63惠帝武邑省还长乐；郡级保留与封国国统应区分"
+    }
+  ]
+}

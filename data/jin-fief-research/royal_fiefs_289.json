@@ -1,0 +1,1927 @@
+{
+  "schema_version": "1.1",
+  "year": 289,
+  "time_slice": "太康十年年末，纳入十月、十一月分封；继嗣不用维基逾年表元年机械留空",
+  "records": [
+    {
+      "id": "R289-001",
+      "year": 289,
+      "kingdom_name": "长乐国",
+      "holder": "司马玷",
+      "title": "长乐王",
+      "seat_commandery": "安平",
+      "member_commanderies": [
+        "安平"
+      ],
+      "confirmed_member_commanderies": [
+        "安平"
+      ],
+      "inferred_member_commanderies": [],
+      "start_year": 284,
+      "end_year": null,
+      "start_end_evidence": "太康五年武帝纪立玷为长乐王；原安平系转长乐。",
+      "status_at_year_end": "存续",
+      "confidence": "中",
+      "source_urls": [
+        "https://zh.wikipedia.org/wiki/晉朝藩王列表",
+        "https://zh.wikisource.org/zh-hans/晉書/卷037"
+      ],
+      "source_refs": [
+        "turn5view0",
+        "turn22view1"
+      ],
+      "evidence_summary": "太康五年武帝纪立玷为长乐王；原安平系转长乐。",
+      "exclusions_ambiguities": "玷/祐异文；武邑并入时间不详。安平原图面作为近似，不能连带吞并独立武邑。",
+      "polygon_policy": "match_exact_commandery_only",
+      "historical_role": "以郡为国",
+      "member_evidence": [],
+      "map_aliases": [
+        "安平"
+      ],
+      "annexed_former_commanderies": [],
+      "historical_annexations": [],
+      "food_associated_counties": [],
+      "map_default": true,
+      "fief_level": "郡王国",
+      "nominal_not_actual_control": true
+    },
+    {
+      "id": "R289-002",
+      "year": 289,
+      "kingdom_name": "义阳国",
+      "holder": "司马威",
+      "title": "义阳王",
+      "seat_commandery": "义阳",
+      "member_commanderies": [
+        "义阳"
+      ],
+      "confirmed_member_commanderies": [
+        "义阳"
+      ],
+      "inferred_member_commanderies": [],
+      "start_year": 288,
+      "end_year": 301,
+      "start_end_evidence": "太康九年由章武转义阳，永宁元年与赵王伦同诛。",
+      "status_at_year_end": "存续",
+      "confidence": "高",
+      "source_urls": [
+        "https://zh.wikipedia.org/wiki/晉朝藩王列表",
+        "https://zh.wikisource.org/zh-hans/晉書/卷037"
+      ],
+      "source_refs": [
+        "turn5view0",
+        "turn22view1"
+      ],
+      "evidence_summary": "太康九年由章武转义阳，永宁元年与赵王伦同诛。",
+      "exclusions_ambiguities": "",
+      "polygon_policy": "match_exact_commandery_only",
+      "historical_role": "以郡为国",
+      "member_evidence": [],
+      "annexed_former_commanderies": [],
+      "historical_annexations": [],
+      "food_associated_counties": [],
+      "map_default": true,
+      "fief_level": "郡王国",
+      "nominal_not_actual_control": true
+    },
+    {
+      "id": "R289-003",
+      "year": 289,
+      "kingdom_name": "章武国",
+      "holder": "司马混",
+      "title": "章武王",
+      "seat_commandery": "章武",
+      "member_commanderies": [
+        "章武"
+      ],
+      "confirmed_member_commanderies": [
+        "章武"
+      ],
+      "inferred_member_commanderies": [],
+      "start_year": 288,
+      "end_year": null,
+      "start_end_evidence": "太康九年立司马洪子继章武；纪作英，传作混，校勘以混为是。",
+      "status_at_year_end": "存续",
+      "confidence": "高",
+      "source_urls": [
+        "https://zh.wikipedia.org/wiki/晉朝藩王列表",
+        "https://zh.wikisource.org/zh-hans/晉書/卷037"
+      ],
+      "source_refs": [
+        "turn5view0",
+        "turn22view1"
+      ],
+      "evidence_summary": "太康九年立司马洪子继章武；纪作英，传作混，校勘以混为是。",
+      "exclusions_ambiguities": "终年与311遇害说未获直接确证。",
+      "polygon_policy": "match_exact_commandery_only",
+      "historical_role": "以郡为国",
+      "member_evidence": [],
+      "annexed_former_commanderies": [],
+      "historical_annexations": [],
+      "food_associated_counties": [],
+      "map_default": true,
+      "fief_level": "郡王国",
+      "nominal_not_actual_control": true
+    },
+    {
+      "id": "R289-004",
+      "year": 289,
+      "kingdom_name": "随国",
+      "holder": "司马迈",
+      "title": "随王",
+      "seat_commandery": "随",
+      "member_commanderies": [
+        "随"
+      ],
+      "confirmed_member_commanderies": [
+        "随"
+      ],
+      "inferred_member_commanderies": [],
+      "start_year": 288,
+      "end_year": 311,
+      "start_end_evidence": "太康九年以平林增封，随县王升随郡王。",
+      "status_at_year_end": "存续",
+      "confidence": "高",
+      "source_urls": [
+        "https://zh.wikipedia.org/wiki/晉朝藩王列表",
+        "https://zh.wikisource.org/zh-hans/晉書/卷037"
+      ],
+      "source_refs": [
+        "turn5view0",
+        "turn22view1"
+      ],
+      "evidence_summary": "太康九年以平林增封，随县王升随郡王。",
+      "exclusions_ambiguities": "288以义阳平林增随县为随郡王；原图漏随郡者不得以义阳全郡替代，仅注点并等待CHGIS县界。",
+      "polygon_policy": "no_polygon_without_exact_subdivision",
+      "historical_role": "以郡为国",
+      "member_evidence": [],
+      "annexed_former_commanderies": [],
+      "historical_annexations": [],
+      "food_associated_counties": [
+        "随县",
+        "平林"
+      ],
+      "map_default": true,
+      "fief_level": "郡王国",
+      "nominal_not_actual_control": true
+    },
+    {
+      "id": "R289-005",
+      "year": 289,
+      "kingdom_name": "东平国",
+      "holder": "司马楙",
+      "title": "东平王",
+      "seat_commandery": "东平",
+      "member_commanderies": [
+        "东平"
+      ],
+      "confirmed_member_commanderies": [
+        "东平"
+      ],
+      "inferred_member_commanderies": [],
+      "start_year": 265,
+      "end_year": 307,
+      "start_end_evidence": "泰始初封东平，怀帝即位后改封竟陵。",
+      "status_at_year_end": "存续",
+      "confidence": "高",
+      "source_urls": [
+        "https://zh.wikipedia.org/wiki/晉朝藩王列表",
+        "https://zh.wikisource.org/zh-hans/晉書/卷037"
+      ],
+      "source_refs": [
+        "turn5view0",
+        "turn22view1"
+      ],
+      "evidence_summary": "泰始初封东平，怀帝即位后改封竟陵。",
+      "exclusions_ambiguities": "",
+      "polygon_policy": "match_exact_commandery_only",
+      "historical_role": "以郡为国",
+      "member_evidence": [],
+      "annexed_former_commanderies": [],
+      "historical_annexations": [],
+      "food_associated_counties": [],
+      "map_default": true,
+      "fief_level": "郡王国",
+      "nominal_not_actual_control": true
+    },
+    {
+      "id": "R289-006",
+      "year": 289,
+      "kingdom_name": "太原国",
+      "holder": "司马泓",
+      "title": "太原王",
+      "seat_commandery": "太原",
+      "member_commanderies": [
+        "太原"
+      ],
+      "confirmed_member_commanderies": [
+        "太原"
+      ],
+      "inferred_member_commanderies": [],
+      "start_year": 284,
+      "end_year": null,
+      "start_end_evidence": "父辅太康五年薨，子嗣；元康中徙中丘，289仍按太原。",
+      "status_at_year_end": "存续",
+      "confidence": "高",
+      "source_urls": [
+        "https://zh.wikipedia.org/wiki/晉朝藩王列表",
+        "https://zh.wikisource.org/zh-hans/晉書/卷037"
+      ],
+      "source_refs": [
+        "turn5view0",
+        "turn22view1"
+      ],
+      "evidence_summary": "父辅太康五年薨，子嗣；元康中徙中丘，289仍按太原。",
+      "exclusions_ambiguities": "本传弘，表作泓；改中丘确年不详，常系291前后。",
+      "polygon_policy": "match_exact_commandery_only",
+      "historical_role": "以郡为国",
+      "member_evidence": [],
+      "annexed_former_commanderies": [],
+      "historical_annexations": [],
+      "food_associated_counties": [],
+      "map_default": true,
+      "fief_level": "郡王国",
+      "nominal_not_actual_control": true
+    },
+    {
+      "id": "R289-007",
+      "year": 289,
+      "kingdom_name": "武邑国",
+      "holder": "司马承",
+      "title": "武邑王",
+      "seat_commandery": "武邑",
+      "member_commanderies": [
+        "武邑"
+      ],
+      "confirmed_member_commanderies": [
+        "武邑"
+      ],
+      "inferred_member_commanderies": [],
+      "start_year": 289,
+      "end_year": null,
+      "start_end_evidence": "太康十年十月由南宫进封武邑。",
+      "status_at_year_end": "存续",
+      "confidence": "中",
+      "source_urls": [
+        "https://zh.wikipedia.org/wiki/晉朝藩王列表",
+        "https://zh.wikisource.org/zh-hans/晉書/卷003"
+      ],
+      "source_refs": [
+        "turn5view0",
+        "turn22view0"
+      ],
+      "evidence_summary": "太康十年十月由南宫进封武邑。",
+      "exclusions_ambiguities": "惠帝时省并长乐，时间不详；原图缺武邑独立标签，不直接替换安平。 原图无武邑面，不得以安平整郡替代。",
+      "polygon_policy": "no_polygon_without_exact_subdivision",
+      "historical_role": "以郡为国",
+      "member_evidence": [],
+      "annexed_former_commanderies": [],
+      "historical_annexations": [],
+      "food_associated_counties": [],
+      "map_default": true,
+      "fief_level": "郡王国",
+      "nominal_not_actual_control": true
+    },
+    {
+      "id": "R289-008",
+      "year": 289,
+      "kingdom_name": "下邳国",
+      "holder": "司马晃",
+      "title": "下邳王",
+      "seat_commandery": "下邳",
+      "member_commanderies": [
+        "下邳"
+      ],
+      "confirmed_member_commanderies": [
+        "下邳"
+      ],
+      "inferred_member_commanderies": [],
+      "start_year": 265,
+      "end_year": 296,
+      "start_end_evidence": "泰始元年受封；元康六年薨。",
+      "status_at_year_end": "存续",
+      "confidence": "高",
+      "source_urls": [
+        "https://zh.wikipedia.org/wiki/晉朝藩王列表",
+        "https://zh.wikisource.org/zh-hans/晉書/卷037"
+      ],
+      "source_refs": [
+        "turn5view0",
+        "turn22view1"
+      ],
+      "evidence_summary": "泰始元年受封；元康六年薨。",
+      "exclusions_ambiguities": "",
+      "polygon_policy": "match_exact_commandery_only",
+      "historical_role": "以郡为国",
+      "member_evidence": [],
+      "annexed_former_commanderies": [],
+      "historical_annexations": [],
+      "food_associated_counties": [],
+      "map_default": true,
+      "fief_level": "郡王国",
+      "nominal_not_actual_control": true
+    },
+    {
+      "id": "R289-009",
+      "year": 289,
+      "kingdom_name": "河间国",
+      "holder": "司马颙",
+      "title": "河间王",
+      "seat_commandery": "河间",
+      "member_commanderies": [
+        "河间"
+      ],
+      "confirmed_member_commanderies": [
+        "河间"
+      ],
+      "inferred_member_commanderies": [],
+      "start_year": 277,
+      "end_year": 306,
+      "start_end_evidence": "咸宁三年由太原转河间；光熙末遇害。",
+      "status_at_year_end": "存续",
+      "confidence": "高",
+      "source_urls": [
+        "https://zh.wikipedia.org/wiki/晉朝藩王列表",
+        "https://zh.wikisource.org/zh-hans/晉書/卷059"
+      ],
+      "source_refs": [
+        "turn5view0",
+        "turn22view4"
+      ],
+      "evidence_summary": "咸宁三年由太原转河间；光熙末遇害。",
+      "exclusions_ambiguities": "",
+      "polygon_policy": "match_exact_commandery_only",
+      "historical_role": "以郡为国",
+      "member_evidence": [],
+      "annexed_former_commanderies": [],
+      "historical_annexations": [],
+      "food_associated_counties": [],
+      "map_default": true,
+      "fief_level": "郡王国",
+      "nominal_not_actual_control": true
+    },
+    {
+      "id": "R289-010",
+      "year": 289,
+      "kingdom_name": "沛国",
+      "holder": "司马韬（暂定）",
+      "title": "沛王",
+      "seat_commandery": "沛",
+      "member_commanderies": [
+        "沛"
+      ],
+      "confirmed_member_commanderies": [
+        "沛"
+      ],
+      "inferred_member_commanderies": [],
+      "start_year": 275,
+      "end_year": null,
+      "start_end_evidence": "沛顺王275年薨，子韬立；后另见沛王滋。",
+      "status_at_year_end": "存续",
+      "confidence": "中",
+      "source_urls": [
+        "https://zh.wikipedia.org/wiki/晉朝藩王列表",
+        "https://zh.wikisource.org/zh-hans/晉書/卷037"
+      ],
+      "source_refs": [
+        "turn5view0",
+        "turn22view1"
+      ],
+      "evidence_summary": "沛顺王275年薨，子韬立；后另见沛王滋。",
+      "exclusions_ambiguities": "韬、滋继承分界年不详；289国存续可判，持有人仅暂定。",
+      "polygon_policy": "match_exact_commandery_only",
+      "historical_role": "以郡为国",
+      "member_evidence": [],
+      "annexed_former_commanderies": [],
+      "historical_annexations": [],
+      "food_associated_counties": [],
+      "map_default": true,
+      "fief_level": "郡王国",
+      "nominal_not_actual_control": true
+    },
+    {
+      "id": "R289-011",
+      "year": 289,
+      "kingdom_name": "彭城国",
+      "holder": "司马植",
+      "title": "彭城王",
+      "seat_commandery": "彭城",
+      "member_commanderies": [
+        "彭城"
+      ],
+      "confirmed_member_commanderies": [
+        "彭城"
+      ],
+      "inferred_member_commanderies": [],
+      "start_year": 275,
+      "end_year": 300,
+      "start_end_evidence": "彭城权咸宁元年薨，植嗣，永康元年薨。",
+      "status_at_year_end": "存续",
+      "confidence": "高",
+      "source_urls": [
+        "https://zh.wikipedia.org/wiki/晉朝藩王列表",
+        "https://zh.wikisource.org/zh-hans/晉書/卷037"
+      ],
+      "source_refs": [
+        "turn5view0",
+        "turn22view1"
+      ],
+      "evidence_summary": "彭城权咸宁元年薨，植嗣，永康元年薨。",
+      "exclusions_ambiguities": "",
+      "polygon_policy": "match_exact_commandery_only",
+      "historical_role": "以郡为国",
+      "member_evidence": [],
+      "annexed_former_commanderies": [],
+      "historical_annexations": [],
+      "food_associated_counties": [],
+      "map_default": true,
+      "fief_level": "郡王国",
+      "nominal_not_actual_control": true
+    },
+    {
+      "id": "R289-012",
+      "year": 289,
+      "kingdom_name": "陇西国",
+      "holder": "司马泰",
+      "title": "陇西王",
+      "seat_commandery": "陇西",
+      "member_commanderies": [
+        "陇西"
+      ],
+      "confirmed_member_commanderies": [
+        "陇西"
+      ],
+      "inferred_member_commanderies": [],
+      "start_year": 265,
+      "end_year": 296,
+      "start_end_evidence": "泰始元年封陇西，元康六年徙高密。",
+      "status_at_year_end": "存续",
+      "confidence": "高",
+      "source_urls": [
+        "https://zh.wikipedia.org/wiki/晉朝藩王列表",
+        "https://zh.wikisource.org/zh-hans/晉書/卷037"
+      ],
+      "source_refs": [
+        "turn5view0",
+        "turn22view1"
+      ],
+      "evidence_summary": "泰始元年封陇西，元康六年徙高密。",
+      "exclusions_ambiguities": "",
+      "polygon_policy": "match_exact_commandery_only",
+      "historical_role": "以郡为国",
+      "member_evidence": [],
+      "annexed_former_commanderies": [],
+      "historical_annexations": [],
+      "food_associated_counties": [],
+      "map_default": true,
+      "fief_level": "郡王国",
+      "nominal_not_actual_control": true
+    },
+    {
+      "id": "R289-013",
+      "year": 289,
+      "kingdom_name": "范阳国",
+      "holder": "司马虓",
+      "title": "范阳王",
+      "seat_commandery": "范阳",
+      "member_commanderies": [
+        "范阳"
+      ],
+      "confirmed_member_commanderies": [
+        "范阳"
+      ],
+      "inferred_member_commanderies": [],
+      "start_year": 278,
+      "end_year": 306,
+      "start_end_evidence": "绥咸宁四年薨，子虓嗣，光熙元年薨。",
+      "status_at_year_end": "存续",
+      "confidence": "高",
+      "source_urls": [
+        "https://zh.wikipedia.org/wiki/晉朝藩王列表",
+        "https://zh.wikisource.org/zh-hans/晉書/卷037"
+      ],
+      "source_refs": [
+        "turn5view0",
+        "turn22view1"
+      ],
+      "evidence_summary": "绥咸宁四年薨，子虓嗣，光熙元年薨。",
+      "exclusions_ambiguities": "",
+      "polygon_policy": "match_exact_commandery_only",
+      "historical_role": "以郡为国",
+      "member_evidence": [],
+      "annexed_former_commanderies": [],
+      "historical_annexations": [],
+      "food_associated_counties": [],
+      "map_default": true,
+      "fief_level": "郡王国",
+      "nominal_not_actual_control": true
+    },
+    {
+      "id": "R289-014",
+      "year": 289,
+      "kingdom_name": "中山国",
+      "holder": "司马耽",
+      "title": "中山王",
+      "seat_commandery": "中山",
+      "member_commanderies": [
+        "中山"
+      ],
+      "confirmed_member_commanderies": [
+        "中山"
+      ],
+      "inferred_member_commanderies": [],
+      "start_year": 277,
+      "end_year": 292,
+      "start_end_evidence": "咸宁三年由济南转中山；元康二年薨。",
+      "status_at_year_end": "存续",
+      "confidence": "高",
+      "source_urls": [
+        "https://zh.wikipedia.org/wiki/晉朝藩王列表",
+        "https://zh.wikisource.org/zh-hans/晉書/卷037"
+      ],
+      "source_refs": [
+        "turn5view0",
+        "turn22view1"
+      ],
+      "evidence_summary": "咸宁三年由济南转中山；元康二年薨。",
+      "exclusions_ambiguities": "",
+      "polygon_policy": "match_exact_commandery_only",
+      "historical_role": "以郡为国",
+      "member_evidence": [],
+      "annexed_former_commanderies": [],
+      "historical_annexations": [],
+      "food_associated_counties": [],
+      "map_default": true,
+      "fief_level": "郡王国",
+      "nominal_not_actual_control": true
+    },
+    {
+      "id": "R289-015",
+      "year": 289,
+      "kingdom_name": "高阳国",
+      "holder": "司马睦",
+      "title": "高阳王",
+      "seat_commandery": "高阳",
+      "member_commanderies": [
+        "高阳"
+      ],
+      "confirmed_member_commanderies": [
+        "高阳"
+      ],
+      "inferred_member_commanderies": [],
+      "start_year": 280,
+      "end_year": 291,
+      "start_end_evidence": "中山旧封被废后，太康元年改以高阳封睦。",
+      "status_at_year_end": "存续",
+      "confidence": "高",
+      "source_urls": [
+        "https://zh.wikipedia.org/wiki/晉朝藩王列表",
+        "https://zh.wikisource.org/zh-hans/晉書/卷037"
+      ],
+      "source_refs": [
+        "turn5view0",
+        "turn22view1"
+      ],
+      "evidence_summary": "中山旧封被废后，太康元年改以高阳封睦。",
+      "exclusions_ambiguities": "",
+      "polygon_policy": "match_exact_commandery_only",
+      "historical_role": "以郡为国",
+      "member_evidence": [],
+      "annexed_former_commanderies": [],
+      "historical_annexations": [],
+      "food_associated_counties": [],
+      "map_default": true,
+      "fief_level": "郡王国",
+      "nominal_not_actual_control": true
+    },
+    {
+      "id": "R289-016",
+      "year": 289,
+      "kingdom_name": "谯国",
+      "holder": "司马随",
+      "title": "谯王",
+      "seat_commandery": "谯",
+      "member_commanderies": [
+        "谯"
+      ],
+      "confirmed_member_commanderies": [
+        "谯"
+      ],
+      "inferred_member_commanderies": [],
+      "start_year": 266,
+      "end_year": 302,
+      "start_end_evidence": "谯王逊泰始二年薨，随嗣，太安元年薨。",
+      "status_at_year_end": "存续",
+      "confidence": "高",
+      "source_urls": [
+        "https://zh.wikipedia.org/wiki/晉朝藩王列表",
+        "https://zh.wikisource.org/zh-hans/晉書/卷037"
+      ],
+      "source_refs": [
+        "turn5view0",
+        "turn22view1"
+      ],
+      "evidence_summary": "谯王逊泰始二年薨，随嗣，太安元年薨。",
+      "exclusions_ambiguities": "",
+      "polygon_policy": "match_exact_commandery_only",
+      "historical_role": "以郡为国",
+      "member_evidence": [],
+      "annexed_former_commanderies": [],
+      "historical_annexations": [],
+      "food_associated_counties": [],
+      "map_default": true,
+      "fief_level": "郡王国",
+      "nominal_not_actual_control": true
+    },
+    {
+      "id": "R289-017",
+      "year": 289,
+      "kingdom_name": "任城国",
+      "holder": "司马济",
+      "title": "任城王",
+      "seat_commandery": "任城",
+      "member_commanderies": [
+        "任城"
+      ],
+      "confirmed_member_commanderies": [
+        "任城"
+      ],
+      "inferred_member_commanderies": [],
+      "start_year": 283,
+      "end_year": 311,
+      "start_end_evidence": "陵转任城，太康四年薨后济继位。",
+      "status_at_year_end": "存续",
+      "confidence": "高",
+      "source_urls": [
+        "https://zh.wikipedia.org/wiki/晉朝藩王列表",
+        "https://zh.wikisource.org/zh-hans/晉書/卷037"
+      ],
+      "source_refs": [
+        "turn5view0",
+        "turn22view1"
+      ],
+      "evidence_summary": "陵转任城，太康四年薨后济继位。",
+      "exclusions_ambiguities": "本传部分改封、薨年与本纪异；从武帝纪校正为277改封、283嗣位。",
+      "polygon_policy": "match_exact_commandery_only",
+      "historical_role": "以郡为国",
+      "member_evidence": [],
+      "annexed_former_commanderies": [],
+      "historical_annexations": [],
+      "food_associated_counties": [],
+      "map_default": true,
+      "fief_level": "郡王国",
+      "nominal_not_actual_control": true
+    },
+    {
+      "id": "R289-018",
+      "year": 289,
+      "kingdom_name": "西河国",
+      "holder": "司马隐（暂定）",
+      "title": "西河王",
+      "seat_commandery": "西河",
+      "member_commanderies": [
+        "西河"
+      ],
+      "confirmed_member_commanderies": [
+        "西河"
+      ],
+      "inferred_member_commanderies": [],
+      "start_year": 278,
+      "end_year": null,
+      "start_end_evidence": "斌咸宁四年薨，隐嗣，后其子孴继。",
+      "status_at_year_end": "存续",
+      "confidence": "中",
+      "source_urls": [
+        "https://zh.wikipedia.org/wiki/晉朝藩王列表",
+        "https://zh.wikisource.org/zh-hans/晉書/卷037"
+      ],
+      "source_refs": [
+        "turn5view0",
+        "turn22view1"
+      ],
+      "evidence_summary": "斌咸宁四年薨，隐嗣，后其子孴继。",
+      "exclusions_ambiguities": "隐、孴继承分界年不详；289国存续可判，持有人暂定。",
+      "polygon_policy": "match_exact_commandery_only",
+      "historical_role": "以郡为国",
+      "member_evidence": [],
+      "annexed_former_commanderies": [],
+      "historical_annexations": [],
+      "food_associated_counties": [],
+      "map_default": true,
+      "fief_level": "郡王国",
+      "nominal_not_actual_control": true
+    },
+    {
+      "id": "R289-019",
+      "year": 289,
+      "kingdom_name": "汝南国",
+      "holder": "司马亮",
+      "title": "汝南王",
+      "seat_commandery": "汝南",
+      "member_commanderies": [
+        "汝南"
+      ],
+      "confirmed_member_commanderies": [
+        "汝南"
+      ],
+      "inferred_member_commanderies": [],
+      "start_year": 277,
+      "end_year": 291,
+      "start_end_evidence": "咸宁三年由扶风徙汝南，元康元年被害。",
+      "status_at_year_end": "存续",
+      "confidence": "高",
+      "source_urls": [
+        "https://zh.wikipedia.org/wiki/晉朝藩王列表",
+        "https://zh.wikisource.org/zh-hans/晉書/卷059"
+      ],
+      "source_refs": [
+        "turn5view0",
+        "turn22view4"
+      ],
+      "evidence_summary": "咸宁三年由扶风徙汝南，元康元年被害。",
+      "exclusions_ambiguities": "",
+      "polygon_policy": "match_exact_commandery_only",
+      "historical_role": "以郡为国",
+      "member_evidence": [],
+      "annexed_former_commanderies": [],
+      "historical_annexations": [],
+      "food_associated_counties": [],
+      "map_default": true,
+      "fief_level": "郡王国",
+      "nominal_not_actual_control": true
+    },
+    {
+      "id": "R289-020",
+      "year": 289,
+      "kingdom_name": "琅邪国",
+      "holder": "司马觐",
+      "title": "琅邪王",
+      "seat_commandery": "琅邪",
+      "member_commanderies": [
+        "琅邪"
+      ],
+      "confirmed_member_commanderies": [
+        "琅邪"
+      ],
+      "inferred_member_commanderies": [],
+      "start_year": 283,
+      "end_year": 290,
+      "start_end_evidence": "伷太康四年薨，觐承袭；太熙元年薨。",
+      "status_at_year_end": "存续",
+      "confidence": "高",
+      "source_urls": [
+        "https://zh.wikipedia.org/wiki/晉朝藩王列表",
+        "https://zh.wikisource.org/zh-hans/晉書/卷038",
+        "https://zh.wikisource.org/wiki/宋書/卷35"
+      ],
+      "source_refs": [
+        "turn5view0",
+        "turn22view2",
+        "turn63view0"
+      ],
+      "evidence_summary": "伷太康四年薨，觐承袭；太熙元年薨。",
+      "exclusions_ambiguities": "东莞277并琅邪，但289已经复置，289与308均保留东莞郡及其独立界，不能回填为琅邪支郡。",
+      "polygon_policy": "match_exact_commandery_only",
+      "historical_role": "以郡为国",
+      "member_evidence": [],
+      "annexed_former_commanderies": [],
+      "historical_annexations": [
+        {
+          "former_commandery": "东莞",
+          "start_year": 277,
+          "end_year": 288,
+          "restored_year": 289,
+          "basis": "宋书卷35：咸宁三年合琅邪，太康十年复立。"
+        }
+      ],
+      "food_associated_counties": [],
+      "map_default": true,
+      "fief_level": "郡王国",
+      "nominal_not_actual_control": true
+    },
+    {
+      "id": "R289-021",
+      "year": 289,
+      "kingdom_name": "平原国",
+      "holder": "司马榦",
+      "title": "平原王",
+      "seat_commandery": "平原",
+      "member_commanderies": [
+        "平原"
+      ],
+      "confirmed_member_commanderies": [
+        "平原"
+      ],
+      "inferred_member_commanderies": [],
+      "start_year": 265,
+      "end_year": 311,
+      "start_end_evidence": "武帝受禅封平原，永嘉五年薨。",
+      "status_at_year_end": "存续",
+      "confidence": "高",
+      "source_urls": [
+        "https://zh.wikipedia.org/wiki/晉朝藩王列表",
+        "https://zh.wikisource.org/zh-hans/晉書/卷038"
+      ],
+      "source_refs": [
+        "turn5view0",
+        "turn22view2"
+      ],
+      "evidence_summary": "武帝受禅封平原，永嘉五年薨。",
+      "exclusions_ambiguities": "",
+      "polygon_policy": "match_exact_commandery_only",
+      "historical_role": "以郡为国",
+      "member_evidence": [],
+      "annexed_former_commanderies": [],
+      "historical_annexations": [],
+      "food_associated_counties": [],
+      "map_default": true,
+      "fief_level": "郡王国",
+      "nominal_not_actual_control": true
+    },
+    {
+      "id": "R289-022",
+      "year": 289,
+      "kingdom_name": "顺阳国",
+      "holder": "司马畅",
+      "title": "顺阳王",
+      "seat_commandery": "顺阳",
+      "member_commanderies": [
+        "顺阳"
+      ],
+      "confirmed_member_commanderies": [
+        "顺阳"
+      ],
+      "inferred_member_commanderies": [],
+      "start_year": 289,
+      "end_year": 311,
+      "start_end_evidence": "太康十年由扶风转顺阳，以让扶风于秦王。",
+      "status_at_year_end": "存续",
+      "confidence": "高",
+      "source_urls": [
+        "https://zh.wikipedia.org/wiki/晉朝藩王列表",
+        "https://zh.wikisource.org/zh-hans/晉書/卷038"
+      ],
+      "source_refs": [
+        "turn5view0",
+        "turn22view2"
+      ],
+      "evidence_summary": "太康十年由扶风转顺阳，以让扶风于秦王。",
+      "exclusions_ambiguities": "",
+      "polygon_policy": "match_exact_commandery_only",
+      "historical_role": "以郡为国",
+      "member_evidence": [],
+      "annexed_former_commanderies": [],
+      "historical_annexations": [],
+      "food_associated_counties": [],
+      "map_default": true,
+      "fief_level": "郡王国",
+      "nominal_not_actual_control": true
+    },
+    {
+      "id": "R289-023",
+      "year": 289,
+      "kingdom_name": "梁国",
+      "holder": "司马肜",
+      "title": "梁王",
+      "seat_commandery": "梁",
+      "member_commanderies": [
+        "梁"
+      ],
+      "confirmed_member_commanderies": [
+        "梁"
+      ],
+      "inferred_member_commanderies": [],
+      "start_year": 265,
+      "end_year": 302,
+      "start_end_evidence": "泰始元年封梁，太安元年薨。",
+      "status_at_year_end": "存续",
+      "confidence": "高",
+      "source_urls": [
+        "https://zh.wikipedia.org/wiki/晉朝藩王列表",
+        "https://zh.wikisource.org/zh-hans/晉書/卷038",
+        "https://tgaz.fudan.edu.cn/tgaz/placename/hvd_82047"
+      ],
+      "source_refs": [
+        "turn5view0",
+        "turn22view2",
+        "turn60view0"
+      ],
+      "evidence_summary": "泰始元年封梁，太安元年薨。 咸宁中以陈国及汝南南顿增封；CHGIS/TGAZ项县明确277–301属梁国，302复属陈郡。",
+      "exclusions_ambiguities": "陈为废并旧郡，不标陈支郡；南顿仅县级增封，不吞汝南全郡。",
+      "polygon_policy": "union_confirmed_annexed_former_commandery",
+      "historical_role": "割郡增封（旧陈并入范围）",
+      "member_evidence": [],
+      "annexed_former_commanderies": [
+        "陈"
+      ],
+      "historical_annexations": [],
+      "food_associated_counties": [
+        "南顿"
+      ],
+      "map_default": true,
+      "fief_level": "郡王国",
+      "nominal_not_actual_control": true,
+      "annexation_evidence": [
+        {
+          "former_commandery": "陈",
+          "year": 277,
+          "until_year": 301,
+          "basis": "晋书卷38；CHGIS/TGAZ项县父级分期277–301梁国",
+          "confidence": "高",
+          "map_default": true
+        }
+      ]
+    },
+    {
+      "id": "R289-024",
+      "year": 289,
+      "kingdom_name": "赵国",
+      "holder": "司马伦",
+      "title": "赵王",
+      "seat_commandery": "赵",
+      "member_commanderies": [
+        "赵"
+      ],
+      "confirmed_member_commanderies": [
+        "赵"
+      ],
+      "inferred_member_commanderies": [],
+      "start_year": 277,
+      "end_year": 301,
+      "start_end_evidence": "咸宁三年由琅邪转赵，永宁元年篡位。",
+      "status_at_year_end": "存续",
+      "confidence": "高",
+      "source_urls": [
+        "https://zh.wikipedia.org/wiki/晉朝藩王列表",
+        "https://zh.wikisource.org/zh-hans/晉書/卷059"
+      ],
+      "source_refs": [
+        "turn5view0",
+        "turn22view4"
+      ],
+      "evidence_summary": "咸宁三年由琅邪转赵，永宁元年篡位。",
+      "exclusions_ambiguities": "300增封五万户不适用于289。",
+      "polygon_policy": "match_exact_commandery_only",
+      "historical_role": "以郡为国",
+      "member_evidence": [],
+      "annexed_former_commanderies": [],
+      "historical_annexations": [],
+      "food_associated_counties": [],
+      "map_default": true,
+      "fief_level": "郡王国",
+      "nominal_not_actual_control": true
+    },
+    {
+      "id": "R289-025",
+      "year": 289,
+      "kingdom_name": "齐国",
+      "holder": "司马冏",
+      "title": "齐王",
+      "seat_commandery": "齐",
+      "member_commanderies": [
+        "齐"
+      ],
+      "confirmed_member_commanderies": [
+        "齐"
+      ],
+      "inferred_member_commanderies": [],
+      "start_year": 283,
+      "end_year": 302,
+      "start_end_evidence": "攸太康四年薨，冏嗣；攸临终前诏以济南益齐。",
+      "status_at_year_end": "存续",
+      "confidence": "高",
+      "source_urls": [
+        "https://zh.wikipedia.org/wiki/晉朝藩王列表",
+        "https://zh.wikisource.org/zh-hans/晉書/卷059",
+        "https://xbzs.ecnu.edu.cn/CN/html/2018-4-61.htm",
+        "https://zh.wikisource.org/zh-hans/晉書/卷038",
+        "https://tgaz.fudan.edu.cn/tgaz/placename/hvd_45076"
+      ],
+      "source_refs": [
+        "turn5view0",
+        "turn22view4",
+        "turn6view0",
+        "turn22view2",
+        "turn60view1"
+      ],
+      "evidence_summary": "攸太康四年薨，冏嗣；攸临终前诏以济南益齐。",
+      "exclusions_ambiguities": "283以济南益齐属割郡增封，不机械称济南支郡。CHGIS/TGAZ著县(hvd_45076)却列265–555属济南郡，与废并解释冲突；按用户规则主图优先CHGIS，仅把济南旧面作为可切换历史推定，不无条件吞并。",
+      "polygon_policy": "CHGIS_priority_conflict_review_annexation",
+      "historical_role": "割郡增封（旧济南并入范围）",
+      "member_evidence": [],
+      "annexed_former_commanderies": [
+        "济南"
+      ],
+      "historical_annexations": [],
+      "food_associated_counties": [],
+      "map_default": true,
+      "fief_level": "郡王国",
+      "nominal_not_actual_control": true,
+      "annexation_evidence": [
+        {
+          "former_commandery": "济南",
+          "year": 283,
+          "basis": "晋书卷38以济南郡益齐国；顾江龙2018区分太康十年前割郡与太康十年多郡",
+          "confidence": "中高",
+          "map_default": false
+        }
+      ]
+    },
+    {
+      "id": "R289-026",
+      "year": 289,
+      "kingdom_name": "东莱国",
+      "holder": "司马蕤",
+      "title": "东莱王",
+      "seat_commandery": "东莱",
+      "member_commanderies": [
+        "东莱"
+      ],
+      "confirmed_member_commanderies": [
+        "东莱"
+      ],
+      "inferred_member_commanderies": [],
+      "start_year": 283,
+      "end_year": 301,
+      "start_end_evidence": "太康四年由辽东转东莱，永宁元年废。",
+      "status_at_year_end": "存续",
+      "confidence": "高",
+      "source_urls": [
+        "https://zh.wikipedia.org/wiki/晉朝藩王列表",
+        "https://zh.wikisource.org/zh-hans/晉書/卷038"
+      ],
+      "source_refs": [
+        "turn5view0",
+        "turn22view2"
+      ],
+      "evidence_summary": "太康四年由辽东转东莱，永宁元年废。",
+      "exclusions_ambiguities": "",
+      "polygon_policy": "match_exact_commandery_only",
+      "historical_role": "以郡为国",
+      "member_evidence": [],
+      "annexed_former_commanderies": [],
+      "historical_annexations": [],
+      "food_associated_counties": [],
+      "map_default": true,
+      "fief_level": "郡王国",
+      "nominal_not_actual_control": true
+    },
+    {
+      "id": "R289-027",
+      "year": 289,
+      "kingdom_name": "北海国",
+      "holder": "司马寔",
+      "title": "北海王",
+      "seat_commandery": "北海",
+      "member_commanderies": [
+        "北海"
+      ],
+      "confirmed_member_commanderies": [
+        "北海"
+      ],
+      "inferred_member_commanderies": [],
+      "start_year": 283,
+      "end_year": 302,
+      "start_end_evidence": "太康四年以长乐亭侯寔继广德，改北海王。",
+      "status_at_year_end": "存续",
+      "confidence": "高",
+      "source_urls": [
+        "https://zh.wikipedia.org/wiki/晉朝藩王列表",
+        "https://zh.wikisource.org/zh-hans/晉書/卷038"
+      ],
+      "source_refs": [
+        "turn5view0",
+        "turn22view2"
+      ],
+      "evidence_summary": "太康四年以长乐亭侯寔继广德，改北海王。",
+      "exclusions_ambiguities": "",
+      "polygon_policy": "match_exact_commandery_only",
+      "historical_role": "以郡为国",
+      "member_evidence": [],
+      "annexed_former_commanderies": [],
+      "historical_annexations": [],
+      "food_associated_counties": [],
+      "map_default": true,
+      "fief_level": "郡王国",
+      "nominal_not_actual_control": true
+    },
+    {
+      "id": "R289-028",
+      "year": 289,
+      "kingdom_name": "乐安国",
+      "holder": "司马鉴",
+      "title": "乐安王",
+      "seat_commandery": "乐安",
+      "member_commanderies": [
+        "乐安"
+      ],
+      "confirmed_member_commanderies": [
+        "乐安"
+      ],
+      "inferred_member_commanderies": [],
+      "start_year": 265,
+      "end_year": 297,
+      "start_end_evidence": "泰始元年受封，元康七年薨。",
+      "status_at_year_end": "存续",
+      "confidence": "高",
+      "source_urls": [
+        "https://zh.wikipedia.org/wiki/晉朝藩王列表",
+        "https://zh.wikisource.org/zh-hans/晉書/卷038"
+      ],
+      "source_refs": [
+        "turn5view0",
+        "turn22view2"
+      ],
+      "evidence_summary": "泰始元年受封，元康七年薨。",
+      "exclusions_ambiguities": "齐之梁邹为县级增封，不能吞并齐国整面。",
+      "polygon_policy": "match_exact_commandery_only",
+      "historical_role": "以郡为国",
+      "member_evidence": [],
+      "annexed_former_commanderies": [],
+      "historical_annexations": [],
+      "food_associated_counties": [
+        "梁邹"
+      ],
+      "map_default": true,
+      "fief_level": "郡王国",
+      "nominal_not_actual_control": true
+    },
+    {
+      "id": "R289-029",
+      "year": 289,
+      "kingdom_name": "燕国",
+      "holder": "司马机（暂定）",
+      "title": "燕王",
+      "seat_commandery": "燕",
+      "member_commanderies": [
+        "燕"
+      ],
+      "confirmed_member_commanderies": [
+        "燕"
+      ],
+      "inferred_member_commanderies": [],
+      "start_year": 265,
+      "end_year": null,
+      "start_end_evidence": "泰始元年封燕，咸宁初增封；后由冏子嗣。",
+      "status_at_year_end": "存续",
+      "confidence": "中",
+      "source_urls": [
+        "https://zh.wikipedia.org/wiki/晉朝藩王列表",
+        "https://zh.wikisource.org/zh-hans/晉書/卷038"
+      ],
+      "source_refs": [
+        "turn5view0",
+        "turn22view2"
+      ],
+      "evidence_summary": "泰始元年封燕，咸宁初增封；后由冏子嗣。",
+      "exclusions_ambiguities": "司马机薨年、继王几名有异说，289持有人暂定。渔阳为并入旧郡；北平、上谷、广宁一万三百三十七户增封只确证户邑关系，暂不合并三郡整面。原图燕面已可能含原渔阳，须防重复union。",
+      "polygon_policy": "match_exact_commandery_only",
+      "historical_role": "割郡增封及邻郡户邑增封",
+      "member_evidence": [],
+      "food_household_associations": [
+        "北平",
+        "上谷",
+        "广宁"
+      ],
+      "annexed_former_commanderies": [
+        "渔阳"
+      ],
+      "historical_annexations": [],
+      "food_associated_counties": [],
+      "map_default": true,
+      "fief_level": "郡王国",
+      "nominal_not_actual_control": true,
+      "annexation_evidence": [
+        {
+          "former_commandery": "渔阳",
+          "year": "咸宁初",
+          "basis": "晋书卷38以渔阳郡益其国；废并旧郡范围不作支郡",
+          "confidence": "中高",
+          "map_default": true
+        }
+      ]
+    },
+    {
+      "id": "R289-030",
+      "year": 289,
+      "kingdom_name": "毗陵国",
+      "holder": "司马仪",
+      "title": "毗陵王",
+      "seat_commandery": "毗陵",
+      "member_commanderies": [
+        "毗陵"
+      ],
+      "confirmed_member_commanderies": [
+        "毗陵"
+      ],
+      "inferred_member_commanderies": [],
+      "start_year": 289,
+      "end_year": 291,
+      "start_end_evidence": "太康十年追封已卒司马轨，以楚王子仪奉嗣。",
+      "status_at_year_end": "存续",
+      "confidence": "高",
+      "source_urls": [
+        "https://zh.wikipedia.org/wiki/晉朝藩王列表",
+        "https://zh.wikisource.org/zh-hans/晉書/卷064"
+      ],
+      "source_refs": [
+        "turn5view0",
+        "turn22view3"
+      ],
+      "evidence_summary": "太康十年追封已卒司马轨，以楚王子仪奉嗣。",
+      "exclusions_ambiguities": "仪/义异文；不得把追封死者轨列为289在位者。",
+      "polygon_policy": "match_exact_commandery_only",
+      "historical_role": "以郡为国",
+      "member_evidence": [],
+      "annexed_former_commanderies": [],
+      "historical_annexations": [],
+      "food_associated_counties": [],
+      "map_default": true,
+      "fief_level": "郡王国",
+      "nominal_not_actual_control": true
+    },
+    {
+      "id": "R289-031",
+      "year": 289,
+      "kingdom_name": "秦国",
+      "holder": "司马柬",
+      "title": "秦王",
+      "seat_commandery": "扶风",
+      "member_commanderies": [
+        "扶风",
+        "始平"
+      ],
+      "confirmed_member_commanderies": [
+        "扶风"
+      ],
+      "inferred_member_commanderies": [
+        "始平"
+      ],
+      "start_year": 289,
+      "end_year": 291,
+      "start_end_evidence": "太康十年由南阳转秦，八万户。",
+      "status_at_year_end": "存续",
+      "confidence": "高",
+      "source_urls": [
+        "https://zh.wikipedia.org/wiki/晉朝藩王列表",
+        "https://zh.wikisource.org/zh-hans/晉書/卷064",
+        "https://xbzs.ecnu.edu.cn/CN/html/2018-4-61.htm"
+      ],
+      "source_refs": [
+        "turn5view0",
+        "turn22view3",
+        "turn6view0"
+      ],
+      "evidence_summary": "太康十年由南阳转秦，八万户。",
+      "exclusions_ambiguities": "始平支郡来自元康索靖内史记载回推；其余支郡未详。地理志将扶风改秦系惠帝，和本纪纪年不一。",
+      "polygon_policy": "confirmed_solid_inferred_dashed",
+      "historical_role": "多郡王国",
+      "member_evidence": [
+        {
+          "member": "始平",
+          "basis": "元康中索靖称始平内史；顾文亦列始平等郡",
+          "confidence": "中",
+          "temporal_inference": "后期官名回推289",
+          "source_url": "https://zh.wikipedia.org/wiki/晉朝藩王列表"
+        }
+      ],
+      "map_aliases": [
+        "扶风"
+      ],
+      "annexed_former_commanderies": [],
+      "historical_annexations": [],
+      "food_associated_counties": [],
+      "map_default": true,
+      "fief_level": "郡王国",
+      "nominal_not_actual_control": true
+    },
+    {
+      "id": "R289-032",
+      "year": 289,
+      "kingdom_name": "汉国",
+      "holder": "司马迪",
+      "title": "汉王",
+      "seat_commandery": "汉中",
+      "member_commanderies": [
+        "汉中"
+      ],
+      "confirmed_member_commanderies": [
+        "汉中"
+      ],
+      "inferred_member_commanderies": [],
+      "start_year": 289,
+      "end_year": 300,
+      "start_end_evidence": "太康十年淮南王子迪奉始平哀王裕后，改封汉王。",
+      "status_at_year_end": "存续",
+      "confidence": "高",
+      "source_urls": [
+        "https://zh.wikipedia.org/wiki/晉朝藩王列表",
+        "https://zh.wikisource.org/zh-hans/晉書/卷064"
+      ],
+      "source_refs": [
+        "turn5view0",
+        "turn22view3"
+      ],
+      "evidence_summary": "太康十年淮南王子迪奉始平哀王裕后，改封汉王。",
+      "exclusions_ambiguities": "汉中改汉的范围按地理建置与研究使用。",
+      "polygon_policy": "match_exact_commandery_only",
+      "historical_role": "以郡为国",
+      "member_evidence": [],
+      "map_aliases": [
+        "汉中"
+      ],
+      "annexed_former_commanderies": [],
+      "historical_annexations": [],
+      "food_associated_counties": [],
+      "map_default": true,
+      "fief_level": "郡王国",
+      "nominal_not_actual_control": true
+    },
+    {
+      "id": "R289-033",
+      "year": 289,
+      "kingdom_name": "楚国",
+      "holder": "司马玮",
+      "title": "楚王",
+      "seat_commandery": "襄阳",
+      "member_commanderies": [
+        "襄阳"
+      ],
+      "confirmed_member_commanderies": [
+        "襄阳"
+      ],
+      "inferred_member_commanderies": [],
+      "start_year": 289,
+      "end_year": 291,
+      "start_end_evidence": "太康十年始平王玮转楚，并出镇荆州。",
+      "status_at_year_end": "存续",
+      "confidence": "高",
+      "source_urls": [
+        "https://zh.wikipedia.org/wiki/晉朝藩王列表",
+        "https://zh.wikisource.org/zh-hans/晉書/卷059",
+        "https://xbzs.ecnu.edu.cn/CN/html/2018-4-61.htm"
+      ],
+      "source_refs": [
+        "turn5view0",
+        "turn22view4",
+        "turn6view0"
+      ],
+      "evidence_summary": "太康十年始平王玮转楚，并出镇荆州。",
+      "exclusions_ambiguities": "襄阳主体外旁郡未详；都督荆州的军区不是楚国全部封土。",
+      "polygon_policy": "confirmed_solid_inferred_dashed",
+      "historical_role": "多郡王国",
+      "member_evidence": [
+        {
+          "member": null,
+          "basis": "顾文列兼食旁郡，未给可落图名称",
+          "confidence": "未详",
+          "source_url": "https://xbzs.ecnu.edu.cn/CN/html/2018-4-61.htm"
+        }
+      ],
+      "map_aliases": [
+        "襄阳"
+      ],
+      "annexed_former_commanderies": [],
+      "historical_annexations": [],
+      "food_associated_counties": [],
+      "map_default": true,
+      "fief_level": "郡王国",
+      "nominal_not_actual_control": true
+    },
+    {
+      "id": "R289-034",
+      "year": 289,
+      "kingdom_name": "淮南国",
+      "holder": "司马允",
+      "title": "淮南王",
+      "seat_commandery": "淮南",
+      "member_commanderies": [
+        "淮南",
+        "安丰",
+        "庐江"
+      ],
+      "confirmed_member_commanderies": [
+        "淮南"
+      ],
+      "inferred_member_commanderies": [
+        "安丰",
+        "庐江"
+      ],
+      "start_year": 289,
+      "end_year": 300,
+      "start_end_evidence": "太康十年濮阳王允转淮南。",
+      "status_at_year_end": "存续",
+      "confidence": "高",
+      "source_urls": [
+        "https://zh.wikipedia.org/wiki/晉朝藩王列表",
+        "https://zh.wikisource.org/zh-hans/晉書/卷064",
+        "https://xbzs.ecnu.edu.cn/CN/html/2018-4-61.htm"
+      ],
+      "source_refs": [
+        "turn5view0",
+        "turn22view3",
+        "turn6view0"
+      ],
+      "evidence_summary": "太康十年濮阳王允转淮南。",
+      "exclusions_ambiguities": "安丰出顾氏论文；庐江为后期内史官名回推，均需标推定。",
+      "polygon_policy": "confirmed_solid_inferred_dashed",
+      "historical_role": "多郡王国",
+      "member_evidence": [
+        {
+          "member": "安丰",
+          "basis": "顾江龙2018皇子分封汇总列安丰",
+          "confidence": "中",
+          "temporal_inference": "研究判断",
+          "source_url": "https://xbzs.ecnu.edu.cn/CN/html/2018-4-61.htm"
+        },
+        {
+          "member": "庐江",
+          "basis": "维基注47据华谭303前后任庐江内史",
+          "confidence": "中低",
+          "temporal_inference": "后期官名回推289",
+          "source_url": "https://zh.wikipedia.org/wiki/晉朝藩王列表"
+        }
+      ],
+      "annexed_former_commanderies": [],
+      "historical_annexations": [],
+      "food_associated_counties": [],
+      "map_default": true,
+      "fief_level": "郡王国",
+      "nominal_not_actual_control": true
+    },
+    {
+      "id": "R289-035",
+      "year": 289,
+      "kingdom_name": "清河国",
+      "holder": "司马遐",
+      "title": "清河王",
+      "seat_commandery": "清河",
+      "member_commanderies": [
+        "清河",
+        "渤海"
+      ],
+      "confirmed_member_commanderies": [
+        "清河",
+        "渤海"
+      ],
+      "inferred_member_commanderies": [],
+      "start_year": 277,
+      "end_year": 300,
+      "start_end_evidence": "原清河王于太康十年增渤海。",
+      "status_at_year_end": "存续",
+      "confidence": "高",
+      "source_urls": [
+        "https://zh.wikipedia.org/wiki/晉朝藩王列表",
+        "https://zh.wikisource.org/zh-hans/晉書/卷064",
+        "https://xbzs.ecnu.edu.cn/CN/html/2018-4-61.htm"
+      ],
+      "source_refs": [
+        "turn5view0",
+        "turn22view3",
+        "turn6view0"
+      ],
+      "evidence_summary": "原清河王于太康十年增渤海。",
+      "exclusions_ambiguities": "",
+      "polygon_policy": "confirmed_solid_inferred_dashed",
+      "historical_role": "多郡王国",
+      "member_evidence": [
+        {
+          "member": "渤海",
+          "basis": "晋书卷64太康十年增封渤海",
+          "confidence": "高",
+          "source_url": "https://zh.wikisource.org/zh-hans/晉書/卷064"
+        }
+      ],
+      "annexed_former_commanderies": [],
+      "historical_annexations": [],
+      "food_associated_counties": [],
+      "map_default": true,
+      "fief_level": "郡王国",
+      "nominal_not_actual_control": true
+    },
+    {
+      "id": "R289-036",
+      "year": 289,
+      "kingdom_name": "代国",
+      "holder": "司马演",
+      "title": "代王",
+      "seat_commandery": "代郡",
+      "member_commanderies": [
+        "代郡"
+      ],
+      "confirmed_member_commanderies": [
+        "代郡"
+      ],
+      "inferred_member_commanderies": [],
+      "start_year": 289,
+      "end_year": null,
+      "start_end_evidence": "太康十年受封代王，有疾而未就国。",
+      "status_at_year_end": "存续",
+      "confidence": "中",
+      "source_urls": [
+        "https://zh.wikipedia.org/wiki/晉朝藩王列表",
+        "https://zh.wikisource.org/zh-hans/晉書/卷064"
+      ],
+      "source_refs": [
+        "turn5view0",
+        "turn22view3"
+      ],
+      "evidence_summary": "太康十年受封代王，有疾而未就国。",
+      "exclusions_ambiguities": "未就国不等于未受封；薨年不详。",
+      "polygon_policy": "match_exact_commandery_only",
+      "historical_role": "以郡为国",
+      "member_evidence": [],
+      "map_aliases": [
+        "代",
+        "代郡"
+      ],
+      "annexed_former_commanderies": [],
+      "historical_annexations": [],
+      "food_associated_counties": [],
+      "map_default": true,
+      "fief_level": "郡王国",
+      "nominal_not_actual_control": true
+    },
+    {
+      "id": "R289-037",
+      "year": 289,
+      "kingdom_name": "长沙国",
+      "holder": "司马乂",
+      "title": "长沙王",
+      "seat_commandery": "长沙",
+      "member_commanderies": [
+        "长沙",
+        "南平",
+        "衡阳"
+      ],
+      "confirmed_member_commanderies": [
+        "长沙"
+      ],
+      "inferred_member_commanderies": [
+        "南平",
+        "衡阳"
+      ],
+      "start_year": 289,
+      "end_year": 291,
+      "start_end_evidence": "太康十年封长沙，元康元年降常山。",
+      "status_at_year_end": "存续",
+      "confidence": "高",
+      "source_urls": [
+        "https://zh.wikipedia.org/wiki/晉朝藩王列表",
+        "https://zh.wikisource.org/zh-hans/晉書/卷059",
+        "https://xbzs.ecnu.edu.cn/CN/html/2018-4-61.htm"
+      ],
+      "source_refs": [
+        "turn5view0",
+        "turn22view4",
+        "turn6view0"
+      ],
+      "evidence_summary": "太康十年封长沙，元康元年降常山。",
+      "exclusions_ambiguities": "南平为顾氏研究回推；衡阳为维基据311内史回推；均无289成员清单明文。",
+      "polygon_policy": "confirmed_solid_inferred_dashed",
+      "historical_role": "多郡王国",
+      "member_evidence": [
+        {
+          "member": "南平",
+          "basis": "顾江龙据301复封长沙后南平王改宜都及王矩南平内史反推",
+          "confidence": "中",
+          "temporal_inference": "后期归属回推289",
+          "source_url": "https://xbzs.ecnu.edu.cn/CN/html/2018-4-61.htm"
+        },
+        {
+          "member": "衡阳",
+          "basis": "维基注57据311衡阳内史滕育",
+          "confidence": "中低",
+          "temporal_inference": "后期官名回推289",
+          "source_url": "https://zh.wikipedia.org/wiki/晉朝藩王列表"
+        }
+      ],
+      "annexed_former_commanderies": [],
+      "historical_annexations": [],
+      "food_associated_counties": [],
+      "map_default": true,
+      "fief_level": "郡王国",
+      "nominal_not_actual_control": true
+    },
+    {
+      "id": "R289-038",
+      "year": 289,
+      "kingdom_name": "成都国",
+      "holder": "司马颖",
+      "title": "成都王",
+      "seat_commandery": "蜀郡",
+      "member_commanderies": [
+        "蜀郡",
+        "广汉",
+        "犍为",
+        "汶山"
+      ],
+      "confirmed_member_commanderies": [
+        "蜀郡",
+        "广汉",
+        "犍为",
+        "汶山"
+      ],
+      "inferred_member_commanderies": [],
+      "start_year": 289,
+      "end_year": 304,
+      "start_end_evidence": "太康十年受封十万户，《华阳国志》明确蜀、广汉、犍为、汶山。",
+      "status_at_year_end": "存续",
+      "confidence": "高",
+      "source_urls": [
+        "https://zh.wikipedia.org/wiki/晉朝藩王列表",
+        "https://zh.wikisource.org/zh-hans/晉書/卷059",
+        "https://xbzs.ecnu.edu.cn/CN/html/2018-4-61.htm",
+        "https://zh.wikisource.org/wiki/華陽國志/卷八"
+      ],
+      "source_refs": [
+        "turn5view0",
+        "turn22view4",
+        "turn6view0",
+        "turn54view1"
+      ],
+      "evidence_summary": "太康十年受封十万户，《华阳国志》明确蜀、广汉、犍为、汶山。",
+      "exclusions_ambiguities": "304后南郡析县别置成都，不能继续用四川四郡范围。原图汶山可能被裁并或漏绘。",
+      "polygon_policy": "confirmed_solid_inferred_dashed",
+      "historical_role": "多郡王国",
+      "member_evidence": [
+        {
+          "member": "广汉、犍为、汶山",
+          "basis": "华阳国志卷8大同志明载四郡为成都王国",
+          "confidence": "高",
+          "source_url": "https://zh.wikisource.org/wiki/華陽國志/卷八"
+        }
+      ],
+      "map_aliases": [
+        "蜀郡"
+      ],
+      "annexed_former_commanderies": [],
+      "historical_annexations": [],
+      "food_associated_counties": [],
+      "map_default": true,
+      "fief_level": "郡王国",
+      "nominal_not_actual_control": true
+    },
+    {
+      "id": "R289-039",
+      "year": 289,
+      "kingdom_name": "吴国",
+      "holder": "司马晏",
+      "title": "吴王",
+      "seat_commandery": "吴郡",
+      "member_commanderies": [
+        "吴郡",
+        "丹阳",
+        "吴兴"
+      ],
+      "confirmed_member_commanderies": [
+        "吴郡",
+        "丹阳",
+        "吴兴"
+      ],
+      "inferred_member_commanderies": [],
+      "start_year": 289,
+      "end_year": 300,
+      "start_end_evidence": "太康十年受封，食丹阳、吴兴并吴三郡。",
+      "status_at_year_end": "存续",
+      "confidence": "高",
+      "source_urls": [
+        "https://zh.wikipedia.org/wiki/晉朝藩王列表",
+        "https://zh.wikisource.org/zh-hans/晉書/卷064",
+        "https://xbzs.ecnu.edu.cn/CN/html/2018-4-61.htm"
+      ],
+      "source_refs": [
+        "turn5view0",
+        "turn22view3",
+        "turn6view0"
+      ],
+      "evidence_summary": "太康十年受封，食丹阳、吴兴并吴三郡。",
+      "exclusions_ambiguities": "300降宾徒、301复封；289明确三郡。",
+      "polygon_policy": "confirmed_solid_inferred_dashed",
+      "historical_role": "多郡王国",
+      "member_evidence": [
+        {
+          "member": "丹阳、吴兴",
+          "basis": "晋书卷64吴王晏传明载三郡",
+          "confidence": "高",
+          "source_url": "https://zh.wikisource.org/zh-hans/晉書/卷064"
+        }
+      ],
+      "annexed_former_commanderies": [],
+      "historical_annexations": [],
+      "food_associated_counties": [],
+      "map_default": true,
+      "fief_level": "郡王国",
+      "nominal_not_actual_control": true
+    },
+    {
+      "id": "R289-040",
+      "year": 289,
+      "kingdom_name": "豫章国",
+      "holder": "司马炽",
+      "title": "豫章王",
+      "seat_commandery": "豫章",
+      "member_commanderies": [
+        "豫章",
+        "鄱阳",
+        "临川",
+        "庐陵",
+        "南康",
+        "建安",
+        "晋安",
+        "武昌",
+        "桂阳",
+        "安成"
+      ],
+      "confirmed_member_commanderies": [
+        "豫章"
+      ],
+      "inferred_member_commanderies": [
+        "鄱阳",
+        "临川",
+        "庐陵",
+        "南康",
+        "建安",
+        "晋安",
+        "武昌",
+        "桂阳",
+        "安成"
+      ],
+      "start_year": 289,
+      "end_year": 304,
+      "start_end_evidence": "武帝纪系封王于289十一月；怀帝本纪系太熙元年。",
+      "status_at_year_end": "存续",
+      "confidence": "高",
+      "source_urls": [
+        "https://zh.wikipedia.org/wiki/晉朝藩王列表",
+        "https://zh.wikisource.org/zh-hans/晉書/卷005",
+        "https://xbzs.ecnu.edu.cn/CN/html/2018-4-61.htm"
+      ],
+      "source_refs": [
+        "turn5view0",
+        "turn18view1",
+        "turn6view0"
+      ],
+      "evidence_summary": "武帝纪系封王于289十一月；怀帝本纪系太熙元年。",
+      "exclusions_ambiguities": "十郡全境为顾江龙推论，临川、鄱阳亦主要靠后期内史回推；不能称全部直接确证。",
+      "polygon_policy": "confirmed_solid_inferred_dashed",
+      "historical_role": "多郡王国",
+      "member_evidence": [
+        {
+          "member": "鄱阳、临川",
+          "basis": "维基注54据晋书312等年内史官名",
+          "confidence": "中低",
+          "temporal_inference": "后期官名回推289",
+          "source_url": "https://zh.wikipedia.org/wiki/晉朝藩王列表"
+        },
+        {
+          "member": "庐陵、南康、建安、晋安、武昌、桂阳、安成",
+          "basis": "顾氏提出江州因豫章封国设州，将十郡总户数与皇子十万户封额相证",
+          "confidence": "研究假说",
+          "temporal_inference": "未获289分封成员清单直接证明",
+          "source_url": "https://xbzs.ecnu.edu.cn/CN/html/2018-4-61.htm"
+        }
+      ],
+      "annexed_former_commanderies": [],
+      "historical_annexations": [],
+      "food_associated_counties": [],
+      "map_default": true,
+      "fief_level": "郡王国",
+      "nominal_not_actual_control": true
+    },
+    {
+      "id": "R289-041",
+      "year": 289,
+      "kingdom_name": "广陵国",
+      "holder": "司马遹",
+      "title": "广陵王",
+      "seat_commandery": "广陵",
+      "member_commanderies": [
+        "广陵",
+        "临淮"
+      ],
+      "confirmed_member_commanderies": [
+        "广陵",
+        "临淮"
+      ],
+      "inferred_member_commanderies": [],
+      "start_year": 289,
+      "end_year": 290,
+      "start_end_evidence": "太康十年皇孙遹封广陵，五万户，兼淮、陵；永熙元年立太子。",
+      "status_at_year_end": "存续",
+      "confidence": "高",
+      "source_urls": [
+        "https://zh.wikipedia.org/wiki/晉朝藩王列表",
+        "https://zh.wikisource.org/zh-hans/晉書/卷053",
+        "https://xbzs.ecnu.edu.cn/CN/html/2018-4-61.htm"
+      ],
+      "source_refs": [
+        "turn5view0",
+        "turn11view3",
+        "turn6view0",
+        "turn54view0"
+      ],
+      "evidence_summary": "太康十年皇孙遹封广陵，五万户，兼淮、陵；永熙元年立太子。",
+      "exclusions_ambiguities": "临淮作为支郡；临淮郡公等爵号须另辨，不等同两个整郡互相排斥。",
+      "polygon_policy": "confirmed_solid_inferred_dashed",
+      "historical_role": "多郡王国",
+      "member_evidence": [
+        {
+          "member": "临淮",
+          "basis": "愍怀太子传诏述兼有淮、陵；顾文与维基相同",
+          "confidence": "高",
+          "source_url": "https://zh.wikisource.org/zh-hans/晉書/卷053"
+        }
+      ],
+      "annexed_former_commanderies": [],
+      "historical_annexations": [],
+      "food_associated_counties": [],
+      "map_default": true,
+      "fief_level": "郡王国",
+      "nominal_not_actual_control": true
+    },
+    {
+      "id": "R289-042",
+      "year": 289,
+      "kingdom_name": "陈留国",
+      "holder": "曹奂",
+      "title": "陈留王",
+      "seat_commandery": "陈留",
+      "member_commanderies": [
+        "陈留"
+      ],
+      "confirmed_member_commanderies": [
+        "陈留"
+      ],
+      "inferred_member_commanderies": [],
+      "start_year": 265,
+      "end_year": 302,
+      "start_end_evidence": "魏帝禅位后封陈留王，万户，居邺宫。",
+      "status_at_year_end": "存续",
+      "confidence": "高",
+      "source_urls": [
+        "https://zh.wikipedia.org/wiki/晉朝藩王列表",
+        "https://zh.wikisource.org/zh-hans/晉書/卷003"
+      ],
+      "source_refs": [
+        "turn5view0",
+        "turn22view0"
+      ],
+      "evidence_summary": "魏帝禅位后封陈留王，万户，居邺宫。",
+      "exclusions_ambiguities": "驻居邺宫不等于改魏郡为陈留国；爵国与居处应分开。",
+      "polygon_policy": "match_exact_commandery_only",
+      "historical_role": "以郡为国",
+      "member_evidence": [],
+      "annexed_former_commanderies": [],
+      "historical_annexations": [],
+      "food_associated_counties": [],
+      "map_default": true,
+      "fief_level": "郡王国",
+      "nominal_not_actual_control": true
+    }
+  ],
+  "exclusions": [
+    {
+      "name": "常山王",
+      "reason": "早期国统275后未明；乂291改封未至289。"
+    },
+    {
+      "name": "良城王司马绰",
+      "reason": "始封年不明，不能因311前存在倒推289。"
+    },
+    {
+      "name": "新都王司马该",
+      "reason": "283薨且无子，国除。"
+    },
+    {
+      "name": "乐平王司马延祚",
+      "reason": "太康初封、旋薨无子；不足判289存续。"
+    },
+    {
+      "name": "汝阴哀王司马谟",
+      "reason": "早夭、277前后追封，不以死者记289在位。"
+    },
+    {
+      "name": "勃海殇王司马恢",
+      "reason": "284卒后追封，无嗣续国证据；289渤海属于清河增封。"
+    },
+    {
+      "name": "东海王司马越",
+      "reason": "始封291，289仍不得列东海王。"
+    },
+    {
+      "name": "西阳王司马羕",
+      "reason": "289为县公，升王在291，应转五等爵表。"
+    },
+    {
+      "name": "新野王司马歆",
+      "reason": "289为新野县公，升王在302，应转五等爵表。"
+    },
+    {
+      "name": "东安王司马繇",
+      "reason": "289为东安县公，291方升郡王，应转五等爵表。"
+    }
+  ],
+  "coverage": "维基藩王表逐系核对42个国统（含陈留异姓王）；持有人/范围不明项保留字段区分",
+  "render_contract": "member_commanderies仅现存首郡/支郡；confirmed与inferred分开样式。annexed_former_commanderies为废并旧郡几何范围，不标支郡；每条annexation_evidence.map_default决定是否默认合并。food_associated_counties仅县级关联，不吞其所在整郡。CHGIS冲突优先CHGIS并保留异说。"
+}
