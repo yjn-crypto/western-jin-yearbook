@@ -61,7 +61,7 @@
     kingdom_areas:{fillOpacity:0.18,strokeWidth:2.2},
     member_boundaries:{strokeOpacity:0.22,strokeWidth:0.6},
     prefecture_boundaries:{strokeOpacity:0.75,strokeWidth:0.8},
-    province_boundaries:{strokeOpacity:0.95,strokeWidth:1.5},
+    province_boundaries:{strokeOpacity:1,strokeWidth:3.2},
     uncertain_areas:{fillOpacity:0.08,strokeDasharray:'5 4'}
   };
   const api={slice,active,preferredGeometry,displayName,resolve,style};

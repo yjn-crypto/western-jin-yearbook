@@ -8,13 +8,19 @@ class Node {
   appendChild(c){this.children.push(c);return c;}
   replaceChildren(...c){this.children=c;}
   append(...c){this.children.push(...c);}
+  insertBefore(c,before){this.children.splice(this.children.indexOf(before),0,c);}
+  querySelectorAll(){return [];}
+  addEventListener(){}
 }
 const svgNode=(...args)=>new Node(...args);
 const sandbox={window:{}};vm.runInNewContext(fs.readFileSync(path.join(base,'data/jin-map-snapshots.js'),'utf8'),sandbox);
+vm.runInNewContext(fs.readFileSync(path.join(base,'data/jin-map-label-anchors.js'),'utf8'),sandbox);
 const app=fs.readFileSync(path.join(base,'app.js'),'utf8');
-const selectionContext=vm.createContext({mapZoom:8});
-for(const name of ['normalizeName','mapLabelVisible','selectMapLabels']){
-  const start=app.indexOf(`  function ${name}(`),end=app.indexOf('\n  function ',start+1);
+const selectionContext=vm.createContext({mapZoom:8,svgNode,yearMapOverlay:new Node('svg')});
+for(const name of ['normalizeName','mapLabelVisible','selectMapLabels','labelWidth','mapTerritoryLabelGuard','labelCandidates','placeAndDrawLabels']){
+  const marker=`  function ${name==='labelCandidates'?'*':''}${name}(`;
+  const start=app.indexOf(marker),nextFunction=app.indexOf('\n  function ',start+1),nextConstant=app.indexOf('\n  const ',start+1);
+  const end=nextConstant>start?Math.min(nextFunction,nextConstant):nextFunction;
   assert(start>=0&&end>start,`Read the production ${name} function`);
   vm.runInContext(app.slice(start,end),selectionContext);
 }
@@ -25,11 +31,20 @@ const range={...ordinary,level:'state',kind:'state-area',priority:1000};
 const seat={...range,kind:'state-seat',x:120,priority:560};
 assert.equal(selectionContext.selectMapLabels([range,seat],1).length,1,'State overview retains one range/seat name');
 assert.equal(selectionContext.selectMapLabels([range,seat],8).length,2,'Detailed state view retains distinct range and seat names');
+const narrow={text:'廣平國',x:22.5,y:20,level:'prefecture',kind:'prefecture-area',fontSize:16.5,priority:900,
+  areaGuard:selectionContext.mapTerritoryLabelGuard('M0,0L45,0L45,40L0,40Z')};
+for(const allowAreaFontShrink of [false,true]){
+  const target=new Node('g');selectionContext.placeAndDrawLabels(target,[{...narrow,allowAreaFontShrink}],[0,0,100,100],1,100);
+  const names=target.children.find(node=>node.attributes.class==='map-label-names').children;
+  assert.equal(names.length,allowAreaFontShrink?1:0,'Only opted-in Jin ranges shrink to fit a narrow polygon');
+  if(allowAreaFontShrink)assert.equal(names[0].style.fontSize,'10px','Small areas retain their names without overflowing their borders');
+}
 const results=[];
 for(const [year,map] of Object.entries(sandbox.window.JIN_SNAPSHOT_MAPS.years)){
   const loaded=map.geojson?map:{...map,geojson:JSON.parse(fs.readFileSync(path.join(base,map.data_url),'utf8'))};
   const seatCalls=[];
-  const root=new Node('svg'),rendered=view.draw(loaded,root,{svgNode,seatSymbol:(x,y,level)=>{seatCalls.push({x,y,level});return new Node('g',{'data-seat-level':level});}});
+  const root=new Node('svg'),rendered=view.draw(loaded,root,{svgNode,labelAnchors:sandbox.window.JIN_MAP_LABEL_ANCHORS.anchors,
+    areaGuard:selectionContext.mapTerritoryLabelGuard,seatSymbol:(x,y,level)=>{seatCalls.push({x,y,level});return new Node('g',{'data-seat-level':level});}});
   const namedStates=loaded.geojson.features.filter(f=>f.properties?.layer==='province_areas'&&(f.properties.name||f.properties.display_name));
   assert.equal(rendered.labels.filter(l=>l.kind==='state-area').length,namedStates.length,'Each province must retain a range label when no state seat exists');
   assert(!rendered.labels.some(l=>l.level==='fief'),'Fief annotations need an effective display zoom level');
@@ -54,6 +69,28 @@ for(const [year,map] of Object.entries(sandbox.window.JIN_SNAPSHOT_MAPS.years)){
     assert(!/NaN|Infinity/.test(node.attributes.d),'Projected path must be finite');
   }
   const originalPrefAreas=loaded.geojson.features.filter(f=>f.properties.layer==='prefecture_areas');
+  const prefRanges=rendered.labels.filter(l=>l.kind==='prefecture-area');
+  assert.equal(prefRanges.length,originalPrefAreas.length,'Every named annual prefecture area requires a range label');
+  assert(prefRanges.every(label=>label.areaGuard.contains(label.x,label.y)),'Range anchors remain inside their annual polygons');
+  assert(prefRanges.filter(label=>label.originalAnchorId).length>100,'Most range labels recover the confirmed original text anchors');
+  const middle=selectionContext.selectMapLabels(rendered.labels,3);
+  for(const label of prefRanges)assert(middle.includes(label),'The prefecture zoom tier retains its area labels');
+  assert(prefRanges.filter(label=>label.fief).every(label=>label.color==='#493b2a'),'Fief area names use readable dark type instead of pale fill colors');
+  const middleDrawing=new Node('g');selectionContext.placeAndDrawLabels(middleDrawing,middle,loaded.plot,3000/loaded.width,loaded.height);
+  const middleRangeCount=middleDrawing.children.find(node=>node.attributes.class==='map-label-names').children.filter(node=>node.dataset.labelKind==='area'&&node.attributes['data-label-level']==='prefecture').length;
+  assert(middleRangeCount>=prefRanges.length*.9,'At 300% the real layout places at least 90% of prefecture names within their areas');
+  const countySeats=loaded.geojson.features.filter(f=>f.properties.layer==='county_seats');
+  for(const seat of countySeats)assert(countyLabels.some(label=>label.seatSourceId===seat.properties.source_id),'Every active county seat retains its own county or annual county-fief name');
+  // Check the actual shared layout, not merely the list supplied to it. All
+  // county names must appear in the drawing at 800%, inside the map itself.
+  const drawn=new Node('g'),renderHeight=selectionContext.placeAndDrawLabels(drawn,detailed,loaded.plot,8000/loaded.width,loaded.height);
+  const placed=drawn.children.find(node=>node.attributes.class==='map-label-names').children;
+  const countyText=placed.filter(node=>node.attributes['data-label-level']==='county');
+  assert.equal(countyText.length,countyLabels.length,'The shared layout draws every county and fief annotation');
+  assert(countyText.every(node=>node.attributes.y>=loaded.plot[1]&&node.attributes.y<=loaded.plot[3]),'County names stay on the map rather than in the overflow panel');
+  assert.equal(renderHeight,loaded.height,'The county tier fits without enlarging a hidden overflow panel');
+  const stateBoundary=root.children.find(node=>node.attributes.class==='jin-province-boundary');
+  assert(stateBoundary&&stateBoundary.attributes.stroke==='#292b32'&&stateBoundary.attributes['stroke-width']===3.2&&stateBoundary.attributes['stroke-opacity']===1,'Province borders are fully opaque and visually stronger than kingdom borders');
   const explicit=loaded.geojson.features.some(f=>f.properties.layer==='prefecture_boundaries');
   if(explicit){
     const paths=new Map(root.children.filter(n=>n.tagName==='path').map(n=>[n.attributes.d,n]));
@@ -64,7 +101,7 @@ for(const [year,map] of Object.entries(sandbox.window.JIN_SNAPSHOT_MAPS.years)){
       assert(matches.some(node=>node.attributes.stroke==='none'),'Original prefecture edges must not be redrawn');
     }
   }
-  results.push({year:Number(year),features:loaded.geojson.features.length,labels:rendered.labels.length,province_range_labels:namedStates.length,rendered_paths:root.children.filter(n=>n.tagName==='path').length,county_labels_at_800_percent:countyLabels.length,preserved_paired_county_names:pairedCountyNames.length});
+  results.push({year:Number(year),features:loaded.geojson.features.length,labels:rendered.labels.length,province_range_labels:namedStates.length,prefecture_range_labels:prefRanges.length,prefecture_ranges_drawn_at_300_percent:middleRangeCount,original_prefecture_anchors:prefRanges.filter(label=>label.originalAnchorId).length,rendered_paths:root.children.filter(n=>n.tagName==='path').length,county_seat_names:countySeats.length,county_labels_at_800_percent:countyText.length,preserved_paired_county_names:pairedCountyNames.length});
 }
 assert(results.length,'Build at least one reviewed annual bundle before validation');
 async function routing(){

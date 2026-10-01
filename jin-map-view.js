@@ -26,6 +26,18 @@
     let hash=0;for(const c of String(id||''))hash=(hash*31+c.charCodeAt(0))>>>0;
     return colors[hash%colors.length];
   }
+  function containsPoint(g,point){
+    const polygons=g.type==='Polygon'?[g.coordinates]:g.type==='MultiPolygon'?g.coordinates:[];
+    const inRing=ring=>{let inside=false;
+      for(let i=0,j=ring.length-1;i<ring.length;j=i++){
+        const [x,y]=ring[i],[px,py]=ring[j];
+        if((y>point[1])!==(py>point[1])&&point[0]<(px-x)*(point[1]-y)/(py-y)+x)inside=!inside;
+      }
+      return inside;
+    };
+    return polygons.some(rings=>inRing(rings[0])&&!rings.slice(1).some(inRing));
+  }
+  function prefectureName(name){return String(name||'').replace(/(?:支郡|郡|國|国)$/,'');}
   function interiorPoint(g){
     const polygons=g.type==='Polygon'?[g.coordinates]:g.type==='MultiPolygon'?g.coordinates:[];
     const area=ring=>Math.abs(ring.reduce((s,p,i)=>{const q=ring[(i+1)%ring.length];return s+p[0]*q[1]-q[0]*p[1];},0));
@@ -45,13 +57,38 @@
     }
     return best?.point||null;
   }
-  function draw(map,container,{svgNode,seatSymbol,areaGuard}){
+  function draw(map,container,{svgNode,seatSymbol,areaGuard,labelAnchors=root.JIN_MAP_LABEL_ANCHORS?.anchors||[]}){
     const [west,south,east,north]=map.extent,[left,top,right,bottom]=map.plot;
     const project=([lon,lat])=>[left+(lon-west)/(east-west)*(right-left),top+(north-lat)/(north-south)*(bottom-top)];
     container.replaceChildren();
     container.appendChild(svgNode('text',{x:left,y:60,fill:'#39352e','font-size':32,'font-weight':'bold'},map.title||`${map.year}年　西晉州郡與封國`));
     container.appendChild(svgNode('text',{x:left,y:99,fill:'#655e50','font-size':17},map.year===308?'名義建置與封國關係，非實際控制疆域；多郡王國合併著色，內部郡界淡化。':'多郡王國合併著色；內部郡界淡化。原圖文字位置與CHGIS治所分列。'));
     const labels=[],features=[];
+    const pointLabels=map.geojson.features.filter(f=>f.geometry?.type==='Point'&&f.properties?.layer==='labels');
+    const countySeats=map.geojson.features.filter(f=>f.properties?.layer==='county_seats');
+    const sameSeat=(a,b)=>a.source_id&&b.source_id?String(a.source_id)===String(b.source_id):false;
+    const matchesCountySeat=(label,seat)=>sameSeat(label.properties,seat.properties)||
+      (!label.properties.source_id&&label.properties.entity_id&&label.properties.entity_id===seat.properties.entity_id&&
+       label.geometry.coordinates.every((value,i)=>Math.abs(value-seat.geometry.coordinates[i])<.00001));
+    const countyPointLabels=pointLabels.filter(f=>f.properties.level==='county');
+    const countyLabelsBySeat=new Map(countySeats.map(seat=>[seat,countyPointLabels.filter(label=>matchesCountySeat(label,seat))]));
+    const rangeForPoint=new Map(),prefectureRanges=new Map();
+    for(const area of map.geojson.features.filter(f=>f.properties?.layer==='prefecture_areas')){
+      const p=area.properties,base=prefectureName(p.base_name||p.name);
+      const named=pointLabels.filter(f=>f.properties.level==='prefecture'&&prefectureName(f.properties.name)===base);
+      const related=named.length===1?named[0]:null;
+      const rp=related?.properties||{},entityId=p.entity_id||rp.entity_id||null;
+      const mapKey=entityId?`entity:${entityId}`:`jin:prefecture-area:${base}`;
+      const candidates=labelAnchors.filter(anchor=>prefectureName(anchor.name)===base);
+      // Original text is preferred only inside this year's matched polygon.
+      // A CHGIS seat coordinate remains a seat and is never relabelled as an
+      // original image anchor after the annual boundary changes.
+      const original=candidates.find(anchor=>containsPoint(area.geometry,anchor.coordinates));
+      const point=original?.coordinates||interiorPoint(area.geometry);
+      if(!point)continue;
+      const record={point,original,related,entityId,mapKey,properties:rp};
+      prefectureRanges.set(area,record);if(related)rangeForPoint.set(related,record);
+    }
     const explicitPrefBoundaries=map.geojson.features.some(f=>f.properties?.layer==='prefecture_boundaries');
     const explicitStateBoundaries=map.geojson.features.some(f=>f.properties?.layer==='province_boundaries');
     const defs=svgNode('defs'),hatch=svgNode('pattern',{id:`jin-uncertain-${map.year}`,width:8,height:8,patternUnits:'userSpaceOnUse',patternTransform:'rotate(30)'});
@@ -72,11 +109,20 @@
           container.appendChild(symbol);
         }
         features.push({entity_id:p.entity_id||null,x,y,level,label:name,mapKey:key,coordinate_role:role,source:p.source});
-        if(name&&p.show_label!==false)labels.push({text:name+(p.inferred?'※':''),sourceName:p.name||name,x,y,anchorX:x,anchorY:y,level,
-          entityId:p.entity_id||null,mapKey:key,kind:`${level}-seat`,
+        const range=rangeForPoint.get(f);
+        const seat=level==='county'?(isSeat?f:countySeats.find(item=>matchesCountySeat(f,item))):null;
+        const sourceId=seat?.properties.source_id||p.source_id||'';
+        // Imported seat rows were hidden for the static paper map, whose label
+        // layer only covered fief research. The interactive county tier needs
+        // every county seat, with annual rename labels replacing only that seat.
+        const showCounty=isSeat&&level==='county'&&!countyLabelsBySeat.get(f)?.length;
+        const duplicateImageAnchor=range&&!p.is_seat;
+        if(name&&!duplicateImageAnchor&&(p.show_label!==false||showCounty))labels.push({text:name+(p.inferred?'※':''),sourceName:p.name||name,x,y,anchorX:x,anchorY:y,level,
+          entityId:range?.entityId||p.entity_id||null,mapKey:range?.mapKey||key,mapGroup:range?.mapKey,kind:`${level}-seat`,
           // A county and each nearby fief annotation share text linkage, but
           // are distinct labels even when they use the same CHGIS position.
-          labelIdentity:p.fief_id?`jin-fief:${p.fief_id}`:null,
+          labelIdentity:rawLevel!=='fief'&&level==='county'&&sourceId?`jin-county:${sourceId}`:p.fief_id?`jin-fief:${p.fief_id}`:null,
+          seatSourceId:rawLevel!=='fief'&&level==='county'?sourceId:null,
           fontSize:rawLevel==='fief'?Number(p.font_size||8.6):level==='state'?22.5:level==='prefecture'?11.5:8.6,
           priority:isText?700:level==='state'?560:level==='prefecture'?500:400,
           fief:Boolean(p.fief_id),color:p.color||(p.fief_id?palette(p.fief_id):null),
@@ -89,12 +135,12 @@
       if(/territory/.test(layer))Object.assign(style,{fill:'#ded3a8',stroke:'#6c6043','stroke-width':1.8});
       else if(/kingdom.*area/.test(layer))Object.assign(style,{fill:p.color||palette(p.fief_id||p.name),'fill-opacity':.62,stroke:'#915c32','stroke-width':2.2,'stroke-dasharray':p.has_inference?'6 3':'none'});
       else if(/member.*bound|branch.*bound/.test(layer))Object.assign(style,{stroke:'#766854','stroke-opacity':.24,'stroke-width':.65});
-      else if(/province.*bound|state.*bound/.test(layer))Object.assign(style,{stroke:'#4f493f','stroke-width':1.7});
-      else if(/province.*area|state.*area/.test(layer))Object.assign(style,{fill:'#e2e5d2',stroke:explicitStateBoundaries?'none':'#4f493f','stroke-width':1.7});
+      else if(/province.*bound|state.*bound/.test(layer))Object.assign(style,{class:'jin-province-boundary',stroke:'#292b32','stroke-width':3.2,'stroke-opacity':1});
+      else if(/province.*area|state.*area/.test(layer))Object.assign(style,{class:'jin-province-area',fill:'#e2e5d2',stroke:explicitStateBoundaries?'none':'#292b32','stroke-width':3.2,'stroke-opacity':1});
       else if(layer==='prefecture_areas'&&explicitPrefBoundaries)style.stroke='none';
       else if(layer==='unresolved_areas')Object.assign(style,{fill:`url(#jin-uncertain-${map.year})`,stroke:'none'});
       else if(/coast|river/.test(layer))Object.assign(style,{stroke:'#829aa6','stroke-width':.7});
-      if(polygon&&!/kingdom|territory/.test(layer))style['stroke-opacity']=.65;
+      if(polygon&&!/kingdom|territory|province|state/.test(layer))style['stroke-opacity']=.65;
       const path=svgNode('path',style);
       if(p.entity_id){path.dataset.entityId=p.entity_id;path.dataset.mapKey=key;path.dataset.mapLevel=level;path.setAttribute('tabindex','0');path.setAttribute('role','button');}
       path.appendChild(svgNode('title',{},`${name}；${p.source||''}${p.member_role==='branch'?'；王國支郡':''}`));
@@ -107,6 +153,19 @@
           features.push({entity_id:p.entity_id||null,x,y,level:'state',label:name,mapKey:key,coordinate_role:'derived_area_label_not_seat',source:p.source});
         }
       }
+      if(prefectureRanges.has(f)){
+        const range=prefectureRanges.get(f),rp=range.properties,[x,y]=project(range.point);
+        // Annual labels already encode 郡/国/支郡. Do not invent a suffix
+        // for a complete historical title or an unmatched original name.
+        const text=rp.display_name||p.display_name||name;
+        const inferred=Boolean(rp.inferred)||p.membership_evidence==='inferred';
+        const fiefId=p.fief_id||rp.fief_id;
+        labels.push({text:text+(inferred?'※':''),sourceName:p.name||name,x,y,level:'prefecture',entityId:range.entityId,mapKey:range.mapKey,mapGroup:range.mapKey,
+          kind:'prefecture-area',fontSize:16.5,priority:900,isTextAnchor:true,areaGuard:areaGuard?.(d),areaId:range.mapKey,allowAreaFontShrink:true,
+          labelIdentity:fiefId?`jin-fief:${fiefId}`:null,fief:Boolean(fiefId),color:fiefId?'#493b2a':null,uncertain:inferred,
+          coordinateRole:range.original?'image_label_anchor_not_seat':'derived_area_label_not_seat',originalAnchorId:range.original?.id||null});
+        features.push({entity_id:range.entityId,x,y,level:'prefecture',label:text,mapKey:range.mapKey,coordinate_role:range.original?'image_label_anchor_not_seat':'derived_area_label_not_seat',source:range.original?'原图已确认郡名文字锚点':p.source});
+      }
       if(layer==='prefecture_areas'&&p.membership_evidence==='inferred'){
         container.appendChild(svgNode('path',{d,fill:`url(#jin-uncertain-${map.year})`,stroke:'none','pointer-events':'none'}));
       }
@@ -114,6 +173,6 @@
     container.appendChild(svgNode('rect',{x:left,y:top,width:right-left,height:bottom-top,fill:'none',stroke:'#a99b7d','stroke-width':1,'pointer-events':'none'}));
     return {labels,features,project};
   }
-  const api={draw,paths,order,interiorPoint};root.JIN_MAP_VIEW=api;
+  const api={draw,paths,order,interiorPoint,containsPoint};root.JIN_MAP_VIEW=api;
   if(typeof module!=='undefined'&&module.exports)module.exports=api;
 })(typeof window!=='undefined'?window:globalThis);
