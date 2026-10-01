@@ -1911,19 +1911,26 @@
     for(const source of labels) {
       const isArea=source.kind.includes('area');
       const limits=source.smallAnnotation?[9,10]:isArea?(source.level==='state'?[22,28]:[17,21]):(source.level==='county'?[11,12]:[12,13]);
-      const fontSize=Math.max(limits[0],Math.min(limits[1],source.fontSize*scale))/scale;
-      const label={...source,fontSize},width=labelWidth(label.text,fontSize)+fontSize*.35,height=fontSize*1.4;
-      let placement=null;
-      for(const [x,y,anchor] of labelCandidates(label,width,height,plot)) {
-        const left=anchor==='middle'?x-width/2:anchor==='end'?x-width:x;
-        const box=[left,y-height/2,left+width,y+height/2];
-        if(box[0]<plot[0]||box[1]<plot[1]||box[2]>plot[2]||box[3]>plot[3])continue;
-        if(label.areaGuard&&!label.areaGuard.containsBox([box[0]-1.4/scale,box[1]-1.4/scale,box[2]+1.4/scale,box[3]+1.4/scale]))continue;
-        if(label.outsideChen) {
-          const halo=1.4/scale;
-          if(territoryGuard?.intersects([box[0]-halo,box[1]-halo,box[2]+halo,box[3]+halo]))continue;
-        } else if(collision(box))continue;
-        placement={x,y,anchor,box};break;
+      const preferredSize=Math.max(limits[0],Math.min(limits[1],source.fontSize*scale))/scale;
+      // A narrow Jin prefecture can fit its range name at a smaller size.
+      // Try the usual large type first; every fallback still obeys its border
+      // and the shared collision rules. Other maps retain their original size.
+      const fontSizes=[preferredSize,...(isArea&&source.allowAreaFontShrink?[14,12,10].map(size=>size/scale).filter(size=>size<preferredSize):[])];
+      let placement=null,fontSize=preferredSize,label,width,height;
+      for(const candidateSize of fontSizes) {
+        fontSize=candidateSize;label={...source,fontSize};width=labelWidth(label.text,fontSize)+fontSize*.35;height=fontSize*1.4;
+        for(const [x,y,anchor] of labelCandidates(label,width,height,plot)) {
+          const left=anchor==='middle'?x-width/2:anchor==='end'?x-width:x;
+          const box=[left,y-height/2,left+width,y+height/2];
+          if(box[0]<plot[0]||box[1]<plot[1]||box[2]>plot[2]||box[3]>plot[3])continue;
+          if(label.areaGuard&&!label.areaGuard.containsBox([box[0]-1.4/scale,box[1]-1.4/scale,box[2]+1.4/scale,box[3]+1.4/scale]))continue;
+          if(label.outsideChen) {
+            const halo=1.4/scale;
+            if(territoryGuard?.intersects([box[0]-halo,box[1]-halo,box[2]+halo,box[3]+halo]))continue;
+          } else if(collision(box))continue;
+          placement={x,y,anchor,box};break;
+        }
+        if(placement)break;
       }
       // Do not send northern reference names to the southern overflow panel.
       // A border label with no room remains available from its original point.
@@ -2248,7 +2255,7 @@
     const base=`<svg xmlns="http://www.w3.org/2000/svg" width="${map.width}" height="${map.height}"><rect width="100%" height="100%" fill="#f7f3e9"/></svg>`;
     yearMapImage.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(base);yearMapImage.alt=`${year}年西晉封國地圖底色`;
     $('yearMapTitle').textContent=map.title||`${year}年西晉州郡與封國`;
-    $('yearMapZoomHelp').textContent='100%–1000%；300%起顯示郡國名，超過700%顯示縣級封國。只提供已研究斷面，不外推其他年份。';
+    $('yearMapZoomHelp').textContent='100%–1000%；低於300%顯示州名，300%–700%顯示州與郡國範圍名，超過700%加上縣名及治所名。小字封爵另列。';
     yearMapNote.textContent=map.note||'CHGIS與原圖矢量成果接合；多郡王國合併著色，內部郡界淡化。文字位置不是郡治。';
     for(const link of [yearMapUhd,yearMapCsv,yearMapGeoJson]) {
       link.hidden=true;link.removeAttribute('href');link.removeAttribute('download');
