@@ -1,0 +1,4568 @@
+{
+  "method": {
+    "dynasty": "western-jin",
+    "years": [
+      266,
+      316
+    ],
+    "crs": "EPSG:4326",
+    "width": 2400,
+    "height": 1986,
+    "plot": [
+      80,
+      140,
+      2320,
+      1906
+    ],
+    "extent": [
+      92.76949194836817,
+      15.25765489858437,
+      128.42883145915184,
+      43.37633897890462
+    ],
+    "date_rule": "年末口径；年度源表有效期与控制规则分列，模糊起年仍属推定。",
+    "geometric_method": "以308/289原图郡面作约束容器，按CHGIS优先县治建立分区，按当年县属聚合郡州；同年CHGIS郡面优先。",
+    "county_boundary_status": "ALL INFERRED: constrained nearest-seat fitting cells, not observed historical county boundaries",
+    "control_rule_file": "data/jin-fief-research/annual-territory-rules.json",
+    "fief_rule_file": "data/jin-fief-research/annual-multi-commandery-kingdoms.json",
+    "snapshot_289_308_unchanged": true,
+    "source_inventory": [
+      {
+        "source": "CHGIS_V6:v6_time_cnty_pts_utf_wgs84",
+        "archive": "CHGIS数据/dataverse_files-v6.zip",
+        "nested": "v6_time_cnty_pts_utf_wgs84.zip",
+        "sha256": "3b431d2e587bcb738e632385703824d252e0b4744ddd726fc5eb10364dd2d8c5",
+        "records": 10522,
+        "imported": 1216
+      },
+      {
+        "source": "CHGIS_V6:v6_time_pref_pts_utf_wgs84",
+        "archive": "CHGIS数据/dataverse_files (2)-v6.zip",
+        "nested": "v6_time_pref_pts_utf_wgs84.zip",
+        "sha256": "48f6a50bcc3dd9cf4391efab2153f0e333f2040a08cf96c4d4b950cf9977d1fc",
+        "records": 5226,
+        "imported": 259
+      },
+      {
+        "source": "CHGIS_V6:v6_time_pref_pgn_utf_wgs84",
+        "archive": "CHGIS数据/dataverse_files (1)-v6.zip",
+        "nested": "v6_time_pref_pgn_utf_wgs84.zip",
+        "sha256": "d3aa9f397916f3ca017b9b6379854796846e2348d7303afc47375984a7e12f72",
+        "records": 3830,
+        "imported": 71
+      },
+      {
+        "source": "CHGIS_V4:v4_time_prov_pts_utf",
+        "archive": "CHGIS数据/v4_time_prov_pts_utf.zip",
+        "nested": null,
+        "sha256": "ef7cbbf6675fb528eae51ff64440b3a1fb680893d1b403fd2c91b3892fdf9c73",
+        "records": 312,
+        "imported": 9
+      }
+    ]
+  },
+  "reference_compartments": 173,
+  "physical_county_cells": 956,
+  "county_entities": 1807,
+  "matched_entities": 1328,
+  "unlocated_entities": [
+    {
+      "id": "c0007",
+      "name": "新城",
+      "prefecture": "河南尹",
+      "reason": "same_name_too_far"
+    },
+    {
+      "id": "c0010",
+      "name": "梁",
+      "prefecture": "河南尹",
+      "reason": "missing"
+    },
+    {
+      "id": "c0037",
+      "name": "楊",
+      "prefecture": "平陽郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0040",
+      "name": "蒲子",
+      "prefecture": "平陽郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0050",
+      "name": "東垣",
+      "prefecture": "河東郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0121",
+      "name": "長垣",
+      "prefecture": "陳留國",
+      "reason": "missing"
+    },
+    {
+      "id": "c0129",
+      "name": "濮陽",
+      "prefecture": "東郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0141",
+      "name": "離狐",
+      "prefecture": "濟陰郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0144",
+      "name": "城武",
+      "prefecture": "濟陰郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0156",
+      "name": "富城",
+      "prefecture": "東平國",
+      "reason": "same_name_too_far"
+    },
+    {
+      "id": "c0166",
+      "name": "梁父",
+      "prefecture": "泰山郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0167",
+      "name": "山荏",
+      "prefecture": "泰山郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0172",
+      "name": "矩平",
+      "prefecture": "泰山郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0180",
+      "name": "瑕丘",
+      "prefecture": "高平國",
+      "reason": "missing"
+    },
+    {
+      "id": "c0181",
+      "name": "東",
+      "prefecture": "高平國",
+      "reason": "missing"
+    },
+    {
+      "id": "c0184",
+      "name": "穎陰",
+      "prefecture": "潁川郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0185",
+      "name": "臨穎",
+      "prefecture": "潁川郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0187",
+      "name": "召陵",
+      "prefecture": "潁川郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0203",
+      "name": "北宜春",
+      "prefecture": "汝南郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0208",
+      "name": "定穎",
+      "prefecture": "汝南郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0209",
+      "name": "濯陽",
+      "prefecture": "汝南郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0214",
+      "name": "陽",
+      "prefecture": "汝南郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0219",
+      "name": "固始",
+      "prefecture": "汝陰郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0221",
+      "name": "宋",
+      "prefecture": "汝陰郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0223",
+      "name": "鮦陽",
+      "prefecture": "汝陰郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0254",
+      "name": "鄼",
+      "prefecture": "譙國",
+      "reason": "missing"
+    },
+    {
+      "id": "c0275",
+      "name": "松滋",
+      "prefecture": "安豐郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0298",
+      "name": "南宮",
+      "prefecture": "安平國",
+      "reason": "missing"
+    },
+    {
+      "id": "c0303",
+      "name": "武邑",
+      "prefecture": "武邑國",
+      "reason": "missing_parent_area_context"
+    },
+    {
+      "id": "c0304",
+      "name": "武遂",
+      "prefecture": "武邑國",
+      "reason": "missing_parent_area_context"
+    },
+    {
+      "id": "c0305",
+      "name": "觀津",
+      "prefecture": "武邑國",
+      "reason": "missing_parent_area_context"
+    },
+    {
+      "id": "c0308",
+      "name": "荏平",
+      "prefecture": "平原國",
+      "reason": "missing"
+    },
+    {
+      "id": "c0327",
+      "name": "蓨",
+      "prefecture": "勃海郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0333",
+      "name": "易",
+      "prefecture": "河間國",
+      "reason": "missing"
+    },
+    {
+      "id": "c0340",
+      "name": "清河",
+      "prefecture": "清河郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0344",
+      "name": "靈",
+      "prefecture": "清河郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0376",
+      "name": "遒",
+      "prefecture": "範陽國",
+      "reason": "missing"
+    },
+    {
+      "id": "c0380",
+      "name": "路",
+      "prefecture": "漁陽郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0381",
+      "name": "雍奴",
+      "prefecture": "漁陽郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0382",
+      "name": "安樂",
+      "prefecture": "漁陽郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0383",
+      "name": "泉州",
+      "prefecture": "漁陽郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0384",
+      "name": "狐奴",
+      "prefecture": "漁陽郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0385",
+      "name": "薊",
+      "prefecture": "燕國",
+      "reason": "missing"
+    },
+    {
+      "id": "c0387",
+      "name": "昌平",
+      "prefecture": "燕國",
+      "reason": "same_name_too_far"
+    },
+    {
+      "id": "c0388",
+      "name": "軍都",
+      "prefecture": "燕國",
+      "reason": "missing"
+    },
+    {
+      "id": "c0391",
+      "name": "雍奴",
+      "prefecture": "燕國",
+      "reason": "missing"
+    },
+    {
+      "id": "c0392",
+      "name": "安樂",
+      "prefecture": "燕國",
+      "reason": "missing"
+    },
+    {
+      "id": "c0393",
+      "name": "泉州",
+      "prefecture": "燕國",
+      "reason": "missing"
+    },
+    {
+      "id": "c0394",
+      "name": "狐奴",
+      "prefecture": "燕國",
+      "reason": "missing"
+    },
+    {
+      "id": "c0397",
+      "name": "無終",
+      "prefecture": "北平郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0400",
+      "name": "居庸",
+      "prefecture": "上谷郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0403",
+      "name": "鹿",
+      "prefecture": "上谷郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0414",
+      "name": "襄平",
+      "prefecture": "遼東郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0415",
+      "name": "汶",
+      "prefecture": "遼東郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0416",
+      "name": "新昌",
+      "prefecture": "遼東郡",
+      "reason": "same_name_too_far"
+    },
+    {
+      "id": "c0417",
+      "name": "力城",
+      "prefecture": "遼東郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0418",
+      "name": "安市",
+      "prefecture": "遼東郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0419",
+      "name": "西安平",
+      "prefecture": "遼東郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0420",
+      "name": "朝鮮",
+      "prefecture": "樂浪郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0421",
+      "name": "屯有",
+      "prefecture": "樂浪郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0422",
+      "name": "渾彌",
+      "prefecture": "樂浪郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0423",
+      "name": "遂城",
+      "prefecture": "樂浪郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0424",
+      "name": "鏤方",
+      "prefecture": "樂浪郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0425",
+      "name": "駟望",
+      "prefecture": "樂浪郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0426",
+      "name": "高句驪",
+      "prefecture": "玄菟郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0427",
+      "name": "高顯",
+      "prefecture": "玄菟郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0428",
+      "name": "望平",
+      "prefecture": "玄菟郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0429",
+      "name": "帶方",
+      "prefecture": "帶方郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0430",
+      "name": "列口",
+      "prefecture": "帶方郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0431",
+      "name": "海冥",
+      "prefecture": "帶方郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0432",
+      "name": "長岑",
+      "prefecture": "帶方郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0433",
+      "name": "提奚",
+      "prefecture": "帶方郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0434",
+      "name": "含資",
+      "prefecture": "帶方郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0435",
+      "name": "昌黎",
+      "prefecture": "昌黎郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0436",
+      "name": "賓徒",
+      "prefecture": "昌黎郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0437",
+      "name": "襄平",
+      "prefecture": "遼東郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0438",
+      "name": "汶",
+      "prefecture": "遼東郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0439",
+      "name": "居就",
+      "prefecture": "遼東郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0440",
+      "name": "樂就",
+      "prefecture": "遼東郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0441",
+      "name": "安市",
+      "prefecture": "遼東郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0442",
+      "name": "西安平",
+      "prefecture": "遼東郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0443",
+      "name": "新昌",
+      "prefecture": "遼東郡",
+      "reason": "same_name_too_far"
+    },
+    {
+      "id": "c0444",
+      "name": "力城",
+      "prefecture": "遼東郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0445",
+      "name": "朝鮮",
+      "prefecture": "樂浪郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0446",
+      "name": "屯有",
+      "prefecture": "樂浪郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0447",
+      "name": "渾彌",
+      "prefecture": "樂浪郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0448",
+      "name": "遂城",
+      "prefecture": "樂浪郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0449",
+      "name": "鏤方",
+      "prefecture": "樂浪郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0450",
+      "name": "駟望",
+      "prefecture": "樂浪郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0451",
+      "name": "高句驪",
+      "prefecture": "玄菟郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0452",
+      "name": "高顯",
+      "prefecture": "玄菟郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0453",
+      "name": "望平",
+      "prefecture": "玄菟郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0454",
+      "name": "帶方",
+      "prefecture": "帶方郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0455",
+      "name": "列口",
+      "prefecture": "帶方郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0456",
+      "name": "海冥",
+      "prefecture": "帶方郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0457",
+      "name": "長岑",
+      "prefecture": "帶方郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0458",
+      "name": "提奚",
+      "prefecture": "帶方郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0459",
+      "name": "含資",
+      "prefecture": "帶方郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0460",
+      "name": "南新",
+      "prefecture": "帶方郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0461",
+      "name": "晉陽",
+      "prefecture": "太原國",
+      "reason": "missing"
+    },
+    {
+      "id": "c0464",
+      "name": "於離",
+      "prefecture": "太原國",
+      "reason": "missing"
+    },
+    {
+      "id": "c0466",
+      "name": "狼孟",
+      "prefecture": "太原國",
+      "reason": "missing"
+    },
+    {
+      "id": "c0470",
+      "name": "平陶",
+      "prefecture": "太原國",
+      "reason": "missing"
+    },
+    {
+      "id": "c0474",
+      "name": "隰城",
+      "prefecture": "西河國",
+      "reason": "missing"
+    },
+    {
+      "id": "c0475",
+      "name": "離石",
+      "prefecture": "西河國",
+      "reason": "missing"
+    },
+    {
+      "id": "c0476",
+      "name": "中陽",
+      "prefecture": "西河國",
+      "reason": "missing"
+    },
+    {
+      "id": "c0477",
+      "name": "界休",
+      "prefecture": "西河國",
+      "reason": "missing"
+    },
+    {
+      "id": "c0487",
+      "name": "潞",
+      "prefecture": "上黨郡",
+      "reason": "missing_parent_area_context"
+    },
+    {
+      "id": "c0491",
+      "name": "受陽",
+      "prefecture": "樂平郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0495",
+      "name": "汪陶",
+      "prefecture": "雁門郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0496",
+      "name": "醇",
+      "prefecture": "雁門郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0504",
+      "name": "廣牧",
+      "prefecture": "新興郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0507",
+      "name": "杜陵",
+      "prefecture": "京兆郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0513",
+      "name": "陰槃",
+      "prefecture": "京兆郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0520",
+      "name": "頻陽",
+      "prefecture": "馮翊郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0522",
+      "name": "蓮芍",
+      "prefecture": "馮翊郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0527",
+      "name": "雍",
+      "prefecture": "扶風國",
+      "reason": "missing"
+    },
+    {
+      "id": "c0528",
+      "name": "汧",
+      "prefecture": "扶風國",
+      "reason": "missing"
+    },
+    {
+      "id": "c0530",
+      "name": "美陽",
+      "prefecture": "扶風國",
+      "reason": "missing"
+    },
+    {
+      "id": "c0534",
+      "name": "鄂",
+      "prefecture": "扶風國",
+      "reason": "same_name_too_far"
+    },
+    {
+      "id": "c0539",
+      "name": "蒯城",
+      "prefecture": "始平郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0540",
+      "name": "臨涇",
+      "prefecture": "安定郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0542",
+      "name": "烏氏",
+      "prefecture": "安定郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0543",
+      "name": "鶉觚",
+      "prefecture": "安定郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0544",
+      "name": "陰密",
+      "prefecture": "安定郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0545",
+      "name": "西川",
+      "prefecture": "安定郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0546",
+      "name": "都盧",
+      "prefecture": "安定郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0549",
+      "name": "靈州",
+      "prefecture": "北地郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0551",
+      "name": "邠邑",
+      "prefecture": "新平郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0556",
+      "name": "河關",
+      "prefecture": "隴西國",
+      "reason": "missing"
+    },
+    {
+      "id": "c0557",
+      "name": "獂道",
+      "prefecture": "南安郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0558",
+      "name": "中陶",
+      "prefecture": "南安郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0561",
+      "name": "上邽",
+      "prefecture": "天水郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0562",
+      "name": "顯親",
+      "prefecture": "天水郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0564",
+      "name": "新陽",
+      "prefecture": "天水郡",
+      "reason": "same_name_too_far"
+    },
+    {
+      "id": "c0565",
+      "name": "成紀",
+      "prefecture": "天水郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0566",
+      "name": "臨渭",
+      "prefecture": "略陽郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0567",
+      "name": "平襄",
+      "prefecture": "略陽郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0568",
+      "name": "略陽",
+      "prefecture": "略陽郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0569",
+      "name": "清水",
+      "prefecture": "略陽郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0570",
+      "name": "下辨",
+      "prefecture": "武都郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0571",
+      "name": "河池",
+      "prefecture": "武都郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0574",
+      "name": "武都",
+      "prefecture": "武都郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0575",
+      "name": "氐道",
+      "prefecture": "武都郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0576",
+      "name": "上祿",
+      "prefecture": "武都郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0577",
+      "name": "陰平",
+      "prefecture": "陰平郡",
+      "reason": "same_name_too_far"
+    },
+    {
+      "id": "c0580",
+      "name": "允街",
+      "prefecture": "金城郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0582",
+      "name": "白土",
+      "prefecture": "金城郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0583",
+      "name": "浩亶",
+      "prefecture": "金城郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0584",
+      "name": "令居",
+      "prefecture": "金城郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0588",
+      "name": "破羌",
+      "prefecture": "西平郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0589",
+      "name": "長寧",
+      "prefecture": "西平郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0590",
+      "name": "姑臧",
+      "prefecture": "武威郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0591",
+      "name": "宣威",
+      "prefecture": "武威郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0592",
+      "name": "揟次",
+      "prefecture": "武威郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0593",
+      "name": "倉松",
+      "prefecture": "武威郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0600",
+      "name": "氏池",
+      "prefecture": "張掖郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0606",
+      "name": "福祿",
+      "prefecture": "酒泉郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0607",
+      "name": "表氏",
+      "prefecture": "酒泉郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0608",
+      "name": "樂涫",
+      "prefecture": "酒泉郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0610",
+      "name": "會水",
+      "prefecture": "酒泉郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0611",
+      "name": "安彌",
+      "prefecture": "酒泉郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0613",
+      "name": "沙頭",
+      "prefecture": "酒泉郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0614",
+      "name": "騂馬",
+      "prefecture": "酒泉郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0617",
+      "name": "廣至",
+      "prefecture": "敦煌郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0620",
+      "name": "宜禾",
+      "prefecture": "敦煌郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0621",
+      "name": "淵泉",
+      "prefecture": "敦煌郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0622",
+      "name": "伊吾",
+      "prefecture": "敦煌郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0623",
+      "name": "昌蒲",
+      "prefecture": "敦煌郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0624",
+      "name": "陽關",
+      "prefecture": "敦煌郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0625",
+      "name": "乾齊",
+      "prefecture": "敦煌郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0627",
+      "name": "伊吾",
+      "prefecture": "晉昌郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0628",
+      "name": "宜禾",
+      "prefecture": "晉昌郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0629",
+      "name": "淵泉",
+      "prefecture": "晉昌郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0630",
+      "name": "廣至",
+      "prefecture": "晉昌郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0631",
+      "name": "沙頭",
+      "prefecture": "晉昌郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0638",
+      "name": "河關",
+      "prefecture": "隴西國",
+      "reason": "missing"
+    },
+    {
+      "id": "c0639",
+      "name": "獂道",
+      "prefecture": "南安郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0640",
+      "name": "中陶",
+      "prefecture": "南安郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0643",
+      "name": "上邽",
+      "prefecture": "天水郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0644",
+      "name": "顯親",
+      "prefecture": "天水郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0646",
+      "name": "新陽",
+      "prefecture": "天水郡",
+      "reason": "same_name_too_far"
+    },
+    {
+      "id": "c0647",
+      "name": "成紀",
+      "prefecture": "天水郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0648",
+      "name": "臨渭",
+      "prefecture": "略陽郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0649",
+      "name": "平襄",
+      "prefecture": "略陽郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0650",
+      "name": "略陽",
+      "prefecture": "略陽郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0651",
+      "name": "清水",
+      "prefecture": "略陽郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0652",
+      "name": "下辨",
+      "prefecture": "武都郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0653",
+      "name": "河池",
+      "prefecture": "武都郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0656",
+      "name": "武都",
+      "prefecture": "武都郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0657",
+      "name": "氐道",
+      "prefecture": "武都郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0658",
+      "name": "陰平",
+      "prefecture": "陰平郡",
+      "reason": "same_name_too_far"
+    },
+    {
+      "id": "c0662",
+      "name": "河關",
+      "prefecture": "狄道郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0663",
+      "name": "洮陽",
+      "prefecture": "狄道郡",
+      "reason": "same_name_too_far"
+    },
+    {
+      "id": "c0664",
+      "name": "遂平",
+      "prefecture": "狄道郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0665",
+      "name": "武街",
+      "prefecture": "狄道郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0666",
+      "name": "始興",
+      "prefecture": "狄道郡",
+      "reason": "same_name_too_far"
+    },
+    {
+      "id": "c0667",
+      "name": "第五",
+      "prefecture": "狄道郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0668",
+      "name": "真仇",
+      "prefecture": "狄道郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0670",
+      "name": "允街",
+      "prefecture": "金城郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0672",
+      "name": "白土",
+      "prefecture": "金城郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0673",
+      "name": "浩亶",
+      "prefecture": "金城郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0674",
+      "name": "令居",
+      "prefecture": "金城郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0680",
+      "name": "蒲池",
+      "prefecture": "漢中郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0682",
+      "name": "黃金",
+      "prefecture": "漢中郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0684",
+      "name": "城",
+      "prefecture": "梓潼郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0686",
+      "name": "白水",
+      "prefecture": "梓潼郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0687",
+      "name": "漢德",
+      "prefecture": "梓潼郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0688",
+      "name": "劍閣",
+      "prefecture": "梓潼郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0689",
+      "name": "武連",
+      "prefecture": "梓潼郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0690",
+      "name": "黃安",
+      "prefecture": "梓潼郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0691",
+      "name": "廣漢",
+      "prefecture": "廣漢郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0697",
+      "name": "什",
+      "prefecture": "廣漢郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0698",
+      "name": "雒",
+      "prefecture": "新都郡",
+      "reason": "missing_parent_area_context"
+    },
+    {
+      "id": "c0699",
+      "name": "新都",
+      "prefecture": "新都郡",
+      "reason": "missing_parent_area_context"
+    },
+    {
+      "id": "c0700",
+      "name": "綿竹",
+      "prefecture": "新都郡",
+      "reason": "missing_parent_area_context"
+    },
+    {
+      "id": "c0701",
+      "name": "什",
+      "prefecture": "新都郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0702",
+      "name": "漢復",
+      "prefecture": "涪陵郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0703",
+      "name": "涪陵",
+      "prefecture": "涪陵郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0704",
+      "name": "漢薛",
+      "prefecture": "涪陵郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0706",
+      "name": "萬寧",
+      "prefecture": "涪陵郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0711",
+      "name": "南充國",
+      "prefecture": "巴郡",
+      "reason": "point_outside_reference_domain"
+    },
+    {
+      "id": "c0720",
+      "name": "蒼溪",
+      "prefecture": "巴西郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0721",
+      "name": "岐愜",
+      "prefecture": "巴西郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0722",
+      "name": "南充國",
+      "prefecture": "巴西郡",
+      "reason": "point_outside_reference_domain"
+    },
+    {
+      "id": "c0726",
+      "name": "平州",
+      "prefecture": "巴西郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0728",
+      "name": "宕渠",
+      "prefecture": "宕渠郡",
+      "reason": "missing_parent_area_context"
+    },
+    {
+      "id": "c0731",
+      "name": "陰平",
+      "prefecture": "陰平郡",
+      "reason": "same_name_too_far"
+    },
+    {
+      "id": "c0733",
+      "name": "下辨",
+      "prefecture": "武都郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0734",
+      "name": "河池",
+      "prefecture": "武都郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0737",
+      "name": "武都",
+      "prefecture": "武都郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0738",
+      "name": "氐道",
+      "prefecture": "武都郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0748",
+      "name": "洵陽",
+      "prefecture": "魏興郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0752",
+      "name": "北巫",
+      "prefecture": "上庸郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0763",
+      "name": "南安",
+      "prefecture": "犍為郡",
+      "reason": "same_name_too_far"
+    },
+    {
+      "id": "c0767",
+      "name": "汶山",
+      "prefecture": "汶山郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0768",
+      "name": "升遷",
+      "prefecture": "汶山郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0771",
+      "name": "興樂",
+      "prefecture": "汶山郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0772",
+      "name": "平康",
+      "prefecture": "汶山郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0775",
+      "name": "青衣",
+      "prefecture": "漢嘉郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0778",
+      "name": "牛",
+      "prefecture": "漢嘉郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0784",
+      "name": "漢陽",
+      "prefecture": "朱提郡",
+      "reason": "same_name_too_far"
+    },
+    {
+      "id": "c0788",
+      "name": "會無",
+      "prefecture": "越巂郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0789",
+      "name": "卑水",
+      "prefecture": "越巂郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0790",
+      "name": "定摧",
+      "prefecture": "越巂郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0798",
+      "name": "並渠",
+      "prefecture": "牂柯郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0799",
+      "name": "平夷",
+      "prefecture": "牂柯郡",
+      "reason": "same_name_too_far"
+    },
+    {
+      "id": "c0800",
+      "name": "同並",
+      "prefecture": "牂柯郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0802",
+      "name": "永寧",
+      "prefecture": "雲南郡",
+      "reason": "same_name_too_far"
+    },
+    {
+      "id": "c0803",
+      "name": "棟",
+      "prefecture": "雲南郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0806",
+      "name": "姑復",
+      "prefecture": "雲南郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0807",
+      "name": "邪龍",
+      "prefecture": "雲南郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0810",
+      "name": "勝休",
+      "prefecture": "興古郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0811",
+      "name": "進乘",
+      "prefecture": "興古郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0816",
+      "name": "毋",
+      "prefecture": "興古郡",
+      "reason": "same_name_too_far"
+    },
+    {
+      "id": "c0819",
+      "name": "律高",
+      "prefecture": "興古郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0821",
+      "name": "西隨",
+      "prefecture": "興古郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0824",
+      "name": "存號",
+      "prefecture": "建寧郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0826",
+      "name": "談槀",
+      "prefecture": "建寧郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0827",
+      "name": "漏江",
+      "prefecture": "建寧郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0833",
+      "name": "秦臧",
+      "prefecture": "建寧郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0835",
+      "name": "俞元",
+      "prefecture": "建寧郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0836",
+      "name": "修雲",
+      "prefecture": "建寧郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0837",
+      "name": "泠丘",
+      "prefecture": "建寧郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0842",
+      "name": "巂唐",
+      "prefecture": "永昌郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0846",
+      "name": "雍鄉",
+      "prefecture": "永昌郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0847",
+      "name": "南涪",
+      "prefecture": "永昌郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0853",
+      "name": "漢復",
+      "prefecture": "涪陵郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0854",
+      "name": "涪陵",
+      "prefecture": "涪陵郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0855",
+      "name": "漢葭",
+      "prefecture": "涪陵郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0857",
+      "name": "萬寧",
+      "prefecture": "涪陵郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0863",
+      "name": "梇棟",
+      "prefecture": "雲南郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0867",
+      "name": "姑復",
+      "prefecture": "雲南郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0868",
+      "name": "邪龍",
+      "prefecture": "雲南郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0870",
+      "name": "永寧",
+      "prefecture": "雲南郡",
+      "reason": "same_name_too_far"
+    },
+    {
+      "id": "c0871",
+      "name": "勝休",
+      "prefecture": "興古郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0876",
+      "name": "毋掇",
+      "prefecture": "興古郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0878",
+      "name": "律高",
+      "prefecture": "興古郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0880",
+      "name": "進乘",
+      "prefecture": "興古郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0882",
+      "name": "西隨",
+      "prefecture": "興古郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0885",
+      "name": "存䣖",
+      "prefecture": "建寧郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0887",
+      "name": "談槀",
+      "prefecture": "建寧郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0888",
+      "name": "漏江",
+      "prefecture": "建寧郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0894",
+      "name": "秦臧",
+      "prefecture": "建寧郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0896",
+      "name": "俞元",
+      "prefecture": "建寧郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0897",
+      "name": "修雲",
+      "prefecture": "建寧郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0903",
+      "name": "巂唐",
+      "prefecture": "永昌郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0904",
+      "name": "袁牢",
+      "prefecture": "永昌郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0907",
+      "name": "雍鄉",
+      "prefecture": "永昌郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0908",
+      "name": "南涪",
+      "prefecture": "永昌郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0916",
+      "name": "會無",
+      "prefecture": "越巂郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0917",
+      "name": "卑水",
+      "prefecture": "越巂郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0918",
+      "name": "定莋",
+      "prefecture": "越巂郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0926",
+      "name": "並渠",
+      "prefecture": "牂柯郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0927",
+      "name": "平夷",
+      "prefecture": "牂柯郡",
+      "reason": "same_name_too_far"
+    },
+    {
+      "id": "c0929",
+      "name": "秦臧",
+      "prefecture": "益州郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0934",
+      "name": "俞元",
+      "prefecture": "益州郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0935",
+      "name": "平夷",
+      "prefecture": "平夷郡",
+      "reason": "missing_parent_area_context"
+    },
+    {
+      "id": "c0936",
+      "name": "鱉",
+      "prefecture": "平夷郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0937",
+      "name": "夜郎",
+      "prefecture": "夜郎郡",
+      "reason": "missing_parent_area_context"
+    },
+    {
+      "id": "c0938",
+      "name": "談指",
+      "prefecture": "夜郎郡",
+      "reason": "missing_parent_area_context"
+    },
+    {
+      "id": "c0939",
+      "name": "河陽",
+      "prefecture": "河陽郡",
+      "reason": "missing_parent_area_context"
+    },
+    {
+      "id": "c0940",
+      "name": "棵榆",
+      "prefecture": "河陽郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0941",
+      "name": "永寧",
+      "prefecture": "河陽郡",
+      "reason": "missing_parent_area_context"
+    },
+    {
+      "id": "c0942",
+      "name": "比蘇",
+      "prefecture": "河陽郡",
+      "reason": "missing_parent_area_context"
+    },
+    {
+      "id": "c0949",
+      "name": "新香",
+      "prefecture": "齊國",
+      "reason": "missing"
+    },
+    {
+      "id": "c0960",
+      "name": "隰陰",
+      "prefecture": "濟南國",
+      "reason": "missing"
+    },
+    {
+      "id": "c0969",
+      "name": "蓼城",
+      "prefecture": "樂安國",
+      "reason": "missing"
+    },
+    {
+      "id": "c0972",
+      "name": "益",
+      "prefecture": "樂安國",
+      "reason": "missing"
+    },
+    {
+      "id": "c0975",
+      "name": "莒",
+      "prefecture": "城陽郡",
+      "reason": "missing_parent_area_context"
+    },
+    {
+      "id": "c0976",
+      "name": "東武",
+      "prefecture": "城陽郡",
+      "reason": "missing_parent_area_context"
+    },
+    {
+      "id": "c0977",
+      "name": "諸",
+      "prefecture": "城陽郡",
+      "reason": "missing_parent_area_context"
+    },
+    {
+      "id": "c0978",
+      "name": "壯武",
+      "prefecture": "城陽郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0981",
+      "name": "黔",
+      "prefecture": "城陽郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0983",
+      "name": "平昌",
+      "prefecture": "城陽郡",
+      "reason": "missing_parent_area_context"
+    },
+    {
+      "id": "c0987",
+      "name": "姑幕",
+      "prefecture": "城陽郡",
+      "reason": "missing_parent_area_context"
+    },
+    {
+      "id": "c0992",
+      "name": "曲城",
+      "prefecture": "東萊郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0993",
+      "name": "㡉",
+      "prefecture": "東萊郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c0995",
+      "name": "不其",
+      "prefecture": "東萊郡",
+      "reason": "point_outside_reference_domain"
+    },
+    {
+      "id": "c1002",
+      "name": "壯武",
+      "prefecture": "高密國",
+      "reason": "missing"
+    },
+    {
+      "id": "c1006",
+      "name": "平昌",
+      "prefecture": "高密國",
+      "reason": "missing_parent_area_context"
+    },
+    {
+      "id": "c1017",
+      "name": "梧",
+      "prefecture": "彭城國",
+      "reason": "missing"
+    },
+    {
+      "id": "c1022",
+      "name": "唯陵",
+      "prefecture": "下邳國",
+      "reason": "missing"
+    },
+    {
+      "id": "c1026",
+      "name": "良城",
+      "prefecture": "下邳國",
+      "reason": "missing"
+    },
+    {
+      "id": "c1034",
+      "name": "高山",
+      "prefecture": "臨淮郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1035",
+      "name": "潘旌",
+      "prefecture": "臨淮郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1036",
+      "name": "贅其",
+      "prefecture": "臨淮郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1043",
+      "name": "鄭",
+      "prefecture": "東海郡",
+      "reason": "same_name_too_far"
+    },
+    {
+      "id": "c1058",
+      "name": "縉",
+      "prefecture": "琅邪國",
+      "reason": "missing"
+    },
+    {
+      "id": "c1066",
+      "name": "臨",
+      "prefecture": "琅邪國",
+      "reason": "missing"
+    },
+    {
+      "id": "c1076",
+      "name": "臨",
+      "prefecture": "東莞國",
+      "reason": "missing"
+    },
+    {
+      "id": "c1092",
+      "name": "海西",
+      "prefecture": "廣陵郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1100",
+      "name": "東安",
+      "prefecture": "東安郡",
+      "reason": "missing_parent_area_context"
+    },
+    {
+      "id": "c1110",
+      "name": "瀑陽",
+      "prefecture": "江夏郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1129",
+      "name": "中盧",
+      "prefecture": "襄陽郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1131",
+      "name": "族陽",
+      "prefecture": "襄陽郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1132",
+      "name": "都",
+      "prefecture": "襄陽郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1145",
+      "name": "涅陽",
+      "prefecture": "南陽國",
+      "reason": "missing"
+    },
+    {
+      "id": "c1147",
+      "name": "襄鄉",
+      "prefecture": "南陽國",
+      "reason": "missing"
+    },
+    {
+      "id": "c1149",
+      "name": "鑲",
+      "prefecture": "南陽國",
+      "reason": "missing"
+    },
+    {
+      "id": "c1156",
+      "name": "復陽",
+      "prefecture": "南陽國",
+      "reason": "missing"
+    },
+    {
+      "id": "c1176",
+      "name": "順陽",
+      "prefecture": "南鄉郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1177",
+      "name": "南鄉",
+      "prefecture": "南鄉郡",
+      "reason": "same_name_too_far"
+    },
+    {
+      "id": "c1178",
+      "name": "丹水",
+      "prefecture": "南鄉郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1183",
+      "name": "陽",
+      "prefecture": "南鄉郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1193",
+      "name": "洵陽",
+      "prefecture": "魏興郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1194",
+      "name": "勳鄉",
+      "prefecture": "魏興郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1197",
+      "name": "北巫",
+      "prefecture": "上庸郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1201",
+      "name": "廣昌",
+      "prefecture": "上庸郡",
+      "reason": "same_name_too_far"
+    },
+    {
+      "id": "c1219",
+      "name": "鐔城",
+      "prefecture": "武陵郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1230",
+      "name": "下售",
+      "prefecture": "長沙郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1249",
+      "name": "利陽",
+      "prefecture": "湘東郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1263",
+      "name": "春陵",
+      "prefecture": "零陵郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1270",
+      "name": "新",
+      "prefecture": "邵陵郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1285",
+      "name": "高陵",
+      "prefecture": "武昌郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1287",
+      "name": "鄭",
+      "prefecture": "武昌郡",
+      "reason": "same_name_too_far"
+    },
+    {
+      "id": "c1291",
+      "name": "新諭",
+      "prefecture": "安成郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1299",
+      "name": "南新市",
+      "prefecture": "竟陵郡",
+      "reason": "missing_parent_area_context"
+    },
+    {
+      "id": "c1300",
+      "name": "下售",
+      "prefecture": "建昌郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1301",
+      "name": "巴陵",
+      "prefecture": "建昌郡",
+      "reason": "missing_parent_area_context"
+    },
+    {
+      "id": "c1305",
+      "name": "豐都",
+      "prefecture": "成都郡",
+      "reason": "missing_parent_area_context"
+    },
+    {
+      "id": "c1309",
+      "name": "義城",
+      "prefecture": "淮南郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1324",
+      "name": "龍舒",
+      "prefecture": "廬江郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1332",
+      "name": "松滋",
+      "prefecture": "廬江郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1336",
+      "name": "婁",
+      "prefecture": "廬江郡",
+      "reason": "same_name_too_far"
+    },
+    {
+      "id": "c1358",
+      "name": "春谷",
+      "prefecture": "宣城郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1377",
+      "name": "沙中",
+      "prefecture": "吳郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1378",
+      "name": "新城",
+      "prefecture": "吳郡",
+      "reason": "same_name_too_far"
+    },
+    {
+      "id": "c1411",
+      "name": "黟",
+      "prefecture": "新安郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1436",
+      "name": "宛平",
+      "prefecture": "晉安郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1466",
+      "name": "永城",
+      "prefecture": "臨川郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1470",
+      "name": "余乾",
+      "prefecture": "鄱陽郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1472",
+      "name": "陽",
+      "prefecture": "鄱陽郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1488",
+      "name": "都",
+      "prefecture": "廬陵郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1492",
+      "name": "都",
+      "prefecture": "南康郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1500",
+      "name": "陽美",
+      "prefecture": "義興郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1501",
+      "name": "義鄉",
+      "prefecture": "義興郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1525",
+      "name": "利陽",
+      "prefecture": "湘東郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1539",
+      "name": "春陵",
+      "prefecture": "零陵郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1547",
+      "name": "新",
+      "prefecture": "邵陵郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1549",
+      "name": "下售",
+      "prefecture": "建昌郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1569",
+      "name": "始陽",
+      "prefecture": "始安郡",
+      "reason": "same_name_too_far"
+    },
+    {
+      "id": "c1573",
+      "name": "陽",
+      "prefecture": "始興郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1596",
+      "name": "余乾",
+      "prefecture": "鄱陽郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1620",
+      "name": "永城",
+      "prefecture": "臨川郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1622",
+      "name": "陂陽",
+      "prefecture": "南康郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1637",
+      "name": "宛平",
+      "prefecture": "晉安郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1648",
+      "name": "高陵",
+      "prefecture": "武昌郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1656",
+      "name": "新諭",
+      "prefecture": "安成郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1669",
+      "name": "南平",
+      "prefecture": "合浦郡",
+      "reason": "same_name_too_far"
+    },
+    {
+      "id": "c1670",
+      "name": "毒質",
+      "prefecture": "合浦郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1671",
+      "name": "晉始",
+      "prefecture": "合浦郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1672",
+      "name": "龍編",
+      "prefecture": "交趾郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1673",
+      "name": "羸縷",
+      "prefecture": "交趾郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1674",
+      "name": "定安",
+      "prefecture": "交趾郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1675",
+      "name": "苟屚",
+      "prefecture": "交趾郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1676",
+      "name": "曲易",
+      "prefecture": "交趾郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1677",
+      "name": "北帶",
+      "prefecture": "交趾郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1678",
+      "name": "稽徐",
+      "prefecture": "交趾郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1679",
+      "name": "西於",
+      "prefecture": "交趾郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1680",
+      "name": "朱鳶",
+      "prefecture": "交趾郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1681",
+      "name": "望海",
+      "prefecture": "交趾郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1682",
+      "name": "交興",
+      "prefecture": "交趾郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1683",
+      "name": "南定",
+      "prefecture": "交趾郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1684",
+      "name": "武寧",
+      "prefecture": "交趾郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1685",
+      "name": "海平",
+      "prefecture": "交趾郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1686",
+      "name": "封溪",
+      "prefecture": "交趾郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1687",
+      "name": "平道",
+      "prefecture": "交趾郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1688",
+      "name": "麊冷",
+      "prefecture": "新昌郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1689",
+      "name": "嘉寧",
+      "prefecture": "新昌郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1690",
+      "name": "吳定",
+      "prefecture": "新昌郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1691",
+      "name": "封山",
+      "prefecture": "新昌郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1692",
+      "name": "臨西",
+      "prefecture": "新昌郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1693",
+      "name": "西道",
+      "prefecture": "新昌郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1694",
+      "name": "武興",
+      "prefecture": "武平郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1695",
+      "name": "進山",
+      "prefecture": "武平郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1696",
+      "name": "根寧",
+      "prefecture": "武平郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1697",
+      "name": "安武",
+      "prefecture": "武平郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1698",
+      "name": "扶安",
+      "prefecture": "武平郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1699",
+      "name": "胥浦",
+      "prefecture": "九真郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1700",
+      "name": "移風",
+      "prefecture": "九真郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1701",
+      "name": "常樂",
+      "prefecture": "九真郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1702",
+      "name": "建初",
+      "prefecture": "九真郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1703",
+      "name": "津梧",
+      "prefecture": "九真郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1704",
+      "name": "松原",
+      "prefecture": "九真郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1705",
+      "name": "扶樂",
+      "prefecture": "九真郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1706",
+      "name": "高安",
+      "prefecture": "九真郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1707",
+      "name": "寧夷",
+      "prefecture": "九真郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1708",
+      "name": "軍安",
+      "prefecture": "九真郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1709",
+      "name": "九德",
+      "prefecture": "九德郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1710",
+      "name": "陽成",
+      "prefecture": "九德郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1711",
+      "name": "咸驩",
+      "prefecture": "九德郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1712",
+      "name": "南陵",
+      "prefecture": "九德郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1713",
+      "name": "蒲陽",
+      "prefecture": "九德郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1714",
+      "name": "曲胥",
+      "prefecture": "九德郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1715",
+      "name": "都洨",
+      "prefecture": "九德郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1716",
+      "name": "扶苓",
+      "prefecture": "九德郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1717",
+      "name": "西安",
+      "prefecture": "九德郡",
+      "reason": "same_name_too_far"
+    },
+    {
+      "id": "c1718",
+      "name": "盧容",
+      "prefecture": "九德郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1719",
+      "name": "象林",
+      "prefecture": "九德郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1720",
+      "name": "朱吾",
+      "prefecture": "九德郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1721",
+      "name": "西卷",
+      "prefecture": "九德郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1722",
+      "name": "比景",
+      "prefecture": "九德郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1723",
+      "name": "盧容",
+      "prefecture": "日南郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1724",
+      "name": "象林",
+      "prefecture": "日南郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1725",
+      "name": "朱吾",
+      "prefecture": "日南郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1726",
+      "name": "西卷",
+      "prefecture": "日南郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1727",
+      "name": "比景",
+      "prefecture": "日南郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1728",
+      "name": "無勞",
+      "prefecture": "日南郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1729",
+      "name": "壽泠",
+      "prefecture": "日南郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1740",
+      "name": "彰平",
+      "prefecture": "蒼梧郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1742",
+      "name": "豐城",
+      "prefecture": "蒼梧郡",
+      "reason": "same_name_too_far"
+    },
+    {
+      "id": "c1746",
+      "name": "都羅",
+      "prefecture": "蒼梧郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1747",
+      "name": "元溪",
+      "prefecture": "蒼梧郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1749",
+      "name": "丁留",
+      "prefecture": "蒼梧郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1755",
+      "name": "新邑",
+      "prefecture": "郁林郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1756",
+      "name": "安始",
+      "prefecture": "郁林郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1757",
+      "name": "晉平",
+      "prefecture": "郁林郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1759",
+      "name": "安遠",
+      "prefecture": "郁林郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1761",
+      "name": "武豐",
+      "prefecture": "桂林郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1762",
+      "name": "粟平",
+      "prefecture": "桂林郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1763",
+      "name": "洋平",
+      "prefecture": "桂林郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1764",
+      "name": "龍岡",
+      "prefecture": "桂林郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1765",
+      "name": "夾陽",
+      "prefecture": "桂林郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1766",
+      "name": "軍騰",
+      "prefecture": "桂林郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1772",
+      "name": "海安",
+      "prefecture": "高涼郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1774",
+      "name": "化平",
+      "prefecture": "高涼郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1775",
+      "name": "西平",
+      "prefecture": "高涼郡",
+      "reason": "same_name_too_far"
+    },
+    {
+      "id": "c1776",
+      "name": "廣化",
+      "prefecture": "高興郡",
+      "reason": "missing_parent_area_context"
+    },
+    {
+      "id": "c1777",
+      "name": "海安",
+      "prefecture": "高興郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1778",
+      "name": "莫陽",
+      "prefecture": "高興郡",
+      "reason": "missing_parent_area_context"
+    },
+    {
+      "id": "c1779",
+      "name": "化平",
+      "prefecture": "高興郡",
+      "reason": "missing"
+    },
+    {
+      "id": "c1780",
+      "name": "西平",
+      "prefecture": "高興郡",
+      "reason": "missing_parent_area_context"
+    },
+    {
+      "id": "c1781",
+      "name": "寧浦",
+      "prefecture": "合浦屬國都尉",
+      "reason": "missing"
+    },
+    {
+      "id": "c1783",
+      "name": "吳安",
+      "prefecture": "合浦屬國都尉",
+      "reason": "missing"
+    },
+    {
+      "id": "c1785",
+      "name": "澗陽",
+      "prefecture": "合浦屬國都尉",
+      "reason": "missing"
+    },
+    {
+      "id": "c1786",
+      "name": "始定",
+      "prefecture": "合浦屬國都尉",
+      "reason": "missing"
+    },
+    {
+      "id": "c1799",
+      "name": "始陽",
+      "prefecture": "始安郡",
+      "reason": "same_name_too_far"
+    },
+    {
+      "id": "c1803",
+      "name": "禎陽",
+      "prefecture": "始興郡",
+      "reason": "missing"
+    }
+  ],
+  "geometry_count": 3839,
+  "common_geometry_count": 1965,
+  "index_bytes": 2179689,
+  "geometry_shards": [
+    {
+      "url": "data/jin-maps/annual-geometry/g001.json",
+      "bytes": 595693,
+      "geometry_count": 179
+    },
+    {
+      "url": "data/jin-maps/annual-geometry/g002.json",
+      "bytes": 595356,
+      "geometry_count": 195
+    },
+    {
+      "url": "data/jin-maps/annual-geometry/g003.json",
+      "bytes": 580807,
+      "geometry_count": 105
+    },
+    {
+      "url": "data/jin-maps/annual-geometry/g004.json",
+      "bytes": 599292,
+      "geometry_count": 95
+    },
+    {
+      "url": "data/jin-maps/annual-geometry/g005.json",
+      "bytes": 574896,
+      "geometry_count": 126
+    },
+    {
+      "url": "data/jin-maps/annual-geometry/g006.json",
+      "bytes": 597603,
+      "geometry_count": 60
+    },
+    {
+      "url": "data/jin-maps/annual-geometry/g007.json",
+      "bytes": 550010,
+      "geometry_count": 92
+    },
+    {
+      "url": "data/jin-maps/annual-geometry/g008.json",
+      "bytes": 596292,
+      "geometry_count": 78
+    },
+    {
+      "url": "data/jin-maps/annual-geometry/g009.json",
+      "bytes": 580641,
+      "geometry_count": 90
+    },
+    {
+      "url": "data/jin-maps/annual-geometry/g010.json",
+      "bytes": 591017,
+      "geometry_count": 124
+    },
+    {
+      "url": "data/jin-maps/annual-geometry/g011.json",
+      "bytes": 594070,
+      "geometry_count": 156
+    },
+    {
+      "url": "data/jin-maps/annual-geometry/g012.json",
+      "bytes": 597982,
+      "geometry_count": 117
+    },
+    {
+      "url": "data/jin-maps/annual-geometry/g013.json",
+      "bytes": 595449,
+      "geometry_count": 97
+    },
+    {
+      "url": "data/jin-maps/annual-geometry/g014.json",
+      "bytes": 595269,
+      "geometry_count": 84
+    },
+    {
+      "url": "data/jin-maps/annual-geometry/g015.json",
+      "bytes": 595310,
+      "geometry_count": 150
+    },
+    {
+      "url": "data/jin-maps/annual-geometry/g016.json",
+      "bytes": 575311,
+      "geometry_count": 126
+    }
+  ],
+  "max_year_extra_geometry_bytes": 7639206,
+  "years": {
+    "266": {
+      "year": 266,
+      "states_total": 14,
+      "prefectures_total": 124,
+      "counties_total": 830,
+      "counties_included": 830,
+      "located": 629,
+      "unlocated": 201,
+      "counties_located": 629,
+      "counties_unlocated": 201,
+      "inferred_county_areas": 588,
+      "prefecture_areas": 121,
+      "chgis_prefecture_areas": 5,
+      "kingdom_areas": 35,
+      "control_summary": {
+        "administrative": 119,
+        "partial": 2
+      },
+      "marker_only_extras": 1,
+      "feature_count": 1650,
+      "messages": [
+        "县界全部为受旧郡界约束的县治分区拟合，不是史料实测县界。",
+        "无坐标县保留正文，不虚构县治。",
+        "CHGIS同年郡面优先，原图与拟合范围属于地理参考。"
+      ],
+      "residual_groups": 0,
+      "ancestor_date_conflicts": []
+    },
+    "267": {
+      "year": 267,
+      "states_total": 14,
+      "prefectures_total": 124,
+      "counties_total": 812,
+      "counties_included": 812,
+      "located": 613,
+      "unlocated": 199,
+      "counties_located": 613,
+      "counties_unlocated": 199,
+      "inferred_county_areas": 586,
+      "prefecture_areas": 122,
+      "chgis_prefecture_areas": 5,
+      "kingdom_areas": 35,
+      "control_summary": {
+        "administrative": 120,
+        "partial": 2
+      },
+      "marker_only_extras": 1,
+      "feature_count": 1634,
+      "messages": [
+        "县界全部为受旧郡界约束的县治分区拟合，不是史料实测县界。",
+        "无坐标县保留正文，不虚构县治。",
+        "CHGIS同年郡面优先，原图与拟合范围属于地理参考。"
+      ],
+      "residual_groups": 0,
+      "ancestor_date_conflicts": []
+    },
+    "268": {
+      "year": 268,
+      "states_total": 14,
+      "prefectures_total": 124,
+      "counties_total": 811,
+      "counties_included": 811,
+      "located": 613,
+      "unlocated": 198,
+      "counties_located": 613,
+      "counties_unlocated": 198,
+      "inferred_county_areas": 586,
+      "prefecture_areas": 122,
+      "chgis_prefecture_areas": 5,
+      "kingdom_areas": 35,
+      "control_summary": {
+        "administrative": 120,
+        "partial": 2
+      },
+      "marker_only_extras": 4,
+      "feature_count": 1637,
+      "messages": [
+        "县界全部为受旧郡界约束的县治分区拟合，不是史料实测县界。",
+        "无坐标县保留正文，不虚构县治。",
+        "CHGIS同年郡面优先，原图与拟合范围属于地理参考。"
+      ],
+      "residual_groups": 0,
+      "ancestor_date_conflicts": []
+    },
+    "269": {
+      "year": 269,
+      "states_total": 15,
+      "prefectures_total": 124,
+      "counties_total": 811,
+      "counties_included": 811,
+      "located": 613,
+      "unlocated": 198,
+      "counties_located": 613,
+      "counties_unlocated": 198,
+      "inferred_county_areas": 586,
+      "prefecture_areas": 122,
+      "chgis_prefecture_areas": 5,
+      "kingdom_areas": 35,
+      "control_summary": {
+        "administrative": 120,
+        "partial": 2
+      },
+      "marker_only_extras": 4,
+      "feature_count": 1641,
+      "messages": [
+        "县界全部为受旧郡界约束的县治分区拟合，不是史料实测县界。",
+        "无坐标县保留正文，不虚构县治。",
+        "CHGIS同年郡面优先，原图与拟合范围属于地理参考。"
+      ],
+      "residual_groups": 0,
+      "ancestor_date_conflicts": []
+    },
+    "270": {
+      "year": 270,
+      "states_total": 15,
+      "prefectures_total": 124,
+      "counties_total": 811,
+      "counties_included": 811,
+      "located": 613,
+      "unlocated": 198,
+      "counties_located": 613,
+      "counties_unlocated": 198,
+      "inferred_county_areas": 586,
+      "prefecture_areas": 122,
+      "chgis_prefecture_areas": 5,
+      "kingdom_areas": 35,
+      "control_summary": {
+        "administrative": 120,
+        "partial": 2
+      },
+      "marker_only_extras": 4,
+      "feature_count": 1641,
+      "messages": [
+        "县界全部为受旧郡界约束的县治分区拟合，不是史料实测县界。",
+        "无坐标县保留正文，不虚构县治。",
+        "CHGIS同年郡面优先，原图与拟合范围属于地理参考。"
+      ],
+      "residual_groups": 0,
+      "ancestor_date_conflicts": []
+    },
+    "271": {
+      "year": 271,
+      "states_total": 16,
+      "prefectures_total": 124,
+      "counties_total": 806,
+      "counties_included": 806,
+      "located": 609,
+      "unlocated": 197,
+      "counties_located": 609,
+      "counties_unlocated": 197,
+      "inferred_county_areas": 582,
+      "prefecture_areas": 122,
+      "chgis_prefecture_areas": 5,
+      "kingdom_areas": 35,
+      "control_summary": {
+        "administrative": 120,
+        "partial": 2
+      },
+      "marker_only_extras": 0,
+      "feature_count": 1633,
+      "messages": [
+        "县界全部为受旧郡界约束的县治分区拟合，不是史料实测县界。",
+        "无坐标县保留正文，不虚构县治。",
+        "CHGIS同年郡面优先，原图与拟合范围属于地理参考。"
+      ],
+      "residual_groups": 0,
+      "ancestor_date_conflicts": []
+    },
+    "272": {
+      "year": 272,
+      "states_total": 16,
+      "prefectures_total": 124,
+      "counties_total": 807,
+      "counties_included": 807,
+      "located": 610,
+      "unlocated": 197,
+      "counties_located": 610,
+      "counties_unlocated": 197,
+      "inferred_county_areas": 582,
+      "prefecture_areas": 122,
+      "chgis_prefecture_areas": 5,
+      "kingdom_areas": 35,
+      "control_summary": {
+        "administrative": 120,
+        "partial": 2
+      },
+      "marker_only_extras": 0,
+      "feature_count": 1634,
+      "messages": [
+        "县界全部为受旧郡界约束的县治分区拟合，不是史料实测县界。",
+        "无坐标县保留正文，不虚构县治。",
+        "CHGIS同年郡面优先，原图与拟合范围属于地理参考。"
+      ],
+      "residual_groups": 0,
+      "ancestor_date_conflicts": []
+    },
+    "273": {
+      "year": 273,
+      "states_total": 16,
+      "prefectures_total": 124,
+      "counties_total": 806,
+      "counties_included": 806,
+      "located": 609,
+      "unlocated": 197,
+      "counties_located": 609,
+      "counties_unlocated": 197,
+      "inferred_county_areas": 582,
+      "prefecture_areas": 122,
+      "chgis_prefecture_areas": 5,
+      "kingdom_areas": 36,
+      "control_summary": {
+        "administrative": 120,
+        "partial": 2
+      },
+      "marker_only_extras": 0,
+      "feature_count": 1634,
+      "messages": [
+        "县界全部为受旧郡界约束的县治分区拟合，不是史料实测县界。",
+        "无坐标县保留正文，不虚构县治。",
+        "CHGIS同年郡面优先，原图与拟合范围属于地理参考。"
+      ],
+      "residual_groups": 0,
+      "ancestor_date_conflicts": []
+    },
+    "274": {
+      "year": 274,
+      "states_total": 17,
+      "prefectures_total": 124,
+      "counties_total": 806,
+      "counties_included": 806,
+      "located": 609,
+      "unlocated": 197,
+      "counties_located": 609,
+      "counties_unlocated": 197,
+      "inferred_county_areas": 582,
+      "prefecture_areas": 122,
+      "chgis_prefecture_areas": 5,
+      "kingdom_areas": 35,
+      "control_summary": {
+        "administrative": 120,
+        "partial": 2
+      },
+      "marker_only_extras": 0,
+      "feature_count": 1636,
+      "messages": [
+        "县界全部为受旧郡界约束的县治分区拟合，不是史料实测县界。",
+        "无坐标县保留正文，不虚构县治。",
+        "CHGIS同年郡面优先，原图与拟合范围属于地理参考。"
+      ],
+      "residual_groups": 0,
+      "ancestor_date_conflicts": []
+    },
+    "275": {
+      "year": 275,
+      "states_total": 17,
+      "prefectures_total": 126,
+      "counties_total": 819,
+      "counties_included": 819,
+      "located": 615,
+      "unlocated": 204,
+      "counties_located": 615,
+      "counties_unlocated": 204,
+      "inferred_county_areas": 585,
+      "prefecture_areas": 124,
+      "chgis_prefecture_areas": 5,
+      "kingdom_areas": 35,
+      "control_summary": {
+        "administrative": 121,
+        "partial": 3
+      },
+      "marker_only_extras": 0,
+      "feature_count": 1650,
+      "messages": [
+        "县界全部为受旧郡界约束的县治分区拟合，不是史料实测县界。",
+        "无坐标县保留正文，不虚构县治。",
+        "CHGIS同年郡面优先，原图与拟合范围属于地理参考。"
+      ],
+      "residual_groups": 0,
+      "ancestor_date_conflicts": []
+    },
+    "276": {
+      "year": 276,
+      "states_total": 17,
+      "prefectures_total": 126,
+      "counties_total": 809,
+      "counties_included": 809,
+      "located": 613,
+      "unlocated": 196,
+      "counties_located": 613,
+      "counties_unlocated": 196,
+      "inferred_county_areas": 586,
+      "prefecture_areas": 125,
+      "chgis_prefecture_areas": 5,
+      "kingdom_areas": 36,
+      "control_summary": {
+        "administrative": 122,
+        "partial": 3
+      },
+      "marker_only_extras": 0,
+      "feature_count": 1653,
+      "messages": [
+        "县界全部为受旧郡界约束的县治分区拟合，不是史料实测县界。",
+        "无坐标县保留正文，不虚构县治。",
+        "CHGIS同年郡面优先，原图与拟合范围属于地理参考。"
+      ],
+      "residual_groups": 0,
+      "ancestor_date_conflicts": []
+    },
+    "277": {
+      "year": 277,
+      "states_total": 17,
+      "prefectures_total": 126,
+      "counties_total": 809,
+      "counties_included": 809,
+      "located": 614,
+      "unlocated": 195,
+      "counties_located": 614,
+      "counties_unlocated": 195,
+      "inferred_county_areas": 586,
+      "prefecture_areas": 125,
+      "chgis_prefecture_areas": 5,
+      "kingdom_areas": 34,
+      "control_summary": {
+        "administrative": 122,
+        "partial": 3
+      },
+      "marker_only_extras": 0,
+      "feature_count": 1651,
+      "messages": [
+        "县界全部为受旧郡界约束的县治分区拟合，不是史料实测县界。",
+        "无坐标县保留正文，不虚构县治。",
+        "CHGIS同年郡面优先，原图与拟合范围属于地理参考。"
+      ],
+      "residual_groups": 0,
+      "ancestor_date_conflicts": []
+    },
+    "278": {
+      "year": 278,
+      "states_total": 17,
+      "prefectures_total": 126,
+      "counties_total": 811,
+      "counties_included": 811,
+      "located": 615,
+      "unlocated": 196,
+      "counties_located": 615,
+      "counties_unlocated": 196,
+      "inferred_county_areas": 587,
+      "prefecture_areas": 125,
+      "chgis_prefecture_areas": 5,
+      "kingdom_areas": 34,
+      "control_summary": {
+        "administrative": 122,
+        "partial": 3
+      },
+      "marker_only_extras": 0,
+      "feature_count": 1653,
+      "messages": [
+        "县界全部为受旧郡界约束的县治分区拟合，不是史料实测县界。",
+        "无坐标县保留正文，不虚构县治。",
+        "CHGIS同年郡面优先，原图与拟合范围属于地理参考。"
+      ],
+      "residual_groups": 0,
+      "ancestor_date_conflicts": []
+    },
+    "279": {
+      "year": 279,
+      "states_total": 17,
+      "prefectures_total": 126,
+      "counties_total": 813,
+      "counties_included": 813,
+      "located": 616,
+      "unlocated": 197,
+      "counties_located": 616,
+      "counties_unlocated": 197,
+      "inferred_county_areas": 588,
+      "prefecture_areas": 125,
+      "chgis_prefecture_areas": 5,
+      "kingdom_areas": 34,
+      "control_summary": {
+        "administrative": 122,
+        "partial": 3
+      },
+      "marker_only_extras": 0,
+      "feature_count": 1655,
+      "messages": [
+        "县界全部为受旧郡界约束的县治分区拟合，不是史料实测县界。",
+        "无坐标县保留正文，不虚构县治。",
+        "CHGIS同年郡面优先，原图与拟合范围属于地理参考。"
+      ],
+      "residual_groups": 0,
+      "ancestor_date_conflicts": []
+    },
+    "280": {
+      "year": 280,
+      "states_total": 19,
+      "prefectures_total": 170,
+      "counties_total": 1203,
+      "counties_included": 1203,
+      "located": 922,
+      "unlocated": 281,
+      "counties_located": 922,
+      "counties_unlocated": 281,
+      "inferred_county_areas": 882,
+      "prefecture_areas": 166,
+      "chgis_prefecture_areas": 35,
+      "kingdom_areas": 32,
+      "control_summary": {
+        "administrative": 166
+      },
+      "marker_only_extras": 0,
+      "feature_count": 2380,
+      "messages": [
+        "县界全部为受旧郡界约束的县治分区拟合，不是史料实测县界。",
+        "无坐标县保留正文，不虚构县治。",
+        "CHGIS同年郡面优先，原图与拟合范围属于地理参考。"
+      ],
+      "residual_groups": 0,
+      "ancestor_date_conflicts": []
+    },
+    "281": {
+      "year": 281,
+      "states_total": 19,
+      "prefectures_total": 169,
+      "counties_total": 1198,
+      "counties_included": 1198,
+      "located": 919,
+      "unlocated": 279,
+      "counties_located": 919,
+      "counties_unlocated": 279,
+      "inferred_county_areas": 885,
+      "prefecture_areas": 165,
+      "chgis_prefecture_areas": 36,
+      "kingdom_areas": 33,
+      "control_summary": {
+        "administrative": 165
+      },
+      "marker_only_extras": 0,
+      "feature_count": 2377,
+      "messages": [
+        "县界全部为受旧郡界约束的县治分区拟合，不是史料实测县界。",
+        "无坐标县保留正文，不虚构县治。",
+        "CHGIS同年郡面优先，原图与拟合范围属于地理参考。"
+      ],
+      "residual_groups": 0,
+      "ancestor_date_conflicts": []
+    },
+    "282": {
+      "year": 282,
+      "states_total": 18,
+      "prefectures_total": 173,
+      "counties_total": 1221,
+      "counties_included": 1221,
+      "located": 939,
+      "unlocated": 282,
+      "counties_located": 939,
+      "counties_unlocated": 282,
+      "inferred_county_areas": 897,
+      "prefecture_areas": 169,
+      "chgis_prefecture_areas": 38,
+      "kingdom_areas": 33,
+      "control_summary": {
+        "administrative": 169
+      },
+      "marker_only_extras": 0,
+      "feature_count": 2416,
+      "messages": [
+        "县界全部为受旧郡界约束的县治分区拟合，不是史料实测县界。",
+        "无坐标县保留正文，不虚构县治。",
+        "CHGIS同年郡面优先，原图与拟合范围属于地理参考。"
+      ],
+      "residual_groups": 0,
+      "ancestor_date_conflicts": []
+    },
+    "283": {
+      "year": 283,
+      "states_total": 18,
+      "prefectures_total": 174,
+      "counties_total": 1289,
+      "counties_included": 1289,
+      "located": 972,
+      "unlocated": 317,
+      "counties_located": 972,
+      "counties_unlocated": 317,
+      "inferred_county_areas": 920,
+      "prefecture_areas": 169,
+      "chgis_prefecture_areas": 38,
+      "kingdom_areas": 33,
+      "control_summary": {
+        "administrative": 169
+      },
+      "marker_only_extras": 0,
+      "feature_count": 2472,
+      "messages": [
+        "县界全部为受旧郡界约束的县治分区拟合，不是史料实测县界。",
+        "无坐标县保留正文，不虚构县治。",
+        "CHGIS同年郡面优先，原图与拟合范围属于地理参考。"
+      ],
+      "residual_groups": 0,
+      "ancestor_date_conflicts": []
+    },
+    "284": {
+      "year": 284,
+      "states_total": 17,
+      "prefectures_total": 172,
+      "counties_total": 1265,
+      "counties_included": 1265,
+      "located": 956,
+      "unlocated": 309,
+      "counties_located": 956,
+      "counties_unlocated": 309,
+      "inferred_county_areas": 920,
+      "prefecture_areas": 169,
+      "chgis_prefecture_areas": 38,
+      "kingdom_areas": 32,
+      "control_summary": {
+        "administrative": 169
+      },
+      "marker_only_extras": 0,
+      "feature_count": 2449,
+      "messages": [
+        "县界全部为受旧郡界约束的县治分区拟合，不是史料实测县界。",
+        "无坐标县保留正文，不虚构县治。",
+        "CHGIS同年郡面优先，原图与拟合范围属于地理参考。"
+      ],
+      "residual_groups": 0,
+      "ancestor_date_conflicts": []
+    },
+    "285": {
+      "year": 285,
+      "states_total": 17,
+      "prefectures_total": 171,
+      "counties_total": 1267,
+      "counties_included": 1267,
+      "located": 960,
+      "unlocated": 307,
+      "counties_located": 960,
+      "counties_unlocated": 307,
+      "inferred_county_areas": 924,
+      "prefecture_areas": 169,
+      "chgis_prefecture_areas": 38,
+      "kingdom_areas": 32,
+      "control_summary": {
+        "administrative": 169
+      },
+      "marker_only_extras": 0,
+      "feature_count": 2456,
+      "messages": [
+        "县界全部为受旧郡界约束的县治分区拟合，不是史料实测县界。",
+        "无坐标县保留正文，不虚构县治。",
+        "CHGIS同年郡面优先，原图与拟合范围属于地理参考。"
+      ],
+      "residual_groups": 0,
+      "ancestor_date_conflicts": []
+    },
+    "286": {
+      "year": 286,
+      "states_total": 17,
+      "prefectures_total": 171,
+      "counties_total": 1269,
+      "counties_included": 1269,
+      "located": 960,
+      "unlocated": 309,
+      "counties_located": 960,
+      "counties_unlocated": 309,
+      "inferred_county_areas": 924,
+      "prefecture_areas": 169,
+      "chgis_prefecture_areas": 38,
+      "kingdom_areas": 32,
+      "control_summary": {
+        "administrative": 169
+      },
+      "marker_only_extras": 0,
+      "feature_count": 2456,
+      "messages": [
+        "县界全部为受旧郡界约束的县治分区拟合，不是史料实测县界。",
+        "无坐标县保留正文，不虚构县治。",
+        "CHGIS同年郡面优先，原图与拟合范围属于地理参考。"
+      ],
+      "residual_groups": 0,
+      "ancestor_date_conflicts": []
+    },
+    "287": {
+      "year": 287,
+      "states_total": 17,
+      "prefectures_total": 171,
+      "counties_total": 1269,
+      "counties_included": 1269,
+      "located": 960,
+      "unlocated": 309,
+      "counties_located": 960,
+      "counties_unlocated": 309,
+      "inferred_county_areas": 924,
+      "prefecture_areas": 169,
+      "chgis_prefecture_areas": 38,
+      "kingdom_areas": 32,
+      "control_summary": {
+        "administrative": 169
+      },
+      "marker_only_extras": 0,
+      "feature_count": 2456,
+      "messages": [
+        "县界全部为受旧郡界约束的县治分区拟合，不是史料实测县界。",
+        "无坐标县保留正文，不虚构县治。",
+        "CHGIS同年郡面优先，原图与拟合范围属于地理参考。"
+      ],
+      "residual_groups": 0,
+      "ancestor_date_conflicts": []
+    },
+    "288": {
+      "year": 288,
+      "states_total": 17,
+      "prefectures_total": 172,
+      "counties_total": 1269,
+      "counties_included": 1269,
+      "located": 960,
+      "unlocated": 309,
+      "counties_located": 960,
+      "counties_unlocated": 309,
+      "inferred_county_areas": 924,
+      "prefecture_areas": 170,
+      "chgis_prefecture_areas": 38,
+      "kingdom_areas": 33,
+      "control_summary": {
+        "administrative": 170
+      },
+      "marker_only_extras": 0,
+      "feature_count": 2460,
+      "messages": [
+        "县界全部为受旧郡界约束的县治分区拟合，不是史料实测县界。",
+        "无坐标县保留正文，不虚构县治。",
+        "CHGIS同年郡面优先，原图与拟合范围属于地理参考。"
+      ],
+      "residual_groups": 0,
+      "ancestor_date_conflicts": []
+    },
+    "289": {
+      "year": 289,
+      "states_total": 17,
+      "prefectures_total": 174,
+      "counties_total": 1273,
+      "counties_included": 1273,
+      "located": 964,
+      "unlocated": 309,
+      "counties_located": 964,
+      "counties_unlocated": 309,
+      "inferred_county_areas": 928,
+      "prefecture_areas": 171,
+      "chgis_prefecture_areas": 38,
+      "kingdom_areas": 42,
+      "control_summary": {
+        "administrative": 171
+      },
+      "marker_only_extras": 0,
+      "feature_count": 2480,
+      "messages": [
+        "县界全部为受旧郡界约束的县治分区拟合，不是史料实测县界。",
+        "无坐标县保留正文，不虚构县治。",
+        "CHGIS同年郡面优先，原图与拟合范围属于地理参考。"
+      ],
+      "residual_groups": 0,
+      "ancestor_date_conflicts": []
+    },
+    "290": {
+      "year": 290,
+      "states_total": 17,
+      "prefectures_total": 177,
+      "counties_total": 1283,
+      "counties_included": 1283,
+      "located": 974,
+      "unlocated": 309,
+      "counties_located": 974,
+      "counties_unlocated": 309,
+      "inferred_county_areas": 929,
+      "prefecture_areas": 171,
+      "chgis_prefecture_areas": 38,
+      "kingdom_areas": 42,
+      "control_summary": {
+        "administrative": 171
+      },
+      "marker_only_extras": 0,
+      "feature_count": 2493,
+      "messages": [
+        "县界全部为受旧郡界约束的县治分区拟合，不是史料实测县界。",
+        "无坐标县保留正文，不虚构县治。",
+        "CHGIS同年郡面优先，原图与拟合范围属于地理参考。"
+      ],
+      "residual_groups": 0,
+      "ancestor_date_conflicts": []
+    },
+    "291": {
+      "year": 291,
+      "states_total": 18,
+      "prefectures_total": 177,
+      "counties_total": 1272,
+      "counties_included": 1272,
+      "located": 967,
+      "unlocated": 305,
+      "counties_located": 967,
+      "counties_unlocated": 305,
+      "inferred_county_areas": 929,
+      "prefecture_areas": 175,
+      "chgis_prefecture_areas": 38,
+      "kingdom_areas": 40,
+      "control_summary": {
+        "administrative": 175
+      },
+      "marker_only_extras": 0,
+      "feature_count": 2497,
+      "messages": [
+        "县界全部为受旧郡界约束的县治分区拟合，不是史料实测县界。",
+        "无坐标县保留正文，不虚构县治。",
+        "CHGIS同年郡面优先，原图与拟合范围属于地理参考。"
+      ],
+      "residual_groups": 0,
+      "ancestor_date_conflicts": []
+    },
+    "292": {
+      "year": 292,
+      "states_total": 18,
+      "prefectures_total": 177,
+      "counties_total": 1270,
+      "counties_included": 1270,
+      "located": 965,
+      "unlocated": 305,
+      "counties_located": 965,
+      "counties_unlocated": 305,
+      "inferred_county_areas": 927,
+      "prefecture_areas": 175,
+      "chgis_prefecture_areas": 38,
+      "kingdom_areas": 40,
+      "control_summary": {
+        "administrative": 175
+      },
+      "marker_only_extras": 0,
+      "feature_count": 2494,
+      "messages": [
+        "县界全部为受旧郡界约束的县治分区拟合，不是史料实测县界。",
+        "无坐标县保留正文，不虚构县治。",
+        "CHGIS同年郡面优先，原图与拟合范围属于地理参考。"
+      ],
+      "residual_groups": 0,
+      "ancestor_date_conflicts": []
+    },
+    "293": {
+      "year": 293,
+      "states_total": 18,
+      "prefectures_total": 177,
+      "counties_total": 1270,
+      "counties_included": 1270,
+      "located": 965,
+      "unlocated": 305,
+      "counties_located": 965,
+      "counties_unlocated": 305,
+      "inferred_county_areas": 927,
+      "prefecture_areas": 175,
+      "chgis_prefecture_areas": 38,
+      "kingdom_areas": 40,
+      "control_summary": {
+        "administrative": 175
+      },
+      "marker_only_extras": 0,
+      "feature_count": 2494,
+      "messages": [
+        "县界全部为受旧郡界约束的县治分区拟合，不是史料实测县界。",
+        "无坐标县保留正文，不虚构县治。",
+        "CHGIS同年郡面优先，原图与拟合范围属于地理参考。"
+      ],
+      "residual_groups": 0,
+      "ancestor_date_conflicts": []
+    },
+    "294": {
+      "year": 294,
+      "states_total": 18,
+      "prefectures_total": 177,
+      "counties_total": 1270,
+      "counties_included": 1270,
+      "located": 965,
+      "unlocated": 305,
+      "counties_located": 965,
+      "counties_unlocated": 305,
+      "inferred_county_areas": 927,
+      "prefecture_areas": 175,
+      "chgis_prefecture_areas": 38,
+      "kingdom_areas": 40,
+      "control_summary": {
+        "administrative": 175
+      },
+      "marker_only_extras": 0,
+      "feature_count": 2494,
+      "messages": [
+        "县界全部为受旧郡界约束的县治分区拟合，不是史料实测县界。",
+        "无坐标县保留正文，不虚构县治。",
+        "CHGIS同年郡面优先，原图与拟合范围属于地理参考。"
+      ],
+      "residual_groups": 0,
+      "ancestor_date_conflicts": []
+    },
+    "295": {
+      "year": 295,
+      "states_total": 18,
+      "prefectures_total": 178,
+      "counties_total": 1272,
+      "counties_included": 1272,
+      "located": 967,
+      "unlocated": 305,
+      "counties_located": 967,
+      "counties_unlocated": 305,
+      "inferred_county_areas": 929,
+      "prefecture_areas": 176,
+      "chgis_prefecture_areas": 38,
+      "kingdom_areas": 40,
+      "control_summary": {
+        "administrative": 176
+      },
+      "marker_only_extras": 0,
+      "feature_count": 2501,
+      "messages": [
+        "县界全部为受旧郡界约束的县治分区拟合，不是史料实测县界。",
+        "无坐标县保留正文，不虚构县治。",
+        "CHGIS同年郡面优先，原图与拟合范围属于地理参考。"
+      ],
+      "residual_groups": 0,
+      "ancestor_date_conflicts": []
+    },
+    "296": {
+      "year": 296,
+      "states_total": 18,
+      "prefectures_total": 178,
+      "counties_total": 1272,
+      "counties_included": 1272,
+      "located": 968,
+      "unlocated": 304,
+      "counties_located": 968,
+      "counties_unlocated": 304,
+      "inferred_county_areas": 930,
+      "prefecture_areas": 175,
+      "chgis_prefecture_areas": 38,
+      "kingdom_areas": 40,
+      "control_summary": {
+        "administrative": 165,
+        "contested": 10
+      },
+      "marker_only_extras": 0,
+      "feature_count": 2501,
+      "messages": [
+        "县界全部为受旧郡界约束的县治分区拟合，不是史料实测县界。",
+        "无坐标县保留正文，不虚构县治。",
+        "CHGIS同年郡面优先，原图与拟合范围属于地理参考。"
+      ],
+      "residual_groups": 0,
+      "ancestor_date_conflicts": []
+    },
+    "297": {
+      "year": 297,
+      "states_total": 19,
+      "prefectures_total": 181,
+      "counties_total": 1281,
+      "counties_included": 1281,
+      "located": 969,
+      "unlocated": 312,
+      "counties_located": 969,
+      "counties_unlocated": 312,
+      "inferred_county_areas": 929,
+      "prefecture_areas": 177,
+      "chgis_prefecture_areas": 38,
+      "kingdom_areas": 40,
+      "control_summary": {
+        "administrative": 165,
+        "contested": 12
+      },
+      "marker_only_extras": 0,
+      "feature_count": 2510,
+      "messages": [
+        "县界全部为受旧郡界约束的县治分区拟合，不是史料实测县界。",
+        "无坐标县保留正文，不虚构县治。",
+        "CHGIS同年郡面优先，原图与拟合范围属于地理参考。"
+      ],
+      "residual_groups": 0,
+      "ancestor_date_conflicts": []
+    },
+    "298": {
+      "year": 298,
+      "states_total": 19,
+      "prefectures_total": 181,
+      "counties_total": 1279,
+      "counties_included": 1279,
+      "located": 968,
+      "unlocated": 311,
+      "counties_located": 968,
+      "counties_unlocated": 311,
+      "inferred_county_areas": 929,
+      "prefecture_areas": 178,
+      "chgis_prefecture_areas": 38,
+      "kingdom_areas": 40,
+      "control_summary": {
+        "administrative": 165,
+        "contested": 13
+      },
+      "marker_only_extras": 0,
+      "feature_count": 2511,
+      "messages": [
+        "县界全部为受旧郡界约束的县治分区拟合，不是史料实测县界。",
+        "无坐标县保留正文，不虚构县治。",
+        "CHGIS同年郡面优先，原图与拟合范围属于地理参考。"
+      ],
+      "residual_groups": 0,
+      "ancestor_date_conflicts": []
+    },
+    "299": {
+      "year": 299,
+      "states_total": 19,
+      "prefectures_total": 184,
+      "counties_total": 1279,
+      "counties_included": 1279,
+      "located": 968,
+      "unlocated": 311,
+      "counties_located": 968,
+      "counties_unlocated": 311,
+      "inferred_county_areas": 930,
+      "prefecture_areas": 181,
+      "chgis_prefecture_areas": 38,
+      "kingdom_areas": 40,
+      "control_summary": {
+        "administrative": 181
+      },
+      "marker_only_extras": 0,
+      "feature_count": 2519,
+      "messages": [
+        "县界全部为受旧郡界约束的县治分区拟合，不是史料实测县界。",
+        "无坐标县保留正文，不虚构县治。",
+        "CHGIS同年郡面优先，原图与拟合范围属于地理参考。"
+      ],
+      "residual_groups": 0,
+      "ancestor_date_conflicts": []
+    },
+    "300": {
+      "year": 300,
+      "states_total": 19,
+      "prefectures_total": 184,
+      "counties_total": 1280,
+      "counties_included": 1280,
+      "located": 969,
+      "unlocated": 311,
+      "counties_located": 969,
+      "counties_unlocated": 311,
+      "inferred_county_areas": 931,
+      "prefecture_areas": 181,
+      "chgis_prefecture_areas": 38,
+      "kingdom_areas": 39,
+      "control_summary": {
+        "administrative": 180,
+        "contested": 1
+      },
+      "marker_only_extras": 0,
+      "feature_count": 2520,
+      "messages": [
+        "县界全部为受旧郡界约束的县治分区拟合，不是史料实测县界。",
+        "无坐标县保留正文，不虚构县治。",
+        "CHGIS同年郡面优先，原图与拟合范围属于地理参考。"
+      ],
+      "residual_groups": 0,
+      "ancestor_date_conflicts": []
+    },
+    "301": {
+      "year": 301,
+      "states_total": 19,
+      "prefectures_total": 184,
+      "counties_total": 1280,
+      "counties_included": 1273,
+      "located": 964,
+      "unlocated": 309,
+      "counties_located": 964,
+      "counties_unlocated": 309,
+      "inferred_county_areas": 926,
+      "prefecture_areas": 180,
+      "chgis_prefecture_areas": 38,
+      "kingdom_areas": 44,
+      "control_summary": {
+        "administrative": 180
+      },
+      "marker_only_extras": 0,
+      "feature_count": 2512,
+      "messages": [
+        "县界全部为受旧郡界约束的县治分区拟合，不是史料实测县界。",
+        "无坐标县保留正文，不虚构县治。",
+        "CHGIS同年郡面优先，原图与拟合范围属于地理参考。"
+      ],
+      "residual_groups": 0,
+      "ancestor_date_conflicts": []
+    },
+    "302": {
+      "year": 302,
+      "states_total": 19,
+      "prefectures_total": 183,
+      "counties_total": 1273,
+      "counties_included": 1258,
+      "located": 959,
+      "unlocated": 299,
+      "counties_located": 959,
+      "counties_unlocated": 299,
+      "inferred_county_areas": 922,
+      "prefecture_areas": 178,
+      "chgis_prefecture_areas": 38,
+      "kingdom_areas": 41,
+      "control_summary": {
+        "administrative": 178
+      },
+      "marker_only_extras": 0,
+      "feature_count": 2494,
+      "messages": [
+        "县界全部为受旧郡界约束的县治分区拟合，不是史料实测县界。",
+        "无坐标县保留正文，不虚构县治。",
+        "CHGIS同年郡面优先，原图与拟合范围属于地理参考。"
+      ],
+      "residual_groups": 0,
+      "ancestor_date_conflicts": []
+    },
+    "303": {
+      "year": 303,
+      "states_total": 20,
+      "prefectures_total": 182,
+      "counties_total": 1258,
+      "counties_included": 1252,
+      "located": 954,
+      "unlocated": 298,
+      "counties_located": 954,
+      "counties_unlocated": 298,
+      "inferred_county_areas": 920,
+      "prefecture_areas": 178,
+      "chgis_prefecture_areas": 24,
+      "kingdom_areas": 39,
+      "control_summary": {
+        "administrative": 155,
+        "contested": 23
+      },
+      "marker_only_extras": 0,
+      "feature_count": 2488,
+      "messages": [
+        "县界全部为受旧郡界约束的县治分区拟合，不是史料实测县界。",
+        "无坐标县保留正文，不虚构县治。",
+        "CHGIS同年郡面优先，原图与拟合范围属于地理参考。"
+      ],
+      "residual_groups": 0,
+      "ancestor_date_conflicts": []
+    },
+    "304": {
+      "year": 304,
+      "states_total": 20,
+      "prefectures_total": 183,
+      "counties_total": 1244,
+      "counties_included": 1244,
+      "located": 950,
+      "unlocated": 294,
+      "counties_located": 950,
+      "counties_unlocated": 294,
+      "inferred_county_areas": 915,
+      "prefecture_areas": 180,
+      "chgis_prefecture_areas": 40,
+      "kingdom_areas": 38,
+      "control_summary": {
+        "administrative": 180
+      },
+      "marker_only_extras": 0,
+      "feature_count": 2482,
+      "messages": [
+        "县界全部为受旧郡界约束的县治分区拟合，不是史料实测县界。",
+        "无坐标县保留正文，不虚构县治。",
+        "CHGIS同年郡面优先，原图与拟合范围属于地理参考。"
+      ],
+      "residual_groups": 0,
+      "ancestor_date_conflicts": []
+    },
+    "305": {
+      "year": 305,
+      "states_total": 20,
+      "prefectures_total": 183,
+      "counties_total": 1244,
+      "counties_included": 1244,
+      "located": 950,
+      "unlocated": 294,
+      "counties_located": 950,
+      "counties_unlocated": 294,
+      "inferred_county_areas": 916,
+      "prefecture_areas": 180,
+      "chgis_prefecture_areas": 20,
+      "kingdom_areas": 37,
+      "control_summary": {
+        "administrative": 156,
+        "contested": 24
+      },
+      "marker_only_extras": 0,
+      "feature_count": 2482,
+      "messages": [
+        "县界全部为受旧郡界约束的县治分区拟合，不是史料实测县界。",
+        "无坐标县保留正文，不虚构县治。",
+        "CHGIS同年郡面优先，原图与拟合范围属于地理参考。"
+      ],
+      "residual_groups": 0,
+      "ancestor_date_conflicts": []
+    },
+    "306": {
+      "year": 306,
+      "states_total": 20,
+      "prefectures_total": 183,
+      "counties_total": 1245,
+      "counties_included": 1245,
+      "located": 950,
+      "unlocated": 295,
+      "counties_located": 950,
+      "counties_unlocated": 295,
+      "inferred_county_areas": 916,
+      "prefecture_areas": 180,
+      "chgis_prefecture_areas": 20,
+      "kingdom_areas": 37,
+      "control_summary": {
+        "administrative": 148,
+        "partial": 8,
+        "contested": 24
+      },
+      "marker_only_extras": 0,
+      "feature_count": 2482,
+      "messages": [
+        "县界全部为受旧郡界约束的县治分区拟合，不是史料实测县界。",
+        "无坐标县保留正文，不虚构县治。",
+        "CHGIS同年郡面优先，原图与拟合范围属于地理参考。"
+      ],
+      "residual_groups": 0,
+      "ancestor_date_conflicts": []
+    },
+    "307": {
+      "year": 307,
+      "states_total": 21,
+      "prefectures_total": 182,
+      "counties_total": 1226,
+      "counties_included": 1226,
+      "located": 940,
+      "unlocated": 286,
+      "counties_located": 940,
+      "counties_unlocated": 286,
+      "inferred_county_areas": 894,
+      "prefecture_areas": 178,
+      "chgis_prefecture_areas": 42,
+      "kingdom_areas": 35,
+      "control_summary": {
+        "administrative": 170,
+        "partial": 8
+      },
+      "marker_only_extras": 0,
+      "feature_count": 2443,
+      "messages": [
+        "县界全部为受旧郡界约束的县治分区拟合，不是史料实测县界。",
+        "无坐标县保留正文，不虚构县治。",
+        "CHGIS同年郡面优先，原图与拟合范围属于地理参考。"
+      ],
+      "residual_groups": 0,
+      "ancestor_date_conflicts": []
+    },
+    "308": {
+      "year": 308,
+      "states_total": 21,
+      "prefectures_total": 179,
+      "counties_total": 1202,
+      "counties_included": 1190,
+      "located": 909,
+      "unlocated": 281,
+      "counties_located": 909,
+      "counties_unlocated": 281,
+      "inferred_county_areas": 875,
+      "prefecture_areas": 175,
+      "chgis_prefecture_areas": 40,
+      "kingdom_areas": 37,
+      "control_summary": {
+        "administrative": 166,
+        "contested": 1,
+        "partial": 8
+      },
+      "marker_only_extras": 0,
+      "feature_count": 2384,
+      "messages": [
+        "县界全部为受旧郡界约束的县治分区拟合，不是史料实测县界。",
+        "无坐标县保留正文，不虚构县治。",
+        "CHGIS同年郡面优先，原图与拟合范围属于地理参考。"
+      ],
+      "residual_groups": 0,
+      "ancestor_date_conflicts": []
+    },
+    "309": {
+      "year": 309,
+      "states_total": 21,
+      "prefectures_total": 179,
+      "counties_total": 1202,
+      "counties_included": 1190,
+      "located": 909,
+      "unlocated": 281,
+      "counties_located": 909,
+      "counties_unlocated": 281,
+      "inferred_county_areas": 875,
+      "prefecture_areas": 175,
+      "chgis_prefecture_areas": 40,
+      "kingdom_areas": 37,
+      "control_summary": {
+        "administrative": 152,
+        "contested": 15,
+        "partial": 8
+      },
+      "marker_only_extras": 0,
+      "feature_count": 2384,
+      "messages": [
+        "县界全部为受旧郡界约束的县治分区拟合，不是史料实测县界。",
+        "无坐标县保留正文，不虚构县治。",
+        "CHGIS同年郡面优先，原图与拟合范围属于地理参考。"
+      ],
+      "residual_groups": 0,
+      "ancestor_date_conflicts": []
+    },
+    "310": {
+      "year": 310,
+      "states_total": 21,
+      "prefectures_total": 181,
+      "counties_total": 1217,
+      "counties_included": 1205,
+      "located": 914,
+      "unlocated": 291,
+      "counties_located": 914,
+      "counties_unlocated": 291,
+      "inferred_county_areas": 879,
+      "prefecture_areas": 177,
+      "chgis_prefecture_areas": 40,
+      "kingdom_areas": 37,
+      "control_summary": {
+        "administrative": 150,
+        "contested": 17,
+        "partial": 10
+      },
+      "marker_only_extras": 0,
+      "feature_count": 2400,
+      "messages": [
+        "县界全部为受旧郡界约束的县治分区拟合，不是史料实测县界。",
+        "无坐标县保留正文，不虚构县治。",
+        "CHGIS同年郡面优先，原图与拟合范围属于地理参考。"
+      ],
+      "residual_groups": 0,
+      "ancestor_date_conflicts": []
+    },
+    "311": {
+      "year": 311,
+      "states_total": 21,
+      "prefectures_total": 176,
+      "counties_total": 1190,
+      "counties_included": 1175,
+      "located": 896,
+      "unlocated": 279,
+      "counties_located": 896,
+      "counties_unlocated": 279,
+      "inferred_county_areas": 866,
+      "prefecture_areas": 172,
+      "chgis_prefecture_areas": 31,
+      "kingdom_areas": 34,
+      "control_summary": {
+        "nominal": 6,
+        "partial": 4,
+        "contested": 34,
+        "administrative": 128
+      },
+      "marker_only_extras": 0,
+      "feature_count": 2351,
+      "messages": [
+        "县界全部为受旧郡界约束的县治分区拟合，不是史料实测县界。",
+        "无坐标县保留正文，不虚构县治。",
+        "CHGIS同年郡面优先，原图与拟合范围属于地理参考。"
+      ],
+      "residual_groups": 0,
+      "ancestor_date_conflicts": []
+    },
+    "312": {
+      "year": 312,
+      "states_total": 20,
+      "prefectures_total": 166,
+      "counties_total": 1089,
+      "counties_included": 1088,
+      "located": 814,
+      "unlocated": 274,
+      "counties_located": 814,
+      "counties_unlocated": 274,
+      "inferred_county_areas": 787,
+      "prefecture_areas": 163,
+      "chgis_prefecture_areas": 31,
+      "kingdom_areas": 34,
+      "control_summary": {
+        "partial": 3,
+        "administrative": 128,
+        "contested": 32
+      },
+      "marker_only_extras": 0,
+      "feature_count": 2164,
+      "messages": [
+        "县界全部为受旧郡界约束的县治分区拟合，不是史料实测县界。",
+        "无坐标县保留正文，不虚构县治。",
+        "CHGIS同年郡面优先，原图与拟合范围属于地理参考。"
+      ],
+      "residual_groups": 1,
+      "ancestor_date_conflicts": [
+        {
+          "id": "c0034",
+          "name": "豐陽",
+          "prefecture_id": "p004",
+          "reason": "县期段有效但父郡期段已结束，未据此虚构仍存在整郡；待沿革校勘"
+        },
+        {
+          "id": "c0035",
+          "name": "拒陽",
+          "prefecture_id": "p004",
+          "reason": "县期段有效但父郡期段已结束，未据此虚构仍存在整郡；待沿革校勘"
+        },
+        {
+          "id": "c0072",
+          "name": "修武",
+          "prefecture_id": "p008",
+          "reason": "县期段有效但父郡期段已结束，未据此虚构仍存在整郡；待沿革校勘"
+        }
+      ]
+    },
+    "313": {
+      "year": 313,
+      "states_total": 20,
+      "prefectures_total": 169,
+      "counties_total": 1090,
+      "counties_included": 1081,
+      "located": 803,
+      "unlocated": 278,
+      "counties_located": 803,
+      "counties_unlocated": 278,
+      "inferred_county_areas": 776,
+      "prefecture_areas": 160,
+      "chgis_prefecture_areas": 31,
+      "kingdom_areas": 33,
+      "control_summary": {
+        "partial": 3,
+        "nominal": 37,
+        "administrative": 102,
+        "contested": 18
+      },
+      "marker_only_extras": 0,
+      "feature_count": 2131,
+      "messages": [
+        "县界全部为受旧郡界约束的县治分区拟合，不是史料实测县界。",
+        "无坐标县保留正文，不虚构县治。",
+        "CHGIS同年郡面优先，原图与拟合范围属于地理参考。"
+      ],
+      "residual_groups": 1,
+      "ancestor_date_conflicts": [
+        {
+          "id": "c0034",
+          "name": "豐陽",
+          "prefecture_id": "p004",
+          "reason": "县期段有效但父郡期段已结束，未据此虚构仍存在整郡；待沿革校勘"
+        },
+        {
+          "id": "c0035",
+          "name": "拒陽",
+          "prefecture_id": "p004",
+          "reason": "县期段有效但父郡期段已结束，未据此虚构仍存在整郡；待沿革校勘"
+        },
+        {
+          "id": "c0072",
+          "name": "修武",
+          "prefecture_id": "p008",
+          "reason": "县期段有效但父郡期段已结束，未据此虚构仍存在整郡；待沿革校勘"
+        }
+      ]
+    },
+    "314": {
+      "year": 314,
+      "states_total": 17,
+      "prefectures_total": 128,
+      "counties_total": 812,
+      "counties_included": 811,
+      "located": 564,
+      "unlocated": 247,
+      "counties_located": 564,
+      "counties_unlocated": 247,
+      "inferred_county_areas": 548,
+      "prefecture_areas": 120,
+      "chgis_prefecture_areas": 31,
+      "kingdom_areas": 11,
+      "control_summary": {
+        "partial": 3,
+        "nominal": 5,
+        "contested": 18,
+        "administrative": 94
+      },
+      "marker_only_extras": 0,
+      "feature_count": 1521,
+      "messages": [
+        "县界全部为受旧郡界约束的县治分区拟合，不是史料实测县界。",
+        "无坐标县保留正文，不虚构县治。",
+        "CHGIS同年郡面优先，原图与拟合范围属于地理参考。"
+      ],
+      "residual_groups": 1,
+      "ancestor_date_conflicts": [
+        {
+          "id": "c0034",
+          "name": "豐陽",
+          "prefecture_id": "p004",
+          "reason": "县期段有效但父郡期段已结束，未据此虚构仍存在整郡；待沿革校勘"
+        },
+        {
+          "id": "c0035",
+          "name": "拒陽",
+          "prefecture_id": "p004",
+          "reason": "县期段有效但父郡期段已结束，未据此虚构仍存在整郡；待沿革校勘"
+        },
+        {
+          "id": "c0072",
+          "name": "修武",
+          "prefecture_id": "p008",
+          "reason": "县期段有效但父郡期段已结束，未据此虚构仍存在整郡；待沿革校勘"
+        },
+        {
+          "id": "c0224",
+          "name": "樓煩",
+          "prefecture_id": "p024",
+          "reason": "县期段有效但父郡期段已结束，未据此虚构仍存在整郡；待沿革校勘"
+        }
+      ]
+    },
+    "315": {
+      "year": 315,
+      "states_total": 16,
+      "prefectures_total": 121,
+      "counties_total": 778,
+      "counties_included": 777,
+      "located": 540,
+      "unlocated": 237,
+      "counties_located": 540,
+      "counties_unlocated": 237,
+      "inferred_county_areas": 523,
+      "prefecture_areas": 112,
+      "chgis_prefecture_areas": 39,
+      "kingdom_areas": 9,
+      "control_summary": {
+        "partial": 3,
+        "nominal": 5,
+        "administrative": 102,
+        "contested": 2
+      },
+      "marker_only_extras": 0,
+      "feature_count": 1444,
+      "messages": [
+        "县界全部为受旧郡界约束的县治分区拟合，不是史料实测县界。",
+        "无坐标县保留正文，不虚构县治。",
+        "CHGIS同年郡面优先，原图与拟合范围属于地理参考。"
+      ],
+      "residual_groups": 1,
+      "ancestor_date_conflicts": [
+        {
+          "id": "c0034",
+          "name": "豐陽",
+          "prefecture_id": "p004",
+          "reason": "县期段有效但父郡期段已结束，未据此虚构仍存在整郡；待沿革校勘"
+        },
+        {
+          "id": "c0035",
+          "name": "拒陽",
+          "prefecture_id": "p004",
+          "reason": "县期段有效但父郡期段已结束，未据此虚构仍存在整郡；待沿革校勘"
+        },
+        {
+          "id": "c0072",
+          "name": "修武",
+          "prefecture_id": "p008",
+          "reason": "县期段有效但父郡期段已结束，未据此虚构仍存在整郡；待沿革校勘"
+        },
+        {
+          "id": "c0224",
+          "name": "樓煩",
+          "prefecture_id": "p024",
+          "reason": "县期段有效但父郡期段已结束，未据此虚构仍存在整郡；待沿革校勘"
+        }
+      ]
+    },
+    "316": {
+      "year": 316,
+      "states_total": 16,
+      "prefectures_total": 121,
+      "counties_total": 782,
+      "counties_included": 776,
+      "located": 541,
+      "unlocated": 235,
+      "counties_located": 541,
+      "counties_unlocated": 235,
+      "inferred_county_areas": 522,
+      "prefecture_areas": 110,
+      "chgis_prefecture_areas": 39,
+      "kingdom_areas": 9,
+      "control_summary": {
+        "partial": 2,
+        "nominal": 5,
+        "administrative": 96,
+        "contested": 7
+      },
+      "marker_only_extras": 0,
+      "feature_count": 1437,
+      "messages": [
+        "县界全部为受旧郡界约束的县治分区拟合，不是史料实测县界。",
+        "无坐标县保留正文，不虚构县治。",
+        "CHGIS同年郡面优先，原图与拟合范围属于地理参考。"
+      ],
+      "residual_groups": 1,
+      "ancestor_date_conflicts": [
+        {
+          "id": "c0034",
+          "name": "豐陽",
+          "prefecture_id": "p004",
+          "reason": "县期段有效但父郡期段已结束，未据此虚构仍存在整郡；待沿革校勘"
+        },
+        {
+          "id": "c0035",
+          "name": "拒陽",
+          "prefecture_id": "p004",
+          "reason": "县期段有效但父郡期段已结束，未据此虚构仍存在整郡；待沿革校勘"
+        },
+        {
+          "id": "c0072",
+          "name": "修武",
+          "prefecture_id": "p008",
+          "reason": "县期段有效但父郡期段已结束，未据此虚构仍存在整郡；待沿革校勘"
+        },
+        {
+          "id": "c0224",
+          "name": "樓煩",
+          "prefecture_id": "p024",
+          "reason": "县期段有效但父郡期段已结束，未据此虚构仍存在整郡；待沿革校勘"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,1301 @@
+{
+  "schema_version": "1.0.0",
+  "researched_at": "2026-10-01",
+  "year_range": [
+    266,
+    316
+  ],
+  "time_slice": "公元年末；begin、end 均含该年。年内改封以年末身份处理，年内短暂事件保留在notes与events。",
+  "research_method": "既有289/308成果逐条回原典，并核对研究论文、本机行政区划通史OCR；当前工具没有独立Deep Research调用，未声称调用该产品。",
+  "mapping_contract": {
+    "commandery_names": "简体，不带郡或国后缀；吴郡、蜀郡保留郡字。琅邪对应琅琊，渤海对应勃海，丹阳对应丹杨，由消费端归一。",
+    "map_default_false": "候选记录仅供说明和检索，禁止作为已确定逐年合面。",
+    "inferred_members": "只能用斜纹或等效不确定样式；不能静默并入确证纯色。",
+    "hypothesized_members": "不进入默认面图，不参与默认union，仅研究注释。",
+    "union_policy": "只合并当年存在、当年属于晋实际控制的郡县面；失陷地不得因名义王号保留。次郡行政实体与郡治点继续保留。",
+    "missing_secondary_members": "保留王号及首郡可确证范围，注明旁郡未详，不按军督州界或食邑户数补齐。",
+    "administrative_amalgamation": "县已改隶首郡时重建该郡范围，不再合并一个已废的支郡。",
+    "county_subset": "汝南云杜、西阳期思等跨郡县食封及荆州成都四县不得整郡扩色。",
+    "temporal_bounds": "date_bounds与inferred_member_date_bounds是待考窗口，不等于已证年度；map_default的推定记录须在图例说明。",
+    "political_control": "王号、封爵存续与军政实控是两套时间线，国界不能替代国土界。"
+  },
+  "coverage_notes": [
+    "这是一份有证据分级的候选与确认期段表，不是宣称266—316每一个旁郡均已穷尽。",
+    "266—274尚未核得可确定成员名单的多郡王国；这不证明当时不存在跨郡食封。",
+    "277年前后琅邪、梁、燕及283年齐有别于太康十年新制，必须区分并郡、整郡兼食、部分县户增邑。",
+    "既有289/308原始快照保留作比较，不能作为其它年份授封、继嗣或实际控制的独立证据。",
+    "311以后北方封国多有名义继统、流徙或失土，材料不足以确认连续原封疆；默认不沿用以前多郡面。"
+  ],
+  "events": [
+    {
+      "year": 283,
+      "kingdom_name": "齐",
+      "holder": "司马攸",
+      "event": "增济南，同年攸薨、冏继",
+      "source_ids": [
+        "JS038"
+      ],
+      "year_end_holder": "司马冏"
+    },
+    {
+      "year": 290,
+      "kingdom_name": "广陵",
+      "holder": "司马遹",
+      "event": "八月为皇太子，年末结束广陵多郡身份",
+      "source_ids": [
+        "JS004"
+      ]
+    },
+    {
+      "year": 291,
+      "kingdom_name": "楚",
+      "holder": "司马玮",
+      "event": "六月被诛，年末不延用楚旁郡",
+      "source_ids": [
+        "JS004"
+      ]
+    },
+    {
+      "year": 291,
+      "kingdom_name": "长沙",
+      "holder": "司马乂",
+      "event": "八月徙常山，长沙旧旁郡停止默认归乂",
+      "source_ids": [
+        "JS004"
+      ]
+    },
+    {
+      "year": 300,
+      "kingdom_name": "吴",
+      "holder": "司马晏",
+      "event": "降宾徒；301年复本封",
+      "source_ids": [
+        "JS004",
+        "JS064"
+      ]
+    },
+    {
+      "year": 302,
+      "kingdom_name": "清河",
+      "holder": "司马覃",
+      "event": "五月立太子；304年降清河",
+      "source_ids": [
+        "JS004"
+      ]
+    },
+    {
+      "year": 303,
+      "kingdom_name": "成都",
+      "event": "成都陷，不能维持四川四郡完整封疆",
+      "source_ids": [
+        "BOOKI_SHU"
+      ]
+    },
+    {
+      "year": 304,
+      "kingdom_name": "成都",
+      "holder": "司马颖",
+      "event": "年内增封二十郡，成员名单未详；同年太弟又废归藩",
+      "source_ids": [
+        "JS059"
+      ],
+      "mapping_policy": "annotation_only_unknown_members"
+    },
+    {
+      "year": 307,
+      "kingdom_name": "豫章",
+      "holder": "司马诠",
+      "event": "三月为太子，端继豫章；本传纪年与本纪不合时按本纪",
+      "source_ids": [
+        "JS005",
+        "JS064"
+      ]
+    },
+    {
+      "year": 312,
+      "kingdom_name": "秦",
+      "holder": "司马邺",
+      "event": "九月太子，313年即帝位国绝",
+      "source_ids": [
+        "JS005",
+        "JS064"
+      ]
+    }
+  ],
+  "records": [
+    {
+      "id": "YAN_EARLY",
+      "begin": 275,
+      "end": 300,
+      "kingdom_name": "燕",
+      "seat_commandery": "燕",
+      "holder": "司马机（薨年未详）",
+      "confirmed_member_commanderies": [
+        "燕"
+      ],
+      "inferred_member_commanderies": [
+        "渔阳",
+        "北平",
+        "上谷",
+        "广宁"
+      ],
+      "mapping_policy": "annotation_only_unknown_date_and_scope",
+      "certainty": "unknown",
+      "map_default": false,
+      "source_ids": [
+        "JS038",
+        "BOOKI_YUYANG"
+      ],
+      "notes": "咸宁初增渔阳，随后增北平、上谷、广宁部分户邑。后一次增封确年及整郡范围均未证；渔阳郡又在咸宁后废。候选期间只供检索，不逐年确定合面。",
+      "date_bounds": {
+        "first_grant": [
+          275,
+          277
+        ],
+        "later_grant": [
+          275,
+          300
+        ]
+      },
+      "scope_type": "commandery_plus_households"
+    },
+    {
+      "id": "YAN_SUCCESSION",
+      "begin": 301,
+      "end": 301,
+      "kingdom_name": "燕",
+      "seat_commandery": "燕",
+      "holder": "司马几（姓名有校勘疑）",
+      "confirmed_member_commanderies": [
+        "燕"
+      ],
+      "inferred_member_commanderies": [
+        "渔阳",
+        "北平",
+        "上谷",
+        "广宁"
+      ],
+      "mapping_policy": "annotation_only_unknown_members",
+      "certainty": "unknown",
+      "map_default": false,
+      "source_ids": [
+        "JS038"
+      ],
+      "notes": "齐王冏表子继燕，302年冏败国除；原次郡承袭范围未载。"
+    },
+    {
+      "id": "LIANG_CHEN",
+      "begin": 277,
+      "end": 299,
+      "kingdom_name": "梁",
+      "seat_commandery": "梁",
+      "holder": "司马肜",
+      "confirmed_member_commanderies": [
+        "梁"
+      ],
+      "inferred_member_commanderies": [
+        "陈"
+      ],
+      "mapping_policy": "union_confirmed_and_hatched_inferred",
+      "certainty": "medium",
+      "map_default": true,
+      "source_ids": [
+        "JS038",
+        "CHGIS_XIANG"
+      ],
+      "notes": "咸宁中陈国为次国；以CHGIS项县277—301属梁作为年界线索，整陈范围作推定。汝南只涉及南顿县，不得整郡合并。",
+      "food_associated_counties": [
+        "南顿"
+      ],
+      "scope_type": "commandery_plus_county",
+      "date_bounds": {
+        "grant": [
+          275,
+          279
+        ]
+      }
+    },
+    {
+      "id": "LIANG_CHEN_LATE",
+      "begin": 300,
+      "end": 301,
+      "kingdom_name": "梁",
+      "seat_commandery": "梁",
+      "holder": "司马肜",
+      "confirmed_member_commanderies": [
+        "梁"
+      ],
+      "inferred_member_commanderies": [
+        "陈"
+      ],
+      "mapping_policy": "union_confirmed_and_hatched_inferred",
+      "certainty": "medium",
+      "map_default": true,
+      "source_ids": [
+        "JS038",
+        "CHGIS_XIANG"
+      ],
+      "notes": "300年又增二万户，未载新增郡县；维持原陈次国推定，不因增户扩大至别郡。302年项县复陈。",
+      "food_associated_counties": [
+        "南顿"
+      ],
+      "scope_type": "commandery_plus_county"
+    },
+    {
+      "id": "LANGYE_DONGGUAN_FIRST",
+      "begin": 277,
+      "end": 279,
+      "kingdom_name": "琅邪",
+      "seat_commandery": "琅邪",
+      "holder": "司马伷",
+      "confirmed_member_commanderies": [
+        "琅邪"
+      ],
+      "inferred_member_commanderies": [],
+      "mapping_policy": "administrative_amalgamation_follow_counties",
+      "certainty": "high",
+      "map_default": false,
+      "source_ids": [
+        "JS038",
+        "BOOKI_LANGYE",
+        "SS035"
+      ],
+      "notes": "277年东莞益国同时东莞郡省、县并琅邪；范围应跟随当年琅邪县属重建，不能再叠加一个东莞支郡。280年东莞复置。",
+      "former_commandery": "东莞",
+      "scope_type": "administrative_amalgamation"
+    },
+    {
+      "id": "LANGYE_DONGGUAN_SECOND",
+      "begin": 284,
+      "end": 288,
+      "kingdom_name": "琅邪",
+      "seat_commandery": "琅邪",
+      "holder": "司马觐",
+      "confirmed_member_commanderies": [
+        "琅邪"
+      ],
+      "inferred_member_commanderies": [],
+      "mapping_policy": "annotation_only_unknown_date",
+      "certainty": "unknown",
+      "map_default": false,
+      "source_ids": [
+        "BOOKI_LANGYE"
+      ],
+      "notes": "283年后东莞再省并琅邪，289年复置；再省确年未详，284只是候选下界。按年表确定县属后重建，不默认五年均已并。",
+      "date_bounds": {
+        "amalgamation": [
+          284,
+          288
+        ]
+      },
+      "former_commandery": "东莞",
+      "scope_type": "administrative_amalgamation"
+    },
+    {
+      "id": "QI_JINAN",
+      "begin": 283,
+      "end": 301,
+      "kingdom_name": "齐",
+      "seat_commandery": "齐",
+      "holder": "司马冏（283年继攸）",
+      "confirmed_member_commanderies": [
+        "齐"
+      ],
+      "inferred_member_commanderies": [
+        "济南"
+      ],
+      "mapping_policy": "union_confirmed_and_hatched_inferred",
+      "certainty": "medium",
+      "map_default": true,
+      "source_ids": [
+        "JS038",
+        "CHGIS_ZHU"
+      ],
+      "notes": "283年攸受增济南后同年薨，冏继；次郡持续承袭属推定。CHGIS仍记著县属济南，保留济南行政名称与内部郡界。",
+      "scope_type": "multi_commandery",
+      "grant_holder": "司马攸"
+    },
+    {
+      "id": "QI_POST_JIONG",
+      "begin": 302,
+      "end": 310,
+      "kingdom_name": "齐",
+      "seat_commandery": "齐",
+      "holder": "齐王继统有复废",
+      "confirmed_member_commanderies": [
+        "齐"
+      ],
+      "inferred_member_commanderies": [
+        "济南"
+      ],
+      "mapping_policy": "annotation_only_unknown_members",
+      "certainty": "unknown",
+      "map_default": false,
+      "source_ids": [
+        "JS004",
+        "JS005",
+        "JS059"
+      ],
+      "notes": "302年冏败、后继统复封的次郡是否保持没有明确证据；不把283年增封自动延到永嘉。"
+    },
+    {
+      "id": "QIN_JIAN",
+      "begin": 289,
+      "end": 290,
+      "kingdom_name": "秦",
+      "seat_commandery": "扶风",
+      "holder": "司马柬",
+      "confirmed_member_commanderies": [
+        "扶风"
+      ],
+      "inferred_member_commanderies": [
+        "始平"
+      ],
+      "mapping_policy": "union_confirmed_and_hatched_inferred",
+      "certainty": "medium",
+      "map_default": true,
+      "source_ids": [
+        "JS003",
+        "JS064",
+        "JS060",
+        "GU2018",
+        "BOOKI_QIN"
+      ],
+      "notes": "289年首郡扶风，始平据后来内史官名及研究回推；关中军督范围不等于秦封疆。"
+    },
+    {
+      "id": "QIN_YU",
+      "begin": 291,
+      "end": 299,
+      "kingdom_name": "秦",
+      "seat_commandery": "扶风",
+      "holder": "司马郁",
+      "confirmed_member_commanderies": [
+        "扶风"
+      ],
+      "inferred_member_commanderies": [
+        "始平"
+      ],
+      "mapping_policy": "union_confirmed_and_hatched_inferred",
+      "certainty": "medium",
+      "map_default": true,
+      "source_ids": [
+        "JS004",
+        "JS064",
+        "JS060"
+      ],
+      "notes": "291年柬薨、郁随后继封，既有表从翌年292称元；本次以291年末继统推定，300年郁被害。始平承袭亦为推定。",
+      "date_bounds": {
+        "succession": [
+          291,
+          292
+        ]
+      },
+      "temporal_certainty": "medium"
+    },
+    {
+      "id": "QIN_YE",
+      "begin": 302,
+      "end": 311,
+      "kingdom_name": "秦",
+      "seat_commandery": "扶风",
+      "holder": "司马邺",
+      "confirmed_member_commanderies": [
+        "扶风"
+      ],
+      "inferred_member_commanderies": [
+        "始平"
+      ],
+      "mapping_policy": "union_confirmed_and_hatched_inferred",
+      "certainty": "medium",
+      "map_default": true,
+      "source_ids": [
+        "JS064",
+        "JS005",
+        "BOOKI_QIN"
+      ],
+      "notes": "302年邺继秦，312年立太子、313年帝即位国绝；302—311始平承袭仅推定且受年度实际控制限制。",
+      "member_certainty": {
+        "扶风": "high",
+        "始平": "low"
+      }
+    },
+    {
+      "id": "CHU_WEI",
+      "begin": 289,
+      "end": 290,
+      "kingdom_name": "楚",
+      "seat_commandery": "襄阳",
+      "holder": "司马玮",
+      "confirmed_member_commanderies": [
+        "襄阳"
+      ],
+      "inferred_member_commanderies": [],
+      "mapping_policy": "seat_only_unknown_secondary_members",
+      "certainty": "unknown",
+      "map_default": true,
+      "source_ids": [
+        "JS003",
+        "JS004",
+        "JS059",
+        "GU2018"
+      ],
+      "notes": "楚有旁郡之制，成员郡名未考定；只画首郡，不以荆州军督范围补填。291年玮被杀，范后来为襄阳王不能直接继承所有未知旁郡。",
+      "scope_type": "multi_commandery_members_unknown"
+    },
+    {
+      "id": "HUAINAN_YUN",
+      "begin": 289,
+      "end": 299,
+      "kingdom_name": "淮南",
+      "seat_commandery": "淮南",
+      "holder": "司马允",
+      "confirmed_member_commanderies": [
+        "淮南"
+      ],
+      "inferred_member_commanderies": [
+        "安丰",
+        "庐江"
+      ],
+      "mapping_policy": "union_confirmed_and_hatched_inferred",
+      "certainty": "medium",
+      "map_default": true,
+      "source_ids": [
+        "JS003",
+        "JS004",
+        "JS064",
+        "GU2018",
+        "BASE289"
+      ],
+      "notes": "安丰据研究，庐江据稍后内史回推；均非289原诏逐郡名单。300年允被杀，年末不再沿用。",
+      "member_certainty": {
+        "淮南": "high",
+        "安丰": "medium",
+        "庐江": "low"
+      }
+    },
+    {
+      "id": "HUAINAN_CHAO",
+      "begin": 301,
+      "end": 301,
+      "kingdom_name": "淮南",
+      "seat_commandery": "淮南",
+      "holder": "司马超",
+      "confirmed_member_commanderies": [
+        "淮南"
+      ],
+      "inferred_member_commanderies": [
+        "安丰",
+        "庐江"
+      ],
+      "mapping_policy": "union_confirmed_and_hatched_inferred",
+      "certainty": "low",
+      "map_default": true,
+      "source_ids": [
+        "JS064",
+        "JS004"
+      ],
+      "notes": "冏子超继淮南，次郡承袭未详；302年冏败后幽禁，不能确定继续享有旁郡。"
+    },
+    {
+      "id": "HUAINAN_AFTER",
+      "begin": 302,
+      "end": 310,
+      "kingdom_name": "淮南",
+      "seat_commandery": "淮南",
+      "holder": "司马超后废；司马祥永嘉中继",
+      "confirmed_member_commanderies": [
+        "淮南"
+      ],
+      "inferred_member_commanderies": [
+        "安丰",
+        "庐江"
+      ],
+      "mapping_policy": "annotation_only_unknown_date_and_scope",
+      "certainty": "unknown",
+      "map_default": false,
+      "source_ids": [
+        "JS064"
+      ],
+      "notes": "祥继封仅有永嘉中宽泛时段；没有据以逐年恢复三郡的材料。",
+      "date_bounds": {
+        "xiang_succession": [
+          307,
+          312
+        ]
+      }
+    },
+    {
+      "id": "QINGHE_XIA",
+      "begin": 289,
+      "end": 299,
+      "kingdom_name": "清河",
+      "seat_commandery": "清河",
+      "holder": "司马遐",
+      "confirmed_member_commanderies": [
+        "清河",
+        "渤海"
+      ],
+      "inferred_member_commanderies": [],
+      "mapping_policy": "union_confirmed_and_hatched_inferred",
+      "certainty": "high",
+      "map_default": true,
+      "source_ids": [
+        "JS003",
+        "JS064"
+      ],
+      "notes": "渤海增封明确始于289，不前推到277年初封清河；遐300年薨。"
+    },
+    {
+      "id": "QINGHE_TAN_FIRST",
+      "begin": 300,
+      "end": 301,
+      "kingdom_name": "清河",
+      "seat_commandery": "清河",
+      "holder": "司马覃",
+      "confirmed_member_commanderies": [
+        "清河"
+      ],
+      "inferred_member_commanderies": [
+        "渤海"
+      ],
+      "mapping_policy": "union_confirmed_and_hatched_inferred",
+      "certainty": "medium",
+      "map_default": true,
+      "source_ids": [
+        "JS064",
+        "JS004"
+      ],
+      "notes": "覃继遐，渤海承袭为推定；302年立皇太子，302—303不按清河王多郡封国合面。"
+    },
+    {
+      "id": "QINGHE_TAN_RESTORED",
+      "begin": 304,
+      "end": 307,
+      "kingdom_name": "清河",
+      "seat_commandery": "清河",
+      "holder": "司马覃",
+      "confirmed_member_commanderies": [
+        "清河"
+      ],
+      "inferred_member_commanderies": [
+        "渤海"
+      ],
+      "mapping_policy": "union_confirmed_and_hatched_inferred",
+      "certainty": "medium",
+      "map_default": true,
+      "source_ids": [
+        "JS004",
+        "JS064"
+      ],
+      "notes": "304年覃降为清河王，次郡恢复是否完整未载；308年被害。"
+    },
+    {
+      "id": "QINGHE_YUE",
+      "begin": 308,
+      "end": 310,
+      "kingdom_name": "清河",
+      "seat_commandery": "清河",
+      "holder": "司马籥",
+      "confirmed_member_commanderies": [
+        "清河"
+      ],
+      "inferred_member_commanderies": [
+        "渤海"
+      ],
+      "mapping_policy": "union_confirmed_and_hatched_inferred",
+      "certainty": "medium",
+      "map_default": true,
+      "source_ids": [
+        "JS005",
+        "JS064",
+        "BASE308"
+      ],
+      "notes": "籥承清河，渤海沿旧封推定；311年后继统终年与北方实控均不足以确定同一封疆。"
+    },
+    {
+      "id": "QINGHE_AFTER",
+      "begin": 311,
+      "end": 316,
+      "kingdom_name": "清河",
+      "seat_commandery": "清河",
+      "holder": "继统、终年待核",
+      "confirmed_member_commanderies": [
+        "清河"
+      ],
+      "inferred_member_commanderies": [
+        "渤海"
+      ],
+      "mapping_policy": "annotation_only_unknown_members",
+      "certainty": "unknown",
+      "map_default": false,
+      "source_ids": [
+        "BASE308"
+      ],
+      "notes": "不把308年推定成员延至316年；名义国统与当年晋实际控制另行区分。"
+    },
+    {
+      "id": "CHANGSHA_YI_FIRST",
+      "begin": 289,
+      "end": 290,
+      "kingdom_name": "长沙",
+      "seat_commandery": "长沙",
+      "holder": "司马乂",
+      "confirmed_member_commanderies": [
+        "长沙"
+      ],
+      "inferred_member_commanderies": [
+        "南平",
+        "衡阳"
+      ],
+      "mapping_policy": "union_confirmed_and_hatched_inferred",
+      "certainty": "medium",
+      "map_default": true,
+      "source_ids": [
+        "JS003",
+        "JS004",
+        "JS059",
+        "GU2018"
+      ],
+      "notes": "南平据301年改封及内史线索，衡阳据311年内史回推；291年乂徙常山。",
+      "member_certainty": {
+        "长沙": "high",
+        "南平": "medium",
+        "衡阳": "low"
+      }
+    },
+    {
+      "id": "CHANGSHA_YI_RESTORED",
+      "begin": 301,
+      "end": 303,
+      "kingdom_name": "长沙",
+      "seat_commandery": "长沙",
+      "holder": "司马乂",
+      "confirmed_member_commanderies": [
+        "长沙"
+      ],
+      "inferred_member_commanderies": [
+        "南平",
+        "衡阳"
+      ],
+      "mapping_policy": "union_confirmed_and_hatched_inferred",
+      "certainty": "medium",
+      "map_default": true,
+      "source_ids": [
+        "JS004",
+        "JS059",
+        "GU2018"
+      ],
+      "notes": "301年复长沙；原次郡完整恢复为推定。南平王祥改宜都可支持释放南平，不能单凭王号保证整郡。乂304年初死。"
+    },
+    {
+      "id": "CHANGSHA_SHUO",
+      "begin": 308,
+      "end": 310,
+      "kingdom_name": "长沙",
+      "seat_commandery": "长沙",
+      "holder": "司马硕",
+      "confirmed_member_commanderies": [
+        "长沙"
+      ],
+      "inferred_member_commanderies": [
+        "南平",
+        "衡阳"
+      ],
+      "mapping_policy": "union_confirmed_and_hatched_inferred",
+      "certainty": "medium",
+      "map_default": true,
+      "source_ids": [
+        "JS005",
+        "JS059",
+        "BASE308"
+      ],
+      "notes": "308年十二月复乂子硕为长沙王；次郡沿用为推定。311年硕被害；304—307不连续沿用乂的封疆。"
+    },
+    {
+      "id": "CHENGDU_YING_SICHUAN",
+      "begin": 289,
+      "end": 302,
+      "kingdom_name": "成都",
+      "seat_commandery": "蜀郡",
+      "holder": "司马颖",
+      "confirmed_member_commanderies": [
+        "蜀郡",
+        "广汉",
+        "犍为",
+        "汶山"
+      ],
+      "inferred_member_commanderies": [],
+      "mapping_policy": "union_confirmed_and_hatched_inferred",
+      "certainty": "high",
+      "map_default": true,
+      "source_ids": [
+        "JS003",
+        "HY008",
+        "BOOKI_SHU"
+      ],
+      "notes": "四郡名单明载。华阳国志授封年有太康八年异文，以武帝纪太康十年及地理通史校时。303年成都陷后不延用四郡完整面。"
+    },
+    {
+      "id": "CHENGDU_AFTER_LOSS",
+      "begin": 303,
+      "end": 306,
+      "kingdom_name": "成都",
+      "seat_commandery": "蜀郡",
+      "holder": "司马颖",
+      "confirmed_member_commanderies": [
+        "蜀郡"
+      ],
+      "inferred_member_commanderies": [],
+      "mapping_policy": "annotation_only_lost_seat_and_unknown_members",
+      "certainty": "unknown",
+      "map_default": false,
+      "source_ids": [
+        "JS059",
+        "BOOKI_SHU"
+      ],
+      "notes": "303年四川首郡失陷；304年曾增封二十郡，但没有完整成员名单，随后为太弟又废归藩。名义王号仅注释，不再染满四川四郡；邺城军镇也不作为成都郡。",
+      "unknown_secondary_count": 20
+    },
+    {
+      "id": "CHENGDU_JINGZHOU",
+      "begin": 307,
+      "end": 312,
+      "kingdom_name": "成都",
+      "seat_commandery": "成都",
+      "holder": "司马遵等续颖封（郡置确年未详）",
+      "confirmed_member_commanderies": [],
+      "inferred_member_commanderies": [],
+      "mapping_policy": "county_subset_only_pending_dates",
+      "certainty": "unknown",
+      "map_default": false,
+      "source_ids": [
+        "JS059",
+        "BOOKI_CHENGDU"
+      ],
+      "notes": "荆州成都国涉及华容、州陵、监利及新丰都四县，书籍考为永嘉中续封、建兴中省还南郡。旧成果304年移封说与此冲突；未裁成确证年度郡面。",
+      "date_bounds": {
+        "establishment": [
+          307,
+          312
+        ],
+        "abolition": [
+          313,
+          316
+        ]
+      },
+      "food_associated_counties": [
+        "华容",
+        "州陵",
+        "监利",
+        "丰都"
+      ],
+      "scope_type": "county_subset_not_whole_nanjun",
+      "incompatible_legacy_begin": 304
+    },
+    {
+      "id": "WU_YAN_FIRST",
+      "begin": 289,
+      "end": 299,
+      "kingdom_name": "吴",
+      "seat_commandery": "吴郡",
+      "holder": "司马晏",
+      "confirmed_member_commanderies": [
+        "吴郡",
+        "丹阳",
+        "吴兴"
+      ],
+      "inferred_member_commanderies": [],
+      "mapping_policy": "union_confirmed_and_hatched_inferred",
+      "certainty": "high",
+      "map_default": true,
+      "source_ids": [
+        "JS003",
+        "JS064"
+      ],
+      "notes": "三郡名单明确；300年晏降宾徒，不沿用三郡封疆。"
+    },
+    {
+      "id": "WU_YAN_RESTORED",
+      "begin": 301,
+      "end": 310,
+      "kingdom_name": "吴",
+      "seat_commandery": "吴郡",
+      "holder": "司马晏",
+      "confirmed_member_commanderies": [
+        "吴郡",
+        "丹阳",
+        "吴兴"
+      ],
+      "inferred_member_commanderies": [],
+      "mapping_policy": "union_confirmed_and_hatched_inferred",
+      "certainty": "high",
+      "map_default": true,
+      "source_ids": [
+        "JS004",
+        "JS064"
+      ],
+      "notes": "301年明确复本封，按旧三郡恢复；311年洛阳陷后晏被害。年度军政实控变化仍需裁切。"
+    },
+    {
+      "id": "YUZHANG_CHI",
+      "begin": 289,
+      "end": 303,
+      "kingdom_name": "豫章",
+      "seat_commandery": "豫章",
+      "holder": "司马炽",
+      "confirmed_member_commanderies": [
+        "豫章"
+      ],
+      "inferred_member_commanderies": [
+        "鄱阳",
+        "临川"
+      ],
+      "mapping_policy": "union_confirmed_and_hatched_inferred",
+      "certainty": "medium",
+      "map_default": true,
+      "source_ids": [
+        "JS003",
+        "JS004",
+        "JS005",
+        "JS064",
+        "GU2018"
+      ],
+      "notes": "鄱阳、临川据封国长官及研究推定。十郡说是论文人口与江州建置假说，额外七郡不进入默认地图。炽304年末为太弟；诠307年三月太子；端311年太子后被害。",
+      "hypothesized_member_commanderies": [
+        "庐陵",
+        "南康",
+        "建安",
+        "晋安",
+        "武昌",
+        "桂阳",
+        "安成"
+      ],
+      "member_certainty": {
+        "豫章": "high",
+        "鄱阳": "medium",
+        "临川": "medium"
+      },
+      "hypothesis_map_default": false
+    },
+    {
+      "id": "YUZHANG_QUAN",
+      "begin": 306,
+      "end": 306,
+      "kingdom_name": "豫章",
+      "seat_commandery": "豫章",
+      "holder": "司马诠（《晋书》作铨）",
+      "confirmed_member_commanderies": [
+        "豫章"
+      ],
+      "inferred_member_commanderies": [
+        "鄱阳",
+        "临川"
+      ],
+      "mapping_policy": "union_confirmed_and_hatched_inferred",
+      "certainty": "medium",
+      "map_default": true,
+      "source_ids": [
+        "JS003",
+        "JS004",
+        "JS005",
+        "JS064",
+        "GU2018"
+      ],
+      "notes": "鄱阳、临川据封国长官及研究推定。十郡说是论文人口与江州建置假说，额外七郡不进入默认地图。炽304年末为太弟；诠307年三月太子；端311年太子后被害。",
+      "hypothesized_member_commanderies": [
+        "庐陵",
+        "南康",
+        "建安",
+        "晋安",
+        "武昌",
+        "桂阳",
+        "安成"
+      ],
+      "member_certainty": {
+        "豫章": "high",
+        "鄱阳": "medium",
+        "临川": "medium"
+      },
+      "hypothesis_map_default": false
+    },
+    {
+      "id": "YUZHANG_DUAN",
+      "begin": 307,
+      "end": 310,
+      "kingdom_name": "豫章",
+      "seat_commandery": "豫章",
+      "holder": "司马端",
+      "confirmed_member_commanderies": [
+        "豫章"
+      ],
+      "inferred_member_commanderies": [
+        "鄱阳",
+        "临川"
+      ],
+      "mapping_policy": "union_confirmed_and_hatched_inferred",
+      "certainty": "medium",
+      "map_default": true,
+      "source_ids": [
+        "JS003",
+        "JS004",
+        "JS005",
+        "JS064",
+        "GU2018"
+      ],
+      "notes": "鄱阳、临川据封国长官及研究推定。十郡说是论文人口与江州建置假说，额外七郡不进入默认地图。炽304年末为太弟；诠307年三月太子；端311年太子后被害。",
+      "hypothesized_member_commanderies": [
+        "庐陵",
+        "南康",
+        "建安",
+        "晋安",
+        "武昌",
+        "桂阳",
+        "安成"
+      ],
+      "member_certainty": {
+        "豫章": "high",
+        "鄱阳": "medium",
+        "临川": "medium"
+      },
+      "hypothesis_map_default": false
+    },
+    {
+      "id": "GUANGLING_YU",
+      "begin": 289,
+      "end": 289,
+      "kingdom_name": "广陵",
+      "seat_commandery": "广陵",
+      "holder": "司马遹",
+      "confirmed_member_commanderies": [
+        "广陵",
+        "临淮"
+      ],
+      "inferred_member_commanderies": [],
+      "mapping_policy": "union_confirmed_and_hatched_inferred",
+      "certainty": "high",
+      "map_default": true,
+      "source_ids": [
+        "JS003",
+        "JS004",
+        "JS053",
+        "GU2018"
+      ],
+      "notes": "广陵初封五万户并有淮陵，研究落实临淮郡；290年八月太子，年末不再按广陵王两郡封国绘制。",
+      "member_certainty": {
+        "广陵": "high",
+        "临淮": "medium"
+      }
+    },
+    {
+      "id": "DONGHAI_YUE_306",
+      "begin": 306,
+      "end": 306,
+      "kingdom_name": "东海",
+      "seat_commandery": "东海",
+      "holder": "司马越",
+      "confirmed_member_commanderies": [
+        "东海",
+        "下邳",
+        "济阳"
+      ],
+      "inferred_member_commanderies": [],
+      "mapping_policy": "union_confirmed_and_hatched_inferred",
+      "certainty": "high",
+      "map_default": true,
+      "source_ids": [
+        "JS059"
+      ],
+      "notes": "306年迎帝返洛后，下邳、济阳二郡明确增封；不前推至291年东海初封六县。封国食邑和下邳行政王号可能重叠，保留行政郡界及实体。"
+    },
+    {
+      "id": "DONGHAI_YUE_YONGJIA",
+      "begin": 307,
+      "end": 310,
+      "kingdom_name": "东海",
+      "seat_commandery": "东海",
+      "holder": "司马越",
+      "confirmed_member_commanderies": [
+        "东海",
+        "下邳",
+        "济阳"
+      ],
+      "inferred_member_commanderies": [
+        "兰陵"
+      ],
+      "mapping_policy": "union_confirmed_and_hatched_inferred",
+      "certainty": "medium",
+      "map_default": true,
+      "source_ids": [
+        "JS059",
+        "SS060",
+        "BOOKI_LANLING"
+      ],
+      "notes": "兰陵增食仅定在永嘉中，始年未详，307年是候选最早年，默认斜纹推定而非确证。311年越薨，继冲的次郡范围未证。",
+      "inferred_member_date_bounds": {
+        "兰陵": [
+          307,
+          310
+        ]
+      },
+      "hypothesized_member_commanderies": [
+        "毗陵"
+      ],
+      "hypothesis_map_default": false
+    },
+    {
+      "id": "DONGHAI_POST_YUE",
+      "begin": 311,
+      "end": 316,
+      "kingdom_name": "东海",
+      "seat_commandery": "东海",
+      "holder": "司马毗（没于石勒后继统未明）",
+      "confirmed_member_commanderies": [
+        "东海"
+      ],
+      "inferred_member_commanderies": [],
+      "mapping_policy": "annotation_only_unknown_members",
+      "certainty": "unknown",
+      "map_default": false,
+      "source_ids": [
+        "JS059",
+        "JS064",
+        "SS035",
+        "BOOKI_PILING"
+      ],
+      "notes": "311年越薨，世子毗后没石勒；元帝以冲继为世子、食毗陵及改食下邳兰陵是后续材料，不能把冲继统前推成311年已即王位。毗陵食封始年和越后成员均未定。",
+      "hypothesized_member_commanderies": [
+        "下邳",
+        "济阳",
+        "兰陵",
+        "毗陵"
+      ],
+      "hypothesis_map_default": false
+    },
+    {
+      "id": "CHANGLE_WUYI",
+      "begin": 290,
+      "end": 308,
+      "kingdom_name": "长乐",
+      "seat_commandery": "安平",
+      "holder": "司马玷等",
+      "confirmed_member_commanderies": [
+        "安平"
+      ],
+      "inferred_member_commanderies": [
+        "武邑"
+      ],
+      "mapping_policy": "annotation_only_unknown_transfer_year",
+      "certainty": "unknown",
+      "map_default": false,
+      "source_ids": [
+        "BOOKI_WUYI",
+        "BASE308"
+      ],
+      "notes": "武邑王承惠帝时薨无后、省还长乐，确年未详；289年武邑是独立国，不能早并。308成果将武邑作为支郡是竞争解释，本次不逐年确认。",
+      "date_bounds": {
+        "transfer": [
+          290,
+          306
+        ]
+      }
+    },
+    {
+      "id": "ZHAO_LUN_EXPANSION",
+      "begin": 300,
+      "end": 300,
+      "kingdom_name": "赵",
+      "seat_commandery": "赵",
+      "holder": "司马伦",
+      "confirmed_member_commanderies": [
+        "赵"
+      ],
+      "inferred_member_commanderies": [],
+      "mapping_policy": "seat_only_unknown_secondary_members",
+      "certainty": "unknown",
+      "map_default": true,
+      "source_ids": [
+        "JS059"
+      ],
+      "notes": "300年增五万户，旁郡名称未载；不以所督北方诸州填成多郡范围。301年篡位败死。",
+      "scope_type": "multi_commandery_members_unknown"
+    }
+  ],
+  "sources": [
+    {
+      "id": "JS003",
+      "title": "晋书卷三·武帝纪",
+      "kind": "原典转录",
+      "url": "https://zh.wikisource.org/zh-hans/晉書/卷003"
+    },
+    {
+      "id": "JS004",
+      "title": "晋书卷四·惠帝纪",
+      "kind": "原典转录",
+      "url": "https://zh.wikisource.org/zh-hans/晉書/卷004"
+    },
+    {
+      "id": "JS005",
+      "title": "晋书卷五·怀帝纪、愍帝纪",
+      "kind": "原典转录",
+      "url": "https://zh.wikisource.org/zh-hans/晉書/卷005"
+    },
+    {
+      "id": "JS038",
+      "title": "晋书卷三十八·宣五王、文六王传",
+      "kind": "原典转录",
+      "url": "https://zh.wikisource.org/zh-hans/晉書/卷038"
+    },
+    {
+      "id": "JS053",
+      "title": "晋书卷五十三·愍怀太子传",
+      "kind": "原典转录",
+      "url": "https://zh.wikisource.org/zh-hans/晉書/卷053"
+    },
+    {
+      "id": "JS059",
+      "title": "晋书卷五十九·八王传",
+      "kind": "原典转录",
+      "url": "https://zh.wikisource.org/zh-hans/晉書/卷059"
+    },
+    {
+      "id": "JS060",
+      "title": "晋书卷六十·索靖传",
+      "kind": "原典转录",
+      "url": "https://zh.wikisource.org/zh-hans/晉書/卷060"
+    },
+    {
+      "id": "JS064",
+      "title": "晋书卷六十四·武十三王等传",
+      "kind": "原典转录",
+      "url": "https://zh.wikisource.org/zh-hans/晉書/卷064"
+    },
+    {
+      "id": "HY008",
+      "title": "华阳国志卷八·大同志",
+      "kind": "原典转录及校释",
+      "url": "https://zh.wikisource.org/wiki/華陽國志/卷八"
+    },
+    {
+      "id": "SS035",
+      "title": "宋书卷三十五·州郡志一",
+      "kind": "原典转录",
+      "url": "https://zh.wikisource.org/wiki/宋書/卷35"
+    },
+    {
+      "id": "SS060",
+      "title": "宋书卷六十·荀伯子传",
+      "kind": "原典转录",
+      "url": "https://zh.wikisource.org/wiki/宋書/卷60"
+    },
+    {
+      "id": "GU2018",
+      "title": "顾江龙：太康十年分封与杨骏的兴灭",
+      "kind": "研究论文",
+      "year": 2018,
+      "journal": "华东师范大学学报（哲学社会科学版）",
+      "pages": "61—71",
+      "doi": "10.16382/j.cnki.1000-5579.2018.04.007",
+      "url": "https://xbzs.ecnu.edu.cn/CN/html/2018-4-61.htm"
+    },
+    {
+      "id": "CHGIS_XIANG",
+      "title": "CHGIS/TGAZ 项县 hvd_82047",
+      "kind": "官方时序地名数据",
+      "url": "https://tgaz.fudan.edu.cn/tgaz/placename/hvd_82047"
+    },
+    {
+      "id": "CHGIS_ZHU",
+      "title": "CHGIS/TGAZ 著县 hvd_45076",
+      "kind": "官方时序地名数据",
+      "url": "https://tgaz.fudan.edu.cn/tgaz/placename/hvd_45076"
+    },
+    {
+      "id": "BOOKI_WUYI",
+      "title": "中国行政区划通史·三国两晋南朝卷Ⅰ，安平、长乐、武邑考",
+      "kind": "本机书籍OCR核读",
+      "book_pages": "624—625",
+      "authors": "胡阿祥、孔祥军、徐成；周振鹤主编",
+      "publisher": "复旦大学出版社",
+      "local_ocr": "中国行政区划通史：三国两晋南朝卷Ⅰ(1).pdf_by_PaddleOCR-VL-1.6.md"
+    },
+    {
+      "id": "BOOKI_YUYANG",
+      "title": "中国行政区划通史·三国两晋南朝卷Ⅰ，渔阳郡考",
+      "kind": "本机书籍OCR核读",
+      "book_pages": "630",
+      "authors": "胡阿祥、孔祥军、徐成；周振鹤主编",
+      "publisher": "复旦大学出版社",
+      "local_ocr": "中国行政区划通史：三国两晋南朝卷Ⅰ(1).pdf_by_PaddleOCR-VL-1.6.md"
+    },
+    {
+      "id": "BOOKI_QIN",
+      "title": "中国行政区划通史·三国两晋南朝卷Ⅰ，扶风、秦国考",
+      "kind": "本机书籍OCR核读",
+      "book_pages": "644",
+      "authors": "胡阿祥、孔祥军、徐成；周振鹤主编",
+      "publisher": "复旦大学出版社",
+      "local_ocr": "中国行政区划通史：三国两晋南朝卷Ⅰ(1).pdf_by_PaddleOCR-VL-1.6.md"
+    },
+    {
+      "id": "BOOKI_SHU",
+      "title": "中国行政区划通史·三国两晋南朝卷Ⅰ，蜀郡、成都国考",
+      "kind": "本机书籍OCR核读",
+      "book_pages": "669",
+      "authors": "胡阿祥、孔祥军、徐成；周振鹤主编",
+      "publisher": "复旦大学出版社",
+      "local_ocr": "中国行政区划通史：三国两晋南朝卷Ⅰ(1).pdf_by_PaddleOCR-VL-1.6.md"
+    },
+    {
+      "id": "BOOKI_LANGYE",
+      "title": "中国行政区划通史·三国两晋南朝卷Ⅰ，琅邪、东莞考",
+      "kind": "本机书籍OCR核读",
+      "book_pages": "698",
+      "authors": "胡阿祥、孔祥军、徐成；周振鹤主编",
+      "publisher": "复旦大学出版社",
+      "local_ocr": "中国行政区划通史：三国两晋南朝卷Ⅰ(1).pdf_by_PaddleOCR-VL-1.6.md"
+    },
+    {
+      "id": "BOOKI_LANLING",
+      "title": "中国行政区划通史·三国两晋南朝卷Ⅰ，兰陵郡考",
+      "kind": "本机书籍OCR核读",
+      "book_pages": "703",
+      "authors": "胡阿祥、孔祥军、徐成；周振鹤主编",
+      "publisher": "复旦大学出版社",
+      "local_ocr": "中国行政区划通史：三国两晋南朝卷Ⅰ(1).pdf_by_PaddleOCR-VL-1.6.md"
+    },
+    {
+      "id": "BOOKI_CHENGDU",
+      "title": "中国行政区划通史·三国两晋南朝卷Ⅰ，荆州成都郡考",
+      "kind": "本机书籍OCR核读",
+      "book_pages": "725",
+      "authors": "胡阿祥、孔祥军、徐成；周振鹤主编",
+      "publisher": "复旦大学出版社",
+      "local_ocr": "中国行政区划通史：三国两晋南朝卷Ⅰ(1).pdf_by_PaddleOCR-VL-1.6.md"
+    },
+    {
+      "id": "BOOKI_PILING",
+      "title": "中国行政区划通史·三国两晋南朝卷Ⅰ，毗陵、晋陵考",
+      "kind": "本机书籍OCR核读",
+      "book_pages": "732",
+      "authors": "胡阿祥、孔祥军、徐成；周振鹤主编",
+      "publisher": "复旦大学出版社",
+      "local_ocr": "中国行政区划通史：三国两晋南朝卷Ⅰ(1).pdf_by_PaddleOCR-VL-1.6.md"
+    },
+    {
+      "id": "BASE289",
+      "title": "项目既有289年封国成果",
+      "kind": "既有成果，非独立文献",
+      "local": "data/jin-fief-research/royal_fiefs_289.json"
+    },
+    {
+      "id": "BASE308",
+      "title": "项目既有308年封国成果",
+      "kind": "既有成果，非独立文献",
+      "local": "data/jin-fief-research/royal_fiefs_308.json"
+    }
+  ],
+  "validation": {
+    "rule": "map_default记录须逐年度与行政实体和实控掩膜交集，source_ids均能解析；本文件不直接生成经纬度边界。"
+  }
+}

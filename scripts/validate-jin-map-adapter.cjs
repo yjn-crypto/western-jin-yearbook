@@ -108,7 +108,7 @@ async function routing(){
   const app=fs.readFileSync(path.join(base,'app.js'),'utf8'),start=app.indexOf('  function renderYearMap('),end=app.indexOf('  async function exportCurrentYearMap(',start);
   const controls=new Map(),calls=[],overlay=new Node('svg');
   const context=vm.createContext({window:{...sandbox.window,JIN_MAP_VIEW:view},console,Map,
-    jinMapRequest:0,jinMapCache:new Map(),currentDynasty:{key:'western-jin'},currentMap:null,currentMapFeatures:[],mapReadingMode:false,
+    jinMapRequest:0,jinMapCache:new Map(),jinMapVersion:{value:'legacy'},currentDynasty:{key:'western-jin'},currentMap:null,currentMapFeatures:[],mapReadingMode:false,
     $:id=>{if(!controls.has(id))controls.set(id,{});return controls.get(id);},
     yearMapOverlay:overlay,mapLabelLayouts:new WeakMap(),yearMapPanel:{hidden:true},textMapLinkControl:{},
     yearMapExport:{},yearMapCsv:{},yearMapGeoJson:{},yearMapUhd:{},yearMapLoadUhd:{},yearMapStage:{style:{}},
