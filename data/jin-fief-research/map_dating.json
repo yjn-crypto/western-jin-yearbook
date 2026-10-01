@@ -1,0 +1,242 @@
+{
+  "scope": "依据已转写的州郡名称及原图名义政区框架进行工作断代；不将图面当实际控制区。",
+  "recommended_year": 308,
+  "recommended_era": "西晋永嘉二年",
+  "recommended_map_title": "西晋永嘉二年（308）州郡与封国建置复原（示意）",
+  "confidence": "medium_for_working_year_low_for_exact_original_date",
+  "earliest_bound": 308,
+  "latest_bound": 310,
+  "bounds_interpretation": "晋宁改名308为明确下限，毗陵改晋陵311给出正常使用现称时的上限；取窗口最早年308，尽量少引入后续沿革。旧名沿用、漏绘与编图拼合会破坏严格上下限。",
+  "is_exact_snapshot": false,
+  "assert_all_units_coexisted": false,
+  "reason_single_year": "无需逐年匹配；308是满足最晚明确建置且仍保留毗陵旧名的最早可用工作年。307不足以容纳晋宁标签。",
+  "evidence_events": [
+    {
+      "name": "湘州",
+      "start_year": 307,
+      "last_year_of_name": null,
+      "interpretation": "307年分荆、江、广诸郡置；图中长沙等及始安、始兴、临贺同归湘州，吻合《晋书》系统。",
+      "confidence": "strong",
+      "source_urls": [
+        "https://zh.wikisource.org/zh-hans/晉書/卷015"
+      ],
+      "short_evidence": "怀帝又分长沙、衡阳、湘东、零陵、邵陵、桂阳及广州之始安、始兴、临贺九郡置湘州。"
+    },
+    {
+      "name": "江州",
+      "start_year": 291,
+      "last_year_of_name": null,
+      "interpretation": "291年分扬州七郡及荆州武昌、桂阳、安成置。",
+      "confidence": "strong",
+      "source_urls": [
+        "https://tgaz.fudan.edu.cn/tgaz/placename/hvd_30121"
+      ],
+      "short_evidence": "惠帝元康元年……合十郡，因江水之名而置江州。"
+    },
+    {
+      "name": "晋宁",
+      "start_year": 308,
+      "last_year_of_name": null,
+      "interpretation": "303年从建宁析益州郡，308年更名晋宁；为现存标签最晚的明确下限。",
+      "confidence": "strong",
+      "source_urls": [
+        "https://tgaz.fudan.edu.cn/tgaz/placename/hvd_80725"
+      ],
+      "short_evidence": "永嘉二年（308年），改益州郡曰晋宁。"
+    },
+    {
+      "name": "毗陵",
+      "start_year": 281,
+      "last_year_of_name": 310,
+      "interpretation": "281年置郡；311年改称晋陵，原图仍称毗陵。311改名由《宋书》及CHGIS采取。",
+      "confidence": "strong",
+      "source_urls": [
+        "https://tgaz.fudan.edu.cn/tgaz/placename/hvd_32366"
+      ],
+      "short_evidence": "永嘉五年，元帝改为晋陵。"
+    },
+    {
+      "name": "晋昌",
+      "start_year": 295,
+      "last_year_of_name": null,
+      "interpretation": "295年分敦煌五县、酒泉沙头县并新立县置。",
+      "confidence": "strong",
+      "source_urls": [
+        "https://zh.wikisource.org/zh-hans/晉書/卷014"
+      ],
+      "short_evidence": "元康五年……凡八县为晋昌郡。"
+    },
+    {
+      "name": "寻阳",
+      "start_year": 304,
+      "last_year_of_name": null,
+      "interpretation": "304年合庐江寻阳县与武昌柴桑县置；307年又取豫章彭泽。",
+      "confidence": "strong",
+      "source_urls": [
+        "https://zh.wikisource.org/zh-hans/晉書/卷015"
+      ],
+      "short_evidence": "永兴元年，分庐江之寻阳、武昌之柴桑二县置寻阳郡。"
+    },
+    {
+      "name": "历阳",
+      "start_year": 304,
+      "last_year_of_name": null,
+      "interpretation": "304年分淮南乌江、历阳二县置。",
+      "confidence": "strong",
+      "source_urls": [
+        "https://zh.wikisource.org/zh-hans/晉書/卷015"
+      ],
+      "short_evidence": "分淮南之乌江、历阳二县置历阳郡。"
+    },
+    {
+      "name": "义兴",
+      "start_year": 304,
+      "last_year_of_name": null,
+      "interpretation": "按《晋书》《宋书》及CHGIS置于304；不采用网上将周玘三定江南后311前事混为310建郡的说法。",
+      "confidence": "strong",
+      "source_urls": [
+        "https://tgaz.fudan.edu.cn/tgaz/placename/hvd_32351"
+      ],
+      "short_evidence": "晋惠帝永兴元年（304年），分吴兴之阳羡、丹阳之永世立。"
+    },
+    {
+      "name": "宁州",
+      "start_year": 303,
+      "last_year_of_name": null,
+      "interpretation": "271初置、282废入益州、303复置，结合其它标签应是复置后。",
+      "confidence": "strong",
+      "source_urls": [
+        "https://zh.wikisource.org/zh-hans/晉書/卷014"
+      ],
+      "short_evidence": "太康三年……废宁州入益州；太安二年，惠帝复置宁州。"
+    },
+    {
+      "name": "狄道",
+      "start_year": 290,
+      "last_year_of_name": null,
+      "interpretation": "惠帝时分陇西；CHGIS部分县记录以290始，现代综述多暂定297左右，精确年未定。只作为武帝朝之后线索。",
+      "confidence": "medium",
+      "source_urls": [
+        "https://tgaz.fudan.edu.cn/tgaz/placename/hvd_70079"
+      ],
+      "short_evidence": "西晋惠帝改属狄道郡。"
+    },
+    {
+      "name": "濮阳",
+      "start_year": 301,
+      "last_year_of_name": null,
+      "interpretation": "277国号濮阳，289复东郡，301再称濮阳。与晚期标签合看应属于301后。",
+      "confidence": "strong",
+      "source_urls": [
+        "https://tgaz.fudan.edu.cn/tgaz/placename/hvd_82320"
+      ],
+      "short_evidence": "太康十年（289年）复属东郡，永宁元年（301年）属濮阳郡。"
+    },
+    {
+      "name": "陈",
+      "start_year": 302,
+      "last_year_of_name": null,
+      "interpretation": "277后陈郡地并梁，CHGIS县属以302复陈；现代综述亦有301左右。",
+      "confidence": "medium",
+      "source_urls": [
+        "https://tgaz.fudan.edu.cn/tgaz/placename/hvd_82047"
+      ],
+      "short_evidence": "约咸宁三年（277年）属梁国，永宁二年（302年）复属陈郡。"
+    },
+    {
+      "name": "襄城",
+      "start_year": 266,
+      "last_year_of_name": null,
+      "interpretation": "原图有襄城郡，只能可靠推出不早于266；不是待襄城王受封后才设。",
+      "confidence": "strong",
+      "source_urls": [
+        "https://zh.wikisource.org/zh-hans/晉書/卷014"
+      ],
+      "short_evidence": "襄城郡：泰始二年置。"
+    },
+    {
+      "name": "西海",
+      "start_year": 195,
+      "last_year_of_name": null,
+      "interpretation": "为张掖居延地区的西海郡，汉献帝时已设；不能误当西晋晚期新郡。",
+      "confidence": "strong",
+      "source_urls": [
+        "https://zh.wikisource.org/zh-hans/晉書/卷014"
+      ],
+      "short_evidence": "西海郡……汉献帝兴平二年，武威太守张雅请置。"
+    },
+    {
+      "name": "晋安",
+      "start_year": 282,
+      "last_year_of_name": null,
+      "interpretation": "282从建安析置，289保留；291起属江州。",
+      "confidence": "strong",
+      "source_urls": [
+        "https://tgaz.fudan.edu.cn/tgaz/placename/hvd_32055"
+      ],
+      "short_evidence": "晋安郡（282—467年）界线和治所。"
+    },
+    {
+      "name": "宁浦",
+      "start_year": 280,
+      "last_year_of_name": null,
+      "interpretation": "《晋书》太康郡国已有宁浦；始置有吴置、太康初或286等考说，但均不妨289保留。",
+      "confidence": "medium",
+      "source_urls": [
+        "https://zh.wikisource.org/zh-hans/晉書/卷015"
+      ],
+      "short_evidence": "宁浦郡（原书寧浦；始置年份诸说，勿据该名限定308）。"
+    }
+  ],
+  "inconsistencies": [
+    {
+      "issue": "图面疆域与实际控制矛盾",
+      "detail": "图中全蜀及北部仍整体作西晋色。304后成汉兴起、汉赵扩张，不能把308名义州郡面当作308实际政治疆域。第二图须在标题/图例注明名义建置，若绘控制区须另用同期政权面。",
+      "severity": "high"
+    },
+    {
+      "issue": "原图非穷尽郡目",
+      "detail": "转写仅172处，未列兰陵、东燕、武兴、晋兴、安故及上庸、宜都等；可为底图漏绘、识别遗漏、简化或异时拼合，缺名不能直接认定该年不存在。",
+      "severity": "high"
+    },
+    {
+      "issue": "晋宁改名史料异文",
+      "detail": "《晋书·地理志》定永嘉二年；同书王逊传叙于元帝事，校勘记已指出。此处依用户CHGIS优先原则采用CHGIS 308。",
+      "severity": "medium"
+    },
+    {
+      "issue": "湘州领郡不同史志系统",
+      "detail": "《晋书》九郡系统含始安、始兴、临贺；《宋书》八郡系统含建昌、营阳，营阳断年亦有考异。原图接近前者，不静默混并二者。",
+      "severity": "medium"
+    },
+    {
+      "issue": "武昌州属疑误",
+      "detail": "原图武昌文字落荆州面，291以后史志与CHGIS应属江州；可能图面州界/文字锚点误差，应以CHGIS时间属与历史依据校正。",
+      "severity": "medium"
+    },
+    {
+      "issue": "安平旧名与长乐封国",
+      "detail": "原图以地理郡名概称，未严格按年显示封国异名；应由封国表处理，不能用未写国号否定工作断年。",
+      "severity": "medium"
+    }
+  ],
+  "research_method_source": {
+    "title": "杜预释地与西晋郡县沿革考略",
+    "author": "熊少聪",
+    "journal": "历史地理研究",
+    "year": 2024,
+    "volume": "44(4)",
+    "pages": "36—45",
+    "doi": "10.20166/j.issn.2096-6822.L20230087",
+    "url": "https://www.lsdlyj.com.cn/CN/abstract/article/2096-6822/70650",
+    "application": "该文揭示不同地理资料的断限和旧稿层次，不可把总表中每一名称强拼为同一截面；并支持289濮阳复东郡。"
+  },
+  "user_confirmed_labels": [
+    {
+      "name": "越巂",
+      "status": "confirmed_by_user",
+      "date": "2026-10-01",
+      "pending_review": false
+    }
+  ]
+}

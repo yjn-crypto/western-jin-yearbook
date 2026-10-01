@@ -83,8 +83,11 @@ assert.equal(context.selectMapLabels([paired[0],{...paired[0],entityId:'another-
 
 const actualOverlay=new Node('svg'),actualLayouts=new WeakMap(),actualWindow={};
 for(const filename of ['chen-data.js','chen-map-dynamic.js'])vm.runInNewContext(fs.readFileSync(new URL(`../data/${filename}`,import.meta.url),'utf8'),{window:actualWindow});
-const actual=vm.createContext({window:actualWindow,Math,Map,Set,Number,String,Boolean,mapZoom:1,yearMapOverlay:actualOverlay,mapLabelLayouts:actualLayouts,svgNode:(...args)=>new Node(...args)});
-for(const name of ['normalizeName','itemDisplayName','activeMapRecords','chenTerritoryFeature','chenTerritorySource','drawRegimes','mapDistance','chooseEntitySeat','resolveSnapshotFeatures','dynamicFiefLabels','snapshotFeatureForMapArea','appendHotspots','mapTerritoryLabelGuard','mapLabelVisible','selectMapLabels','renderDynamicMap'])vm.runInContext(extract(name),actual);
+const actualControls=new Map();
+const actual=vm.createContext({window:actualWindow,Math,Map,Set,Number,String,Boolean,mapZoom:1,yearMapOverlay:actualOverlay,mapLabelLayouts:actualLayouts,svgNode:(...args)=>new Node(...args),
+  document:{createElement:(tag)=>new Node(tag)},
+  $:id=>{if(!actualControls.has(id))actualControls.set(id,new Node('div'));return actualControls.get(id);}});
+for(const name of ['normalizeName','itemDisplayName','activeMapRecords','chenTerritoryFeature','chenTerritorySource','drawRegimes','mapDistance','chooseEntitySeat','resolveSnapshotFeatures','dynamicFiefLabels','snapshotFeatureForMapArea','appendHotspots','appendMapSymbolLegend','mapSeatSymbol','mapTerritoryLabelGuard','mapLabelVisible','selectMapLabels','renderDynamicMap'])vm.runInContext(extract(name),actual);
 const phaseAt=(entity,year)=>(entity.phases||[]).find((phase)=>Number(phase.start)<=year&&year<=Number(phase.end));
 const states=actualWindow.CHEN_DATA.regimes.chen.states.flatMap((entity)=>{
   const phase=phaseAt(entity,588);if(!phase)return [];
@@ -128,7 +131,8 @@ borderLabels.push({level:'state',kind:'state-seat',text:'陳州',x:490,y:500,fon
 const borderHeight=context.placeAndDrawLabels(borderLayer,borderLabels,[0,0,1000,1000],1,1000,territoryGuard);
 const borderNames=borderLayer.querySelectorAll('.dynamic-map-label'),northernNames=borderNames.filter((node)=>node.dataset.mapKey.startsWith('reference:'));
 assert.equal(northernNames.length,2,'Northern references must remain visible, rather than being removed wholesale');
-assert.deepEqual(northernNames.map((node)=>[node.getAttribute('x'),node.getAttribute('y'),node.getAttribute('text-anchor')]),[[469.84,500,'end'],[469.84,500,'end']].map((row)=>row.map(String)),'Northern names are allowed to overlap at their own seat');
+// Seat text is capped at 13 px: 490 - (13 * 1.4 * .8) = 475.44.
+assert.deepEqual(northernNames.map((node)=>[node.getAttribute('x'),node.getAttribute('y'),node.getAttribute('text-anchor')]),[[475.44,500,'end'],[475.44,500,'end']].map((row)=>row.map(String)),'Northern names are allowed to overlap at their own seat');
 for(const node of northernNames) {
   const font=Number.parseFloat(node.style.fontSize),width=context.labelWidth(node.textContent,font)+font*.35,height=font*1.4;
   const x=Number(node.getAttribute('x')),y=Number(node.getAttribute('y')),anchor=node.getAttribute('text-anchor');
@@ -146,7 +150,8 @@ for(const level of ['state','prefecture','county'])for(let index=0;index<8;index
   labels.push({level,kind:`${level}-seat`,text:`${level==='state'?'州':level==='prefecture'?'郡國':'縣國'}${index}`,x:50,y:50,
     anchorX:25,anchorY:25,fontSize:18,priority:100-index,entityId:`${level}-${index}`,mapKey:`entity:${level}-${index}`,fief:level!=='state'});
 }
-context.mapLabelLayouts.set(overlay,{year:588,labels,layer,plot:[0,0,110,110]});
+// Keep this fixture dense enough to overflow with the current 13 px seat text.
+context.mapLabelLayouts.set(overlay,{year:588,labels,layer,plot:[0,0,60,60]});
 for(const [zoom,levels] of expected) {
   context.mapZoom=zoom;context.layoutDynamicMapLabels();
   const textNodes=layer.querySelectorAll('.dynamic-map-label');

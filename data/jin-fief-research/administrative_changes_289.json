@@ -1,0 +1,2345 @@
+{
+  "target_year": 289,
+  "time_convention": "太康十年年末状态；不等同机械公历12月31日。289年内迁封以当年最终有效状态处理。",
+  "scope": "行政区回溯；受封人、爵级、国号和支郡关系由封国研究表叠加。",
+  "source_labels_count": 172,
+  "default_rule": "对无专门条目的郡沿用原图示意面，但保持provisional，不声明已逐郡复原289边界。CHGIS同年同实体geometry/point优先。",
+  "zhou_rules": [
+    {
+      "source_zhou": "江州",
+      "action": "abolish_for_289",
+      "targets": {
+        "扬州": [
+          "豫章",
+          "鄱阳",
+          "庐陵",
+          "临川",
+          "南康",
+          "建安",
+          "晋安"
+        ],
+        "荆州": [
+          "武昌",
+          "安成",
+          "桂阳"
+        ]
+      },
+      "source_urls": [
+        "https://zh.wikisource.org/zh-hans/晉書/卷015"
+      ]
+    },
+    {
+      "source_zhou": "湘州",
+      "action": "abolish_for_289",
+      "targets": {
+        "荆州": [
+          "长沙",
+          "衡阳",
+          "湘东",
+          "零陵",
+          "邵陵",
+          "桂阳"
+        ],
+        "广州": [
+          "始安",
+          "始兴",
+          "临贺"
+        ]
+      },
+      "source_urls": [
+        "https://zh.wikisource.org/zh-hans/晉書/卷015",
+        "https://tgaz.fudan.edu.cn/tgaz/placename/hvd_33384"
+      ]
+    },
+    {
+      "source_zhou": "宁州",
+      "action": "abolish_for_289",
+      "targets": {
+        "益州": [
+          "建宁",
+          "云南",
+          "兴古",
+          "永昌",
+          "晋宁合建宁"
+        ]
+      },
+      "source_urls": [
+        "https://zh.wikisource.org/zh-hans/晉書/卷014",
+        "https://tgaz.fudan.edu.cn/tgaz/placename/hvd_45514"
+      ]
+    },
+    {
+      "source_zhou": "秦州",
+      "action": "retain_with_source_note",
+      "note": "《晋书》太康三年罢、七年复（286），因此289保留。现代部分综述系复置于297，有不同考说；若CHGIS记录不支持289，需登记来源冲突而不是静默改史。",
+      "source_urls": [
+        "https://zh.wikisource.org/zh-hans/晉書/卷014"
+      ]
+    }
+  ],
+  "jun_rules": [
+    {
+      "id": "L001",
+      "source_name": "西海",
+      "source_zhou_by_label": "凉州",
+      "target_name_base": "西海",
+      "target_zhou_289": "凉州",
+      "action": "keep_provisionally",
+      "verified_for_289": true,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "high",
+      "note": "195已置，289保留，不误当晋晚年新郡。",
+      "source_urls": [
+        "https://zh.wikisource.org/zh-hans/晉書/卷014",
+        "https://zh.wikisource.org/zh-hans/晉書/卷015"
+      ]
+    },
+    {
+      "id": "L002",
+      "source_name": "晋昌",
+      "source_zhou_by_label": "凉州",
+      "target_name_base": null,
+      "target_zhou_289": "凉州",
+      "action": "split_required",
+      "verified_for_289": true,
+      "geometry_policy": "do_not_assign_whole_polygon_to_single_parent_without_county_evidence",
+      "confidence": "high_for_history_low_for_boundary",
+      "note": "295由敦煌宜禾、伊吾、冥安、深泉、广至及酒泉沙头并新县组成，289须分别还父郡。可主部并敦煌作示意，但沙头来源必须标注未解，不能冒充准确289郡面。",
+      "target_candidates": [
+        "敦煌",
+        "酒泉"
+      ],
+      "source_urls": [
+        "https://zh.wikisource.org/zh-hans/晉書/卷014"
+      ]
+    },
+    {
+      "id": "L003",
+      "source_name": "敦煌",
+      "source_zhou_by_label": "凉州",
+      "target_name_base": "敦煌",
+      "target_zhou_289": "凉州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L004",
+      "source_name": "酒泉",
+      "source_zhou_by_label": "凉州",
+      "target_name_base": "酒泉",
+      "target_zhou_289": "凉州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L005",
+      "source_name": "张掖",
+      "source_zhou_by_label": "凉州",
+      "target_name_base": "张掖",
+      "target_zhou_289": "凉州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L006",
+      "source_name": "西郡",
+      "source_zhou_by_label": "凉州",
+      "target_name_base": "西郡",
+      "target_zhou_289": "凉州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L007",
+      "source_name": "武威",
+      "source_zhou_by_label": "凉州",
+      "target_name_base": "武威",
+      "target_zhou_289": "凉州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L008",
+      "source_name": "西平",
+      "source_zhou_by_label": "凉州",
+      "target_name_base": "西平",
+      "target_zhou_289": "凉州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L009",
+      "source_name": "金城",
+      "source_zhou_by_label": "凉州",
+      "target_name_base": "金城",
+      "target_zhou_289": "凉州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L010",
+      "source_name": "狄道",
+      "source_zhou_by_label": "秦州",
+      "target_name_base": "陇西",
+      "target_zhou_289": "秦州",
+      "action": "merge",
+      "verified_for_289": true,
+      "geometry_policy": "union_with_陇西_sketch",
+      "confidence": "high",
+      "note": "惠帝时置，289尚属陇西。惠帝置郡具体年份不强定。",
+      "source_urls": [
+        "https://zh.wikisource.org/zh-hans/晉書/卷014",
+        "https://tgaz.fudan.edu.cn/tgaz/placename/hvd_70079"
+      ]
+    },
+    {
+      "id": "L011",
+      "source_name": "陇西",
+      "source_zhou_by_label": "秦州",
+      "target_name_base": "陇西",
+      "target_zhou_289": "秦州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L012",
+      "source_name": "南安",
+      "source_zhou_by_label": "秦州",
+      "target_name_base": "南安",
+      "target_zhou_289": "秦州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L013",
+      "source_name": "略阳",
+      "source_zhou_by_label": "秦州",
+      "target_name_base": "略阳",
+      "target_zhou_289": "秦州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L014",
+      "source_name": "天水",
+      "source_zhou_by_label": "秦州",
+      "target_name_base": "天水",
+      "target_zhou_289": "秦州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L015",
+      "source_name": "始平",
+      "source_zhou_by_label": "雍州",
+      "target_name_base": "始平",
+      "target_zhou_289": "雍州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L016",
+      "source_name": "安定",
+      "source_zhou_by_label": "雍州",
+      "target_name_base": "安定",
+      "target_zhou_289": "雍州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L017",
+      "source_name": "扶风",
+      "source_zhou_by_label": "雍州",
+      "target_name_base": "扶风",
+      "target_zhou_289": "雍州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L018",
+      "source_name": "新平",
+      "source_zhou_by_label": "雍州",
+      "target_name_base": "新平",
+      "target_zhou_289": "雍州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L019",
+      "source_name": "北地",
+      "source_zhou_by_label": "雍州",
+      "target_name_base": "北地",
+      "target_zhou_289": "雍州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L020",
+      "source_name": "京兆",
+      "source_zhou_by_label": "雍州",
+      "target_name_base": "京兆",
+      "target_zhou_289": "雍州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L021",
+      "source_name": "冯翊",
+      "source_zhou_by_label": "雍州",
+      "target_name_base": "冯翊",
+      "target_zhou_289": "雍州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L022",
+      "source_name": "阴平",
+      "source_zhou_by_label": "秦州",
+      "target_name_base": "阴平",
+      "target_zhou_289": "秦州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L023",
+      "source_name": "武都",
+      "source_zhou_by_label": "秦州",
+      "target_name_base": "武都",
+      "target_zhou_289": "秦州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L024",
+      "source_name": "汉中",
+      "source_zhou_by_label": "梁州",
+      "target_name_base": "汉中",
+      "target_zhou_289": "梁州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L025",
+      "source_name": "上洛",
+      "source_zhou_by_label": "司州",
+      "target_name_base": "上洛",
+      "target_zhou_289": "司州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L026",
+      "source_name": "魏兴",
+      "source_zhou_by_label": "梁州",
+      "target_name_base": "魏兴",
+      "target_zhou_289": "荆州",
+      "action": "reassign_zhou",
+      "verified_for_289": true,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "high",
+      "note": "按289州属回溯；若郡/州边界跨时期，合面仅为复原示意。",
+      "source_urls": [
+        "https://zh.wikisource.org/zh-hans/晉書/卷014",
+        "https://zh.wikisource.org/zh-hans/晉書/卷015"
+      ]
+    },
+    {
+      "id": "L027",
+      "source_name": "梓潼",
+      "source_zhou_by_label": "梁州",
+      "target_name_base": "梓潼",
+      "target_zhou_289": "梁州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L028",
+      "source_name": "巴西",
+      "source_zhou_by_label": "梁州",
+      "target_name_base": "巴西",
+      "target_zhou_289": "梁州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L029",
+      "source_name": "广汉",
+      "source_zhou_by_label": "梁州",
+      "target_name_base": "广汉",
+      "target_zhou_289": "梁州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L030",
+      "source_name": "蜀郡",
+      "source_zhou_by_label": "益州",
+      "target_name_base": "蜀郡",
+      "target_zhou_289": "益州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L031",
+      "source_name": "汉嘉",
+      "source_zhou_by_label": "益州",
+      "target_name_base": "汉嘉",
+      "target_zhou_289": "益州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L032",
+      "source_name": "犍为",
+      "source_zhou_by_label": "益州",
+      "target_name_base": "犍为",
+      "target_zhou_289": "益州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L033",
+      "source_name": "江阳",
+      "source_zhou_by_label": "益州",
+      "target_name_base": "江阳",
+      "target_zhou_289": "益州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L034",
+      "source_name": "朱提",
+      "source_zhou_by_label": "益州",
+      "target_name_base": "朱提",
+      "target_zhou_289": "益州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L035",
+      "source_name": "越巂",
+      "source_zhou_by_label": "益州",
+      "target_name_base": "越巂",
+      "target_zhou_289": "益州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L036",
+      "source_name": "牂牁",
+      "source_zhou_by_label": "益州",
+      "target_name_base": "牂牁",
+      "target_zhou_289": "益州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L037",
+      "source_name": "巴郡",
+      "source_zhou_by_label": "梁州",
+      "target_name_base": "巴郡",
+      "target_zhou_289": "梁州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L038",
+      "source_name": "涪陵",
+      "source_zhou_by_label": "梁州",
+      "target_name_base": "涪陵",
+      "target_zhou_289": "梁州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L039",
+      "source_name": "巴东",
+      "source_zhou_by_label": "梁州",
+      "target_name_base": "巴东",
+      "target_zhou_289": "梁州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L040",
+      "source_name": "建平",
+      "source_zhou_by_label": "荆州",
+      "target_name_base": "建平",
+      "target_zhou_289": "荆州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L041",
+      "source_name": "新城",
+      "source_zhou_by_label": "梁州",
+      "target_name_base": "新城",
+      "target_zhou_289": "荆州",
+      "action": "reassign_zhou",
+      "verified_for_289": true,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "high",
+      "note": "按289州属回溯；若郡/州边界跨时期，合面仅为复原示意。",
+      "source_urls": [
+        "https://zh.wikisource.org/zh-hans/晉書/卷014",
+        "https://zh.wikisource.org/zh-hans/晉書/卷015"
+      ]
+    },
+    {
+      "id": "L042",
+      "source_name": "顺阳",
+      "source_zhou_by_label": "荆州",
+      "target_name_base": "顺阳",
+      "target_zhou_289": "荆州",
+      "action": "keep_provisionally",
+      "verified_for_289": true,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "high",
+      "note": "289南乡改顺阳，年末表保留顺阳，封国名按封爵时段覆盖。",
+      "source_urls": [
+        "https://zh.wikisource.org/zh-hans/晉書/卷014",
+        "https://zh.wikisource.org/zh-hans/晉書/卷015"
+      ]
+    },
+    {
+      "id": "L043",
+      "source_name": "南阳",
+      "source_zhou_by_label": "荆州",
+      "target_name_base": "南阳",
+      "target_zhou_289": "荆州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L044",
+      "source_name": "义阳",
+      "source_zhou_by_label": "荆州",
+      "target_name_base": "义阳",
+      "target_zhou_289": "荆州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L045",
+      "source_name": "襄阳",
+      "source_zhou_by_label": "荆州",
+      "target_name_base": "襄阳",
+      "target_zhou_289": "荆州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L046",
+      "source_name": "江夏",
+      "source_zhou_by_label": "荆州",
+      "target_name_base": "江夏",
+      "target_zhou_289": "荆州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L047",
+      "source_name": "南郡",
+      "source_zhou_by_label": "荆州",
+      "target_name_base": "南郡",
+      "target_zhou_289": "荆州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L048",
+      "source_name": "南平",
+      "source_zhou_by_label": "荆州",
+      "target_name_base": "南平",
+      "target_zhou_289": "荆州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L049",
+      "source_name": "天门",
+      "source_zhou_by_label": "荆州",
+      "target_name_base": "天门",
+      "target_zhou_289": "荆州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L050",
+      "source_name": "武陵",
+      "source_zhou_by_label": "荆州",
+      "target_name_base": "武陵",
+      "target_zhou_289": "荆州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L051",
+      "source_name": "武昌",
+      "source_zhou_by_label": "荆州",
+      "target_name_base": "武昌",
+      "target_zhou_289": "荆州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L052",
+      "source_name": "河东",
+      "source_zhou_by_label": "司州",
+      "target_name_base": "河东",
+      "target_zhou_289": "司州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L053",
+      "source_name": "河内",
+      "source_zhou_by_label": "司州",
+      "target_name_base": "河内",
+      "target_zhou_289": "司州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L054",
+      "source_name": "弘农",
+      "source_zhou_by_label": "司州",
+      "target_name_base": "弘农",
+      "target_zhou_289": "司州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L055",
+      "source_name": "河南",
+      "source_zhou_by_label": "司州",
+      "target_name_base": "河南",
+      "target_zhou_289": "司州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L056",
+      "source_name": "荥阳",
+      "source_zhou_by_label": "司州",
+      "target_name_base": "荥阳",
+      "target_zhou_289": "司州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L057",
+      "source_name": "平阳",
+      "source_zhou_by_label": "司州",
+      "target_name_base": "平阳",
+      "target_zhou_289": "司州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L058",
+      "source_name": "上党",
+      "source_zhou_by_label": "并州",
+      "target_name_base": "上党",
+      "target_zhou_289": "并州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L059",
+      "source_name": "汲郡",
+      "source_zhou_by_label": "司州",
+      "target_name_base": "汲郡",
+      "target_zhou_289": "司州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L060",
+      "source_name": "魏",
+      "source_zhou_by_label": "司州",
+      "target_name_base": "魏",
+      "target_zhou_289": "司州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L061",
+      "source_name": "顿丘",
+      "source_zhou_by_label": "司州",
+      "target_name_base": "顿丘",
+      "target_zhou_289": "司州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L062",
+      "source_name": "广平",
+      "source_zhou_by_label": "司州",
+      "target_name_base": "广平",
+      "target_zhou_289": "司州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L063",
+      "source_name": "阳平",
+      "source_zhou_by_label": "司州",
+      "target_name_base": "阳平",
+      "target_zhou_289": "司州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L064",
+      "source_name": "西河",
+      "source_zhou_by_label": "并州",
+      "target_name_base": "西河",
+      "target_zhou_289": "并州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L065",
+      "source_name": "太原",
+      "source_zhou_by_label": "并州",
+      "target_name_base": "太原",
+      "target_zhou_289": "并州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L066",
+      "source_name": "雁门",
+      "source_zhou_by_label": "并州",
+      "target_name_base": "雁门",
+      "target_zhou_289": "并州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L067",
+      "source_name": "新兴",
+      "source_zhou_by_label": "并州",
+      "target_name_base": "新兴",
+      "target_zhou_289": "并州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L068",
+      "source_name": "乐平",
+      "source_zhou_by_label": "并州",
+      "target_name_base": "乐平",
+      "target_zhou_289": "并州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L069",
+      "source_name": "代郡",
+      "source_zhou_by_label": "幽州",
+      "target_name_base": "代郡",
+      "target_zhou_289": "幽州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L070",
+      "source_name": "广宁",
+      "source_zhou_by_label": "幽州",
+      "target_name_base": "广宁",
+      "target_zhou_289": "幽州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L071",
+      "source_name": "上谷",
+      "source_zhou_by_label": "幽州",
+      "target_name_base": "上谷",
+      "target_zhou_289": "幽州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L072",
+      "source_name": "范阳",
+      "source_zhou_by_label": "幽州",
+      "target_name_base": "范阳",
+      "target_zhou_289": "幽州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L073",
+      "source_name": "燕",
+      "source_zhou_by_label": "幽州",
+      "target_name_base": "燕",
+      "target_zhou_289": "幽州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L074",
+      "source_name": "北平",
+      "source_zhou_by_label": "幽州",
+      "target_name_base": "北平",
+      "target_zhou_289": "幽州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L075",
+      "source_name": "辽西",
+      "source_zhou_by_label": "幽州",
+      "target_name_base": "辽西",
+      "target_zhou_289": "幽州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L076",
+      "source_name": "辽东",
+      "source_zhou_by_label": "平州",
+      "target_name_base": "辽东",
+      "target_zhou_289": "平州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L077",
+      "source_name": "昌黎",
+      "source_zhou_by_label": "平州",
+      "target_name_base": "昌黎",
+      "target_zhou_289": "平州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L078",
+      "source_name": "玄菟",
+      "source_zhou_by_label": "平州",
+      "target_name_base": "玄菟",
+      "target_zhou_289": "平州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L079",
+      "source_name": "乐浪",
+      "source_zhou_by_label": "平州",
+      "target_name_base": "乐浪",
+      "target_zhou_289": "平州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L080",
+      "source_name": "带方",
+      "source_zhou_by_label": "平州",
+      "target_name_base": "带方",
+      "target_zhou_289": "平州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L081",
+      "source_name": "常山",
+      "source_zhou_by_label": "冀州",
+      "target_name_base": "常山",
+      "target_zhou_289": "冀州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L082",
+      "source_name": "中山",
+      "source_zhou_by_label": "冀州",
+      "target_name_base": "中山",
+      "target_zhou_289": "冀州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L083",
+      "source_name": "高阳",
+      "source_zhou_by_label": "冀州",
+      "target_name_base": "高阳",
+      "target_zhou_289": "冀州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L084",
+      "source_name": "章武",
+      "source_zhou_by_label": "冀州",
+      "target_name_base": "章武",
+      "target_zhou_289": "冀州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L085",
+      "source_name": "博陵",
+      "source_zhou_by_label": "冀州",
+      "target_name_base": "博陵",
+      "target_zhou_289": "冀州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L086",
+      "source_name": "河间",
+      "source_zhou_by_label": "冀州",
+      "target_name_base": "河间",
+      "target_zhou_289": "冀州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L087",
+      "source_name": "渤海",
+      "source_zhou_by_label": "冀州",
+      "target_name_base": "渤海",
+      "target_zhou_289": "冀州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L088",
+      "source_name": "乐陵",
+      "source_zhou_by_label": "冀州",
+      "target_name_base": "乐陵",
+      "target_zhou_289": "冀州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L089",
+      "source_name": "安平",
+      "source_zhou_by_label": "冀州",
+      "target_name_base": "安平",
+      "target_zhou_289": "冀州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L090",
+      "source_name": "赵",
+      "source_zhou_by_label": "冀州",
+      "target_name_base": "赵",
+      "target_zhou_289": "冀州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L091",
+      "source_name": "巨鹿",
+      "source_zhou_by_label": "冀州",
+      "target_name_base": "巨鹿",
+      "target_zhou_289": "冀州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L092",
+      "source_name": "清河",
+      "source_zhou_by_label": "冀州",
+      "target_name_base": "清河",
+      "target_zhou_289": "冀州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L093",
+      "source_name": "平原",
+      "source_zhou_by_label": "冀州",
+      "target_name_base": "平原",
+      "target_zhou_289": "冀州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L094",
+      "source_name": "济南",
+      "source_zhou_by_label": "青州",
+      "target_name_base": "济南",
+      "target_zhou_289": "青州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L095",
+      "source_name": "乐安",
+      "source_zhou_by_label": "青州",
+      "target_name_base": "乐安",
+      "target_zhou_289": "青州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L096",
+      "source_name": "齐",
+      "source_zhou_by_label": "青州",
+      "target_name_base": "齐",
+      "target_zhou_289": "青州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L097",
+      "source_name": "东莱",
+      "source_zhou_by_label": "青州",
+      "target_name_base": "东莱",
+      "target_zhou_289": "青州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L098",
+      "source_name": "北海",
+      "source_zhou_by_label": "青州",
+      "target_name_base": "北海",
+      "target_zhou_289": "青州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L099",
+      "source_name": "城阳",
+      "source_zhou_by_label": "青州",
+      "target_name_base": "城阳",
+      "target_zhou_289": "青州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L100",
+      "source_name": "东莞",
+      "source_zhou_by_label": "徐州",
+      "target_name_base": "东莞",
+      "target_zhou_289": "徐州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L101",
+      "source_name": "琅邪",
+      "source_zhou_by_label": "徐州",
+      "target_name_base": "琅邪",
+      "target_zhou_289": "徐州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L102",
+      "source_name": "东平",
+      "source_zhou_by_label": "兖州",
+      "target_name_base": "东平",
+      "target_zhou_289": "兖州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L103",
+      "source_name": "濮阳",
+      "source_zhou_by_label": "兖州",
+      "target_name_base": "东郡",
+      "target_zhou_289": "兖州",
+      "action": "rename",
+      "verified_for_289": true,
+      "geometry_policy": "same_outline_name_change_only",
+      "confidence": "high",
+      "note": "太康十年司马允移淮南后复东郡，按年末表用东郡；301以后才再称濮阳。",
+      "source_urls": [
+        "https://tgaz.fudan.edu.cn/tgaz/placename/hvd_82320",
+        "https://www.lsdlyj.com.cn/CN/abstract/article/2096-6822/70650"
+      ]
+    },
+    {
+      "id": "L104",
+      "source_name": "陈留",
+      "source_zhou_by_label": "兖州",
+      "target_name_base": "陈留",
+      "target_zhou_289": "兖州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L105",
+      "source_name": "济阴",
+      "source_zhou_by_label": "兖州",
+      "target_name_base": "济阴",
+      "target_zhou_289": "兖州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L106",
+      "source_name": "济北",
+      "source_zhou_by_label": "兖州",
+      "target_name_base": "济北",
+      "target_zhou_289": "兖州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L107",
+      "source_name": "泰山",
+      "source_zhou_by_label": "兖州",
+      "target_name_base": "泰山",
+      "target_zhou_289": "兖州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L108",
+      "source_name": "高平",
+      "source_zhou_by_label": "兖州",
+      "target_name_base": "高平",
+      "target_zhou_289": "兖州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L109",
+      "source_name": "任城",
+      "source_zhou_by_label": "兖州",
+      "target_name_base": "任城",
+      "target_zhou_289": "兖州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L110",
+      "source_name": "鲁",
+      "source_zhou_by_label": "豫州",
+      "target_name_base": "鲁",
+      "target_zhou_289": "豫州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L111",
+      "source_name": "东海",
+      "source_zhou_by_label": "徐州",
+      "target_name_base": "东海",
+      "target_zhou_289": "徐州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L112",
+      "source_name": "彭城",
+      "source_zhou_by_label": "徐州",
+      "target_name_base": "彭城",
+      "target_zhou_289": "徐州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L113",
+      "source_name": "下邳",
+      "source_zhou_by_label": "徐州",
+      "target_name_base": "下邳",
+      "target_zhou_289": "徐州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L114",
+      "source_name": "临淮",
+      "source_zhou_by_label": "徐州",
+      "target_name_base": "临淮",
+      "target_zhou_289": "徐州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L115",
+      "source_name": "广陵",
+      "source_zhou_by_label": "徐州",
+      "target_name_base": "广陵",
+      "target_zhou_289": "徐州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L116",
+      "source_name": "陈",
+      "source_zhou_by_label": "豫州",
+      "target_name_base": "梁",
+      "target_zhou_289": "豫州",
+      "action": "merge",
+      "verified_for_289": true,
+      "geometry_policy": "union_with_梁_sketch",
+      "confidence": "high",
+      "note": "289陈地属梁国；不得将原图陈面又立陈国。原陈国一部分县入颍川，不能仅靠原图晚期陈面精确还原所有县界。",
+      "source_urls": [
+        "https://zh.wikisource.org/zh-hans/晉書/卷014",
+        "https://tgaz.fudan.edu.cn/tgaz/placename/hvd_82047"
+      ]
+    },
+    {
+      "id": "L117",
+      "source_name": "谯",
+      "source_zhou_by_label": "豫州",
+      "target_name_base": "谯",
+      "target_zhou_289": "豫州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L118",
+      "source_name": "梁",
+      "source_zhou_by_label": "豫州",
+      "target_name_base": "梁",
+      "target_zhou_289": "豫州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L119",
+      "source_name": "沛",
+      "source_zhou_by_label": "豫州",
+      "target_name_base": "沛",
+      "target_zhou_289": "豫州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L120",
+      "source_name": "颍川",
+      "source_zhou_by_label": "豫州",
+      "target_name_base": "颍川",
+      "target_zhou_289": "豫州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L121",
+      "source_name": "襄城",
+      "source_zhou_by_label": "豫州",
+      "target_name_base": "襄城",
+      "target_zhou_289": "豫州",
+      "action": "keep_provisionally",
+      "verified_for_289": true,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "high",
+      "note": "266已置郡，289保留；封国须依实际受封人时段。",
+      "source_urls": [
+        "https://zh.wikisource.org/zh-hans/晉書/卷014",
+        "https://zh.wikisource.org/zh-hans/晉書/卷015"
+      ]
+    },
+    {
+      "id": "L122",
+      "source_name": "汝南",
+      "source_zhou_by_label": "豫州",
+      "target_name_base": "汝南",
+      "target_zhou_289": "豫州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L123",
+      "source_name": "汝阴",
+      "source_zhou_by_label": "豫州",
+      "target_name_base": "汝阴",
+      "target_zhou_289": "豫州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L124",
+      "source_name": "弋阳",
+      "source_zhou_by_label": "豫州",
+      "target_name_base": "弋阳",
+      "target_zhou_289": "豫州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L125",
+      "source_name": "安丰",
+      "source_zhou_by_label": "豫州",
+      "target_name_base": "安丰",
+      "target_zhou_289": "豫州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L126",
+      "source_name": "庐江",
+      "source_zhou_by_label": "扬州",
+      "target_name_base": "庐江",
+      "target_zhou_289": "扬州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L127",
+      "source_name": "淮南",
+      "source_zhou_by_label": "扬州",
+      "target_name_base": "淮南",
+      "target_zhou_289": "扬州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L128",
+      "source_name": "历阳",
+      "source_zhou_by_label": "扬州",
+      "target_name_base": "淮南",
+      "target_zhou_289": "扬州",
+      "action": "merge",
+      "verified_for_289": true,
+      "geometry_policy": "union_with_淮南_sketch",
+      "confidence": "high",
+      "note": "304从淮南分置，289回并淮南；其后封国表改淮南国。",
+      "source_urls": [
+        "https://zh.wikisource.org/zh-hans/晉書/卷015"
+      ]
+    },
+    {
+      "id": "L129",
+      "source_name": "毗陵",
+      "source_zhou_by_label": "扬州",
+      "target_name_base": "毗陵",
+      "target_zhou_289": "扬州",
+      "action": "keep_provisionally",
+      "verified_for_289": true,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "high",
+      "note": "281置郡，311改晋陵；289保留毗陵。",
+      "source_urls": [
+        "https://zh.wikisource.org/zh-hans/晉書/卷014",
+        "https://zh.wikisource.org/zh-hans/晉書/卷015"
+      ]
+    },
+    {
+      "id": "L130",
+      "source_name": "义兴",
+      "source_zhou_by_label": "扬州",
+      "target_name_base": null,
+      "target_zhou_289": "扬州",
+      "action": "split_required",
+      "verified_for_289": true,
+      "geometry_policy": "check_current_extent_excludes_永世平陵_then_merge_Wuxing_if_confirmed_else_mark_mixed_origin",
+      "confidence": "high_for_history_low_for_boundary",
+      "note": "304由吴兴阳羡及长城北乡、丹阳永世析置；307永世平陵还丹阳。若原图确为308义兴四县面，则可并吴兴；原图不含县界无法直接证明，应按CHGIS核其范围。",
+      "target_candidates": [
+        "吴兴",
+        "丹阳"
+      ],
+      "source_urls": [
+        "https://tgaz.fudan.edu.cn/tgaz/placename/hvd_32351",
+        "https://tgaz.fudan.edu.cn/tgaz/placename/hvd_32363"
+      ]
+    },
+    {
+      "id": "L131",
+      "source_name": "丹阳",
+      "source_zhou_by_label": "扬州",
+      "target_name_base": "丹阳",
+      "target_zhou_289": "扬州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L132",
+      "source_name": "宣城",
+      "source_zhou_by_label": "扬州",
+      "target_name_base": "宣城",
+      "target_zhou_289": "扬州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L133",
+      "source_name": "吴兴",
+      "source_zhou_by_label": "扬州",
+      "target_name_base": "吴兴",
+      "target_zhou_289": "扬州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L134",
+      "source_name": "吴郡",
+      "source_zhou_by_label": "扬州",
+      "target_name_base": "吴郡",
+      "target_zhou_289": "扬州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L135",
+      "source_name": "新安",
+      "source_zhou_by_label": "扬州",
+      "target_name_base": "新安",
+      "target_zhou_289": "扬州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L136",
+      "source_name": "会稽",
+      "source_zhou_by_label": "扬州",
+      "target_name_base": "会稽",
+      "target_zhou_289": "扬州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L137",
+      "source_name": "东阳",
+      "source_zhou_by_label": "扬州",
+      "target_name_base": "东阳",
+      "target_zhou_289": "扬州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L138",
+      "source_name": "临海",
+      "source_zhou_by_label": "",
+      "target_name_base": "临海",
+      "target_zhou_289": "扬州",
+      "action": "reassign_zhou",
+      "verified_for_289": true,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "high",
+      "note": "按289州属回溯；若郡/州边界跨时期，合面仅为复原示意。",
+      "source_urls": [
+        "https://zh.wikisource.org/zh-hans/晉書/卷014",
+        "https://zh.wikisource.org/zh-hans/晉書/卷015"
+      ]
+    },
+    {
+      "id": "L139",
+      "source_name": "鄱阳",
+      "source_zhou_by_label": "江州",
+      "target_name_base": "鄱阳",
+      "target_zhou_289": "扬州",
+      "action": "reassign_zhou",
+      "verified_for_289": true,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "high",
+      "note": "按289州属回溯；若郡/州边界跨时期，合面仅为复原示意。",
+      "source_urls": [
+        "https://zh.wikisource.org/zh-hans/晉書/卷014",
+        "https://zh.wikisource.org/zh-hans/晉書/卷015"
+      ]
+    },
+    {
+      "id": "L140",
+      "source_name": "寻阳",
+      "source_zhou_by_label": "江州",
+      "target_name_base": null,
+      "target_zhou_289": null,
+      "action": "split_required",
+      "verified_for_289": true,
+      "geometry_policy": "split_using_dated_county_or_reference_geometry_if_available_else_keep_hatched_pending_area",
+      "confidence": "high_for_history_low_for_boundary",
+      "note": "304合庐江寻阳与武昌柴桑；307又得豫章彭泽。289分别归扬州庐江、荆州武昌、扬州豫章；不能整个并一郡。",
+      "source_urls": [
+        "https://zh.wikisource.org/zh-hans/晉書/卷015"
+      ],
+      "target_candidates": [
+        "庐江",
+        "武昌",
+        "豫章"
+      ]
+    },
+    {
+      "id": "L141",
+      "source_name": "庐陵",
+      "source_zhou_by_label": "江州",
+      "target_name_base": "庐陵",
+      "target_zhou_289": "扬州",
+      "action": "reassign_zhou",
+      "verified_for_289": true,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "high",
+      "note": "按289州属回溯；若郡/州边界跨时期，合面仅为复原示意。",
+      "source_urls": [
+        "https://zh.wikisource.org/zh-hans/晉書/卷014",
+        "https://zh.wikisource.org/zh-hans/晉書/卷015"
+      ]
+    },
+    {
+      "id": "L142",
+      "source_name": "临川",
+      "source_zhou_by_label": "江州",
+      "target_name_base": "临川",
+      "target_zhou_289": "扬州",
+      "action": "reassign_zhou",
+      "verified_for_289": true,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "high",
+      "note": "按289州属回溯；若郡/州边界跨时期，合面仅为复原示意。",
+      "source_urls": [
+        "https://zh.wikisource.org/zh-hans/晉書/卷014",
+        "https://zh.wikisource.org/zh-hans/晉書/卷015"
+      ]
+    },
+    {
+      "id": "L143",
+      "source_name": "豫章",
+      "source_zhou_by_label": "江州",
+      "target_name_base": "豫章",
+      "target_zhou_289": "扬州",
+      "action": "reassign_zhou",
+      "verified_for_289": true,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "high",
+      "note": "按289州属回溯；若郡/州边界跨时期，合面仅为复原示意。",
+      "source_urls": [
+        "https://zh.wikisource.org/zh-hans/晉書/卷014",
+        "https://zh.wikisource.org/zh-hans/晉書/卷015"
+      ]
+    },
+    {
+      "id": "L144",
+      "source_name": "建安",
+      "source_zhou_by_label": "江州",
+      "target_name_base": "建安",
+      "target_zhou_289": "扬州",
+      "action": "reassign_zhou",
+      "verified_for_289": true,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "high",
+      "note": "按289州属回溯；若郡/州边界跨时期，合面仅为复原示意。",
+      "source_urls": [
+        "https://zh.wikisource.org/zh-hans/晉書/卷014",
+        "https://zh.wikisource.org/zh-hans/晉書/卷015"
+      ]
+    },
+    {
+      "id": "L145",
+      "source_name": "晋安",
+      "source_zhou_by_label": "江州",
+      "target_name_base": "晋安",
+      "target_zhou_289": "扬州",
+      "action": "reassign_zhou",
+      "verified_for_289": true,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "high",
+      "note": "282已置，289属扬州。",
+      "source_urls": [
+        "https://zh.wikisource.org/zh-hans/晉書/卷014",
+        "https://zh.wikisource.org/zh-hans/晉書/卷015"
+      ]
+    },
+    {
+      "id": "L146",
+      "source_name": "南康",
+      "source_zhou_by_label": "江州",
+      "target_name_base": "南康",
+      "target_zhou_289": "扬州",
+      "action": "reassign_zhou",
+      "verified_for_289": true,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "high",
+      "note": "按289州属回溯；若郡/州边界跨时期，合面仅为复原示意。",
+      "source_urls": [
+        "https://zh.wikisource.org/zh-hans/晉書/卷014",
+        "https://zh.wikisource.org/zh-hans/晉書/卷015"
+      ]
+    },
+    {
+      "id": "L147",
+      "source_name": "衡阳",
+      "source_zhou_by_label": "湘州",
+      "target_name_base": "衡阳",
+      "target_zhou_289": "荆州",
+      "action": "reassign_zhou",
+      "verified_for_289": true,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "high",
+      "note": "按289州属回溯；若郡/州边界跨时期，合面仅为复原示意。",
+      "source_urls": [
+        "https://zh.wikisource.org/zh-hans/晉書/卷014",
+        "https://zh.wikisource.org/zh-hans/晉書/卷015"
+      ]
+    },
+    {
+      "id": "L148",
+      "source_name": "长沙",
+      "source_zhou_by_label": "湘州",
+      "target_name_base": "长沙",
+      "target_zhou_289": "荆州",
+      "action": "reassign_zhou",
+      "verified_for_289": true,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "high",
+      "note": "按289州属回溯；若郡/州边界跨时期，合面仅为复原示意。",
+      "source_urls": [
+        "https://zh.wikisource.org/zh-hans/晉書/卷014",
+        "https://zh.wikisource.org/zh-hans/晉書/卷015"
+      ]
+    },
+    {
+      "id": "L149",
+      "source_name": "邵陵",
+      "source_zhou_by_label": "湘州",
+      "target_name_base": "邵陵",
+      "target_zhou_289": "荆州",
+      "action": "reassign_zhou",
+      "verified_for_289": true,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "high",
+      "note": "按289州属回溯；若郡/州边界跨时期，合面仅为复原示意。",
+      "source_urls": [
+        "https://zh.wikisource.org/zh-hans/晉書/卷014",
+        "https://zh.wikisource.org/zh-hans/晉書/卷015"
+      ]
+    },
+    {
+      "id": "L150",
+      "source_name": "湘东",
+      "source_zhou_by_label": "湘州",
+      "target_name_base": "湘东",
+      "target_zhou_289": "荆州",
+      "action": "reassign_zhou",
+      "verified_for_289": true,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "high",
+      "note": "按289州属回溯；若郡/州边界跨时期，合面仅为复原示意。",
+      "source_urls": [
+        "https://zh.wikisource.org/zh-hans/晉書/卷014",
+        "https://zh.wikisource.org/zh-hans/晉書/卷015"
+      ]
+    },
+    {
+      "id": "L151",
+      "source_name": "零陵",
+      "source_zhou_by_label": "湘州",
+      "target_name_base": "零陵",
+      "target_zhou_289": "荆州",
+      "action": "reassign_zhou",
+      "verified_for_289": true,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "high",
+      "note": "按289州属回溯；若郡/州边界跨时期，合面仅为复原示意。",
+      "source_urls": [
+        "https://zh.wikisource.org/zh-hans/晉書/卷014",
+        "https://zh.wikisource.org/zh-hans/晉書/卷015"
+      ]
+    },
+    {
+      "id": "L152",
+      "source_name": "桂阳",
+      "source_zhou_by_label": "湘州",
+      "target_name_base": "桂阳",
+      "target_zhou_289": "荆州",
+      "action": "reassign_zhou",
+      "verified_for_289": true,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "high",
+      "note": "按289州属回溯；若郡/州边界跨时期，合面仅为复原示意。",
+      "source_urls": [
+        "https://zh.wikisource.org/zh-hans/晉書/卷014",
+        "https://zh.wikisource.org/zh-hans/晉書/卷015"
+      ]
+    },
+    {
+      "id": "L153",
+      "source_name": "始安",
+      "source_zhou_by_label": "湘州",
+      "target_name_base": "始安",
+      "target_zhou_289": "广州",
+      "action": "reassign_zhou",
+      "verified_for_289": true,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "high",
+      "note": "按289州属回溯；若郡/州边界跨时期，合面仅为复原示意。",
+      "source_urls": [
+        "https://zh.wikisource.org/zh-hans/晉書/卷014",
+        "https://zh.wikisource.org/zh-hans/晉書/卷015"
+      ]
+    },
+    {
+      "id": "L154",
+      "source_name": "始兴",
+      "source_zhou_by_label": "湘州",
+      "target_name_base": "始兴",
+      "target_zhou_289": "广州",
+      "action": "reassign_zhou",
+      "verified_for_289": true,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "high",
+      "note": "按289州属回溯；若郡/州边界跨时期，合面仅为复原示意。",
+      "source_urls": [
+        "https://zh.wikisource.org/zh-hans/晉書/卷014",
+        "https://zh.wikisource.org/zh-hans/晉書/卷015"
+      ]
+    },
+    {
+      "id": "L155",
+      "source_name": "高凉",
+      "source_zhou_by_label": "广州",
+      "target_name_base": "高凉",
+      "target_zhou_289": "广州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L156",
+      "source_name": "合浦",
+      "source_zhou_by_label": "广州",
+      "target_name_base": "合浦",
+      "target_zhou_289": "交州",
+      "action": "reassign_zhou",
+      "verified_for_289": true,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "high",
+      "note": "按289州属回溯；若郡/州边界跨时期，合面仅为复原示意。",
+      "source_urls": [
+        "https://zh.wikisource.org/zh-hans/晉書/卷014",
+        "https://zh.wikisource.org/zh-hans/晉書/卷015"
+      ]
+    },
+    {
+      "id": "L157",
+      "source_name": "苍梧",
+      "source_zhou_by_label": "广州",
+      "target_name_base": "苍梧",
+      "target_zhou_289": "广州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L158",
+      "source_name": "郁林",
+      "source_zhou_by_label": "广州",
+      "target_name_base": "郁林",
+      "target_zhou_289": "广州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L159",
+      "source_name": "桂林",
+      "source_zhou_by_label": "广州",
+      "target_name_base": "桂林",
+      "target_zhou_289": "广州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L160",
+      "source_name": "南海",
+      "source_zhou_by_label": "广州",
+      "target_name_base": "南海",
+      "target_zhou_289": "广州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L161",
+      "source_name": "宁浦",
+      "source_zhou_by_label": "广州",
+      "target_name_base": "宁浦",
+      "target_zhou_289": "广州",
+      "action": "keep_provisionally",
+      "verified_for_289": true,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "medium",
+      "note": "始置年诸说但太康时已有，289保留。",
+      "source_urls": [
+        "https://zh.wikisource.org/zh-hans/晉書/卷014",
+        "https://zh.wikisource.org/zh-hans/晉書/卷015"
+      ]
+    },
+    {
+      "id": "L162",
+      "source_name": "永昌",
+      "source_zhou_by_label": "宁州",
+      "target_name_base": "永昌",
+      "target_zhou_289": "益州",
+      "action": "reassign_zhou",
+      "verified_for_289": true,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "high",
+      "note": "按289州属回溯；若郡/州边界跨时期，合面仅为复原示意。",
+      "source_urls": [
+        "https://zh.wikisource.org/zh-hans/晉書/卷014",
+        "https://zh.wikisource.org/zh-hans/晉書/卷015"
+      ]
+    },
+    {
+      "id": "L163",
+      "source_name": "建宁",
+      "source_zhou_by_label": "宁州",
+      "target_name_base": "建宁",
+      "target_zhou_289": "益州",
+      "action": "reassign_zhou",
+      "verified_for_289": true,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "high",
+      "note": "按289州属回溯；若郡/州边界跨时期，合面仅为复原示意。",
+      "source_urls": [
+        "https://zh.wikisource.org/zh-hans/晉書/卷014",
+        "https://zh.wikisource.org/zh-hans/晉書/卷015"
+      ]
+    },
+    {
+      "id": "L164",
+      "source_name": "云南",
+      "source_zhou_by_label": "宁州",
+      "target_name_base": "云南",
+      "target_zhou_289": "益州",
+      "action": "reassign_zhou",
+      "verified_for_289": true,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "high",
+      "note": "按289州属回溯；若郡/州边界跨时期，合面仅为复原示意。",
+      "source_urls": [
+        "https://zh.wikisource.org/zh-hans/晉書/卷014",
+        "https://zh.wikisource.org/zh-hans/晉書/卷015"
+      ]
+    },
+    {
+      "id": "L165",
+      "source_name": "晋宁",
+      "source_zhou_by_label": "宁州",
+      "target_name_base": "建宁",
+      "target_zhou_289": "益州",
+      "action": "merge",
+      "verified_for_289": true,
+      "geometry_policy": "union_with_建宁_sketch",
+      "confidence": "high",
+      "note": "303才从建宁析置益州郡，308更名晋宁；289并回建宁。",
+      "source_urls": [
+        "https://tgaz.fudan.edu.cn/tgaz/placename/hvd_80725"
+      ]
+    },
+    {
+      "id": "L166",
+      "source_name": "兴古",
+      "source_zhou_by_label": "宁州",
+      "target_name_base": "兴古",
+      "target_zhou_289": "益州",
+      "action": "reassign_zhou",
+      "verified_for_289": true,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "high",
+      "note": "按289州属回溯；若郡/州边界跨时期，合面仅为复原示意。",
+      "source_urls": [
+        "https://zh.wikisource.org/zh-hans/晉書/卷014",
+        "https://zh.wikisource.org/zh-hans/晉書/卷015"
+      ]
+    },
+    {
+      "id": "L167",
+      "source_name": "九真",
+      "source_zhou_by_label": "交州",
+      "target_name_base": "九真",
+      "target_zhou_289": "交州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L168",
+      "source_name": "九德",
+      "source_zhou_by_label": "交州",
+      "target_name_base": "九德",
+      "target_zhou_289": "交州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L169",
+      "source_name": "日南",
+      "source_zhou_by_label": "交州",
+      "target_name_base": "日南",
+      "target_zhou_289": "交州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L170",
+      "source_name": "交趾",
+      "source_zhou_by_label": "交州",
+      "target_name_base": "交趾",
+      "target_zhou_289": "交州",
+      "action": "keep_provisionally",
+      "verified_for_289": false,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "provisional",
+      "note": "此行为全表配接槽位，不等于逐郡完成历史考定。封国国号由封国表最后覆盖。"
+    },
+    {
+      "id": "L171",
+      "source_name": "安成",
+      "source_zhou_by_label": "江州",
+      "target_name_base": "安成",
+      "target_zhou_289": "荆州",
+      "action": "reassign_zhou",
+      "verified_for_289": true,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "high",
+      "note": "按289州属回溯；若郡/州边界跨时期，合面仅为复原示意。",
+      "source_urls": [
+        "https://zh.wikisource.org/zh-hans/晉書/卷014",
+        "https://zh.wikisource.org/zh-hans/晉書/卷015"
+      ]
+    },
+    {
+      "id": "L172",
+      "source_name": "临贺",
+      "source_zhou_by_label": "湘州",
+      "target_name_base": "临贺",
+      "target_zhou_289": "广州",
+      "action": "reassign_zhou",
+      "verified_for_289": true,
+      "geometry_policy": "retain_source_sketch_unless_CHGIS_has_same_unit_time_geometry",
+      "confidence": "high",
+      "note": "按289州属回溯；若郡/州边界跨时期，合面仅为复原示意。",
+      "source_urls": [
+        "https://zh.wikisource.org/zh-hans/晉書/卷014",
+        "https://zh.wikisource.org/zh-hans/晉書/卷015"
+      ]
+    }
+  ],
+  "additional_absent_units_to_check": [
+    "兰陵（291始置，289不应补入）",
+    "东燕（306始置，289不应补入）",
+    "上庸（289应在荆州，原图漏名或并画）",
+    "宜都（289应有，原图漏名或并画）",
+    "新昌、武平（交州）",
+    "长广（青州）"
+  ],
+  "map308_corrections": [
+    {
+      "source_name": "武昌",
+      "action": "reassign_zhou",
+      "target_zhou": "江州",
+      "evidence": "291分置江州时在十郡中",
+      "source_urls": [
+        "https://zh.wikisource.org/zh-hans/晉書/卷015",
+        "https://tgaz.fudan.edu.cn/tgaz/placename/hvd_30121"
+      ]
+    },
+    {
+      "source_name": "晋宁",
+      "action": "keep",
+      "target_zhou": "宁州",
+      "evidence": "按CHGIS308更名",
+      "source_urls": [
+        "https://tgaz.fudan.edu.cn/tgaz/placename/hvd_80725"
+      ]
+    },
+    {
+      "source_name": "毗陵",
+      "action": "keep",
+      "target_zhou": "扬州",
+      "evidence": "311始改晋陵",
+      "source_urls": [
+        "https://tgaz.fudan.edu.cn/tgaz/placename/hvd_32366"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+[
+  {
+    "id": "WP-1",
+    "title": "晉朝公爵列表",
+    "url": "https://zh.wikipedia.org/wiki/晉朝公爵列表",
+    "accessed": "2026-10-01",
+    "type": "指定二级资料／可修改爵表",
+    "usage": "提取封爵、国祚、世系；非逐人原始史料穷尽核验"
+  },
+  {
+    "id": "WP-2",
+    "title": "晉朝侯爵列表 (五等爵)",
+    "url": "https://zh.wikipedia.org/wiki/晉朝侯爵列表_(五等爵)",
+    "accessed": "2026-10-01",
+    "type": "指定二级资料／可修改爵表",
+    "usage": "提取封爵、国祚、世系；非逐人原始史料穷尽核验"
+  },
+  {
+    "id": "WP-3",
+    "title": "晉朝列侯列表",
+    "url": "https://zh.wikipedia.org/wiki/晉朝列侯列表",
+    "accessed": "2026-10-01",
+    "type": "指定二级资料／可修改爵表",
+    "usage": "提取封爵、国祚、世系；非逐人原始史料穷尽核验"
+  },
+  {
+    "id": "WP-4",
+    "title": "晉朝侯爵列表",
+    "url": "https://zh.wikipedia.org/wiki/晉朝侯爵列表",
+    "accessed": "2026-10-01",
+    "type": "指定二级资料／可修改爵表",
+    "usage": "提取封爵、国祚、世系；非逐人原始史料穷尽核验"
+  },
+  {
+    "id": "WP-5",
+    "title": "晉朝伯爵列表",
+    "url": "https://zh.wikipedia.org/wiki/晉朝伯爵列表",
+    "accessed": "2026-10-01",
+    "type": "指定二级资料／可修改爵表",
+    "usage": "提取封爵、国祚、世系；非逐人原始史料穷尽核验"
+  },
+  {
+    "id": "WP-6",
+    "title": "晉朝子爵列表",
+    "url": "https://zh.wikipedia.org/wiki/晉朝子爵列表",
+    "accessed": "2026-10-01",
+    "type": "指定二级资料／可修改爵表",
+    "usage": "提取封爵、国祚、世系；非逐人原始史料穷尽核验"
+  },
+  {
+    "id": "WP-7",
+    "title": "晉朝男爵列表",
+    "url": "https://zh.wikipedia.org/wiki/晉朝男爵列表",
+    "accessed": "2026-10-01",
+    "type": "指定二级资料／可修改爵表",
+    "usage": "提取封爵、国祚、世系；非逐人原始史料穷尽核验"
+  },
+  {
+    "id": "JS-3",
+    "title": "晋书·卷3·武帝纪",
+    "url": "https://zh.wikisource.org/wiki/晉書/卷003",
+    "accessed": "2026-10-01",
+    "type": "一手史料公共领域文字转录",
+    "usage": "太康十年（289）授爵、荀勖当年卒"
+  },
+  {
+    "id": "JS-14",
+    "title": "晋书·卷14·地理上",
+    "url": "https://zh.wikisource.org/wiki/晉書/卷014",
+    "accessed": "2026-10-01",
+    "type": "一手史料公共领域文字转录",
+    "usage": "公国相、侯相等行政县国性质、所属郡"
+  },
+  {
+    "id": "JS-15",
+    "title": "晋书·卷15·地理下",
+    "url": "https://zh.wikisource.org/wiki/晉書/卷015",
+    "accessed": "2026-10-01",
+    "type": "一手史料公共领域文字转录",
+    "usage": "公国相、侯相等行政县国性质、所属郡"
+  },
+  {
+    "id": "JS-42",
+    "title": "晋书·卷42·王渾王濬唐彬列传",
+    "url": "https://zh.wikisource.org/wiki/晉書/卷042",
+    "accessed": "2026-10-01",
+    "type": "一手史料公共领域文字转录",
+    "usage": "王浑京陵进爵；不盲信世系承袭日期"
+  },
+  {
+    "id": "YAO2012",
+    "title": "姚乐：《〈晋书·地理志〉县级封国考论》",
+    "journal": "中国历史地理论丛",
+    "year": 2012,
+    "volume": 27,
+    "issue": 2,
+    "pages": "143–150",
+    "url": "https://www.jsass.org.cn/sjb/zjxzsj/lsyjs_808/201912/t20191227_12839.html",
+    "abstract_url": "https://history.alljournals.cn/relate_search.aspx?aid=9019A71AB6EF4CFC4D9D17528B266E2B&ctl=16&etl=0&language=0&pcid=B105980C46742988AA264212B4BA36DE578B761D73696550",
+    "accessed": "2026-10-01",
+    "read_extent": "官方作者书目＋公开摘要；未读取全文",
+    "summary": "区分西晋一般县公/县侯行政封国与五等爵封国。摘要统计《晋志》县级封国58个。"
+  }
+]
