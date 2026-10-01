@@ -122,6 +122,9 @@ src = evidence('益州巴西、梓潼二郡及涪縣', 16170, 16172,
     '治涪的巴西、梓潼雙頭郡，與巴漢地區治閬中的北巴西郡不同。人工確認涪屬巴西，於合題行列示，不改判為梓潼單郡。')
 link([729], ['liang_s0139_p019', 'liang_s0149_p001'], 502, 553, src, '依治所涪和蜀中上下文連接雙頭郡。')
 
+from liang_october_source_repairs import augment
+data = augment(data, lines, sha, SOURCES)
+
 for suffix in ['json', 'js']:
     text = json.dumps(data, ensure_ascii=False, indent=2) + '\n'
     if suffix == 'js':

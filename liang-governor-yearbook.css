@@ -215,3 +215,13 @@
   .governor-yearbook-table td { width: 202px; min-width: 202px; max-width: 202px; }
   .governor-yearbook-table .year-column { width: 124px; min-width: 124px; max-width: 124px; }
 }
+
+/* Source annotations remain readable independently of office/name colours. */
+.source-cell-comments { margin-top: .5rem; color: #222; font: normal 13px/1.65 system-ui, sans-serif; text-align: left; white-space: normal; }
+.source-cell-comments summary { cursor: pointer; width: fit-content; color: #5f4932; border-bottom: 1px dotted currentColor; }
+.source-comment-text { white-space: pre-wrap; overflow-wrap: anywhere; margin-top: .4rem; padding: .5rem; background: #faf5e7; border-left: 2px solid #bda66d; color: #222; }
+.source-extra-cell + .source-extra-cell { margin-top: .7rem; padding-top: .5rem; border-top: 1px solid #ddd; }
+.source-supplemental-row { margin: .7rem 0; padding: .7rem; border: 1px solid #ddd; }
+.source-supplemental-row > summary { cursor: pointer; font-weight: 600; }
+.source-supplemental-row .source-extra-cell { margin-top: .65rem; }
+.governor-yearbook-table td[rowspan], .governor-yearbook-table td[colspan] { border: 1px solid #aaa; }

@@ -499,14 +499,29 @@
   function governorRecords(year) {
     const records=governorData()?.years?.[String(year)]?.records || [];
     if(currentDynasty.key!=='southern-liang')return records;
-    return records.map((record,index)=>{
+    return records.flatMap((record,index)=>{
       const source=window.LIANG_GOVERNOR_SOURCES?.years?.[String(year)]?.[index];
       const decisions=(window.LIANG_GOVERNOR_LINKS?.records||[]).filter(link=>Number(link.year)===Number(year)&&link.state===record.state&&link.source_page_index===record.source_page_index);
       const decision=decisions.find(link=>JSON.stringify(link.summary_lines)===JSON.stringify(record.summary_lines))
         ||(decisions.length?{decision:'hold',reason:'來源摘要已變更，既有具名連接須重新核對；不回退同名自動掛接。'}:null);
-      if(!source||source.state!==record.state||source.original_source_page_index!==record.source_page_index
-        ||JSON.stringify(source.original_summary_lines)!==JSON.stringify(record.summary_lines))return {...record,source_alignment_pending:true,administrative_link:decision};
-      return {...record,...source,summary_lines:record.summary_lines,administrative_link:decision};
+      const aligned=source&&source.state===record.state&&source.original_source_page_index===record.source_page_index
+        &&JSON.stringify(source.original_summary_lines)===JSON.stringify(record.summary_lines);
+      const enriched=aligned?{...record,...source,summary_lines:record.summary_lines}:{...record,source_alignment_pending:true};
+      if(decision?.decision!=='split')return [{...enriched,administrative_link:decision}];
+      const used=new Set(),parts=[];
+      for(const part of decision.line_targets||[]) {
+        const indexes=part.summary_line_indexes||[];
+        if(!indexes.length||indexes.some(i=>!Number.isInteger(i)||i<0||i>=record.summary_lines.length||used.has(i))) {
+          return [{...enriched,administrative_link:{decision:'hold',reason:'分行連接索引重複或越界，保留原條待核。'}}];
+        }
+        indexes.forEach(i=>used.add(i));
+        parts.push({...enriched,source_state:record.state,original_summary_lines:record.summary_lines,
+          state:part.display_state||record.state,summary_lines:indexes.map(i=>record.summary_lines[i]),
+          administrative_link:part,editorial_notes:[...(enriched.editorial_notes||[]),`原條列在${record.state}；依原文官銜與工作簿分行歸屬，原摘要和來源保留。`]});
+      }
+      const remaining=record.summary_lines.filter((_,i)=>!used.has(i));
+      if(remaining.length)parts.push({...enriched,summary_lines:remaining,administrative_link:{decision:'hold',reason:'原條未含於具名分行裁決的摘要，保留待核。'}});
+      return parts;
     });
   }
 
@@ -572,6 +587,7 @@
         ]).filter(Boolean)] : []),
         ...((record.editorial_notes||[]).map((t)=>`人工校勘：${t}`)),
         ...(record.administrative_link_notes||[]),
+        record.source_state?`原始條目：${record.source_state}；原摘要：${(record.original_summary_lines||[]).join('／')}`:'',
         record.dating_note||'',
         record.source_alignment_pending?'本條摘要尚未與新OCR唯一校合，原有頁序保留待核。':'',
         pageIndexes.length ? (currentDynasty.key==='southern-liang'
@@ -663,7 +679,7 @@
       const target=explicit?states.find(s=>s.group===targetGroup&&s.id===decision.target_id)||null:chooseGovernorTarget(candidates,record);
       if(currentDynasty.key==='southern-liang')displayRecord.administrative_link_notes=[
         decision?`政區連接考證：${decision.reason}`:target?`政區連接：本年唯一同名州 ${target.name}（${target.region}，${target.id}）；只作底表對應，不由官銜推建置年代。`:`本年同名州候選：${candidates.map(s=>`${s.name}（${s.region}，${s.id}）`).join('、')||'無'}；無有來源的唯一對應，未按轄郡數或排列次序猜選。`,
-        ...(decision?.evidence||[]).map(e=>`連接依據：${e.year||year}年，方鎮OCR頁索引 ${(e.source_page_indexes||[]).join('、')}：${e.quote}`)
+        ...(decision?.evidence||[]).map(e=>`連接依據：${e.year||year}年，${e.source||e.source_title||e.workbook||'方鎮年表'}${e.source_page_indexes?.length?'，OCR頁索引 '+e.source_page_indexes.join('、'):''}${e.source_pdf_pages?.length?'，PDF第'+e.source_pdf_pages.join('、')+'頁':''}${(e.printed_pages||e.source_printed_pages)?.length?'，書內第'+(e.printed_pages||e.source_printed_pages).join('、')+'頁':''}${e.sheet?'，'+e.sheet:''}${e.cell?' '+e.cell:''}${e.locator?'，'+e.locator:''}：${e.quote}`)
       ];
       if (target) target.governor=mergeGovernorRecords(target.governor,displayRecord);
       else appendGovernorExtra(extras,displayRecord,decision?.reason|| (candidates.length>1?`本年${currentDynasty.label}政區表存在多個同名實州，尚無可唯一連接的證據，未自動附着。`:`方鎮年表有長官條目，但本年${currentDynasty.label}州郡縣政區表未列可對應此條的州。`));
@@ -1154,6 +1170,8 @@
   function filteredStateCopy(state) {
     const query=normalizeName(searchInput.value.trim());
     if (!query) return state;
+    if (normalizeName(state.name).includes(query))return state;
+    if(currentDynasty.key==='southern-liang'&&(window.LIANG_ENTITY_LINKS?.unnumbered_prefecture_audit||[]).some(x=>x.state_id===state.id&&normalizeName(x.name).includes(query)))return state;
     if (state.governor && normalizeName([state.name,...(state.governor.summary_lines||[])].join(' ')).includes(query)) return state;
     const copy={...state,rows:[]};
     for (const row of state.rows) {
@@ -1176,6 +1194,17 @@
     const meta=document.createElement('span'); meta.className='state-meta'; const prefCount=state.rows.filter((r)=>!r.directCounties).length; meta.textContent=`${prefCount} 郡級政區`; if(state.region)meta.textContent+=` · ${state.region}`; if(state.rows.some((r)=>r.directCounties)) meta.textContent+=`，另有郡無考縣`;
     heading.append(h2,meta); article.appendChild(heading);
     if (state.governor) article.appendChild(renderGovernorBox(state.governor,year));
+    if(currentDynasty.key==='southern-liang'){
+      const pending=(window.LIANG_ENTITY_LINKS?.unnumbered_prefecture_audit||[]).filter(x=>x.state_id===state.id&&x.status==='dating_pending');
+      const notes=(window.LIANG_ENTITY_LINKS?.state_research_notes||[]).filter(x=>x.state_id===state.id);
+      for(const item of pending){
+        const line=document.createElement('p');line.className='state-research-note';
+        line.appendChild(createAuxButton(`原書所列：${item.name}；年度歸屬待定`,{title:'原書單郡記錄：年代待考',summary:`${state.name} · ${item.name}`,paragraphs:[`原書斷限：${item.source_range}；未將未定起訖補成整朝有效。`],sources:[item.source]}));
+        article.appendChild(line);
+      }
+      for(const item of notes){const line=document.createElement('p');line.className='state-research-note';line.textContent=item.note;article.appendChild(line);}
+      if(!state.rows.length&&!pending.length&&!notes.length){const line=document.createElement('p');line.className='state-research-note';line.textContent='本年底表尚無可列郡；不表示本州歷史上確實無郡，仍需據原書核對。';article.appendChild(line);}
+    }
     const wrap=document.createElement('div'); wrap.className='table-wrap'; const table=document.createElement('table');
     const thead=document.createElement('thead'), hr=document.createElement('tr');
     for (const label of ['郡、國及郡級政區','所屬縣級政區']) {const th=document.createElement('th');th.textContent=label;hr.appendChild(th);} thead.appendChild(hr);table.appendChild(thead);
@@ -1617,7 +1646,7 @@
   const SVG_NS='http://www.w3.org/2000/svg';
   const MAP_SELECTION_EXPORT_STYLE='.map-label-link.is-active,.map-label-reference.is-active{text-decoration:underline;stroke:#fff1a8}.map-label-leader.is-active{stroke:#9b2f52;stroke-opacity:1;stroke-width:2;vector-effect:non-scaling-stroke}.map-hotspot.is-active{fill:rgba(255,241,153,.42);stroke:#9b2f52;stroke-width:7;vector-effect:non-scaling-stroke}';
   const MAP_EXPORT_STYLE=`
-    text{font-family:"Noto Serif CJK TC","Songti TC","PMingLiU",serif}.dynamic-map-title{fill:#302b27;font-size:46px;font-weight:700;letter-spacing:3px}.dynamic-map-subtitle{fill:#665d54;font-size:16px}.dynamic-regime{stroke-width:2.2;fill-opacity:.62;fill-rule:evenodd}.dynamic-rebellion{fill-opacity:.8;stroke-dasharray:12 7}.dynamic-regime-label{fill:#fffdf2;stroke:rgba(40,32,25,.72);stroke-width:2.6;paint-order:stroke;font-size:42px;font-weight:700;letter-spacing:5px}.dynamic-rebellion-label{font-size:23px;letter-spacing:1px}.dynamic-state-boundary{fill:none;stroke:#60392d;stroke-width:2.2}.dynamic-pref-boundary{fill:none;stroke:#776d55;stroke-width:1.1}.dynamic-supplement-boundary{stroke-dasharray:5 4;opacity:.72}.dynamic-state-dot{fill:#6a382d;stroke:#fff8e8;stroke-width:.9}.dynamic-prefecture-dot{fill:#a85e52;stroke:#fff8e8;stroke-width:.6}.dynamic-county-dot{fill:#365f70}.dynamic-map-label{paint-order:stroke;stroke:rgba(255,252,240,.94);stroke-width:2.3;stroke-linejoin:round;dominant-baseline:central}.dynamic-state-area-label{fill:#4d3028;font-size:24.5px;font-weight:700;letter-spacing:2px}.dynamic-state-seat-label{fill:#562f28;font-size:22.5px;font-weight:700}.dynamic-prefecture-area-label{fill:#3f4a38;font-size:16.5px;font-weight:700}.dynamic-prefecture-seat-label{fill:#684a3f;font-size:10.8px}.dynamic-county-seat-label{fill:#264f60;font-size:8.6px}.dynamic-fief-label{fill:#754476;font-weight:700}.is-uncertain{font-style:italic}`;
+    text{font-family:"Noto Serif CJK TC","Songti TC","PMingLiU",serif}.dynamic-map-title{fill:#302b27;font-size:46px;font-weight:700;letter-spacing:3px}.dynamic-map-subtitle{fill:#665d54;font-size:16px}.dynamic-regime{stroke-width:2.2;fill-opacity:.62;fill-rule:evenodd}.dynamic-rebellion{fill-opacity:.8;stroke-dasharray:12 7}.dynamic-regime-label{fill:#fffdf2;stroke:rgba(40,32,25,.72);stroke-width:2.6;paint-order:stroke;font-size:42px;font-weight:700;letter-spacing:5px}.dynamic-rebellion-label{font-size:23px;letter-spacing:1px}.dynamic-state-boundary{fill:none;stroke:#60392d;stroke-width:2.2}.dynamic-pref-boundary{fill:none;stroke:#776d55;stroke-width:1.1}.dynamic-supplement-boundary{stroke-dasharray:5 4;opacity:.72}.dynamic-state-dot{fill:#6a382d;stroke:#fff8e8;stroke-width:.9}.dynamic-prefecture-dot{fill:#a85e52;stroke:#fff8e8;stroke-width:.6}.dynamic-county-dot{fill:#365f70}.dynamic-map-label{paint-order:stroke;stroke:rgba(255,252,240,.94);stroke-width:2.3;stroke-linejoin:round;dominant-baseline:central}.dynamic-state-area-label{fill:#34312d;font-size:24.5px;font-weight:700;letter-spacing:2px}.dynamic-state-seat-label{fill:#34312d;font-size:22.5px;font-weight:700}.dynamic-prefecture-area-label{fill:#34312d;font-size:16.5px;font-weight:700}.dynamic-prefecture-seat-label{fill:#34312d;font-size:10.8px}.dynamic-county-seat-label{fill:#34312d;font-size:8.6px}.dynamic-fief-label{fill:#000;font-weight:700}.is-uncertain{font-style:italic}`;
 
   function svgNode(tag,attributes={},text='') {
     const node=document.createElementNS(SVG_NS,tag);
@@ -1630,11 +1659,14 @@
     const priority={'CHGIS V6':0,'western-jin-yearbook＋CHGIS V6':0,'CHGIS V4':1,'CHGIS V5':2};
     const active=(records||[]).filter((item)=>Number(item.b)<=year&&year<=Number(item.e));
     active.sort((a,b)=>(priority[a.s]??5)-(priority[b.s]??5));
-    const seen=new Set(),out=[];
+    const seen=new Set(),sourceIds=new Set(),out=[];
     for(const item of active) {
+      // V5 and V6 retain the same CHGIS entity ID even when geometry centroids move.
+      const sourceId=/^CHGIS V[56]$/.test(item.s)&&item.i?`${item.l}|${item.i}|${item.k}`:null;
+      if(sourceId&&sourceIds.has(sourceId))continue;
       const key=`${item.k}|${Math.round(Number(item.x||0)/spatialStep)}|${Math.round(Number(item.y||0)/spatialStep)}`;
       if(seen.has(key)) continue;
-      seen.add(key);out.push(item);
+      seen.add(key);if(sourceId)sourceIds.add(sourceId);out.push(item);
     }
     return out;
   }
@@ -1688,40 +1720,56 @@
       const southern=candidates.filter((item)=>Number(item.x)>=2250&&Number(item.y)>=1620);
       if(southern.length)candidates=southern;
     }
-    if(parent&&candidates.length>1)candidates.sort((a,b)=>mapDistance(a,parent)-mapDistance(b,parent));
+    if(candidates.length>1&&!parent)return null;
+    if(parent&&candidates.length>1){
+      candidates.sort((a,b)=>mapDistance(a,parent)-mapDistance(b,parent));
+      if(Math.abs(mapDistance(candidates[0],parent)-mapDistance(candidates[1],parent))<1)return null;
+    }
     return candidates[0]||null;
   }
 
-  function resolveSnapshotFeatures(snapshot,seatsByLevel) {
-    const features=[],byId=new Map();
+  function resolveSnapshotFeatures(snapshot,seatsByLevel,year) {
+    const features=[],byId=new Map(),supplementalSeats=[];
+    const correctedSeat=(entity,level,parentId)=>{
+      const links=(window.CHEN_MAP_CORRECTIONS?.seat_links||[]).filter(link=>link.entity_id===entity.id&&link.level===level&&link.start<=year&&year<=link.end&&(!link.parent_id||link.parent_id===parentId));
+      if(links.length!==1)return null;
+      const link=links[0],sources=seatsByLevel[link.source_level]||[];
+      const source=sources.find(seat=>seat.i===link.source_id&&seat.s===link.source);
+      if(!source)return null;
+      if(link.source_level!==level){
+        const proxy={...source,i:`documented:${entity.id}`,n:entity.name,k:normalizeName(entity.name),l:level,correction:link};
+        supplementalSeats.push(proxy);return proxy;
+      }
+      return {...source,correction:link};
+    };
     for(const state of snapshot.states) {
-      const stateSeat=chooseEntitySeat(state.name,'state',seatsByLevel.state,null,state.group);
+      const stateSeat=correctedSeat(state,'state')||chooseEntitySeat(state.name,'state',seatsByLevel.state,null,state.group);
       if(stateSeat) {
-        const feature={entity_id:state.id,level:'state',label:state.name,x:stateSeat.x,y:stateSeat.y,entity:state};
+        const feature={entity_id:state.id,level:'state',label:state.name,x:stateSeat.x,y:stateSeat.y,entity:state,coordinateSource:stateSeat.correction};
         features.push(feature);byId.set(state.id,feature);
       }
       for(const row of state.rows) {
-        const prefSeat=chooseEntitySeat(row.name,'prefecture',seatsByLevel.prefecture,stateSeat,state.group);
+        const prefSeat=correctedSeat(row,'prefecture',state.id)||chooseEntitySeat(row.name,'prefecture',seatsByLevel.prefecture,stateSeat,state.group);
         if(prefSeat) {
-          const feature={entity_id:row.id,level:'prefecture',label:itemDisplayName(row),x:prefSeat.x,y:prefSeat.y,entity:row,state};
+          const feature={entity_id:row.id,level:'prefecture',label:itemDisplayName(row),x:prefSeat.x,y:prefSeat.y,entity:row,state,coordinateSource:prefSeat.correction};
           features.push(feature);byId.set(row.id,feature);
         }
         for(const county of row.counties) {
-          const countySeat=chooseEntitySeat(county.name,'county',seatsByLevel.county,prefSeat||stateSeat,state.group);
+          const countySeat=correctedSeat(county,'county',row.id)||chooseEntitySeat(county.name,'county',seatsByLevel.county,prefSeat||stateSeat,state.group);
           if(!countySeat)continue;
-          const feature={entity_id:county.id,level:'county',label:county.name,x:countySeat.x,y:countySeat.y,entity:county,state,row};
+          const feature={entity_id:county.id,level:'county',label:county.name,x:countySeat.x,y:countySeat.y,entity:county,state,row,coordinateSource:countySeat.correction};
           features.push(feature);byId.set(county.id,feature);
         }
       }
     }
-    return {features,byId};
+    return {features,byId,supplementalSeats};
   }
 
   function dynamicFiefLabels(snapshot,resolved,seatsByLevel,year) {
     const labels=[];
     const append=(feature,matches)=>{
       if(!feature||!matches?.length)return;
-      const names=[],ids=[],uncertain=[];
+      const names=[],ids=[],uncertain=[],colors=[],colorSources=[];
       for(const match of matches) {
         const record=match.record,phase=match.phase;
         const administrativeName=feature.level==='prefecture'&&feature.entity?.displayName!==feature.entity?.name
@@ -1730,8 +1778,11 @@
         const label=administrativeName||(record.kind==='prince'?`${phase.fief}國`:`${phase.fief}${record.rank}國`);
         if(!names.includes(label))names.push(label);
         ids.push(record.id);uncertain.push(Boolean(phase.uncertain||match.display?.uncertain));
+        colors.push(chenFiefPersonColor(match,year));
+        const style=window.CHEN_PERSON_FORMATS?.fiefRecordStyle(match,year);
+        if(style?.source)colorSources.push(style.source);
       }
-      labels.push({text:names.join('／'),sourceName:feature.entity?.name||matches[0].phase.fief,x:feature.x,y:feature.y,level:feature.level,entityId:feature.entity_id,fiefIds:ids,uncertain:uncertain.some(Boolean)});
+      labels.push({text:names.join('／'),sourceName:feature.entity?.name||matches[0].phase.fief,x:feature.x,y:feature.y,level:feature.level,entityId:feature.entity_id,fiefIds:ids,uncertain:uncertain.some(Boolean),color:colors.length&&colors.every(c=>c&&c===colors[0])?colors[0]:'#000000',colorSource:[...new Set(colorSources)].join('；')||'封君顏色未能唯一判定，保留黑色'});
     };
     for(const feature of resolved.features)append(feature,feature.entity?.chenFiefs||[]);
     for(const match of snapshot.virtualFiefs||[]) {
@@ -1785,7 +1836,7 @@
       for(const edge of edges)if((edge.y>y)!==(edge.py>y)&&x<(edge.px-edge.x)*(y-edge.y)/(edge.py-edge.y)+edge.x)inside=!inside;
       return inside;
     };
-    const intersects=(box)=>{
+    const crossesBoundary=(box)=>{
       const checked=new Set();
       for(let gx=Math.floor(box[0]/step);gx<=Math.floor(box[2]/step);gx++)for(let gy=Math.floor(box[1]/step);gy<=Math.floor(box[3]/step);gy++)for(const edge of grid.get(`${gx}|${gy}`)||[]) {
         if(checked.has(edge))continue;checked.add(edge);
@@ -1799,9 +1850,12 @@
         }
         if(enter<=leave)return true;
       }
-      return contains(box[0],box[1]);
+      return false;
     };
-    return {contains,intersects};
+    const intersects=box=>crossesBoundary(box)||contains(box[0],box[1]);
+    const containsBox=box=>contains(box[0],box[1])&&contains(box[2],box[1])&&contains(box[2],box[3])&&contains(box[0],box[3])&&!crossesBoundary(box);
+    const all=rings.flat(),bounds=[Math.min(...all.map(p=>p[0])),Math.min(...all.map(p=>p[1])),Math.max(...all.map(p=>p[0])),Math.max(...all.map(p=>p[1]))];
+    return {contains,intersects,containsBox,bounds};
   }
 
   function *labelCandidates(label,width,height,plot) {
@@ -1820,6 +1874,15 @@
         const angle=index/count*Math.PI*2,dx=Math.cos(angle)*radius;
         yield [x+dx,y+Math.sin(angle)*radius,dx>width*.2?'start':dx<-width*.2?'end':'middle'];
       }
+    }
+    if(label.areaGuard) {
+      const [left,top,right,bottom]=label.areaGuard.bounds,candidates=[];
+      for(let row=0;row<16;row++)for(let col=0;col<16;col++) {
+        const cx=left+(col+.5)*(right-left)/16,cy=top+(row+.5)*(bottom-top)/16;
+        if(label.areaGuard.contains(cx,cy))candidates.push([cx,cy,'middle']);
+      }
+      candidates.sort((a,b)=>Math.hypot(a[0]-x,a[1]-y)-Math.hypot(b[0]-x,b[1]-y));
+      yield* candidates;
     }
   }
 
@@ -1843,7 +1906,8 @@
     let legendX=plot[0]+legendGap,legendY=baseHeight+42/scale,legendRowHeight=0,legendCount=0,renderHeight=baseHeight;
     labels.sort((a,b)=>b.priority-a.priority||a.y-b.y||a.x-b.x||a.text.localeCompare(b.text));
     for(const source of labels) {
-      const limits=source.level==='state'?[16,22]:source.level==='prefecture'?[13,16]:[12,13];
+      const isArea=source.kind.includes('area');
+      const limits=isArea?(source.level==='state'?[22,28]:[17,21]):(source.level==='county'?[11,12]:[12,13]);
       const fontSize=Math.max(limits[0],Math.min(limits[1],source.fontSize*scale))/scale;
       const label={...source,fontSize},width=labelWidth(label.text,fontSize)+fontSize*.35,height=fontSize*1.4;
       let placement=null;
@@ -1851,6 +1915,7 @@
         const left=anchor==='middle'?x-width/2:anchor==='end'?x-width:x;
         const box=[left,y-height/2,left+width,y+height/2];
         if(box[0]<plot[0]||box[1]<plot[1]||box[2]>plot[2]||box[3]>plot[3])continue;
+        if(label.areaGuard&&!label.areaGuard.containsBox([box[0]-1.4/scale,box[1]-1.4/scale,box[2]+1.4/scale,box[3]+1.4/scale]))continue;
         if(label.outsideChen) {
           const halo=1.4/scale;
           if(territoryGuard?.intersects([box[0]-halo,box[1]-halo,box[2]+halo,box[3]+halo]))continue;
@@ -1859,7 +1924,7 @@
       }
       // Do not send northern reference names to the southern overflow panel.
       // A border label with no room remains available from its original point.
-      if(!placement&&label.outsideChen)continue;
+      if(!placement&&(label.outsideChen||isArea))continue;
       // A dense overview may exhaust the plot. Pack the remaining names below
       // the base image and include that panel in both the SVG and PNG bounds.
       if(!placement) {
@@ -1877,11 +1942,14 @@
       const text=svgNode('text',{x:placement.x,y:placement.y,'text-anchor':placement.anchor,class:classes.join(' '),'data-label-level':label.level},label.text);
       text.dataset.mapKey=label.mapKey;text.dataset.mapLevel=label.level;
       text.style.fontSize=`${fontSize}px`;text.style.letterSpacing='0';text.style.strokeWidth=`${2.8/scale}px`;
+      if(label.color)text.style.fill=label.color;
+      text.dataset.labelKind=isArea?'area':'seat';
+      if(label.areaId)text.dataset.areaId=label.areaId;
       if(label.fiefIds?.length)text.dataset.fiefIds=label.fiefIds.join(' ');
       text.setAttribute('tabindex','0');text.setAttribute('role','button');
       if(label.entityId) {
         text.dataset.entityId=label.entityId;text.setAttribute('aria-label',`高亮${label.text}的文字與治所`);
-        text.appendChild(svgNode('title',{},`點擊聯動文字與治所：${label.text}${label.coLocated?'（同治所分列標注）':''}`));
+        text.appendChild(svgNode('title',{},`點擊聯動文字與治所：${label.text}${label.coLocated?'（同治所分列標注）':''}${label.colorSource?'；'+label.colorSource:''}`));
       } else {
         text.dataset.mapReference=label.text;
         text.appendChild(svgNode('title',{},`${label.text}：地圖參考標記，未與本年正文唯一連接`));
@@ -1892,7 +1960,7 @@
       const sourceEndX=Math.max(placement.box[0],Math.min(placement.box[2],label.x));
       const sourceEndY=Math.max(placement.box[1],Math.min(placement.box[3],label.y));
       const displacedArea=!label.kind.includes('area')||Math.hypot(sourceEndX-label.x,sourceEndY-label.y)>fontSize*.9;
-      if(displacedArea&&Math.hypot(endX-anchorX,endY-anchorY)>fontSize*.9) {
+      if(!isArea&&displacedArea&&Math.hypot(endX-anchorX,endY-anchorY)>fontSize*.9) {
         const line=svgNode('line',{x1:anchorX,y1:anchorY,x2:endX,y2:endY,class:'map-label-leader','data-label-level':label.level,'data-map-key':label.mapKey,stroke:'#766d5b','stroke-width':.8/scale,'stroke-opacity':.7,'pointer-events':'none'});
         leaders.appendChild(line);
         text.addEventListener('mouseenter',()=>line.classList.add('is-hover'));
@@ -1935,11 +2003,39 @@
     if(!layout||currentMap?.reference||layout.year!==currentMap?.year)return;
     layout.layer.replaceChildren();
     const scale=Math.max(.01,yearMapStage.clientWidth/currentMap.width);
+    for(const symbol of yearMapOverlay.querySelectorAll('[data-seat-level]')) {
+      const level=symbol.dataset.seatLevel,outer=symbol.children[0],inner=symbol.children[1];
+      if(!outer)continue;
+      outer.setAttribute('r',String((level==='state'?4.8:level==='prefecture'?3.5:1.7)/scale));
+      outer.style.strokeWidth=`${(level==='county'?.5:1.1)/scale}`;
+      if(inner&&inner.tagName.toLowerCase()==='circle'){
+        inner.setAttribute('r',String((level==='state'?2.7:1.1)/scale));inner.style.strokeWidth=`${.9/scale}`;
+      }
+    }
     const labels=selectMapLabels(layout.labels);
     currentMap.renderHeight=placeAndDrawLabels(layout.layer,labels,layout.plot,scale,currentMap.height,layout.territoryGuard);
     yearMapOverlay.setAttribute('viewBox',`0 0 ${currentMap.width} ${currentMap.renderHeight}`);
     yearMapStage.style.paddingBottom=`${(currentMap.renderHeight-currentMap.height)*scale}px`;
     restoreMapSelection();
+  }
+
+  function appendMapSymbolLegend(root) {
+    root.appendChild(svgNode('text',{x:650,y:176,fill:'#34312d','font-size':15},'◎ 州治　⊙ 郡治　● 縣治｜大字為界內範圍名，小字為治所名｜封國文字與治所沿用本年封君色；未詳為黑色'));
+  }
+
+  function mapSeatSymbol(x,y,level,color=null) {
+    const radius=level==='state'?4.8:level==='prefecture'?3.5:2;
+    const group=svgNode('g',{'data-seat-level':level,class:`dynamic-${level}-symbol`});
+    const outer=svgNode('circle',{cx:x,cy:y,r:radius});
+    outer.style.fill=level==='county'?(color||'#34312d'):'#fffaf0';
+    outer.style.stroke=color||'#34312d';outer.style.strokeWidth=level==='county'?'.5':'1.2';
+    group.appendChild(outer);
+    if(level!=='county') {
+      const inner=svgNode('circle',{cx:x,cy:y,r:level==='state'?2.7:1.2});
+      inner.style.fill=level==='state'?'#fffaf0':(color||'#34312d');
+      inner.style.stroke=color||'#34312d';inner.style.strokeWidth='1';group.appendChild(inner);
+    }
+    return group;
   }
 
   function appendHotspots(root,features) {
@@ -1948,7 +2044,7 @@
       circle.dataset.mapKey=feature.mapKey||`entity:${feature.entity_id}`;circle.dataset.mapLevel=feature.level;
       if(feature.entity_id)circle.dataset.entityId=feature.entity_id;
       else circle.dataset.mapReference=feature.label;
-      circle.appendChild(svgNode('title',{},feature.label));root.appendChild(circle);
+      circle.appendChild(svgNode('title',{},feature.coordinateSource?`${feature.label}：${feature.coordinateSource.reason}《通史》書內第${feature.coordinateSource.evidence.book_page}頁；${feature.coordinateSource.source} ${feature.coordinateSource.source_id}`:feature.label));root.appendChild(circle);
     }
   }
 
@@ -1972,14 +2068,22 @@
 
   function renderDynamicMap(year,snapshot,map) {
     const territoryGuard=mapTerritoryLabelGuard(chenTerritoryFeature(year)?.properties?.svgPath||map.regimes?.chen);
-    const stateAreas=activeMapRecords(map.stateAreas,year,190);
+    const heldBoundaries=(window.CHEN_MAP_CORRECTIONS?.boundary_rules||[]).filter(rule=>rule.action==='hold'&&rule.start<=year&&year<=rule.end);
+    const stateAreas=activeMapRecords(map.stateAreas,year,190).filter(area=>{
+      if(heldBoundaries.some(rule=>rule.source===area.s&&rule.source_id===area.i))return false;
+      if(area.i==='ch_s0002-area'&&!snapshot.states.some(state=>state.id==='ch_s0002'))return false;
+      return true;
+    });
+    const boundaryNote=$('mapBoundaryResearch');boundaryNote.replaceChildren();boundaryNote.hidden=!heldBoundaries.length;
+    for(const rule of heldBoundaries){const line=document.createElement('p');line.textContent=`參考州界待核：${rule.reason}（${rule.source}，ID ${rule.source_id}；《通史》書內第${rule.evidence.book_page}頁）。`;boundaryNote.appendChild(line);}
     const prefAreas=activeMapRecords(map.prefAreas,year,120);
     const seatsByLevel={
       state:activeMapRecords(map.stateSeats,year,75),
       prefecture:activeMapRecords(map.prefSeats,year,55),
       county:activeMapRecords(map.countySeats,year,34),
     };
-    const resolved=resolveSnapshotFeatures(snapshot,seatsByLevel);
+    const resolved=resolveSnapshotFeatures(snapshot,seatsByLevel,year);
+    for(const seat of resolved.supplementalSeats)seatsByLevel[seat.l].push(seat);
     const featuresAtSeat=(seat,level)=>resolved.features.filter((feature)=>feature.level===level&&feature.x===seat.x&&feature.y===seat.y&&normalizeName(feature.entity.name)===seat.k);
     const fiefs=dynamicFiefLabels(snapshot,resolved,seatsByLevel,year);
     const seatKey=(level,x,y,name)=>`${level}|${Math.round(x)}|${Math.round(y)}|${normalizeName(name)}`;
@@ -1990,25 +2094,30 @@
     root.replaceChildren();
     root.appendChild(svgNode('text',{x:650,y:92,class:'dynamic-map-title'},`公元${year}年　南陳與同時期政權州郡縣封國`));
     root.appendChild(svgNode('text',{x:650,y:145,class:'dynamic-map-subtitle'},`共用地形：CHGIS DEM　｜　行政點面：CHGIS V6＋V4／V5補充　｜　政權疆域：${chenTerritorySource(year)}`));
+    appendMapSymbolLegend(root);
     drawRegimes(year,root,map);
     for(const area of stateAreas) {
-      root.appendChild(svgNode('path',{d:area.d,class:`dynamic-state-boundary${area.s==='CHGIS V5'?' dynamic-supplement-boundary':''}`}));
+      const boundary=svgNode('path',{d:area.d,class:`dynamic-state-boundary${area.s!=='CHGIS V6'?' dynamic-supplement-boundary':''}`,'data-area-id':area.i,'data-area-source':area.s});
+      boundary.appendChild(svgNode('title',{},`${area.n}：${area.s} ${area.i}，${area.b}—${area.e}；參考州界`));root.appendChild(boundary);
       const feature=snapshotFeatureForMapArea(area,'state',resolved.features);
       const mapGroup=feature?`entity:${feature.entity_id}`:`reference:state-area:${area.i}`;
       areaGroups.set(area,mapGroup);
-      labels.state.push({text:feature?.label||area.n,x:area.x,y:area.y,fontSize:24.5,kind:'state-area',priority:1000,entityId:feature?.entity_id,mapGroup});
+      labels.state.push({text:feature?.label||area.n,x:area.x,y:area.y,fontSize:24.5,kind:'state-area',priority:1000,entityId:feature?.entity_id,mapGroup,areaGuard:mapTerritoryLabelGuard(area.d),areaId:area.i});
     }
     for(const area of prefAreas) {
-      root.appendChild(svgNode('path',{d:area.d,class:`dynamic-pref-boundary${area.s==='CHGIS V5'?' dynamic-supplement-boundary':''}`}));
+      const boundary=svgNode('path',{d:area.d,class:`dynamic-pref-boundary${area.s!=='CHGIS V6'?' dynamic-supplement-boundary':''}`,'data-area-id':area.i,'data-area-source':area.s});
+      boundary.appendChild(svgNode('title',{},`${area.n}：${area.s} ${area.i}，${area.b}—${area.e}；參考郡界`));root.appendChild(boundary);
       const feature=snapshotFeatureForMapArea(area,'prefecture',resolved.features);
       const fief=feature&&fiefs.find((label)=>label.entityId===feature.entity_id);
       const mapGroup=feature?`entity:${feature.entity_id}`:`reference:prefecture-area:${area.i}`;
       areaGroups.set(area,mapGroup);
-      labels.prefecture.push({text:fief?.text||feature?.label||area.n,x:area.x,y:area.y,fontSize:16.5,kind:'prefecture-area',priority:900,entityId:feature?.entity_id,mapGroup,fief:Boolean(fief),fiefIds:fief?.fiefIds,uncertain:fief?.uncertain});
+      labels.prefecture.push({text:fief?.text||feature?.label||area.n,x:area.x,y:area.y,fontSize:16.5,kind:'prefecture-area',priority:900,entityId:feature?.entity_id,mapGroup,fief:Boolean(fief),fiefIds:fief?.fiefIds,uncertain:fief?.uncertain,color:fief?.color,colorSource:fief?.colorSource,areaGuard:mapTerritoryLabelGuard(area.d),areaId:area.i});
     }
     const specs=[['state','state-seat',22.5,560,4.1],['prefecture','prefecture-seat',10.8,500,2.9],['county','county-seat',8.6,400,2]];
-    for(const [level,kind,fontSize,priority,radius] of specs)for(const seat of seatsByLevel[level]) {
-      root.appendChild(svgNode('circle',{cx:seat.x,cy:seat.y,r:radius,class:`dynamic-${level}-dot`}));
+    for(const [level,kind,fontSize,priority,radius] of [...specs].reverse())for(const seat of seatsByLevel[level]) {
+      const linkedFief=fiefs.filter(f=>f.level===level&&f.x===seat.x&&f.y===seat.y);
+      const dotColor=linkedFief.length&&linkedFief.every(f=>f.color===linkedFief[0].color)?linkedFief[0].color:null;
+      root.appendChild(mapSeatSymbol(seat.x,seat.y,level,dotColor));
       if(!suppressed.has(seatKey(level,seat.x,seat.y,seat.n))) {
         const linked=featuresAtSeat(seat,level);
         if(linked.length)for(const feature of linked)labels[level].push({text:feature.label,x:seat.x,y:seat.y,fontSize,kind,priority,entityId:feature.entity_id});
@@ -2051,6 +2160,7 @@
     root.replaceChildren();
     root.appendChild(svgNode('text',{x:650,y:92,class:'dynamic-map-title'},`公元${year}年　蕭梁州郡縣治所參考`));
     root.appendChild(svgNode('text',{x:650,y:145,class:'dynamic-map-subtitle'},'CHGIS本年有效治所／郡界　｜　依原書地域與年表實體連接　｜　不表示梁朝精確疆域'));
+    appendMapSymbolLegend(root);
     for(const {area,feature} of resolved.boundaries){
       const path=svgNode('path',{d:area.d,class:'dynamic-pref-boundary'});
       path.appendChild(svgNode('title',{},`${feature.label}：${area.s}參考面 ${area.i}（${area.b}—${area.e}）；不是政權疆域`));root.appendChild(path);
@@ -2059,11 +2169,13 @@
       const {level,seat}=feature,fiefs=feature.entity.liangFiefs||[];
       const fiefNames=[...new Set(fiefs.map(f=>`${f.phase.fief}${f.record.rank==='王'?'國':f.record.rank+'國'}`))];
       const text=fiefNames.length?fiefNames.join('／'):feature.label;
-      const circle=svgNode('circle',{cx:feature.x,cy:feature.y,r:level==='state'?4.1:level==='prefecture'?2.9:2,class:`dynamic-${level}-dot`});
+      const colors=fiefs.map(f=>window.LIANG_PERSON_FORMATS?.fiefRecordStyle(f,year)?.color);
+      const color=fiefs.length?(colors.every(c=>c&&c===colors[0])?colors[0]:'#000000'):null;
+      const circle=mapSeatSymbol(feature.x,feature.y,level,color);
       circle.appendChild(svgNode('title',{},`${text}；${seat.s} SYS_ID=${seat.i}；${seat.b}—${seat.e}；${feature.method}`));root.appendChild(circle);
       return {text,sourceName:feature.entity.name,x:feature.x,y:feature.y,anchorX:feature.x,anchorY:feature.y,level,
         entityId:feature.entity_id,mapKey:feature.mapKey,kind:`${level}-seat`,fontSize:level==='state'?22.5:level==='prefecture'?10.8:8.6,
-        priority:level==='state'?560:level==='prefecture'?500:400,fief:!!fiefs.length};
+        priority:level==='state'?560:level==='prefecture'?500:400,fief:!!fiefs.length,color};
     });
     appendHotspots(root,[...resolved.features].sort((a,b)=>({county:0,prefecture:1,state:2}[a.level])-({county:0,prefecture:1,state:2}[b.level])));
     const layer=svgNode('g',{class:'dynamic-map-label-layer'});root.appendChild(layer);
@@ -2121,6 +2233,7 @@
 
   function renderYearMap(year,snapshot) {
     const liang=currentDynasty.key==='southern-liang';
+    $('mapBoundaryResearch').hidden=true;
     const dynamic=liang?window.LIANG_DYNAMIC_MAP:currentDynasty.key==='chen'?window.CHEN_DYNAMIC_MAP:null;
     $('liangMapMissing').hidden=!liang||!dynamic;
     $('liangMapReference555').hidden=!liang;
@@ -2160,7 +2273,7 @@
       resetMapView();return;
     }
     yearMapUhd.hidden=false;yearMapCsv.hidden=false;yearMapGeoJson.hidden=false;yearMapExport.hidden=false;
-    yearMapUhd.textContent='下載588年超高清 PNG';yearMapCsv.textContent='下載588年 CSV';
+    yearMapUhd.textContent='下載588年舊版覆核原圖（未更新標注）';yearMapCsv.textContent='下載588年 CSV';
     yearMapGeoJson.textContent='下載史圖館分期疆域 GeoJSON';yearMapGeoJson.href='data/chen-territories.geojson';
     for(const link of [yearMapUhd,yearMapCsv,yearMapGeoJson])link.setAttribute('download','');
     $('yearMapZoomHelp').textContent='100%–1000%；低於300%只顯示州名，300%–700%顯示州郡名，超過700%顯示州郡縣名。滾輪縮放，拖曳或聚焦地圖後用方向鍵平移。';
@@ -2168,7 +2281,7 @@
     const territoryNote=territory
       ? `${year}年陳境採史圖館${territory.properties.source_year}年圖矢量化${territory.properties.year_relation==='exact'?'':'（最近可用年份）'}；以建康、江陵、武陵、廣州、交趾、海南六處分布式控制點配準CHGIS／經緯網，東南海岸另依地形底圖校準，海南與大陸之間保留瓊州海峽。${year===569?'廣州叛亂區先依海陸掩膜裁至陸地，仍計入陳境，另以綠色叛亂層疊加。':''}`
       : '本年尚無史圖館分期矢量，政權疆域仍以ChinaXMap 572年斷面近似。';
-    yearMapNote.textContent=`${year===557?'557年不反向補造正文行政資料。':'各年共用一份地形底圖，州郡縣、封國及可用邊界按年即時繪製。'}${territoryNote} 州郡縣治所與邊界以CHGIS V6為主、V4／V5補足；缺坐標者不臆測。縮放範圍100%–1000%：低於300%只顯示州名；300%至700%（含兩端）顯示州與郡國名；超過700%顯示全部州、郡國、縣名，封國按所屬行政層級同步顯示。名稱隨縮放重新避讓，移位標注以細線指回原位置，同治所分列；面與治所均使用本年名稱。總覽過密時，剩餘名稱列於圖下並一併匯出。點擊名稱或治所會持續高亮對應文字、位置及引線；點選尚未顯示名稱的治所時自動放大至該層級。讀圖模式佔滿視窗並保留圖中位置，可按Esc退出或按「查看正文」定位年表。588年人工覆核原圖仍可下載。`;
+    yearMapNote.textContent=`${year===557?'557年不反向補造正文行政資料。':'各年共用一份地形底圖，州郡縣、封國及可用邊界按年即時繪製。'}${territoryNote} 州郡縣治所與邊界以CHGIS V6為主、V4／V5補足；缺坐標者不臆測。縮放範圍100%–1000%：低於300%只顯示州名；300%至700%（含兩端）顯示州與郡國名；超過700%顯示全部州、郡國、縣名，封國按所屬行政層級同步顯示。範圍名使用較大字，完整文字須在對應參考界內；界內無空位時暫隱，不移至界外。治所名使用接近縣名的小字，州治雙圈、郡治圈中點、縣治實心點；移位治所名用細線指回原位置，同治所分列。封國文字與治所沿用正文當年封君色，未能唯一判定者黑色。總覽過密時，剩餘治所名列於圖下並一併匯出。點擊名稱或治所會持續高亮對應文字、位置及引線；點選尚未顯示名稱的治所時自動放大至該層級。讀圖模式佔滿視窗並保留圖中位置，可按Esc退出或按「查看正文」定位年表。588年舊版人工覆核原圖仍可下載，未套用本輪標注；請用「匯出當前年份 PNG」取得新圖。`;
     currentMap={year,width:dynamic.width,height:dynamic.height,uhd:dynamic.map588.uhd};
     yearMapOverlay.setAttribute('viewBox',`0 0 ${dynamic.width} ${dynamic.height}`);
     yearMapOverlay.setAttribute('aria-label',`${year}年州郡縣治所可點擊定位圖層`);
@@ -2177,7 +2290,7 @@
     mapUhdLoaded=false;yearMapLoadUhd.hidden=true;
     yearMapImage.src=dynamic.base;
     currentMapFeatures=renderDynamicMap(year,snapshot,dynamic);
-    $('yearMapStatus').textContent=`${year}年以共用地形和年度向量層即時繪製；${currentMapFeatures.length}個年表政區取得可用坐標。點擊名稱或圓點可聯動高亮；300%開始顯示郡名，超過700%顯示縣名。`;
+    $('yearMapStatus').textContent=`${year}年以共用地形和年度向量層即時繪製；${currentMapFeatures.length}個年表政區取得可用坐標。點擊名稱或治所符號可聯動高亮；300%開始顯示郡名，超過700%顯示縣名。`;
     yearMapImage.alt=`公元${year}年南陳與同時期政權州郡縣封國地形圖`;
     resetMapView();
   }

@@ -20,7 +20,7 @@
   let catalogSources;
 
   function catalog() {
-    const sources = [window.LIANG_PERSON_COLORS, window.LIANG_LOCAL_OFFICIALS, window.LIANG_FIEFS, window.LIANG_PERSON_EVIDENCE];
+    const sources = [window.LIANG_PERSON_COLORS, window.LIANG_LOCAL_OFFICIALS, window.LIANG_FIEFS, window.LIANG_PERSON_EVIDENCE, window.LIANG_WORKBOOK_PERSON_COLORS];
     if (catalogSources?.every((source, index) => source === sources[index])) return cachedCatalog;
     const people = new Map();
     const add = (rawName, aliases = []) => {
@@ -38,6 +38,10 @@
     for (const item of window.LIANG_PERSON_COLORS?.people || []) {
       const person = add(item.name, item.aliases || []);
       if (person) Object.assign(person.years, item.years || {});
+    }
+    for (const item of window.LIANG_WORKBOOK_PERSON_COLORS?.people || []) {
+      const person = add(item.name, item.aliases || []);
+      if (person) person.workbookYears = item.years || {};
     }
     for (const item of Object.values(window.LIANG_LOCAL_OFFICIALS?.tenures_by_id || {})) add(item.person, item.person_aliases || []);
     // Some live data updates provide only annual rows.
@@ -81,14 +85,17 @@
   function personStyle(value, requestedYear) {
     const name = normalizeName(value), year = Number(requestedYear), person = catalog().get(name);
     if (!person || !Number.isFinite(year)) return null;
+    const workbook = person.workbookYears?.[String(year)];
+    if (workbook && (workbook.color !== ink || workbook.conflict)) return { ...workbook };
     const annual = person.years[String(year)];
-    if (annual) return { ...annual, source: `梁代刺史年表既有人物—年份色：${year}年 ${name}`, basis: 'annual_source', pending: false };
+    if (!workbook && annual) return { ...annual, source: `梁代刺史年表既有人物—年份色：${year}年 ${name}`, basis: 'annual_source', pending: false };
     for (const item of person.evidence) {
       const period = (item.periods || []).find(item => year >= item.start && year <= item.end);
       if (period) return { color: period.color || ink, category: period.category,
         source: period.source || item.source || '', evidence: period.evidence || item.evidence || [],
         pending: Boolean(period.pending), basis: 'liang_evidence' };
     }
+    if (workbook) return { ...workbook };
     if (!name.startsWith('蕭')) return { color: '#00B050', category: '異姓', source: '梁代異姓人物綠色規則；姓名來自梁代人物名錄', basis: 'surname_display_rule', pending: false };
     return { color: ink, category: '同姓身份待核', pending: true, basis: 'unresolved',
       source: person.evidence.map(item => item.source).filter(Boolean).join('；') || '本年沒有已核梁代身份色；不能僅憑蕭姓推為宗室' };
@@ -170,6 +177,20 @@
     return result;
   }
 
+  function matchesSourceCell(cell, year) {
+    return matches(cell.text, year).map(match => {
+      const annual = match.person.workbookYears?.[String(year)];
+      const occurrences = (annual?.evidence || []).filter(item => item.address === cell.address && item.text === match.text);
+      const colors = [...new Set(occurrences.flatMap(item => item.source_colors).filter(color => color !== ink))];
+      // A source cell can explicitly record two titles/identities within one
+      // year. Preserve each occurrence; do not choose a single annual status.
+      if (!match.person.name.startsWith('蕭') || colors.length !== 1) return match;
+      const style = { ...annual, color: colors[0], pending: false,
+        source: `${annual.source}；本格「${match.text}」原字色` };
+      return { ...match, style, yearStyle: style, colorStyle: style, color: style.color, source: style.source };
+    });
+  }
+
   function fiefRecordStyle(value, year) {
     const record = value?.record || value;
     if (!record) return null;
@@ -183,6 +204,6 @@
     return value?.record || value?.holders ? fiefRecordStyle(value, year) : personStyle(value, year);
   }
 
-  window.LIANG_PERSON_FORMATS = { matches, displayName, decorateText, personStyle, fiefStyle, fiefRecordStyle,
+  window.LIANG_PERSON_FORMATS = { matches, matchesSourceCell, displayName, decorateText, personStyle, fiefStyle, fiefRecordStyle,
     canonicalName: normalizeName, ink };
 })();

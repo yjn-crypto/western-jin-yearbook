@@ -4,7 +4,7 @@
   const DATA = window.GOVERNOR_YEARBOOK || window.LIANG_GOVERNOR_YEARBOOK || window.CHEN_GOVERNOR_YEARBOOK || { meta: {}, states: [], rows: [] };
   const dynastyKey = DATA.meta.dynasty_key || 'southern-liang';
   const isLiang = dynastyKey === 'southern-liang';
-  const sourceFormats = isLiang ? null : window.CHEN_YEARBOOK_FORMATS;
+  const sourceFormats = isLiang ? window.LIANG_YEARBOOK_FORMATS : window.CHEN_YEARBOOK_FORMATS;
   const sourceRenderer = window.GOVERNOR_SOURCE_FORMAT;
   const formattedRows = new Map((sourceFormats?.rows || []).map((row) => [row.year, row]));
   const rows = sourceFormats ? sourceFormats.rows.map((row) => ({
@@ -13,6 +13,7 @@
     cells: row.cells.map((cell) => cell.text),
     auxiliary: row.auxiliary.text,
     appendix: row.appendix.text,
+    extra_cells: row.extra_cells || [],
   })) : DATA.rows;
   const $ = (id) => document.getElementById(id);
   const yearSelect = $('governorYearSelect');
@@ -81,7 +82,9 @@
 
   function renderCell(cell, value, sourceColor = null, sourceCell = null, year = null, state = null) {
     if (sourceCell && sourceRenderer) {
-      const personMatches = year && window.CHEN_PERSON_FORMATS ? window.CHEN_PERSON_FORMATS.matches(sourceCell.text, year, state) : [];
+      const personFormats = isLiang ? window.LIANG_PERSON_FORMATS : window.CHEN_PERSON_FORMATS;
+      const personMatches = year && personFormats ? isLiang && personFormats.matchesSourceCell
+        ? personFormats.matchesSourceCell(sourceCell, year) : personFormats.matches(sourceCell.text, year, state) : [];
       sourceRenderer.appendCell(cell, sourceCell, { personMatches });
       // Excel's unfilled sheet is white; an opaque surface also keeps sticky
       // headers from showing the scrolled cell text through their background.
@@ -220,7 +223,73 @@
     else appendix.textContent = '附錄';
     if (focusAppendix) appendix.classList.add('is-target-column');
     row.appendChild(appendix);
+    if (rows.some(record => record.extra_cells?.length)) {
+      const extras = document.createElement('th');
+      extras.scope = 'col';
+      extras.className = 'appendix-column';
+      extras.textContent = '原表右側及其他附欄';
+      row.appendChild(extras);
+    }
     thead.appendChild(row);
+  }
+
+  function commentText(cell) {
+    return (cell?.comments || []).map(comment => comment.text).join('\n');
+  }
+
+  function renderExtraCells(element, cells, year = null) {
+    for (const sourceCell of cells || []) {
+      const block = document.createElement('div');
+      block.className = 'source-extra-cell';
+      const label = document.createElement('small');
+      label.className = 'source-row';
+      label.textContent = `原表 ${sourceCell.address}`;
+      const content = document.createElement('div');
+      renderCell(content, sourceCell.text, null, sourceCell, year, '附欄');
+      block.append(label, content);
+      element.appendChild(block);
+    }
+  }
+
+  function renderSupplementalRows(query) {
+    const section = $('sourceSupplementalRows');
+    if (!section) return;
+    section.replaceChildren();
+    for (const record of sourceFormats?.supplemental_rows || []) {
+      const text = record.cells.map(cell => cell.text + '\n' + commentText(cell)).join('\n');
+      if (query && matchOnly.checked && !normalize(text).includes(query)) continue;
+      const details = document.createElement('details');
+      details.className = 'source-supplemental-row';
+      details.open = Boolean(query && normalize(text).includes(query));
+      const summary = document.createElement('summary');
+      summary.textContent = `原表第 ${record.source_row} 行 · ${record.kind === 'transition' ? '改朝過渡行' : '未繫年備註'}（${record.cells.length} 格）`;
+      details.appendChild(summary);
+      renderExtraCells(details, record.cells);
+      section.appendChild(details);
+    }
+  }
+
+  function applySourceMerges(filtered) {
+    if (filtered) return;
+    for (const merge of sourceFormats?.merged_ranges || []) {
+      const anchor = tbody.querySelector(`[data-source-cell="${merge.anchor}"]`);
+      if (!anchor || anchor.tagName !== 'TD') continue;
+      // All covered rows must be in this annual view. A merge crossing a
+      // transition block is retained as source metadata instead of extended.
+      const covered = [];
+      for (let row = merge.top; row <= merge.bottom; row += 1) {
+        for (let col = merge.left; col <= merge.right; col += 1) {
+          let n = col, letters = '';
+          while (n) { n -= 1; letters = String.fromCharCode(65 + n % 26) + letters; n = Math.floor(n / 26); }
+          covered.push(tbody.querySelector(`td[data-source-cell="${letters}${row}"]`));
+        }
+      }
+      if (covered.some(cell => !cell)) continue;
+      if (covered.some(cell => cell !== anchor && cell.textContent.trim())) continue;
+      anchor.rowSpan = merge.bottom - merge.top + 1;
+      anchor.colSpan = merge.right - merge.left + 1;
+      for (const cell of covered) if (cell !== anchor) cell.remove();
+    }
   }
 
   function renderTable() {
@@ -242,7 +311,8 @@
       const sourceRecord = formattedRows.get(record.year);
       const tr = document.createElement('tr');
       tr.dataset.year = String(record.year);
-      const rowText = [record.reign, ...record.cells, record.auxiliary, record.appendix].join('\n');
+      const sourceCells = sourceRecord ? [sourceRecord.reign, ...sourceRecord.cells, sourceRecord.auxiliary, sourceRecord.appendix, ...(sourceRecord.extra_cells || [])] : [];
+      const rowText = [record.reign, ...record.cells, record.auxiliary, record.appendix, ...(record.extra_cells || []).map(cell => cell.text), ...sourceCells.map(commentText)].join('\n');
       const rowMatches = !query || normalize(rowText).includes(query);
       if (query && rowMatches) {
         tr.classList.add('is-search-match');
@@ -274,7 +344,7 @@
         const td = document.createElement('td');
         td.dataset.year = String(record.year);
         td.dataset.state = DATA.states[index].name;
-        if (query && normalize(value).includes(query)) td.classList.add('is-search-match');
+        if (query && normalize(value + '\n' + commentText(sourceRecord?.cells[index])).includes(query)) td.classList.add('is-search-match');
         if (isTargetYear && stateIndex === index && !(!value && appendixHasTarget)) {
           td.classList.add('is-target-cell');
           targetCell = td;
@@ -292,7 +362,7 @@
       appendix.className = 'appendix-column';
       appendix.dataset.year = String(record.year);
       appendix.dataset.state = '附錄';
-      if (query && normalize(record.appendix).includes(query)) appendix.classList.add('is-search-match');
+      if (query && normalize(record.appendix + '\n' + commentText(sourceRecord?.appendix)).includes(query)) appendix.classList.add('is-search-match');
       if (isTargetYear && (focusAppendix || (stateIndex >= 0 && !record.cells[stateIndex] && appendixHasTarget))) {
         appendix.classList.add('is-target-cell');
         targetCell = appendix;
@@ -300,7 +370,23 @@
       }
       renderCell(appendix, record.appendix, record.appendix_color, sourceRecord?.appendix, record.year, '附錄');
       tr.appendChild(appendix);
+      if (rows.some(item => item.extra_cells?.length)) {
+        const extras = document.createElement('td');
+        extras.className = 'appendix-column';
+        renderExtraCells(extras, sourceRecord?.extra_cells || [], record.year);
+        tr.appendChild(extras);
+      }
       tbody.appendChild(tr);
+    }
+
+    applySourceMerges(Boolean(query && matchOnly.checked));
+    if (targetCell && !targetCell.isConnected && targetCell.dataset.sourceMerge) {
+      targetCell = tbody.querySelector(`[data-source-merge="${targetCell.dataset.sourceMerge}"]`);
+      targetCell?.classList.add('is-target-cell');
+    }
+    renderSupplementalRows(query);
+    if (query) for (const details of tbody.querySelectorAll('.source-cell-comments')) {
+      if (normalize(details.textContent).includes(query)) details.open = true;
     }
 
     updateUrls();

@@ -174,12 +174,12 @@ body.map-reading-open { overflow: hidden; }
 .dynamic-map-label.map-label-link { pointer-events: bounding-box; cursor: pointer; }
 .dynamic-map-label.map-label-reference { pointer-events: bounding-box; cursor: help; }
 .map-label-link:hover,.map-label-link:focus-visible,.map-label-link.is-active,.map-label-reference:hover,.map-label-reference:focus-visible,.map-label-reference.is-active { text-decoration: underline; outline: none; stroke: #fff1a8; }
-.dynamic-state-area-label { fill: #4d3028; font-size: 24.5px; font-weight: 700; letter-spacing: 2px; }
-.dynamic-state-seat-label { fill: #562f28; font-size: 22.5px; font-weight: 700; }
-.dynamic-prefecture-area-label { fill: #3f4a38; font-size: 16.5px; font-weight: 700; }
-.dynamic-prefecture-seat-label { fill: #684a3f; font-size: 10.8px; }
-.dynamic-county-seat-label { fill: #264f60; font-size: 8.6px; }
-.dynamic-fief-label { fill: #754476; font-family: var(--kai); font-weight: 700; }
+.dynamic-state-area-label { fill: #34312d; font-size: 24.5px; font-weight: 700; letter-spacing: 2px; }
+.dynamic-state-seat-label { fill: #34312d; font-size: 22.5px; font-weight: 700; }
+.dynamic-prefecture-area-label { fill: #34312d; font-size: 16.5px; font-weight: 700; }
+.dynamic-prefecture-seat-label { fill: #34312d; font-size: 10.8px; }
+.dynamic-county-seat-label { fill: #34312d; font-size: 8.6px; }
+.dynamic-fief-label { fill: #000; font-family: var(--kai); font-weight: 700; }
 .dynamic-fief-label.is-uncertain { font-style: italic; text-decoration: underline dotted; }
 .map-hotspot { fill: transparent; stroke: transparent; stroke-width: 5; vector-effect: non-scaling-stroke; cursor: pointer; pointer-events: all; }
 .map-hotspot:hover,.map-hotspot:focus-visible { fill: rgba(255,255,255,.28); stroke: #f5f1d7; outline: none; }
@@ -867,3 +867,7 @@ body[data-theme] input:focus { outline-color: color-mix(in srgb, var(--accent) 2
 .liang-pending-counties>p{line-height:1.7;margin:10px 0}
 .liang-pending-county-link{font:inherit;color:inherit;background:transparent;border:0;border-bottom:1px dotted currentColor;cursor:pointer;padding:0}
 .liang-local-officer-name{font-weight:600}
+
+.map-symbol-legend { margin: 4px 0 8px; font-size: .82rem; color: #34312d; line-height: 1.6; }
+
+.state-research-note { margin: 8px 16px; color: #645d52; font-size: .88rem; line-height: 1.6; }

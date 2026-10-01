@@ -52,7 +52,8 @@ class Reader:
         rel_id = sheet.get("{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id")
         relationships = ET.fromstring(archive.read("xl/_rels/workbook.xml.rels"))
         target = next(r.get("Target") for r in relationships if r.get("Id") == rel_id)
-        self.sheet = ET.fromstring(archive.read(posixpath.normpath(posixpath.join("xl", target)) if not target.startswith("/") else target.lstrip("/")))
+        self.sheet_path = posixpath.normpath(posixpath.join("xl", target)) if not target.startswith("/") else target.lstrip("/")
+        self.sheet = ET.fromstring(archive.read(self.sheet_path))
         self.styles = ET.fromstring(archive.read("xl/styles.xml"))
         self.fonts = list(self.styles.find("s:fonts", NS))
         self.fills = list(self.styles.find("s:fills", NS))
@@ -70,6 +71,23 @@ class Reader:
         self.row_styles = {row.get("r"): row.get("s") for row in self.sheet.find("s:sheetData", NS) if row.get("s") is not None}
         columns = self.sheet.find("s:cols", NS)
         self.column_styles = list(columns) if columns is not None else []
+        self.comments = {}
+        rel_path = posixpath.join(posixpath.dirname(self.sheet_path), "_rels", posixpath.basename(self.sheet_path) + ".rels")
+        if rel_path in archive.namelist():
+            for relation in ET.fromstring(archive.read(rel_path)):
+                if not relation.get("Type", "").endswith("/comments"):
+                    continue
+                comment_path = posixpath.normpath(posixpath.join(posixpath.dirname(self.sheet_path), relation.get("Target")))
+                comments = ET.fromstring(archive.read(comment_path))
+                authors = [node.text or "" for node in comments.findall("s:authors/s:author", NS)]
+                for comment in comments.findall("s:commentList/s:comment", NS):
+                    content = comment.find("s:text", NS)
+                    runs = []
+                    for child in content:
+                        chunk = child.text or "" if child.tag.endswith("}t") else "".join(node.text or "" for node in child.findall("s:t", NS))
+                        props = child.find("s:rPr", NS)
+                        runs.append({"text": chunk, "style": self.font(props) if props is not None else {}, "source_font": raw(props)})
+                    self.comments.setdefault(comment.get("ref"), []).append({"author": authors[int(comment.get("authorId", "0"))], "text": "".join(run["text"] for run in runs), "runs": runs, "source_part": comment_path})
 
     def color(self, element, fallback="#000000"):
         if element is None:
@@ -177,63 +195,20 @@ class Reader:
         elif text:
             runs = [{"text": text, "style": dict(style)}]
         return {"address": address, "text": text, "style": style, "runs": runs,
+                "comments": self.comments.get(address, []),
+                "formula": element.findtext("s:f", default=None, namespaces=NS) if element is not None else None,
+                "source_type": element.get("t", "n") if element is not None else None,
                 "source_format": {"style_id": style_id, "font": raw(font), "fill": raw(fill),
                                   "alignment": raw(alignment), "xf": raw(xf), "base_xf": raw(base),
                                   "border": raw(self.borders[int(attributes.get("borderId", "0"))])}}
 
 
 def main():
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("workbook", type=Path)
-    parser.add_argument("--output", type=Path)
-    args = parser.parse_args()
-    root = Path(__file__).resolve().parents[1]
-    output = args.output or root / "data/chen-yearbook-formats.js"
-    legacy_text = (root / "data/chen-governor-yearbook.js").read_text(encoding="utf-8-sig")
-    legacy = json.loads(legacy_text.split("=", 1)[1].strip().removesuffix(";"))
-    differences = []
-    counts = {"compared_cells": 0, "identical_cells": 0, "whitespace_only_differences": 0, "text_differences": 0}
-    with zipfile.ZipFile(args.workbook, "r") as archive:
-        reader = Reader(archive, "Sheet1")
-        rows = []
-        for old in legacy["rows"]:
-            number = old["source_row"]
-            item = {"year": old["year"], "source_row": number,
-                    "cells": [reader.cell(f"{column(col)}{number}") for col in range(2, 26)],
-                    "reign": reader.cell(f"A{number}"), "auxiliary": reader.cell(f"Z{number}"),
-                    "spacer": reader.cell(f"AA{number}"), "appendix": reader.cell(f"AB{number}")}
-            pairs = list(zip(item["cells"], old["cells"])) + [(item[key], old.get(key, "")) for key in ("reign", "auxiliary", "appendix")]
-            for cell, previous in pairs:
-                counts["compared_cells"] += 1
-                if cell["text"] == previous:
-                    counts["identical_cells"] += 1
-                    continue
-                kind = "whitespace_only" if re.sub(r"\s+", "", cell["text"]) == re.sub(r"\s+", "", previous) else "text"
-                counts[f"{kind}_differences"] += 1
-                differences.append({"year": old["year"], "address": cell["address"], "kind": kind,
-                                    "previous_text": previous, "source_text": cell["text"]})
-            rows.append(item)
-        cells = [cell for row in rows for cell in [*row["cells"], row["reign"], row["auxiliary"], row["appendix"]]]
-        nonempty = [cell for cell in cells if cell["text"]]
-        multicolor = [cell for cell in nonempty if len({run["style"].get("color") for run in cell["runs"] if run["text"].strip()}) > 1]
-        italic = [cell for cell in nonempty if any(run["style"].get("fontStyle") == "italic" for run in cell["runs"])]
-        underline = [cell for cell in nonempty if any("underline" in run["style"].get("textDecorationLine", "") for run in cell["runs"])]
-        data = {"meta": {"source_file": args.workbook.name, "source_sheet": "Sheet1", "source_range": "A320:AB352",
-                         "state_range": "B:Y", "auxiliary_column": "Z", "appendix_column": "AB",
-                         "range_note": "舊匯出標注終列 AA；原工作簿附欄實際位於 AB，AA 留空並保留。",
-                         "text_comparison": {**counts, "differences": differences},
-                         "format_counts": {"nonempty_cells": len(nonempty), "multicolor_cells": len(multicolor), "italic_cells": len(italic), "underlined_cells": len(underline)},
-                         "resolved_theme_colors": reader.theme,
-                         "note": "只讀匯入原工作簿字元格式。逐段字色、字体、大小、粗斜體、刪除線、下劃線、上下標及原儲存樣式皆保留；不改寫任期或史料。"},
-                "headers": [reader.cell(f"{column(col)}320") for col in range(1, 29)], "rows": rows}
-        for cell in cells:
-            if "".join(run["text"] for run in cell["runs"]) != cell["text"]:
-                raise ValueError(f"Run text differs at {cell['address']}")
-        output.write_text("window.CHEN_YEARBOOK_FORMATS=" + json.dumps(data, ensure_ascii=False, separators=(",", ":")) + ";\n", encoding="utf-8")
-    print(json.dumps({"output": output.name, **counts, **data["meta"]["format_counts"],
-                      "examples": {key: [{"address": c["address"], "runs": [{"text": r["text"], "color": r["style"].get("color"), "fontStyle": r["style"].get("fontStyle"), "textDecorationLine": r["style"].get("textDecorationLine")} for r in c["runs"]]} for c in collection[:1]] for key, collection in (("multicolor", multicolor), ("italic", italic), ("underline", underline))}}, ensure_ascii=False))
+    # Keep the historical entry point, but use the complete shared importer so
+    # appendix detection, comments and side columns cannot regress to AB-only.
+    import subprocess
+    subprocess.run([sys.executable, str(Path(__file__).with_name("import-governor-workbook.py")), *sys.argv[1:]], check=True)
 
 
 if __name__ == "__main__":
-    sys.stdout.reconfigure(encoding="utf-8")
     main()

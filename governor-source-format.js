@@ -80,6 +80,26 @@
       applyStyle(span, runStyle);
       element.appendChild(span);
     }
+    if (options.comments !== false && cell.comments?.length) {
+      const details = document.createElement('details');
+      details.className = 'source-cell-comments';
+      const summary = document.createElement('summary');
+      summary.textContent = `批註 ${cell.comments.length}`;
+      summary.title = `${cell.address || ''} 原工作簿批註`;
+      details.appendChild(summary);
+      for (const comment of cell.comments) {
+        const content = document.createElement('div');
+        content.className = 'source-comment-text';
+        content.textContent = comment.text;
+        content.dataset.sourceCell = cell.address || '';
+        details.appendChild(content);
+      }
+      element.appendChild(details);
+    }
+    if (cell.merge) {
+      element.dataset.sourceMerge = cell.merge.ref;
+      element.title = `原表合併範圍 ${cell.merge.ref}；合併本身不推定任期`;
+    }
     return element;
   }
 

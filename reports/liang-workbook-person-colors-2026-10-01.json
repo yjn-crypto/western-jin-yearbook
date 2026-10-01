@@ -1,0 +1,312 @@
+{
+  "source_file": "南朝刺史、長史、司馬年表.xlsx",
+  "source_sheet": "Sheet1",
+  "source_sha256": "06e8b8f0d3b01dadce3b618a4cc49a4a7f45e77abc8bb995712d22b3c21ed07c",
+  "years": [
+    502,
+    556
+  ],
+  "imported": "2026-10-01",
+  "policy": "只匹配有名錄依據的完整姓名與爵號；逐段取色，同年異色保留待核；不由蕭姓推宗室，不跨年補色。",
+  "people": 172,
+  "annual_person_entries": 1063,
+  "source_occurrences": 1211,
+  "changed_legacy_colors": 17,
+  "corrections": [
+    {
+      "name": "蕭淵藻",
+      "year": 520,
+      "previous": "#FF0000",
+      "current": "#0070C0",
+      "evidence": [
+        {
+          "address": "M276",
+          "text": "西昌侯蕭淵藻",
+          "source_colors": [
+            "#0070C0"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "蕭淵藻",
+      "year": 531,
+      "previous": "#C00000",
+      "current": "#0070C0",
+      "evidence": [
+        {
+          "address": "I287",
+          "text": "西昌侯蕭淵藻",
+          "source_colors": [
+            "#0070C0"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "蕭綜",
+      "year": 506,
+      "previous": "#FF0000",
+      "current": "#C00000",
+      "evidence": [
+        {
+          "address": "C262",
+          "text": "豫章王蕭綜",
+          "source_colors": [
+            "#C00000"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "蕭昌",
+      "year": 509,
+      "previous": "#00B050",
+      "current": "#632523",
+      "evidence": [
+        {
+          "address": "N265",
+          "text": "蕭昌",
+          "source_colors": [
+            "#632523"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "孔休源",
+      "year": 527,
+      "previous": "#FF0000",
+      "current": "#00B050",
+      "evidence": [
+        {
+          "address": "B283",
+          "text": "孔休源",
+          "source_colors": [
+            "#00B050"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "孔休源",
+      "year": 528,
+      "previous": "#FF0000",
+      "current": "#00B050",
+      "evidence": [
+        {
+          "address": "B284",
+          "text": "孔休源",
+          "source_colors": [
+            "#00B050"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "孔休源",
+      "year": 529,
+      "previous": "#FF0000",
+      "current": "#00B050",
+      "evidence": [
+        {
+          "address": "B285",
+          "text": "孔休源",
+          "source_colors": [
+            "#00B050"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "孔休源",
+      "year": 530,
+      "previous": "#FF0000",
+      "current": "#00B050",
+      "evidence": [
+        {
+          "address": "B286",
+          "text": "孔休源",
+          "source_colors": [
+            "#00B050"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "蕭續",
+      "year": 522,
+      "previous": "#7030A0",
+      "current": "#C00000",
+      "evidence": [
+        {
+          "address": "G278",
+          "text": "廬陵王蕭續",
+          "source_colors": [
+            "#C00000"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "蕭恭",
+      "year": 535,
+      "previous": "#7030A0",
+      "current": "#0070C0",
+      "evidence": [
+        {
+          "address": "G291",
+          "text": "衡山侯蕭恭",
+          "source_colors": [
+            "#0070C0"
+          ]
+        },
+        {
+          "address": "J291",
+          "text": "衡山侯蕭恭",
+          "source_colors": [
+            "#0070C0"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "蕭大心",
+      "year": 549,
+      "previous": "#FFFF00",
+      "current": "#000000",
+      "evidence": [
+        {
+          "address": "F305",
+          "text": "當陽公蕭大心",
+          "source_colors": [
+            "#FFFF00"
+          ]
+        },
+        {
+          "address": "F305",
+          "text": "尋陽王蕭大心",
+          "source_colors": [
+            "#C00000"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "蕭大器",
+      "year": 538,
+      "previous": "#C00000",
+      "current": "#FFFF00",
+      "evidence": [
+        {
+          "address": "B294",
+          "text": "宣城王大器",
+          "source_colors": [
+            "#FFFF00"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "胡貴孫",
+      "year": 547,
+      "previous": "#0070C0",
+      "current": "#00B050",
+      "evidence": [
+        {
+          "address": "R303",
+          "text": "胡貴孫",
+          "source_colors": [
+            "#00B050"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "蕭大春",
+      "year": 551,
+      "previous": "#FFFF00",
+      "current": "#C00000",
+      "evidence": [
+        {
+          "address": "D307",
+          "text": "安陸王蕭大春",
+          "source_colors": [
+            "#C00000"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "皇甫昚",
+      "year": 549,
+      "previous": "#FFC000",
+      "current": "#00B050",
+      "evidence": [
+        {
+          "address": "K305",
+          "text": "皇甫昚",
+          "source_colors": [
+            "#00B050"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "蕭大鈞",
+      "year": 551,
+      "previous": "#FFFF00",
+      "current": "#C00000",
+      "evidence": [
+        {
+          "address": "B307",
+          "text": "西陽王蕭大鈞",
+          "source_colors": [
+            "#C00000"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "徐世譜",
+      "year": 554,
+      "previous": "#CC00FF",
+      "current": "#00B050",
+      "evidence": [
+        {
+          "address": "Z310",
+          "text": "徐世譜",
+          "source_colors": [
+            "#00B050"
+          ]
+        }
+      ]
+    }
+  ],
+  "conflicts": [
+    {
+      "name": "蕭大心",
+      "year": 549,
+      "colors": [
+        "#FFFF00",
+        "#C00000"
+      ],
+      "evidence": [
+        {
+          "address": "F305",
+          "text": "當陽公蕭大心",
+          "source_colors": [
+            "#FFFF00"
+          ]
+        },
+        {
+          "address": "F305",
+          "text": "尋陽王蕭大心",
+          "source_colors": [
+            "#C00000"
+          ]
+        }
+      ]
+    }
+  ]
+}

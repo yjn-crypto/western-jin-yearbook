@@ -6,14 +6,14 @@
   <title>蕭梁刺史年表</title>
   <meta name="description" content="依《南朝刺史、長史、司馬年表》工作簿蕭梁表段重建的502—556年逐年刺史年表。">
   <link rel="stylesheet" href="style.css?v=20260912.1">
-  <link rel="stylesheet" href="liang-governor-yearbook.css?v=20260826.1">
+  <link rel="stylesheet" href="liang-governor-yearbook.css?v=20261001.1">
 </head>
 <body data-theme="fire" class="governor-yearbook-page">
   <header class="site-header">
     <div class="header-inner">
       <p class="eyebrow">蕭梁方鎮 · 原表逐格重建</p>
       <h1>蕭梁刺史年表</h1>
-      <p class="subtitle">按工作簿「蕭梁」表段原有紀年、州列、換行與附錄內容呈現；可由州郡縣表的本年刺史詳情直接定位。</p>
+      <p class="subtitle">按工作簿「蕭梁」表段原有紀年、州列、逐段格式、批註、換行與附錄內容呈現；可由州郡縣表的本年刺史詳情直接定位。</p>
     </div>
   </header>
 
@@ -37,7 +37,7 @@
         </select>
       </label>
       <label class="yearbook-search-label">
-        <span>檢索原表文字</span>
+        <span>檢索原文與批註</span>
         <input id="governorSearch" type="search" placeholder="例如：蕭宏、南梁州、長史" autocomplete="off">
       </label>
       <label class="check-label yearbook-match-only">
@@ -52,16 +52,22 @@
     <section class="yearbook-key" aria-label="人物色彩圖例">
       <strong>人物色彩：</strong>
       <span id="personColorLegend"></span>
-      <span class="yearbook-key-note">僅姓名及緊連姓名的爵號著色；月份、官銜和說明均用黑色。姓名優先沿用既有人物年度色，缺年度色時參照本格原色；尚未收錄於姓名表的人物暫用黑色，原文及換行保留。</span>
+      <span class="yearbook-key-note">僅姓名及緊連姓名的爵號著色；月份、官銜和說明均用黑色。姓名依本版工作簿逐段字色及有據人物名錄呈現；同年變封分別保留原格字色。尚未識別的姓名用黑色待核；點開「批註」可讀原文，批註亦可檢索。</span>
     </section>
 
     <div class="yearbook-table-shell" aria-label="可橫向捲動的蕭梁刺史年表">
       <table id="governorYearbookTable" class="governor-yearbook-table">
-        <caption>工作簿 Sheet1「蕭梁」表段 A258:AC312</caption>
+        <caption>工作簿 Sheet1「蕭梁」年行 A258:AQ312（含右側附欄；批註可展開）</caption>
         <thead></thead>
         <tbody></tbody>
       </table>
     </div>
+
+    <section class="method-note yearbook-method">
+      <h2>原表過渡行與未繫年備註</h2>
+      <p>以下保留工作簿表段以外的原格、旁列及批註，不將未繫年文字推定為某年任職。</p>
+      <div id="sourceSupplementalRows"></div>
+    </section>
 
     <section class="method-note yearbook-method">
       <h2>資料範圍與讀法</h2>
@@ -72,13 +78,16 @@
 
   <footer><p>資料來源：使用者提供的《南朝刺史、長史、司馬年表.xlsx》工作簿，Sheet1 蕭梁表段。</p></footer>
 
-  <script src="data/liang-governor-yearbook.js?v=20260927.1"></script>
+  <script src="data/liang-governor-yearbook.js?v=20261001.1"></script>
+  <script src="data/liang-yearbook-formats.js?v=20261001.1"></script>
+  <script src="data/liang-workbook-person-colors.js?v=20261001.1"></script>
+  <script src="governor-source-format.js?v=20261001.1"></script>
   <script src="data/liang-person-colors.js?v=20260927.1"></script>
   <script src="data/liang-local-officials.js?v=20260927.1"></script>
   <script src="data/liang-fiefs.js?v=20260927.1"></script>
   <script src="data/liang-person-evidence.js?v=20260927.1"></script>
   <script src="liang-fief-rules.js?v=20260927.1"></script>
-  <script src="liang-person-formats.js?v=20260927.1"></script>
-  <script src="liang-governor-yearbook-app.js?v=20260927.1"></script>
+  <script src="liang-person-formats.js?v=20261001.1"></script>
+  <script src="liang-governor-yearbook-app.js?v=20261001.1"></script>
 </body>
 </html>

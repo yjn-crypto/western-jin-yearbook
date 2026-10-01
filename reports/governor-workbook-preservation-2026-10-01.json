@@ -1,0 +1,368 @@
+{
+  "source": {
+    "source_file": "南朝刺史、長史、司馬年表.xlsx",
+    "source_sheet": "Sheet1",
+    "source_sha256": "06e8b8f0d3b01dadce3b618a4cc49a4a7f45e77abc8bb995712d22b3c21ed07c",
+    "source_bytes": 141507,
+    "imported": "2026-10-01"
+  },
+  "source_workbook_comments": 196,
+  "liang": {
+    "annual_rows": 55,
+    "source_nonempty_or_annotated_cells": 1300,
+    "imported_nonempty_or_annotated_cells": 1300,
+    "comments": 135,
+    "annual_comments": 133,
+    "extra_annual_cells": 175,
+    "supplemental_rows": 5,
+    "merge_ranges": 4,
+    "changed_legacy_text_cells": 47,
+    "source_range": "A255:AQ315",
+    "appendix_column": "AC",
+    "text_changes": [
+      {
+        "year": 502,
+        "field": "auxiliary",
+        "address": "AB258",
+        "previous_text": 4,
+        "source_text": "4"
+      },
+      {
+        "year": 503,
+        "field": "auxiliary",
+        "address": "AB259",
+        "previous_text": 4,
+        "source_text": "4"
+      },
+      {
+        "year": 504,
+        "field": "auxiliary",
+        "address": "AB260",
+        "previous_text": 4,
+        "source_text": "4"
+      },
+      {
+        "year": 505,
+        "field": "auxiliary",
+        "address": "AB261",
+        "previous_text": 4,
+        "source_text": "4"
+      },
+      {
+        "year": 506,
+        "field": "auxiliary",
+        "address": "AB262",
+        "previous_text": 4,
+        "source_text": "4"
+      },
+      {
+        "year": 507,
+        "field": "auxiliary",
+        "address": "AB263",
+        "previous_text": 6,
+        "source_text": "6"
+      },
+      {
+        "year": 508,
+        "field": "auxiliary",
+        "address": "AB264",
+        "previous_text": 5,
+        "source_text": "5"
+      },
+      {
+        "year": 509,
+        "field": "auxiliary",
+        "address": "AB265",
+        "previous_text": 5,
+        "source_text": "5"
+      },
+      {
+        "year": 510,
+        "field": "auxiliary",
+        "address": "AB266",
+        "previous_text": 7,
+        "source_text": "7"
+      },
+      {
+        "year": 511,
+        "field": "auxiliary",
+        "address": "AB267",
+        "previous_text": 8,
+        "source_text": "8"
+      },
+      {
+        "year": 512,
+        "field": "auxiliary",
+        "address": "AB268",
+        "previous_text": 8,
+        "source_text": "8"
+      },
+      {
+        "year": 513,
+        "field": "auxiliary",
+        "address": "AB269",
+        "previous_text": 7,
+        "source_text": "7"
+      },
+      {
+        "year": 514,
+        "field": "auxiliary",
+        "address": "AB270",
+        "previous_text": 7,
+        "source_text": "7"
+      },
+      {
+        "year": 515,
+        "field": "auxiliary",
+        "address": "AB271",
+        "previous_text": 6,
+        "source_text": "6"
+      },
+      {
+        "year": 516,
+        "field": "auxiliary",
+        "address": "AB272",
+        "previous_text": 6,
+        "source_text": "6"
+      },
+      {
+        "year": 517,
+        "field": "auxiliary",
+        "address": "AB273",
+        "previous_text": 6,
+        "source_text": "6"
+      },
+      {
+        "year": 518,
+        "field": "auxiliary",
+        "address": "AB274",
+        "previous_text": 7,
+        "source_text": "7"
+      },
+      {
+        "year": 519,
+        "field": "auxiliary",
+        "address": "AB275",
+        "previous_text": 5,
+        "source_text": "5"
+      },
+      {
+        "year": 520,
+        "field": "auxiliary",
+        "address": "AB276",
+        "previous_text": 6,
+        "source_text": "6"
+      },
+      {
+        "year": 521,
+        "field": "auxiliary",
+        "address": "AB277",
+        "previous_text": 6,
+        "source_text": "6"
+      },
+      {
+        "year": 522,
+        "field": "auxiliary",
+        "address": "AB278",
+        "previous_text": 6,
+        "source_text": "6"
+      },
+      {
+        "year": 523,
+        "field": "auxiliary",
+        "address": "AB279",
+        "previous_text": 7,
+        "source_text": "7"
+      },
+      {
+        "year": 524,
+        "field": "auxiliary",
+        "address": "AB280",
+        "previous_text": 8,
+        "source_text": "8"
+      },
+      {
+        "year": 525,
+        "field": "auxiliary",
+        "address": "AB281",
+        "previous_text": 7,
+        "source_text": "7"
+      },
+      {
+        "year": 526,
+        "field": "auxiliary",
+        "address": "AB282",
+        "previous_text": 7,
+        "source_text": "7"
+      },
+      {
+        "year": 527,
+        "field": "auxiliary",
+        "address": "AB283",
+        "previous_text": 5,
+        "source_text": "5"
+      },
+      {
+        "year": 528,
+        "field": "auxiliary",
+        "address": "AB284",
+        "previous_text": 4,
+        "source_text": "4"
+      },
+      {
+        "year": 529,
+        "field": "auxiliary",
+        "address": "AB285",
+        "previous_text": 4,
+        "source_text": "4"
+      },
+      {
+        "year": 530,
+        "field": "auxiliary",
+        "address": "AB286",
+        "previous_text": 4,
+        "source_text": "4"
+      },
+      {
+        "year": 531,
+        "field": "auxiliary",
+        "address": "AB287",
+        "previous_text": 4,
+        "source_text": "4"
+      },
+      {
+        "year": 532,
+        "field": "auxiliary",
+        "address": "AB288",
+        "previous_text": 5,
+        "source_text": "5"
+      },
+      {
+        "year": 533,
+        "field": "auxiliary",
+        "address": "AB289",
+        "previous_text": 3,
+        "source_text": "3"
+      },
+      {
+        "year": 534,
+        "field": "auxiliary",
+        "address": "AB290",
+        "previous_text": 3,
+        "source_text": "3"
+      },
+      {
+        "year": 535,
+        "field": "auxiliary",
+        "address": "AB291",
+        "previous_text": 3,
+        "source_text": "3"
+      },
+      {
+        "year": 536,
+        "field": "auxiliary",
+        "address": "AB292",
+        "previous_text": 3,
+        "source_text": "3"
+      },
+      {
+        "year": 537,
+        "field": "auxiliary",
+        "address": "AB293",
+        "previous_text": 4,
+        "source_text": "4"
+      },
+      {
+        "year": 538,
+        "field": "auxiliary",
+        "address": "AB294",
+        "previous_text": 3,
+        "source_text": "3"
+      },
+      {
+        "year": 539,
+        "field": "auxiliary",
+        "address": "AB295",
+        "previous_text": 4,
+        "source_text": "4"
+      },
+      {
+        "year": 540,
+        "field": "auxiliary",
+        "address": "AB296",
+        "previous_text": 4,
+        "source_text": "4"
+      },
+      {
+        "year": 541,
+        "field": "auxiliary",
+        "address": "AB297",
+        "previous_text": 4,
+        "source_text": "4"
+      },
+      {
+        "year": 542,
+        "field": "auxiliary",
+        "address": "AB298",
+        "previous_text": 4,
+        "source_text": "4"
+      },
+      {
+        "year": 543,
+        "field": "auxiliary",
+        "address": "AB299",
+        "previous_text": 4,
+        "source_text": "4"
+      },
+      {
+        "year": 544,
+        "field": "auxiliary",
+        "address": "AB300",
+        "previous_text": 4,
+        "source_text": "4"
+      },
+      {
+        "year": 545,
+        "field": "auxiliary",
+        "address": "AB301",
+        "previous_text": 4,
+        "source_text": "4"
+      },
+      {
+        "year": 546,
+        "field": "auxiliary",
+        "address": "AB302",
+        "previous_text": 4,
+        "source_text": "4"
+      },
+      {
+        "year": 547,
+        "field": "auxiliary",
+        "address": "AB303",
+        "previous_text": 4,
+        "source_text": "4"
+      },
+      {
+        "year": 548,
+        "field": "auxiliary",
+        "address": "AB304",
+        "previous_text": 4,
+        "source_text": "4"
+      }
+    ]
+  },
+  "chen": {
+    "annual_rows": 32,
+    "source_nonempty_or_annotated_cells": 491,
+    "imported_nonempty_or_annotated_cells": 491,
+    "comments": 8,
+    "annual_comments": 8,
+    "extra_annual_cells": 1,
+    "supplemental_rows": 1,
+    "merge_ranges": 8,
+    "changed_legacy_text_cells": 0,
+    "source_range": "A320:AJ353",
+    "appendix_column": "AA",
+    "text_changes": []
+  }
+}

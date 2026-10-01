@@ -6,14 +6,14 @@
   <title>南陳刺史年表</title>
   <meta name="description" content="依《南朝刺史、長史、司馬年表》工作簿南陳表段重建的557—588年逐年刺史年表。">
   <link rel="stylesheet" href="style.css?v=20260913.1">
-  <link rel="stylesheet" href="liang-governor-yearbook.css?v=20260908.1">
+  <link rel="stylesheet" href="liang-governor-yearbook.css?v=20261001.1">
 </head>
 <body data-theme="ink" class="governor-yearbook-page">
   <header class="site-header">
     <div class="header-inner">
       <p class="eyebrow">南陳方鎮 · 原表逐格重建</p>
       <h1>南陳刺史年表</h1>
-      <p class="subtitle">按工作簿「南陳」表段原有紀年、州列、逐段文字格式、空格、換行與附錄內容呈現；可由州郡縣表的本年刺史詳情直接定位。</p>
+      <p class="subtitle">按工作簿「南陳」表段原有紀年、州列、逐段文字格式、批註、空格、換行與附錄內容呈現；可由州郡縣表的本年刺史詳情直接定位。</p>
     </div>
   </header>
 
@@ -33,7 +33,7 @@
         <select id="governorStateSelect"><option value="">全部州</option></select>
       </label>
       <label class="yearbook-search-label">
-        <span>檢索原表文字</span>
+        <span>檢索原文與批註</span>
         <input id="governorSearch" type="search" placeholder="例如：陳伯恭、江州、長史" autocomplete="off">
       </label>
       <label class="check-label yearbook-match-only">
@@ -48,16 +48,22 @@
     <section class="yearbook-key" aria-label="人物色彩圖例">
       <strong>人物色彩：</strong>
       <span id="personColorLegend"></span>
-      <span class="yearbook-key-note">僅姓名及緊連姓名的爵號著色，官銜、月份和說明用黑色；非陳姓人物為綠色，陳姓宗室依當年身份補色並校驗同父兄弟。字體、字號、粗斜體、下劃線及背景保留原格格式；懸停姓名可查看顏色依據。</span>
+      <span class="yearbook-key-note">僅姓名及緊連姓名的爵號著色，官銜、月份和說明用黑色；非陳姓人物為綠色，陳姓宗室依當年身份補色並校驗同父兄弟。字體、字號、粗斜體、下劃線及背景保留原格格式；懸停姓名可查看顏色依據；點開「批註」可讀原文，批註亦可檢索。</span>
     </section>
 
     <div class="yearbook-table-shell" aria-label="可橫向捲動的南陳刺史年表">
       <table id="governorYearbookTable" class="governor-yearbook-table">
-        <caption>工作簿 Sheet1「南陳」表段 A321:AB352（表頭 A320:AB320）</caption>
+        <caption>工作簿 Sheet1「南陳」表段 A321:AJ352（本版附錄在 AA；批註可展開）</caption>
         <thead></thead>
         <tbody></tbody>
       </table>
     </div>
+
+    <section class="method-note yearbook-method">
+      <h2>原表過渡行與未繫年備註</h2>
+      <p>以下保留工作簿表段以外的原格、旁列及批註，不將未繫年文字推定為某年任職。</p>
+      <div id="sourceSupplementalRows"></div>
+    </section>
 
     <section class="method-note yearbook-method">
       <h2>資料範圍與讀法</h2>
@@ -68,15 +74,15 @@
 
   <footer><p>資料來源：使用者提供的《南朝刺史、長史、司馬年表.xlsx》工作簿，Sheet1 南陳表段。</p></footer>
 
-  <script src="data/chen-governor-yearbook.js?v=20260826.1"></script>
-  <script src="data/chen-yearbook-formats.js?v=20260908.1"></script>
+  <script src="data/chen-governor-yearbook.js?v=20261001.1"></script>
+  <script src="data/chen-yearbook-formats.js?v=20261001.1"></script>
   <script src="data/chen-fiefs.js"></script>
   <script src="data/chen-governors.js"></script>
   <script src="data/chen-local-officials.js?v=20260907.1"></script>
   <script src="data/chen-royal-identities.js?v=20260913.1"></script>
   <script src="data/chen-588-supplement.js?v=20260913.2"></script>
-  <script src="governor-source-format.js?v=20260912.1"></script>
+  <script src="governor-source-format.js?v=20261001.1"></script>
   <script src="chen-person-formats.js?v=20260913.1"></script>
-  <script src="liang-governor-yearbook-app.js?v=20260912.2"></script>
+  <script src="liang-governor-yearbook-app.js?v=20261001.1"></script>
 </body>
 </html>
