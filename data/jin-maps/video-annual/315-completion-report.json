@@ -1,0 +1,226 @@
+{
+  "year": 315,
+  "source_original_gap": {
+    "gap_compartments": 123,
+    "area_degrees_squared": 98.5425586,
+    "category_areas_degrees_squared": {
+      "valid_prefecture_geometry_gap": 13.3223473,
+      "no_current_prefecture_phase": 55.0149318,
+      "lost_or_non_jin": 21.2348353,
+      "unresolved_original": 8.9704442
+    },
+    "largest": [
+      {
+        "reference_id": "ref-308-111",
+        "name": "巴",
+        "entity_id": "p129",
+        "category": "lost_or_non_jin",
+        "control_status": "lost",
+        "area_degrees_squared": 4.234524
+      },
+      {
+        "reference_id": "ref-308-115",
+        "name": "犍为",
+        "entity_id": "p116",
+        "category": "lost_or_non_jin",
+        "control_status": "lost",
+        "area_degrees_squared": 3.0668509
+      },
+      {
+        "reference_id": "ref-308-209",
+        "name": "原图未命名区",
+        "entity_id": null,
+        "category": "unresolved_original",
+        "control_status": null,
+        "area_degrees_squared": 2.9854591
+      },
+      {
+        "reference_id": "ref-308-93",
+        "name": "汶山",
+        "entity_id": "p117",
+        "category": "no_current_prefecture_phase",
+        "control_status": "contested",
+        "area_degrees_squared": 2.7469219
+      },
+      {
+        "reference_id": "ref-308-85",
+        "name": "魏兴",
+        "entity_id": "p113",
+        "category": "no_current_prefecture_phase",
+        "control_status": "nominal",
+        "area_degrees_squared": 2.7456782
+      },
+      {
+        "reference_id": "ref-308-142",
+        "name": "乐浪",
+        "entity_id": "p062",
+        "category": "valid_prefecture_geometry_gap",
+        "control_status": "contested",
+        "area_degrees_squared": 2.7121708
+      },
+      {
+        "reference_id": "ref-308-151",
+        "name": "巴西",
+        "entity_id": "p108",
+        "category": "lost_or_non_jin",
+        "control_status": "lost",
+        "area_degrees_squared": 2.621198
+      },
+      {
+        "reference_id": "ref-308-132",
+        "name": "汉嘉",
+        "entity_id": "p118",
+        "category": "no_current_prefecture_phase",
+        "control_status": "contested",
+        "area_degrees_squared": 2.6171059
+      },
+      {
+        "reference_id": "ref-308-113",
+        "name": "江阳",
+        "entity_id": "p119",
+        "category": "lost_or_non_jin",
+        "control_status": "lost",
+        "area_degrees_squared": 2.3922955
+      },
+      {
+        "reference_id": "ref-308-81",
+        "name": "上洛",
+        "entity_id": "p004",
+        "category": "no_current_prefecture_phase",
+        "control_status": "nominal",
+        "area_degrees_squared": 2.2888801
+      },
+      {
+        "reference_id": "ref-308-213",
+        "name": "原图未命名区",
+        "entity_id": null,
+        "category": "unresolved_original",
+        "control_status": null,
+        "area_degrees_squared": 2.2532062
+      },
+      {
+        "reference_id": "ref-308-62",
+        "name": "平阳",
+        "entity_id": "p005",
+        "category": "lost_or_non_jin",
+        "control_status": "lost",
+        "area_degrees_squared": 2.2455306
+      },
+      {
+        "reference_id": "ref-308-59",
+        "name": "上党",
+        "entity_id": null,
+        "category": "no_current_prefecture_phase",
+        "control_status": null,
+        "area_degrees_squared": 2.2347857
+      },
+      {
+        "reference_id": "ref-308-137",
+        "name": "太原",
+        "entity_id": "p065",
+        "category": "valid_prefecture_geometry_gap",
+        "control_status": "partial",
+        "area_degrees_squared": 2.2065119
+      },
+      {
+        "reference_id": "ref-308-27",
+        "name": "燕",
+        "entity_id": "p049",
+        "category": "no_current_prefecture_phase",
+        "control_status": "contested",
+        "area_degrees_squared": 2.184048
+      },
+      {
+        "reference_id": "ref-308-86",
+        "name": "汉中",
+        "entity_id": "p101",
+        "category": "lost_or_non_jin",
+        "control_status": "lost",
+        "area_degrees_squared": 2.1589699
+      },
+      {
+        "reference_id": "ref-308-91",
+        "name": "梓潼",
+        "entity_id": "p102",
+        "category": "lost_or_non_jin",
+        "control_status": "lost",
+        "area_degrees_squared": 2.059767
+      },
+      {
+        "reference_id": "ref-308-143",
+        "name": "带方",
+        "entity_id": "p064",
+        "category": "valid_prefecture_geometry_gap",
+        "control_status": "contested",
+        "area_degrees_squared": 1.7880905
+      },
+      {
+        "reference_id": "ref-308-33",
+        "name": "代",
+        "entity_id": "p053",
+        "category": "no_current_prefecture_phase",
+        "control_status": "contested",
+        "area_degrees_squared": 1.737043
+      },
+      {
+        "reference_id": "ref-308-114",
+        "name": "广汉",
+        "entity_id": "p103",
+        "category": "lost_or_non_jin",
+        "control_status": "lost",
+        "area_degrees_squared": 1.7131196
+      }
+    ]
+  },
+  "political_input_overlap_area_degrees_squared": 0.0,
+  "nominal_affiliate_overlap_jin_area_degrees_squared": 11.649938949,
+  "input_political_overlap_pairs": [
+    {
+      "regime": "西晋西域都护名义范围",
+      "kind": "nominal-affiliate",
+      "area_degrees_squared": 11.64993895,
+      "precedence": "main_jin"
+    }
+  ],
+  "political_precedence": "独立他国优先于晋；主晋优先于西域名义附属范围，附属范围不合入中国州郡",
+  "jin_area_degrees_squared": 311.8125187,
+  "initial_annual_prefecture_area_inside_jin_degrees_squared": 211.5877579,
+  "completed_area_degrees_squared": 100.2247608,
+  "filled_old_reference_gaps_degrees_squared": 63.8932243,
+  "added_beyond_old_reference_degrees_squared": 36.3315357,
+  "unfilled_jin_area_degrees_squared": 1.343e-06,
+  "unpainted_jin_area_degrees_squared": 0,
+  "numerical_overlay_tolerance_degrees_squared": 2e-05,
+  "numerical_slivers_have_full_jin_background": true,
+  "outside_jin_prefecture_area_degrees_squared": 2.37e-07,
+  "prefecture_overlap_area_degrees_squared": 0,
+  "stored_annual_overlap_removed_degrees_squared": 1.2178e-05,
+  "allocation_count": 1665,
+  "internally_used_county_cells": 0,
+  "province_boundary_model": "reviewed_province_masks_whole_prefecture_changes_shared_borders",
+  "stable_reference_year": 308,
+  "province_boundaries_are_shared_lines_only": true,
+  "province_shared_boundary_features": 36,
+  "source_province_overlap_removed_degrees_squared": 0.002899767,
+  "whole_prefecture_province_transfers": [],
+  "restored_dated_prefecture_ids": [
+    "p062",
+    "p063",
+    "p064",
+    "p065"
+  ],
+  "unresolved_context_province_ids": [
+    "s05",
+    "s04",
+    "s11"
+  ],
+  "reviewed_province_interior_change_degrees_squared": 2.43e-07,
+  "methods": {
+    "same_stable_province_numerical_residual": 1002,
+    "active_prefecture_reference_compartment": 350,
+    "stable_province_dated_prefecture_unresolved": 58,
+    "stable_province_neighbor_prefecture_fit": 245,
+    "dated_county_parent_within_stable_province": 10
+  },
+  "limitation": "面积为WGS84平方度，仅用于本次几何前后对照；归属拟合不是独立行政边界考证。"
+}

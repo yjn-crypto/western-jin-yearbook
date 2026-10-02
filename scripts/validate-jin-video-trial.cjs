@@ -1,4 +1,4 @@
-/* Necessary runtime checks for the two video GIS trials and map-version return.
+/* Necessary runtime checks for the preserved video trials and map-version return.
  * Deliberately does not repeat the 51-year historical/geographic audit. */
 const fs=require('fs'),path=require('path'),vm=require('vm'),assert=require('assert/strict');
 const root=path.resolve(__dirname,'..');
@@ -22,7 +22,7 @@ class Node{
 const flatten=node=>[node,...node.children.flatMap(flatten)];
 const land=read(model.VIDEO_LAND_URL),results=[];
 for(const year of [289,308]){
-  const data=read(model.VIDEO_TRIAL_URLS[year]);
+  const data=read(model.PREVIOUS_VIDEO_URLS[year]);
   const geometries=Object.assign({},data.geometries,...(data.geometry_urls||[]).map(url=>read(url).geometries));
   assert(data.features.every(f=>f.geometry||geometries[f.geometry_id]),`${year}: all geometry references resolve`);
   const map=model.hydrateVideoTrial({...data,geometries},year,land);
@@ -112,23 +112,25 @@ function dispatchFixture(heldYear){
 }
 const flush=()=>new Promise(resolve=>setImmediate(resolve));
 async function runDispatch(){
-  const normal=dispatchFixture();normal.context.renderYearMap(289,{});await flush();
-  normal.context.renderYearMap(308,{});await flush();
-  assert.deepEqual(normal.calls,[{year:289,kind:'trial'},{year:308,kind:'trial'}],'Annual mode dispatches the two video GIS trials');
+  const normal=dispatchFixture(),years=[266,279,280,289,308,312,316];
+  for(const year of years){normal.context.renderYearMap(year,{});await flush();}
+  assert.deepEqual(normal.calls,years.map(year=>({year,kind:'trial'})),'Annual mode dispatches the exact selected year across the full range');
   normal.context.jinMapVersion.value='prior';normal.context.renderYearMap(289,{});await flush();
-  assert.equal(normal.calls.at(-1).kind,'prior','Prior mode keeps the prior annual geography');
+  assert.equal(normal.calls.at(-1).kind,'trial','Prior mode keeps the previous two-year video trial');
+  normal.context.renderYearMap(304,{});await flush();
+  assert.deepEqual(normal.calls.at(-1),{year:304,kind:'prior'},'Other prior years retain the previous annual model');
   normal.context.jinMapVersion.value='video';normal.context.renderYearMap(304,{});
   assert.deepEqual(normal.calls.at(-1),{year:304,kind:'video',sourceYear:304},'Source mode uses the exact selected video year');
   assert(normal.context.yearMapExport.hidden&&normal.context.yearMapCsv.hidden&&normal.context.yearMapGeoJson.hidden&&normal.context.yearMapUhd.hidden,'Jin downloads remain hidden');
   for(const destination of ['trial','video','legacy']){
     const pending=dispatchFixture(289);pending.context.renderYearMap(289,{});
-    if(destination==='trial')pending.context.renderYearMap(308,{});
+    if(destination==='trial')pending.context.renderYearMap(316,{});
     else if(destination==='video'){pending.context.jinMapVersion.value='video';pending.context.renderYearMap(304,{});}
     else{pending.context.jinMapVersion.value='legacy';pending.context.renderYearMap(308,{});}
     await flush();const before=[...pending.calls];pending.release();await flush();
     assert.deepEqual(pending.calls,before,`Late trial reply is discarded after switching to ${destination}`);
     assert(pending.calls.length===1&&!pending.calls.some(c=>c.year===289),'Only the currently selected map renders');
   }
-  console.log(JSON.stringify({passed:true,scope:'Two video GIS trials and map-version return/dispatch only',maps:results,frames:frames.frames.length,version_return:['annual','prior','video'],stale_dispatch:['trial','video','legacy']},null,2));
+  console.log(JSON.stringify({passed:true,scope:'Preserved trials and new annual version return/dispatch only',maps:results,frames:frames.frames.length,dispatch_years:years,version_return:['annual','prior','video'],stale_dispatch:['trial','video','legacy']},null,2));
 }
 runDispatch().catch(error=>{console.error(error);process.exitCode=1;});

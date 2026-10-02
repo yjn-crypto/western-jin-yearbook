@@ -2277,13 +2277,16 @@
     $('yearMapZoomHelp').textContent='100%–1000%；低於300%顯示州名，300%–700%顯示州與郡國範圍名，超過700%加上縣名及治所名；不顯示縣域面或縣界。小字封爵另列。';
     yearMapNote.textContent=map.note||'CHGIS與原圖矢量成果接合；多郡王國合併著色，內部郡界淡化。文字位置不是郡治。';
     if($('jinAnnualLegend'))$('jinAnnualLegend').hidden=!map.trial||Boolean(map.videoTrial);
-    if($('jinVideoLegend'))$('jinVideoLegend').hidden=!map.videoTrial;
+    if($('jinVideoLegend')){
+      $('jinVideoLegend').hidden=!map.videoTrial;
+      if(map.videoTrial)$('jinVideoLegend').innerHTML=`<span class="jin-boundary-key jin-regime-key">政權界</span> 取自史圖館本年年末最後清晰地圖。${map.annualVideo?'州界以原圖為基礎、按郡屬調整，接壤封國使用不同色彩。':'這是上輪兩年視頻測驗，保留當時的州界與配色。'}晉境保持連續；白色為其它政權，保留名稱及邊界。補齊郡界含推定段；縣域只在內部用於擬合。`;
+    }
     const frame=window.JIN_VIDEO_FRAMES?.frames?.find(item=>Number(item.year)===Number(year));
     if($('jinVideoSource')){
       $('jinVideoSource').hidden=!frame;
       if(frame){
         $('jinVideoSourceTitle').textContent=`查看${year}年史圖館年末原幀`;
-        $('jinVideoSourceNote').textContent=`${frame.source_filename}，${Number(frame.timestamp_seconds).toFixed(3)}秒；採本年最後事件後、跨年淡化前的最後清晰畫面。原視頻的年末圖是本次政權界底稿；本輪先完成289、308年GIS測驗。`;
+        $('jinVideoSourceNote').textContent=`${frame.source_filename}，${Number(frame.timestamp_seconds).toFixed(3)}秒；採本年最後事件後、跨年淡化前的最後清晰畫面。本年政權界以該原幀為底稿，行政歸屬另依年表。`;
         $('jinVideoSourceImage').src=frame.web_path;$('jinVideoSourceImage').alt=`${year}年史圖館年末最後清晰地圖`;
       }
     }
@@ -2312,7 +2315,7 @@
     $('yearMapTitle').textContent=`${year}年　史圖館年末原圖`;
     $('yearMapStatus').textContent=`${frame.source_filename} · ${Number(frame.timestamp_seconds).toFixed(3)}秒 · 本年最後事件後、跨年淡化前的最後清晰畫面。`;
     $('yearMapZoomHelp').textContent='原圖可放大查看政權邊界；原圖文字與年表政區尚未逐項連結。';
-    yearMapNote.textContent='這是本機視頻提取的原幀底圖，保留原作者的政權邊界和說明。視頻年末狀態不等於另經史料證實的12月31日疆界。289、308年的配准與州郡封國測驗可切至「年度圖」查看。';
+    yearMapNote.textContent='這是本機視頻提取的原幀底圖，保留原作者的政權邊界和說明。視頻年末狀態不等於另經史料證實的12月31日疆界。本年的配准與州郡封國圖可切至「年度圖」查看。';
     resetMapView();
   }
 
@@ -2337,20 +2340,19 @@
         $('yearMapStatus').textContent='正在載入本年政區、疆域與封國…';yearMapNote.textContent='縣域擬合只用於生成郡界，不在地圖上展示；地圖版本可雙向切換。';
         $('mapBoundaryResearch').hidden=true;$('liangMapMissing').hidden=true;$('liangMapReference555').hidden=true;
         const load=url=>{
-          if(!jinMapCache.has(url))jinMapCache.set(url,fetch(url).then(response=>{
-            if(!response.ok)throw new Error(`HTTP ${response.status}`);return response.json();
-          }).catch(error=>{jinMapCache.delete(url);throw error;}));
+          if(!jinMapCache.has(url))jinMapCache.set(url,window.JIN_ANNUAL_MAP_MODEL.readMapData(url,fetch).catch(error=>{jinMapCache.delete(url);throw error;}));
           return jinMapCache.get(url);
         };
-        const trialUrl=jinMapVersion.value==='annual'&&window.JIN_ANNUAL_MAP_MODEL.VIDEO_TRIAL_URLS?.[year];
+        const annualVideo=jinMapVersion.value==='annual';
+        const trialUrl=(annualVideo?window.JIN_ANNUAL_MAP_MODEL.VIDEO_TRIAL_URLS:window.JIN_ANNUAL_MAP_MODEL.PREVIOUS_VIDEO_URLS)?.[year];
         if(trialUrl){
           load(trialUrl).then(async bundle=>{
             const [shards,land]=await Promise.all([
-              Promise.all((bundle.geometry_urls||[]).map(url=>load(url+'?v=20261002.2'))),
+              Promise.all((bundle.geometry_urls||[]).map(url=>load(url+'?v=20261002.3'))),
               load(window.JIN_ANNUAL_MAP_MODEL.VIDEO_LAND_URL)
             ]);
             const trial={...bundle,geometries:Object.assign({},bundle.geometries,...shards.map(shard=>shard.geometries))};
-            if(request===jinMapRequest)renderJinSnapshotMap(year,snapshot,window.JIN_ANNUAL_MAP_MODEL.hydrateVideoTrial(trial,year,land));
+            if(request===jinMapRequest)renderJinSnapshotMap(year,snapshot,window.JIN_ANNUAL_MAP_MODEL.hydrateVideoTrial(trial,year,land,{annualVideo}));
           }).catch(error=>{
             if(request===jinMapRequest){$('yearMapStatus').textContent='視頻測驗圖載入失敗，請重選年份或切至上輪年度圖。';console.error(error);}
           });return;
