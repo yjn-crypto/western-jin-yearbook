@@ -93,11 +93,11 @@ async function dispatch(){
   assert.equal(calls.at(-1).year,316,'A late result cannot restore a stale selected year');
   assert(!calls.slice(2).some(c=>c.year===289),'Stale response discarded');
   assert(context.yearMapExport.hidden&&context.yearMapCsv.hidden&&context.yearMapGeoJson.hidden&&context.yearMapUhd.hidden,'Jin downloads stay hidden');
-  assert(app.includes("initialParams.get('jinmap')==='legacy'"),'Original mode survives refresh');
+  assert(app.includes("['legacy','prior','video'].includes(initialParams.get('jinmap'))"),'Original and comparison modes survive refresh');
   assert(fs.readFileSync(path.join(root,'index.html'),'utf8').includes('切換至修改前地圖'),'Visible rollback entry');
   const extract=name=>{const marker=`  function ${name}(`,start=app.indexOf(marker),end=app.indexOf('\n  }',start+1)+5;assert(start>=0&&end>start);return app.slice(start,end);};
   const versionContext=vm.createContext({URL,Number,Math,DYNASTIES:{'western-jin':{years:[266,316]}},
-    currentDynasty:{key:'western-jin',years:[266,316]},jinMapVersion:{value:'annual'},activeJinMapVersion:'annual',jinAnnualReturnYear:304,
+    currentDynasty:{key:'western-jin',years:[266,316]},jinMapVersion:{value:'annual'},activeJinMapVersion:'annual',jinAnnualReturnYear:304,jinAnnualReturnVersion:'annual',
     yearSelect:{value:'304'},stateSelect:{value:'',selectedOptions:[]},window:{location:{href:'https://example.test/?year=304'}},
     history:{replaceState(a,b,url){versionContext.window.location.href=String(url);}},
     $:id=>{if(!controls.has(id))controls.set(id,{dataset:{}});return controls.get(id);},populateStates(){},clearMapLinkHighlights(){},render(){}});

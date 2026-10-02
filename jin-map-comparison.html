@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-Hant">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>西晉289、308年視頻GIS測驗與上輪地圖比較</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f6f3eb;color:#302f2a;font-family:system-ui,"Songti SC",serif;line-height:1.75}main{max-width:1500px;margin:auto;padding:28px}h1{font-size:clamp(22px,3vw,34px);margin:10px 0}h2{font-size:22px;margin-top:30px}a{color:#73502d}nav{display:flex;gap:12px;flex-wrap:wrap;align-items:center}button{font:inherit;padding:6px 18px;background:white;border:1px solid #c3bbaa;border-radius:5px;cursor:pointer}button[aria-pressed=true]{background:#534f3d;color:white}.intro{max-width:1050px;color:#59584e}.pair{display:grid;grid-template-columns:1fr 1fr;gap:18px}figure{margin:0;background:#fffdf8;border:1px solid #d7d1c3;padding:12px}figcaption{font-weight:600;margin-bottom:8px}img{width:100%;height:auto;display:block}table{border-collapse:collapse;width:100%;background:#fffdf8}th,td{border:1px solid #d7d1c3;padding:10px;text-align:left}th{width:24%}.source{margin-top:18px}details{margin-top:22px}summary{cursor:pointer;font-weight:600}.links{margin:20px 0}small{color:#6e6a5d}#overview{background:#dce9f4}@media(max-width:760px){main{padding:16px}.pair{grid-template-columns:1fr}th{width:35%}}
+</style>
+<main>
+<nav><a href="index.html">返回年表</a><button data-year="289" aria-pressed="true">289年</button><button data-year="308" aria-pressed="false">308年</button></nav>
+<h1><span id="year">289</span>年：視頻政權界與州郡封國測驗</h1>
+<p class="intro">左右兩圖採用同一經緯度範圍、尺寸及郡名縮放層級。右圖先按史圖館年末原幀確定政權外界，再依本年年表的縣屬與有效郡補齊晉境。郡級及以上封國保持著色，縣域只參與內部擬合。白色用於其它政權；補入的郡界含推定段。</p>
+<div class="links"><a id="newMap">打開本年新圖</a> · <a id="oldMap">打開上輪年度圖</a> · <a id="videoMap">查看本年原幀底圖</a></div>
+<div class="pair">
+<figure><figcaption>修改前：上輪年度圖</figcaption><img id="before" alt="上輪年度圖"></figure>
+<figure><figcaption>修改後：視頻政權界＋本年州郡封國</figcaption><img id="after" alt="視頻GIS試驗圖"></figure>
+</div>
+<h2>本年比較結果</h2><table><tbody id="metrics"></tbody></table>
+<p id="analysis" class="intro"></p>
+<p class="intro">配准選用Albers候選模型（中央經線105°、標準緯線25°與47°）加仿射變換，15個海岸與治所控制點的留一法誤差約4.4個原圖像素。公開資料未找到史圖館作者對原投影的明確聲明；這是本次配准推定。幾何補齊證明圖面覆蓋連續，不能據此認為每一段郡界已經史料考定。</p>
+<details open><summary>政權範圍全覽（包含主圖視窗之外的範圍）</summary><img id="overview" alt="WGS84政權範圍全覽" loading="lazy"><p>白色範圍保留其它政權／部族名稱和邊界；淡赭色虛線範圍為原圖另列的晉西域都護名義範圍，單列而不附入中國州郡。無明確政治界線的陸地只作地理背景。</p></details>
+<details class="source"><summary>對照史圖館本年最後清晰原幀</summary><p id="sourceNote"></p><img id="source" alt="史圖館年末最後清晰原幀" loading="lazy"></details>
+<p><small>比較基線：Git提交144a428。保留「上輪年度圖」與「最初原版」雙向切換；本輪只完成289、308年GIS測驗，266–316年共51張原幀已作為各年可選底圖。</small></p>
+</main>
+<script src="data/jin-video-frames.js?v=20261002.2"></script>
+<script>
+(async()=>{
+ const data=await fetch('data/jin-video-comparison.json?v=20261002.2').then(r=>r.json());
+ const show=year=>{
+  const item=data.years[year],frame=window.JIN_VIDEO_FRAMES.frames.find(f=>Number(f.year)===year);
+  document.getElementById('year').textContent=year;
+  for(const mode of ['before','after','overview'])document.getElementById(mode).src=`assets/maps/jin-video/comparison/${year}-${mode}.webp`;
+  document.getElementById('newMap').href=`index.html?year=${year}`;document.getElementById('oldMap').href=`index.html?year=${year}&jinmap=prior`;document.getElementById('videoMap').href=`index.html?year=${year}&jinmap=video`;
+  document.getElementById('source').src=frame.web_path;document.getElementById('sourceNote').textContent=`${frame.source_filename}，${Number(frame.timestamp_seconds).toFixed(3)}秒；視頻本年最後事件後、下年淡化前的最後清晰畫面。`;
+  document.getElementById('analysis').textContent=item.analysis;
+  document.getElementById('metrics').replaceChildren(...item.metrics.map(([label,value])=>{const tr=document.createElement('tr'),th=document.createElement('th'),td=document.createElement('td');th.textContent=label;td.textContent=value;tr.append(th,td);return tr;}));
+  for(const button of document.querySelectorAll('[data-year]'))button.setAttribute('aria-pressed',Number(button.dataset.year)===year);
+  const url=new URL(location.href);url.searchParams.set('year',year);history.replaceState(null,'',url);
+ };
+ for(const button of document.querySelectorAll('[data-year]'))button.addEventListener('click',()=>show(Number(button.dataset.year)));
+ show(Number(new URLSearchParams(location.search).get('year'))===308?308:289);
+})().catch(error=>{document.getElementById('analysis').textContent='比較資料載入失敗，請重新整理。';console.error(error);});
+</script>
+</html>
