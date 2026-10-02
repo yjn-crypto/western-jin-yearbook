@@ -4,7 +4,24 @@
  */
 (function (root) {
   'use strict';
-  const priority = {'CHGIS V6': 60, 'CHGIS V5': 50, 'CHGIS V4': 40, 'image-vector': 10};
+  function sourceRank(properties, geometry, year) {
+    const source=String(properties?.source || '');
+    const role=String(properties?.geometry_role || properties?.coordinate_role || '');
+    const point=/^(Point|MultiPoint)$/.test(geometry?.type || '') || /seat|point|治所/.test(role);
+    const original=/image-vector|原图|原圖|原上传|原上傳|矢量化|vectorized/i.test(source);
+    const begin=properties?.coordinate_source_begin ?? properties?.source_begin ?? properties?.begin;
+    const end=properties?.coordinate_source_end ?? properties?.source_end ?? properties?.end;
+    const atYear=year ?? properties?.year;
+    const datedFallback=properties?.point_source_priority==='reviewed_original_fallback' ||
+      properties?.geometry_source_priority==='reviewed_original_fallback' ||
+      (!point && /^CHGIS_reference(?:_|$)/.test(properties?.geometry_status || '')) ||
+      (atYear!=null && begin!=null && end!=null && !(Number(begin)<=Number(atYear) && Number(atYear)<=Number(end)));
+    const version=source.match(/CHGIS[ _-]*V(?:ERSION[ _-]*)?(\d+)/i);
+    if(/CHGIS/i.test(source))return datedFallback?50:120+Number(version?.[1] || properties?.source_version || 0);
+    if(original)return point?50:100;
+    if(/视频|視頻|video|史图馆|史圖館/i.test(source))return 10;
+    return 0;
+  }
   function slice(bundle, year) {
     const value = bundle?.years?.[String(year)];
     // Do not silently extrapolate two researched dates to every Jin year.
@@ -13,14 +30,15 @@
   function active(record, year) {
     return record.begin != null && record.end != null && record.begin <= year && year <= record.end;
   }
-  function preferredGeometry(features) {
+  function preferredGeometry(features, year) {
     const groups = new Map(), unresolved = [];
     for (const f of features) {
       const p=f.properties || {};
       // Source entity links must be reviewed upstream; a name is not an identity.
-      if (!p.entity_id || !p.geometry_role) { unresolved.push(f); continue; }
-      const key=`${p.entity_id}:${p.geometry_role}`;
-      const rank=priority[p.source] ?? (p.source_version ? p.source_version*10 : 0);
+      const role=p.geometry_role || p.coordinate_role;
+      if (!p.entity_id || !role) { unresolved.push(f); continue; }
+      const key=`${p.entity_id}:${role}`;
+      const rank=sourceRank(p,f.geometry,year);
       const previous=groups.get(key);
       if (!previous || rank>previous.rank) groups.set(key,{feature:f,rank});
     }
@@ -64,7 +82,7 @@
     province_boundaries:{strokeOpacity:1,strokeWidth:3.2},
     uncertain_areas:{fillOpacity:0.08,strokeDasharray:'5 4'}
   };
-  const api={slice,active,preferredGeometry,displayName,resolve,style};
+  const api={slice,active,sourceRank,preferredGeometry,displayName,resolve,style};
   root.JIN_MAP_MODEL=api;
   if (typeof module!=='undefined' && module.exports) module.exports=api;
 })(typeof window!=='undefined'?window:globalThis);

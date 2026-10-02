@@ -66,7 +66,7 @@ function versionFixture(version='annual',year=304,href=`https://example.test/?ye
   for(const name of ['validJinAnnualYear','nearestJinLegacyYear','syncMainLocation','changeJinMapVersion'])vm.runInContext(extract(name),context);
   return {context,controls};
 }
-for(const version of ['annual','prior','video']){
+for(const version of ['annual','prior','video-prior','video']){
   const {context,controls}=versionFixture(version);
   context.changeJinMapVersion('legacy');
   const legacyUrl=new URL(context.window.location.href);
@@ -90,7 +90,7 @@ for(const version of ['annual','prior','video']){
 const initialStart=app.indexOf('  if(jinMapVersion)jinMapVersion.value=');
 const initialEnd=app.indexOf('\n',initialStart);
 assert(initialStart>=0&&initialEnd>initialStart);
-for(const version of ['annual','prior','video','legacy']){
+for(const version of ['annual','prior','video-prior','video','legacy']){
   const context=vm.createContext({jinMapVersion:{value:''},initialParams:new URL(`https://example.test/?jinmap=${version}`).searchParams});
   vm.runInContext(app.slice(initialStart,initialEnd),context);assert.equal(context.jinMapVersion.value,version,'Mode URL initializes the correct selector');
 }
@@ -102,10 +102,10 @@ function dispatchFixture(heldYear){
     jinMapRequest:0,jinMapCache:new Map(),jinMapVersion:{value:'annual'},currentDynasty:{key:'western-jin'},currentMap:null,currentMapFeatures:[],mapReadingMode:false,
     $:id=>{if(!controls.has(id))controls.set(id,{dataset:{}});return controls.get(id);},yearMapOverlay:new Node('svg'),mapLabelLayouts:new WeakMap(),yearMapPanel:{hidden:true},textMapLinkControl:{},
     yearMapExport:{},yearMapCsv:{},yearMapGeoJson:{},yearMapUhd:{},yearMapLoadUhd:{},yearMapStage:{style:{}},yearMapImage:{removeAttribute(){}},yearMapNote:{},results:{classList:{toggle(){}}},clearMapLinkHighlights(){},
-    renderJinSnapshotMap:(year,snapshot,map)=>calls.push({year,kind:map.videoTrial?'trial':map.trial?'prior':'legacy'}),renderJinVideoSourceMap:(year,frame)=>calls.push({year,kind:'video',sourceYear:Number(frame.year)}),
+    renderJinSnapshotMap:(year,snapshot,map)=>calls.push({year,kind:map.sourcePriority?'source-priority':map.videoTrial?'trial':map.trial?'prior':'legacy'}),renderJinVideoSourceMap:(year,frame)=>calls.push({year,kind:'video',sourceYear:Number(frame.year)}),
     fetch:url=>{
       const response={ok:true,json:async()=>read(url)};
-      return Number(heldYear)&&url.split('?')[0]===model.VIDEO_TRIAL_URLS[heldYear]?.split('?')[0]?new Promise(resolve=>waiting.push(()=>resolve(response))):Promise.resolve(response);
+      return Number(heldYear)&&url.split('?')[0]===model.SOURCE_PRIORITY_URLS[heldYear]?.split('?')[0]?new Promise(resolve=>waiting.push(()=>resolve(response))):Promise.resolve(response);
     }});
   vm.runInContext(app.slice(dispatchStart,dispatchEnd),context);
   return {context,calls,release(){waiting.splice(0).forEach(resolve=>resolve());}};
@@ -114,7 +114,9 @@ const flush=()=>new Promise(resolve=>setImmediate(resolve));
 async function runDispatch(){
   const normal=dispatchFixture(),years=[266,279,280,289,308,312,316];
   for(const year of years){normal.context.renderYearMap(year,{});await flush();}
-  assert.deepEqual(normal.calls,years.map(year=>({year,kind:'trial'})),'Annual mode dispatches the exact selected year across the full range');
+  assert.deepEqual(normal.calls,years.map(year=>({year,kind:'source-priority'})),'Annual mode dispatches the source-priority map for the exact selected year');
+  normal.context.jinMapVersion.value='video-prior';normal.context.renderYearMap(304,{});await flush();
+  assert.deepEqual(normal.calls.at(-1),{year:304,kind:'trial'},'The preceding 51-year video edition remains accessible');
   normal.context.jinMapVersion.value='prior';normal.context.renderYearMap(289,{});await flush();
   assert.equal(normal.calls.at(-1).kind,'trial','Prior mode keeps the previous two-year video trial');
   normal.context.renderYearMap(304,{});await flush();
@@ -131,6 +133,6 @@ async function runDispatch(){
     assert.deepEqual(pending.calls,before,`Late trial reply is discarded after switching to ${destination}`);
     assert(pending.calls.length===1&&!pending.calls.some(c=>c.year===289),'Only the currently selected map renders');
   }
-  console.log(JSON.stringify({passed:true,scope:'Preserved trials and new annual version return/dispatch only',maps:results,frames:frames.frames.length,dispatch_years:years,version_return:['annual','prior','video'],stale_dispatch:['trial','video','legacy']},null,2));
+  console.log(JSON.stringify({passed:true,scope:'Preserved trials and source-priority annual version return/dispatch only',maps:results,frames:frames.frames.length,dispatch_years:years,version_return:['annual','video-prior','prior','video'],stale_dispatch:['trial','video','legacy']},null,2));
 }
 runDispatch().catch(error=>{console.error(error);process.exitCode=1;});

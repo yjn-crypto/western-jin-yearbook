@@ -65,7 +65,13 @@ def read_snapshots(entities):
                 options = candidates.get(name, [])
                 matched = [eid for eid in options if annual.key(entities['prefecture'][eid]['state']['name']) == annual.key(p.get('state_name'))]
                 pid = matched[0] if len(matched) == 1 else options[0] if len(options) == 1 else None
-            sid = entities['prefecture'][pid]['state']['id'] if pid else next((eid for eid, e in entities['state'].items() if annual.key(e['entity']['name']) == annual.key(p.get('state_name'))), None)
+            # The source administrative parent is an image attribute, not the
+            # current dated table entity's parent. Keeping both is essential:
+            # otherwise a dated whole-prefecture province transfer disappears
+            # before the stable-province builder can perform it.
+            original_sid = next((eid for eid, e in entities['state'].items()
+                                 if annual.key(e['entity']['name']) == annual.key(p.get('state_name'))), None)
+            sid = original_sid or (entities['prefecture'][pid]['state']['id'] if pid else None)
             # The original image is schematic. Preserve each named compartment
             # once; overlaps at mixed CHGIS/image joins are never duplicated.
             g = annual.polygonal(g.difference(occupied))

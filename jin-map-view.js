@@ -13,6 +13,7 @@
     return '';
   }
   function order(layer){
+    if(layer==='original_territory_boundary')return 10;
     if(layer==='land_background')return -3;
     if(layer==='regime_areas')return -2;
     if(layer==='regime_boundaries')return 9;
@@ -152,9 +153,13 @@
       }
       const d=paths(g,project);if(!d)continue;
       const polygon=/Polygon/.test(g.type),style={d,fill:'none',stroke:'#6d624d','stroke-width':.9,'fill-rule':'evenodd','vector-effect':'non-scaling-stroke'};
-      if(layer==='land_background')Object.assign(style,{fill:'#fffdf8',stroke:'#b2b7b6','stroke-width':.65});
+      if(layer==='land_background'){
+        if(map.sourcePriority)continue;
+        Object.assign(style,{fill:'#fffdf8',stroke:'#b2b7b6','stroke-width':.65});
+      }
       else if(layer==='regime_areas')Object.assign(style,{class:'jin-regime-area',fill:p.is_jin?'#e2e5d2':p.is_jin_affiliate?'#eee0b9':'#ffffff',stroke:'none'});
-      else if(layer==='regime_boundaries')Object.assign(style,{class:'jin-regime-boundary',fill:'none',stroke:'#2e3439','stroke-width':p.is_jin?3.8:2.2,'stroke-dasharray':p.is_jin_affiliate?'7 4':'none','stroke-opacity':1});
+      else if(layer==='regime_boundaries')Object.assign(style,{class:'jin-regime-boundary',fill:'none',stroke:map.sourcePriority?'#6c6043':'#2e3439','stroke-width':map.sourcePriority?2.2:p.is_jin?3.8:2.2,'stroke-dasharray':p.is_jin_affiliate?'7 4':'none','stroke-opacity':1});
+      else if(layer==='original_territory_boundary')Object.assign(style,{class:'jin-original-territory-boundary',fill:'none',stroke:'#6c6043','stroke-width':1.8});
       else if(p.is_reference)Object.assign(style,{class:'jin-reference-boundary',fill:'none',stroke:map.annualVideo&&/province|state/.test(layer)?'none':/province|state/.test(layer)?'#686d73':'#92918b','stroke-width':/province|state/.test(layer)?2.6:.85,'stroke-opacity':1});
       else if(/territory/.test(layer))Object.assign(style,{fill:'#ded3a8',stroke:map.annualVideo?'none':'#6c6043','stroke-width':1.8});
       else if(/kingdom.*area/.test(layer))Object.assign(style,{fill:p.color||fiefColor(p.fief_id||p.name),'fill-opacity':.62,stroke:'#915c32','stroke-width':2.2,'stroke-dasharray':p.has_inference?'6 3':'none'});
@@ -176,7 +181,7 @@
         const point=p.label_lonlat||interiorPoint(g);
         if(point){const [x,y]=project(point);
           labels.push({text:p.display_name||(p.kind==='rebellion'?name.replace('起兵范围',''):name),sourceName:name,x,y,level:'state',entityId:null,mapKey:key,
-            kind:'regime-area',fontSize:p.is_jin?38:32,priority:p.is_jin?1300:1150,color:'#39434a',isTextAnchor:true,politicalLabel:true,areaId:key,allowAreaFontShrink:true});
+            kind:'regime-area',fontSize:map.sourcePriority?24:p.is_jin?38:32,priority:p.is_jin?1300:1150,color:map.sourcePriority?'#34312d':'#39434a',isTextAnchor:true,politicalLabel:true,areaId:key,allowAreaFontShrink:true});
           features.push({entity_id:null,x,y,level:'state',label:name,mapKey:key,coordinate_role:'political_area_label_not_seat',source:p.source});
         }
       }

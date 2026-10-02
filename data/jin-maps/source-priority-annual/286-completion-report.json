@@ -1,0 +1,3970 @@
+{
+  "year": 286,
+  "source_original_gap": {
+    "gap_compartments": 57,
+    "area_degrees_squared": 13.9230305,
+    "category_areas_degrees_squared": {
+      "valid_prefecture_geometry_gap": 4.6651395,
+      "unresolved_original": 9.257891
+    },
+    "largest": [
+      {
+        "reference_id": "ref-289-201",
+        "name": "原图未命名区",
+        "entity_id": null,
+        "category": "unresolved_original",
+        "control_status": null,
+        "area_degrees_squared": 2.9854591
+      },
+      {
+        "reference_id": "ref-289-205",
+        "name": "原图未命名区",
+        "entity_id": null,
+        "category": "unresolved_original",
+        "control_status": null,
+        "area_degrees_squared": 2.2529146
+      },
+      {
+        "reference_id": "ref-289-155",
+        "name": "南康郡",
+        "entity_id": "p204",
+        "category": "valid_prefecture_geometry_gap",
+        "control_status": "administrative",
+        "area_degrees_squared": 1.1252275
+      },
+      {
+        "reference_id": "ref-289-175",
+        "name": "高凉郡",
+        "entity_id": "p239",
+        "category": "valid_prefecture_geometry_gap",
+        "control_status": "administrative",
+        "area_degrees_squared": 0.8715659
+      },
+      {
+        "reference_id": "ref-289-202",
+        "name": "原图未命名区",
+        "entity_id": null,
+        "category": "unresolved_original",
+        "control_status": null,
+        "area_degrees_squared": 0.8444525
+      },
+      {
+        "reference_id": "ref-289-187",
+        "name": "北海／城阳",
+        "entity_id": null,
+        "category": "unresolved_original",
+        "control_status": null,
+        "area_degrees_squared": 0.8365844
+      },
+      {
+        "reference_id": "ref-289-199",
+        "name": "原图未命名区",
+        "entity_id": null,
+        "category": "unresolved_original",
+        "control_status": null,
+        "area_degrees_squared": 0.8186518
+      },
+      {
+        "reference_id": "ref-289-204",
+        "name": "原图未命名区",
+        "entity_id": null,
+        "category": "unresolved_original",
+        "control_status": null,
+        "area_degrees_squared": 0.7529413
+      },
+      {
+        "reference_id": "ref-289-113",
+        "name": "桂林",
+        "entity_id": "p238",
+        "category": "valid_prefecture_geometry_gap",
+        "control_status": "administrative",
+        "area_degrees_squared": 0.5750654
+      },
+      {
+        "reference_id": "ref-289-203",
+        "name": "原图未命名区",
+        "entity_id": null,
+        "category": "unresolved_original",
+        "control_status": null,
+        "area_degrees_squared": 0.462518
+      },
+      {
+        "reference_id": "ref-289-147",
+        "name": "临海郡",
+        "entity_id": "p197",
+        "category": "valid_prefecture_geometry_gap",
+        "control_status": "administrative",
+        "area_degrees_squared": 0.4428793
+      },
+      {
+        "reference_id": "ref-289-129",
+        "name": "北地",
+        "entity_id": "p076",
+        "category": "valid_prefecture_geometry_gap",
+        "control_status": "administrative",
+        "area_degrees_squared": 0.3163741
+      },
+      {
+        "reference_id": "ref-289-178",
+        "name": "广陵郡",
+        "entity_id": "p155",
+        "category": "valid_prefecture_geometry_gap",
+        "control_status": "administrative",
+        "area_degrees_squared": 0.3138244
+      },
+      {
+        "reference_id": "ref-289-111",
+        "name": "南郡",
+        "entity_id": "p161",
+        "category": "valid_prefecture_geometry_gap",
+        "control_status": "administrative",
+        "area_degrees_squared": 0.2956511
+      },
+      {
+        "reference_id": "ref-289-196",
+        "name": "寻阳",
+        "entity_id": "p227",
+        "category": "unresolved_original",
+        "control_status": "administrative",
+        "area_degrees_squared": 0.2881275
+      },
+      {
+        "reference_id": "ref-289-157",
+        "name": "安成郡",
+        "entity_id": "p182",
+        "category": "valid_prefecture_geometry_gap",
+        "control_status": "administrative",
+        "area_degrees_squared": 0.2134704
+      },
+      {
+        "reference_id": "ref-289-112",
+        "name": "始安",
+        "entity_id": "p243",
+        "category": "valid_prefecture_geometry_gap",
+        "control_status": "administrative",
+        "area_degrees_squared": 0.1274801
+      },
+      {
+        "reference_id": "ref-289-89",
+        "name": "淮南",
+        "entity_id": "p187",
+        "category": "valid_prefecture_geometry_gap",
+        "control_status": "administrative",
+        "area_degrees_squared": 0.0926644
+      },
+      {
+        "reference_id": "ref-289-71",
+        "name": "颍川",
+        "entity_id": "p021",
+        "category": "valid_prefecture_geometry_gap",
+        "control_status": "administrative",
+        "area_degrees_squared": 0.0868406
+      },
+      {
+        "reference_id": "ref-289-182",
+        "name": "沛国",
+        "entity_id": "p027",
+        "category": "valid_prefecture_geometry_gap",
+        "control_status": "administrative",
+        "area_degrees_squared": 0.0666218
+      }
+    ]
+  },
+  "political_input_overlap_area_degrees_squared": 0.0,
+  "nominal_affiliate_overlap_jin_area_degrees_squared": 0.0,
+  "input_political_overlap_pairs": [],
+  "political_precedence": "原图完整疆域与海岸优先；仅原图域内具名孙吴、汉成、起兵等控制变化扣出无色区",
+  "source_policy": {
+    "version": "2026-10-02.4",
+    "source_priority": [
+      "current_CHGIS_points_and_areas",
+      "reviewed_original_image_areas",
+      "annual_video_control_changes"
+    ],
+    "point_policy": "dated_CHGIS_source_coordinates_preserved_then_reviewed_original_fallback",
+    "area_policy": "original_province_prefecture_and_coastline_unless_dated_affiliation_conflict",
+    "footprint_source": "reviewed_original_province_areas_union",
+    "control_source": "annual_video_named_internal_control_changes_only",
+    "video_edge_overlap_filter": {
+      "original_domain_inset_degrees": 0.12,
+      "min_interior_overlap_degrees_squared": 0.5,
+      "meaning": "coarse_registration_edge_overlap_filter_not_historical_accuracy"
+    },
+    "video_outer_jin_boundary_used": false,
+    "original_domain_extended": false,
+    "excluded_external_areas": [
+      "西域",
+      "日本",
+      "朝鲜半岛",
+      "西伯利亚"
+    ],
+    "county_boundaries_displayed": false
+  },
+  "original_domain_area_degrees_squared": 374.2931793,
+  "display_domain_extends_beyond_original": false,
+  "video_jin_domain_difference_degrees_squared": 60.7833247,
+  "excluded_outside_study_regimes": [
+    "丁零",
+    "乌孙",
+    "匈奴余部",
+    "古坟时代日本",
+    "坚昆",
+    "夷洲",
+    "弁韩",
+    "悦般",
+    "扶余",
+    "林邑",
+    "焉耆",
+    "珠崖部",
+    "百济",
+    "西晋西域都护名义范围",
+    "辰韩",
+    "马韩"
+  ],
+  "video_regime_scope_assessments": [
+    {
+      "regime": "坚昆",
+      "overlap_original_domain_degrees_squared": 0.0,
+      "overlap_original_domain_interior_degrees_squared": 0,
+      "retained": false,
+      "assessment": "outside_scope_or_low_precision_edge_overlap_original_area_preferred"
+    },
+    {
+      "regime": "丁零",
+      "overlap_original_domain_degrees_squared": 0.0,
+      "overlap_original_domain_interior_degrees_squared": 0,
+      "retained": false,
+      "assessment": "outside_scope_or_low_precision_edge_overlap_original_area_preferred"
+    },
+    {
+      "regime": "匈奴余部",
+      "overlap_original_domain_degrees_squared": 0.0,
+      "overlap_original_domain_interior_degrees_squared": 0,
+      "retained": false,
+      "assessment": "outside_scope_or_low_precision_edge_overlap_original_area_preferred"
+    },
+    {
+      "regime": "悦般",
+      "overlap_original_domain_degrees_squared": 0.0,
+      "overlap_original_domain_interior_degrees_squared": 0,
+      "retained": false,
+      "assessment": "outside_scope_or_low_precision_edge_overlap_original_area_preferred"
+    },
+    {
+      "regime": "乌孙",
+      "overlap_original_domain_degrees_squared": 0.0,
+      "overlap_original_domain_interior_degrees_squared": 0,
+      "retained": false,
+      "assessment": "outside_scope_or_low_precision_edge_overlap_original_area_preferred"
+    },
+    {
+      "regime": "焉耆",
+      "overlap_original_domain_degrees_squared": 0.0,
+      "overlap_original_domain_interior_degrees_squared": 0,
+      "retained": false,
+      "assessment": "outside_scope_or_low_precision_edge_overlap_original_area_preferred"
+    },
+    {
+      "regime": "扶余",
+      "overlap_original_domain_degrees_squared": 0.2271681,
+      "overlap_original_domain_interior_degrees_squared": 0.0778743,
+      "retained": false,
+      "assessment": "outside_scope_or_low_precision_edge_overlap_original_area_preferred"
+    },
+    {
+      "regime": "高句丽",
+      "overlap_original_domain_degrees_squared": 1.4568512,
+      "overlap_original_domain_interior_degrees_squared": 0.8777135,
+      "retained": true,
+      "assessment": "large_internal_overlap_kept_clipped_to_original_domain"
+    },
+    {
+      "regime": "马韩",
+      "overlap_original_domain_degrees_squared": 0.0,
+      "overlap_original_domain_interior_degrees_squared": 0,
+      "retained": false,
+      "assessment": "outside_scope_or_low_precision_edge_overlap_original_area_preferred"
+    },
+    {
+      "regime": "辰韩",
+      "overlap_original_domain_degrees_squared": 0.0,
+      "overlap_original_domain_interior_degrees_squared": 0,
+      "retained": false,
+      "assessment": "outside_scope_or_low_precision_edge_overlap_original_area_preferred"
+    },
+    {
+      "regime": "弁韩",
+      "overlap_original_domain_degrees_squared": 0.0,
+      "overlap_original_domain_interior_degrees_squared": 0,
+      "retained": false,
+      "assessment": "outside_scope_or_low_precision_edge_overlap_original_area_preferred"
+    },
+    {
+      "regime": "百济",
+      "overlap_original_domain_degrees_squared": 0.0,
+      "overlap_original_domain_interior_degrees_squared": 0,
+      "retained": false,
+      "assessment": "outside_scope_or_low_precision_edge_overlap_original_area_preferred"
+    },
+    {
+      "regime": "珠崖部",
+      "overlap_original_domain_degrees_squared": 0.0,
+      "overlap_original_domain_interior_degrees_squared": 0,
+      "retained": false,
+      "assessment": "outside_scope_or_low_precision_edge_overlap_original_area_preferred"
+    },
+    {
+      "regime": "夷洲",
+      "overlap_original_domain_degrees_squared": 0.0,
+      "overlap_original_domain_interior_degrees_squared": 0,
+      "retained": false,
+      "assessment": "outside_scope_or_low_precision_edge_overlap_original_area_preferred"
+    },
+    {
+      "regime": "古坟时代日本",
+      "overlap_original_domain_degrees_squared": 0.0,
+      "overlap_original_domain_interior_degrees_squared": 0,
+      "retained": false,
+      "assessment": "outside_scope_or_low_precision_edge_overlap_original_area_preferred"
+    },
+    {
+      "regime": "林邑",
+      "overlap_original_domain_degrees_squared": 0.0630391,
+      "overlap_original_domain_interior_degrees_squared": 0.0045983,
+      "retained": false,
+      "assessment": "outside_scope_or_low_precision_edge_overlap_original_area_preferred"
+    },
+    {
+      "regime": "鲜卑诸部",
+      "overlap_original_domain_degrees_squared": 4.1806144,
+      "overlap_original_domain_interior_degrees_squared": 2.4592078,
+      "retained": true,
+      "assessment": "large_internal_overlap_kept_clipped_to_original_domain"
+    },
+    {
+      "regime": "西晋西域都护名义范围",
+      "overlap_original_domain_degrees_squared": 0.7994634,
+      "overlap_original_domain_interior_degrees_squared": 0.5934647,
+      "retained": false,
+      "assessment": "nominal_outside_affiliate_excluded"
+    }
+  ],
+  "original_internal_seam_holes_filled": 190,
+  "original_internal_seam_hole_area_degrees_squared": 0.004262878,
+  "current_CHGIS_area_count": 28,
+  "current_CHGIS_areas": [
+    {
+      "prefecture_id": "p149",
+      "state_id": "s15",
+      "source_id": "91230",
+      "begin": 265,
+      "end": 323
+    },
+    {
+      "prefecture_id": "p150",
+      "state_id": "s15",
+      "source_id": "91510",
+      "begin": 280,
+      "end": 323
+    },
+    {
+      "prefecture_id": "p151",
+      "state_id": "s15",
+      "source_id": "91511",
+      "begin": 280,
+      "end": 323
+    },
+    {
+      "prefecture_id": "p173",
+      "state_id": "s16",
+      "source_id": "97593",
+      "begin": 263,
+      "end": 501
+    },
+    {
+      "prefecture_id": "p174",
+      "state_id": "s16",
+      "source_id": "97572",
+      "begin": 263,
+      "end": 553
+    },
+    {
+      "prefecture_id": "p176",
+      "state_id": "s16",
+      "source_id": "97570",
+      "begin": 280,
+      "end": 478
+    },
+    {
+      "prefecture_id": "p177",
+      "state_id": "s16",
+      "source_id": "97564",
+      "begin": 280,
+      "end": 464
+    },
+    {
+      "prefecture_id": "p178",
+      "state_id": "s16",
+      "source_id": "97578",
+      "begin": 275,
+      "end": 344
+    },
+    {
+      "prefecture_id": "p179",
+      "state_id": "s16",
+      "source_id": "97583",
+      "begin": 280,
+      "end": 588
+    },
+    {
+      "prefecture_id": "p180",
+      "state_id": "s16",
+      "source_id": "97588",
+      "begin": 265,
+      "end": 501
+    },
+    {
+      "prefecture_id": "p189",
+      "state_id": "s17",
+      "source_id": "90518",
+      "begin": 281,
+      "end": 303
+    },
+    {
+      "prefecture_id": "p190",
+      "state_id": "s17",
+      "source_id": "90542",
+      "begin": 281,
+      "end": 410
+    },
+    {
+      "prefecture_id": "p192",
+      "state_id": "s17",
+      "source_id": "90223",
+      "begin": 266,
+      "end": 506
+    },
+    {
+      "prefecture_id": "p193",
+      "state_id": "s17",
+      "source_id": "90077",
+      "begin": 266,
+      "end": 303
+    },
+    {
+      "prefecture_id": "p194",
+      "state_id": "s17",
+      "source_id": "90424",
+      "begin": 266,
+      "end": 588
+    },
+    {
+      "prefecture_id": "p195",
+      "state_id": "s17",
+      "source_id": "90395",
+      "begin": 266,
+      "end": 525
+    },
+    {
+      "prefecture_id": "p196",
+      "state_id": "s17",
+      "source_id": "90442",
+      "begin": 280,
+      "end": 521
+    },
+    {
+      "prefecture_id": "p198",
+      "state_id": "s17",
+      "source_id": "90176",
+      "begin": 282,
+      "end": 588
+    },
+    {
+      "prefecture_id": "p199",
+      "state_id": "s17",
+      "source_id": "90177",
+      "begin": 282,
+      "end": 467
+    },
+    {
+      "prefecture_id": "p200",
+      "state_id": "s17",
+      "source_id": "97196",
+      "begin": 267,
+      "end": 306
+    },
+    {
+      "prefecture_id": "p201",
+      "state_id": "s17",
+      "source_id": "97184",
+      "begin": 257,
+      "end": 527
+    },
+    {
+      "prefecture_id": "p202",
+      "state_id": "s17",
+      "source_id": "97217",
+      "begin": 210,
+      "end": 423
+    },
+    {
+      "prefecture_id": "p203",
+      "state_id": "s17",
+      "source_id": "97152",
+      "begin": 282,
+      "end": 527
+    },
+    {
+      "prefecture_id": "p235",
+      "state_id": "s21",
+      "source_id": "92253",
+      "begin": 265,
+      "end": 330
+    },
+    {
+      "prefecture_id": "p236",
+      "state_id": "s21",
+      "source_id": "92280",
+      "begin": 265,
+      "end": 350
+    },
+    {
+      "prefecture_id": "p239",
+      "state_id": "s21",
+      "source_id": "92342",
+      "begin": 265,
+      "end": 288
+    },
+    {
+      "prefecture_id": "p242",
+      "state_id": "s21",
+      "source_id": "92285",
+      "begin": 226,
+      "end": 451
+    },
+    {
+      "prefecture_id": "p244",
+      "state_id": "s21",
+      "source_id": "92230",
+      "begin": 265,
+      "end": 469
+    }
+  ],
+  "point_selection": {
+    "year": 286,
+    "point_priority": "current_CHGIS_then_reviewed_original_point",
+    "coordinates_preserved": true,
+    "political_masks_used_for_point_selection": false,
+    "levels": {
+      "county": {
+        "yearbook_entities": 1269,
+        "current_CHGIS_source_records": 1075,
+        "current_CHGIS_points": 932,
+        "original_point_fallbacks": 13,
+        "unlocated": 324,
+        "match_methods": {
+          "CHGIS_current_explicit_source_link": 890,
+          "unlocated": 324,
+          "CHGIS_current_unique_name": 27,
+          "CHGIS_current_unique_parent_compartment": 15,
+          "reviewed_original_coordinate_fallback": 13
+        }
+      },
+      "prefecture": {
+        "yearbook_entities": 171,
+        "current_CHGIS_source_records": 154,
+        "current_CHGIS_points": 142,
+        "original_point_fallbacks": 0,
+        "unlocated": 29,
+        "match_methods": {
+          "CHGIS_current_explicit_source_link": 133,
+          "unlocated": 29,
+          "CHGIS_current_unique_name": 9
+        }
+      },
+      "state": {
+        "yearbook_entities": 17,
+        "current_CHGIS_source_records": 14,
+        "current_CHGIS_points": 9,
+        "original_point_fallbacks": 0,
+        "unlocated": 8,
+        "match_methods": {
+          "CHGIS_current_explicit_source_link": 5,
+          "unlocated": 8,
+          "CHGIS_current_unique_name": 4
+        }
+      }
+    },
+    "unresolved": [
+      {
+        "entity_id": "c0007",
+        "level": "county",
+        "name": "新城",
+        "reason": "ambiguous_current_CHGIS_name"
+      },
+      {
+        "entity_id": "c0010",
+        "level": "county",
+        "name": "梁",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0035",
+        "level": "county",
+        "name": "拒陽",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0037",
+        "level": "county",
+        "name": "楊",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0040",
+        "level": "county",
+        "name": "蒲子",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0050",
+        "level": "county",
+        "name": "東垣",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0072",
+        "level": "county",
+        "name": "修武",
+        "reason": "ambiguous_current_CHGIS_name"
+      },
+      {
+        "entity_id": "c0083",
+        "level": "county",
+        "name": "襄國",
+        "reason": "ambiguous_current_CHGIS_name"
+      },
+      {
+        "entity_id": "c0095",
+        "level": "county",
+        "name": "發乾",
+        "reason": "no_current_CHGIS_name_match",
+        "original_point_retained": true
+      },
+      {
+        "entity_id": "c0121",
+        "level": "county",
+        "name": "長垣",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0126",
+        "level": "county",
+        "name": "圉",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0129",
+        "level": "county",
+        "name": "濮陽",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0141",
+        "level": "county",
+        "name": "離狐",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0144",
+        "level": "county",
+        "name": "城武",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0156",
+        "level": "county",
+        "name": "富城",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0166",
+        "level": "county",
+        "name": "梁父",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0167",
+        "level": "county",
+        "name": "山荏",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0169",
+        "level": "county",
+        "name": "南武陽",
+        "reason": "no_current_CHGIS_name_match",
+        "original_point_retained": true
+      },
+      {
+        "entity_id": "c0172",
+        "level": "county",
+        "name": "矩平",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0177",
+        "level": "county",
+        "name": "高平",
+        "reason": "ambiguous_current_CHGIS_name"
+      },
+      {
+        "entity_id": "c0184",
+        "level": "county",
+        "name": "穎陰",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0185",
+        "level": "county",
+        "name": "臨穎",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0187",
+        "level": "county",
+        "name": "召陵",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0203",
+        "level": "county",
+        "name": "北宜春",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0208",
+        "level": "county",
+        "name": "定穎",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0209",
+        "level": "county",
+        "name": "濯陽",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0218",
+        "level": "county",
+        "name": "原鹿",
+        "reason": "no_current_CHGIS_name_match",
+        "original_point_retained": true
+      },
+      {
+        "entity_id": "c0219",
+        "level": "county",
+        "name": "固始",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0221",
+        "level": "county",
+        "name": "宋",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0223",
+        "level": "county",
+        "name": "鮦陽",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0254",
+        "level": "county",
+        "name": "鄼",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0275",
+        "level": "county",
+        "name": "松滋",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0298",
+        "level": "county",
+        "name": "南宮",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0308",
+        "level": "county",
+        "name": "荏平",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0327",
+        "level": "county",
+        "name": "蓨",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0333",
+        "level": "county",
+        "name": "易",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0340",
+        "level": "county",
+        "name": "清河",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0344",
+        "level": "county",
+        "name": "靈",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0376",
+        "level": "county",
+        "name": "遒",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0385",
+        "level": "county",
+        "name": "薊",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0387",
+        "level": "county",
+        "name": "昌平",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0388",
+        "level": "county",
+        "name": "軍都",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0391",
+        "level": "county",
+        "name": "雍奴",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0392",
+        "level": "county",
+        "name": "安樂",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0393",
+        "level": "county",
+        "name": "泉州",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0394",
+        "level": "county",
+        "name": "狐奴",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0397",
+        "level": "county",
+        "name": "無終",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0400",
+        "level": "county",
+        "name": "居庸",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0435",
+        "level": "county",
+        "name": "昌黎",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0436",
+        "level": "county",
+        "name": "賓徒",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0437",
+        "level": "county",
+        "name": "襄平",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0438",
+        "level": "county",
+        "name": "汶",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0439",
+        "level": "county",
+        "name": "居就",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0440",
+        "level": "county",
+        "name": "樂就",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0441",
+        "level": "county",
+        "name": "安市",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0442",
+        "level": "county",
+        "name": "西安平",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0443",
+        "level": "county",
+        "name": "新昌",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0444",
+        "level": "county",
+        "name": "力城",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0445",
+        "level": "county",
+        "name": "朝鮮",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0446",
+        "level": "county",
+        "name": "屯有",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0447",
+        "level": "county",
+        "name": "渾彌",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0448",
+        "level": "county",
+        "name": "遂城",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0449",
+        "level": "county",
+        "name": "鏤方",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0450",
+        "level": "county",
+        "name": "駟望",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0451",
+        "level": "county",
+        "name": "高句驪",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0452",
+        "level": "county",
+        "name": "高顯",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0453",
+        "level": "county",
+        "name": "望平",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0454",
+        "level": "county",
+        "name": "帶方",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0455",
+        "level": "county",
+        "name": "列口",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0456",
+        "level": "county",
+        "name": "海冥",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0457",
+        "level": "county",
+        "name": "長岑",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0458",
+        "level": "county",
+        "name": "提奚",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0459",
+        "level": "county",
+        "name": "含資",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0460",
+        "level": "county",
+        "name": "南新",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0461",
+        "level": "county",
+        "name": "晉陽",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0464",
+        "level": "county",
+        "name": "於離",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0466",
+        "level": "county",
+        "name": "狼孟",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0470",
+        "level": "county",
+        "name": "平陶",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0474",
+        "level": "county",
+        "name": "隰城",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0475",
+        "level": "county",
+        "name": "離石",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0476",
+        "level": "county",
+        "name": "中陽",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0477",
+        "level": "county",
+        "name": "界休",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0487",
+        "level": "county",
+        "name": "潞",
+        "reason": "ambiguous_current_CHGIS_name"
+      },
+      {
+        "entity_id": "c0491",
+        "level": "county",
+        "name": "壽陽",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0495",
+        "level": "county",
+        "name": "汪陶",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0496",
+        "level": "county",
+        "name": "醇",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0504",
+        "level": "county",
+        "name": "廣牧",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0505",
+        "level": "county",
+        "name": "晉昌",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0507",
+        "level": "county",
+        "name": "杜陵",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0513",
+        "level": "county",
+        "name": "陰槃",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0514",
+        "level": "county",
+        "name": "鄭",
+        "reason": "ambiguous_current_CHGIS_name"
+      },
+      {
+        "entity_id": "c0520",
+        "level": "county",
+        "name": "頻陽",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0522",
+        "level": "county",
+        "name": "蓮芍",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0527",
+        "level": "county",
+        "name": "雍",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0528",
+        "level": "county",
+        "name": "汧",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0530",
+        "level": "county",
+        "name": "美陽",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0539",
+        "level": "county",
+        "name": "蒯城",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0540",
+        "level": "county",
+        "name": "臨涇",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0542",
+        "level": "county",
+        "name": "烏氏",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0543",
+        "level": "county",
+        "name": "鶉觚",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0544",
+        "level": "county",
+        "name": "陰密",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0545",
+        "level": "county",
+        "name": "西川",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0546",
+        "level": "county",
+        "name": "都盧",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0551",
+        "level": "county",
+        "name": "邠邑",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0556",
+        "level": "county",
+        "name": "河關",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0557",
+        "level": "county",
+        "name": "獂道",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0558",
+        "level": "county",
+        "name": "中陶",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0561",
+        "level": "county",
+        "name": "上邽",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0562",
+        "level": "county",
+        "name": "顯親",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0564",
+        "level": "county",
+        "name": "新陽",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0565",
+        "level": "county",
+        "name": "成紀",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0566",
+        "level": "county",
+        "name": "臨渭",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0567",
+        "level": "county",
+        "name": "平襄",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0568",
+        "level": "county",
+        "name": "略陽",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0569",
+        "level": "county",
+        "name": "清水",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0570",
+        "level": "county",
+        "name": "下辨",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0571",
+        "level": "county",
+        "name": "河池",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0574",
+        "level": "county",
+        "name": "武都",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0575",
+        "level": "county",
+        "name": "氐道",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0577",
+        "level": "county",
+        "name": "陰平",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0580",
+        "level": "county",
+        "name": "允街",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0582",
+        "level": "county",
+        "name": "白土",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0583",
+        "level": "county",
+        "name": "浩亶",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0588",
+        "level": "county",
+        "name": "破羌",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0589",
+        "level": "county",
+        "name": "長寧",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0590",
+        "level": "county",
+        "name": "姑臧",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0591",
+        "level": "county",
+        "name": "宣威",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0592",
+        "level": "county",
+        "name": "揟次",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0593",
+        "level": "county",
+        "name": "倉松",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0597",
+        "level": "county",
+        "name": "永平",
+        "reason": "no_current_CHGIS_name_match",
+        "original_point_retained": true
+      },
+      {
+        "entity_id": "c0603",
+        "level": "county",
+        "name": "仙提",
+        "reason": "no_current_CHGIS_name_match",
+        "original_point_retained": true
+      },
+      {
+        "entity_id": "c0604",
+        "level": "county",
+        "name": "萬歲",
+        "reason": "no_current_CHGIS_name_match",
+        "original_point_retained": true
+      },
+      {
+        "entity_id": "c0605",
+        "level": "county",
+        "name": "蘭池",
+        "reason": "no_current_CHGIS_name_match",
+        "original_point_retained": true
+      },
+      {
+        "entity_id": "c0606",
+        "level": "county",
+        "name": "福祿",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0607",
+        "level": "county",
+        "name": "表氏",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0608",
+        "level": "county",
+        "name": "樂涫",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0610",
+        "level": "county",
+        "name": "會水",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0611",
+        "level": "county",
+        "name": "安彌",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0613",
+        "level": "county",
+        "name": "沙頭",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0614",
+        "level": "county",
+        "name": "騂馬",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0617",
+        "level": "county",
+        "name": "廣至",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0620",
+        "level": "county",
+        "name": "宜禾",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0621",
+        "level": "county",
+        "name": "淵泉",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0622",
+        "level": "county",
+        "name": "伊吾",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0623",
+        "level": "county",
+        "name": "昌蒲",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0624",
+        "level": "county",
+        "name": "陽關",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0625",
+        "level": "county",
+        "name": "乾齊",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0680",
+        "level": "county",
+        "name": "蒲池",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0682",
+        "level": "county",
+        "name": "黃金",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0684",
+        "level": "county",
+        "name": "城",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0686",
+        "level": "county",
+        "name": "白水",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0687",
+        "level": "county",
+        "name": "漢德",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0688",
+        "level": "county",
+        "name": "劍閣",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0689",
+        "level": "county",
+        "name": "武連",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0690",
+        "level": "county",
+        "name": "黃安",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0691",
+        "level": "county",
+        "name": "廣漢",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0693",
+        "level": "county",
+        "name": "五城",
+        "reason": "no_current_CHGIS_name_match",
+        "original_point_retained": true
+      },
+      {
+        "entity_id": "c0697",
+        "level": "county",
+        "name": "什",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0702",
+        "level": "county",
+        "name": "漢復",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0703",
+        "level": "county",
+        "name": "涪陵",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0704",
+        "level": "county",
+        "name": "漢薛",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0706",
+        "level": "county",
+        "name": "萬寧",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0713",
+        "level": "county",
+        "name": "魚復",
+        "reason": "no_current_CHGIS_name_match",
+        "original_point_retained": true
+      },
+      {
+        "entity_id": "c0720",
+        "level": "county",
+        "name": "蒼溪",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0721",
+        "level": "county",
+        "name": "岐愜",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0726",
+        "level": "county",
+        "name": "平州",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0727",
+        "level": "county",
+        "name": "宣漢",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0763",
+        "level": "county",
+        "name": "南安",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0767",
+        "level": "county",
+        "name": "汶山",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0768",
+        "level": "county",
+        "name": "升遷",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0771",
+        "level": "county",
+        "name": "興樂",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0772",
+        "level": "county",
+        "name": "平康",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0775",
+        "level": "county",
+        "name": "青衣",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0778",
+        "level": "county",
+        "name": "牛",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0784",
+        "level": "county",
+        "name": "漢陽",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0788",
+        "level": "county",
+        "name": "會無",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0789",
+        "level": "county",
+        "name": "卑水",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0790",
+        "level": "county",
+        "name": "定摧",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0798",
+        "level": "county",
+        "name": "並渠",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0799",
+        "level": "county",
+        "name": "平夷",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0802",
+        "level": "county",
+        "name": "永寧",
+        "reason": "ambiguous_current_CHGIS_name"
+      },
+      {
+        "entity_id": "c0803",
+        "level": "county",
+        "name": "棟",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0806",
+        "level": "county",
+        "name": "姑復",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0807",
+        "level": "county",
+        "name": "邪龍",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0810",
+        "level": "county",
+        "name": "勝休",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0811",
+        "level": "county",
+        "name": "進乘",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0816",
+        "level": "county",
+        "name": "毋",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0819",
+        "level": "county",
+        "name": "律高",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0821",
+        "level": "county",
+        "name": "西隨",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0824",
+        "level": "county",
+        "name": "存號",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0826",
+        "level": "county",
+        "name": "談槀",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0827",
+        "level": "county",
+        "name": "漏江",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0833",
+        "level": "county",
+        "name": "秦臧",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0835",
+        "level": "county",
+        "name": "俞元",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0836",
+        "level": "county",
+        "name": "修雲",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0837",
+        "level": "county",
+        "name": "泠丘",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0840",
+        "level": "county",
+        "name": "同樂",
+        "reason": "no_current_CHGIS_name_match",
+        "original_point_retained": true
+      },
+      {
+        "entity_id": "c0842",
+        "level": "county",
+        "name": "巂唐",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0846",
+        "level": "county",
+        "name": "雍鄉",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0847",
+        "level": "county",
+        "name": "南涪",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0944",
+        "level": "county",
+        "name": "西安",
+        "reason": "ambiguous_current_CHGIS_name"
+      },
+      {
+        "entity_id": "c0956",
+        "level": "county",
+        "name": "平陵",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0960",
+        "level": "county",
+        "name": "隰陰",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0969",
+        "level": "county",
+        "name": "蓼城",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0972",
+        "level": "county",
+        "name": "益",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0978",
+        "level": "county",
+        "name": "壯武",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0981",
+        "level": "county",
+        "name": "黔",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0983",
+        "level": "county",
+        "name": "平昌",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0992",
+        "level": "county",
+        "name": "曲城",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c0993",
+        "level": "county",
+        "name": "㡉",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1017",
+        "level": "county",
+        "name": "梧",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1022",
+        "level": "county",
+        "name": "唯陵",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1026",
+        "level": "county",
+        "name": "良城",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1031",
+        "level": "county",
+        "name": "北凌",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1034",
+        "level": "county",
+        "name": "高山",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1035",
+        "level": "county",
+        "name": "潘旌",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1036",
+        "level": "county",
+        "name": "贅其",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1043",
+        "level": "county",
+        "name": "鄭",
+        "reason": "ambiguous_current_CHGIS_name"
+      },
+      {
+        "entity_id": "c1058",
+        "level": "county",
+        "name": "縉",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1066",
+        "level": "county",
+        "name": "臨",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1092",
+        "level": "county",
+        "name": "海西",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1093",
+        "level": "county",
+        "name": "凌",
+        "reason": "no_current_CHGIS_name_match",
+        "original_point_retained": true
+      },
+      {
+        "entity_id": "c1129",
+        "level": "county",
+        "name": "中盧",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1145",
+        "level": "county",
+        "name": "涅陽",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1147",
+        "level": "county",
+        "name": "襄鄉",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1176",
+        "level": "county",
+        "name": "順陽",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1177",
+        "level": "county",
+        "name": "南鄉",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1178",
+        "level": "county",
+        "name": "丹水",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1183",
+        "level": "county",
+        "name": "陽",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1192",
+        "level": "county",
+        "name": "長利",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1193",
+        "level": "county",
+        "name": "洵陽",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1194",
+        "level": "county",
+        "name": "勳鄉",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1197",
+        "level": "county",
+        "name": "北巫",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1219",
+        "level": "county",
+        "name": "鐔城",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1224",
+        "level": "county",
+        "name": "充",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1230",
+        "level": "county",
+        "name": "下售",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1234",
+        "level": "county",
+        "name": "劉陽",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1249",
+        "level": "county",
+        "name": "利陽",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1263",
+        "level": "county",
+        "name": "春陵",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1270",
+        "level": "county",
+        "name": "新",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1285",
+        "level": "county",
+        "name": "高陵",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1289",
+        "level": "county",
+        "name": "宜春",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1291",
+        "level": "county",
+        "name": "新諭",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1309",
+        "level": "county",
+        "name": "義城",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1318",
+        "level": "county",
+        "name": "當塗",
+        "reason": "no_current_CHGIS_name_match",
+        "original_point_retained": true
+      },
+      {
+        "entity_id": "c1323",
+        "level": "county",
+        "name": "六安",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1324",
+        "level": "county",
+        "name": "龍舒",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1358",
+        "level": "county",
+        "name": "春谷",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1378",
+        "level": "county",
+        "name": "新城",
+        "reason": "ambiguous_current_CHGIS_name"
+      },
+      {
+        "entity_id": "c1382",
+        "level": "county",
+        "name": "餘杭",
+        "reason": "no_current_CHGIS_name_match",
+        "original_point_retained": true
+      },
+      {
+        "entity_id": "c1411",
+        "level": "county",
+        "name": "黟",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1436",
+        "level": "county",
+        "name": "宛平",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1456",
+        "level": "county",
+        "name": "鐘陵",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1466",
+        "level": "county",
+        "name": "永城",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1470",
+        "level": "county",
+        "name": "余乾",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1472",
+        "level": "county",
+        "name": "陽",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1492",
+        "level": "county",
+        "name": "都",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1493",
+        "level": "county",
+        "name": "陂陽",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1669",
+        "level": "county",
+        "name": "南平",
+        "reason": "ambiguous_current_CHGIS_name"
+      },
+      {
+        "entity_id": "c1670",
+        "level": "county",
+        "name": "毒質",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1671",
+        "level": "county",
+        "name": "晉始",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1672",
+        "level": "county",
+        "name": "龍編",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1673",
+        "level": "county",
+        "name": "羸縷",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1674",
+        "level": "county",
+        "name": "定安",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1675",
+        "level": "county",
+        "name": "苟屚",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1676",
+        "level": "county",
+        "name": "曲易",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1677",
+        "level": "county",
+        "name": "北帶",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1678",
+        "level": "county",
+        "name": "稽徐",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1679",
+        "level": "county",
+        "name": "西於",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1680",
+        "level": "county",
+        "name": "朱鳶",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1681",
+        "level": "county",
+        "name": "望海",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1682",
+        "level": "county",
+        "name": "交興",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1683",
+        "level": "county",
+        "name": "南定",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1684",
+        "level": "county",
+        "name": "武寧",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1685",
+        "level": "county",
+        "name": "海平",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1686",
+        "level": "county",
+        "name": "封溪",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1688",
+        "level": "county",
+        "name": "麊冷",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1689",
+        "level": "county",
+        "name": "嘉寧",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1690",
+        "level": "county",
+        "name": "吳定",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1691",
+        "level": "county",
+        "name": "封山",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1692",
+        "level": "county",
+        "name": "臨西",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1693",
+        "level": "county",
+        "name": "西道",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1694",
+        "level": "county",
+        "name": "武興",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1695",
+        "level": "county",
+        "name": "進山",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1696",
+        "level": "county",
+        "name": "根寧",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1697",
+        "level": "county",
+        "name": "安武",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1698",
+        "level": "county",
+        "name": "扶安",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1699",
+        "level": "county",
+        "name": "胥浦",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1700",
+        "level": "county",
+        "name": "移風",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1701",
+        "level": "county",
+        "name": "常樂",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1702",
+        "level": "county",
+        "name": "建初",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1703",
+        "level": "county",
+        "name": "津梧",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1704",
+        "level": "county",
+        "name": "松原",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1705",
+        "level": "county",
+        "name": "扶樂",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1706",
+        "level": "county",
+        "name": "高安",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1707",
+        "level": "county",
+        "name": "寧夷",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1708",
+        "level": "county",
+        "name": "軍安",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1709",
+        "level": "county",
+        "name": "九德",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1710",
+        "level": "county",
+        "name": "陽遠",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1711",
+        "level": "county",
+        "name": "咸驩",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1712",
+        "level": "county",
+        "name": "南陵",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1713",
+        "level": "county",
+        "name": "蒲陽",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1714",
+        "level": "county",
+        "name": "曲胥",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1715",
+        "level": "county",
+        "name": "都洨",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1716",
+        "level": "county",
+        "name": "扶苓",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1717",
+        "level": "county",
+        "name": "西安",
+        "reason": "ambiguous_current_CHGIS_name"
+      },
+      {
+        "entity_id": "c1723",
+        "level": "county",
+        "name": "盧容",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1724",
+        "level": "county",
+        "name": "象林",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1725",
+        "level": "county",
+        "name": "朱吾",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1726",
+        "level": "county",
+        "name": "西卷",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1727",
+        "level": "county",
+        "name": "比景",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1728",
+        "level": "county",
+        "name": "無勞",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1734",
+        "level": "county",
+        "name": "平夷",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1740",
+        "level": "county",
+        "name": "彰平",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1742",
+        "level": "county",
+        "name": "豐城",
+        "reason": "ambiguous_current_CHGIS_name"
+      },
+      {
+        "entity_id": "c1746",
+        "level": "county",
+        "name": "都羅",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1747",
+        "level": "county",
+        "name": "元溪",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1749",
+        "level": "county",
+        "name": "丁留",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1755",
+        "level": "county",
+        "name": "新邑",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1756",
+        "level": "county",
+        "name": "安始",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1757",
+        "level": "county",
+        "name": "晉平",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1759",
+        "level": "county",
+        "name": "安遠",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1761",
+        "level": "county",
+        "name": "武豐",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1762",
+        "level": "county",
+        "name": "粟平",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1763",
+        "level": "county",
+        "name": "洋平",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1764",
+        "level": "county",
+        "name": "龍岡",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1765",
+        "level": "county",
+        "name": "夾陽",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1766",
+        "level": "county",
+        "name": "軍騰",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1772",
+        "level": "county",
+        "name": "海安",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1774",
+        "level": "county",
+        "name": "化平",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1775",
+        "level": "county",
+        "name": "西平",
+        "reason": "ambiguous_current_CHGIS_name"
+      },
+      {
+        "entity_id": "c1781",
+        "level": "county",
+        "name": "寧浦",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1782",
+        "level": "county",
+        "name": "興道",
+        "reason": "ambiguous_current_CHGIS_name"
+      },
+      {
+        "entity_id": "c1783",
+        "level": "county",
+        "name": "吳安",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1785",
+        "level": "county",
+        "name": "澗陽",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1799",
+        "level": "county",
+        "name": "始陽",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "c1803",
+        "level": "county",
+        "name": "禎陽",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "p010",
+        "level": "prefecture",
+        "name": "陽平郡",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "p011",
+        "level": "prefecture",
+        "name": "頓丘郡",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "p016",
+        "level": "prefecture",
+        "name": "濟北國",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "p024",
+        "level": "prefecture",
+        "name": "汝陰郡",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "p028",
+        "level": "prefecture",
+        "name": "譙國",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "p029",
+        "level": "prefecture",
+        "name": "魯郡",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "p031",
+        "level": "prefecture",
+        "name": "安豐郡",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "p033",
+        "level": "prefecture",
+        "name": "中丘郡",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "p051",
+        "level": "prefecture",
+        "name": "上谷郡",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "p060",
+        "level": "prefecture",
+        "name": "昌黎郡",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "p061",
+        "level": "prefecture",
+        "name": "遼東郡",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "p062",
+        "level": "prefecture",
+        "name": "樂浪郡",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "p063",
+        "level": "prefecture",
+        "name": "玄菟郡",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "p064",
+        "level": "prefecture",
+        "name": "帶方郡",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "p074",
+        "level": "prefecture",
+        "name": "始平郡",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "p079",
+        "level": "prefecture",
+        "name": "南安郡",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "p091",
+        "level": "prefecture",
+        "name": "西海郡",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "p121",
+        "level": "prefecture",
+        "name": "越巂郡",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "p145",
+        "level": "prefecture",
+        "name": "城陽郡",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "p147",
+        "level": "prefecture",
+        "name": "長廣郡",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "p172",
+        "level": "prefecture",
+        "name": "宜都郡",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "p187",
+        "level": "prefecture",
+        "name": "淮南郡",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "p188",
+        "level": "prefecture",
+        "name": "廬江郡",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "p229",
+        "level": "prefecture",
+        "name": "交趾郡",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "p230",
+        "level": "prefecture",
+        "name": "新昌郡",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "p231",
+        "level": "prefecture",
+        "name": "武平郡",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "p232",
+        "level": "prefecture",
+        "name": "九真郡",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "p233",
+        "level": "prefecture",
+        "name": "九德郡",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "p234",
+        "level": "prefecture",
+        "name": "日南郡",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "s02",
+        "level": "state",
+        "name": "兗州",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "s03",
+        "level": "state",
+        "name": "豫州",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "s04",
+        "level": "state",
+        "name": "冀州",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "s05",
+        "level": "state",
+        "name": "幽州",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "s06",
+        "level": "state",
+        "name": "平州",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "s08",
+        "level": "state",
+        "name": "雍州",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "s14",
+        "level": "state",
+        "name": "青州",
+        "reason": "no_current_CHGIS_name_match"
+      },
+      {
+        "entity_id": "s15",
+        "level": "state",
+        "name": "徐州",
+        "reason": "no_current_CHGIS_name_match"
+      }
+    ],
+    "unlinked_current_CHGIS_reference_points": 149
+  },
+  "retained_dated_seats": 1096,
+  "retained_unlinked_CHGIS_reference_seats": 137,
+  "dated_seats_in_non_jin_control": 0,
+  "dated_points_outside_original_area_retained": 3,
+  "original_outer_boundary_features": 1,
+  "explicit_dated_county_parent_amendments": [
+    {
+      "county_id": "c0013",
+      "county_name": "新安",
+      "original_reference_name": "弘农",
+      "current_prefecture_id": "p001",
+      "current_prefecture_name": "河南尹",
+      "state_id": "s01",
+      "area_degrees_squared": 0.358449,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c0104",
+      "county_name": "繁陽",
+      "original_reference_name": "魏",
+      "current_prefecture_id": "p011",
+      "current_prefecture_name": "頓丘郡",
+      "state_id": "s01",
+      "area_degrees_squared": 0.0876461,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c0110",
+      "county_name": "魏",
+      "original_reference_name": "阳平",
+      "current_prefecture_id": "p012",
+      "current_prefecture_name": "魏郡",
+      "state_id": "s01",
+      "area_degrees_squared": 0.0476962,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c0139",
+      "county_name": "乘氏",
+      "original_reference_name": "高平",
+      "current_prefecture_id": "p015",
+      "current_prefecture_name": "濟陽郡",
+      "state_id": "s02",
+      "area_degrees_squared": 0.040602,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c0161",
+      "county_name": "樊",
+      "original_reference_name": "高平",
+      "current_prefecture_id": "p018",
+      "current_prefecture_name": "任城國",
+      "state_id": "s02",
+      "area_degrees_squared": 0.0331361,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c0177",
+      "county_name": "高平",
+      "original_reference_name": "任城",
+      "current_prefecture_id": "p020",
+      "current_prefecture_name": "高平國",
+      "state_id": "s02",
+      "area_degrees_squared": 0.0102249,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c0182",
+      "county_name": "許昌",
+      "original_reference_name": "襄城",
+      "current_prefecture_id": "p021",
+      "current_prefecture_name": "潁川郡",
+      "state_id": "s03",
+      "area_degrees_squared": 0.0427388,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c0192",
+      "county_name": "襄城",
+      "original_reference_name": "颍川",
+      "current_prefecture_id": "p022",
+      "current_prefecture_name": "襄城郡",
+      "state_id": "s03",
+      "area_degrees_squared": 0.0252703,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c0211",
+      "county_name": "汝陽",
+      "original_reference_name": "颍川",
+      "current_prefecture_id": "p023",
+      "current_prefecture_name": "汝南郡",
+      "state_id": "s03",
+      "area_degrees_squared": 0.0917954,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c0283",
+      "county_name": "中丘",
+      "original_reference_name": "赵",
+      "current_prefecture_id": "p033",
+      "current_prefecture_name": "中丘郡",
+      "state_id": "s04",
+      "area_degrees_squared": 0.1136751,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c0285",
+      "county_name": "平鄉",
+      "original_reference_name": "巨鹿",
+      "current_prefecture_id": "p032",
+      "current_prefecture_name": "趙國",
+      "state_id": "s04",
+      "area_degrees_squared": 0.1210806,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c0286",
+      "county_name": "下曲陽",
+      "original_reference_name": "巨鹿",
+      "current_prefecture_id": "p032",
+      "current_prefecture_name": "趙國",
+      "state_id": "s04",
+      "area_degrees_squared": 0.10224,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c0287",
+      "county_name": "鄡",
+      "original_reference_name": "巨鹿",
+      "current_prefecture_id": "p032",
+      "current_prefecture_name": "趙國",
+      "state_id": "s04",
+      "area_degrees_squared": 0.1285392,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c0301",
+      "county_name": "武遂",
+      "original_reference_name": "博陵",
+      "current_prefecture_id": "p035",
+      "current_prefecture_name": "長樂國",
+      "state_id": "s04",
+      "area_degrees_squared": 0.0138906,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c0314",
+      "county_name": "鬲",
+      "original_reference_name": "清河",
+      "current_prefecture_id": "p037",
+      "current_prefecture_name": "平原國",
+      "state_id": "s04",
+      "area_degrees_squared": 0.01577,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c0318",
+      "county_name": "新樂",
+      "original_reference_name": "渤海",
+      "current_prefecture_id": "p038",
+      "current_prefecture_name": "樂陵國",
+      "state_id": "s04",
+      "area_degrees_squared": 0.0704692,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c0320",
+      "county_name": "南皮",
+      "original_reference_name": "平原",
+      "current_prefecture_id": "p039",
+      "current_prefecture_name": "勃海郡",
+      "state_id": "s04",
+      "area_degrees_squared": 0.052115,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c0321",
+      "county_name": "東光",
+      "original_reference_name": "平原",
+      "current_prefecture_id": "p039",
+      "current_prefecture_name": "勃海郡",
+      "state_id": "s04",
+      "area_degrees_squared": 0.1160749,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c0322",
+      "county_name": "浮陽",
+      "original_reference_name": "平原",
+      "current_prefecture_id": "p039",
+      "current_prefecture_name": "勃海郡",
+      "state_id": "s04",
+      "area_degrees_squared": 0.0638344,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c0323",
+      "county_name": "饒安",
+      "original_reference_name": "平原",
+      "current_prefecture_id": "p039",
+      "current_prefecture_name": "勃海郡",
+      "state_id": "s04",
+      "area_degrees_squared": 0.0422724,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c0324",
+      "county_name": "高城",
+      "original_reference_name": "平原",
+      "current_prefecture_id": "p039",
+      "current_prefecture_name": "勃海郡",
+      "state_id": "s04",
+      "area_degrees_squared": 0.1556712,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c0325",
+      "county_name": "重合",
+      "original_reference_name": "平原",
+      "current_prefecture_id": "p039",
+      "current_prefecture_name": "勃海郡",
+      "state_id": "s04",
+      "area_degrees_squared": 0.0553193,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c0326",
+      "county_name": "東安陵",
+      "original_reference_name": "平原",
+      "current_prefecture_id": "p039",
+      "current_prefecture_name": "勃海郡",
+      "state_id": "s04",
+      "area_degrees_squared": 0.1653583,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c0329",
+      "county_name": "阜城",
+      "original_reference_name": "平原",
+      "current_prefecture_id": "p039",
+      "current_prefecture_name": "勃海郡",
+      "state_id": "s04",
+      "area_degrees_squared": 0.0781406,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c0334",
+      "county_name": "中水",
+      "original_reference_name": "博陵",
+      "current_prefecture_id": "p040",
+      "current_prefecture_name": "河間國",
+      "state_id": "s04",
+      "area_degrees_squared": 0.0140903,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c0335",
+      "county_name": "成平",
+      "original_reference_name": "平原",
+      "current_prefecture_id": "p040",
+      "current_prefecture_name": "河間國",
+      "state_id": "s04",
+      "area_degrees_squared": 0.0271095,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c0346",
+      "county_name": "廣川",
+      "original_reference_name": "平原",
+      "current_prefecture_id": "p042",
+      "current_prefecture_name": "清河郡",
+      "state_id": "s04",
+      "area_degrees_squared": 0.0762923,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c0350",
+      "county_name": "安國",
+      "original_reference_name": "高阳",
+      "current_prefecture_id": "p043",
+      "current_prefecture_name": "博陵郡",
+      "state_id": "s04",
+      "area_degrees_squared": 0.0244421,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c0373",
+      "county_name": "良鄉",
+      "original_reference_name": "燕",
+      "current_prefecture_id": "p047",
+      "current_prefecture_name": "範陽國",
+      "state_id": "s05",
+      "area_degrees_squared": 0.5884564,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c0478",
+      "county_name": "泫氏",
+      "original_reference_name": "上党",
+      "current_prefecture_id": "p067",
+      "current_prefecture_name": "上黨郡",
+      "state_id": "s07",
+      "area_degrees_squared": 0.3076513,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c0479",
+      "county_name": "屯留",
+      "original_reference_name": "上党",
+      "current_prefecture_id": "p067",
+      "current_prefecture_name": "上黨郡",
+      "state_id": "s07",
+      "area_degrees_squared": 0.0776118,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c0480",
+      "county_name": "長子",
+      "original_reference_name": "上党",
+      "current_prefecture_id": "p067",
+      "current_prefecture_name": "上黨郡",
+      "state_id": "s07",
+      "area_degrees_squared": 0.2202097,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c0481",
+      "county_name": "壺關",
+      "original_reference_name": "上党",
+      "current_prefecture_id": "p067",
+      "current_prefecture_name": "上黨郡",
+      "state_id": "s07",
+      "area_degrees_squared": 0.2161359,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c0482",
+      "county_name": "高都",
+      "original_reference_name": "上党",
+      "current_prefecture_id": "p067",
+      "current_prefecture_name": "上黨郡",
+      "state_id": "s07",
+      "area_degrees_squared": 0.308442,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c0483",
+      "county_name": "銅鞮",
+      "original_reference_name": "上党",
+      "current_prefecture_id": "p067",
+      "current_prefecture_name": "上黨郡",
+      "state_id": "s07",
+      "area_degrees_squared": 0.2109526,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c0484",
+      "county_name": "涅",
+      "original_reference_name": "上党",
+      "current_prefecture_id": "p067",
+      "current_prefecture_name": "上黨郡",
+      "state_id": "s07",
+      "area_degrees_squared": 0.2522876,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c0485",
+      "county_name": "襄垣",
+      "original_reference_name": "上党",
+      "current_prefecture_id": "p067",
+      "current_prefecture_name": "上黨郡",
+      "state_id": "s07",
+      "area_degrees_squared": 0.1552554,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c0486",
+      "county_name": "武鄉",
+      "original_reference_name": "上党",
+      "current_prefecture_id": "p067",
+      "current_prefecture_name": "上黨郡",
+      "state_id": "s07",
+      "area_degrees_squared": 0.1829184,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c0503",
+      "county_name": "雲中",
+      "original_reference_name": "雁门",
+      "current_prefecture_id": "p070",
+      "current_prefecture_name": "新興郡",
+      "state_id": "s07",
+      "area_degrees_squared": 0.0792245,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c0517",
+      "county_name": "臨晉",
+      "original_reference_name": "冯翊",
+      "current_prefecture_id": "p072",
+      "current_prefecture_name": "馮翊郡",
+      "state_id": "s08",
+      "area_degrees_squared": 0.1832613,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c0518",
+      "county_name": "下邽",
+      "original_reference_name": "冯翊",
+      "current_prefecture_id": "p072",
+      "current_prefecture_name": "馮翊郡",
+      "state_id": "s08",
+      "area_degrees_squared": 0.0831487,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c0519",
+      "county_name": "重泉",
+      "original_reference_name": "冯翊",
+      "current_prefecture_id": "p072",
+      "current_prefecture_name": "馮翊郡",
+      "state_id": "s08",
+      "area_degrees_squared": 0.219165,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c0521",
+      "county_name": "粟邑",
+      "original_reference_name": "冯翊",
+      "current_prefecture_id": "p072",
+      "current_prefecture_name": "馮翊郡",
+      "state_id": "s08",
+      "area_degrees_squared": 0.6088338,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c0523",
+      "county_name": "郃陽",
+      "original_reference_name": "冯翊",
+      "current_prefecture_id": "p072",
+      "current_prefecture_name": "馮翊郡",
+      "state_id": "s08",
+      "area_degrees_squared": 0.2714623,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c0524",
+      "county_name": "夏陽",
+      "original_reference_name": "冯翊",
+      "current_prefecture_id": "p072",
+      "current_prefecture_name": "馮翊郡",
+      "state_id": "s08",
+      "area_degrees_squared": 0.2511936,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c0529",
+      "county_name": "陳倉",
+      "original_reference_name": "始平",
+      "current_prefecture_id": "p073",
+      "current_prefecture_name": "扶風國",
+      "state_id": "s08",
+      "area_degrees_squared": 0.3624478,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c0537",
+      "county_name": "武功",
+      "original_reference_name": "扶风",
+      "current_prefecture_id": "p074",
+      "current_prefecture_name": "始平郡",
+      "state_id": "s08",
+      "area_degrees_squared": 0.3424743,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c0547",
+      "county_name": "泥陽",
+      "original_reference_name": "安定",
+      "current_prefecture_id": "p076",
+      "current_prefecture_name": "北地郡",
+      "state_id": "s08",
+      "area_degrees_squared": 0.6290626,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c0559",
+      "county_name": "新興",
+      "original_reference_name": "陇西",
+      "current_prefecture_id": "p079",
+      "current_prefecture_name": "南安郡",
+      "state_id": "s08",
+      "area_degrees_squared": 0.1773024,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c0598",
+      "county_name": "臨澤",
+      "original_reference_name": "张掖",
+      "current_prefecture_id": "p087",
+      "current_prefecture_name": "張掖郡",
+      "state_id": "s09",
+      "area_degrees_squared": 1.2694019,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c0599",
+      "county_name": "屋蘭",
+      "original_reference_name": "武威",
+      "current_prefecture_id": "p087",
+      "current_prefecture_name": "張掖郡",
+      "state_id": "s09",
+      "area_degrees_squared": 0.3347798,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c0602",
+      "county_name": "刪丹",
+      "original_reference_name": "张掖",
+      "current_prefecture_id": "p088",
+      "current_prefecture_name": "西郡",
+      "state_id": "s09",
+      "area_degrees_squared": 0.3171624,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c0618",
+      "county_name": "龍勒",
+      "original_reference_name": "晋昌",
+      "current_prefecture_id": "p090",
+      "current_prefecture_name": "敦煌郡",
+      "state_id": "s09",
+      "area_degrees_squared": 2.08526,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c0619",
+      "county_name": "冥安",
+      "original_reference_name": "晋昌",
+      "current_prefecture_id": "p090",
+      "current_prefecture_name": "敦煌郡",
+      "state_id": "s09",
+      "area_degrees_squared": 0.8450036,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c0792",
+      "county_name": "萬壽",
+      "original_reference_name": "牂牁",
+      "current_prefecture_id": "p122",
+      "current_prefecture_name": "牂柯郡",
+      "state_id": "s12",
+      "area_degrees_squared": 0.9200126,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c0793",
+      "county_name": "且蘭",
+      "original_reference_name": "牂牁",
+      "current_prefecture_id": "p122",
+      "current_prefecture_name": "牂柯郡",
+      "state_id": "s12",
+      "area_degrees_squared": 0.7274196,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c0794",
+      "county_name": "談指",
+      "original_reference_name": "牂牁",
+      "current_prefecture_id": "p122",
+      "current_prefecture_name": "牂柯郡",
+      "state_id": "s12",
+      "area_degrees_squared": 1.6921376,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c0795",
+      "county_name": "夜郎",
+      "original_reference_name": "牂牁",
+      "current_prefecture_id": "p122",
+      "current_prefecture_name": "牂柯郡",
+      "state_id": "s12",
+      "area_degrees_squared": 1.4542812,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c0796",
+      "county_name": "毋斂",
+      "original_reference_name": "牂牁",
+      "current_prefecture_id": "p122",
+      "current_prefecture_name": "牂柯郡",
+      "state_id": "s12",
+      "area_degrees_squared": 2.2912661,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c0797",
+      "county_name": "鄨",
+      "original_reference_name": "牂牁",
+      "current_prefecture_id": "p122",
+      "current_prefecture_name": "牂柯郡",
+      "state_id": "s12",
+      "area_degrees_squared": 1.8474732,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c0964",
+      "county_name": "鄒平",
+      "original_reference_name": "乐安",
+      "current_prefecture_id": "p143",
+      "current_prefecture_name": "濟南郡",
+      "state_id": "s14",
+      "area_degrees_squared": 0.0603588,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c0988",
+      "county_name": "掖",
+      "original_reference_name": "东莱",
+      "current_prefecture_id": "p146",
+      "current_prefecture_name": "東萊郡",
+      "state_id": "s14",
+      "area_degrees_squared": 0.1627771,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c0989",
+      "county_name": "黃",
+      "original_reference_name": "东莱",
+      "current_prefecture_id": "p146",
+      "current_prefecture_name": "東萊郡",
+      "state_id": "s14",
+      "area_degrees_squared": 0.3328311,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c0990",
+      "county_name": "當利",
+      "original_reference_name": "东莱",
+      "current_prefecture_id": "p146",
+      "current_prefecture_name": "東萊郡",
+      "state_id": "s14",
+      "area_degrees_squared": 0.0325899,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c0991",
+      "county_name": "盧鄉",
+      "original_reference_name": "东莱",
+      "current_prefecture_id": "p146",
+      "current_prefecture_name": "東萊郡",
+      "state_id": "s14",
+      "area_degrees_squared": 0.0516459,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c1018",
+      "county_name": "廣戚",
+      "original_reference_name": "沛国",
+      "current_prefecture_id": "p149",
+      "current_prefecture_name": "彭城國",
+      "state_id": "s15",
+      "area_degrees_squared": 2.95e-05,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c1064",
+      "county_name": "東莞",
+      "original_reference_name": "东莞",
+      "current_prefecture_id": "p153",
+      "current_prefecture_name": "琅邪國",
+      "state_id": "s15",
+      "area_degrees_squared": 0.5253865,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c1068",
+      "county_name": "廣",
+      "original_reference_name": "东莞",
+      "current_prefecture_id": "p153",
+      "current_prefecture_name": "琅邪國",
+      "state_id": "s15",
+      "area_degrees_squared": 0.1534491,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c1069",
+      "county_name": "蓋",
+      "original_reference_name": "东莞",
+      "current_prefecture_id": "p153",
+      "current_prefecture_name": "琅邪國",
+      "state_id": "s15",
+      "area_degrees_squared": 0.249187,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c1107",
+      "county_name": "平春",
+      "original_reference_name": "义阳",
+      "current_prefecture_id": "p160",
+      "current_prefecture_name": "江夏郡",
+      "state_id": "s16",
+      "area_degrees_squared": 0.2280756,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c1119",
+      "county_name": "州陵",
+      "original_reference_name": "江夏",
+      "current_prefecture_id": "p161",
+      "current_prefecture_name": "南郡",
+      "state_id": "s16",
+      "area_degrees_squared": 0.1937161,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c1120",
+      "county_name": "石首",
+      "original_reference_name": "南平郡",
+      "current_prefecture_id": "p161",
+      "current_prefecture_name": "南郡",
+      "state_id": "s16",
+      "area_degrees_squared": 0.0944446,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c1123",
+      "county_name": "江安",
+      "original_reference_name": "南郡",
+      "current_prefecture_id": "p162",
+      "current_prefecture_name": "南平郡",
+      "state_id": "s16",
+      "area_degrees_squared": 0.0001214,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c1126",
+      "county_name": "臨沮",
+      "original_reference_name": "南郡",
+      "current_prefecture_id": "p163",
+      "current_prefecture_name": "襄陽郡",
+      "state_id": "s16",
+      "area_degrees_squared": 0.081526,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c1179",
+      "county_name": "武當",
+      "original_reference_name": "顺阳",
+      "current_prefecture_id": "p167",
+      "current_prefecture_name": "南鄉郡",
+      "state_id": "s16",
+      "area_degrees_squared": 0.432311,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c1180",
+      "county_name": "陰",
+      "original_reference_name": "顺阳",
+      "current_prefecture_id": "p167",
+      "current_prefecture_name": "南鄉郡",
+      "state_id": "s16",
+      "area_degrees_squared": 0.2599353,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c1181",
+      "county_name": "築陽",
+      "original_reference_name": "顺阳",
+      "current_prefecture_id": "p167",
+      "current_prefecture_name": "南鄉郡",
+      "state_id": "s16",
+      "area_degrees_squared": 0.1158698,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c1182",
+      "county_name": "析",
+      "original_reference_name": "顺阳",
+      "current_prefecture_id": "p167",
+      "current_prefecture_name": "南鄉郡",
+      "state_id": "s16",
+      "area_degrees_squared": 0.3214442,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c1211",
+      "county_name": "夷道",
+      "original_reference_name": "南平郡",
+      "current_prefecture_id": "p172",
+      "current_prefecture_name": "宜都郡",
+      "state_id": "s16",
+      "area_degrees_squared": 0.2401367,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c1236",
+      "county_name": "蒲圻",
+      "original_reference_name": "南郡",
+      "current_prefecture_id": "p175",
+      "current_prefecture_name": "長沙郡",
+      "state_id": "s16",
+      "area_degrees_squared": 0.0002481,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c1280",
+      "county_name": "沙陽",
+      "original_reference_name": "长沙郡",
+      "current_prefecture_id": "p181",
+      "current_prefecture_name": "武昌郡",
+      "state_id": "s16",
+      "area_degrees_squared": 0.2435128,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c1283",
+      "county_name": "沙羨",
+      "original_reference_name": "江夏",
+      "current_prefecture_id": "p181",
+      "current_prefecture_name": "武昌郡",
+      "state_id": "s16",
+      "area_degrees_squared": 0.3769709,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c1328",
+      "county_name": "尋陽",
+      "original_reference_name": "寻阳",
+      "current_prefecture_id": "p188",
+      "current_prefecture_name": "廬江郡",
+      "state_id": "s17",
+      "area_degrees_squared": 0.2784573,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c1359",
+      "county_name": "丹徒",
+      "original_reference_name": "毗陵郡",
+      "current_prefecture_id": "p191",
+      "current_prefecture_name": "毗陵郡",
+      "state_id": "s17",
+      "area_degrees_squared": 0.0617234,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c1360",
+      "county_name": "曲阿",
+      "original_reference_name": "毗陵郡",
+      "current_prefecture_id": "p191",
+      "current_prefecture_name": "毗陵郡",
+      "state_id": "s17",
+      "area_degrees_squared": 0.0499445,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c1361",
+      "county_name": "毗陵",
+      "original_reference_name": "毗陵郡",
+      "current_prefecture_id": "p191",
+      "current_prefecture_name": "毗陵郡",
+      "state_id": "s17",
+      "area_degrees_squared": 0.1705488,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c1362",
+      "county_name": "武進",
+      "original_reference_name": "毗陵郡",
+      "current_prefecture_id": "p191",
+      "current_prefecture_name": "毗陵郡",
+      "state_id": "s17",
+      "area_degrees_squared": 0.0870281,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c1363",
+      "county_name": "延陵",
+      "original_reference_name": "毗陵郡",
+      "current_prefecture_id": "p191",
+      "current_prefecture_name": "毗陵郡",
+      "state_id": "s17",
+      "area_degrees_squared": 0.1225297,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c1364",
+      "county_name": "無錫",
+      "original_reference_name": "毗陵郡",
+      "current_prefecture_id": "p191",
+      "current_prefecture_name": "毗陵郡",
+      "state_id": "s17",
+      "area_degrees_squared": 0.1547298,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c1365",
+      "county_name": "暨陽",
+      "original_reference_name": "毗陵郡",
+      "current_prefecture_id": "p191",
+      "current_prefecture_name": "毗陵郡",
+      "state_id": "s17",
+      "area_degrees_squared": 0.2479169,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c1407",
+      "county_name": "遂昌",
+      "original_reference_name": "临海郡",
+      "current_prefecture_id": "p195",
+      "current_prefecture_name": "東陽郡",
+      "state_id": "s17",
+      "area_degrees_squared": 6.66e-05,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c1453",
+      "county_name": "吳平",
+      "original_reference_name": "安成郡",
+      "current_prefecture_id": "p200",
+      "current_prefecture_name": "豫章郡",
+      "state_id": "s17",
+      "area_degrees_squared": 0.0001203,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c1748",
+      "county_name": "武城",
+      "original_reference_name": "桂林",
+      "current_prefecture_id": "p236",
+      "current_prefecture_name": "蒼梧郡",
+      "state_id": "s21",
+      "area_degrees_squared": 0.0001651,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c1784",
+      "county_name": "平山",
+      "original_reference_name": "宁浦",
+      "current_prefecture_id": "p241",
+      "current_prefecture_name": "寧浦郡",
+      "state_id": "s21",
+      "area_degrees_squared": 0.022274,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c1787",
+      "county_name": "臨賀",
+      "original_reference_name": "临贺郡",
+      "current_prefecture_id": "p242",
+      "current_prefecture_name": "臨賀郡",
+      "state_id": "s21",
+      "area_degrees_squared": 0.1900864,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c1788",
+      "county_name": "封陽",
+      "original_reference_name": "临贺郡",
+      "current_prefecture_id": "p242",
+      "current_prefecture_name": "臨賀郡",
+      "state_id": "s21",
+      "area_degrees_squared": 0.3311124,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    },
+    {
+      "county_id": "c1790",
+      "county_name": "富川",
+      "original_reference_name": "临贺郡",
+      "current_prefecture_id": "p242",
+      "current_prefecture_name": "臨賀郡",
+      "state_id": "s21",
+      "area_degrees_squared": 0.1128216,
+      "method": "explicit_dated_county_parent_local_fit",
+      "certainty": "inferred"
+    }
+  ],
+  "jin_area_degrees_squared": 368.6557137,
+  "initial_annual_prefecture_area_inside_jin_degrees_squared": 354.5261901,
+  "completed_area_degrees_squared": 14.1295236,
+  "filled_old_reference_gaps_degrees_squared": 11.2336863,
+  "added_beyond_old_reference_degrees_squared": 2.8958358,
+  "unfilled_jin_area_degrees_squared": 4.99e-07,
+  "unpainted_jin_area_degrees_squared": 0,
+  "numerical_overlay_tolerance_degrees_squared": 2e-05,
+  "numerical_slivers_have_full_jin_background": true,
+  "outside_jin_prefecture_area_degrees_squared": 3.4e-08,
+  "prefecture_overlap_area_degrees_squared": 0,
+  "stored_annual_overlap_removed_degrees_squared": 1.103239681,
+  "allocation_count": 781,
+  "internally_used_county_cells": 51,
+  "province_boundary_model": "original_province_masks_whole_prefecture_changes_shared_borders",
+  "stable_reference_year": 289,
+  "province_boundaries_are_shared_lines_only": true,
+  "province_shared_boundary_features": 33,
+  "source_province_overlap_removed_degrees_squared": 0.00335297,
+  "whole_prefecture_province_transfers": [
+    [
+      "ref-289-99",
+      "s11",
+      "s16"
+    ]
+  ],
+  "restored_dated_prefecture_ids": [],
+  "unresolved_context_province_ids": [],
+  "reviewed_province_interior_change_degrees_squared": 0.018697881,
+  "methods": {
+    "dated_county_internal_cell": 51,
+    "same_stable_province_numerical_residual": 103,
+    "stable_province_neighbor_prefecture_fit": 184,
+    "active_prefecture_reference_compartment": 435,
+    "dated_county_parent_within_stable_province": 8
+  },
+  "limitation": "面积为WGS84平方度，仅用于本次几何前后对照；归属拟合不是独立行政边界考证。"
+}
