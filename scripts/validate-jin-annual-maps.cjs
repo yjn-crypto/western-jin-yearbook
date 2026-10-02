@@ -4,6 +4,8 @@ const root=path.resolve(__dirname,'..');
 const model=require('../jin-annual-map-model.js'),view=require('../jin-map-view.js');
 const read=file=>JSON.parse(fs.readFileSync(path.join(root,file),'utf8'));
 const bundle=read('data/jin-maps/annual-geography.json');
+const reference=read('data/jin-maps/reference-geography.json');
+for(const shard of reference.geometry_shards||[])Object.assign(reference.geometries,read(shard.url).geometries);
 assert.deepEqual(Object.keys(bundle.years).map(Number),Array.from({length:51},(_,i)=>266+i),'Each Jin year must have its own slice');
 const slices={},maps={},results=[];
 for(const year of Object.keys(bundle.years)){
@@ -11,16 +13,17 @@ for(const year of Object.keys(bundle.years)){
   const slice=read(entry.data_url);slices[year]=slice;
   assert.equal(slice.year,Number(year),'No nearest-year substitution');
   const geometries=Object.assign({},bundle.geometries,...(entry.geometry_urls||[]).map(url=>read(url).geometries));
-  const map=model.hydrate({...bundle,geometries},year,slice);maps[year]=map;
+  const map=model.hydrate({...bundle,geometries},year,slice,reference);maps[year]=map;
   const features=map.geojson.features;
-  assert(features.length>0&&map.trial&&map.note.includes('擬合界'),'Annual maps disclose their geometric limits');
+  assert(features.length>0&&map.trial&&map.note.includes('擬合'),'Annual maps disclose their geometric limits');
   assert(!/undefined|\[object Object\]/.test(map.note+map.status),'Readable annual coverage');
   const areas=features.filter(f=>f.properties.layer==='county_areas');
-  assert(areas.length>0,'County tier must have boundaries, not just seats');
+  assert(areas.length>0,'Internal county fitting cells must be retained');
   assert(areas.every(f=>f.properties.geometric_certainty==='inferred'),'No fitted county boundary can be labelled observed');
   for(const feature of features){
     assert.equal(feature.properties.year,Number(year),'All features belong to selected year');
-    assert(!['lost','external','enemy','withdrawn'].includes(feature.properties.control_status)||feature.properties.layer==='labels','Lost land cannot remain a Jin area or seat');
+    assert(!['lost','external','enemy','withdrawn'].includes(feature.properties.control_status)||feature.properties.layer==='labels'||feature.properties.is_reference,'Lost land cannot remain an active Jin area or seat');
+    if(feature.properties.is_reference){assert.equal(feature.properties.entity_id,null,'Reference units are not active timeline units');assert(!feature.properties.fief_id,'Reference units cannot inherit fief colour');}
   }
   for(const layer of ['county_seats','prefecture_areas','province_areas']){
     const ids=features.filter(f=>f.properties.layer===layer).map(f=>f.properties.entity_id).filter(Boolean);
@@ -61,7 +64,9 @@ for(const year of [266,280,289,308,311,316]){
   const canvas=new Node('svg');
   const rendered=view.draw(maps[year],canvas,{svgNode:(...args)=>new Node(...args),seatSymbol:()=>new Node('g')});
   assert(rendered.labels.every(l=>Number.isFinite(l.x)&&Number.isFinite(l.y)),'Annual labels have real projected coordinates');
-  assert.equal(canvas.children.filter(n=>n.attributes.class==='jin-county-boundary').length,layer(year,'county_areas').length,'Each county unit draws a boundary');
+  assert.equal(canvas.children.filter(n=>n.attributes.class==='jin-county-boundary').length,0,'County fitting cells never draw visible county boundaries');
+  assert(canvas.children.filter(n=>n.attributes.class==='jin-reference-boundary').every(n=>n.attributes.fill==='none'),'Reference areas have no colour');
+  assert.equal(canvas.children.filter(n=>n.tagName==='path'&&n.attributes['fill-opacity']===.62).length,layer(year,'kingdom_areas').length,'Active fiefs keep coloured areas');
   assert(rendered.labels.filter(l=>l.kind==='prefecture-area').length>=layer(year,'prefecture_areas').length*.95,'Prefecture labels retain range anchors');
   assert(canvas.children.every(n=>!n.attributes.d||!n.attributes.d.includes('NaN')),'Valid SVG paths');
   assert(!rendered.features.some(f=>f.coordinate_role==='administrative_seat'&&/晋据点/.test(f.label)),'Layout annotations never become historical seat symbols');
@@ -73,7 +78,7 @@ async function dispatch(){
   const controls=new Map(),calls=[];
   const context=vm.createContext({window:{JIN_ANNUAL_MAP_MODEL:model,JIN_MAP_VIEW:view},console,Map,
     jinMapRequest:0,jinMapCache:new Map(),jinMapVersion:{value:'annual'},currentDynasty:{key:'western-jin'},currentMap:null,currentMapFeatures:[],mapReadingMode:false,
-    $:id=>{if(!controls.has(id))controls.set(id,{});return controls.get(id);},
+    $:id=>{if(!controls.has(id))controls.set(id,{dataset:{}});return controls.get(id);},
     yearMapOverlay:new Node('svg'),mapLabelLayouts:new WeakMap(),yearMapPanel:{hidden:true},textMapLinkControl:{},
     yearMapExport:{},yearMapCsv:{},yearMapGeoJson:{},yearMapUhd:{},yearMapLoadUhd:{},yearMapStage:{style:{}},
     yearMapImage:{removeAttribute(){}},yearMapNote:{},results:{classList:{toggle(){}}},clearMapLinkHighlights(){},
@@ -89,7 +94,23 @@ async function dispatch(){
   assert(!calls.slice(2).some(c=>c.year===289),'Stale response discarded');
   assert(context.yearMapExport.hidden&&context.yearMapCsv.hidden&&context.yearMapGeoJson.hidden&&context.yearMapUhd.hidden,'Jin downloads stay hidden');
   assert(app.includes("initialParams.get('jinmap')==='legacy'"),'Original mode survives refresh');
-  assert(fs.readFileSync(path.join(root,'index.html'),'utf8').includes('切回修改前地圖'),'Visible rollback entry');
+  assert(fs.readFileSync(path.join(root,'index.html'),'utf8').includes('切換至修改前地圖'),'Visible rollback entry');
+  const extract=name=>{const marker=`  function ${name}(`,start=app.indexOf(marker),end=app.indexOf('\n  }',start+1)+5;assert(start>=0&&end>start);return app.slice(start,end);};
+  const versionContext=vm.createContext({URL,Number,Math,DYNASTIES:{'western-jin':{years:[266,316]}},
+    currentDynasty:{key:'western-jin',years:[266,316]},jinMapVersion:{value:'annual'},activeJinMapVersion:'annual',jinAnnualReturnYear:304,
+    yearSelect:{value:'304'},stateSelect:{value:'',selectedOptions:[]},window:{location:{href:'https://example.test/?year=304'}},
+    history:{replaceState(a,b,url){versionContext.window.location.href=String(url);}},
+    $:id=>{if(!controls.has(id))controls.set(id,{dataset:{}});return controls.get(id);},populateStates(){},clearMapLinkHighlights(){},render(){}});
+  for(const name of ['validJinAnnualYear','nearestJinLegacyYear','syncMainLocation','changeJinMapVersion'])vm.runInContext(extract(name),versionContext);
+  versionContext.changeJinMapVersion('legacy');
+  assert.equal(versionContext.yearSelect.value,'308','Unsupported original dates select a real old snapshot');
+  assert.equal(new URL(versionContext.window.location.href).searchParams.get('returnyear'),'304','Return year survives refresh');
+  assert.equal(controls.get('jinMapRestore').textContent,'返回年度地圖（304年）','Original map exposes a return action');
+  versionContext.changeJinMapVersion('annual');
+  assert.equal(versionContext.yearSelect.value,'304','Return restores the original annual year');
+  assert(!new URL(versionContext.window.location.href).searchParams.has('jinmap'),'Annual return clears the original-mode URL');
+  versionContext.changeJinMapVersion('legacy');versionContext.changeJinMapVersion('annual');
+  assert.equal(versionContext.yearSelect.value,'304','Repeated version switches remain reversible');
   console.log(JSON.stringify({passed:true,years:results,routing:'All annual years, loss/recovery dates, stale responses, original-mode entry and hidden downloads verified'},null,2));
 }
 dispatch().catch(error=>{console.error(error);process.exitCode=1;});

@@ -1,0 +1,2894 @@
+{
+  "meta": {
+    "crs": "EPSG:4326",
+    "purpose": "Uncolored administrative reference backdrop; never Jin control or fief colours",
+    "method": "289/308原圖郡面減去本年已繪郡面；州郡縣治僅為地理參考，取消縣域可視層",
+    "county_boundaries_visible": false,
+    "annual_control_and_fief_geometry_unchanged": true
+  },
+  "years": {
+    "266": {
+      "reference_prefecture_areas": 12,
+      "reference_county_seats": 2,
+      "reference_year": 289,
+      "uncolored_area_degrees_squared": 0.64069,
+      "examples": [
+        {
+          "name": "燕國",
+          "entity_id": "p049",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00237
+        },
+        {
+          "name": "襄城郡",
+          "entity_id": "p022",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00052
+        },
+        {
+          "name": "淮南郡",
+          "entity_id": "p187",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.14904
+        },
+        {
+          "name": "弋陽郡",
+          "entity_id": "p030",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.0537
+        },
+        {
+          "name": "涪陵郡",
+          "entity_id": "p105",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00174
+        },
+        {
+          "name": "牂柯郡",
+          "entity_id": "p122",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00149
+        },
+        {
+          "name": "北地郡",
+          "entity_id": "p076",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.31637
+        },
+        {
+          "name": "東海郡",
+          "entity_id": "p152",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.04448
+        }
+      ]
+    },
+    "267": {
+      "reference_prefecture_areas": 12,
+      "reference_county_seats": 2,
+      "reference_year": 289,
+      "uncolored_area_degrees_squared": 0.64069,
+      "examples": [
+        {
+          "name": "燕國",
+          "entity_id": "p049",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00237
+        },
+        {
+          "name": "襄城郡",
+          "entity_id": "p022",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00052
+        },
+        {
+          "name": "淮南郡",
+          "entity_id": "p187",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.14904
+        },
+        {
+          "name": "弋陽郡",
+          "entity_id": "p030",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.0537
+        },
+        {
+          "name": "涪陵郡",
+          "entity_id": "p105",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00174
+        },
+        {
+          "name": "牂柯郡",
+          "entity_id": "p122",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00149
+        },
+        {
+          "name": "北地郡",
+          "entity_id": "p076",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.31637
+        },
+        {
+          "name": "東海郡",
+          "entity_id": "p152",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.04448
+        }
+      ]
+    },
+    "268": {
+      "reference_prefecture_areas": 12,
+      "reference_county_seats": 2,
+      "reference_year": 289,
+      "uncolored_area_degrees_squared": 0.64069,
+      "examples": [
+        {
+          "name": "燕國",
+          "entity_id": "p049",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00237
+        },
+        {
+          "name": "襄城郡",
+          "entity_id": "p022",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00052
+        },
+        {
+          "name": "淮南郡",
+          "entity_id": "p187",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.14904
+        },
+        {
+          "name": "弋陽郡",
+          "entity_id": "p030",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.0537
+        },
+        {
+          "name": "涪陵郡",
+          "entity_id": "p105",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00174
+        },
+        {
+          "name": "牂柯郡",
+          "entity_id": "p122",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00149
+        },
+        {
+          "name": "北地郡",
+          "entity_id": "p076",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.31637
+        },
+        {
+          "name": "東海郡",
+          "entity_id": "p152",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.04448
+        }
+      ]
+    },
+    "269": {
+      "reference_prefecture_areas": 12,
+      "reference_county_seats": 2,
+      "reference_year": 289,
+      "uncolored_area_degrees_squared": 0.64069,
+      "examples": [
+        {
+          "name": "燕國",
+          "entity_id": "p049",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00237
+        },
+        {
+          "name": "襄城郡",
+          "entity_id": "p022",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00052
+        },
+        {
+          "name": "淮南郡",
+          "entity_id": "p187",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.14904
+        },
+        {
+          "name": "弋陽郡",
+          "entity_id": "p030",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.0537
+        },
+        {
+          "name": "涪陵郡",
+          "entity_id": "p105",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00175
+        },
+        {
+          "name": "牂柯郡",
+          "entity_id": "p122",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00149
+        },
+        {
+          "name": "北地郡",
+          "entity_id": "p076",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.31637
+        },
+        {
+          "name": "東海郡",
+          "entity_id": "p152",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.04448
+        }
+      ]
+    },
+    "270": {
+      "reference_prefecture_areas": 12,
+      "reference_county_seats": 2,
+      "reference_year": 289,
+      "uncolored_area_degrees_squared": 0.64069,
+      "examples": [
+        {
+          "name": "燕國",
+          "entity_id": "p049",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00237
+        },
+        {
+          "name": "襄城郡",
+          "entity_id": "p022",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00052
+        },
+        {
+          "name": "淮南郡",
+          "entity_id": "p187",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.14904
+        },
+        {
+          "name": "弋陽郡",
+          "entity_id": "p030",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.0537
+        },
+        {
+          "name": "涪陵郡",
+          "entity_id": "p105",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00175
+        },
+        {
+          "name": "牂柯郡",
+          "entity_id": "p122",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00149
+        },
+        {
+          "name": "北地郡",
+          "entity_id": "p076",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.31637
+        },
+        {
+          "name": "東海郡",
+          "entity_id": "p152",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.04448
+        }
+      ]
+    },
+    "271": {
+      "reference_prefecture_areas": 12,
+      "reference_county_seats": 2,
+      "reference_year": 289,
+      "uncolored_area_degrees_squared": 0.64069,
+      "examples": [
+        {
+          "name": "燕國",
+          "entity_id": "p049",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00237
+        },
+        {
+          "name": "襄城郡",
+          "entity_id": "p022",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00052
+        },
+        {
+          "name": "淮南郡",
+          "entity_id": "p187",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.14904
+        },
+        {
+          "name": "弋陽郡",
+          "entity_id": "p030",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.0537
+        },
+        {
+          "name": "涪陵郡",
+          "entity_id": "p105",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00175
+        },
+        {
+          "name": "牂柯郡",
+          "entity_id": "p122",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00149
+        },
+        {
+          "name": "北地郡",
+          "entity_id": "p076",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.31637
+        },
+        {
+          "name": "東海郡",
+          "entity_id": "p152",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.04448
+        }
+      ]
+    },
+    "272": {
+      "reference_prefecture_areas": 12,
+      "reference_county_seats": 2,
+      "reference_year": 289,
+      "uncolored_area_degrees_squared": 0.64069,
+      "examples": [
+        {
+          "name": "燕國",
+          "entity_id": "p049",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00237
+        },
+        {
+          "name": "襄城郡",
+          "entity_id": "p022",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00052
+        },
+        {
+          "name": "淮南郡",
+          "entity_id": "p187",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.14904
+        },
+        {
+          "name": "弋陽郡",
+          "entity_id": "p030",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.0537
+        },
+        {
+          "name": "涪陵郡",
+          "entity_id": "p105",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00175
+        },
+        {
+          "name": "牂柯郡",
+          "entity_id": "p122",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00149
+        },
+        {
+          "name": "北地郡",
+          "entity_id": "p076",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.31637
+        },
+        {
+          "name": "東海郡",
+          "entity_id": "p152",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.04448
+        }
+      ]
+    },
+    "273": {
+      "reference_prefecture_areas": 12,
+      "reference_county_seats": 2,
+      "reference_year": 289,
+      "uncolored_area_degrees_squared": 0.64069,
+      "examples": [
+        {
+          "name": "燕國",
+          "entity_id": "p049",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00237
+        },
+        {
+          "name": "襄城郡",
+          "entity_id": "p022",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00052
+        },
+        {
+          "name": "淮南郡",
+          "entity_id": "p187",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.14904
+        },
+        {
+          "name": "弋陽郡",
+          "entity_id": "p030",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.0537
+        },
+        {
+          "name": "涪陵郡",
+          "entity_id": "p105",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00175
+        },
+        {
+          "name": "牂柯郡",
+          "entity_id": "p122",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00149
+        },
+        {
+          "name": "北地郡",
+          "entity_id": "p076",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.31637
+        },
+        {
+          "name": "東海國",
+          "entity_id": "p152",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.04448
+        }
+      ]
+    },
+    "274": {
+      "reference_prefecture_areas": 12,
+      "reference_county_seats": 2,
+      "reference_year": 289,
+      "uncolored_area_degrees_squared": 0.64069,
+      "examples": [
+        {
+          "name": "燕國",
+          "entity_id": "p049",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00237
+        },
+        {
+          "name": "襄城郡",
+          "entity_id": "p022",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00052
+        },
+        {
+          "name": "淮南郡",
+          "entity_id": "p187",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.14904
+        },
+        {
+          "name": "弋陽郡",
+          "entity_id": "p030",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.0537
+        },
+        {
+          "name": "涪陵郡",
+          "entity_id": "p105",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00175
+        },
+        {
+          "name": "牂柯郡",
+          "entity_id": "p122",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00149
+        },
+        {
+          "name": "北地郡",
+          "entity_id": "p076",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.31637
+        },
+        {
+          "name": "東海郡",
+          "entity_id": "p152",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.04448
+        }
+      ]
+    },
+    "275": {
+      "reference_prefecture_areas": 12,
+      "reference_county_seats": 2,
+      "reference_year": 289,
+      "uncolored_area_degrees_squared": 0.64057,
+      "examples": [
+        {
+          "name": "燕國",
+          "entity_id": "p049",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00237
+        },
+        {
+          "name": "襄城郡",
+          "entity_id": "p022",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00052
+        },
+        {
+          "name": "淮南郡",
+          "entity_id": "p187",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.14904
+        },
+        {
+          "name": "弋陽郡",
+          "entity_id": "p030",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.05358
+        },
+        {
+          "name": "涪陵郡",
+          "entity_id": "p105",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00175
+        },
+        {
+          "name": "牂柯郡",
+          "entity_id": "p122",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00149
+        },
+        {
+          "name": "北地郡",
+          "entity_id": "p076",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.31637
+        },
+        {
+          "name": "東海郡",
+          "entity_id": "p152",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.04448
+        }
+      ]
+    },
+    "276": {
+      "reference_prefecture_areas": 12,
+      "reference_county_seats": 2,
+      "reference_year": 289,
+      "uncolored_area_degrees_squared": 0.64057,
+      "examples": [
+        {
+          "name": "燕國",
+          "entity_id": "p049",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00237
+        },
+        {
+          "name": "襄城郡",
+          "entity_id": "p022",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00052
+        },
+        {
+          "name": "淮南郡",
+          "entity_id": "p187",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.14904
+        },
+        {
+          "name": "弋陽郡",
+          "entity_id": "p030",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.05358
+        },
+        {
+          "name": "涪陵郡",
+          "entity_id": "p105",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00175
+        },
+        {
+          "name": "牂柯郡",
+          "entity_id": "p122",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00149
+        },
+        {
+          "name": "北地郡",
+          "entity_id": "p076",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.31637
+        },
+        {
+          "name": "東海郡",
+          "entity_id": "p152",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.04448
+        }
+      ]
+    },
+    "277": {
+      "reference_prefecture_areas": 12,
+      "reference_county_seats": 2,
+      "reference_year": 289,
+      "uncolored_area_degrees_squared": 0.64038,
+      "examples": [
+        {
+          "name": "燕國",
+          "entity_id": "p049",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00237
+        },
+        {
+          "name": "襄城郡",
+          "entity_id": "p022",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00052
+        },
+        {
+          "name": "淮南郡",
+          "entity_id": "p187",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.14904
+        },
+        {
+          "name": "弋陽郡",
+          "entity_id": "p030",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.05358
+        },
+        {
+          "name": "涪陵郡",
+          "entity_id": "p105",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00175
+        },
+        {
+          "name": "牂柯郡",
+          "entity_id": "p122",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00149
+        },
+        {
+          "name": "北地郡",
+          "entity_id": "p076",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.31637
+        },
+        {
+          "name": "東海郡",
+          "entity_id": "p152",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.04429
+        }
+      ]
+    },
+    "278": {
+      "reference_prefecture_areas": 12,
+      "reference_county_seats": 2,
+      "reference_year": 289,
+      "uncolored_area_degrees_squared": 0.64038,
+      "examples": [
+        {
+          "name": "燕國",
+          "entity_id": "p049",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00237
+        },
+        {
+          "name": "襄城郡",
+          "entity_id": "p022",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00052
+        },
+        {
+          "name": "淮南郡",
+          "entity_id": "p187",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.14904
+        },
+        {
+          "name": "弋陽郡",
+          "entity_id": "p030",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.05358
+        },
+        {
+          "name": "涪陵郡",
+          "entity_id": "p105",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00175
+        },
+        {
+          "name": "牂柯郡",
+          "entity_id": "p122",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00149
+        },
+        {
+          "name": "北地郡",
+          "entity_id": "p076",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.31637
+        },
+        {
+          "name": "東海郡",
+          "entity_id": "p152",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.04429
+        }
+      ]
+    },
+    "279": {
+      "reference_prefecture_areas": 12,
+      "reference_county_seats": 2,
+      "reference_year": 289,
+      "uncolored_area_degrees_squared": 0.64038,
+      "examples": [
+        {
+          "name": "燕國",
+          "entity_id": "p049",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00237
+        },
+        {
+          "name": "襄城郡",
+          "entity_id": "p022",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00052
+        },
+        {
+          "name": "淮南郡",
+          "entity_id": "p187",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.14904
+        },
+        {
+          "name": "弋陽郡",
+          "entity_id": "p030",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.05358
+        },
+        {
+          "name": "涪陵郡",
+          "entity_id": "p105",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00175
+        },
+        {
+          "name": "牂柯郡",
+          "entity_id": "p122",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00149
+        },
+        {
+          "name": "北地郡",
+          "entity_id": "p076",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.31637
+        },
+        {
+          "name": "東海郡",
+          "entity_id": "p152",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.04429
+        }
+      ]
+    },
+    "280": {
+      "reference_prefecture_areas": 56,
+      "reference_county_seats": 5,
+      "reference_year": 289,
+      "uncolored_area_degrees_squared": 14.88696,
+      "examples": [
+        {
+          "name": "燕國",
+          "entity_id": "p049",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00237
+        },
+        {
+          "name": "樂安國",
+          "entity_id": "p144",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.05213
+        },
+        {
+          "name": "潁川郡",
+          "entity_id": "p021",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.08684
+        },
+        {
+          "name": "襄城郡",
+          "entity_id": "p022",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.0005
+        },
+        {
+          "name": "淮南郡",
+          "entity_id": "p187",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.09266
+        },
+        {
+          "name": "武昌郡",
+          "entity_id": "p181",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00055
+        },
+        {
+          "name": "南郡",
+          "entity_id": "p161",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.29564
+        },
+        {
+          "name": "始安郡",
+          "entity_id": "p243",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.12864
+        }
+      ]
+    },
+    "281": {
+      "reference_prefecture_areas": 57,
+      "reference_county_seats": 5,
+      "reference_year": 289,
+      "uncolored_area_degrees_squared": 14.35808,
+      "examples": [
+        {
+          "name": "燕國",
+          "entity_id": "p049",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00237
+        },
+        {
+          "name": "樂安國",
+          "entity_id": "p144",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.05213
+        },
+        {
+          "name": "潁川郡",
+          "entity_id": "p021",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.08684
+        },
+        {
+          "name": "襄城郡",
+          "entity_id": "p022",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.0005
+        },
+        {
+          "name": "淮南郡",
+          "entity_id": "p187",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.09266
+        },
+        {
+          "name": "弋陽郡",
+          "entity_id": "p030",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.0006
+        },
+        {
+          "name": "武昌郡",
+          "entity_id": "p181",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00099
+        },
+        {
+          "name": "南郡",
+          "entity_id": "p161",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.29564
+        }
+      ]
+    },
+    "282": {
+      "reference_prefecture_areas": 57,
+      "reference_county_seats": 6,
+      "reference_year": 289,
+      "uncolored_area_degrees_squared": 14.15575,
+      "examples": [
+        {
+          "name": "燕國",
+          "entity_id": "p049",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00237
+        },
+        {
+          "name": "樂安國",
+          "entity_id": "p144",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.05213
+        },
+        {
+          "name": "潁川郡",
+          "entity_id": "p021",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.08684
+        },
+        {
+          "name": "襄城郡",
+          "entity_id": "p022",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.0005
+        },
+        {
+          "name": "淮南郡",
+          "entity_id": "p187",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.09266
+        },
+        {
+          "name": "弋陽郡",
+          "entity_id": "p030",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.0006
+        },
+        {
+          "name": "武昌郡",
+          "entity_id": "p181",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00099
+        },
+        {
+          "name": "南郡",
+          "entity_id": "p161",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.29564
+        }
+      ]
+    },
+    "283": {
+      "reference_prefecture_areas": 57,
+      "reference_county_seats": 3,
+      "reference_year": 289,
+      "uncolored_area_degrees_squared": 13.96575,
+      "examples": [
+        {
+          "name": "燕國",
+          "entity_id": "p049",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00237
+        },
+        {
+          "name": "樂安國",
+          "entity_id": "p144",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.05213
+        },
+        {
+          "name": "潁川郡",
+          "entity_id": "p021",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.08684
+        },
+        {
+          "name": "襄城郡",
+          "entity_id": "p022",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.0005
+        },
+        {
+          "name": "淮南郡",
+          "entity_id": "p187",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.09266
+        },
+        {
+          "name": "弋陽郡",
+          "entity_id": "p030",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.0006
+        },
+        {
+          "name": "武昌郡",
+          "entity_id": "p181",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00099
+        },
+        {
+          "name": "南郡",
+          "entity_id": "p161",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.29565
+        }
+      ]
+    },
+    "284": {
+      "reference_prefecture_areas": 57,
+      "reference_county_seats": 3,
+      "reference_year": 289,
+      "uncolored_area_degrees_squared": 13.92303,
+      "examples": [
+        {
+          "name": "燕國",
+          "entity_id": "p049",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00237
+        },
+        {
+          "name": "樂安國",
+          "entity_id": "p144",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.05201
+        },
+        {
+          "name": "潁川郡",
+          "entity_id": "p021",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.08684
+        },
+        {
+          "name": "襄城郡",
+          "entity_id": "p022",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.0005
+        },
+        {
+          "name": "淮南郡",
+          "entity_id": "p187",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.09266
+        },
+        {
+          "name": "弋陽郡",
+          "entity_id": "p030",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.0006
+        },
+        {
+          "name": "武昌郡",
+          "entity_id": "p181",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00099
+        },
+        {
+          "name": "南郡",
+          "entity_id": "p161",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.29565
+        }
+      ]
+    },
+    "285": {
+      "reference_prefecture_areas": 57,
+      "reference_county_seats": 3,
+      "reference_year": 289,
+      "uncolored_area_degrees_squared": 13.92303,
+      "examples": [
+        {
+          "name": "燕國",
+          "entity_id": "p049",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00237
+        },
+        {
+          "name": "樂安國",
+          "entity_id": "p144",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.05201
+        },
+        {
+          "name": "潁川郡",
+          "entity_id": "p021",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.08684
+        },
+        {
+          "name": "襄城郡",
+          "entity_id": "p022",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.0005
+        },
+        {
+          "name": "淮南郡",
+          "entity_id": "p187",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.09266
+        },
+        {
+          "name": "弋陽郡",
+          "entity_id": "p030",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.0006
+        },
+        {
+          "name": "武昌郡",
+          "entity_id": "p181",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00099
+        },
+        {
+          "name": "南郡",
+          "entity_id": "p161",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.29565
+        }
+      ]
+    },
+    "286": {
+      "reference_prefecture_areas": 57,
+      "reference_county_seats": 3,
+      "reference_year": 289,
+      "uncolored_area_degrees_squared": 13.92303,
+      "examples": [
+        {
+          "name": "燕國",
+          "entity_id": "p049",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00237
+        },
+        {
+          "name": "樂安國",
+          "entity_id": "p144",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.05201
+        },
+        {
+          "name": "潁川郡",
+          "entity_id": "p021",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.08684
+        },
+        {
+          "name": "襄城郡",
+          "entity_id": "p022",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.0005
+        },
+        {
+          "name": "淮南郡",
+          "entity_id": "p187",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.09266
+        },
+        {
+          "name": "弋陽郡",
+          "entity_id": "p030",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.0006
+        },
+        {
+          "name": "武昌郡",
+          "entity_id": "p181",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00099
+        },
+        {
+          "name": "南郡",
+          "entity_id": "p161",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.29565
+        }
+      ]
+    },
+    "287": {
+      "reference_prefecture_areas": 57,
+      "reference_county_seats": 3,
+      "reference_year": 289,
+      "uncolored_area_degrees_squared": 13.92303,
+      "examples": [
+        {
+          "name": "燕國",
+          "entity_id": "p049",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00237
+        },
+        {
+          "name": "樂安國",
+          "entity_id": "p144",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.05201
+        },
+        {
+          "name": "潁川郡",
+          "entity_id": "p021",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.08684
+        },
+        {
+          "name": "襄城郡",
+          "entity_id": "p022",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.0005
+        },
+        {
+          "name": "淮南郡",
+          "entity_id": "p187",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.09266
+        },
+        {
+          "name": "弋陽郡",
+          "entity_id": "p030",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.0006
+        },
+        {
+          "name": "武昌郡",
+          "entity_id": "p181",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00099
+        },
+        {
+          "name": "南郡",
+          "entity_id": "p161",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.29565
+        }
+      ]
+    },
+    "288": {
+      "reference_prefecture_areas": 57,
+      "reference_county_seats": 3,
+      "reference_year": 289,
+      "uncolored_area_degrees_squared": 13.92303,
+      "examples": [
+        {
+          "name": "燕國",
+          "entity_id": "p049",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00237
+        },
+        {
+          "name": "樂安國",
+          "entity_id": "p144",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.05201
+        },
+        {
+          "name": "潁川郡",
+          "entity_id": "p021",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.08684
+        },
+        {
+          "name": "襄城郡",
+          "entity_id": "p022",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.0005
+        },
+        {
+          "name": "淮南郡",
+          "entity_id": "p187",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.09266
+        },
+        {
+          "name": "弋陽郡",
+          "entity_id": "p030",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.0006
+        },
+        {
+          "name": "武昌郡",
+          "entity_id": "p181",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00099
+        },
+        {
+          "name": "南郡",
+          "entity_id": "p161",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.29565
+        }
+      ]
+    },
+    "289": {
+      "reference_prefecture_areas": 57,
+      "reference_county_seats": 3,
+      "reference_year": 289,
+      "uncolored_area_degrees_squared": 13.05498,
+      "examples": [
+        {
+          "name": "燕國",
+          "entity_id": "p049",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00237
+        },
+        {
+          "name": "樂安國",
+          "entity_id": "p144",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.05201
+        },
+        {
+          "name": "潁川郡",
+          "entity_id": "p021",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.08684
+        },
+        {
+          "name": "襄城郡",
+          "entity_id": "p022",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.0005
+        },
+        {
+          "name": "淮南郡",
+          "entity_id": "p187",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.09266
+        },
+        {
+          "name": "弋陽郡",
+          "entity_id": "p030",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.0006
+        },
+        {
+          "name": "武昌郡",
+          "entity_id": "p181",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00099
+        },
+        {
+          "name": "南郡",
+          "entity_id": "p161",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.29565
+        }
+      ]
+    },
+    "290": {
+      "reference_prefecture_areas": 57,
+      "reference_county_seats": 3,
+      "reference_year": 289,
+      "uncolored_area_degrees_squared": 13.05498,
+      "examples": [
+        {
+          "name": "燕國",
+          "entity_id": "p049",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00237
+        },
+        {
+          "name": "樂安國",
+          "entity_id": "p144",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.05201
+        },
+        {
+          "name": "潁川郡",
+          "entity_id": "p021",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.08684
+        },
+        {
+          "name": "襄城郡",
+          "entity_id": "p022",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.0005
+        },
+        {
+          "name": "淮南郡",
+          "entity_id": "p187",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.09266
+        },
+        {
+          "name": "弋陽郡",
+          "entity_id": "p030",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.0006
+        },
+        {
+          "name": "武昌郡",
+          "entity_id": "p181",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00099
+        },
+        {
+          "name": "南郡",
+          "entity_id": "p161",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.29565
+        }
+      ]
+    },
+    "291": {
+      "reference_prefecture_areas": 56,
+      "reference_county_seats": 5,
+      "reference_year": 308,
+      "uncolored_area_degrees_squared": 12.75185,
+      "examples": [
+        {
+          "name": "燕國",
+          "entity_id": "p049",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00237
+        },
+        {
+          "name": "樂安國",
+          "entity_id": "p144",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.05201
+        },
+        {
+          "name": "潁川郡",
+          "entity_id": "p021",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.08684
+        },
+        {
+          "name": "襄城郡",
+          "entity_id": "p022",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.0005
+        },
+        {
+          "name": "淮南郡",
+          "entity_id": "p187",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.09263
+        },
+        {
+          "name": "武昌郡",
+          "entity_id": "p224",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00063
+        },
+        {
+          "name": "南郡",
+          "entity_id": "p161",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.29565
+        },
+        {
+          "name": "始安郡",
+          "entity_id": "p215",
+          "reason": "年度表本年未列此郡或有效期已結束（不等同正式撤郡）：沿用原圖地理參考，不計為本年西晉有效郡",
+          "area_degrees_squared": 0.12748
+        }
+      ]
+    },
+    "292": {
+      "reference_prefecture_areas": 56,
+      "reference_county_seats": 5,
+      "reference_year": 308,
+      "uncolored_area_degrees_squared": 12.8286,
+      "examples": [
+        {
+          "name": "燕國",
+          "entity_id": "p049",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00237
+        },
+        {
+          "name": "樂安國",
+          "entity_id": "p144",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.05201
+        },
+        {
+          "name": "潁川郡",
+          "entity_id": "p021",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.08684
+        },
+        {
+          "name": "襄城郡",
+          "entity_id": "p022",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.0005
+        },
+        {
+          "name": "淮南郡",
+          "entity_id": "p187",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.09263
+        },
+        {
+          "name": "武昌郡",
+          "entity_id": "p224",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00063
+        },
+        {
+          "name": "南郡",
+          "entity_id": "p161",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.29565
+        },
+        {
+          "name": "始安郡",
+          "entity_id": "p215",
+          "reason": "年度表本年未列此郡或有效期已結束（不等同正式撤郡）：沿用原圖地理參考，不計為本年西晉有效郡",
+          "area_degrees_squared": 0.12748
+        }
+      ]
+    },
+    "293": {
+      "reference_prefecture_areas": 56,
+      "reference_county_seats": 5,
+      "reference_year": 308,
+      "uncolored_area_degrees_squared": 12.8286,
+      "examples": [
+        {
+          "name": "燕國",
+          "entity_id": "p049",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00237
+        },
+        {
+          "name": "樂安國",
+          "entity_id": "p144",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.05201
+        },
+        {
+          "name": "潁川郡",
+          "entity_id": "p021",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.08684
+        },
+        {
+          "name": "襄城郡",
+          "entity_id": "p022",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.0005
+        },
+        {
+          "name": "淮南郡",
+          "entity_id": "p187",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.09263
+        },
+        {
+          "name": "武昌郡",
+          "entity_id": "p224",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00063
+        },
+        {
+          "name": "南郡",
+          "entity_id": "p161",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.29565
+        },
+        {
+          "name": "始安郡",
+          "entity_id": "p215",
+          "reason": "年度表本年未列此郡或有效期已結束（不等同正式撤郡）：沿用原圖地理參考，不計為本年西晉有效郡",
+          "area_degrees_squared": 0.12748
+        }
+      ]
+    },
+    "294": {
+      "reference_prefecture_areas": 56,
+      "reference_county_seats": 5,
+      "reference_year": 308,
+      "uncolored_area_degrees_squared": 12.8286,
+      "examples": [
+        {
+          "name": "燕國",
+          "entity_id": "p049",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00237
+        },
+        {
+          "name": "樂安國",
+          "entity_id": "p144",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.05201
+        },
+        {
+          "name": "潁川郡",
+          "entity_id": "p021",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.08684
+        },
+        {
+          "name": "襄城郡",
+          "entity_id": "p022",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.0005
+        },
+        {
+          "name": "淮南郡",
+          "entity_id": "p187",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.09263
+        },
+        {
+          "name": "武昌郡",
+          "entity_id": "p224",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00063
+        },
+        {
+          "name": "南郡",
+          "entity_id": "p161",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.29565
+        },
+        {
+          "name": "始安郡",
+          "entity_id": "p215",
+          "reason": "年度表本年未列此郡或有效期已結束（不等同正式撤郡）：沿用原圖地理參考，不計為本年西晉有效郡",
+          "area_degrees_squared": 0.12748
+        }
+      ]
+    },
+    "295": {
+      "reference_prefecture_areas": 57,
+      "reference_county_seats": 5,
+      "reference_year": 308,
+      "uncolored_area_degrees_squared": 12.83037,
+      "examples": [
+        {
+          "name": "晉昌郡",
+          "entity_id": "p092",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00177
+        },
+        {
+          "name": "燕國",
+          "entity_id": "p049",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00237
+        },
+        {
+          "name": "樂安國",
+          "entity_id": "p144",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.05201
+        },
+        {
+          "name": "潁川郡",
+          "entity_id": "p021",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.08684
+        },
+        {
+          "name": "襄城郡",
+          "entity_id": "p022",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.0005
+        },
+        {
+          "name": "淮南郡",
+          "entity_id": "p187",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.09263
+        },
+        {
+          "name": "武昌郡",
+          "entity_id": "p224",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00063
+        },
+        {
+          "name": "南郡",
+          "entity_id": "p161",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.29565
+        }
+      ]
+    },
+    "296": {
+      "reference_prefecture_areas": 58,
+      "reference_prefecture_seats": 1,
+      "reference_county_seats": 5,
+      "reference_year": 308,
+      "uncolored_area_degrees_squared": 13.78665,
+      "examples": [
+        {
+          "name": "晉昌郡",
+          "entity_id": "p092",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00177
+        },
+        {
+          "name": "燕國",
+          "entity_id": "p049",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00237
+        },
+        {
+          "name": "樂安國",
+          "entity_id": "p144",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.05201
+        },
+        {
+          "name": "略陽郡",
+          "entity_id": "p096",
+          "reason": "年度表本年未列此郡或有效期已結束（不等同正式撤郡）：沿用原圖地理參考，不計為本年西晉有效郡",
+          "area_degrees_squared": 0.95628
+        },
+        {
+          "name": "潁川郡",
+          "entity_id": "p021",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.08684
+        },
+        {
+          "name": "襄城郡",
+          "entity_id": "p022",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.0005
+        },
+        {
+          "name": "淮南郡",
+          "entity_id": "p187",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.09263
+        },
+        {
+          "name": "武昌郡",
+          "entity_id": "p224",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00063
+        }
+      ]
+    },
+    "297": {
+      "reference_prefecture_areas": 58,
+      "reference_county_seats": 5,
+      "reference_year": 308,
+      "uncolored_area_degrees_squared": 13.78653,
+      "examples": [
+        {
+          "name": "晉昌郡",
+          "entity_id": "p092",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00177
+        },
+        {
+          "name": "燕國",
+          "entity_id": "p049",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00237
+        },
+        {
+          "name": "樂安國",
+          "entity_id": "p144",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.05201
+        },
+        {
+          "name": "略陽郡",
+          "entity_id": "p096",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.95628
+        },
+        {
+          "name": "潁川郡",
+          "entity_id": "p021",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.08684
+        },
+        {
+          "name": "襄城郡",
+          "entity_id": "p022",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.0005
+        },
+        {
+          "name": "淮南郡",
+          "entity_id": "p187",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.09263
+        },
+        {
+          "name": "武昌郡",
+          "entity_id": "p224",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00063
+        }
+      ]
+    },
+    "298": {
+      "reference_prefecture_areas": 58,
+      "reference_county_seats": 4,
+      "reference_year": 308,
+      "uncolored_area_degrees_squared": 13.78653,
+      "examples": [
+        {
+          "name": "晉昌郡",
+          "entity_id": "p092",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00177
+        },
+        {
+          "name": "燕國",
+          "entity_id": "p049",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00237
+        },
+        {
+          "name": "樂安國",
+          "entity_id": "p144",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.05201
+        },
+        {
+          "name": "略陽郡",
+          "entity_id": "p096",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.95628
+        },
+        {
+          "name": "潁川郡",
+          "entity_id": "p021",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.08684
+        },
+        {
+          "name": "襄城郡",
+          "entity_id": "p022",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.0005
+        },
+        {
+          "name": "淮南郡",
+          "entity_id": "p187",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.09263
+        },
+        {
+          "name": "武昌郡",
+          "entity_id": "p224",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00063
+        }
+      ]
+    },
+    "299": {
+      "reference_prefecture_areas": 58,
+      "reference_county_seats": 3,
+      "reference_year": 308,
+      "uncolored_area_degrees_squared": 12.83213,
+      "examples": [
+        {
+          "name": "晉昌郡",
+          "entity_id": "p092",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00177
+        },
+        {
+          "name": "燕國",
+          "entity_id": "p049",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00237
+        },
+        {
+          "name": "樂安國",
+          "entity_id": "p144",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.05201
+        },
+        {
+          "name": "東莞郡",
+          "entity_id": "p154",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00115
+        },
+        {
+          "name": "潁川郡",
+          "entity_id": "p021",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.08684
+        },
+        {
+          "name": "襄城郡",
+          "entity_id": "p022",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.0005
+        },
+        {
+          "name": "淮南郡",
+          "entity_id": "p187",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.09263
+        },
+        {
+          "name": "武昌郡",
+          "entity_id": "p224",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00063
+        }
+      ]
+    },
+    "300": {
+      "reference_prefecture_areas": 58,
+      "reference_county_seats": 3,
+      "reference_year": 308,
+      "uncolored_area_degrees_squared": 12.83213,
+      "examples": [
+        {
+          "name": "晉昌郡",
+          "entity_id": "p092",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00177
+        },
+        {
+          "name": "燕國",
+          "entity_id": "p049",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00237
+        },
+        {
+          "name": "樂安國",
+          "entity_id": "p144",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.05201
+        },
+        {
+          "name": "東莞郡",
+          "entity_id": "p154",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00115
+        },
+        {
+          "name": "潁川郡",
+          "entity_id": "p021",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.08684
+        },
+        {
+          "name": "襄城郡",
+          "entity_id": "p022",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.0005
+        },
+        {
+          "name": "淮南郡",
+          "entity_id": "p187",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.09263
+        },
+        {
+          "name": "武昌郡",
+          "entity_id": "p224",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00063
+        }
+      ]
+    },
+    "301": {
+      "reference_prefecture_areas": 59,
+      "reference_prefecture_seats": 2,
+      "reference_county_seats": 10,
+      "reference_year": 308,
+      "uncolored_area_degrees_squared": 14.34233,
+      "examples": [
+        {
+          "name": "晉昌郡",
+          "entity_id": "p092",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00177
+        },
+        {
+          "name": "燕國",
+          "entity_id": "p049",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00237
+        },
+        {
+          "name": "樂安國",
+          "entity_id": "p144",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.05201
+        },
+        {
+          "name": "東莞郡",
+          "entity_id": "p154",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00115
+        },
+        {
+          "name": "潁川郡",
+          "entity_id": "p021",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.08684
+        },
+        {
+          "name": "襄城郡",
+          "entity_id": "p022",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.0005
+        },
+        {
+          "name": "淮南郡",
+          "entity_id": "p187",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.09263
+        },
+        {
+          "name": "武昌郡",
+          "entity_id": "p224",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00063
+        }
+      ]
+    },
+    "302": {
+      "reference_prefecture_areas": 60,
+      "reference_prefecture_seats": 4,
+      "reference_county_seats": 16,
+      "reference_year": 308,
+      "uncolored_area_degrees_squared": 16.56215,
+      "examples": [
+        {
+          "name": "晉昌郡",
+          "entity_id": "p092",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00177
+        },
+        {
+          "name": "燕國",
+          "entity_id": "p049",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00237
+        },
+        {
+          "name": "樂安國",
+          "entity_id": "p144",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.05201
+        },
+        {
+          "name": "東莞郡",
+          "entity_id": "p154",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00115
+        },
+        {
+          "name": "潁川郡",
+          "entity_id": "p021",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.08684
+        },
+        {
+          "name": "襄城郡",
+          "entity_id": "p022",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.0005
+        },
+        {
+          "name": "梓潼郡",
+          "entity_id": "p102",
+          "reason": "失陷或非西晉實控區：保留政區地理參考，不代表本年仍屬西晉",
+          "area_degrees_squared": 2.01661
+        },
+        {
+          "name": "淮南郡",
+          "entity_id": "p187",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.09263
+        }
+      ]
+    },
+    "303": {
+      "reference_prefecture_areas": 61,
+      "reference_prefecture_seats": 4,
+      "reference_county_seats": 20,
+      "reference_year": 308,
+      "uncolored_area_degrees_squared": 14.64851,
+      "examples": [
+        {
+          "name": "晉昌郡",
+          "entity_id": "p092",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00177
+        },
+        {
+          "name": "燕國",
+          "entity_id": "p049",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00237
+        },
+        {
+          "name": "樂安國",
+          "entity_id": "p144",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.05201
+        },
+        {
+          "name": "東莞郡",
+          "entity_id": "p154",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00115
+        },
+        {
+          "name": "琅邪國",
+          "entity_id": "p153",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.07199
+        },
+        {
+          "name": "潁川郡",
+          "entity_id": "p021",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.08684
+        },
+        {
+          "name": "襄城郡",
+          "entity_id": "p022",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.0005
+        },
+        {
+          "name": "武昌郡",
+          "entity_id": "p224",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00063
+        }
+      ]
+    },
+    "304": {
+      "reference_prefecture_areas": 61,
+      "reference_prefecture_seats": 5,
+      "reference_county_seats": 17,
+      "reference_year": 308,
+      "uncolored_area_degrees_squared": 17.79582,
+      "examples": [
+        {
+          "name": "晉昌郡",
+          "entity_id": "p092",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00177
+        },
+        {
+          "name": "燕國",
+          "entity_id": "p049",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00237
+        },
+        {
+          "name": "樂安國",
+          "entity_id": "p144",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.05201
+        },
+        {
+          "name": "東莞郡",
+          "entity_id": "p154",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00115
+        },
+        {
+          "name": "潁川郡",
+          "entity_id": "p021",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.08684
+        },
+        {
+          "name": "襄城郡",
+          "entity_id": "p022",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.0005
+        },
+        {
+          "name": "武昌郡",
+          "entity_id": "p224",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00064
+        },
+        {
+          "name": "廣漢郡",
+          "entity_id": "p103",
+          "reason": "年度表本年未列此郡或有效期已結束（不等同正式撤郡）：沿用原圖地理參考，不計為本年西晉有效郡；另有失陷或非晉控制記錄",
+          "area_degrees_squared": 1.71312
+        }
+      ]
+    },
+    "305": {
+      "reference_prefecture_areas": 59,
+      "reference_prefecture_seats": 5,
+      "reference_county_seats": 19,
+      "reference_year": 308,
+      "uncolored_area_degrees_squared": 17.08598,
+      "examples": [
+        {
+          "name": "晉昌郡",
+          "entity_id": "p092",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00177
+        },
+        {
+          "name": "燕國",
+          "entity_id": "p049",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00237
+        },
+        {
+          "name": "東莞郡",
+          "entity_id": "p154",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00115
+        },
+        {
+          "name": "潁川郡",
+          "entity_id": "p021",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.08684
+        },
+        {
+          "name": "襄城郡",
+          "entity_id": "p022",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.0005
+        },
+        {
+          "name": "武昌郡",
+          "entity_id": "p224",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00063
+        },
+        {
+          "name": "廣漢郡",
+          "entity_id": "p103",
+          "reason": "年度表本年未列此郡或有效期已結束（不等同正式撤郡）：沿用原圖地理參考，不計為本年西晉有效郡；另有失陷或非晉控制記錄",
+          "area_degrees_squared": 1.71312
+        },
+        {
+          "name": "蜀郡",
+          "entity_id": "p115",
+          "reason": "年度表本年未列此郡或有效期已結束（不等同正式撤郡）：沿用原圖地理參考，不計為本年西晉有效郡；另有失陷或非晉控制記錄",
+          "area_degrees_squared": 0.74258
+        }
+      ]
+    },
+    "306": {
+      "reference_prefecture_areas": 60,
+      "reference_prefecture_seats": 5,
+      "reference_county_seats": 20,
+      "reference_year": 308,
+      "uncolored_area_degrees_squared": 25.0576,
+      "examples": [
+        {
+          "name": "晉昌郡",
+          "entity_id": "p092",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00177
+        },
+        {
+          "name": "燕國",
+          "entity_id": "p049",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00237
+        },
+        {
+          "name": "東莞郡",
+          "entity_id": "p154",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00115
+        },
+        {
+          "name": "潁川郡",
+          "entity_id": "p021",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.08684
+        },
+        {
+          "name": "襄城郡",
+          "entity_id": "p022",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.0005
+        },
+        {
+          "name": "武昌郡",
+          "entity_id": "p224",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00063
+        },
+        {
+          "name": "廣漢郡",
+          "entity_id": "p103",
+          "reason": "年度表本年未列此郡或有效期已結束（不等同正式撤郡）：沿用原圖地理參考，不計為本年西晉有效郡；另有失陷或非晉控制記錄",
+          "area_degrees_squared": 1.71312
+        },
+        {
+          "name": "蜀郡",
+          "entity_id": "p115",
+          "reason": "年度表本年未列此郡或有效期已結束（不等同正式撤郡）：沿用原圖地理參考，不計為本年西晉有效郡；另有失陷或非晉控制記錄",
+          "area_degrees_squared": 0.74258
+        }
+      ]
+    },
+    "307": {
+      "reference_prefecture_areas": 64,
+      "reference_province_areas": 1,
+      "reference_prefecture_seats": 7,
+      "reference_county_seats": 30,
+      "reference_year": 308,
+      "uncolored_area_degrees_squared": 29.32527,
+      "examples": [
+        {
+          "name": "晉昌郡",
+          "entity_id": "p092",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00177
+        },
+        {
+          "name": "燕國",
+          "entity_id": "p049",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00237
+        },
+        {
+          "name": "雁門郡",
+          "entity_id": "p069",
+          "reason": "年度表本年未列此郡或有效期已結束（不等同正式撤郡）：沿用原圖地理參考，不計為本年西晉有效郡",
+          "area_degrees_squared": 1.23847
+        },
+        {
+          "name": "樂安國",
+          "entity_id": "p144",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.05201
+        },
+        {
+          "name": "新興郡",
+          "entity_id": "p070",
+          "reason": "年度表本年未列此郡或有效期已結束（不等同正式撤郡）：沿用原圖地理參考，不計為本年西晉有效郡",
+          "area_degrees_squared": 0.90021
+        },
+        {
+          "name": "東莞郡",
+          "entity_id": "p154",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00115
+        },
+        {
+          "name": "西河郡",
+          "entity_id": "p066",
+          "reason": "年度表本年未列此郡或有效期已結束（不等同正式撤郡）：沿用原圖地理參考，不計為本年西晉有效郡",
+          "area_degrees_squared": 1.37482
+        },
+        {
+          "name": "潁川郡",
+          "entity_id": "p021",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.08684
+        }
+      ]
+    },
+    "308": {
+      "reference_prefecture_areas": 67,
+      "reference_province_areas": 1,
+      "reference_prefecture_seats": 8,
+      "reference_county_seats": 40,
+      "reference_year": 308,
+      "uncolored_area_degrees_squared": 31.69968,
+      "examples": [
+        {
+          "name": "晉昌郡",
+          "entity_id": "p092",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00177
+        },
+        {
+          "name": "燕國",
+          "entity_id": "p049",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00237
+        },
+        {
+          "name": "雁門郡",
+          "entity_id": "p069",
+          "reason": "年度表本年未列此郡或有效期已結束（不等同正式撤郡）：沿用原圖地理參考，不計為本年西晉有效郡",
+          "area_degrees_squared": 1.23847
+        },
+        {
+          "name": "樂安國",
+          "entity_id": "p144",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.05201
+        },
+        {
+          "name": "新興郡",
+          "entity_id": "p070",
+          "reason": "年度表本年未列此郡或有效期已結束（不等同正式撤郡）：沿用原圖地理參考，不計為本年西晉有效郡",
+          "area_degrees_squared": 0.90021
+        },
+        {
+          "name": "東莞郡",
+          "entity_id": "p154",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00115
+        },
+        {
+          "name": "平陽郡",
+          "entity_id": "p005",
+          "reason": "失陷或非西晉實控區：保留政區地理參考，不代表本年仍屬西晉",
+          "area_degrees_squared": 2.24553
+        },
+        {
+          "name": "西河郡",
+          "entity_id": "p066",
+          "reason": "年度表本年未列此郡或有效期已結束（不等同正式撤郡）：沿用原圖地理參考，不計為本年西晉有效郡",
+          "area_degrees_squared": 1.37482
+        }
+      ]
+    },
+    "309": {
+      "reference_prefecture_areas": 67,
+      "reference_province_areas": 1,
+      "reference_prefecture_seats": 8,
+      "reference_county_seats": 40,
+      "reference_year": 308,
+      "uncolored_area_degrees_squared": 31.69968,
+      "examples": [
+        {
+          "name": "晉昌郡",
+          "entity_id": "p092",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00177
+        },
+        {
+          "name": "燕國",
+          "entity_id": "p049",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00237
+        },
+        {
+          "name": "雁門郡",
+          "entity_id": "p069",
+          "reason": "年度表本年未列此郡或有效期已結束（不等同正式撤郡）：沿用原圖地理參考，不計為本年西晉有效郡",
+          "area_degrees_squared": 1.23847
+        },
+        {
+          "name": "樂安國",
+          "entity_id": "p144",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.05201
+        },
+        {
+          "name": "新興郡",
+          "entity_id": "p070",
+          "reason": "年度表本年未列此郡或有效期已結束（不等同正式撤郡）：沿用原圖地理參考，不計為本年西晉有效郡",
+          "area_degrees_squared": 0.90021
+        },
+        {
+          "name": "東莞郡",
+          "entity_id": "p154",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00115
+        },
+        {
+          "name": "平陽郡",
+          "entity_id": "p005",
+          "reason": "失陷或非西晉實控區：保留政區地理參考，不代表本年仍屬西晉",
+          "area_degrees_squared": 2.24553
+        },
+        {
+          "name": "西河郡",
+          "entity_id": "p066",
+          "reason": "年度表本年未列此郡或有效期已結束（不等同正式撤郡）：沿用原圖地理參考，不計為本年西晉有效郡",
+          "area_degrees_squared": 1.37482
+        }
+      ]
+    },
+    "310": {
+      "reference_prefecture_areas": 67,
+      "reference_province_areas": 1,
+      "reference_prefecture_seats": 7,
+      "reference_county_seats": 38,
+      "reference_year": 308,
+      "uncolored_area_degrees_squared": 31.49648,
+      "examples": [
+        {
+          "name": "晉昌郡",
+          "entity_id": "p092",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00177
+        },
+        {
+          "name": "燕國",
+          "entity_id": "p049",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00237
+        },
+        {
+          "name": "雁門郡",
+          "entity_id": "p069",
+          "reason": "年度表本年未列此郡或有效期已結束（不等同正式撤郡）：沿用原圖地理參考，不計為本年西晉有效郡",
+          "area_degrees_squared": 1.23847
+        },
+        {
+          "name": "樂安國",
+          "entity_id": "p144",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.05201
+        },
+        {
+          "name": "新興郡",
+          "entity_id": "p070",
+          "reason": "年度表本年未列此郡或有效期已結束（不等同正式撤郡）：沿用原圖地理參考，不計為本年西晉有效郡",
+          "area_degrees_squared": 0.90021
+        },
+        {
+          "name": "東莞郡",
+          "entity_id": "p154",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00115
+        },
+        {
+          "name": "平陽郡",
+          "entity_id": "p005",
+          "reason": "失陷或非西晉實控區：保留政區地理參考，不代表本年仍屬西晉",
+          "area_degrees_squared": 2.24553
+        },
+        {
+          "name": "西河郡",
+          "entity_id": "p066",
+          "reason": "年度表本年未列此郡或有效期已結束（不等同正式撤郡）：沿用原圖地理參考，不計為本年西晉有效郡",
+          "area_degrees_squared": 1.37482
+        }
+      ]
+    },
+    "311": {
+      "reference_prefecture_areas": 71,
+      "reference_province_areas": 1,
+      "reference_prefecture_seats": 12,
+      "reference_county_seats": 56,
+      "reference_year": 308,
+      "uncolored_area_degrees_squared": 34.99515,
+      "examples": [
+        {
+          "name": "晉昌郡",
+          "entity_id": "p092",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00177
+        },
+        {
+          "name": "燕國",
+          "entity_id": "p049",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00237
+        },
+        {
+          "name": "雁門郡",
+          "entity_id": "p069",
+          "reason": "年度表本年未列此郡或有效期已結束（不等同正式撤郡）：沿用原圖地理參考，不計為本年西晉有效郡",
+          "area_degrees_squared": 1.23847
+        },
+        {
+          "name": "樂安國",
+          "entity_id": "p144",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.05201
+        },
+        {
+          "name": "濟南郡",
+          "entity_id": "p143",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.05508
+        },
+        {
+          "name": "樂平郡",
+          "entity_id": "p068",
+          "reason": "年度表本年未列此郡或有效期已結束（不等同正式撤郡）：沿用原圖地理參考，不計為本年西晉有效郡",
+          "area_degrees_squared": 0.80393
+        },
+        {
+          "name": "新興郡",
+          "entity_id": "p070",
+          "reason": "年度表本年未列此郡或有效期已結束（不等同正式撤郡）：沿用原圖地理參考，不計為本年西晉有效郡",
+          "area_degrees_squared": 0.90032
+        },
+        {
+          "name": "東莞郡",
+          "entity_id": "p154",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00115
+        }
+      ]
+    },
+    "312": {
+      "reference_prefecture_areas": 77,
+      "reference_province_areas": 1,
+      "reference_prefecture_seats": 20,
+      "reference_county_seats": 135,
+      "reference_year": 308,
+      "uncolored_area_degrees_squared": 43.99362,
+      "examples": [
+        {
+          "name": "晉昌郡",
+          "entity_id": "p092",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00177
+        },
+        {
+          "name": "燕國",
+          "entity_id": "p049",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00237
+        },
+        {
+          "name": "雁門郡",
+          "entity_id": "p069",
+          "reason": "年度表本年未列此郡或有效期已結束（不等同正式撤郡）：沿用原圖地理參考，不計為本年西晉有效郡",
+          "area_degrees_squared": 1.23847
+        },
+        {
+          "name": "樂安國",
+          "entity_id": "p144",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.05201
+        },
+        {
+          "name": "濟南郡",
+          "entity_id": "p143",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.05508
+        },
+        {
+          "name": "樂平郡",
+          "entity_id": "p068",
+          "reason": "年度表本年未列此郡或有效期已結束（不等同正式撤郡）：沿用原圖地理參考，不計為本年西晉有效郡",
+          "area_degrees_squared": 1.02319
+        },
+        {
+          "name": "新興郡",
+          "entity_id": "p070",
+          "reason": "年度表本年未列此郡或有效期已結束（不等同正式撤郡）：沿用原圖地理參考，不計為本年西晉有效郡",
+          "area_degrees_squared": 0.90032
+        },
+        {
+          "name": "陽平郡",
+          "entity_id": "p010",
+          "reason": "年度表本年未列此郡或有效期已結束（不等同正式撤郡）：沿用原圖地理參考，不計為本年西晉有效郡",
+          "area_degrees_squared": 0.47155
+        }
+      ]
+    },
+    "313": {
+      "reference_prefecture_areas": 88,
+      "reference_province_areas": 1,
+      "reference_prefecture_seats": 22,
+      "reference_county_seats": 157,
+      "reference_year": 308,
+      "uncolored_area_degrees_squared": 55.36507,
+      "examples": [
+        {
+          "name": "晉昌郡",
+          "entity_id": "p092",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00177
+        },
+        {
+          "name": "燕國",
+          "entity_id": "p049",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00237
+        },
+        {
+          "name": "雁門郡",
+          "entity_id": "p069",
+          "reason": "年度表本年未列此郡或有效期已結束（不等同正式撤郡）：沿用原圖地理參考，不計為本年西晉有效郡",
+          "area_degrees_squared": 1.23847
+        },
+        {
+          "name": "樂安國",
+          "entity_id": "p144",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.05201
+        },
+        {
+          "name": "濟南郡",
+          "entity_id": "p143",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.05508
+        },
+        {
+          "name": "樂平郡",
+          "entity_id": "p068",
+          "reason": "年度表本年未列此郡或有效期已結束（不等同正式撤郡）：沿用原圖地理參考，不計為本年西晉有效郡",
+          "area_degrees_squared": 1.02319
+        },
+        {
+          "name": "新興郡",
+          "entity_id": "p070",
+          "reason": "年度表本年未列此郡或有效期已結束（不等同正式撤郡）：沿用原圖地理參考，不計為本年西晉有效郡",
+          "area_degrees_squared": 0.90032
+        },
+        {
+          "name": "陽平郡",
+          "entity_id": "p010",
+          "reason": "年度表本年未列此郡或有效期已結束（不等同正式撤郡）：沿用原圖地理參考，不計為本年西晉有效郡",
+          "area_degrees_squared": 0.47155
+        }
+      ]
+    },
+    "314": {
+      "reference_prefecture_areas": 115,
+      "reference_province_areas": 4,
+      "reference_prefecture_seats": 53,
+      "reference_county_seats": 391,
+      "reference_year": 308,
+      "uncolored_area_degrees_squared": 86.3647,
+      "examples": [
+        {
+          "name": "晉昌郡",
+          "entity_id": "p092",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00177
+        },
+        {
+          "name": "燕國",
+          "entity_id": "p049",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00237
+        },
+        {
+          "name": "章武郡",
+          "entity_id": "p041",
+          "reason": "年度表本年未列此郡或有效期已結束（不等同正式撤郡）：沿用原圖地理參考，不計為本年西晉有效郡",
+          "area_degrees_squared": 0.83186
+        },
+        {
+          "name": "河間郡",
+          "entity_id": "p040",
+          "reason": "年度表本年未列此郡或有效期已結束（不等同正式撤郡）：沿用原圖地理參考，不計為本年西晉有效郡",
+          "area_degrees_squared": 0.50737
+        },
+        {
+          "name": "高陽郡",
+          "entity_id": "p044",
+          "reason": "年度表本年未列此郡或有效期已結束（不等同正式撤郡）：沿用原圖地理參考，不計為本年西晉有效郡",
+          "area_degrees_squared": 0.44052
+        },
+        {
+          "name": "中山郡",
+          "entity_id": "p045",
+          "reason": "年度表本年未列此郡或有效期已結束（不等同正式撤郡）：沿用原圖地理參考，不計為本年西晉有效郡",
+          "area_degrees_squared": 0.65311
+        },
+        {
+          "name": "常山郡",
+          "entity_id": "p046",
+          "reason": "年度表本年未列此郡或有效期已結束（不等同正式撤郡）：沿用原圖地理參考，不計為本年西晉有效郡",
+          "area_degrees_squared": 1.23279
+        },
+        {
+          "name": "雁門郡",
+          "entity_id": "p069",
+          "reason": "年度表本年未列此郡或有效期已結束（不等同正式撤郡）：沿用原圖地理參考，不計為本年西晉有效郡",
+          "area_degrees_squared": 1.23847
+        }
+      ]
+    },
+    "315": {
+      "reference_prefecture_areas": 123,
+      "reference_province_areas": 5,
+      "reference_prefecture_seats": 60,
+      "reference_county_seats": 417,
+      "reference_year": 308,
+      "uncolored_area_degrees_squared": 98.54256,
+      "examples": [
+        {
+          "name": "晉昌郡",
+          "entity_id": "p092",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00177
+        },
+        {
+          "name": "北平郡",
+          "entity_id": "p050",
+          "reason": "年度表本年未列此郡或有效期已結束（不等同正式撤郡）：沿用原圖地理參考，不計為本年西晉有效郡",
+          "area_degrees_squared": 1.64014
+        },
+        {
+          "name": "遼西郡",
+          "entity_id": "p054",
+          "reason": "年度表本年未列此郡或有效期已結束（不等同正式撤郡）：沿用原圖地理參考，不計為本年西晉有效郡",
+          "area_degrees_squared": 1.11147
+        },
+        {
+          "name": "燕郡",
+          "entity_id": "p049",
+          "reason": "年度表本年未列此郡或有效期已結束（不等同正式撤郡）：沿用原圖地理參考，不計為本年西晉有效郡",
+          "area_degrees_squared": 2.18405
+        },
+        {
+          "name": "章武郡",
+          "entity_id": "p041",
+          "reason": "年度表本年未列此郡或有效期已結束（不等同正式撤郡）：沿用原圖地理參考，不計為本年西晉有效郡",
+          "area_degrees_squared": 0.83186
+        },
+        {
+          "name": "範陽郡",
+          "entity_id": "p047",
+          "reason": "年度表本年未列此郡或有效期已結束（不等同正式撤郡）：沿用原圖地理參考，不計為本年西晉有效郡",
+          "area_degrees_squared": 1.04725
+        },
+        {
+          "name": "河間郡",
+          "entity_id": "p040",
+          "reason": "年度表本年未列此郡或有效期已結束（不等同正式撤郡）：沿用原圖地理參考，不計為本年西晉有效郡",
+          "area_degrees_squared": 0.50737
+        },
+        {
+          "name": "高陽郡",
+          "entity_id": "p044",
+          "reason": "年度表本年未列此郡或有效期已結束（不等同正式撤郡）：沿用原圖地理參考，不計為本年西晉有效郡",
+          "area_degrees_squared": 0.44052
+        }
+      ]
+    },
+    "316": {
+      "reference_prefecture_areas": 124,
+      "reference_province_areas": 5,
+      "reference_prefecture_seats": 61,
+      "reference_county_seats": 421,
+      "reference_year": 308,
+      "uncolored_area_degrees_squared": 99.26253,
+      "examples": [
+        {
+          "name": "晉昌郡",
+          "entity_id": "p092",
+          "reason": "原圖與年度郡面未銜接的地理參考區；非本年獨立確認的政區或界線",
+          "area_degrees_squared": 0.00177
+        },
+        {
+          "name": "北平郡",
+          "entity_id": "p050",
+          "reason": "年度表本年未列此郡或有效期已結束（不等同正式撤郡）：沿用原圖地理參考，不計為本年西晉有效郡",
+          "area_degrees_squared": 1.64014
+        },
+        {
+          "name": "遼西郡",
+          "entity_id": "p054",
+          "reason": "年度表本年未列此郡或有效期已結束（不等同正式撤郡）：沿用原圖地理參考，不計為本年西晉有效郡",
+          "area_degrees_squared": 1.11147
+        },
+        {
+          "name": "燕郡",
+          "entity_id": "p049",
+          "reason": "年度表本年未列此郡或有效期已結束（不等同正式撤郡）：沿用原圖地理參考，不計為本年西晉有效郡",
+          "area_degrees_squared": 2.18405
+        },
+        {
+          "name": "章武郡",
+          "entity_id": "p041",
+          "reason": "年度表本年未列此郡或有效期已結束（不等同正式撤郡）：沿用原圖地理參考，不計為本年西晉有效郡",
+          "area_degrees_squared": 0.83186
+        },
+        {
+          "name": "範陽郡",
+          "entity_id": "p047",
+          "reason": "年度表本年未列此郡或有效期已結束（不等同正式撤郡）：沿用原圖地理參考，不計為本年西晉有效郡",
+          "area_degrees_squared": 1.04725
+        },
+        {
+          "name": "河間郡",
+          "entity_id": "p040",
+          "reason": "年度表本年未列此郡或有效期已結束（不等同正式撤郡）：沿用原圖地理參考，不計為本年西晉有效郡",
+          "area_degrees_squared": 0.50737
+        },
+        {
+          "name": "高陽郡",
+          "entity_id": "p044",
+          "reason": "年度表本年未列此郡或有效期已結束（不等同正式撤郡）：沿用原圖地理參考，不計為本年西晉有效郡",
+          "area_degrees_squared": 0.44052
+        }
+      ]
+    }
+  }
+}

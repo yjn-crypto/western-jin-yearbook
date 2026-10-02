@@ -185,10 +185,12 @@ body.map-reading-open { overflow: hidden; }
 .jin-province-key::before { border-top: 3.2px solid #292b32; }
 .jin-kingdom-key::before { border-top: 2.2px solid #915c32; }
 .jin-member-key::before { border-top: 1px solid rgba(118,104,84,.3); }
-.jin-county-key::before { border-top: 1px dashed #a69d89; }
+.jin-reference-key::before { border-top: 1px solid #92918b; }
 .jin-map-version-control { display: flex; align-items: center; flex-wrap: wrap; gap: 10px 14px; margin-top: 14px; font-size: .88rem; }
 .jin-map-version-control[hidden] { display: none; }
 .jin-map-version-control select { width: auto; max-width: 100%; }
+.jin-map-version-toggle { display: inline-block; padding: 7px 12px; border: 1px solid var(--theme-border); border-radius: 4px; background: var(--paper-2); text-decoration: none; }
+.jin-map-version-toggle:hover,.jin-map-version-toggle:focus-visible { background: var(--paper); text-decoration: underline; }
 .jin-map-version-control span { color: var(--muted); }
 .map-hotspot { fill: transparent; stroke: transparent; stroke-width: 5; vector-effect: non-scaling-stroke; cursor: pointer; pointer-events: all; }
 .map-hotspot:hover,.map-hotspot:focus-visible { fill: rgba(255,255,255,.28); stroke: #f5f1d7; outline: none; }
