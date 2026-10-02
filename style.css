@@ -186,6 +186,12 @@ body.map-reading-open { overflow: hidden; }
 .jin-kingdom-key::before { border-top: 2.2px solid #915c32; }
 .jin-member-key::before { border-top: 1px solid rgba(118,104,84,.3); }
 .jin-reference-key::before { border-top: 1px solid #92918b; }
+.jin-regime-key::before { border-top: 4px solid #2e3439; }
+.jin-video-source { margin: 10px 0 16px; padding: 10px 14px; border: 1px solid var(--line); background: var(--paper-2); }
+.jin-video-source[hidden] { display: none; }
+.jin-video-source summary { cursor: pointer; }
+.jin-video-source p { font-size: .86rem; color: var(--muted); }
+.jin-video-source img { display: block; width: 100%; height: auto; }
 .jin-map-version-control { display: flex; align-items: center; flex-wrap: wrap; gap: 10px 14px; margin-top: 14px; font-size: .88rem; }
 .jin-map-version-control[hidden] { display: none; }
 .jin-map-version-control select { width: auto; max-width: 100%; }

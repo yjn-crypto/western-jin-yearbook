@@ -1,0 +1,1183 @@
+{
+  "289": {
+    "year": 289,
+    "source_original_gap": {
+      "gap_compartments": 57,
+      "area_degrees_squared": 13.0549843,
+      "category_areas_degrees_squared": {
+        "valid_prefecture_geometry_gap": 3.7970936,
+        "unresolved_original": 9.2578907
+      },
+      "largest": [
+        {
+          "reference_id": "ref-289-201",
+          "name": "原图未命名区",
+          "entity_id": null,
+          "category": "unresolved_original",
+          "control_status": null,
+          "area_degrees_squared": 2.9854591
+        },
+        {
+          "reference_id": "ref-289-205",
+          "name": "原图未命名区",
+          "entity_id": null,
+          "category": "unresolved_original",
+          "control_status": null,
+          "area_degrees_squared": 2.2529146
+        },
+        {
+          "reference_id": "ref-289-155",
+          "name": "南康郡",
+          "entity_id": "p204",
+          "category": "valid_prefecture_geometry_gap",
+          "control_status": "administrative",
+          "area_degrees_squared": 1.1252276
+        },
+        {
+          "reference_id": "ref-289-202",
+          "name": "原图未命名区",
+          "entity_id": null,
+          "category": "unresolved_original",
+          "control_status": null,
+          "area_degrees_squared": 0.8444525
+        },
+        {
+          "reference_id": "ref-289-187",
+          "name": "北海／城阳",
+          "entity_id": null,
+          "category": "unresolved_original",
+          "control_status": null,
+          "area_degrees_squared": 0.8365844
+        },
+        {
+          "reference_id": "ref-289-199",
+          "name": "原图未命名区",
+          "entity_id": null,
+          "category": "unresolved_original",
+          "control_status": null,
+          "area_degrees_squared": 0.8186518
+        },
+        {
+          "reference_id": "ref-289-204",
+          "name": "原图未命名区",
+          "entity_id": null,
+          "category": "unresolved_original",
+          "control_status": null,
+          "area_degrees_squared": 0.7529413
+        },
+        {
+          "reference_id": "ref-289-113",
+          "name": "桂林",
+          "entity_id": "p238",
+          "category": "valid_prefecture_geometry_gap",
+          "control_status": "administrative",
+          "area_degrees_squared": 0.5750654
+        },
+        {
+          "reference_id": "ref-289-203",
+          "name": "原图未命名区",
+          "entity_id": null,
+          "category": "unresolved_original",
+          "control_status": null,
+          "area_degrees_squared": 0.4625179
+        },
+        {
+          "reference_id": "ref-289-147",
+          "name": "临海郡",
+          "entity_id": "p197",
+          "category": "valid_prefecture_geometry_gap",
+          "control_status": "administrative",
+          "area_degrees_squared": 0.4428796
+        },
+        {
+          "reference_id": "ref-289-129",
+          "name": "北地",
+          "entity_id": "p076",
+          "category": "valid_prefecture_geometry_gap",
+          "control_status": "administrative",
+          "area_degrees_squared": 0.3163741
+        },
+        {
+          "reference_id": "ref-289-178",
+          "name": "广陵郡",
+          "entity_id": "p155",
+          "category": "valid_prefecture_geometry_gap",
+          "control_status": "administrative",
+          "area_degrees_squared": 0.3138245
+        },
+        {
+          "reference_id": "ref-289-111",
+          "name": "南郡",
+          "entity_id": "p161",
+          "category": "valid_prefecture_geometry_gap",
+          "control_status": "administrative",
+          "area_degrees_squared": 0.2956513
+        },
+        {
+          "reference_id": "ref-289-196",
+          "name": "寻阳",
+          "entity_id": "p227",
+          "category": "unresolved_original",
+          "control_status": "administrative",
+          "area_degrees_squared": 0.2881274
+        },
+        {
+          "reference_id": "ref-289-157",
+          "name": "安成郡",
+          "entity_id": "p182",
+          "category": "valid_prefecture_geometry_gap",
+          "control_status": "administrative",
+          "area_degrees_squared": 0.2134704
+        },
+        {
+          "reference_id": "ref-289-112",
+          "name": "始安",
+          "entity_id": "p243",
+          "category": "valid_prefecture_geometry_gap",
+          "control_status": "administrative",
+          "area_degrees_squared": 0.1274801
+        },
+        {
+          "reference_id": "ref-289-89",
+          "name": "淮南",
+          "entity_id": "p187",
+          "category": "valid_prefecture_geometry_gap",
+          "control_status": "administrative",
+          "area_degrees_squared": 0.0926644
+        },
+        {
+          "reference_id": "ref-289-71",
+          "name": "颍川",
+          "entity_id": "p021",
+          "category": "valid_prefecture_geometry_gap",
+          "control_status": "administrative",
+          "area_degrees_squared": 0.0868406
+        },
+        {
+          "reference_id": "ref-289-182",
+          "name": "沛国",
+          "entity_id": "p027",
+          "category": "valid_prefecture_geometry_gap",
+          "control_status": "administrative",
+          "area_degrees_squared": 0.0666218
+        },
+        {
+          "reference_id": "ref-289-33",
+          "name": "乐安",
+          "entity_id": "p144",
+          "category": "valid_prefecture_geometry_gap",
+          "control_status": "administrative",
+          "area_degrees_squared": 0.0520137
+        }
+      ]
+    },
+    "political_input_overlap_area_degrees_squared": 0.0,
+    "nominal_affiliate_overlap_jin_area_degrees_squared": 4.376288723,
+    "input_political_overlap_pairs": [
+      {
+        "regime": "西晋西域都护名义范围",
+        "kind": "nominal-affiliate",
+        "area_degrees_squared": 4.37628872,
+        "precedence": "main_jin"
+      }
+    ],
+    "political_precedence": "独立他国优先于晋；主晋优先于西域名义附属范围，附属范围不合入中国州郡",
+    "jin_area_degrees_squared": 402.9430495,
+    "initial_annual_prefecture_area_inside_jin_degrees_squared": 339.0816074,
+    "completed_area_degrees_squared": 63.8614421,
+    "filled_old_reference_gaps_degrees_squared": 12.9081248,
+    "added_beyond_old_reference_degrees_squared": 50.9533173,
+    "unfilled_jin_area_degrees_squared": 2e-09,
+    "outside_jin_prefecture_area_degrees_squared": 0.0,
+    "prefecture_overlap_area_degrees_squared": 0.0,
+    "stored_annual_overlap_removed_degrees_squared": 1.2507e-05,
+    "allocation_count": 1386,
+    "internally_used_county_cells": 333,
+    "methods": {
+      "dated_county_internal_cell": 333,
+      "active_prefecture_reference_compartment": 972,
+      "dated_county_parent_reference_seat_partition": 21,
+      "numerical_partition_residual": 12,
+      "same_dated_state_neighbor_fit": 42,
+      "nearest_active_prefecture_fit": 6
+    },
+    "prior_control_conflicts": [],
+    "annual_prefecture_parts_clipped": [
+      {
+        "entity_id": "p061",
+        "name": "遼東郡",
+        "area_outside_video_jin_degrees_squared": 1.4288387,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p091",
+        "name": "西海郡",
+        "area_outside_video_jin_degrees_squared": 1.4076042,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p126",
+        "name": "永昌郡",
+        "area_outside_video_jin_degrees_squared": 0.9711451,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p235",
+        "name": "南海郡",
+        "area_outside_video_jin_degrees_squared": 0.9301226,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p078",
+        "name": "隴西國",
+        "area_outside_video_jin_degrees_squared": 0.900926,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p118",
+        "name": "漢嘉郡",
+        "area_outside_video_jin_degrees_squared": 0.8196469,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p063",
+        "name": "玄菟郡",
+        "area_outside_video_jin_degrees_squared": 0.7724207,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p086",
+        "name": "武威郡",
+        "area_outside_video_jin_degrees_squared": 0.7663916,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p124",
+        "name": "興古郡",
+        "area_outside_video_jin_degrees_squared": 0.6779901,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p117",
+        "name": "汶山郡",
+        "area_outside_video_jin_degrees_squared": 0.6331991,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p087",
+        "name": "張掖郡",
+        "area_outside_video_jin_degrees_squared": 0.6294807,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p052",
+        "name": "廣寧郡",
+        "area_outside_video_jin_degrees_squared": 0.5775611,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p053",
+        "name": "代郡",
+        "area_outside_video_jin_degrees_squared": 0.548092,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p234",
+        "name": "日南郡",
+        "area_outside_video_jin_degrees_squared": 0.5323032,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p051",
+        "name": "上谷郡",
+        "area_outside_video_jin_degrees_squared": 0.5242669,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p083",
+        "name": "陰平郡",
+        "area_outside_video_jin_degrees_squared": 0.4970951,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p121",
+        "name": "越巂郡",
+        "area_outside_video_jin_degrees_squared": 0.4403401,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p229",
+        "name": "交趾郡",
+        "area_outside_video_jin_degrees_squared": 0.4279277,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p194",
+        "name": "會稽郡",
+        "area_outside_video_jin_degrees_squared": 0.4186492,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p090",
+        "name": "敦煌郡",
+        "area_outside_video_jin_degrees_squared": 0.4030326,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p062",
+        "name": "樂浪郡",
+        "area_outside_video_jin_degrees_squared": 0.3645292,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p123",
+        "name": "雲南郡",
+        "area_outside_video_jin_degrees_squared": 0.319511,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p155",
+        "name": "廣陵國",
+        "area_outside_video_jin_degrees_squared": 0.3178571,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p049",
+        "name": "燕國",
+        "area_outside_video_jin_degrees_squared": 0.2900752,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p191",
+        "name": "毗陵郡",
+        "area_outside_video_jin_degrees_squared": 0.2715387,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p041",
+        "name": "章武國",
+        "area_outside_video_jin_degrees_squared": 0.2604253,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p085",
+        "name": "西平郡",
+        "area_outside_video_jin_degrees_squared": 0.2546941,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p228",
+        "name": "合浦郡",
+        "area_outside_video_jin_degrees_squared": 0.2520521,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p192",
+        "name": "吳郡",
+        "area_outside_video_jin_degrees_squared": 0.2492237,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p047",
+        "name": "範陽國",
+        "area_outside_video_jin_degrees_squared": 0.245591,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p199",
+        "name": "晉安郡",
+        "area_outside_video_jin_degrees_squared": 0.2258845,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p089",
+        "name": "酒泉郡",
+        "area_outside_video_jin_degrees_squared": 0.2121077,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p146",
+        "name": "東萊郡",
+        "area_outside_video_jin_degrees_squared": 0.1955389,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p144",
+        "name": "樂安國",
+        "area_outside_video_jin_degrees_squared": 0.1757525,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p147",
+        "name": "長廣郡",
+        "area_outside_video_jin_degrees_squared": 0.1586177,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p038",
+        "name": "樂陵國",
+        "area_outside_video_jin_degrees_squared": 0.139978,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p232",
+        "name": "九真郡",
+        "area_outside_video_jin_degrees_squared": 0.1276219,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p233",
+        "name": "九德郡",
+        "area_outside_video_jin_degrees_squared": 0.1264199,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p064",
+        "name": "帶方郡",
+        "area_outside_video_jin_degrees_squared": 0.1227932,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p084",
+        "name": "金城郡",
+        "area_outside_video_jin_degrees_squared": 0.1224931,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p060",
+        "name": "昌黎郡",
+        "area_outside_video_jin_degrees_squared": 0.1180705,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p197",
+        "name": "臨海郡",
+        "area_outside_video_jin_degrees_squared": 0.1113645,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p239",
+        "name": "高涼郡",
+        "area_outside_video_jin_degrees_squared": 0.0615646,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p075",
+        "name": "安定郡",
+        "area_outside_video_jin_degrees_squared": 0.0578622,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p152",
+        "name": "東海郡",
+        "area_outside_video_jin_degrees_squared": 0.0516692,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p050",
+        "name": "北平郡",
+        "area_outside_video_jin_degrees_squared": 0.0450889,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p236",
+        "name": "蒼梧郡",
+        "area_outside_video_jin_degrees_squared": 0.0414493,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p069",
+        "name": "雁門郡",
+        "area_outside_video_jin_degrees_squared": 0.0368644,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p039",
+        "name": "勃海郡",
+        "area_outside_video_jin_degrees_squared": 0.0250815,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p142",
+        "name": "北海國",
+        "area_outside_video_jin_degrees_squared": 0.0224859,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p054",
+        "name": "遼西郡",
+        "area_outside_video_jin_degrees_squared": 0.0211201,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p154",
+        "name": "東莞郡",
+        "area_outside_video_jin_degrees_squared": 0.0006991,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      }
+    ],
+    "limitation": "面积为WGS84平方度，仅用于本次几何前后对照；归属拟合不是独立行政边界考证。"
+  },
+  "308": {
+    "year": 308,
+    "source_original_gap": {
+      "gap_compartments": 67,
+      "area_degrees_squared": 31.6996776,
+      "category_areas_degrees_squared": {
+        "valid_prefecture_geometry_gap": 11.8980247,
+        "no_current_prefecture_phase": 6.1306099,
+        "lost_or_non_jin": 4.7012208,
+        "unresolved_original": 8.9698222
+      },
+      "largest": [
+        {
+          "reference_id": "ref-308-131",
+          "name": "永昌",
+          "entity_id": "p133",
+          "category": "valid_prefecture_geometry_gap",
+          "control_status": "partial",
+          "area_degrees_squared": 7.9716128
+        },
+        {
+          "reference_id": "ref-308-209",
+          "name": "原图未命名区",
+          "entity_id": null,
+          "category": "unresolved_original",
+          "control_status": null,
+          "area_degrees_squared": 2.9854591
+        },
+        {
+          "reference_id": "ref-308-132",
+          "name": "汉嘉",
+          "entity_id": "p118",
+          "category": "no_current_prefecture_phase",
+          "control_status": "contested",
+          "area_degrees_squared": 2.6171048
+        },
+        {
+          "reference_id": "ref-308-213",
+          "name": "原图未命名区",
+          "entity_id": null,
+          "category": "unresolved_original",
+          "control_status": null,
+          "area_degrees_squared": 2.2531996
+        },
+        {
+          "reference_id": "ref-308-62",
+          "name": "平阳",
+          "entity_id": "p005",
+          "category": "lost_or_non_jin",
+          "control_status": "lost",
+          "area_degrees_squared": 2.2455265
+        },
+        {
+          "reference_id": "ref-308-114",
+          "name": "广汉",
+          "entity_id": "p103",
+          "category": "lost_or_non_jin",
+          "control_status": "lost",
+          "area_degrees_squared": 1.7131157
+        },
+        {
+          "reference_id": "ref-308-63",
+          "name": "西河",
+          "entity_id": "p066",
+          "category": "no_current_prefecture_phase",
+          "control_status": "partial",
+          "area_degrees_squared": 1.3748221
+        },
+        {
+          "reference_id": "ref-308-35",
+          "name": "雁门",
+          "entity_id": "p069",
+          "category": "no_current_prefecture_phase",
+          "control_status": "partial",
+          "area_degrees_squared": 1.2384728
+        },
+        {
+          "reference_id": "ref-308-164",
+          "name": "南康郡",
+          "entity_id": "p221",
+          "category": "valid_prefecture_geometry_gap",
+          "control_status": "administrative",
+          "area_degrees_squared": 1.1252273
+        },
+        {
+          "reference_id": "ref-308-42",
+          "name": "新兴",
+          "entity_id": "p070",
+          "category": "no_current_prefecture_phase",
+          "control_status": "partial",
+          "area_degrees_squared": 0.9002102
+        },
+        {
+          "reference_id": "ref-308-210",
+          "name": "原图未命名区",
+          "entity_id": null,
+          "category": "unresolved_original",
+          "control_status": null,
+          "area_degrees_squared": 0.8444525
+        },
+        {
+          "reference_id": "ref-308-196",
+          "name": "北海／高密",
+          "entity_id": null,
+          "category": "unresolved_original",
+          "control_status": null,
+          "area_degrees_squared": 0.836533
+        },
+        {
+          "reference_id": "ref-308-207",
+          "name": "原图未命名区",
+          "entity_id": null,
+          "category": "unresolved_original",
+          "control_status": null,
+          "area_degrees_squared": 0.8184771
+        },
+        {
+          "reference_id": "ref-308-212",
+          "name": "原图未命名区",
+          "entity_id": null,
+          "category": "unresolved_original",
+          "control_status": null,
+          "area_degrees_squared": 0.7529413
+        },
+        {
+          "reference_id": "ref-308-116",
+          "name": "蜀",
+          "entity_id": "p115",
+          "category": "lost_or_non_jin",
+          "control_status": "lost",
+          "area_degrees_squared": 0.7425786
+        },
+        {
+          "reference_id": "ref-308-119",
+          "name": "桂林",
+          "entity_id": "p238",
+          "category": "valid_prefecture_geometry_gap",
+          "control_status": "administrative",
+          "area_degrees_squared": 0.5750654
+        },
+        {
+          "reference_id": "ref-308-211",
+          "name": "原图未命名区",
+          "entity_id": null,
+          "category": "unresolved_original",
+          "control_status": null,
+          "area_degrees_squared": 0.4625179
+        },
+        {
+          "reference_id": "ref-308-156",
+          "name": "临海郡",
+          "entity_id": "p197",
+          "category": "valid_prefecture_geometry_gap",
+          "control_status": "administrative",
+          "area_degrees_squared": 0.4428796
+        },
+        {
+          "reference_id": "ref-308-136",
+          "name": "北地",
+          "entity_id": "p076",
+          "category": "valid_prefecture_geometry_gap",
+          "control_status": "administrative",
+          "area_degrees_squared": 0.3163741
+        },
+        {
+          "reference_id": "ref-308-188",
+          "name": "广陵郡",
+          "entity_id": "p155",
+          "category": "valid_prefecture_geometry_gap",
+          "control_status": "administrative",
+          "area_degrees_squared": 0.313914
+        }
+      ]
+    },
+    "political_input_overlap_area_degrees_squared": 0.0,
+    "nominal_affiliate_overlap_jin_area_degrees_squared": 3.304248305,
+    "input_political_overlap_pairs": [
+      {
+        "regime": "西晋西域都护名义范围",
+        "kind": "nominal-affiliate",
+        "area_degrees_squared": 3.30424831,
+        "precedence": "main_jin"
+      }
+    ],
+    "political_precedence": "独立他国优先于晋；主晋优先于西域名义附属范围，附属范围不合入中国州郡",
+    "jin_area_degrees_squared": 343.9916182,
+    "initial_annual_prefecture_area_inside_jin_degrees_squared": 299.6763306,
+    "completed_area_degrees_squared": 44.3152876,
+    "filled_old_reference_gaps_degrees_squared": 15.7862331,
+    "added_beyond_old_reference_degrees_squared": 28.5290545,
+    "unfilled_jin_area_degrees_squared": 0.0,
+    "outside_jin_prefecture_area_degrees_squared": 0.0,
+    "prefecture_overlap_area_degrees_squared": 0.0,
+    "stored_annual_overlap_removed_degrees_squared": 1.4689e-05,
+    "allocation_count": 1431,
+    "internally_used_county_cells": 331,
+    "methods": {
+      "dated_county_internal_cell": 331,
+      "active_prefecture_reference_compartment": 994,
+      "nearest_active_prefecture_fit": 29,
+      "numerical_partition_residual": 13,
+      "same_dated_state_neighbor_fit": 42,
+      "dated_county_parent_reference_seat_partition": 22
+    },
+    "prior_control_conflicts": [
+      {
+        "reference_prefecture_id": "p005",
+        "name": "平阳",
+        "prior_control_status": "lost",
+        "prior_reason": "308七月平阳守宋抽奔洛阳，十月刘渊以平阳为帝都。",
+        "area_inside_video_jin_degrees_squared": 0.0277755,
+        "explanation": "视频配准试验晋域与此前失陷规则相交；依用户要求着色补齐，但保留两源冲突，不据此宣称考证结论。"
+      },
+      {
+        "reference_prefecture_id": "p102",
+        "name": "梓潼",
+        "prior_control_status": "lost",
+        "prior_reason": "302春梓潼守张演弃仓而走，巴西郡丞举郡降，失陷从本年计算。",
+        "area_inside_video_jin_degrees_squared": 0.1880777,
+        "explanation": "视频配准试验晋域与此前失陷规则相交；依用户要求着色补齐，但保留两源冲突，不据此宣称考证结论。"
+      },
+      {
+        "reference_prefecture_id": "p103",
+        "name": "广汉",
+        "prior_control_status": "lost",
+        "prior_reason": "301十月李特围得广汉，年度行政phase末年含301，年末军事状态另覆写为失陷。",
+        "area_inside_video_jin_degrees_squared": 0.0799507,
+        "explanation": "视频配准试验晋域与此前失陷规则相交；依用户要求着色补齐，但保留两源冲突，不据此宣称考证结论。"
+      },
+      {
+        "reference_prefecture_id": "p108",
+        "name": "巴西",
+        "prior_control_status": "lost",
+        "prior_reason": "302春梓潼守张演弃仓而走，巴西郡丞举郡降，失陷从本年计算。",
+        "area_inside_video_jin_degrees_squared": 0.2352709,
+        "explanation": "视频配准试验晋域与此前失陷规则相交；依用户要求着色补齐，但保留两源冲突，不据此宣称考证结论。"
+      }
+    ],
+    "annual_prefecture_parts_clipped": [
+      {
+        "entity_id": "p109",
+        "name": "宕渠郡",
+        "area_outside_video_jin_degrees_squared": 4.2574937,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p049",
+        "name": "燕國",
+        "area_outside_video_jin_degrees_squared": 3.1045811,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p116",
+        "name": "犍為郡",
+        "area_outside_video_jin_degrees_squared": 2.4398139,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p133",
+        "name": "永昌郡",
+        "area_outside_video_jin_degrees_squared": 2.4283566,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p137",
+        "name": "益州郡",
+        "area_outside_video_jin_degrees_squared": 1.6967566,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p061",
+        "name": "遼東郡",
+        "area_outside_video_jin_degrees_squared": 1.4699374,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p131",
+        "name": "興古郡",
+        "area_outside_video_jin_degrees_squared": 1.4664063,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p091",
+        "name": "西海郡",
+        "area_outside_video_jin_degrees_squared": 1.3747515,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p097",
+        "name": "武都郡",
+        "area_outside_video_jin_degrees_squared": 1.2603223,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p060",
+        "name": "昌黎郡",
+        "area_outside_video_jin_degrees_squared": 1.252777,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p085",
+        "name": "西平郡",
+        "area_outside_video_jin_degrees_squared": 1.1076797,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p006",
+        "name": "河東郡",
+        "area_outside_video_jin_degrees_squared": 0.9997075,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p086",
+        "name": "武威郡",
+        "area_outside_video_jin_degrees_squared": 0.9833909,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p235",
+        "name": "南海郡",
+        "area_outside_video_jin_degrees_squared": 0.9426109,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p099",
+        "name": "狄道郡",
+        "area_outside_video_jin_degrees_squared": 0.8995035,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p063",
+        "name": "玄菟郡",
+        "area_outside_video_jin_degrees_squared": 0.7497896,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p098",
+        "name": "陰平郡",
+        "area_outside_video_jin_degrees_squared": 0.6169794,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p075",
+        "name": "安定郡",
+        "area_outside_video_jin_degrees_squared": 0.5977593,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p024",
+        "name": "汝陰郡",
+        "area_outside_video_jin_degrees_squared": 0.594593,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p052",
+        "name": "廣寧郡",
+        "area_outside_video_jin_degrees_squared": 0.5920986,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p053",
+        "name": "代郡",
+        "area_outside_video_jin_degrees_squared": 0.5872121,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p234",
+        "name": "日南郡",
+        "area_outside_video_jin_degrees_squared": 0.5421339,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p051",
+        "name": "上谷郡",
+        "area_outside_video_jin_degrees_squared": 0.5407507,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p087",
+        "name": "張掖郡",
+        "area_outside_video_jin_degrees_squared": 0.5147965,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p135",
+        "name": "越巂郡",
+        "area_outside_video_jin_degrees_squared": 0.5125401,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p229",
+        "name": "交趾郡",
+        "area_outside_video_jin_degrees_squared": 0.4372999,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p076",
+        "name": "北地郡",
+        "area_outside_video_jin_degrees_squared": 0.4371775,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p194",
+        "name": "會稽郡",
+        "area_outside_video_jin_degrees_squared": 0.424028,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p090",
+        "name": "敦煌郡",
+        "area_outside_video_jin_degrees_squared": 0.3875904,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p062",
+        "name": "樂浪郡",
+        "area_outside_video_jin_degrees_squared": 0.3745933,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p072",
+        "name": "馮翊郡",
+        "area_outside_video_jin_degrees_squared": 0.3706625,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p155",
+        "name": "廣陵郡",
+        "area_outside_video_jin_degrees_squared": 0.3407766,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p130",
+        "name": "雲南郡",
+        "area_outside_video_jin_degrees_squared": 0.3385131,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p191",
+        "name": "毗陵郡",
+        "area_outside_video_jin_degrees_squared": 0.2968397,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p047",
+        "name": "範陽國",
+        "area_outside_video_jin_degrees_squared": 0.2937961,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p127",
+        "name": "巴東郡",
+        "area_outside_video_jin_degrees_squared": 0.2900082,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p228",
+        "name": "合浦郡",
+        "area_outside_video_jin_degrees_squared": 0.2726666,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p041",
+        "name": "章武國",
+        "area_outside_video_jin_degrees_squared": 0.2604253,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p192",
+        "name": "吳郡",
+        "area_outside_video_jin_degrees_squared": 0.2539546,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p223",
+        "name": "晉安郡",
+        "area_outside_video_jin_degrees_squared": 0.2343029,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p089",
+        "name": "酒泉郡",
+        "area_outside_video_jin_degrees_squared": 0.2174359,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p101",
+        "name": "漢中郡",
+        "area_outside_video_jin_degrees_squared": 0.2121032,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p144",
+        "name": "樂安國",
+        "area_outside_video_jin_degrees_squared": 0.2040005,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p146",
+        "name": "東萊郡",
+        "area_outside_video_jin_degrees_squared": 0.2024491,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p132",
+        "name": "建寧郡",
+        "area_outside_video_jin_degrees_squared": 0.1955484,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p050",
+        "name": "北平郡",
+        "area_outside_video_jin_degrees_squared": 0.1945651,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p147",
+        "name": "長廣郡",
+        "area_outside_video_jin_degrees_squared": 0.1900625,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p038",
+        "name": "樂陵國",
+        "area_outside_video_jin_degrees_squared": 0.1413385,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p032",
+        "name": "趙國",
+        "area_outside_video_jin_degrees_squared": 0.1304931,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p232",
+        "name": "九真郡",
+        "area_outside_video_jin_degrees_squared": 0.1238195,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p084",
+        "name": "金城郡",
+        "area_outside_video_jin_degrees_squared": 0.1224931,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p064",
+        "name": "帶方郡",
+        "area_outside_video_jin_degrees_squared": 0.1209617,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p197",
+        "name": "臨海郡",
+        "area_outside_video_jin_degrees_squared": 0.1201839,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p129",
+        "name": "巴郡",
+        "area_outside_video_jin_degrees_squared": 0.1165428,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p233",
+        "name": "九德郡",
+        "area_outside_video_jin_degrees_squared": 0.1152905,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p033",
+        "name": "中丘郡",
+        "area_outside_video_jin_degrees_squared": 0.1079442,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p152",
+        "name": "東海國",
+        "area_outside_video_jin_degrees_squared": 0.0863206,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p239",
+        "name": "高涼郡",
+        "area_outside_video_jin_degrees_squared": 0.0610876,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p009",
+        "name": "廣平郡",
+        "area_outside_video_jin_degrees_squared": 0.057909,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p095",
+        "name": "天水郡",
+        "area_outside_video_jin_degrees_squared": 0.0559462,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p236",
+        "name": "蒼梧郡",
+        "area_outside_video_jin_degrees_squared": 0.0450883,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p077",
+        "name": "新平郡",
+        "area_outside_video_jin_degrees_squared": 0.0338662,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p034",
+        "name": "巨鹿國",
+        "area_outside_video_jin_degrees_squared": 0.0323221,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p001",
+        "name": "河南尹",
+        "area_outside_video_jin_degrees_squared": 0.0307135,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p008",
+        "name": "河內郡",
+        "area_outside_video_jin_degrees_squared": 0.0277795,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p039",
+        "name": "勃海郡",
+        "area_outside_video_jin_degrees_squared": 0.0250812,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p054",
+        "name": "遼西郡",
+        "area_outside_video_jin_degrees_squared": 0.0229906,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p142",
+        "name": "北海國",
+        "area_outside_video_jin_degrees_squared": 0.0224859,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p073",
+        "name": "秦國",
+        "area_outside_video_jin_degrees_squared": 0.0026625,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      },
+      {
+        "entity_id": "p154",
+        "name": "東莞郡",
+        "area_outside_video_jin_degrees_squared": 0.0006993,
+        "explanation": "此前年度郡面与视频晋域不重合；可能是控制范围差异、配准误差或原图示意差异。"
+      }
+    ],
+    "limitation": "面积为WGS84平方度，仅用于本次几何前后对照；归属拟合不是独立行政边界考证。"
+  }
+}

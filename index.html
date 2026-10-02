@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>漢魏六朝年末州郡縣表</title>
   <meta name="description" content="依據《中國行政區劃通史》逐年重建漢魏六朝年末州郡縣，並附封國資料。">
-  <link rel="stylesheet" href="style.css?v=20261002.1">
+  <link rel="stylesheet" href="style.css?v=20261002.2">
 </head>
 <body data-theme="metal">
   <header class="site-header">
@@ -54,11 +54,14 @@
       <div id="jinMapVersionControl" class="jin-map-version-control">
         <label for="jinMapVersion">西晉地圖版本</label>
         <select id="jinMapVersion" aria-label="西晉地圖版本">
-          <option value="annual">逐年復原（試驗版）</option>
+          <option value="annual">年度圖（289、308採視頻邊界測驗）</option>
+          <option value="video">史圖館年末原圖（266–316）</option>
+          <option value="prior">上輪年度圖（比較用）</option>
           <option value="legacy">修改前原版（289、308年）</option>
         </select>
         <a id="jinMapRestore" class="jin-map-version-toggle" href="?year=289&amp;jinmap=legacy&amp;returnyear=289" data-version="legacy">切換至修改前地圖</a>
-        <span>年度圖涵蓋266–316年；原版保留289、308年。返回年度圖會恢復先前年份；原版另選其他年份會開啟該年年度圖。</span>
+        <a id="jinMapCompare" href="jin-map-comparison.html?year=289">查看兩年新舊對照</a>
+        <span>年度圖涵蓋266–316年；本輪先測驗289、308年。可返回上輪年度圖或最初原版。</span>
       </div>
       <div class="legend" aria-label="圖例">
         <span><i class="legend-normal">郡縣</i> 宋體類字體</span>
@@ -113,6 +116,12 @@
       <p id="yearMapLegend" class="map-symbol-legend">◎ 州治　⊙ 郡治　● 縣治；範圍名較大且限於對應界內，治所名較小。封國文字及治所符號沿用正文當年封君色，未詳或顏色有歧義者為黑色。底圖填色表示政權，邊界線粗細表示層級；選中項以淡黃底與下劃線提示。</p>
       <p id="jinMapLegend" class="map-symbol-legend" hidden><span class="jin-boundary-key jin-province-key">州界</span>　<span class="jin-boundary-key jin-kingdom-key">國界</span>　<span class="jin-boundary-key jin-member-key">國內郡界</span>；彩色面表示郡級及以上封國。◎ 州治　⊙ 郡治　● 縣治；較大字為界內範圍名，小字為治所名。斜體、※表示封國資料推定，斜線填充或虛線表示範圍、歸屬推定。另列的小字封爵不表示占有整個行政縣。地圖研究與正文沿革有分歧時各自保留。</p>
       <p id="jinAnnualLegend" class="map-symbol-legend" hidden><span class="jin-boundary-key jin-reference-key">無色政區參考</span> 保留腹地失地、廢置或資料缺項區的州郡輪廓與治所；參考地名不表示本年仍屬西晉或仍存在。縣名及治所於超過700%顯示，縣域擬合只用於生成郡界，不顯示縣面、縣界。橙色斜線表示局部控制、爭奪或名義建置；懸停區域可查看來源與參考年代。</p>
+      <p id="jinVideoLegend" class="map-symbol-legend" hidden><span class="jin-boundary-key jin-regime-key">政權界</span> 取自史圖館本年年末最後清晰地圖。晉境底色與州郡範圍保持連續；白色為其它政權，保留其名稱及邊界。補齊郡界含推定段，懸停可查看歸屬依據；縣域只在內部用於擬合。</p>
+      <details id="jinVideoSource" class="jin-video-source" hidden>
+        <summary id="jinVideoSourceTitle">查看本年史圖館年末原幀</summary>
+        <p id="jinVideoSourceNote"></p>
+        <img id="jinVideoSourceImage" alt="史圖館本年年末地圖原幀" loading="lazy">
+      </details>
       <div id="mapBoundaryResearch" class="map-symbol-legend" hidden></div>
       <div id="yearMapViewport" class="year-map-viewport" tabindex="0" role="region" aria-label="地圖瀏覽區" aria-describedby="yearMapZoomHelp">
         <div id="yearMapStage" class="year-map-stage">
@@ -188,8 +197,9 @@
   <script src="data/jin-map-snapshots.js?v=20261001.2"></script>
   <script src="jin-map-model.js?v=20261001.5"></script>
   <script src="data/jin-map-label-anchors.js?v=20261001.5"></script>
-  <script src="jin-map-view.js?v=20261002.1"></script>
-  <script src="jin-annual-map-model.js?v=20261002.1"></script>
+  <script src="jin-map-view.js?v=20261002.2"></script>
+  <script src="jin-annual-map-model.js?v=20261002.2"></script>
+  <script src="data/jin-video-frames.js?v=20261002.2"></script>
   <script src="data/liang-data.js?v=20260927.1"></script>
   <script src="data/liang-governors.js?v=20260927.1"></script>
   <script src="data/liang-county-overlay.js?v=20260927.1"></script>
@@ -226,6 +236,6 @@
   <script src="data/chen-qiao-prefaces.js?v=20260912.3"></script>
   <script src="source-annotations.js?v=20260912.3"></script>
   <script src="governor-history.js?v=20260912.1"></script>
-  <script src="app.js?v=20261002.1"></script>
+  <script src="app.js?v=20261002.2"></script>
 </body>
 </html>
