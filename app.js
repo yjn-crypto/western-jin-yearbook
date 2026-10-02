@@ -71,8 +71,20 @@
   const requestedYear = Number(initialParams.get('year')) || null;
   const requestedState = initialParams.get('state') || '';
   if(jinMapVersion)jinMapVersion.value=initialParams.get('jinmap')==='legacy'?'legacy':'annual';
+  let activeJinMapVersion=jinMapVersion?.value||'annual';
+  let jinAnnualReturnYear=validJinAnnualYear(initialParams.get('returnyear'))
+    ||validJinAnnualYear(requestedYear)||DYNASTIES['western-jin'].defaultYear;
   const EXTRA_GOVERNOR_FILTER_PREFIX = 'governor-extra:';
   let initialLocationApplied = false;
+
+  function validJinAnnualYear(value) {
+    const year=Number(value),[start,end]=DYNASTIES['western-jin'].years;
+    return Number.isInteger(year)&&year>=start&&year<=end?year:null;
+  }
+
+  function nearestJinLegacyYear(year) {
+    return [289,308].reduce((nearest,candidate)=>Math.abs(candidate-year)<Math.abs(nearest-year)?candidate:nearest,289);
+  }
 
   function formatYearLabel(year) {
     if (currentDynasty.key === 'chen') {
@@ -2260,7 +2272,7 @@
     const base=`<svg xmlns="http://www.w3.org/2000/svg" width="${map.width}" height="${map.height}"><rect width="100%" height="100%" fill="#f7f3e9"/></svg>`;
     yearMapImage.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(base);yearMapImage.alt=`${year}年西晉封國地圖底色`;
     $('yearMapTitle').textContent=map.title||`${year}年西晉州郡與封國`;
-    $('yearMapZoomHelp').textContent='100%–1000%；低於300%顯示州名，300%–700%顯示州與郡國範圍名，超過700%加上縣名及治所名。小字封爵另列。';
+    $('yearMapZoomHelp').textContent='100%–1000%；低於300%顯示州名，300%–700%顯示州與郡國範圍名，超過700%加上縣名及治所名；不顯示縣域面或縣界。小字封爵另列。';
     yearMapNote.textContent=map.note||'CHGIS與原圖矢量成果接合；多郡王國合併著色，內部郡界淡化。文字位置不是郡治。';
     if($('jinAnnualLegend'))$('jinAnnualLegend').hidden=!map.trial;
     for(const link of [yearMapUhd,yearMapCsv,yearMapGeoJson]) {
@@ -2288,7 +2300,7 @@
         for(const control of [yearMapExport,yearMapCsv,yearMapGeoJson,yearMapUhd,yearMapLoadUhd])control.hidden=true;
         yearMapImage.removeAttribute('src');yearMapImage.alt=`正在載入${year}年西晉年度試驗圖`;
         $('yearMapTitle').textContent=`${year}年西晉年度復原 · 試驗版`;
-        $('yearMapStatus').textContent='正在載入本年政區、疆域與封國…';yearMapNote.textContent='縣界為縣治約束擬合；可在上方切回修改前原版。';
+        $('yearMapStatus').textContent='正在載入本年政區、疆域與封國…';yearMapNote.textContent='縣域擬合只用於生成郡界，不在地圖上展示；地圖版本可雙向切換。';
         $('mapBoundaryResearch').hidden=true;$('liangMapMissing').hidden=true;$('liangMapReference555').hidden=true;
         const load=url=>{
           if(!jinMapCache.has(url))jinMapCache.set(url,fetch(url).then(response=>{
@@ -2299,12 +2311,16 @@
         load(window.JIN_ANNUAL_MAP_MODEL.DATA_URL).then(async bundle=>{
           const entry=bundle.years?.[String(year)];
           if(!entry)throw new Error(`No annual geography for ${year}`);
-          const [slice,shards]=await Promise.all([
+          const [slice,shards,reference]=await Promise.all([
             entry.features?entry:load(entry.data_url+'?v=20261001.6'),
-            Promise.all((entry.geometry_urls||[]).map(url=>load(url+'?v=20261001.6')))
+            Promise.all((entry.geometry_urls||[]).map(url=>load(url+'?v=20261001.6'))),
+            window.JIN_ANNUAL_MAP_MODEL.REFERENCE_URL?load(window.JIN_ANNUAL_MAP_MODEL.REFERENCE_URL).then(async reference=>{
+              const referenceShards=await Promise.all((reference.years?.[String(year)]?.geometry_urls||[]).map(url=>load(url+'?v=20261002.1')));
+              return {...reference,geometries:Object.assign({},reference.geometries,...referenceShards.map(shard=>shard.geometries))};
+            }):null
           ]);
           const annualBundle={...bundle,geometries:Object.assign({},bundle.geometries,...shards.map(shard=>shard.geometries))};
-          if(request===jinMapRequest)renderJinSnapshotMap(year,snapshot,window.JIN_ANNUAL_MAP_MODEL.hydrate(annualBundle,year,slice));
+          if(request===jinMapRequest)renderJinSnapshotMap(year,snapshot,window.JIN_ANNUAL_MAP_MODEL.hydrate(annualBundle,year,slice,reference));
         }).catch(error=>{
           if(request===jinMapRequest){$('yearMapStatus').textContent='年度試驗圖載入失敗，請重選年份重試，或切回修改前原版。';console.error(error);}
         });return;
@@ -2521,6 +2537,7 @@
     if(liangReviewCount)liangReviewCount.textContent=window.LIANG_COUNTY_REVIEWED?.meta?.manual_records??0;
     searchInput.value='';changedOnly.checked=false;populateYears();
     if(!initialLocationApplied&&requestedDynasty===currentDynasty.key&&requestedYear&&[...yearSelect.options].some((option)=>Number(option.value)===requestedYear))yearSelect.value=String(requestedYear);
+    if(currentDynasty.key==='western-jin'&&jinMapVersion?.value==='legacy'&&![289,308].includes(Number(yearSelect.value)))yearSelect.value=String(nearestJinLegacyYear(Number(yearSelect.value)));
     populateStates(Number(yearSelect.value));
     if(!initialLocationApplied&&requestedDynasty===currentDynasty.key&&requestedState){const option=[...stateSelect.options].find((item)=>normalizeName(item.textContent)===normalizeName(requestedState));if(option)stateSelect.value=option.value;}
     initialLocationApplied=true;syncMainLocation();updateMethod();render();
@@ -2536,14 +2553,45 @@
     }else{
       url.searchParams.delete('year');url.searchParams.delete('state');
     }
-    if(currentDynasty.key==='western-jin'&&jinMapVersion?.value==='legacy')url.searchParams.set('jinmap','legacy');else url.searchParams.delete('jinmap');
-    if($('jinMapRestore'))$('jinMapRestore').href=`?year=${[289,308].includes(Number(yearSelect.value))?yearSelect.value:289}&jinmap=legacy`;
+    if(currentDynasty.key==='western-jin'){
+      const legacy=jinMapVersion?.value==='legacy';
+      if(legacy){url.searchParams.set('jinmap','legacy');url.searchParams.set('returnyear',String(jinAnnualReturnYear));}
+      else{jinAnnualReturnYear=validJinAnnualYear(yearSelect.value)||jinAnnualReturnYear;url.searchParams.delete('jinmap');url.searchParams.delete('returnyear');}
+      const restore=$('jinMapRestore');
+      if(restore){
+        const target=new URL(url),targetYear=legacy?jinAnnualReturnYear:nearestJinLegacyYear(Number(yearSelect.value));
+        target.searchParams.set('year',String(targetYear));
+        if(targetYear!==Number(yearSelect.value))target.searchParams.delete('state');
+        if(legacy){target.searchParams.delete('jinmap');target.searchParams.delete('returnyear');}
+        else{target.searchParams.set('jinmap','legacy');target.searchParams.set('returnyear',String(jinAnnualReturnYear));}
+        restore.href=target.href;
+        restore.textContent=legacy?`返回年度地圖（${jinAnnualReturnYear}年）`:'切換至修改前地圖';
+        restore.dataset.version=legacy?'annual':'legacy';
+      }
+    }else{url.searchParams.delete('jinmap');url.searchParams.delete('returnyear');}
     history.replaceState(null,'',url);
   }
 
+  function changeJinMapVersion(version) {
+    if(currentDynasty.key!=='western-jin'||!jinMapVersion)return;
+    const year=Number(yearSelect.value);
+    if(activeJinMapVersion==='annual')jinAnnualReturnYear=validJinAnnualYear(year)||jinAnnualReturnYear;
+    const targetYear=version==='legacy'?nearestJinLegacyYear(year):activeJinMapVersion==='legacy'?jinAnnualReturnYear:year;
+    jinMapVersion.value=version;activeJinMapVersion=version;
+    if(targetYear!==year){yearSelect.value=String(targetYear);populateStates(targetYear);}
+    clearMapLinkHighlights();syncMainLocation();render();
+  }
+
   dynastySelect.addEventListener('change',switchDynasty);
-  jinMapVersion?.addEventListener('change',()=>{clearMapLinkHighlights();syncMainLocation();render();});
-  yearSelect.addEventListener('change',()=>{populateStates(Number(yearSelect.value));syncMainLocation();render();});
+  jinMapVersion?.addEventListener('change',()=>changeJinMapVersion(jinMapVersion.value));
+  $('jinMapRestore')?.addEventListener('click',(event)=>{
+    if(event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey)return;
+    event.preventDefault();changeJinMapVersion(event.currentTarget.dataset.version);
+  });
+  yearSelect.addEventListener('change',()=>{
+    if(currentDynasty.key==='western-jin'&&jinMapVersion?.value==='legacy'&&![289,308].includes(Number(yearSelect.value))){jinMapVersion.value='annual';activeJinMapVersion='annual';}
+    populateStates(Number(yearSelect.value));syncMainLocation();render();
+  });
   stateSelect.addEventListener('change',()=>{syncMainLocation();render();});searchInput.addEventListener('input',render);changedOnly.addEventListener('change',render);
   document.addEventListener('click',(event)=>{
     const c=event.target.closest('[data-citation]');if(c){openCitation(c.dataset.citation);return;}

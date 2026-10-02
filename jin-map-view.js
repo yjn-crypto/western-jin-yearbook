@@ -13,6 +13,7 @@
     return '';
   }
   function order(layer){
+    if(/^reference_/.test(layer))return -1;
     if(/territory/.test(layer))return 0;
     if(/province.*area/.test(layer))return 1;
     if(/prefecture.*area/.test(layer))return 2;
@@ -74,12 +75,12 @@
     const countyPointLabels=pointLabels.filter(f=>f.properties.level==='county');
     const countyLabelsBySeat=new Map(countySeats.map(seat=>[seat,countyPointLabels.filter(label=>matchesCountySeat(label,seat))]));
     const rangeForPoint=new Map(),prefectureRanges=new Map();
-    for(const area of map.geojson.features.filter(f=>f.properties?.layer==='prefecture_areas')){
+    for(const area of map.geojson.features.filter(f=>['prefecture_areas','reference_prefecture_areas'].includes(f.properties?.layer))){
       const p=area.properties,base=prefectureName(p.base_name||p.name);
-      const named=pointLabels.filter(f=>f.properties.level==='prefecture'&&prefectureName(f.properties.name)===base);
+      const named=p.is_reference?[]:pointLabels.filter(f=>f.properties.level==='prefecture'&&prefectureName(f.properties.name)===base);
       const related=named.length===1?named[0]:null;
       const rp=related?.properties||{},entityId=p.entity_id||rp.entity_id||null;
-      const mapKey=entityId?`entity:${entityId}`:`jin:prefecture-area:${base}`;
+      const mapKey=entityId?`entity:${entityId}`:`jin:${p.is_reference?'reference-':''}prefecture-area:${p.is_reference?(p.id||base):base}`;
       const candidates=labelAnchors.filter(anchor=>prefectureName(anchor.name)===base);
       // Original text is preferred only inside this year's matched polygon.
       // A CHGIS seat coordinate remains a seat and is never relabelled as an
@@ -101,6 +102,9 @@
     for(const f of [...map.geojson.features].sort((a,b)=>order(a.properties?.layer||'')-order(b.properties?.layer||''))){
       const p=f.properties||{},g=f.geometry;if(!g)continue;
       const layer=p.layer||'',rawLevel=p.level||(/province|state/.test(layer)?'state':/county/.test(layer)?'county':'prefecture');
+      // County cells constrain the fitted prefecture geometry internally.
+      // They are deliberately absent from the public map at every zoom.
+      if(/county.*area|county.*bound/.test(layer))continue;
       const level=rawLevel==='fief'?(p.display_level||(/^p/.test(p.entity_id||'')?'prefecture':'county')):rawLevel;
       const name=p.display_name||p.name||'',key=p.entity_id?`entity:${p.entity_id}`:`jin:${layer}:${p.id||features.length}`;
       if(g.type==='Point'){
@@ -109,8 +113,8 @@
         const isSeat=!isText&&/seat|治所|county_seats|prefecture_seats|state_seats/.test(role+' '+layer);
         // Unclassified points can label geography but must not masquerade as seats.
         if(isSeat){
-          const symbol=seatSymbol(x,y,level,p.fief_id?palette(p.fief_id):null);
-          symbol.appendChild(svgNode('title',{},`${name}：${p.source||'來源未載'}；${map.trial?(p.coordinate_time||'治所參考位置'):role}${p.control_reason?`；${p.control_reason}`:''}`));
+          const symbol=seatSymbol(x,y,level,p.is_reference?'#787b7d':p.fief_id?palette(p.fief_id):null);
+          symbol.appendChild(svgNode('title',{},`${name}：${p.source||'來源未載'}；${map.trial?(p.coordinate_time||'治所參考位置'):role}${p.is_reference?`；無色參考層，參考年代${p.reference_year||'未詳'}；${p.reference_reason||''}`:''}${p.control_reason?`；${p.control_reason}`:''}`));
           container.appendChild(symbol);
         }
         features.push({entity_id:p.entity_id||null,x,y,level,label:name,mapKey:key,coordinate_role:role,source:p.source});
@@ -129,39 +133,39 @@
           labelIdentity:rawLevel!=='fief'&&level==='county'&&sourceId?`jin-county:${sourceId}`:p.fief_id?`jin-fief:${p.fief_id}`:null,
           seatSourceId:rawLevel!=='fief'&&level==='county'?sourceId:null,
           fontSize:rawLevel==='fief'?Number(p.font_size||8.6):level==='state'?22.5:level==='prefecture'?11.5:8.6,
-          priority:isText?700:level==='state'?560:level==='prefecture'?500:400,
-          fief:Boolean(p.fief_id),color:p.color||(p.fief_id?palette(p.fief_id):null),
+          priority:p.is_reference?250:isText?700:level==='state'?560:level==='prefecture'?500:400,
+          fief:Boolean(p.fief_id),color:p.is_reference?'#787b7d':p.color||(p.fief_id?palette(p.fief_id):null),
           isTextAnchor:isText&&!p.is_seat,smallAnnotation:rawLevel==='fief',
           uncertain:p.mapping_status==='uncertain'||Boolean(p.inferred)||(map.trial&&Boolean(p.time_uncertain))});
         continue;
       }
       const d=paths(g,project);if(!d)continue;
       const polygon=/Polygon/.test(g.type),style={d,fill:'none',stroke:'#6d624d','stroke-width':.9,'fill-rule':'evenodd','vector-effect':'non-scaling-stroke'};
-      if(/territory/.test(layer))Object.assign(style,{fill:'#ded3a8',stroke:'#6c6043','stroke-width':1.8});
+      if(p.is_reference)Object.assign(style,{class:'jin-reference-boundary',fill:'none',stroke:/province|state/.test(layer)?'#686d73':'#92918b','stroke-width':/province|state/.test(layer)?2.6:.85,'stroke-opacity':1});
+      else if(/territory/.test(layer))Object.assign(style,{fill:'#ded3a8',stroke:'#6c6043','stroke-width':1.8});
       else if(/kingdom.*area/.test(layer))Object.assign(style,{fill:p.color||palette(p.fief_id||p.name),'fill-opacity':.62,stroke:'#915c32','stroke-width':2.2,'stroke-dasharray':p.has_inference?'6 3':'none'});
       else if(/member.*bound|branch.*bound/.test(layer))Object.assign(style,{stroke:'#766854','stroke-opacity':.24,'stroke-width':.65});
       else if(/province.*bound|state.*bound/.test(layer))Object.assign(style,{class:'jin-province-boundary',stroke:'#292b32','stroke-width':3.2,'stroke-opacity':1});
       else if(/province.*area|state.*area/.test(layer))Object.assign(style,{class:'jin-province-area',fill:'#e2e5d2',stroke:explicitStateBoundaries?'none':'#292b32','stroke-width':3.2,'stroke-opacity':1});
-      else if(/county.*area|county.*bound/.test(layer))Object.assign(style,{class:'jin-county-boundary',fill:'none',stroke:'#a69d89','stroke-width':.65,'stroke-dasharray':'2 2','data-boundary-level':'county'});
       else if(layer==='prefecture_boundaries'&&map.trial)Object.assign(style,{'data-boundary-level':'prefecture'});
       else if(layer==='prefecture_areas'&&explicitPrefBoundaries)style.stroke='none';
       else if(layer==='unresolved_areas')Object.assign(style,{fill:`url(#jin-uncertain-${map.year})`,stroke:'none'});
       else if(/coast|river/.test(layer))Object.assign(style,{stroke:'#829aa6','stroke-width':.7});
       if(map.trial&&p.is_context&&/province.*bound/.test(layer))style['stroke-dasharray']='5 4';
-      if(polygon&&!/kingdom|territory|province|state/.test(layer))style['stroke-opacity']=.65;
+      if(!p.is_reference&&polygon&&!/kingdom|territory|province|state/.test(layer))style['stroke-opacity']=.65;
       const path=svgNode('path',style);
       if(p.entity_id){path.dataset.entityId=p.entity_id;path.dataset.mapKey=key;path.dataset.mapLevel=level;path.setAttribute('tabindex','0');path.setAttribute('role','button');}
       const evidence=Array.isArray(p.notes)?p.notes.join('；'):p.notes||'';
-      path.appendChild(svgNode('title',{},`${name}${p.holder?`；${p.holder}`:''}；${p.source||''}${p.book_page?`；原書第${p.book_page}頁`:''}${p.member_role==='branch'?'；王國支郡':''}${p.boundary_evidence?`；${p.boundary_evidence}`:''}${p.explanation?`；${p.explanation}`:''}${p.control_reason?`；${p.control_reason}`:''}${evidence?`；${evidence}`:''}${p.time_uncertain?'；年代待考':''}`));
+      path.appendChild(svgNode('title',{},`${name}${p.holder?`；${p.holder}`:''}；${p.source||''}${p.is_reference?`；無色參考層，參考年代${p.reference_year||'未詳'}；${p.reference_reason||''}`:''}${p.book_page?`；原書第${p.book_page}頁`:''}${p.member_role==='branch'?'；王國支郡':''}${p.boundary_evidence?`；${p.boundary_evidence}`:''}${p.explanation?`；${p.explanation}`:''}${p.control_reason?`；${p.control_reason}`:''}${evidence?`；${evidence}`:''}${p.time_uncertain?'；年代待考':''}`));
       container.appendChild(path);
       if(map.trial&&layer==='prefecture_areas'&&['contested','partial','uncertain','nominal'].includes(p.control_status)){
         controlOverlays.push(svgNode('path',{d,fill:`url(#jin-control-${map.year})`,stroke:'none','pointer-events':'none'}));
       }
-      if(layer==='province_areas'&&name){
+      if(['province_areas','reference_province_areas'].includes(layer)&&name){
         const point=interiorPoint(g);
         if(point){const [x,y]=project(point);
           labels.push({text:name,sourceName:p.name||name,x,y,level:'state',entityId:p.entity_id||null,mapKey:key,
-            kind:'state-area',fontSize:24,priority:1000,isTextAnchor:true,areaGuard:areaGuard?.(d),areaId:p.entity_id||key});
+            kind:'state-area',fontSize:24,priority:p.is_reference?600:1000,color:p.is_reference?'#787b7d':null,isTextAnchor:true,areaGuard:areaGuard?.(d),areaId:p.entity_id||key});
           features.push({entity_id:p.entity_id||null,x,y,level:'state',label:name,mapKey:key,coordinate_role:'derived_area_label_not_seat',source:p.source});
         }
       }
@@ -173,8 +177,8 @@
         const inferred=Boolean(rp.inferred)||p.membership_evidence==='inferred'||(map.trial&&Boolean(p.time_uncertain));
         const fiefId=p.fief_id||rp.fief_id;
         labels.push({text:text+(inferred?'※':''),sourceName:p.name||name,x,y,level:'prefecture',entityId:range.entityId,mapKey:range.mapKey,mapGroup:range.mapKey,
-          kind:'prefecture-area',fontSize:16.5,priority:900,isTextAnchor:true,areaGuard:areaGuard?.(d),areaId:range.mapKey,allowAreaFontShrink:true,
-          labelIdentity:fiefId?`jin-fief:${fiefId}`:null,fief:Boolean(fiefId),color:fiefId?'#493b2a':null,uncertain:inferred,
+          kind:'prefecture-area',fontSize:16.5,priority:p.is_reference?300:900,isTextAnchor:true,areaGuard:areaGuard?.(d),areaId:range.mapKey,allowAreaFontShrink:true,
+          labelIdentity:fiefId?`jin-fief:${fiefId}`:null,fief:Boolean(fiefId),color:p.is_reference?'#787b7d':fiefId?'#493b2a':null,uncertain:inferred,
           coordinateRole:range.original?'image_label_anchor_not_seat':'derived_area_label_not_seat',originalAnchorId:range.original?.id||null});
         features.push({entity_id:range.entityId,x,y,level:'prefecture',label:text,mapKey:range.mapKey,coordinate_role:range.original?'image_label_anchor_not_seat':'derived_area_label_not_seat',source:range.original?'原图已确认郡名文字锚点':p.source});
       }
