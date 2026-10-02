@@ -247,7 +247,7 @@ def build(args):
                            'contact_types': dict(sorted(collections.Counter(edge['relation'] for edge in record['contacts']).items()))})
         if conflicts:
             raise AssertionError(f'{year}: same-colour adjacent fiefs: {conflicts}')
-    result = {'version': '20261002.3', 'colors': colours,
+    result = {'version': '20261002.4', 'colors': colours,
               'palette': PALETTE[:max(assignment.values(), default=-1)+1],
               'names': {fid: sorted(values) for fid, values in sorted(names.items())},
               'meta': {'years': args.years, 'source': args.source,
@@ -272,7 +272,7 @@ def build(args):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--source', choices=['original', 'completed'], default='completed')
-    parser.add_argument('--input-dir', type=Path, default=ROOT/'work/jin-video/annual-final-gis')
+    parser.add_argument('--input-dir', type=Path, default=ROOT/'work/jin-video/source-priority-final-gis')
     parser.add_argument('--years', type=int, nargs='+', default=list(range(266,317)))
     parser.add_argument('--tolerance', type=float, default=CONTACT_TOLERANCE)
     parser.add_argument('--output', type=Path, default=ROOT/'data/jin-fief-colors.json')

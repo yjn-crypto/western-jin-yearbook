@@ -1,6 +1,9 @@
 /* Check this publication's data loading, state-line rendering and colour contract. */
 const fs=require('fs'),path=require('path'),assert=require('assert/strict'),{gunzipSync}=require('zlib');
 const root=path.resolve(__dirname,'..'),model=require('../jin-annual-map-model.js'),view=require('../jin-map-view.js');
+const sourcePriority=process.argv.includes('--source-priority');
+const publicDirectory=sourcePriority?'source-priority-annual':'video-annual';
+const annualUrls=sourcePriority?model.SOURCE_PRIORITY_URLS:model.VIDEO_TRIAL_URLS;
 const vm=require('vm'),yearbookScope={window:{}};
 vm.runInNewContext(fs.readFileSync(path.join(root,'data/jin-data.js'),'utf8'),yearbookScope);
 const yearbook=JSON.parse(JSON.stringify(yearbookScope.window.JIN_DATA));
@@ -11,13 +14,13 @@ const prefectures=new Map(yearbook.states.flatMap(state=>state.prefectures.map(p
 const cache=new Map(),read=url=>{const file=url.split('?')[0];if(!cache.has(file))cache.set(file,JSON.parse(fs.readFileSync(path.join(root,file))));return cache.get(file);};
 global.JIN_FIEF_COLORS=read('data/jin-fief-colors.json');
 global.JIN_VIDEO_FRAMES=read('data/jin-video-frames.json');
-const land=read(model.VIDEO_LAND_URL),graph=read('data/jin-maps/video-annual/graph.json');
+const land=read(model.VIDEO_LAND_URL),graph=read(`data/jin-maps/${publicDirectory}/graph.json`);
 assert.deepEqual(Object.keys(graph.years).map(Number),Array.from({length:51},(_,i)=>266+i));
 assert(global.JIN_FIEF_COLORS.validation.years.length===51,'Colour validation covers all new years');
 assert(global.JIN_FIEF_COLORS.validation.years.every(y=>y.conflict_count===0),'No adjacent fiefs share a colour');
 for(const file of ['graph.json',...Array.from({length:51},(_,i)=>`${266+i}.json`),...graph.geometry_shards.map(s=>path.basename(s.url))]){
- const plain=fs.readFileSync(path.join(root,'data/jin-maps/video-annual',file));
- const compressed=fs.readFileSync(path.join(root,'data/jin-maps/video-annual',file+'.gz'));
+ const plain=fs.readFileSync(path.join(root,'data/jin-maps',publicDirectory,file));
+ const compressed=fs.readFileSync(path.join(root,'data/jin-maps',publicDirectory,file+'.gz'));
  assert(gunzipSync(compressed).equals(plain),'Compressed map data equals its fallback sibling: '+file);
 }
 class Node{
@@ -26,9 +29,17 @@ class Node{
 }
 const all=node=>[node,...node.children.flatMap(all)],results=[];
 for(let year=266;year<=316;year++){
- const sliced=read(model.VIDEO_TRIAL_URLS[year]),geometries=Object.assign({},sliced.geometries,...sliced.geometry_urls.map(url=>read(url).geometries));
+ const sliced=read(annualUrls[year]),geometries=Object.assign({},sliced.geometries,...sliced.geometry_urls.map(url=>read(url).geometries));
  assert.equal(sliced.year,year,'No nearest-year substitution');assert(sliced.features.every(f=>f.geometry||geometries[f.geometry_id]));
- const map=model.hydrateVideoTrial({...sliced,geometries},year,land,{annualVideo:true});
+ const map=model.hydrateVideoTrial({...sliced,geometries},year,land,{annualVideo:true,sourcePriority});
+ if(sourcePriority){
+  assert(map.sourcePriority,'Default map uses original-image source policy');
+  assert(!map.geojson.features.some(f=>f.properties.layer==='land_background'),'No worldwide video background in default maps');
+  const outer=map.geojson.features.filter(f=>f.properties.layer==='original_territory_boundary');
+  assert.equal(outer.length,1,'One original outer boundary, with no second video coast');
+  assert(outer.every(f=>['LineString','MultiLineString'].includes(f.geometry.type)),'Original outer boundary is a line');
+  assert(map.geojson.features.filter(f=>f.properties.layer==='regime_boundaries').every(f=>['LineString','MultiLineString'].includes(f.geometry.type)),'Only shared internal political boundary lines');
+ }
  const activeAreas=map.geojson.features.filter(f=>f.properties.layer==='prefecture_areas'&&f.properties.entity_id&&!f.properties.is_context);
  for(const area of activeAreas){
   const record=prefectures.get(area.properties.entity_id);

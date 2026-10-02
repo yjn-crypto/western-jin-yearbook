@@ -70,11 +70,11 @@
   const requestedDynasty = initialParams.get('dynasty') || 'western-jin';
   const requestedYear = Number(initialParams.get('year')) || null;
   const requestedState = initialParams.get('state') || '';
-  if(jinMapVersion)jinMapVersion.value=['legacy','prior','video'].includes(initialParams.get('jinmap'))?initialParams.get('jinmap'):'annual';
+  if(jinMapVersion)jinMapVersion.value=['legacy','prior','video-prior','video'].includes(initialParams.get('jinmap'))?initialParams.get('jinmap'):'annual';
   let activeJinMapVersion=jinMapVersion?.value||'annual';
   let jinAnnualReturnYear=validJinAnnualYear(initialParams.get('returnyear'))
     ||validJinAnnualYear(requestedYear)||DYNASTIES['western-jin'].defaultYear;
-  let jinAnnualReturnVersion=['prior','video'].includes(initialParams.get('returnmap'))?initialParams.get('returnmap'):'annual';
+  let jinAnnualReturnVersion=['prior','video-prior','video'].includes(initialParams.get('returnmap'))?initialParams.get('returnmap'):'annual';
   const EXTRA_GOVERNOR_FILTER_PREFIX = 'governor-extra:';
   let initialLocationApplied = false;
 
@@ -2271,22 +2271,22 @@
     yearMapStage.style.paddingBottom='0px';
     yearMapOverlay.setAttribute('viewBox',`0 0 ${map.width} ${map.height}`);
     yearMapOverlay.setAttribute('aria-label',`${year}年西晉州郡封國圖`);
-    const base=`<svg xmlns="http://www.w3.org/2000/svg" width="${map.width}" height="${map.height}"><rect width="100%" height="100%" fill="${map.videoTrial?'#dce9f4':'#f7f3e9'}"/></svg>`;
+    const base=`<svg xmlns="http://www.w3.org/2000/svg" width="${map.width}" height="${map.height}"><rect width="100%" height="100%" fill="${map.videoTrial&&!map.sourcePriority?'#dce9f4':'#f7f3e9'}"/></svg>`;
     yearMapImage.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(base);yearMapImage.alt=`${year}年西晉封國地圖底色`;
     $('yearMapTitle').textContent=map.title||`${year}年西晉州郡與封國`;
     $('yearMapZoomHelp').textContent='100%–1000%；低於300%顯示州名，300%–700%顯示州與郡國範圍名，超過700%加上縣名及治所名；不顯示縣域面或縣界。小字封爵另列。';
     yearMapNote.textContent=map.note||'CHGIS與原圖矢量成果接合；多郡王國合併著色，內部郡界淡化。文字位置不是郡治。';
     if($('jinAnnualLegend'))$('jinAnnualLegend').hidden=!map.trial||Boolean(map.videoTrial);
     if($('jinVideoLegend')){
-      $('jinVideoLegend').hidden=!map.videoTrial;
-      if(map.videoTrial)$('jinVideoLegend').innerHTML=`<span class="jin-boundary-key jin-regime-key">政權界</span> 取自史圖館本年年末最後清晰地圖。${map.annualVideo?'州界以原圖為基礎、按郡屬調整，接壤封國使用不同色彩。':'這是上輪兩年視頻測驗，保留當時的州界與配色。'}晉境保持連續；白色為其它政權，保留名稱及邊界。補齊郡界含推定段；縣域只在內部用於擬合。`;
+      $('jinVideoLegend').hidden=!map.videoTrial||Boolean(map.sourcePriority);
+      if(map.videoTrial&&!map.sourcePriority)$('jinVideoLegend').innerHTML=`<span class="jin-boundary-key jin-regime-key">政權界</span> 取自史圖館本年年末最後清晰地圖。${map.annualVideo?'這是修改前的全年度視頻圖，保留當時的疆域、州界與配色。':'這是上輪兩年視頻測驗，保留當時的州界與配色。'}晉境保持連續；白色為其它政權，保留名稱及邊界。補齊郡界含推定段；縣域只在內部用於擬合。`;
     }
     const frame=window.JIN_VIDEO_FRAMES?.frames?.find(item=>Number(item.year)===Number(year));
     if($('jinVideoSource')){
       $('jinVideoSource').hidden=!frame;
       if(frame){
         $('jinVideoSourceTitle').textContent=`查看${year}年史圖館年末原幀`;
-        $('jinVideoSourceNote').textContent=`${frame.source_filename}，${Number(frame.timestamp_seconds).toFixed(3)}秒；採本年最後事件後、跨年淡化前的最後清晰畫面。本年政權界以該原幀為底稿，行政歸屬另依年表。`;
+        $('jinVideoSourceNote').textContent=`${frame.source_filename}，${Number(frame.timestamp_seconds).toFixed(3)}秒；採本年最後事件後、跨年淡化前的最後清晰畫面。${map.sourcePriority?'僅用於原圖漢晉天下範圍内统一前孫吳、末期成漢漢趙及叛亂等控制變化；原圖疆域與海岸線優先。':'此舊版本政權界以該原幀為底稿。'}行政歸屬另依年表，治所點優先採CHGIS。`;
         $('jinVideoSourceImage').src=frame.web_path;$('jinVideoSourceImage').alt=`${year}年史圖館年末最後清晰地圖`;
       }
     }
@@ -2331,7 +2331,7 @@
         const frame=window.JIN_VIDEO_FRAMES?.frames?.find(item=>Number(item.year)===Number(year));
         if(frame){renderJinVideoSourceMap(year,frame);return;}
       }
-      if(['annual','prior'].includes(jinMapVersion?.value)&&window.JIN_ANNUAL_MAP_MODEL){
+      if(['annual','video-prior','prior'].includes(jinMapVersion?.value)&&window.JIN_ANNUAL_MAP_MODEL){
         currentMap=null;currentMapFeatures=[];mapLabelLayouts.delete(yearMapOverlay);yearMapOverlay.replaceChildren();
         yearMapPanel.hidden=false;textMapLinkControl.hidden=true;
         for(const control of [yearMapExport,yearMapCsv,yearMapGeoJson,yearMapUhd,yearMapLoadUhd])control.hidden=true;
@@ -2343,18 +2343,19 @@
           if(!jinMapCache.has(url))jinMapCache.set(url,window.JIN_ANNUAL_MAP_MODEL.readMapData(url,fetch).catch(error=>{jinMapCache.delete(url);throw error;}));
           return jinMapCache.get(url);
         };
-        const annualVideo=jinMapVersion.value==='annual';
-        const trialUrl=(annualVideo?window.JIN_ANNUAL_MAP_MODEL.VIDEO_TRIAL_URLS:window.JIN_ANNUAL_MAP_MODEL.PREVIOUS_VIDEO_URLS)?.[year];
+        const sourcePriority=jinMapVersion.value==='annual';
+        const annualVideo=sourcePriority||jinMapVersion.value==='video-prior';
+        const trialUrl=(sourcePriority?window.JIN_ANNUAL_MAP_MODEL.SOURCE_PRIORITY_URLS:annualVideo?window.JIN_ANNUAL_MAP_MODEL.VIDEO_TRIAL_URLS:window.JIN_ANNUAL_MAP_MODEL.PREVIOUS_VIDEO_URLS)?.[year];
         if(trialUrl){
           load(trialUrl).then(async bundle=>{
             const [shards,land]=await Promise.all([
-              Promise.all((bundle.geometry_urls||[]).map(url=>load(url+'?v=20261002.3'))),
-              load(window.JIN_ANNUAL_MAP_MODEL.VIDEO_LAND_URL)
+              Promise.all((bundle.geometry_urls||[]).map(url=>load(url+(sourcePriority?'?v=20261002.4':'?v=20261002.3')))),
+              sourcePriority?Promise.resolve(null):load(window.JIN_ANNUAL_MAP_MODEL.VIDEO_LAND_URL)
             ]);
             const trial={...bundle,geometries:Object.assign({},bundle.geometries,...shards.map(shard=>shard.geometries))};
-            if(request===jinMapRequest)renderJinSnapshotMap(year,snapshot,window.JIN_ANNUAL_MAP_MODEL.hydrateVideoTrial(trial,year,land,{annualVideo}));
+            if(request===jinMapRequest)renderJinSnapshotMap(year,snapshot,window.JIN_ANNUAL_MAP_MODEL.hydrateVideoTrial(trial,year,land,{annualVideo,sourcePriority}));
           }).catch(error=>{
-            if(request===jinMapRequest){$('yearMapStatus').textContent='視頻測驗圖載入失敗，請重選年份或切至上輪年度圖。';console.error(error);}
+            if(request===jinMapRequest){$('yearMapStatus').textContent='年度地圖載入失敗，請重選年份或切至修改前圖。';console.error(error);}
           });return;
         }
         load(window.JIN_ANNUAL_MAP_MODEL.DATA_URL).then(async bundle=>{
@@ -2607,7 +2608,7 @@
       if(legacy){url.searchParams.set('jinmap','legacy');url.searchParams.set('returnyear',String(jinAnnualReturnYear));url.searchParams.set('returnmap',jinAnnualReturnVersion);}
       else{
         jinAnnualReturnYear=validJinAnnualYear(yearSelect.value)||jinAnnualReturnYear;url.searchParams.delete('returnyear');url.searchParams.delete('returnmap');
-        if(['prior','video'].includes(jinMapVersion?.value))url.searchParams.set('jinmap',jinMapVersion.value);else url.searchParams.delete('jinmap');
+        if(['prior','video-prior','video'].includes(jinMapVersion?.value))url.searchParams.set('jinmap',jinMapVersion.value);else url.searchParams.delete('jinmap');
       }
       if($('jinMapCompare'))$('jinMapCompare').href=`jin-map-comparison.html?year=${Number(yearSelect.value)===308?308:289}`;
       const restore=$('jinMapRestore');
@@ -2615,10 +2616,10 @@
         const target=new URL(url),targetYear=legacy?jinAnnualReturnYear:nearestJinLegacyYear(Number(yearSelect.value));
         target.searchParams.set('year',String(targetYear));
         if(targetYear!==Number(yearSelect.value))target.searchParams.delete('state');
-        if(legacy){if(['prior','video'].includes(jinAnnualReturnVersion))target.searchParams.set('jinmap',jinAnnualReturnVersion);else target.searchParams.delete('jinmap');target.searchParams.delete('returnyear');target.searchParams.delete('returnmap');}
+        if(legacy){if(['prior','video-prior','video'].includes(jinAnnualReturnVersion))target.searchParams.set('jinmap',jinAnnualReturnVersion);else target.searchParams.delete('jinmap');target.searchParams.delete('returnyear');target.searchParams.delete('returnmap');}
         else{target.searchParams.set('jinmap','legacy');target.searchParams.set('returnyear',String(jinAnnualReturnYear));target.searchParams.set('returnmap',jinMapVersion.value);}
         restore.href=target.href;
-        restore.textContent=legacy?`返回${jinAnnualReturnVersion==='video'?'視頻原圖':jinAnnualReturnVersion==='prior'?'上輪年度圖':'年度地圖'}（${jinAnnualReturnYear}年）`:'切換至修改前地圖';
+        restore.textContent=legacy?`返回${jinAnnualReturnVersion==='video'?'視頻原圖':jinAnnualReturnVersion==='video-prior'?'修改前全年度圖':jinAnnualReturnVersion==='prior'?'早期年度圖':'年度地圖'}（${jinAnnualReturnYear}年）`:'切換至修改前地圖';
         restore.dataset.version=legacy?jinAnnualReturnVersion:'legacy';
       }
     }else{url.searchParams.delete('jinmap');url.searchParams.delete('returnyear');url.searchParams.delete('returnmap');}

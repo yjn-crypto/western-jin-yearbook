@@ -25,7 +25,7 @@ if(map.type==='FeatureCollection')map={year:map.year,trial:true,width:2400,heigh
   title:`${map.year}年　史圖館年末疆域與州郡封國測驗`,subtitle:'政權界取自年末視頻；晋境內缺口按當年郡屬補齊，分界仍含擬合段。'};
 if(options.length===4)map.extent=options.map(Number);
 const canvas=new Node('svg',{xmlns:'http://www.w3.org/2000/svg',width:map.width,height:map.height,viewBox:`0 0 ${map.width} ${map.height}`});
-const shapes=new Node('g');canvas.appendChild(new Node('rect',{width:'100%',height:'100%',fill:map.videoTrial?'#dce9f4':'#f7f3ea'}));canvas.appendChild(shapes);
+const shapes=new Node('g');canvas.appendChild(new Node('rect',{width:'100%',height:'100%',fill:map.videoTrial&&!map.sourcePriority?'#dce9f4':'#f7f3ea'}));canvas.appendChild(shapes);
 const rendered=view.draw(map,shapes,{svgNode,seatSymbol:context.mapSeatSymbol,areaGuard:context.mapTerritoryLabelGuard});
 const labelLayer=new Node('g');canvas.appendChild(labelLayer);
 context.placeAndDrawLabels(labelLayer,context.selectMapLabels(rendered.labels,3),map.plot,1,map.height);

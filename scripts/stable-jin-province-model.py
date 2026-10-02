@@ -23,7 +23,7 @@ GRID = .000001
 DOMAIN = box(82, 8, 136, 51)
 
 
-def model(year, rows, entities, snapshot, annual, reference, _apply_transfers=True):
+def model(year, rows, entities, snapshot, annual, reference, _apply_transfers=True, original_only=False):
     refyear = snapshot['refs'][0]['refyear']
     names = {annual.key(v['entity']['name']): sid for sid, v in entities['state'].items()}
     original = json.loads((ROOT / f'data/jin-maps/{refyear}_map.geojson').read_text())
@@ -41,13 +41,14 @@ def model(year, rows, entities, snapshot, annual, reference, _apply_transfers=Tr
         old_sid = reference.historical_state(ref['sid'], year, entities)
         if old_sid and to_sid != old_sid:
             transfers.append((ref['id'], old_sid, to_sid))
-    key = (refyear, tuple(sorted(sid_remap.items(), key=lambda x: str(x[0]))), tuple(transfers))
+    key = (refyear, tuple(sorted(sid_remap.items(), key=lambda x: str(x[0]))), tuple(transfers), original_only)
     if key in _CACHE:
         return _CACHE[key]
     if transfers:
         # Build all old province extensions first. A new dated division cannot
         # re-sample every province coast and move unrelated outer boundaries.
-        baseline = model(year, rows, entities, snapshot, annual, reference, _apply_transfers=False)
+        baseline = model(year, rows, entities, snapshot, annual, reference, _apply_transfers=False,
+                         original_only=original_only)
         result = dict(baseline['masks'])
         groups = collections.defaultdict(list)
         ref_by_id = {ref['id']: ref for ref in snapshot['refs']}
@@ -94,6 +95,27 @@ def model(year, rows, entities, snapshot, annual, reference, _apply_transfers=Tr
         overlap_removed += max(0, g.area-unique.area)
         base[sid] = unique
         occupied = annual.polygonal(unary_union([occupied, unique]))
+    if original_only:
+        # The user-uploaded footprint is the display space. Low-resolution
+        # video shores do not create additional province territory outside it.
+        reviewed = dict(base)
+        parts = [occupied] if occupied.geom_type == 'Polygon' else list(occupied.geoms)
+        seam_holes = [Polygon(ring) for part in parts for ring in part.interiors
+                      if Polygon(ring).area < .001]
+        for hole in seam_holes:
+            sid = min(base, key=lambda sid: base[sid].distance(hole))
+            base[sid] = set_precision(annual.polygonal(unary_union([base[sid],hole])), GRID, mode='valid_output')
+        occupied = set_precision(annual.polygonal(unary_union(list(base.values()))), GRID, mode='valid_output')
+        _CACHE[key] = dict(masks=base, reviewed_masks=reviewed, properties=properties,
+                           domain=set_precision(occupied, GRID, mode='valid_output'),
+                           reference_year=refyear, whole_prefecture_transfers=transfers,
+                           source_overlap_removed=overlap_removed,
+                           model='original_province_masks_whole_prefecture_changes_shared_borders',
+                           footprint_source='reviewed_original_province_areas_union',
+                           original_internal_seam_holes_filled=len(seam_holes),
+                           original_internal_seam_hole_area=sum(g.area for g in seam_holes),
+                           extensions_beyond_original=False)
+        return _CACHE[key]
     missing = annual.polygonal(DOMAIN.difference(occupied))
     # A sparse sample of the existing coast/edge supplies smooth nearest-state
     # extensions outside the old map only.  These extensions cannot change any
