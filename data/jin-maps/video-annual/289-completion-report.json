@@ -1,0 +1,214 @@
+{
+  "year": 289,
+  "source_original_gap": {
+    "gap_compartments": 57,
+    "area_degrees_squared": 13.0549821,
+    "category_areas_degrees_squared": {
+      "valid_prefecture_geometry_gap": 3.797091,
+      "unresolved_original": 9.2578911
+    },
+    "largest": [
+      {
+        "reference_id": "ref-289-201",
+        "name": "原图未命名区",
+        "entity_id": null,
+        "category": "unresolved_original",
+        "control_status": null,
+        "area_degrees_squared": 2.9854591
+      },
+      {
+        "reference_id": "ref-289-205",
+        "name": "原图未命名区",
+        "entity_id": null,
+        "category": "unresolved_original",
+        "control_status": null,
+        "area_degrees_squared": 2.2529146
+      },
+      {
+        "reference_id": "ref-289-155",
+        "name": "南康郡",
+        "entity_id": "p204",
+        "category": "valid_prefecture_geometry_gap",
+        "control_status": "administrative",
+        "area_degrees_squared": 1.1252275
+      },
+      {
+        "reference_id": "ref-289-202",
+        "name": "原图未命名区",
+        "entity_id": null,
+        "category": "unresolved_original",
+        "control_status": null,
+        "area_degrees_squared": 0.8444525
+      },
+      {
+        "reference_id": "ref-289-187",
+        "name": "北海／城阳",
+        "entity_id": null,
+        "category": "unresolved_original",
+        "control_status": null,
+        "area_degrees_squared": 0.8365845
+      },
+      {
+        "reference_id": "ref-289-199",
+        "name": "原图未命名区",
+        "entity_id": null,
+        "category": "unresolved_original",
+        "control_status": null,
+        "area_degrees_squared": 0.8186518
+      },
+      {
+        "reference_id": "ref-289-204",
+        "name": "原图未命名区",
+        "entity_id": null,
+        "category": "unresolved_original",
+        "control_status": null,
+        "area_degrees_squared": 0.7529413
+      },
+      {
+        "reference_id": "ref-289-113",
+        "name": "桂林",
+        "entity_id": "p238",
+        "category": "valid_prefecture_geometry_gap",
+        "control_status": "administrative",
+        "area_degrees_squared": 0.5750654
+      },
+      {
+        "reference_id": "ref-289-203",
+        "name": "原图未命名区",
+        "entity_id": null,
+        "category": "unresolved_original",
+        "control_status": null,
+        "area_degrees_squared": 0.462518
+      },
+      {
+        "reference_id": "ref-289-147",
+        "name": "临海郡",
+        "entity_id": "p197",
+        "category": "valid_prefecture_geometry_gap",
+        "control_status": "administrative",
+        "area_degrees_squared": 0.4428793
+      },
+      {
+        "reference_id": "ref-289-129",
+        "name": "北地",
+        "entity_id": "p076",
+        "category": "valid_prefecture_geometry_gap",
+        "control_status": "administrative",
+        "area_degrees_squared": 0.3163741
+      },
+      {
+        "reference_id": "ref-289-178",
+        "name": "广陵郡",
+        "entity_id": "p155",
+        "category": "valid_prefecture_geometry_gap",
+        "control_status": "administrative",
+        "area_degrees_squared": 0.3138244
+      },
+      {
+        "reference_id": "ref-289-111",
+        "name": "南郡",
+        "entity_id": "p161",
+        "category": "valid_prefecture_geometry_gap",
+        "control_status": "administrative",
+        "area_degrees_squared": 0.2956511
+      },
+      {
+        "reference_id": "ref-289-196",
+        "name": "寻阳",
+        "entity_id": "p227",
+        "category": "unresolved_original",
+        "control_status": "administrative",
+        "area_degrees_squared": 0.2881275
+      },
+      {
+        "reference_id": "ref-289-157",
+        "name": "安成郡",
+        "entity_id": "p182",
+        "category": "valid_prefecture_geometry_gap",
+        "control_status": "administrative",
+        "area_degrees_squared": 0.2134704
+      },
+      {
+        "reference_id": "ref-289-112",
+        "name": "始安",
+        "entity_id": "p243",
+        "category": "valid_prefecture_geometry_gap",
+        "control_status": "administrative",
+        "area_degrees_squared": 0.1274801
+      },
+      {
+        "reference_id": "ref-289-89",
+        "name": "淮南",
+        "entity_id": "p187",
+        "category": "valid_prefecture_geometry_gap",
+        "control_status": "administrative",
+        "area_degrees_squared": 0.0926644
+      },
+      {
+        "reference_id": "ref-289-71",
+        "name": "颍川",
+        "entity_id": "p021",
+        "category": "valid_prefecture_geometry_gap",
+        "control_status": "administrative",
+        "area_degrees_squared": 0.0868406
+      },
+      {
+        "reference_id": "ref-289-182",
+        "name": "沛国",
+        "entity_id": "p027",
+        "category": "valid_prefecture_geometry_gap",
+        "control_status": "administrative",
+        "area_degrees_squared": 0.0666218
+      },
+      {
+        "reference_id": "ref-289-33",
+        "name": "乐安",
+        "entity_id": "p144",
+        "category": "valid_prefecture_geometry_gap",
+        "control_status": "administrative",
+        "area_degrees_squared": 0.0520137
+      }
+    ]
+  },
+  "political_input_overlap_area_degrees_squared": 0.0,
+  "nominal_affiliate_overlap_jin_area_degrees_squared": 4.376290276,
+  "input_political_overlap_pairs": [
+    {
+      "regime": "西晋西域都护名义范围",
+      "kind": "nominal-affiliate",
+      "area_degrees_squared": 4.37629084,
+      "precedence": "main_jin"
+    }
+  ],
+  "political_precedence": "独立他国优先于晋；主晋优先于西域名义附属范围，附属范围不合入中国州郡",
+  "jin_area_degrees_squared": 402.9430518,
+  "initial_annual_prefecture_area_inside_jin_degrees_squared": 330.5351735,
+  "completed_area_degrees_squared": 72.4078783,
+  "filled_old_reference_gaps_degrees_squared": 21.4320536,
+  "added_beyond_old_reference_degrees_squared": 50.9758228,
+  "unfilled_jin_area_degrees_squared": 1.903e-06,
+  "unpainted_jin_area_degrees_squared": 0,
+  "numerical_overlay_tolerance_degrees_squared": 2e-05,
+  "numerical_slivers_have_full_jin_background": true,
+  "outside_jin_prefecture_area_degrees_squared": 4.7e-08,
+  "prefecture_overlap_area_degrees_squared": 0,
+  "stored_annual_overlap_removed_degrees_squared": 8.02e-06,
+  "allocation_count": 1685,
+  "internally_used_county_cells": 0,
+  "province_boundary_model": "reviewed_province_masks_whole_prefecture_changes_shared_borders",
+  "stable_reference_year": 289,
+  "province_boundaries_are_shared_lines_only": true,
+  "province_shared_boundary_features": 34,
+  "source_province_overlap_removed_degrees_squared": 0.00335297,
+  "whole_prefecture_province_transfers": [],
+  "restored_dated_prefecture_ids": [],
+  "unresolved_context_province_ids": [],
+  "reviewed_province_interior_change_degrees_squared": 1.03e-07,
+  "methods": {
+    "same_stable_province_numerical_residual": 1076,
+    "active_prefecture_reference_compartment": 410,
+    "stable_province_neighbor_prefecture_fit": 185,
+    "dated_county_parent_within_stable_province": 14
+  },
+  "limitation": "面积为WGS84平方度，仅用于本次几何前后对照；归属拟合不是独立行政边界考证。"
+}

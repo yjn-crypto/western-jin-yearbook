@@ -3,25 +3,43 @@
   'use strict';
   const DATA_URL='data/jin-maps/annual-geography.json?v=20261002.1';
   const REFERENCE_URL='data/jin-maps/reference-geography.json?v=20261002.1';
-  const VIDEO_TRIAL_URLS={289:'data/jin-maps/video-trial-289-308/289.json?v=20261002.2',308:'data/jin-maps/video-trial-289-308/308.json?v=20261002.2'};
+  const PREVIOUS_VIDEO_URLS={289:'data/jin-maps/video-trial-289-308/289.json?v=20261002.2',308:'data/jin-maps/video-trial-289-308/308.json?v=20261002.2'};
+  const VIDEO_TRIAL_URLS=Object.fromEntries(Array.from({length:51},(_,i)=>[266+i,`data/jin-maps/video-annual/${266+i}.json?v=20261002.3`]));
   const VIDEO_LAND_URL='data/jin-maps/jin-video-land.geojson?v=20261002.2';
-  function hydrateVideoTrial(bundle,year,land){
+  async function readMapData(url,fetcher=fetch){
+    if(url.startsWith('data/jin-maps/video-annual/')&&typeof DecompressionStream==='function'){
+      const compressed=url.replace(/\.json(?=\?|$)/,'.json.gz');
+      try{
+        const response=await fetcher(compressed);
+        if(response.ok&&response.body)return await new Response(response.body.pipeThrough(new DecompressionStream('gzip'))).json();
+      }catch(error){/* A plain JSON sibling remains available as a fallback. */}
+    }
+    const response=await fetcher(url);
+    if(!response.ok)throw new Error(`HTTP ${response.status}`);
+    return response.json();
+  }
+  function hydrateVideoTrial(bundle,year,land,{annualVideo=false}={}){
     if(Number(bundle?.year)!==Number(year)||!Array.isArray(bundle.features))throw new Error(`Missing video trial: ${year}`);
     const features=bundle.features.map(feature=>{
       const geometry=feature.geometry||bundle.geometries?.[feature.geometry_id];
       if(!geometry)throw new Error(`Missing video geometry: ${feature.geometry_id}`);
-      return {type:'Feature',geometry,properties:{...feature.properties}};
+      const properties={...feature.properties};
+      const color=annualVideo&&root.JIN_FIEF_COLORS?.colors?.[properties.fief_id];
+      if(color)properties.color=color;
+      return {type:'Feature',geometry,properties};
     });
     for(const feature of land?.features||[])features.unshift({...feature,properties:{...feature.properties,layer:'land_background',name:'地理陆地背景',political_evidence:false}});
     const geojson={type:'FeatureCollection',features};
     const source=root.JIN_VIDEO_FRAMES?.frames?.find(frame=>Number(frame.year)===Number(year));
     const count=layer=>features.filter(f=>f.properties?.layer===layer).length;
     const contextCount=features.filter(f=>f.properties.layer==='province_areas'&&f.properties.is_context).length;
-    return {year:Number(year),trial:true,videoTrial:true,width:2400,height:1986,extent:[85,15,137,50],plot:[80,140,2320,1906],
+    const prefectureCount=features.filter(f=>f.properties.layer==='prefecture_areas'&&!f.properties.is_context).length;
+    const unresolvedContextCount=features.filter(f=>f.properties.layer==='prefecture_areas'&&f.properties.is_context).length;
+    return {year:Number(year),trial:true,videoTrial:true,annualVideo,fiefColors:annualVideo?root.JIN_FIEF_COLORS?.colors:null,width:2400,height:1986,extent:[85,15,137,50],plot:[80,140,2320,1906],
       title:`${year}年　西晉州郡封國 · 視頻年末疆域測驗`,
-      subtitle:'政權界採史圖館本年最後清晰地圖；晉境內缺口附入當年有效郡，補齊界線含推定段。',
-      note:`史圖館視頻年末原幀配准至WGS84，政權邊界與年表行政層分列。晉境內原有漏色區按當年縣屬、原圖郡屬及同州鄰郡補齊；缺少直接依據的分界為拟合，不代表史料已考定。白色表示其它政權，淡赭色表示原圖另列的晉西域附屬範圍；郡級及以上封國保持合併著色，制度範圍不等同封君軍事实控。縣域單元只用於內部擬合，不顯示縣面或縣界。可在上方選擇上輪年度圖或最初原版比較。${source?`本年原幀：${source.source_part}，${Number(source.timestamp_seconds).toFixed(3)}秒。`:''}`,
-      status:`${year}年：${count('province_areas')-contextCount}州${contextCount?`及${contextCount}組原州殘存郡縣`:''}、${count('prefecture_areas')}郡國範圍、${count('county_seats')}縣治；政權界採本年視頻，晉境內漏色區已分配，新增分界保留推定說明。`,
+      subtitle:annualVideo?'原州界為基礎，按本年郡屬調整；政權界採年末視頻，接壤封國使用不同色彩。':'上輪兩年測驗：政權界採年末視頻；補齊界線含推定段。',
+      note:`史圖館視頻年末原幀配准至WGS84，政權邊界與年表行政層分列。${annualVideo?'州界以原圖穩定州域為基礎，年度改屬沿郡面調整；州際共邊單独繪製，不把補洞碎片外圈畫成州界。':''}晉境內原有漏色區按當年縣屬、原圖郡屬及同州鄰郡補齊；缺少直接依據的分界為拟合，不代表史料已考定。白色表示其它政權，淡赭色表示原圖另列的晉西域附屬範圍；郡級及以上封國保持合併著色${annualVideo?'，接壤封國顏色不同':''}，制度範圍不等同封君軍事实控。縣域單元只用於內部擬合，不顯示縣面或縣界。可在上方選擇上輪年度圖或最初原版比較。${source?`本年原幀：${source.source_part}，${Number(source.timestamp_seconds).toFixed(3)}秒。`:''}`,
+      status:`${year}年：${count('province_areas')-contextCount}州${contextCount?`及${contextCount}組原州地理參考`:''}、${prefectureCount}郡國範圍、${count('county_seats')}縣治${unresolvedContextCount?`；另有${unresolvedContextCount}處晉地郡屬待定`:''}；政權界採本年視頻，新增分界保留推定說明。`,
       coverage:bundle.coverage||{},geojson};
   }
   function hydrate(bundle,year,slice,referenceBundle){
@@ -60,6 +78,6 @@
       geojson:{type:'FeatureCollection',features}
     };
   }
-  const api={DATA_URL,REFERENCE_URL,VIDEO_TRIAL_URLS,VIDEO_LAND_URL,hydrateVideoTrial,hydrate};root.JIN_ANNUAL_MAP_MODEL=api;
+  const api={DATA_URL,REFERENCE_URL,VIDEO_TRIAL_URLS,PREVIOUS_VIDEO_URLS,VIDEO_LAND_URL,readMapData,hydrateVideoTrial,hydrate};root.JIN_ANNUAL_MAP_MODEL=api;
   if(typeof module!=='undefined'&&module.exports)module.exports=api;
 })(typeof window!=='undefined'?window:globalThis);
