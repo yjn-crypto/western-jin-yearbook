@@ -8,8 +8,8 @@
 <main>
 <nav><a href="index.html">返回年表</a><button data-year="289" aria-pressed="true">289年</button><button data-year="308" aria-pressed="false">308年</button></nav>
 <h1><span id="year">289</span>年：原圖範圍與來源優先</h1>
-<p class="intro">左右兩圖採用同一經緯度範圍、尺寸及郡名縮放層級。右圖恢復原圖疆域、海岸、展示空間和圖例樣式，CHGIS有效治所點優先，州郡面以原圖為基礎。史圖館僅補充原圖範圍內的孫吳、漢、成及起兵等年度控制變化。州界保持穩定，年度改屬沿完整郡面調整；郡級及以上封國繼續著色，接壤封國異色。</p>
-<div class="links"><a id="newMap">打開本年新圖</a> · <a id="oldMap">打開上輪年度圖</a> · <a id="videoMap">查看本年原幀底圖</a></div>
+<p class="intro">本頁保留2026-10-02的兩年對照；最新三底圖年度版可返回年表查看。左右兩圖採用同一經緯度範圍、尺寸及郡名縮放層級。右圖恢復原圖疆域、海岸、展示空間和圖例樣式，CHGIS有效治所點優先，州郡面以原圖為基礎。史圖館僅補充原圖範圍內的孫吳、漢、成及起兵等年度控制變化。州界保持穩定，年度改屬沿完整郡面調整；郡級及以上封國繼續著色，接壤封國異色。</p>
+<div class="links"><a id="newMap">打開右側原圖疆域版</a> · <a id="oldMap">打開上輪年度圖</a> · <a id="videoMap">查看本年原幀底圖</a></div>
 <div class="pair">
 <figure><figcaption>修改前：上輪視頻年度圖</figcaption><img id="before" alt="上輪視頻年度圖"></figure>
 <figure><figcaption>修改後：CHGIS點優先＋原圖範圍與樣式</figcaption><img id="after" alt="原圖來源優先年度圖"></figure>
@@ -28,7 +28,7 @@
   const item=data.years[year],frame=window.JIN_VIDEO_FRAMES.frames.find(f=>Number(f.year)===year);
   document.getElementById('year').textContent=year;
   for(const mode of ['before','after'])document.getElementById(mode).src=`assets/maps/jin-video/comparison/${year}-${mode}.webp?v=20261002.4`;
-  document.getElementById('newMap').href=`index.html?year=${year}`;document.getElementById('oldMap').href=`index.html?year=${year}&jinmap=video-prior`;document.getElementById('videoMap').href=`index.html?year=${year}&jinmap=video`;
+  document.getElementById('newMap').href=`index.html?year=${year}&jinmap=source-prior`;document.getElementById('oldMap').href=`index.html?year=${year}&jinmap=video-prior`;document.getElementById('videoMap').href=`index.html?year=${year}&jinmap=video`;
   document.getElementById('source').src=frame.web_path;document.getElementById('sourceNote').textContent=`${frame.source_filename}，${Number(frame.timestamp_seconds).toFixed(3)}秒；視頻本年最後事件後、下年淡化前的最後清晰畫面。`;
   document.getElementById('analysis').textContent=item.analysis;
   document.getElementById('metrics').replaceChildren(...item.metrics.map(([label,value])=>{const tr=document.createElement('tr'),th=document.createElement('th'),td=document.createElement('td');th.textContent=label;td.textContent=value;tr.append(th,td);return tr;}));

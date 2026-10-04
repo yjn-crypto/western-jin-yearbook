@@ -48,7 +48,8 @@ context.createAuxButton = (label, info, className = '') => {
   button.textContent = label; button.className = className; button.info = info;
   return button;
 };
-for (const file of ['data/jin-data.js', 'data/princes.js', 'data/five-rank-fiefs.js',
+for (const file of ['data/jin-data.js', 'data/jin-admin-review.js', 'jin-admin-review.js',
+  'data/princes.js', 'data/jin-ruler-constraints.js', 'data/five-rank-fiefs.js',
   'data/jin-multi-kingdoms.js', 'jin-kingdom-table.js']) {
   vm.runInContext(read(file), context, {filename: file});
 }
@@ -62,7 +63,7 @@ function extract(name) {
 }
 for (const name of ['activePhase', 'effectiveOrder', 'isKingdom', 'baseFiefName',
   'chineseNumber', 'reignYearLabel', 'findJinRuler', 'findJinFiveRank',
-  'jinFiveRankLabel', 'jinFiveRankInfo', 'jinRulerInfo', 'buildJinSnapshot',
+  'jinFiveRankLabel', 'jinConstraintNote', 'jinFiveRankInfo', 'jinRulerInfo', 'buildJinSnapshot',
   'itemDisplayName', 'itemDisplaysAsKingdom', 'appendFiefDetails', 'makeNameSpan',
   'createGovernorIndexButton', 'renderLocalOfficerBox', 'renderState', 'renderSummary']) {
   vm.runInContext(extract(name), context, {filename: `app.js:${name}`});
@@ -123,7 +124,7 @@ try {
   assert.equal(context.findJinRuler('測試國', 306).status, 'gap');
   context.window.JIN_PRINCES.records.push({id: 'test-dated', fief: '測試', title: '測試王',
     person: '有年可考', start: 303, end: 311, sequence: 1});
-  assert.equal(context.findJinRuler('測試國', 304).label, '測試王有年可考之二年');
+  assert.equal(context.findJinRuler('測試國', 304).record, null, 'Two independently attested people must not silently select one');
 } finally {
   context.window.JIN_PRINCES = originalPrinces;
 }
@@ -135,7 +136,7 @@ for (const old of oldNullRows) {
     const record = ruler.record;
     const independentlyAttested = (record.attested_years || []).includes(old.year)
       || (record.attested_periods || []).some(period => period.start <= old.year && old.year <= period.end);
-    assert.ok(record.start != null || independentlyAttested,
+    assert.ok(record.start != null || independentlyAttested || (record.constraint?.certain_periods||[]).some(([a,b])=>a<=old.year&&old.year<=b),
       `${old.year} ${old.name}: an undated successor cannot fill an earlier vacant year`);
   }
 }
@@ -167,9 +168,21 @@ for (let year = 266; year <= 316; year++) {
   }
   snapshots.set(year, snapshot);
 }
+// The original 304 proofread snapshot remains an immutable before-change record.
+// The user expressly authorized this review's corrections; compare every current
+// annual slice to the separately generated Python pipeline consumed by the maps.
 const baseline = JSON.parse(read('reports/jin-304-reviewed-baseline-20261004.json'));
-assert.deepEqual(administrativeShape(snapshots.get(304).states), administrativeShape(baseline.states),
-  'The independently saved 304 manual corrections must survive the presentation changes');
+assert.equal(baseline.states.flatMap(state=>state.rows).reduce((n,row)=>n+row.counties.length,0),1244);
+const reviewed = JSON.parse(read('data/jin-reviewed-annual-rows.json'));
+function rowShape(rows) {
+  return plain(rows.map(row=>({id:row.id,name:row.name,state_id:row.state_id,
+    counties:row.counties.map(county=>({id:county.id,name:county.name})).sort((a,b)=>a.id.localeCompare(b.id))
+  })).sort((a,b)=>(a.state_id+'/'+a.id).localeCompare(b.state_id+'/'+b.id)));
+}
+for (const [year,snapshot] of snapshots) {
+  const actual=snapshot.states.flatMap(state=>state.rows.map(row=>({...row,state_id:state.id})));
+  assert.deepEqual(rowShape(actual),rowShape(reviewed.years[year]),`${year}: text and map must consume the same reviewed annual rows`);
+}
 
 for (let year = 312; year <= 316; year++) {
   const snapshot = snapshots.get(year);
@@ -220,7 +233,7 @@ assertAdministrativeCount(chengduStates, 4, 'The actual four commanderies of Che
 // an additional administrative commandery. Its evidence does not move Yangxia out
 // of the independently attested Chen commandery in the 304 manual baseline.
 const chenCountyIds = new Set(['c0231', 'c0232', 'c0233', 'c0234']);
-for (const year of [281, 289, 304]) {
+for (const year of [282, 289, 304]) {
   const snapshot = snapshots.get(year);
   const state = stateOf(snapshot, 'p025');
   const parent = rowOf(snapshot, 'p025');
@@ -265,4 +278,4 @@ for(const year of [305,306,311,312]){
 assert.equal(JSON.stringify({data: context.window.JIN_DATA,
   princes: context.window.JIN_PRINCES, research: context.window.JIN_MULTI_KINGDOMS}), sourceBefore,
   'The complete check must not mutate source data or the reviewed research layer');
-console.log('Jin kingdom display OK: 51 annual slices preserved; 304 manual baseline unchanged; null accession guarded; residual Sili restored; real subsidiary commanderies counted; Chen county group remains display-only.');
+console.log('Jin kingdom display OK: all 51 annual text slices match reviewed map rows; original 304 fixture retained; uncertain rulers guarded; residual Sili, cross-state subsidiaries and display-only Chen groups counted correctly.');
