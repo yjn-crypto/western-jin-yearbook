@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Replay the approved 2026-10-04 text review without rewriting the source table.
 
-County transfers have a display convention separate from the source event date:
-the transfer year belongs to the origin; the next display year to the destination.
+County transfers display their post-change affiliation in the source event year;
+the destination's annual note records the old state and commandery.
 Unknown dates are bounded by source text and 281/304 observations, never promoted
 to known event dates. IDs are scoped by parent because two old county IDs repeat.
 """
@@ -193,7 +193,7 @@ note('c0115',[280],'太康元年已見廣平縣屬魏郡；這是當年所屬的
 for old,new in [('c0300','c0303'),('c0301','c0304'),('c0302','c0305')]:
     exclude(old,290,290)
     annual[key(old)][291]['review_dating']='after_290_return'
-    note(new,[290],'289年轉入武邑國，按轉屬年留原屬規則自290年列入；惠帝時回屬長樂的確年未詳，原文作290年後，故本年仍列武邑，291年起暫接長樂。',[old,new])
+    note(new,[290],'289年轉入武邑國，該年即列武邑；惠帝時回屬長樂的確年未詳，原文作290年後，故本年仍列武邑，291年起暫接長樂。',[old,new])
     log('bounded_return_after_290',[new,old],'武邑、武遂、觀津之回屬作290後；避免相鄰兩次轉屬將武邑階段全部抹去',event_year=None,event_bounds=[291,304],first_destination_display_year=291)
 
 # Unknown terminal dates remain explicitly bounded by the parent or the reviewed
@@ -256,6 +256,17 @@ def visible(k,y,maps=annual):
 def physical_parent(k):
     return original[parents[k]]['base_name']
 
+def affiliation(k,y):
+    def label(ref):
+        return annual[ref].get(y,{}).get('name') or entities[ref].get('base_name') or entities[ref].get('name')
+    return label(states[k])+label(parents[k])
+
+def transfer_metadata(origin,destination,year,certainty='dated_in_source'):
+    return {'transfer_origin_id':parents[origin],'transfer_origin_state_id':states[origin],
+            'transfer_destination_id':parents[destination],'transfer_destination_state_id':states[destination],
+            'transfer_event_certainty':certainty,'transfer_source_year':year,
+            'transfer_event_year':year if certainty=='dated_in_source' else None}
+
 def qualifier(p, edge):
     text=p.get('period_label','')
     if edge=='start':
@@ -264,8 +275,8 @@ def qualifier(p, edge):
         m=re.search(r'[—-]\s*\d+([前後后？?]*)',text)
     return m.group(1) if m else ''
 
-# Resolve all still-overlapping members with a declared common identity. Use
-# their preceding affiliation, not text similarity or arbitrary source ordering.
+# Resolve overlaps only within declared identities. Use the preceding affiliation
+# to identify the old record, then keep the attested new record in the event year.
 duplicate_decisions=[]
 inferred_numeric_transfers={(266,'p003/c0028'):[267,282],(266,'p023/c0210'):[266,275]}
 for group in lineages:
@@ -282,7 +293,7 @@ for group in lineages:
             removed=[k for k in active if k!=keep]
             for k in removed:annual[k].pop(y,None)
             annual[keep][y]['review_dating']='attested_by_source_bound'
-            text=f'原文作{y}年前已入本郡；以{y}年作新屬可證上限，原屬不再同年重列。實際轉屬年未詳，這不是已知事件年的延後規則。'
+            text=f'原文作{y}年前已入本郡；以{y}年作新屬可證上限，原屬不再同年重列。實際轉屬年未詳，不把觀察上限當成確定轉屬年。'
             note(keep,[y],text,[keep]+removed)
             log('bounded_before_year_affiliation',[keep]+removed,text,event_year=None,observed_by=y,first_destination_display_year=y)
             continue
@@ -298,31 +309,34 @@ for group in lineages:
                 keep=endings[0]
             else:
                 raise ValueError(('Unresolved lineage collision',group['name'],y,active))
-        for k in active:
-            if k!=keep: annual[k].pop(y,None)
+        origin=keep
         destinations=[k for k in active if k!=keep]
         exact=all((p:=phase_at(original[k],y)) and p['start']==y and not qualifier(p,'start') for k in destinations)
         inferred=exact and (y,keep) in inferred_numeric_transfers
-        text=(f'本年初屬{entities[parents[keep]]["base_name"]}；本年轉屬'+
-              '、'.join(entities[parents[k]]['base_name'] for k in destinations)+'，依使用者規則本年只在轉出方列縣，次年始列新屬。') if exact else (
+        text=(f'本年初屬{affiliation(origin,y-1)}；{y}年轉屬'+
+              '、'.join(affiliation(k,y) for k in destinations)+'，本年列示改動後的新屬。') if exact else (
               '原文前／後限定未能確定轉屬年；本年保留原屬，後段從下一年度在不確定標記下銜接，不能據此稱本年為確切轉屬年。')
         if exact:
             assert len(destinations)==1
-            annual[keep][y].update(transfer_destination_id=parents[destinations[0]],
-                transfer_event_certainty='inferred_source_year' if inferred else 'dated_in_source',
-                transfer_source_year=y,transfer_event_year=None if inferred else y)
+            keep=destinations[0]
         if inferred:
-            bounds=inferred_numeric_transfers[(y,keep)]
-            text=f'本書數字期段在{y}年相接，但正文仍屬推定，轉屬確年未詳（見載約束{bounds[0]}—{bounds[1]}）。本年保留原屬，次年暫接新屬；此數字邊界不作當年地理調界的確證。'
+            bounds=inferred_numeric_transfers[(y,origin)]
+            if bounds[0]>y:keep=origin
+            text=f'原屬{affiliation(origin,y-1)}；本書數字期段在{y}年相接，但正文仍屬推定，轉屬確年未詳（見載約束{bounds[0]}—{bounds[1]}）。'
+            text+=('本年仍在可證轉屬下限之前，暫留原屬，新屬從下一年度銜接。' if keep==origin else '本年按本書推定期段列新屬。')
+            text+='此數字邊界不作確切轉屬年。'
             annual[keep][y]['uncertain']=True
-        note(keep,[y],text,[keep]+destinations)
-        log('inferred_numeric_transfer' if inferred else 'same_year_transfer_overlap' if exact else 'bounded_overlap_resolution',[keep]+destinations,text,
-            event_year=y if exact and not inferred else None,display_origin_year=y,retained_key=keep)
-        duplicate_decisions.append({'year':y,'name':group['name'],'kept':keep,'removed':destinations,'event_year':y if exact and not inferred else None})
+        if exact:
+            annual[keep][y].update(transfer_metadata(origin,destinations[0],y,'inferred_source_year' if inferred else 'dated_in_source'))
+        removed=[k for k in active if k!=keep]
+        for k in removed:annual[k].pop(y,None)
+        note(keep,[y],text,[origin]+destinations)
+        log('inferred_numeric_transfer' if inferred else 'same_year_transfer_overlap' if exact else 'bounded_overlap_resolution',[origin]+destinations,text,
+            event_year=y if exact and not inferred else None,first_destination_display_year=y if keep!=origin else y+1,retained_key=keep)
+        duplicate_decisions.append({'year':y,'name':group['name'],'kept':keep,'removed':removed,'event_year':y if exact and not inferred else None})
 
 # Derive non-overlapping transitions only within reviewed physical lineages.
-# Work from a frozen post-anchor schedule so consecutive transfers do not erase
-# one another; an A->B->A succession produces origin-year A,B,A in turn.
+# Work from the post-anchor schedule; leave each event-year destination intact.
 schedule=copy.deepcopy(annual)
 events=[]
 for group in lineages:
@@ -332,7 +346,9 @@ for group in lineages:
         new=[k for k in ks if visible(k,y,schedule)]
         if len(old)!=1 or len(new)!=1 or old[0]==new[0] or physical_parent(old[0])==physical_parent(new[0]): continue
         a,b=old[0],new[0];op=schedule[a][y-1];np=schedule[b][y]
-        # An overlap already resolved at y-1 must not be delayed a second time.
+        # An overlap already resolved at this year has its own evidence record.
+        if any(d['year']==y and d['event_year']==y and d['kept']==b for d in duplicate_decisions):continue
+        # An uncertain overlap retained in the preceding year is not a new event.
         if any(d['year']==y-1 and d['kept']==a and b in d['removed'] for d in duplicate_decisions):continue
         original_new=phase_at(original[b],y)
         if np.get('review_dating') or qualifier(np,'start') or qualifier(op,'end') or original_new is None:
@@ -346,23 +362,10 @@ for group in lineages:
         events.append((y,group,a,b))
 
 for y,group,a,b in sorted(events,key=lambda x:(x[0],x[2])):
-    origins=[k for k in group['keys'] if physical_parent(k)==physical_parent(a) and y in annual[parents[k]]]
-    origin=a if a in origins else (origins[0] if len(origins)==1 else a)
-    op=copy.deepcopy(schedule[a][y-1]);op['review_transfer_year']=y;op['review_origin_group']=True
-    op['transfer_destination_id']=parents[b]
-    op.update(transfer_event_certainty='dated_in_source',transfer_source_year=y,transfer_event_year=y)
-    annual[origin][y]=op
-    annual[b].pop(y,None)
-    pid=parents[origin]
-    if y not in annual[pid]:
-        pp=sample(pid,y-1)
-        pp.update(transfer_origin_grouping=True,administrative_count=False,uncertain=True,geometry_parent_id=parents[b])
-        annual[pid][y]=pp
-        text=f'本年原郡相關縣目轉出；保留年初原屬分組承接縣表，不據此新增或延長獨立郡機構。'
-        note(pid,[y],text,[a,b])
-    text=f'本年初屬{entities[pid]["base_name"]}；{y}年轉屬{entities[parents[b]]["base_name"]}。依使用者指定，本年仍列原屬，{y+1}年起列新屬；史事年份仍為{y}年。'
-    note(origin,[y],text,[a,b])
-    log('dated_county_transfer_origin_year',[origin,b],text,event_year=y,origin_display_year=y,destination_display_from=y+1)
+    annual[b][y].update(transfer_metadata(a,b,y))
+    text=f'本年初屬{affiliation(a,y-1)}；{y}年轉屬{affiliation(b,y)}，本年列示改動後的新屬。'
+    note(b,[y],text,[a,b])
+    log('dated_county_transfer_result_year',[a,b],text,event_year=y,origin_last_display_year=y-1,destination_display_from=y)
 
 # Every original audit candidate is explicitly accounted for, using scoped keys.
 audit=json.loads((ROOT/'reports/jin-text-audit-20261004.json').read_text())
@@ -437,6 +440,7 @@ for y in YEARS:
                      'base_name':c['base_name'],'prefecture_id':pid,'state_id':sid,
                      'order':effective_order(c,cp,y),'source':{'book_page':c.get('source',{}).get('book_page')},
                      'uncertain':bool(cp.get('uncertain')),
+                     **{field:cp[field] for field in ('transfer_origin_id','transfer_origin_state_id','transfer_destination_state_id') if field in cp},
                      'transfer_destination_id':cp.get('transfer_destination_id'),
                      'transfer_event_certainty':cp.get('transfer_event_certainty'),
                      'transfer_source_year':cp.get('transfer_source_year'),
@@ -451,9 +455,9 @@ for y in YEARS:
     rows.sort(key=lambda r:(r['state_order'],r['order']))
     export[str(y)]=rows
 
-result={'schema_version':'1.0.0','reviewed_at':'2026-10-04',
+result={'schema_version':'1.1.0','reviewed_at':'2026-10-04',
  'source_sha256':hashlib.sha256(source_path.read_bytes()).hexdigest(),
- 'policy':{'date_basis':'通史现成年份；县转属年列原郡、次年列新郡；郡改州不延后',
+ 'policy':{'date_basis':'通史现成年份；当年列示改动后州郡县归属，在新属处注明年初旧州旧郡；不创造不详事件年',
            'unknown_dates':'观察锚点只约束显示，不创造确切始置或转属年',
            '304_baseline':'保留原人工基准作为改前对照；本轮仅落实用户指定修订',
            'scope_key':'prefecture_id/county_id, because old source IDs can repeat'},
@@ -462,12 +466,12 @@ result={'schema_version':'1.0.0','reviewed_at':'2026-10-04',
 # The browser only needs patches and policy; full evidence ledger is kept in JSON.
 browser={k:result[k] for k in ['schema_version','reviewed_at','source_sha256','policy','overrides']}
 (ROOT/'data/jin-admin-review.js').write_text('window.JIN_ADMIN_REVIEW_DATA = '+json.dumps(browser,ensure_ascii=False,separators=(',',':'))+';\n')
-annual_out={'meta':{'schema_version':'1.0.0','reviewed_at':'2026-10-04','source_sha256':result['source_sha256'],
+annual_out={'meta':{'schema_version':'1.1.0','reviewed_at':'2026-10-04','source_sha256':result['source_sha256'],
  'policy':result['policy'],'years':[266,316]},'years':export}
 (ROOT/'data/jin-reviewed-annual-rows.json').write_text(json.dumps(annual_out,ensure_ascii=False,separators=(',',':'))+'\n')
 summary={'overrides':len(overrides),'ledger_entries':len(ledger),'reviewed_lineages':len(lineages),
  'original_duplicate_candidates_resolved':len(candidate_resolutions),
- 'dated_county_transfer_events':sum(r['kind'] in ('dated_county_transfer_origin_year','same_year_transfer_overlap') for r in ledger),
+ 'dated_county_transfer_events':sum(r['kind'] in ('dated_county_transfer_result_year','same_year_transfer_overlap') for r in ledger),
  'nonoverlap_county_transfer_events':len(events),
  'snapshots':{y:{'prefectures':sum(r['administrative_count'] is not False for r in export[str(y)]),
                  'transfer_origin_groups':sum(r['transfer_origin_grouping'] for r in export[str(y)]),
@@ -481,6 +485,6 @@ summary['changes_from_original_304']={
  'removed_scoped_records':[{'key':k,**before304[k]} for k in sorted(before304.keys()-after304.keys())],
  'added_scoped_records':[{'key':k,**after304[k]} for k in sorted(after304.keys()-before304.keys())],
  'renamed_scoped_records':[{'key':k,'before':before304[k]['name'],'after':after304[k]['name']} for k in sorted(before304.keys()&after304.keys()) if before304[k]['name']!=after304[k]['name']],
- 'note':'轉屬当年列原郡产生的原／新记录替换，与删除实体不同；原基准不覆盖。'}
+ 'note':'轉屬當年列示新屬；原304人工基準保留為改前對照，實體去重與字形修訂分別記錄。'}
 (ROOT/'reports/jin-admin-review-applied-20261004.json').write_text(json.dumps(summary,ensure_ascii=False,indent=2)+'\n')
 print(json.dumps(summary,ensure_ascii=False,indent=2))

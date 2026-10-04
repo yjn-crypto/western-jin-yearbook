@@ -4,8 +4,9 @@
 Full source layers are archived losslessly. 281 supplies the stable shared
 compartments; 262 restores earlier divisions and 308 supplies only later local
 divisions. County seats constrain amendments inside affected compartments.
-No county polygon is published. Old maps are never overwritten.
-Run with the project's Shapely 2.1 runtime (PYTHONPATH=work/_gis_deps).
+No county polygon is published. Historical reference directories remain intact.
+Run with Python 3.12 and the project's Shapely 2.1 runtime
+(PYTHONPATH=work/_gis_deps).
 """
 from __future__ import annotations
 import argparse, collections, gzip, hashlib, importlib.util, json, math, re, sys
@@ -22,6 +23,9 @@ SOURCES = ROOT/'data/jin-maps/three-basemap-sources'
 LOCAL = ROOT/'work/jin-three-basemap'
 GRID = .000001
 YEARS = range(266,317)
+CONTROL_POLICY_VERSION='2026-10-04.4-no-video-political-boundaries'
+EARLY_JIAO_NOTE='交趾等地於統一前曾有晉據點；既有考證僅支持地點提示，缺乏可靠實控外界，未據此將整郡塗成晉境。'
+NO_VIDEO_NOTE='本版完全不採用史圖館政權邊界。280年起顯示底圖與年表的建置參考範圍；缺乏底圖界據的成漢、漢趙及其他末期實控變化未在本版表達，不代表晉末全境均由西晉實控。'
 GEOMETRY_EXCEPTIONS={
     'p033':dict(years=[283,283],mother='趙國',book_pages=[621,623],reason='中丘始置年份不確定；本年縣目仍列趙國，三底圖及同年CHGIS均無獨立郡面，未補定轉屬年。'),
     'p109':dict(years=[290,290],mother='巴西郡',book_pages=[666],reason='宕渠復置與領縣有前後限定；本年縣目仍列巴西，無可直接使用的獨立郡面，未補定轉屬年。'),
@@ -63,6 +67,9 @@ def key(s):
     return {'巨鹿':'鉅鹿','牂柯':'牂牁','右北平':'北平','毗陵典農校尉':'毗陵',
             '廣魏':'略陽','東廣漢':'廣漢','東':'濮陽','山陽':'高平'}.get(s,s)
 
+def state_key(name):
+    return key(str(name).translate(str.maketrans({'荆':'荊','并':'並','凉':'涼','扬':'揚','兖':'兗','宁':'寧','广':'廣'})))
+
 def archive_sources():
     roots={262:Path('/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/三国262年'),
            281:Path('/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/修订版')}
@@ -100,7 +107,8 @@ def archive_sources():
     else:raise FileNotFoundError(video_source)
     manifest.append(dict(id='video-annual-control',path=str(video_archive.relative_to(ROOT)),
         original_path=str(video_source),sha256=hashlib.sha256(raw).hexdigest(),
-        purpose='political_control_only_no_shoreline',years=[266,316],lossless_archive=True))
+        purpose='backend_reference_only_not_used_by_this_version',years=[266,316],lossless_archive=True,
+        frontend_original_map=False))
     chgis_archive=SOURCES/'chgis-266-316.geojson.gz'
     if not chgis_archive.exists():
         records,inventory=annual.read_chgis(Path.home()/'Downloads/CHGIS数据.zip')
@@ -119,7 +127,9 @@ def archive_sources():
         attribution='CHGIS Harvard/Fudan; see data/jin-maps/CHGIS_V6_README.txt'))
     write(SOURCES/'manifest.json',dict(version=1,date='2026-10-04',sources=manifest,
         priority=[['Tan262','Tan281','dated_CHGIS_points_and_areas'],['circa308_user_map']],
-        control_only='Shituguan_video',county_areas_public=False))
+        control_only='no_video_political_boundaries',county_areas_public=False,
+        political_control_policy=CONTROL_POLICY_VERSION,stable_political_borders='Tan262_Tan281_circa308',
+        video_political_features_used=0,video_originals_retained_in_backend=True))
     return manifest
 
 def source_units(year):
@@ -166,15 +176,15 @@ def load_rows(data,path):
                     display_prefecture_id=p['id'],prefecture_id=p['id'],prefecture_name=p['name'],state_id=p['state_id'],state_name=p['state_name'],entity=ce,
                     phase=dict(start=year,end=year,name=c['name'],uncertain=c.get('uncertain',False),source=c.get('source',{})))
         for c in rows['county'].values():
-            # Editorial placement and the documented event year are separate.
-            # Explicit annual transfers change geometry in their actual year.
+            # The text and map both use the result of the documented event year.
+            # Retain compatibility with archived pre-revision origin groupings.
             explicit_transfer=c.get('transfer_destination_id') and c.get('transfer_event_certainty')=='dated_in_source'
             if explicit_transfer or c['prefecture_id'] in original_groups:
                 destination=c.get('transfer_destination_id') or original_groups[c['prefecture_id']]
                 if destination not in rows['prefecture']:raise ValueError(f'{year}: missing geometry parent {destination}')
                 p=rows['prefecture'][destination]
                 c.update(prefecture_id=destination,state_id=p['state_id'],state_name=p['state_name'],prefecture_name=p['name'])
-                c['geometry_year_note']='表格按转出方列县，本年边界据已发生转属；原始县点坐标不变'
+                c['geometry_year_note']='文字與地圖均按本年改動後統屬；改前州郡另作說明，原始縣點坐標不變'
         for pid in original_groups:rows['prefecture'].pop(pid)
         years[year]=rows
     return years,reviewed
@@ -202,9 +212,43 @@ def round_geometry(value):
     if isinstance(value,dict):return {k:round_geometry(v) for k,v in value.items()}
     return round(value,6) if isinstance(value,float) else value
 
+def finalize_reference_presentation(trial):
+    """Keep unassigned atlas groups legible without inventing current states."""
+    trial['features']=[f for f in trial['features'] if f['properties'].get('geometry_status')!='unassigned_atlas_state_reference']
+    current_states={state_key(f['properties'].get('name')):f['properties']['entity_id'] for f in trial['features']
+                    if f['properties'].get('layer')=='province_areas'}
+    present_states=set(current_states)
+    existing={state_key(f['properties'].get('name')) for f in trial['features']
+              if f['properties'].get('layer')=='reference_province_areas'}
+    groups=collections.defaultdict(list)
+    for f in trial['features']:
+        p=f['properties']
+        if p.get('source_policy')=='2026-10-04-three-basemap':p['source_policy']=CONTROL_POLICY_VERSION
+        if p.get('includes_retained_reference'):
+            p['is_reference']=True
+            ids=[current_states.get(state_key(x[len('reference-state-'):]),x) if x.startswith('reference-state-') else x for x in p['adjacent_state_ids']]
+            p['adjacent_state_ids']=ids
+            p['layer']='province_boundaries' if ids[0]!=ids[1] else 'prefecture_boundaries'
+            p['level']='state' if ids[0]!=ids[1] else 'prefecture'
+            p['name']='州界' if ids[0]!=ids[1] else '郡国界'
+        if p.get('geometry_status')=='unmatched_atlas_compartment_retained_without_current_assignment':
+            groups[p['state_name']].append(shape(f['geometry']))
+    for state,parts in groups.items():
+        if state_key(state) in present_states or state_key(state) in existing:continue
+        g=union(parts)
+        trial['features'].append(dict(type='Feature',geometry=mapping(g),properties=dict(
+            id='unassigned-reference-state-'+key(state),layer='reference_province_areas',level='state',
+            name=state,display_name=state,state_name=state,year=trial['year'],entity_id=None,
+            is_reference=True,reference_year=281,show_label=True,explicit_shared_boundaries=True,
+            source='谭图281参考州；由未分配给当年实体的原郡面合并',
+            geometry_status='unassigned_atlas_state_reference',current_entity_assigned=False,actual_control_claim=False,
+            reference_reason='仅标原图参考州名，不断言本年仍置此州，不计入当年州数')))
+    return trial
+
 def pack(trials):
     registry={};years={};OUT.mkdir(parents=True,exist_ok=True)
     for year,trial in trials.items():
+        finalize_reference_presentation(trial)
         features=[];inline={};need=set()
         for f in trial['features']:
             geom=f['geometry']
@@ -265,7 +309,6 @@ class Builder:
         self.units={y:source_units(y) for y in (262,281,308)}
         self.yearpoints={};self.pointreports={};self.rejected_points={};self.maps={};self.events=[];self.mapping=[]
         self.rules=annual.load_js(ROOT/'data/jin-multi-kingdoms.js')
-        self.polity=read(SOURCES/'video-annual-control.geojson.gz')['features']
         self.units[281]=[u for u in self.units[281] if not u['names'].intersection({'樂浪','帶方'})]
         self.domain=clean(union([u['geometry'] for u in self.units[281]]).intersection(box(*old.PRESENTATION['extent'])))
         old_domain=union([clean(shape(f['geometry'])) for f in read(ROOT/'data/jin-maps/308_map.geojson')['features'] if f['properties'].get('layer')=='province_areas'])
@@ -282,6 +325,7 @@ class Builder:
         for u in self.units[281]:
             u['geometry']=clean(u['geometry'].difference(occupied));occupied=union([occupied,u['geometry']])
         self.domain=occupied
+        self.wu_before_unification,self.wu_source_completion=self.make_wu_baseline()
         self.get_points(281)
         self.baseline_assign=self.match_rows(281)
         self.baseline_counties=collections.defaultdict(list)
@@ -292,6 +336,71 @@ class Builder:
             if not row:continue
             uid=self.baseline_assign.get(row['prefecture_id'])
             if uid:self.baseline_counties[uid].append(f)
+
+    def make_wu_baseline(self):
+        """Carry Tan 262's Wei/Shu–Wu partition to the stable Tan 281 coast.
+
+        A source-registration/coast difference is completed inside its existing
+        281 compartment. No video colour gap becomes an accidental Jin enclave.
+        The actual 262 political edge is retained where both sides are covered.
+        """
+        wu=union([u['geometry'] for u in self.units[262] if u['properties'].get('polity')=='吴'])
+        jin=union([u['geometry'] for u in self.units[262] if u['properties'].get('polity') in ('魏','蜀汉','蜀')])
+        source=union([wu,jin]);parts=[];completion=[]
+        for u in self.units[281]:
+            mask=u['geometry'];w=clean(mask.intersection(wu));j=clean(mask.intersection(jin))
+            # Complete wholly Wu compartments to the retained high-resolution
+            # shore. On a genuinely shared frontier preserve the 262 line.
+            if (not w.is_empty and j.is_empty) or u['state'] in ('交州','广州','廣州'):
+                parts.append(mask)
+                if mask.difference(w).area>1e-8:
+                    completion.append(dict(source_id=u['id'],name=u['name'],method='whole_Wu_compartment_to_stable_coast'))
+                continue
+            if not w.is_empty:parts.append(w)
+            gap=clean(mask.difference(source))
+            if gap.is_empty:continue
+            for piece in old.components(gap):
+                # A tiny disagreement at a shared source edge is spatial
+                # completion, not a new dated conquest or a county boundary.
+                point=piece.representative_point()
+                to_wu=wu.distance(point)<jin.distance(point)
+                if to_wu:parts.append(piece)
+                completion.append(dict(source_id=u['id'],name=u['name'],
+                    method='source_edge_gap_nearest_262_polity_inside_281_compartment',polity='吴' if to_wu else '晋'))
+        return clean(union(parts).intersection(self.domain)),completion
+
+    def political_control(self,year):
+        """Atlas-only presentation. Video control polygons are never read here.
+
+        The later atlas is an administrative reference, not evidence that all
+        its territory remained under Jin military control until 316.
+        """
+        selected=[];occupied=Polygon()
+        if year<280:
+            occupied=self.wu_before_unification
+            selected.append(dict(type='Feature',geometry=mapping(occupied),properties=dict(
+                year=year,regime='孫吳',name='孫吳',is_jin=False,is_western_jin=False,
+                source='谭图262魏蜀／吴政权分区；保留谭图281稳定海岸与共同外圈',
+                source_priority='Tan262_political_partition',control_source='dated_atlas_partition',
+                boundary_evidence='晋承魏蜀主体；280统一前晋吴分界沿用262谭图，海岸差异在既有281郡面内补齐；不据视频留色空隙增补晋地',
+                source_policy=CONTROL_POLICY_VERSION,video_outer_boundary_used=False)))
+        jin=clean(self.domain.difference(occupied))
+        selected.append(dict(type='Feature',geometry=mapping(jin),properties=dict(
+            year=year,regime='西晉',name='西晉' if year<280 else '西晉建置參考範圍',
+            is_jin=True,is_western_jin=True,
+            source='三底图稳定范围；统一前依谭262晋吴分区；完全不使用史图馆政权边界',
+            source_priority='dated_basemap_political_extent',source_policy=CONTROL_POLICY_VERSION,
+            control_source='dated_atlas_partition_only',video_outer_boundary_used=False,
+            control_status='atlas_administrative_reference_not_asserted_actual_control',
+            boundary_evidence='底图与年表的建置参考范围；未表达没有底图界据的末期成汉、汉赵等实控边界，不声称晋末全境实控')))
+        audit=dict(policy=CONTROL_POLICY_VERSION,baseline='Tan262_Wei_Shu_Wu_partition' if year<280 else 'Tan281_administrative_reference_domain',
+            stable_boundary_source='three_basemaps',video_used=False,video_events_used=[],
+            video_political_features_used=0,video_boundaries_used=0,
+            actual_control_claim=False,unmapped_late_control='Late Cheng/Han and other control changes without atlas boundary evidence are not displayed',
+            video_outer_boundary_used=False,early_jiao_control_marker_only=year<271,
+            early_jiao_note=EARLY_JIAO_NOTE if year<271 else None)
+        if year<280:audit['source_edge_completion']=self.wu_source_completion
+        return selected,jin,occupied,audit
 
     def get_points(self,year):
         if year not in self.yearpoints:
@@ -344,7 +453,7 @@ class Builder:
         county_by_name=collections.defaultdict(list)
         for f in county_points:county_by_name[annual.county_key(f['properties']['name'])].append(f)
         seats={f['properties']['entity_id']:shape(f['geometry']) for f in points if f['properties'].get('level')=='prefecture'}
-        additions=collections.defaultdict(list);provenance=collections.defaultdict(list);events=[]
+        additions=collections.defaultdict(list);provenance=collections.defaultdict(list);events=[];retained_references=[]
         # New and former entities select an explicit local source; they may not
         # replace unaffected national boundary compartments.
         local_candidates={}
@@ -397,15 +506,16 @@ class Builder:
                     # a bounded mother compartment, not a same-name far-away郡.
                     targets.add(pid)
             if not targets:
-                # No current named parent: carry territory to a current local
-                # successor using the known county correspondence, then nearby
-                # same-state seat. This is recorded as a fitted allocation.
-                state_candidates=[pid for pid,r in rows['prefecture'].items() if key(r['state_name'])==key(u['state']) and pid in seats and not names_for(r)&{'樂浪','帶方'}]
-                candidates=state_candidates or list(seats)
-                if not candidates:raise ValueError(f'{year}: no seed for {u["name"]}')
-                targets={min(candidates,key=lambda pid:mask.distance(seats[pid]))}
-                allocation='dated_successor_nearest_same_state_fit'
-            else:allocation='source_compartment_retained' if len(targets)==1 and not county_transfers else 'dated_county_membership_local_fit'
+                # A later atlas compartment with no dated identity or county
+                # succession remains an atlas reference. Nearest-seat distance
+                # cannot establish succession or extend a surviving kingdom.
+                retained_references.append(u)
+                events.append(dict(year=year,type='unmatched_atlas_compartment_retained_as_reference',
+                    mother_source=u['id'],name=u['name'],state=u['state'],reference_year=281,
+                    current_entity_assigned=False,inferred=False,
+                    evidence_policy='no_dated_name_or_county_successor_do_not_assign_nearest'))
+                continue
+            allocation='source_compartment_retained' if len(targets)==1 and not county_transfers else 'dated_county_membership_local_fit'
             parts={};remaining=mask
             # Preserve a real 262 former boundary or a 308 late division only
             # inside the affected 281 mother. Unaffected coasts stay untouched.
@@ -446,13 +556,12 @@ class Builder:
         missing=[pid for pid,r in rows['prefecture'].items() if not names_for(r)&{'樂浪','帶方'} and (pid not in final or final[pid].is_empty)]
         self.events.extend(events)
         self.mapping.extend(dict(year=year,entity_id=pid,sources=refs) for pid,refs in provenance.items())
-        return final,provenance,missing
+        return final,provenance,missing,retained_references
 
     def build(self,year):
         print(f'{year}: constructing source compartments and dated local amendments',flush=True)
-        rows=self.rows[year];full,provenance,missing=self.geography(year)
-        political=[f for f in self.polity if int(f['properties'].get('year',-1))==year]
-        political,jin,others,excluded,assessments=old.political_control_in_original_domain(year,political,self.domain)
+        rows=self.rows[year];full,provenance,missing,retained_references=self.geography(year)
+        political,jin,others,control_audit=self.political_control(year)
         final={pid:clean(g.intersection(jin)) for pid,g in full.items()}
         features=[]
         def add(g,p):
@@ -489,17 +598,25 @@ class Builder:
                 add(g.representative_point(),dict(p,layer='labels',label_type='prefecture',coordinate_role='territory_label_not_capital',show_label=True))
         # Administrative shared lines are computed from the uncut partitions;
         # a political frontier is not re-labelled as a province boundary.
-        ids=sorted(full);tree=STRtree([full[pid] for pid in ids])
-        for i,pid in enumerate(ids):
-            for jv in tree.query(full[pid],predicate='intersects'):
+        boundary_units=[dict(id=pid,geometry=g,state_key=rows['prefecture'][pid]['state_id'],reference=False)
+                        for pid,g in full.items()]
+        state_ids={state_key(r['name']):sid for sid,r in rows['state'].items()}
+        boundary_units.extend(dict(id=u['id'],geometry=u['geometry'],
+            state_key=state_ids.get(state_key(u['state']),'reference-state-'+state_key(u['state'])),reference=True)
+            for u in retained_references)
+        tree=STRtree([u['geometry'] for u in boundary_units])
+        for i,left in enumerate(boundary_units):
+            for jv in tree.query(left['geometry'],predicate='intersects'):
                 j=int(jv)
                 if j<=i:continue
-                other=ids[j];line=lineal(full[pid].boundary.intersection(full[other].boundary).intersection(jin))
+                right=boundary_units[j]
+                line=lineal(left['geometry'].boundary.intersection(right['geometry'].boundary).intersection(jin))
                 if line.length<.00001:continue
-                layer='province_boundaries' if rows['prefecture'][pid]['state_id']!=rows['prefecture'][other]['state_id'] else 'prefecture_boundaries'
+                layer='province_boundaries' if left['state_key']!=right['state_key'] else 'prefecture_boundaries'
                 add(line,dict(layer=layer,level='state' if layer=='province_boundaries' else 'prefecture',year=year,
-                    name='州界' if layer=='province_boundaries' else '郡国界',adjacent_entity_ids=[pid,other],
-                    adjacent_state_ids=[rows['prefecture'][pid]['state_id'],rows['prefecture'][other]['state_id']],
+                    name='州界' if layer=='province_boundaries' else '郡国界',
+                    adjacent_entity_ids=[left['id'],right['id']],adjacent_state_ids=[left['state_key'],right['state_key']],
+                    includes_retained_reference=left['reference'] or right['reference'],
                     geometry_status='single_shared_boundary',source='三底图共同分区共享线',coordinate_role='boundary'))
         # Wu and later non-Jin space needs geographical reference names, not
         # the nearest surviving Jin prefecture stretched over foreign control.
@@ -515,6 +632,18 @@ class Builder:
                 is_reference=True,reference_year=ref_year,source=f'谭图{ref_year}行政地理参考',
                 geometry_status='dated_basemap_reference_inside_non_jin_control',
                 reference_reason=f'{ref_year}年底图名称与边线参照，不宣称该郡本年属于西晋或仍为独立建置',
+                show_label=True,explicit_shared_boundaries=True))
+        retained_reference_parts=[]
+        for u in retained_references:
+            g=clean(u['geometry'].intersection(jin))
+            if g.is_empty:continue
+            retained_reference_parts.append(g)
+            add(g,dict(id='unassigned-reference-'+u['id'],layer='reference_prefecture_areas',level='prefecture',entity_id=None,
+                name=u['name'],display_name=u['name'],base_name=u['name'],state_name=u['state'],year=year,
+                is_reference=True,reference_year=281,source='谭图281原州郡分区；当年继承关系未有据',
+                geometry_status='unmatched_atlas_compartment_retained_without_current_assignment',
+                current_entity_assigned=False,actual_control_claim=False,
+                reference_reason='281年底图参考名称及边界；未找到本年同名或县属继承依据，不扩给最近有效郡，不赋予现行封国颜色，也不宣称本年仍设该郡或属晋实控',
                 show_label=True,explicit_shared_boundaries=True))
         for i,(left,lg) in enumerate(references):
             for right,rg in references[i+1:]:
@@ -559,26 +688,29 @@ class Builder:
         # Unlinked same-year CHGIS points in foreign control still provide
         # seats. They never assert Jin affiliation and retain raw coordinates.
         linked_positions={tuple(f['geometry']['coordinates']) for f in features if f['geometry']['type']=='Point' and 'seat' in f['properties'].get('layer','')}
+        reference_area=union([others,*retained_reference_parts])
         for f in self.points.unlinked_features_for(year)+self.rejected_points.get(year,[]):
             pt=shape(f['geometry']);p=dict(f['properties'])
-            if not others.covers(pt) or not self.domain.covers(pt) or tuple(pt.coords[0]) in linked_positions:continue
-            p.update(control_status='non_jin_video_control',reference_reason='非晋控制区内本年CHGIS治所；未与西晋年表实体绑定')
+            if not reference_area.covers(pt) or not self.domain.covers(pt) or tuple(pt.coords[0]) in linked_positions:continue
+            p.update(control_status='dated_atlas_reference_without_current_entity',reference_reason='底图参考范围内本年CHGIS治所；未与西晋年表实体绑定，不据点坐标推定统属')
             add(pt,p);linked_positions.add(tuple(pt.coords[0]))
         for f in political:
             p=dict(f['properties'],layer='regime_areas',level='regime',year=year,
-                source_policy='2026-10-04-three-basemap',footprint_source='Tan281_shared_outer_boundary_with_existing_study_scope',
-                source='谭图281外圈限定的汉晋天下；域内明确控制变化参照史图馆年度原帧')
+                source_policy=CONTROL_POLICY_VERSION,footprint_source='Tan281_shared_outer_boundary_with_existing_study_scope')
             g=shape(f['geometry']);add(g,p)
             if not old.is_jin(p):add(lineal(g.boundary.difference(self.domain.boundary.buffer(GRID*2))),dict(p,layer='regime_boundaries'))
         add(self.domain.boundary,dict(layer='original_territory_boundary',level='territory',name='底图疆域与海岸',year=year,
             source='谭图281完整边线，在原项目汉晋天下空间范围内显示',video_outer_boundary_used=False))
-        covered=union(final.values());gap=clean(jin.difference(covered));overlap=sum(g.area for g in final.values())-covered.area
+        covered=union([*final.values(),*retained_reference_parts]);gap=clean(jin.difference(covered));overlap=sum(g.area for g in final.values())+sum(g.area for g in retained_reference_parts)-covered.area
         if gap.area>1e-5 or overlap>1e-5:raise ValueError(f'{year}: coverage gap={gap.area} overlap={overlap}')
         report=dict(year=year,states_total=sum(not r.get('is_context',False) for r in rows['state'].values()),state_groups_total=len(rows['state']),prefectures_total=len(rows['prefecture']),counties_total=len(rows['county']),
             prefectures_drawn=sum(not g.is_empty for g in final.values()),prefectures_without_geometry=missing,
             gap_area=gap.area,overlap_area=overlap,county_polygons_displayed=False,point_report=self.pointreports[year],
             boundary_events=len([e for e in self.events if e['year']==year]),source_reference_year=281)
         report['display_scope_comparison']=self.scope_comparison
+        report['political_control']=control_audit
+        report['unassigned_atlas_references']=[dict(source_id=u['id'],name=u['name'],state=u['state'],reference_year=281) for u in retained_references if u['geometry'].intersects(jin)]
+        report['nearest_successor_assignments']=0
         exceptions=[]
         for pid in missing:
             exception=GEOMETRY_EXCEPTIONS.get(pid)
@@ -592,11 +724,17 @@ class Builder:
         if unsupported:raise ValueError(f'{year}: unexplained missing prefecture geometry {unsupported}')
         trial=dict(type='JinThreeBasemapGeometryGraph',version=1,year=year,features=features,coverage=report,meta={},
             presentation=dict(old.PRESENTATION,three_basemap=True,title=f'{year}年　西晉州郡與封國',subtitle='谭图262／281与约308局部边界；年度建置依据复核年表',
-                note='谭图与同年CHGIS为同级依据。281稳定边界向前回溯并向后沿用；262旧界与约308晚期界仅局部补充。合面及县属变更处分界为拟合；县域单元不展示。治所保留CHGIS原坐标；史图馆只提供域内政权控制。'),
-            source_policy=dict(version='2026-10-04-three-basemap',tier_1=['Tan262','Tan281','dated_CHGIS'],tier_2=['circa308'],
-                county_boundaries_displayed=False,video_outer_boundary_used=False,original_versions_preserved=True),
+                note='谭图与同年CHGIS为同级依据。281稳定边界向前回溯并向后沿用；262旧界与约308晚期界仅局部补充。合面及县属变更处分界为拟合；县域单元不展示。治所保留CHGIS原坐标；政權邊界僅依三底圖。'),
+            source_policy=dict(version=CONTROL_POLICY_VERSION,tier_1=['Tan262','Tan281','dated_CHGIS'],tier_2=['circa308'],
+                county_boundaries_displayed=False,video_outer_boundary_used=False,original_versions_preserved=True,
+                political_control='three_basemaps_only_no_video_control',
+                video_events_used=[],video_political_features_used=0,actual_control_claim=False),
             provenance=dict(source_manifest='data/jin-maps/three-basemap-sources/manifest.json',yearbook='data/jin-reviewed-annual-rows.json',
                 full_resolution=True,coordinate_grid_degrees=GRID,no_display_simplification=True))
+        trial['presentation']['note']+=' '+NO_VIDEO_NOTE
+        if year<280:trial['presentation']['note']+=' 統一前晉吳分界依262谭圖，並沿用穩定海岸。'
+        if year<271:trial['presentation']['note']+=' '+EARLY_JIAO_NOTE
+        if retained_reference_parts:trial['presentation']['note']+=' 本年無同名或縣屬承繼依據的底圖單元，保留原州郡名稱與邊界作參考，不併入最近有效郡或封國。'
         if exceptions:trial['presentation']['note']+=' 本年表內但未能單獨繪界：'+ '、'.join(e['name'] for e in exceptions)+'；仍保留有據母範圍，具體缺據見年度coverage記錄。'
         self.maps[year]=trial
         write(LOCAL/f'{year}.geojson',dict(trial,type='FeatureCollection'))
