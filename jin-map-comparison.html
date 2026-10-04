@@ -1,42 +1,18 @@
 <!doctype html>
 <html lang="zh-Hant">
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>西晉原圖範圍與來源優先：289、308年對照</title>
-<style>
-*{box-sizing:border-box}body{margin:0;background:#f6f3eb;color:#302f2a;font-family:system-ui,"Songti SC",serif;line-height:1.75}main{max-width:1500px;margin:auto;padding:28px}h1{font-size:clamp(22px,3vw,34px);margin:10px 0}h2{font-size:22px;margin-top:30px}a{color:#73502d}nav{display:flex;gap:12px;flex-wrap:wrap;align-items:center}button{font:inherit;padding:6px 18px;background:white;border:1px solid #c3bbaa;border-radius:5px;cursor:pointer}button[aria-pressed=true]{background:#534f3d;color:white}.intro{max-width:1050px;color:#59584e}.pair{display:grid;grid-template-columns:1fr 1fr;gap:18px}figure{margin:0;background:#fffdf8;border:1px solid #d7d1c3;padding:12px}figcaption{font-weight:600;margin-bottom:8px}img{width:100%;height:auto;display:block}table{border-collapse:collapse;width:100%;background:#fffdf8}th,td{border:1px solid #d7d1c3;padding:10px;text-align:left}th{width:24%}.source{margin-top:18px}details{margin-top:22px}summary{cursor:pointer;font-weight:600}.links{margin:20px 0}small{color:#6e6a5d}#overview{background:#dce9f4}@media(max-width:760px){main{padding:16px}.pair{grid-template-columns:1fr}th{width:35%}}
-</style>
-<main>
-<nav><a href="index.html">返回年表</a><button data-year="289" aria-pressed="true">289年</button><button data-year="308" aria-pressed="false">308年</button></nav>
-<h1><span id="year">289</span>年：原圖範圍與來源優先</h1>
-<p class="intro">本頁保留2026-10-02的兩年對照；最新三底圖年度版可返回年表查看。左右兩圖採用同一經緯度範圍、尺寸及郡名縮放層級。右圖恢復原圖疆域、海岸、展示空間和圖例樣式，CHGIS有效治所點優先，州郡面以原圖為基礎。史圖館僅補充原圖範圍內的孫吳、漢、成及起兵等年度控制變化。州界保持穩定，年度改屬沿完整郡面調整；郡級及以上封國繼續著色，接壤封國異色。</p>
-<div class="links"><a id="newMap">打開右側原圖疆域版</a> · <a id="oldMap">打開上輪年度圖</a> · <a id="videoMap">查看本年原幀底圖</a></div>
-<div class="pair">
-<figure><figcaption>修改前：上輪視頻年度圖</figcaption><img id="before" alt="上輪視頻年度圖"></figure>
-<figure><figcaption>修改後：CHGIS點優先＋原圖範圍與樣式</figcaption><img id="after" alt="原圖來源優先年度圖"></figure>
-</div>
-<h2>本年比較結果</h2><table><tbody id="metrics"></tbody></table>
-<p id="analysis" class="intro"></p>
-<p class="intro">视频控制區仍含配准誤差，只作較低精度的年度政治參照，不替換原圖的外缘和海岸線。CHGIS點保留原坐標，位於非晉控制區者作無色政區參照；這不表示該政區本年仍屬西晉。未考定郡界繼續標作擬合。</p>
-<details class="source"><summary>對照史圖館本年最後清晰原幀</summary><p id="sourceNote"></p><img id="source" alt="史圖館年末最後清晰原幀" loading="lazy"></details>
-<p><small>比較基線：Git提交e707671。266–316年全部51年採用相同來源優先規則和原圖展示空間；修改前年度圖及最初原版仍可切換。</small></p>
-</main>
-<script src="data/jin-video-frames.js?v=20261002.2"></script>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>西晉年度州郡圖</title>
 <script>
-(async()=>{
- const data=await fetch('data/jin-video-comparison.json?v=20261002.4').then(r=>r.json());
- const show=year=>{
-  const item=data.years[year],frame=window.JIN_VIDEO_FRAMES.frames.find(f=>Number(f.year)===year);
-  document.getElementById('year').textContent=year;
-  for(const mode of ['before','after'])document.getElementById(mode).src=`assets/maps/jin-video/comparison/${year}-${mode}.webp?v=20261002.4`;
-  document.getElementById('newMap').href=`index.html?year=${year}&jinmap=source-prior`;document.getElementById('oldMap').href=`index.html?year=${year}&jinmap=video-prior`;document.getElementById('videoMap').href=`index.html?year=${year}&jinmap=video`;
-  document.getElementById('source').src=frame.web_path;document.getElementById('sourceNote').textContent=`${frame.source_filename}，${Number(frame.timestamp_seconds).toFixed(3)}秒；視頻本年最後事件後、下年淡化前的最後清晰畫面。`;
-  document.getElementById('analysis').textContent=item.analysis;
-  document.getElementById('metrics').replaceChildren(...item.metrics.map(([label,value])=>{const tr=document.createElement('tr'),th=document.createElement('th'),td=document.createElement('td');th.textContent=label;td.textContent=value;tr.append(th,td);return tr;}));
-  for(const button of document.querySelectorAll('[data-year]'))button.setAttribute('aria-pressed',Number(button.dataset.year)===year);
-  const url=new URL(location.href);url.searchParams.set('year',year);history.replaceState(null,'',url);
- };
- for(const button of document.querySelectorAll('[data-year]'))button.addEventListener('click',()=>show(Number(button.dataset.year)));
- show(Number(new URLSearchParams(location.search).get('year'))===308?308:289);
-})().catch(error=>{document.getElementById('analysis').textContent='比較資料載入失敗，請重新整理。';console.error(error);});
+(() => {
+  const source=new URL(window.location.href),target=new URL('index.html',source);
+  const year=Number(source.searchParams.get('year'));
+  target.searchParams.set('year',String(Number.isInteger(year)&&year>=266&&year<=316?year:304));
+  if(source.searchParams.get('jinview')==='boundaries')target.searchParams.set('jinview','boundaries');
+  window.location.replace(target.href);
+})();
 </script>
+</head>
+<body><p><a href="index.html">前往西晉年度州郡圖</a></p></body>
 </html>

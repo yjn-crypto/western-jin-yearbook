@@ -6,7 +6,7 @@
   const PREVIOUS_VIDEO_URLS={289:'data/jin-maps/video-trial-289-308/289.json?v=20261002.2',308:'data/jin-maps/video-trial-289-308/308.json?v=20261002.2'};
   const VIDEO_TRIAL_URLS=Object.fromEntries(Array.from({length:51},(_,i)=>[266+i,`data/jin-maps/video-annual/${266+i}.json?v=20261002.3`]));
   const SOURCE_PRIORITY_URLS=Object.fromEntries(Array.from({length:51},(_,i)=>[266+i,`data/jin-maps/source-priority-annual/${266+i}.json?v=20261002.4`]));
-  const THREE_BASEMAP_URLS=Object.fromEntries(Array.from({length:51},(_,i)=>[266+i,`data/jin-maps/three-basemap-annual/${266+i}.json?v=20261004.3`]));
+  const THREE_BASEMAP_URLS=Object.fromEntries(Array.from({length:51},(_,i)=>[266+i,`data/jin-maps/three-basemap-annual/${266+i}.json?v=20261004.4`]));
   const VIDEO_LAND_URL='data/jin-maps/jin-video-land.geojson?v=20261002.2';
   async function readMapData(url,fetcher=fetch){
     if(/^data\/jin-maps\/three-basemap-annual\/.*\.json\.gz(?:\?|$)/.test(url)){
@@ -15,7 +15,7 @@
       const bytes=new Uint8Array(await response.arrayBuffer());
       // Hosts may serve the archive directly or apply Content-Encoding first.
       if(bytes[0]!==0x1f||bytes[1]!==0x8b)return JSON.parse(new TextDecoder().decode(bytes));
-      if(typeof DecompressionStream!=='function')throw new Error('此瀏覽器不支援大圖解壓，請更新瀏覽器或切換修改前圖。');
+      if(typeof DecompressionStream!=='function')throw new Error('此瀏覽器不支援大圖解壓，請更新瀏覽器後重試。');
       return await new Response(new Response(bytes).body.pipeThrough(new DecompressionStream('gzip'))).json();
     }
     if(/^data\/jin-maps\/(?:video-annual|source-priority-annual|three-basemap-annual)\//.test(url)&&typeof DecompressionStream==='function'){
@@ -97,8 +97,17 @@
     };
   }
   function hydrateThreeBasemap(bundle,year){
-    const map=hydrateVideoTrial(bundle,year,null,{sourcePriority:true});
+    if(Number(bundle?.year)!==Number(year)||!Array.isArray(bundle.features))throw new Error(`Missing three-basemap slice: ${year}`);
+    const features=bundle.features.map(feature=>{
+      const geometry=feature.geometry||bundle.geometries?.[feature.geometry_id];
+      if(!geometry)throw new Error(`Missing annual geometry: ${feature.geometry_id}`);
+      return {type:'Feature',geometry,properties:{...feature.properties}};
+    });
     const presentation=bundle.presentation||{};
+    const map={year:Number(year),trial:true,sourcePriority:true,
+      width:presentation.width||2400,height:presentation.height||1986,
+      extent:presentation.extent||[92.76949194836817,15.25765489858437,128.42883145915184,43.37633897890462],
+      plot:presentation.plot||[80,140,2320,1906],coverage:bundle.coverage||{},geojson:{type:'FeatureCollection',features}};
     const fiefColors={...(bundle.fief_colors||presentation.fief_colors||{})};
     for(const feature of map.geojson.features){
       const p=feature.properties;
@@ -109,7 +118,7 @@
     return {...map,threeBasemap:true,fiefColors,
       title:presentation.title||`${year}年　西晉州郡與封國`,
       subtitle:presentation.subtitle||'據262、281及約308年圖按改置事件取界；CHGIS保留治所。',
-      note:note||'谭圖262、281與CHGIS同級採用；約308圖補晚期局部邊界。政區與支郡依本年文字，改名、整郡改州沿用已有郡界；析置及轉縣局部擬合並註明來源。視頻只補展示域內政治控制。縣面與縣界不展示；州郡大圖使用同一年度的完整矢量邊線。',
+      note:note||'谭圖262、281與CHGIS同級採用；約308圖補晚期局部邊界。政區與支郡依本年文字，改名、整郡改州沿用已有郡界；析置及轉縣局部擬合並註明來源。政權邊界只採三底圖；末期缺少明確控制界線之處保留底圖政區參考，不表示仍屬西晉實際控制。縣面與縣界不展示；州郡大圖使用同一年度的完整矢量邊線。',
       status:presentation.status||`${year}年：${count('prefecture_areas')}處郡國範圍、${count('county_seats')}處縣治；邊界逐段保留底圖年代與擬合說明。`
     };
   }

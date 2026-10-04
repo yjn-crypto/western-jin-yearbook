@@ -190,17 +190,8 @@ body.map-reading-open { overflow: hidden; }
 .jin-member-key::before { border-top: 1px solid rgba(118,104,84,.3); }
 .jin-reference-key::before { border-top: 1px solid #92918b; }
 .jin-regime-key::before { border-top: 4px solid #2e3439; }
-.jin-video-source { margin: 10px 0 16px; padding: 10px 14px; border: 1px solid var(--line); background: var(--paper-2); }
-.jin-video-source[hidden] { display: none; }
-.jin-video-source summary { cursor: pointer; }
-.jin-video-source p { font-size: .86rem; color: var(--muted); }
-.jin-video-source img { display: block; width: 100%; height: auto; }
-.jin-map-version-control { display: flex; align-items: center; flex-wrap: wrap; gap: 10px 14px; margin-top: 14px; font-size: .88rem; }
-.jin-map-version-control[hidden] { display: none; }
-.jin-map-version-control select { width: auto; max-width: 100%; }
-.jin-map-version-toggle { display: inline-block; padding: 7px 12px; border: 1px solid var(--theme-border); border-radius: 4px; background: var(--paper-2); text-decoration: none; }
-.jin-map-version-toggle:hover,.jin-map-version-toggle:focus-visible { background: var(--paper); text-decoration: underline; }
-.jin-map-version-control span { color: var(--muted); }
+.jin-map-source-note { margin: 14px 0 0; color: var(--muted); font-size: .88rem; }
+.jin-map-source-note[hidden] { display: none; }
 .map-hotspot { fill: transparent; stroke: transparent; stroke-width: 5; vector-effect: non-scaling-stroke; cursor: pointer; pointer-events: all; }
 .map-hotspot:hover,.map-hotspot:focus-visible { fill: rgba(255,255,255,.28); stroke: #f5f1d7; outline: none; }
 .map-hotspot.is-active { fill: rgba(255,241,153,.42); stroke: #9b2f52; stroke-width: 7; }

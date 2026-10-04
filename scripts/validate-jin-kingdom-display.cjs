@@ -233,7 +233,7 @@ assertAdministrativeCount(chengduStates, 4, 'The actual four commanderies of Che
 // an additional administrative commandery. Its evidence does not move Yangxia out
 // of the independently attested Chen commandery in the 304 manual baseline.
 const chenCountyIds = new Set(['c0231', 'c0232', 'c0233', 'c0234']);
-for (const year of [282, 289, 304]) {
+for (const year of [281, 282, 289, 304]) {
   const snapshot = snapshots.get(year);
   const state = stateOf(snapshot, 'p025');
   const parent = rowOf(snapshot, 'p025');

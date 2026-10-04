@@ -31,12 +31,7 @@ for (const candidate of review.candidate_resolutions) assert.ok(candidate.retain
 for (const [year, rs] of Object.entries(data.years)) {
   const keys = rs.flatMap(r => r.counties.map(c => c.entity_key));
   assert.equal(new Set(keys).size, keys.length, `${year}: scoped entity keys are unique`);
-  for (const r of rs.filter(r => r.transfer_origin_grouping)) {
-    assert.equal(r.administrative_count, false);
-    for (const c of r.counties) {
-      assert.ok(c.transfer_destination_id && rs.some(p => p.id === c.transfer_destination_id), `${year}: former parent group has a current geometry recipient`);
-    }
-  }
+  assert.ok(rs.every(r => !r.transfer_origin_grouping), `${year}: no obsolete transfer-origin groups remain`);
   assert.equal(owners(year, '修武').length, Number(year)<=311?1:0, `${year}: Xiu-wu follows its one valid parent, ending with that parent`);
 }
 assert.deepEqual(owners(279, '修武'), ['p008']);
@@ -48,34 +43,45 @@ assert.deepEqual(owners(281, '南充國'), ['p108']);
 assert.ok(row(281, 'p052'));
 assert.deepEqual(row(281, 'p052').counties.map(c => c.name), ['下洛', '潘', '涿鹿']);
 assert.ok(owners(281, '於陵').length);
-assert.equal(county(266,'c0516')[0].transfer_destination_id,'p004');
-assert.equal(county(266,'c0516')[0].transfer_event_certainty,'dated_in_source');
-assert.equal(county(266,'c0515')[0].transfer_destination_id,'p004');
+assert.equal(county(266,'c0516').length,0);
+assert.equal(county(266,'c0515').length,0);
+assert.equal(county(266,'c0031')[0].transfer_destination_id,'p004');
+assert.equal(county(266,'c0031')[0].transfer_origin_id,'p071');
+assert.equal(county(266,'c0031')[0].transfer_event_certainty,'dated_in_source');
+assert.match(county(266,'c0031')[0].year_note,/本年初屬雍州京兆郡；266年轉屬司州上洛郡/);
+assert.equal(county(266,'c0032')[0].transfer_destination_id,'p004');
 assert.equal(county(266,'c0028')[0].transfer_event_certainty,'inferred_source_year');
 assert.equal(county(266,'c0028')[0].transfer_event_year,null);
+assert.equal(county(266,'c0217')[0].transfer_event_certainty,'inferred_source_year');
+assert.equal(county(266,'c0217')[0].transfer_event_year,null);
 const geographicTransfers = Object.values(data.years).flatMap(rs=>rs.flatMap(r=>r.counties)).filter(c=>c.transfer_event_certainty==='dated_in_source');
 assert.equal(geographicTransfers.length,142,'All dated transfer endpoints, including the formerly overlapping 266 pairs, have map metadata');
+for (const c of geographicTransfers) {
+  assert.equal(c.prefecture_id,c.transfer_destination_id,'The event-year text is already in the destination');
+  assert.equal(c.state_id,c.transfer_destination_state_id);
+  assert.ok(c.transfer_origin_id && c.transfer_origin_state_id,'The pre-change state and prefecture remain traceable');
+  assert.match(c.year_note,/本年初屬.*；\d+年轉屬/);
+}
 
-assert.deepEqual(owners(281, '陳'), ['p026']);
+assert.deepEqual(owners(281, '陳'), ['p025']);
 assert.deepEqual(owners(282, '陳'), ['p025']);
-assert.equal(row(281, 'p026').administrative_count, false);
-assert.equal(row(281, 'p026').geometry_parent_id, 'p025');
-assert.deepEqual(row(280, 'p166').geometry_parent_ids, ['p163', 'p165']);
-assert.equal(row(280, 'p166').geometry_parent_id, null, 'New-ye counties have different recipients');
-assert.equal(row(285, 'p104').administrative_count, false);
-assert.equal(row(285, 'p104').geometry_parent_id, 'p103');
+assert.equal(row(281, 'p026'),undefined,'Withdrawn Chen is not artificially kept for its former counties');
+assert.equal(row(280, 'p166'),undefined,'Withdrawn Xinye is not artificially kept for its former counties');
+assert.equal(row(285, 'p104'),undefined,'Withdrawn Xindu is not artificially kept for its former counties');
+assert.match(county(281,'c0231')[0].year_note,/本年初屬豫州陳國；281年轉屬豫州梁國/);
 for (const name of ['武邑', '武遂', '觀津']) {
-  assert.deepEqual(owners(289, name), ['p035']);
+  assert.deepEqual(owners(289, name), ['p036']);
   assert.deepEqual(owners(290, name), ['p036']);
   assert.deepEqual(owners(291, name), ['p035']);
 }
-assert.deepEqual(owners(304, '歷陽'), ['p187']);
+assert.deepEqual(owners(304, '歷陽'), ['p205']);
 assert.deepEqual(owners(305, '歷陽'), ['p205']);
-assert.deepEqual(owners(304, '陽羨'), ['p193']);
+assert.deepEqual(owners(304, '陽羨'), ['p206']);
 assert.deepEqual(owners(305, '陽羨'), ['p206']);
 assert.equal(row(304, 'p224').state_name, '江州', 'Whole-commandery state transfer is not postponed');
 assert.equal(row(303, 'p132').state_id, 's13');
-assert.ok(row(303, 'p132').counties.some(c => c.name === '滇池'), 'County stays with its old physical commandery in the commandery’s new state');
+assert.ok(!row(303, 'p132').counties.some(c => c.name === '滇池'));
+assert.ok(row(303, 'p137').counties.some(c => c.name === '滇池'), 'County joins its new commandery in the event year');
 assert.ok(row(304, 'p137').counties.some(c => c.name === '滇池'));
 assert.deepEqual(owners(316, '華容'), ['p161']);
 assert.deepEqual(owners(316, '永世'), ['p189']);
@@ -95,4 +101,4 @@ assert.equal(county(281,'c0949')[0].name,'新香');
 assert.match(county(281,'c0949')[0].year_note,/新沓/);
 assert.equal(county(281,'c0981')[0].name,'黔');
 assert.match(county(281,'c0981')[0].year_note,/黔陬/);
-console.log('Jin administrative review OK: replay cache, immutable source, 51 slices, 131 candidates, bounded dates, transfer-year origins, scoped IDs and real homonyms.');
+console.log('Jin administrative review OK: replay cache, immutable source, 51 slices, 131 candidates, bounded dates, 142 event-year destinations with old-affiliation notes, no obsolete origin groups, scoped IDs and real homonyms.');

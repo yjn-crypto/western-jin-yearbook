@@ -102,10 +102,10 @@
     const defs=svgNode('defs'),hatch=svgNode('pattern',{id:`jin-uncertain-${map.year}`,width:8,height:8,patternUnits:'userSpaceOnUse',patternTransform:'rotate(30)'});
     hatch.appendChild(svgNode('line',{x1:0,y1:0,x2:0,y2:8,stroke:'#9b8364','stroke-width':1,'stroke-opacity':.45}));defs.appendChild(hatch);container.appendChild(defs);
     let geometryContainer=container;
-    if(map.videoTrial){
-      const clip=svgNode('clipPath',{id:`jin-video-plot-${map.year}`});
+    if(map.threeBasemap||map.videoTrial){
+      const clip=svgNode('clipPath',{id:`jin-map-plot-${map.year}`});
       clip.appendChild(svgNode('rect',{x:left,y:top,width:right-left,height:bottom-top}));defs.appendChild(clip);
-      geometryContainer=svgNode('g',{'clip-path':`url(#jin-video-plot-${map.year})`});container.appendChild(geometryContainer);
+      geometryContainer=svgNode('g',{'clip-path':`url(#jin-map-plot-${map.year})`});container.appendChild(geometryContainer);
     }
     if(map.trial){
       const control=svgNode('pattern',{id:`jin-control-${map.year}`,width:10,height:10,patternUnits:'userSpaceOnUse',patternTransform:'rotate(35)'});

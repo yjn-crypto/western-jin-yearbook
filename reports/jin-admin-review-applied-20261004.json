@@ -1,5 +1,5 @@
 {
-  "overrides": 423,
+  "overrides": 353,
   "ledger_entries": 334,
   "reviewed_lineages": 159,
   "original_duplicate_candidates_resolved": 131,
@@ -13,7 +13,7 @@
     },
     "281": {
       "prefectures": 170,
-      "transfer_origin_groups": 1,
+      "transfer_origin_groups": 0,
       "counties": 1230
     },
     "304": {
@@ -39,94 +39,9 @@
         "name": "修武",
         "prefecture_id": "p008",
         "state_id": "s01"
-      },
-      {
-        "key": "p159/c1042",
-        "name": "堂邑",
-        "prefecture_id": "p159",
-        "state_id": "s15"
-      },
-      {
-        "key": "p205/c1498",
-        "name": "歷陽",
-        "prefecture_id": "p205",
-        "state_id": "s17"
-      },
-      {
-        "key": "p205/c1499",
-        "name": "烏江",
-        "prefecture_id": "p205",
-        "state_id": "s17"
-      },
-      {
-        "key": "p206/c1500",
-        "name": "陽美",
-        "prefecture_id": "p206",
-        "state_id": "s17"
-      },
-      {
-        "key": "p206/c1504",
-        "name": "永世",
-        "prefecture_id": "p206",
-        "state_id": "s17"
-      },
-      {
-        "key": "p227/c1662",
-        "name": "柴桑",
-        "prefecture_id": "p227",
-        "state_id": "s19"
-      },
-      {
-        "key": "p227/c1663",
-        "name": "尋陽",
-        "prefecture_id": "p227",
-        "state_id": "s19"
       }
     ],
-    "added_scoped_records": [
-      {
-        "key": "p151/c1042",
-        "name": "堂邑",
-        "prefecture_id": "p151",
-        "state_id": "s15"
-      },
-      {
-        "key": "p187/c1317",
-        "name": "歷陽",
-        "prefecture_id": "p187",
-        "state_id": "s17"
-      },
-      {
-        "key": "p187/c1321",
-        "name": "烏江",
-        "prefecture_id": "p187",
-        "state_id": "s17"
-      },
-      {
-        "key": "p188/c1328",
-        "name": "尋陽",
-        "prefecture_id": "p188",
-        "state_id": "s17"
-      },
-      {
-        "key": "p189/c1343",
-        "name": "永世",
-        "prefecture_id": "p189",
-        "state_id": "s17"
-      },
-      {
-        "key": "p193/c1380",
-        "name": "陽羨",
-        "prefecture_id": "p193",
-        "state_id": "s17"
-      },
-      {
-        "key": "p224/c1644",
-        "name": "柴桑",
-        "prefecture_id": "p224",
-        "state_id": "s19"
-      }
-    ],
+    "added_scoped_records": [],
     "renamed_scoped_records": [
       {
         "key": "p037/c0308",
@@ -152,8 +67,13 @@
         "key": "p185/c1300",
         "before": "下售",
         "after": "下雋"
+      },
+      {
+        "key": "p206/c1500",
+        "before": "陽美",
+        "after": "陽羨"
       }
     ],
-    "note": "轉屬当年列原郡产生的原／新记录替换，与删除实体不同；原基准不覆盖。"
+    "note": "轉屬當年列示新屬；原304人工基準保留為改前對照，實體去重與字形修訂分別記錄。"
   }
 }
