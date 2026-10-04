@@ -1,0 +1,2031 @@
+{
+  "date": "2026-10-04",
+  "purpose": "只读成果清点与接入规划，未新做全面几何或历史审核，未修改地图",
+  "chronology_policy": "统一采用《通史》起讫年份，304网页为人工校对锚点；不另做严格年末折算",
+  "source_policy": {
+    "tier_1": [
+      "Tan_atlas_262",
+      "Tan_atlas_281",
+      "CHGIS_dated_points_and_areas"
+    ],
+    "tier_2": [
+      "user_map_circa_308"
+    ],
+    "control_only": [
+      "Shituguan_annual_video"
+    ],
+    "county_polygons_public": false
+  },
+  "basemaps": [
+    {
+      "id": "tan262",
+      "source_year": 262,
+      "root": "/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/三国262年",
+      "geopackage": "/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/三国262年/三国262年_政权州郡.gpkg",
+      "gpkg_layers": [
+        {
+          "table": "all_source_names",
+          "crs_id": 4326,
+          "geometry_type": "POINT"
+        },
+        {
+          "table": "boundary_completion_guides",
+          "crs_id": 4326,
+          "geometry_type": "LINESTRING"
+        },
+        {
+          "table": "external_boundary",
+          "crs_id": 4326,
+          "geometry_type": "LINESTRING"
+        },
+        {
+          "table": "fief_kingdoms",
+          "crs_id": 4326,
+          "geometry_type": "MULTIPOLYGON"
+        },
+        {
+          "table": "historical_coastline",
+          "crs_id": 4326,
+          "geometry_type": "LINESTRING"
+        },
+        {
+          "table": "jun_boundaries",
+          "crs_id": 4326,
+          "geometry_type": "LINESTRING"
+        },
+        {
+          "table": "jun_boundaries_partial",
+          "crs_id": 4326,
+          "geometry_type": "LINESTRING"
+        },
+        {
+          "table": "jun_guo_names",
+          "crs_id": 4326,
+          "geometry_type": "POINT"
+        },
+        {
+          "table": "jun_guo_territories",
+          "crs_id": 4326,
+          "geometry_type": "MULTIPOLYGON"
+        },
+        {
+          "table": "overview_polities",
+          "crs_id": 4326,
+          "geometry_type": "MULTIPOLYGON"
+        },
+        {
+          "table": "polity_boundaries",
+          "crs_id": 4326,
+          "geometry_type": "LINESTRING"
+        },
+        {
+          "table": "polity_names",
+          "crs_id": 4326,
+          "geometry_type": "POINT"
+        },
+        {
+          "table": "polity_territories",
+          "crs_id": 4326,
+          "geometry_type": "MULTIPOLYGON"
+        },
+        {
+          "table": "retained_holes_review",
+          "crs_id": 4326,
+          "geometry_type": "MULTIPOLYGON"
+        },
+        {
+          "table": "reviewed_coastline_additions",
+          "crs_id": 4326,
+          "geometry_type": "MULTIPOLYGON"
+        },
+        {
+          "table": "reviewed_gap_fills",
+          "crs_id": 4326,
+          "geometry_type": "MULTIPOLYGON"
+        },
+        {
+          "table": "reviewed_territory_exclusions",
+          "crs_id": 4326,
+          "geometry_type": "MULTIPOLYGON"
+        },
+        {
+          "table": "reviewed_unit_assignments",
+          "crs_id": 4326,
+          "geometry_type": "MULTIPOLYGON"
+        },
+        {
+          "table": "seam_adjustments",
+          "crs_id": 4326,
+          "geometry_type": "MULTIPOLYGON"
+        },
+        {
+          "table": "source_boundaries",
+          "crs_id": 4326,
+          "geometry_type": "LINESTRING"
+        },
+        {
+          "table": "source_coverage",
+          "crs_id": 4326,
+          "geometry_type": "MULTIPOLYGON"
+        },
+        {
+          "table": "territory_262",
+          "crs_id": 4326,
+          "geometry_type": "MULTIPOLYGON"
+        },
+        {
+          "table": "unlabelled_jurisdiction_points",
+          "crs_id": 4326,
+          "geometry_type": "POINT"
+        },
+        {
+          "table": "western_regions_names",
+          "crs_id": 4326,
+          "geometry_type": "POINT"
+        },
+        {
+          "table": "western_regions_reference",
+          "crs_id": 4326,
+          "geometry_type": "MULTIPOLYGON"
+        },
+        {
+          "table": "zhou_boundaries",
+          "crs_id": 4326,
+          "geometry_type": "LINESTRING"
+        },
+        {
+          "table": "zhou_names",
+          "crs_id": 4326,
+          "geometry_type": "POINT"
+        },
+        {
+          "table": "zhou_territories",
+          "crs_id": 4326,
+          "geometry_type": "MULTIPOLYGON"
+        }
+      ],
+      "layers": [
+        {
+          "path": "/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/三国262年/gis/all_source_names.geojson",
+          "bytes": 95250,
+          "sha256": "cc5fc16af4a65243c18e640ed88cf535191fc8890b7954cc785c5428845e10d0",
+          "feature_count": 147,
+          "geometry_types": {
+            "Point": 147
+          },
+          "bbox": [
+            95.44602825640352,
+            17.369682431906945,
+            126.4777083039352,
+            41.92559150538538
+          ],
+          "crs_member": null,
+          "property_keys": [
+            "active_at_target",
+            "additional_seeds_px",
+            "boundary_status",
+            "display_anchor_adjusted",
+            "display_name",
+            "entity_key",
+            "geometry_group",
+            "geometry_key",
+            "is_fief",
+            "kind",
+            "name",
+            "name_confidence",
+            "note",
+            "original_pixel_x",
+            "original_pixel_y",
+            "point_role",
+            "polity",
+            "source_id",
+            "source_year",
+            "state",
+            "unit_id",
+            "year"
+          ]
+        },
+        {
+          "path": "/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/三国262年/gis/boundary_completion_guides.geojson",
+          "bytes": 1600,
+          "sha256": "9c2c7c4aa30a391f141773e34d6b04b704c784410232c42f9c58878ca4aea84c",
+          "feature_count": 2,
+          "geometry_types": {
+            "LineString": 2
+          },
+          "bbox": [
+            116.00368287565408,
+            31.53582422511281,
+            117.64416813022315,
+            39.06427568269749
+          ],
+          "crs_member": null,
+          "property_keys": [
+            "method",
+            "note",
+            "source_id",
+            "year"
+          ]
+        },
+        {
+          "path": "/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/三国262年/gis/external_boundary.geojson",
+          "bytes": 1330987,
+          "sha256": "64327ea6baeb5ae0ce789da68ff4aa6fe363c5ba0a4e0e87e5228ddc61d284cf",
+          "feature_count": 4,
+          "geometry_types": {
+            "LineString": 4
+          },
+          "bbox": [
+            93.64920606122062,
+            16.548775868499085,
+            129.2084418739434,
+            42.93958127829527
+          ],
+          "crs_member": null,
+          "property_keys": [
+            "boundary_type",
+            "year"
+          ]
+        },
+        {
+          "path": "/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/三国262年/gis/fief_kingdoms.geojson",
+          "bytes": 478071,
+          "sha256": "1a7b3ae9472eaa4d7814bd2a00214676022f05a13ae008a16c1329b43bf7a73f",
+          "feature_count": 16,
+          "geometry_types": {
+            "Polygon": 16
+          },
+          "bbox": [
+            113.63032656126828,
+            33.78270615935268,
+            120.7433302264013,
+            40.4047651393955
+          ],
+          "crs_member": null,
+          "property_keys": [
+            "active_at_target",
+            "area_km2_for_qc",
+            "boundary_status",
+            "entity_key",
+            "grid_m",
+            "is_fief",
+            "kind",
+            "member_active_at_target",
+            "member_kinds",
+            "method",
+            "mixed_fief_group",
+            "name",
+            "name_confidence",
+            "note",
+            "original_names",
+            "polity",
+            "source_count",
+            "source_ids",
+            "source_year",
+            "state",
+            "unit_id",
+            "year"
+          ]
+        },
+        {
+          "path": "/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/三国262年/gis/historical_coastline.geojson",
+          "bytes": 147248,
+          "sha256": "4361af675e050ef82918772652f8268d4701c8eddd7a7da92e752b61d1eb38d1",
+          "feature_count": 174,
+          "geometry_types": {
+            "LineString": 174
+          },
+          "bbox": [
+            105.61658384517624,
+            16.8438502682502,
+            129.2192427529385,
+            41.2361403642417
+          ],
+          "crs_member": null,
+          "property_keys": [
+            "method",
+            "review_status",
+            "source_id",
+            "year"
+          ]
+        },
+        {
+          "path": "/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/三国262年/gis/jun_boundaries.geojson",
+          "bytes": 2109699,
+          "sha256": "15054fa42d8a67d36fcc33339384abc11a9256c5a28b0d5d473c5c8d3b13ffd8",
+          "feature_count": 239,
+          "geometry_types": {
+            "LineString": 239
+          },
+          "bbox": [
+            98.85611500931202,
+            17.909302654448727,
+            125.78407929089879,
+            42.06289293664882
+          ],
+          "crs_member": null,
+          "property_keys": [
+            "method",
+            "polity",
+            "state",
+            "unit_a",
+            "unit_b",
+            "year"
+          ]
+        },
+        {
+          "path": "/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/三国262年/gis/jun_boundaries_partial.geojson",
+          "bytes": 76750,
+          "sha256": "093024ec23f30be1d5791b5495cbce51e060fad5bd0159bbca262084040bea3b",
+          "feature_count": 206,
+          "geometry_types": {
+            "LineString": 206
+          },
+          "bbox": [
+            93.686716075843,
+            35.607134538985726,
+            127.97967367920128,
+            42.93146437102819
+          ],
+          "crs_member": null,
+          "property_keys": [
+            "entity_key",
+            "source_id",
+            "status",
+            "year"
+          ]
+        },
+        {
+          "path": "/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/三国262年/gis/jun_guo_names.geojson",
+          "bytes": 96100,
+          "sha256": "65135181bddda03c3cddeea1b801bfbbb947d05d76e4585912137969195ffdf5",
+          "feature_count": 148,
+          "geometry_types": {
+            "Point": 148
+          },
+          "bbox": [
+            95.44602825640352,
+            17.369682431906945,
+            126.4777083039352,
+            41.92559150538538
+          ],
+          "crs_member": null,
+          "property_keys": [
+            "active_at_target",
+            "additional_seeds_px",
+            "boundary_status",
+            "display_anchor_adjusted",
+            "display_name",
+            "entity_key",
+            "geometry_group",
+            "geometry_key",
+            "is_fief",
+            "kind",
+            "name",
+            "name_confidence",
+            "name_origin",
+            "note",
+            "original_pixel_x",
+            "original_pixel_y",
+            "point_role",
+            "polity",
+            "source_id",
+            "source_year",
+            "state",
+            "unit_id",
+            "year"
+          ]
+        },
+        {
+          "path": "/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/三国262年/gis/jun_guo_territories.geojson",
+          "bytes": 7499179,
+          "sha256": "02a684153c869f1a075321f54d1e74cb2005286cf3f29d4a2303a508fe57eed9",
+          "feature_count": 143,
+          "geometry_types": {
+            "Polygon": 140,
+            "MultiPolygon": 3
+          },
+          "bbox": [
+            93.64920606122062,
+            16.548775868499085,
+            129.2084418739434,
+            42.93958127829527
+          ],
+          "crs_member": null,
+          "property_keys": [
+            "active_at_target",
+            "additional_seeds_px",
+            "area_km2_for_qc",
+            "boundary_status",
+            "entity_key",
+            "geometry_group",
+            "grid_m",
+            "is_fief",
+            "kind",
+            "member_active_at_target",
+            "member_kinds",
+            "method",
+            "mixed_fief_group",
+            "name",
+            "name_confidence",
+            "name_origin",
+            "note",
+            "original_names",
+            "polity",
+            "source_count",
+            "source_ids",
+            "source_year",
+            "state",
+            "unit_id",
+            "year"
+          ]
+        },
+        {
+          "path": "/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/三国262年/gis/overview_polities.geojson",
+          "bytes": 352569,
+          "sha256": "679d7b578bc4564a868ea4094531f941fce70c17d4403abcf98db7f8a84761fe",
+          "feature_count": 3,
+          "geometry_types": {
+            "MultiPolygon": 3
+          },
+          "bbox": [
+            70.9812047723432,
+            16.93138890122996,
+            128.99405085870555,
+            45.96900772640994
+          ],
+          "crs_member": null,
+          "property_keys": [
+            "focus_id",
+            "method",
+            "polity",
+            "review_status",
+            "scope_key",
+            "scope_keys",
+            "source_id",
+            "state",
+            "states",
+            "year"
+          ]
+        },
+        {
+          "path": "/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/三国262年/gis/polity_boundaries.geojson",
+          "bytes": 319263,
+          "sha256": "881f3469fb09f41dfde8e9f72e99cd71c4a55f33d65386424f4c06492be487f8",
+          "feature_count": 3,
+          "geometry_types": {
+            "LineString": 3
+          },
+          "bbox": [
+            103.22374504368206,
+            21.698026183615973,
+            120.29682640864004,
+            34.633684262049016
+          ],
+          "crs_member": null,
+          "property_keys": [
+            "method",
+            "polity_a",
+            "polity_b",
+            "year"
+          ]
+        },
+        {
+          "path": "/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/三国262年/gis/polity_names.geojson",
+          "bytes": 511,
+          "sha256": "73fe2524c7fbf5f2ddaee85a469f1cdb1dc697adf6499b90db11f6fb38e6eaf0",
+          "feature_count": 3,
+          "geometry_types": {
+            "Point": 3
+          },
+          "bbox": [
+            104.17921078092351,
+            25.027641615983065,
+            115.60719736588287,
+            36.994526070716574
+          ],
+          "crs_member": null,
+          "property_keys": [
+            "name",
+            "polity",
+            "year"
+          ]
+        },
+        {
+          "path": "/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/三国262年/gis/polity_territories.geojson",
+          "bytes": 1968118,
+          "sha256": "4706a9408c25f330fffac4e6f8253d323762311f0d1c0b0722ea002677b3e575",
+          "feature_count": 3,
+          "geometry_types": {
+            "Polygon": 3
+          },
+          "bbox": [
+            93.64920606122062,
+            16.548775868499085,
+            129.2084418739434,
+            42.93958127829527
+          ],
+          "crs_member": null,
+          "property_keys": [
+            "entity_key",
+            "name",
+            "polity",
+            "state",
+            "unit_count",
+            "year"
+          ]
+        },
+        {
+          "path": "/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/三国262年/gis/retained_holes_review.geojson",
+          "bytes": 2334,
+          "sha256": "65cc7250bbef24fce9f54a24f82bd54db7d6d0cedca847385e039ca09bc723f1",
+          "feature_count": 3,
+          "geometry_types": {
+            "Polygon": 3
+          },
+          "bbox": [
+            119.24214650092276,
+            25.37356753715455,
+            120.62685376663109,
+            32.329031633888285
+          ],
+          "crs_member": null,
+          "property_keys": [
+            "area_km2",
+            "baseline_fraction",
+            "review_note",
+            "source_id",
+            "status",
+            "year"
+          ]
+        },
+        {
+          "path": "/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/三国262年/gis/reviewed_coastline_additions.geojson",
+          "bytes": 8559,
+          "sha256": "5e6a1c588ad2e7899aa76023290e74862f50a97e9a82f285b54f6db83b2104a0",
+          "feature_count": 1,
+          "geometry_types": {
+            "MultiPolygon": 1
+          },
+          "bbox": [
+            122.39461594221461,
+            37.21466607917364,
+            122.69215911773979,
+            37.43042243986535
+          ],
+          "crs_member": null,
+          "property_keys": [
+            "action",
+            "area_km2",
+            "entity_key",
+            "evidence_images",
+            "forced_entity_key",
+            "review_id",
+            "review_note",
+            "review_status",
+            "source_boundary_method",
+            "source_ids",
+            "source_pixel_bounds",
+            "year"
+          ]
+        },
+        {
+          "path": "/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/三国262年/gis/reviewed_gap_fills.geojson",
+          "bytes": 40130,
+          "sha256": "4acc4b054b44ce75a0f469a0c8564abfacb35aa7cd492e36482ce81327e387a3",
+          "feature_count": 21,
+          "geometry_types": {
+            "Polygon": 21
+          },
+          "bbox": [
+            96.92665329258662,
+            23.402265181861335,
+            117.90641688220543,
+            39.22996323963463
+          ],
+          "crs_member": null,
+          "property_keys": [
+            "area_km2",
+            "baseline_fraction",
+            "forced_entity_key",
+            "original_status",
+            "retained_hole_index",
+            "review_evidence_images",
+            "review_method",
+            "review_note",
+            "review_status",
+            "source_ids",
+            "source_pixel_bounds",
+            "status",
+            "year"
+          ]
+        },
+        {
+          "path": "/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/三国262年/gis/reviewed_territory_exclusions.geojson",
+          "bytes": 16560,
+          "sha256": "283a67b95800096341d4cdfe03f8362815fdc03f57333d33d08b0ccb2c518f71",
+          "feature_count": 3,
+          "geometry_types": {
+            "Polygon": 3
+          },
+          "bbox": [
+            103.84855737101392,
+            21.516654339494277,
+            122.66303282285052,
+            37.38435760758945
+          ],
+          "crs_member": null,
+          "property_keys": [
+            "action",
+            "area_km2",
+            "evidence_images",
+            "review_id",
+            "review_note",
+            "review_status",
+            "source_boundary_method",
+            "source_ids",
+            "source_pixel_bounds",
+            "year"
+          ]
+        },
+        {
+          "path": "/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/三国262年/gis/reviewed_unit_assignments.geojson",
+          "bytes": 18350,
+          "sha256": "996c47036ef5c1be7dfafa7266974971250311f959b93bd2d96f3630fbf9e2b0",
+          "feature_count": 7,
+          "geometry_types": {
+            "Polygon": 6,
+            "MultiPolygon": 1
+          },
+          "bbox": [
+            103.84762496584662,
+            21.566244299137722,
+            122.61590730057283,
+            37.39237799325608
+          ],
+          "crs_member": null,
+          "property_keys": [
+            "action",
+            "area_km2",
+            "clipped_to_current_territory",
+            "entity_key",
+            "evidence_images",
+            "forced_entity_key",
+            "review_id",
+            "review_note",
+            "review_status",
+            "source_boundary_method",
+            "source_ids",
+            "source_pixel_bounds",
+            "year"
+          ]
+        },
+        {
+          "path": "/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/三国262年/gis/seam_adjustments.geojson",
+          "bytes": 191986,
+          "sha256": "61f052ae067de04b78cbb2e6e02f6fc4445c6a3f7d2317b1780898294f3b8664",
+          "feature_count": 175,
+          "geometry_types": {
+            "Polygon": 175
+          },
+          "bbox": [
+            96.92299346402247,
+            20.988975795035856,
+            123.3837317868037,
+            42.20366496298721
+          ],
+          "crs_member": null,
+          "property_keys": [
+            "area_km2",
+            "method",
+            "year"
+          ]
+        },
+        {
+          "path": "/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/三国262年/gis/source_boundaries.geojson",
+          "bytes": 3797120,
+          "sha256": "3174aac2748fe030c456fcfdc5adce5f218239450f526c27d4fb8840e4dbd3e6",
+          "feature_count": 9722,
+          "geometry_types": {
+            "LineString": 9722
+          },
+          "bbox": [
+            93.64945594461614,
+            16.54385494070435,
+            129.20629741145126,
+            42.936826422612214
+          ],
+          "crs_member": null,
+          "property_keys": [
+            "boundary_type",
+            "pixel_length",
+            "review_status",
+            "source_id",
+            "year"
+          ]
+        },
+        {
+          "path": "/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/三国262年/gis/source_coverage.geojson",
+          "bytes": 3333820,
+          "sha256": "bc37ddfdc03a2c00f88f5c134ce41a607757e4215e711577fe24720d322bf0ca",
+          "feature_count": 13,
+          "geometry_types": {
+            "Polygon": 11,
+            "MultiPolygon": 2
+          },
+          "bbox": [
+            93.64920600317504,
+            16.548775902726202,
+            129.20844187486182,
+            42.93958125176941
+          ],
+          "crs_member": null,
+          "property_keys": [
+            "feature_type",
+            "source_id",
+            "year"
+          ]
+        },
+        {
+          "path": "/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/三国262年/gis/source_date_annotations.geojson",
+          "bytes": 42,
+          "sha256": "ed778c73ea51338d6576fb5992b189f2b94d9f3d5e199f46c1af520d6b0b3e6c",
+          "feature_count": 0,
+          "geometry_types": {},
+          "bbox": null,
+          "crs_member": null,
+          "property_keys": []
+        },
+        {
+          "path": "/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/三国262年/gis/territory_262.geojson",
+          "bytes": 1330604,
+          "sha256": "c004cd96d1c2d40ba387ab2627b299858683e1801a5dc80b3fe0394d8c760cef",
+          "feature_count": 1,
+          "geometry_types": {
+            "Polygon": 1
+          },
+          "bbox": [
+            93.64920606122062,
+            16.548775868499085,
+            129.2084418739434,
+            42.93958127829527
+          ],
+          "crs_member": null,
+          "property_keys": [
+            "method",
+            "name",
+            "scope",
+            "year"
+          ]
+        },
+        {
+          "path": "/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/三国262年/gis/unlabelled_jurisdiction_points.geojson",
+          "bytes": 891,
+          "sha256": "a3efa3df063ce49ab1a097ce6fe1b1567de3067dd9399b5e786e79a70a5a4bbb",
+          "feature_count": 1,
+          "geometry_types": {
+            "Point": 1
+          },
+          "bbox": [
+            120.29435759925502,
+            32.48839246660325,
+            120.29435759925502,
+            32.48839246660325
+          ],
+          "crs_member": null,
+          "property_keys": [
+            "active_at_target",
+            "display_anchor_adjusted",
+            "display_name",
+            "entity_key",
+            "geometry_key",
+            "is_fief",
+            "kind",
+            "name",
+            "name_confidence",
+            "name_origin",
+            "note",
+            "original_pixel_x",
+            "original_pixel_y",
+            "point_role",
+            "polity",
+            "source_id",
+            "source_year",
+            "state",
+            "unit_id",
+            "year"
+          ]
+        },
+        {
+          "path": "/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/三国262年/gis/western_regions_names.geojson",
+          "bytes": 13050,
+          "sha256": "ef5b46db376999fb99a2c417b465b6ca97b316d13aa4e7bc08ce7dc341a2c0ef",
+          "feature_count": 24,
+          "geometry_types": {
+            "Point": 24
+          },
+          "bbox": [
+            75.99413571800645,
+            36.08224707159788,
+            91.1504132807561,
+            44.49235014470109
+          ],
+          "crs_member": null,
+          "property_keys": [
+            "direct_administration",
+            "is_fief",
+            "kind",
+            "method",
+            "name",
+            "name_confidence",
+            "note",
+            "role",
+            "seed_px",
+            "source_id",
+            "source_year",
+            "year"
+          ]
+        },
+        {
+          "path": "/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/三国262年/gis/western_regions_reference.geojson",
+          "bytes": 41710,
+          "sha256": "8790548164645725bb9cbc24901b1e91a8ce2d15685c66da6a8b6d1a88eb1e75",
+          "feature_count": 1,
+          "geometry_types": {
+            "Polygon": 1
+          },
+          "bbox": [
+            71.23148915091335,
+            34.25060199992933,
+            96.63198830760658,
+            45.98475594427481
+          ],
+          "crs_member": null,
+          "property_keys": [
+            "direct_administration",
+            "method",
+            "name",
+            "role",
+            "source_id",
+            "year"
+          ]
+        },
+        {
+          "path": "/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/三国262年/gis/zhou_boundaries.geojson",
+          "bytes": 680074,
+          "sha256": "d1cb60a0077898f87fcfeb1ab1d1a19d6f299cdf91626d4aa05fb021188fd284",
+          "feature_count": 32,
+          "geometry_types": {
+            "LineString": 32
+          },
+          "bbox": [
+            101.32560751309971,
+            23.63603980059378,
+            119.29053356125837,
+            39.936378543503054
+          ],
+          "crs_member": null,
+          "property_keys": [
+            "method",
+            "polity",
+            "state_a",
+            "state_b",
+            "year"
+          ]
+        },
+        {
+          "path": "/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/三国262年/gis/zhou_names.geojson",
+          "bytes": 2978,
+          "sha256": "20b8e4fc1d8db5d218d46560a1f24b0e3fddf4d07cc7fc0250eb661d30ee3d8e",
+          "feature_count": 16,
+          "geometry_types": {
+            "Point": 16
+          },
+          "bbox": [
+            99.6606143510765,
+            21.39219867910629,
+            123.95269701904732,
+            40.10993171294505
+          ],
+          "crs_member": null,
+          "property_keys": [
+            "entity_key",
+            "name",
+            "polity",
+            "year"
+          ]
+        },
+        {
+          "path": "/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/三国262年/gis/zhou_territories.geojson",
+          "bytes": 3315705,
+          "sha256": "a04532a123a4583ab59a0f43934e26533c2b0efc9548580a65401d2ad5159e2a",
+          "feature_count": 16,
+          "geometry_types": {
+            "Polygon": 14,
+            "MultiPolygon": 2
+          },
+          "bbox": [
+            93.64920606122062,
+            16.548775868499085,
+            129.2084418739434,
+            42.93958127829527
+          ],
+          "crs_member": null,
+          "property_keys": [
+            "entity_key",
+            "name",
+            "polity",
+            "state",
+            "unit_count",
+            "year"
+          ]
+        }
+      ],
+      "source_summary_path": "/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/三国262年/quality/summary.json",
+      "source_summary": {
+        "all_valid": true,
+        "coverage_valid": true,
+        "overlap_m2": -0.0244140625,
+        "territory_difference_m2": 0.0,
+        "duplicate_length_m": {
+          "polity_boundaries": 0.0,
+          "zhou_boundaries": 0.0,
+          "jun_boundaries": 7.450580596923828e-09
+        },
+        "descriptive_unlabelled_regions": 1,
+        "year": 262,
+        "source_panels": 13,
+        "units": 143,
+        "polities": 3,
+        "states": 16,
+        "fief_kingdoms": 16,
+        "original_name_records": 147,
+        "unique_original_names": 147,
+        "joint_units": 2,
+        "grid_m": 400,
+        "counts_by_state": {
+          "吴|交州": 9,
+          "吴|扬州": 14,
+          "吴|荆州": 11,
+          "蜀汉|益州": 22,
+          "魏|兖州": 8,
+          "魏|冀州": 13,
+          "魏|凉州": 3,
+          "魏|司州": 5,
+          "魏|并州": 6,
+          "魏|幽州": 11,
+          "魏|徐州": 6,
+          "魏|扬州": 2,
+          "魏|荆州": 7,
+          "魏|豫州": 9,
+          "魏|雍州": 11,
+          "魏|青州": 6
+        },
+        "fiefs": [
+          "魏|兖州|东平国",
+          "魏|兖州|济北国",
+          "魏|兖州|陈留国",
+          "魏|冀州|中山国",
+          "魏|冀州|乐陵国",
+          "魏|冀州|安平国",
+          "魏|冀州|赵国",
+          "魏|幽州|燕国",
+          "魏|徐州|东海国",
+          "魏|徐州|彭城国",
+          "魏|徐州|琅邪国",
+          "魏|豫州|梁国",
+          "魏|豫州|沛国",
+          "魏|青州|北海国",
+          "魏|青州|济南国",
+          "魏|青州|齐国"
+        ],
+        "cross_level_duplicate_m": 0.0
+      },
+      "coordinate_interpretation": "GeoPackage声明EPSG:4326；GeoJSON经纬度。沿原图经纬网配准；原图现代大地基准未确认；400米为接缝格网非史界精度",
+      "label_point_role": "display_anchor_not_seat",
+      "name_table": "/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/三国262年/郡国名称表.csv",
+      "source_images": "/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/三国262年/图源清单.csv",
+      "main_render_svg": "/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/三国262年/三国262年_政权州郡与封国.svg",
+      "raw_source_name_records": 147
+    },
+    {
+      "id": "tan281",
+      "source_year": 281,
+      "root": "/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/修订版",
+      "geopackage": "/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/修订版/西晋281年_郡国修订.gpkg",
+      "gpkg_layers": [
+        {
+          "table": "all_source_names",
+          "crs_id": 4326,
+          "geometry_type": "POINT"
+        },
+        {
+          "table": "boundary_completion_guides",
+          "crs_id": 4326,
+          "geometry_type": "LINESTRING"
+        },
+        {
+          "table": "branch_reference_areas",
+          "crs_id": 4326,
+          "geometry_type": "MULTIPOLYGON"
+        },
+        {
+          "table": "branch_reference_boundaries",
+          "crs_id": 4326,
+          "geometry_type": "LINESTRING"
+        },
+        {
+          "table": "branch_reference_names",
+          "crs_id": 4326,
+          "geometry_type": "POINT"
+        },
+        {
+          "table": "coastline_corrections",
+          "crs_id": 4326,
+          "geometry_type": "MULTIPOLYGON"
+        },
+        {
+          "table": "fief_kingdoms",
+          "crs_id": 4326,
+          "geometry_type": "MULTIPOLYGON"
+        },
+        {
+          "table": "historical_coastline",
+          "crs_id": 4326,
+          "geometry_type": "LINESTRING"
+        },
+        {
+          "table": "jun_boundaries",
+          "crs_id": 4326,
+          "geometry_type": "LINESTRING"
+        },
+        {
+          "table": "jun_boundaries_by_source",
+          "crs_id": 4326,
+          "geometry_type": "LINESTRING"
+        },
+        {
+          "table": "jun_boundaries_partial",
+          "crs_id": 4326,
+          "geometry_type": "LINESTRING"
+        },
+        {
+          "table": "jun_guo_names",
+          "crs_id": 4326,
+          "geometry_type": "POINT"
+        },
+        {
+          "table": "jun_guo_territories",
+          "crs_id": 4326,
+          "geometry_type": "MULTIPOLYGON"
+        },
+        {
+          "table": "source_coverage",
+          "crs_id": 4326,
+          "geometry_type": "MULTIPOLYGON"
+        },
+        {
+          "table": "source_date_annotations",
+          "crs_id": 4326,
+          "geometry_type": "POINT"
+        },
+        {
+          "table": "territory_281",
+          "crs_id": 4326,
+          "geometry_type": "MULTIPOLYGON"
+        },
+        {
+          "table": "territory_baseline_281",
+          "crs_id": 4326,
+          "geometry_type": "MULTIPOLYGON"
+        },
+        {
+          "table": "western_regions_reference",
+          "crs_id": 4326,
+          "geometry_type": "MULTIPOLYGON"
+        },
+        {
+          "table": "zhou_boundaries",
+          "crs_id": 4326,
+          "geometry_type": "LINESTRING"
+        },
+        {
+          "table": "zhou_boundaries_by_source",
+          "crs_id": 4326,
+          "geometry_type": "LINESTRING"
+        },
+        {
+          "table": "zhou_names",
+          "crs_id": 4326,
+          "geometry_type": "POINT"
+        },
+        {
+          "table": "zhou_territories",
+          "crs_id": 4326,
+          "geometry_type": "MULTIPOLYGON"
+        }
+      ],
+      "layers": [
+        {
+          "path": "/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/修订版/gis/all_source_names.geojson",
+          "bytes": 146778,
+          "sha256": "7a6b559fe9ac9ceb7ecaca55eecd8abf209c040121bf38b17ad5cf87e917016c",
+          "feature_count": 173,
+          "geometry_types": {
+            "Point": 173
+          },
+          "bbox": [
+            95.64117087033523,
+            17.038496159044822,
+            126.26161640630956,
+            41.88040648094182
+          ],
+          "crs_member": null,
+          "property_keys": [
+            "active_281",
+            "area_km2_for_qc",
+            "boundary_note",
+            "boundary_status",
+            "confidence",
+            "display_anchor_adjusted",
+            "display_name",
+            "establishment_interval",
+            "geometry_group",
+            "grid_m",
+            "is_fief",
+            "kind",
+            "method",
+            "name",
+            "name_confidence",
+            "note",
+            "original_names",
+            "original_pixel_x",
+            "original_pixel_y",
+            "parent_281",
+            "parent_before_establishment",
+            "point_role",
+            "restored_year",
+            "review_status",
+            "seed_points",
+            "source_count",
+            "source_id",
+            "source_ids",
+            "source_label_name",
+            "state",
+            "temporal_status",
+            "unit_id",
+            "valid_from",
+            "valid_to",
+            "year"
+          ]
+        },
+        {
+          "path": "/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/修订版/gis/boundary_completion_guides.geojson",
+          "bytes": 670,
+          "sha256": "16a9bfd2c2dba23c5c159fa3846a42625bfe7bba3f64fa6b80bf7b7dcad52e86",
+          "feature_count": 1,
+          "geometry_types": {
+            "LineString": 1
+          },
+          "bbox": [
+            117.25163883597585,
+            31.557470122339137,
+            117.72206966431824,
+            31.73373464512031
+          ],
+          "crs_member": null,
+          "property_keys": [
+            "method",
+            "note",
+            "source_id",
+            "status"
+          ]
+        },
+        {
+          "path": "/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/修订版/gis/branch_reference_areas.geojson",
+          "bytes": 85633,
+          "sha256": "7e2a58242e3679721aae78fc74d8198cc85532349b1c918f2f0465b892958fe2",
+          "feature_count": 2,
+          "geometry_types": {
+            "Polygon": 2
+          },
+          "bbox": [
+            114.29867305766098,
+            33.44101044519207,
+            117.92362860728586,
+            41.406525423905215
+          ],
+          "crs_member": null,
+          "property_keys": [
+            "branch_id",
+            "geometry_status",
+            "is_original_281_atlas_feature",
+            "name",
+            "note",
+            "parent_kingdom",
+            "reference_year",
+            "source_commandery_name",
+            "source_entity_key",
+            "source_ids",
+            "source_unit_id",
+            "user_requested",
+            "year"
+          ]
+        },
+        {
+          "path": "/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/修订版/gis/branch_reference_boundaries.geojson",
+          "bytes": 85635,
+          "sha256": "e53b1bee65198c2112035fd3bcc6ee195c4f96a2179c4d256aecc742ce5533e0",
+          "feature_count": 2,
+          "geometry_types": {
+            "LineString": 2
+          },
+          "bbox": [
+            114.29867305766098,
+            33.44101044519207,
+            117.92362860728586,
+            41.406525423905215
+          ],
+          "crs_member": null,
+          "property_keys": [
+            "branch_id",
+            "geometry_status",
+            "is_original_281_atlas_feature",
+            "name",
+            "note",
+            "parent_kingdom",
+            "reference_year",
+            "source_commandery_name",
+            "source_entity_key",
+            "source_ids",
+            "source_unit_id",
+            "user_requested",
+            "year"
+          ]
+        },
+        {
+          "path": "/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/修订版/gis/branch_reference_names.geojson",
+          "bytes": 1461,
+          "sha256": "02f0e5deae44eca9cb180f93eac6029251e414f9c6363b23a071d94b8ab266a0",
+          "feature_count": 2,
+          "geometry_types": {
+            "Point": 2
+          },
+          "bbox": [
+            114.80618090845336,
+            33.81237853827283,
+            117.25914359623324,
+            40.1238131357264
+          ],
+          "crs_member": null,
+          "property_keys": [
+            "branch_id",
+            "geometry_status",
+            "is_original_281_atlas_feature",
+            "name",
+            "note",
+            "parent_kingdom",
+            "point_role",
+            "reference_year",
+            "source_commandery_name",
+            "source_entity_key",
+            "source_ids",
+            "source_unit_id",
+            "user_requested",
+            "year"
+          ]
+        },
+        {
+          "path": "/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/修订版/gis/coastline_corrections.geojson",
+          "bytes": 10059,
+          "sha256": "d542ac28be2b7e9bfe9bf642bcd42b8c19bdaac230bba4504abb4bb8ad3282b6",
+          "feature_count": 6,
+          "geometry_types": {
+            "MultiPolygon": 2,
+            "Polygon": 4
+          },
+          "bbox": [
+            112.69545182323994,
+            21.767793928485034,
+            120.37032261455963,
+            37.380128949512105
+          ],
+          "crs_member": null,
+          "property_keys": [
+            "method",
+            "note",
+            "source_id"
+          ]
+        },
+        {
+          "path": "/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/修订版/gis/fief_kingdoms.geojson",
+          "bytes": 1414745,
+          "sha256": "9ae3410e0056c9402960914605aa2e8b4cc217f76851c16fd6498ccb6a5a1d6b",
+          "feature_count": 39,
+          "geometry_types": {
+            "MultiPolygon": 4,
+            "Polygon": 35
+          },
+          "bbox": [
+            101.34333654743452,
+            30.593317498769782,
+            125.79172098541072,
+            41.57270047896813
+          ],
+          "crs_member": null,
+          "property_keys": [
+            "area_km2_for_qc",
+            "boundary_status",
+            "grid_m",
+            "is_fief",
+            "kind",
+            "local_revision_note",
+            "local_revision_source",
+            "method",
+            "name",
+            "name_confidence",
+            "note",
+            "original_names",
+            "review_status",
+            "seed_points",
+            "source_count",
+            "source_ids",
+            "source_label_name",
+            "state",
+            "unit_id",
+            "year"
+          ]
+        },
+        {
+          "path": "/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/修订版/gis/historical_coastline.geojson",
+          "bytes": 66455,
+          "sha256": "2e8ed7d0aaa41e3ad757b4fb3bdd0e4e1ab4914070c4c47f200fe5f95621494b",
+          "feature_count": 31,
+          "geometry_types": {
+            "LineString": 31
+          },
+          "bbox": [
+            105.55858568917705,
+            16.24796827571833,
+            129.0052649599113,
+            41.03713830606375
+          ],
+          "crs_member": null,
+          "property_keys": [
+            "boundary_type",
+            "crs_basis",
+            "method",
+            "review_status",
+            "source_id",
+            "source_map",
+            "year"
+          ]
+        },
+        {
+          "path": "/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/修订版/gis/jun_boundaries.geojson",
+          "bytes": 2189671,
+          "sha256": "396bb88c338fa7bee7482a21cb19b43a1e08fee57fe5107f50a0c420331cb36d",
+          "feature_count": 292,
+          "geometry_types": {
+            "LineString": 292
+          },
+          "bbox": [
+            98.85384089550746,
+            19.308580328771164,
+            125.79172098541072,
+            42.07137779588192
+          ],
+          "crs_member": null,
+          "property_keys": [
+            "method",
+            "state",
+            "unit_a",
+            "unit_b",
+            "year"
+          ]
+        },
+        {
+          "path": "/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/修订版/gis/jun_boundaries_by_source.geojson",
+          "bytes": 1173300,
+          "sha256": "f7e6bfe86b08c5d453ee16b96f9323ff502c09b6d6cbb8999d4b19b36b0d1dd2",
+          "feature_count": 2108,
+          "geometry_types": {
+            "LineString": 2108
+          },
+          "bbox": [
+            96.83171157039192,
+            19.31999949312719,
+            126.66041038355282,
+            41.98489890618337
+          ],
+          "crs_member": null,
+          "property_keys": [
+            "boundary_type",
+            "crs_basis",
+            "method",
+            "pixel_length",
+            "review_status",
+            "source_id",
+            "source_map",
+            "year"
+          ]
+        },
+        {
+          "path": "/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/修订版/gis/jun_boundaries_partial.geojson",
+          "bytes": 26143,
+          "sha256": "7414af3cce11bbddf8e616ca7fac9af582d4f7d49a0867ad88c08ea633949bac",
+          "feature_count": 62,
+          "geometry_types": {
+            "LineString": 62
+          },
+          "bbox": [
+            96.83171157039192,
+            19.31999949312719,
+            126.66041038355282,
+            40.858368491560995
+          ],
+          "crs_member": null,
+          "property_keys": [
+            "group_name",
+            "source_id",
+            "state",
+            "status"
+          ]
+        },
+        {
+          "path": "/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/修订版/gis/jun_guo_names.geojson",
+          "bytes": 144616,
+          "sha256": "d9510c0a2c4d8be9207a649a075b7ba55e74ed5895da9779a44171ce74e5fdaa",
+          "feature_count": 171,
+          "geometry_types": {
+            "Point": 171
+          },
+          "bbox": [
+            95.64117087033523,
+            17.038496159044822,
+            126.26161640630956,
+            41.88040648094182
+          ],
+          "crs_member": null,
+          "property_keys": [
+            "active_281",
+            "area_km2_for_qc",
+            "boundary_note",
+            "boundary_status",
+            "confidence",
+            "display_anchor_adjusted",
+            "display_name",
+            "establishment_interval",
+            "geometry_group",
+            "grid_m",
+            "is_fief",
+            "kind",
+            "method",
+            "name",
+            "name_confidence",
+            "note",
+            "original_names",
+            "original_pixel_x",
+            "original_pixel_y",
+            "parent_before_establishment",
+            "point_role",
+            "restored_year",
+            "review_status",
+            "seed_points",
+            "source_count",
+            "source_id",
+            "source_ids",
+            "source_label_name",
+            "state",
+            "temporal_status",
+            "unit_id",
+            "valid_to",
+            "year"
+          ]
+        },
+        {
+          "path": "/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/修订版/gis/jun_guo_territories.geojson",
+          "bytes": 8260752,
+          "sha256": "94b5313de165c28fdb28fab9969f50cdf9140b242b73e2d057cc760b126838c2",
+          "feature_count": 165,
+          "geometry_types": {
+            "Polygon": 153,
+            "MultiPolygon": 12
+          },
+          "bbox": [
+            93.65294382870715,
+            16.097060273900652,
+            129.0052649599113,
+            42.931886626035556
+          ],
+          "crs_member": null,
+          "property_keys": [
+            "area_km2_for_qc",
+            "boundary_note",
+            "boundary_status",
+            "establishment_interval",
+            "geometry_group",
+            "grid_m",
+            "is_fief",
+            "kind",
+            "local_revision_note",
+            "local_revision_source",
+            "method",
+            "name",
+            "name_confidence",
+            "note",
+            "original_names",
+            "parent_before_establishment",
+            "review_status",
+            "revision_local",
+            "seed_points",
+            "source_count",
+            "source_ids",
+            "source_label_name",
+            "state",
+            "temporal_status",
+            "unit_id",
+            "year"
+          ]
+        },
+        {
+          "path": "/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/修订版/gis/source_coverage.geojson",
+          "bytes": 391973,
+          "sha256": "d3cf2d82a0ae44ac8b3e21e40c4556550916cd768fbeab267d5dc52d1466883f",
+          "feature_count": 13,
+          "geometry_types": {
+            "Polygon": 12,
+            "MultiPolygon": 1
+          },
+          "bbox": [
+            71.3020222761595,
+            16.09706027390065,
+            129.0052649599113,
+            46.844615625159506
+          ],
+          "crs_member": null,
+          "property_keys": [
+            "crs_basis",
+            "feature_type",
+            "method",
+            "review_status",
+            "source_id",
+            "source_map",
+            "year"
+          ]
+        },
+        {
+          "path": "/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/修订版/gis/source_date_annotations.geojson",
+          "bytes": 4521,
+          "sha256": "003e9ec9c3ffd6ce8256772eab32bd1f0555e5f24e53cff79e5a59c51f112d8f",
+          "feature_count": 4,
+          "geometry_types": {
+            "Point": 4
+          },
+          "bbox": [
+            106.80626714718366,
+            17.038496159044826,
+            118.10617584178813,
+            40.13438357974359
+          ],
+          "crs_member": null,
+          "property_keys": [
+            "active_281",
+            "area_km2_for_qc",
+            "boundary_note",
+            "boundary_status",
+            "confidence",
+            "display_anchor_adjusted",
+            "display_name",
+            "establishment_interval",
+            "geometry_group",
+            "grid_m",
+            "is_fief",
+            "kind",
+            "method",
+            "name",
+            "name_confidence",
+            "note",
+            "original_names",
+            "original_pixel_x",
+            "original_pixel_y",
+            "parent_281",
+            "parent_before_establishment",
+            "point_role",
+            "restored_year",
+            "review_status",
+            "seed_points",
+            "source_count",
+            "source_id",
+            "source_ids",
+            "source_label_name",
+            "state",
+            "temporal_status",
+            "unit_id",
+            "valid_from",
+            "valid_to",
+            "year"
+          ]
+        },
+        {
+          "path": "/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/修订版/gis/territory_281.geojson",
+          "bytes": 1568094,
+          "sha256": "86e4989c3743748308abc89a06ef4284672ba7f4dd9d6529ccccbf668067e092",
+          "feature_count": 1,
+          "geometry_types": {
+            "MultiPolygon": 1
+          },
+          "bbox": [
+            93.65294382870715,
+            16.097060273900652,
+            129.0052649599113,
+            42.931886626035556
+          ],
+          "crs_member": null,
+          "property_keys": [
+            "method",
+            "name",
+            "revision",
+            "year"
+          ]
+        },
+        {
+          "path": "/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/修订版/gis/territory_baseline_281.geojson",
+          "bytes": 30930,
+          "sha256": "6fe70c1f8eacc37f08ecb6c570192a38ab96be8f90fa10ba9c6e6b1f63827e7a",
+          "feature_count": 1,
+          "geometry_types": {
+            "MultiPolygon": 1
+          },
+          "bbox": [
+            93.81510810395261,
+            16.171079987220974,
+            128.75639921124824,
+            42.688436720204194
+          ],
+          "crs_member": null,
+          "property_keys": [
+            "method",
+            "name",
+            "review_status",
+            "source_id",
+            "year"
+          ]
+        },
+        {
+          "path": "/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/修订版/gis/western_regions_reference.geojson",
+          "bytes": 22478,
+          "sha256": "5f0813d86a303330e13ef5379c4d8c7d9731c0397208b4c23b267132ef57da3f",
+          "feature_count": 1,
+          "geometry_types": {
+            "Polygon": 1
+          },
+          "bbox": [
+            71.3020222761595,
+            34.28181087432294,
+            96.53497001603618,
+            46.844615625159506
+          ],
+          "crs_member": null,
+          "property_keys": [
+            "crs_basis",
+            "feature_type",
+            "method",
+            "name",
+            "review_status",
+            "scope",
+            "source_id",
+            "source_map",
+            "year"
+          ]
+        },
+        {
+          "path": "/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/修订版/gis/zhou_boundaries.geojson",
+          "bytes": 1185427,
+          "sha256": "5297cee2538261ad653241e47ae93cc0cc030ece7708576756d5c6dd573c671f",
+          "feature_count": 51,
+          "geometry_types": {
+            "LineString": 51
+          },
+          "bbox": [
+            100.80881098359009,
+            21.318822242248334,
+            120.29900308000141,
+            40.61020015729691
+          ],
+          "crs_member": null,
+          "property_keys": [
+            "merge_method",
+            "state_a",
+            "state_b",
+            "year"
+          ]
+        },
+        {
+          "path": "/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/修订版/gis/zhou_boundaries_by_source.geojson",
+          "bytes": 1505827,
+          "sha256": "616e0c36ee195f4b8f785f364e99cc31abb9950c7f0fe60317d94b947d0fe8aa",
+          "feature_count": 2590,
+          "geometry_types": {
+            "LineString": 2590
+          },
+          "bbox": [
+            93.65294382870715,
+            16.101875791624213,
+            129.01272042803961,
+            42.94750948862119
+          ],
+          "crs_member": null,
+          "property_keys": [
+            "boundary_type",
+            "crs_basis",
+            "method",
+            "pixel_length",
+            "review_status",
+            "source_id",
+            "source_map",
+            "year"
+          ]
+        },
+        {
+          "path": "/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/修订版/gis/zhou_names.geojson",
+          "bytes": 3532,
+          "sha256": "ed92b03734cf2f1c18e1473dfbb590cb31feaa15b5340e3d2118ab0559420e13",
+          "feature_count": 19,
+          "geometry_types": {
+            "Point": 19
+          },
+          "bbox": [
+            99.64710284943845,
+            19.767409223396008,
+            123.7474954298985,
+            40.3092213984576
+          ],
+          "crs_member": null,
+          "property_keys": [
+            "name",
+            "point_role",
+            "year"
+          ]
+        },
+        {
+          "path": "/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/修订版/gis/zhou_territories.geojson",
+          "bytes": 3921236,
+          "sha256": "2b6c06e054405d1a7b0492b4742ecd434eccfd4fbf1977ad4a91ecb23eaba932",
+          "feature_count": 19,
+          "geometry_types": {
+            "Polygon": 15,
+            "MultiPolygon": 4
+          },
+          "bbox": [
+            93.65294382870715,
+            16.097060273900652,
+            129.0052649599113,
+            42.931886626035556
+          ],
+          "crs_member": null,
+          "property_keys": [
+            "fief_count",
+            "method",
+            "name",
+            "unit_count",
+            "year"
+          ]
+        }
+      ],
+      "source_summary_path": "/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/修订版/quality/revision_summary.json",
+      "source_summary": {
+        "revision": 4,
+        "units": 165,
+        "states": 19,
+        "fief_kingdoms": 39,
+        "fief_name_records": 39,
+        "original_name_records": 173,
+        "main_map_name_records": 171,
+        "active_281_name_records": 169,
+        "uncertain_281_name_records": 1,
+        "date_annotation_records": 4,
+        "joint_coverage_units": 4,
+        "grid_m": 400,
+        "all_valid": true,
+        "coverage_valid": true,
+        "overlap_area_m2": 0,
+        "territory_difference_m2": 0.0,
+        "shared_state_edges": 51,
+        "state_duplicate_length_m": 0.0,
+        "counts_by_state": {
+          "交州": 7,
+          "兖州": 8,
+          "冀州": 13,
+          "凉州": 4,
+          "司州": 12,
+          "宁州": 4,
+          "平州": 4,
+          "并州": 6,
+          "幽州": 7,
+          "广州": 8,
+          "徐州": 7,
+          "扬州": 16,
+          "梁州": 7,
+          "益州": 9,
+          "秦州": 7,
+          "荆州": 22,
+          "豫州": 10,
+          "雍州": 7,
+          "青州": 7
+        },
+        "fiefs_by_state": {
+          "交州": [],
+          "兖州": [
+            "濮阳国",
+            "济北国",
+            "东平国",
+            "任城国",
+            "高平国"
+          ],
+          "冀州": [
+            "中山国",
+            "高阳国",
+            "博陵国",
+            "河间国",
+            "章武国",
+            "乐陵国",
+            "安平国",
+            "巨鹿国",
+            "赵国",
+            "清河国",
+            "平原国"
+          ],
+          "凉州": [],
+          "司州": [],
+          "宁州": [],
+          "平州": [
+            "辽东国"
+          ],
+          "并州": [
+            "太原国",
+            "西河国",
+            "乐平国"
+          ],
+          "幽州": [
+            "燕国",
+            "范阳国"
+          ],
+          "广州": [],
+          "徐州": [
+            "琅邪国",
+            "彭城国",
+            "下邳国",
+            "临淮国"
+          ],
+          "扬州": [],
+          "梁州": [],
+          "益州": [
+            "新都国"
+          ],
+          "秦州": [
+            "陇西国"
+          ],
+          "荆州": [
+            "南阳国",
+            "义阳国"
+          ],
+          "豫州": [
+            "鲁国",
+            "沛国",
+            "梁国",
+            "谯国",
+            "汝南国"
+          ],
+          "雍州": [
+            "扶风国",
+            "始平国"
+          ],
+          "青州": [
+            "乐安国",
+            "齐国"
+          ]
+        },
+        "overlap_area_deg2": -2.1600499167107046e-12,
+        "local_revised_unit_ids": [
+          49,
+          50,
+          52,
+          53,
+          54
+        ],
+        "reference_branch_layers": 2,
+        "local_added_land_km2": 2558.8728399582346,
+        "local_removed_land_km2": 1.0965231922455132e-13,
+        "method_note": "原版400米接缝外，本次鲁任高平、吴郡吴兴细界按原图高倍局部替换；面积统计仅供几何质检。",
+        "followup": "吴郡钱唐—富春—桐庐—建德—寿昌西南长带原图重新核读"
+      },
+      "coordinate_interpretation": "GeoPackage声明EPSG:4326；GeoJSON经纬度。沿原图经纬网配准；原图现代大地基准未确认；400米为接缝格网非史界精度",
+      "label_point_role": "display_anchor_not_seat",
+      "name_table": "/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/修订版/郡国名称表.csv",
+      "source_images": "/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/修订版/图源清单.csv",
+      "main_render_svg": "/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/修订版/西晋281年_郡国封国着色.svg",
+      "raw_source_name_records": 173
+    },
+    {
+      "path": "/Users/yujiangnan/Documents/Codex/2026-09-10/六朝年表/data/jin-maps/308_map.geojson",
+      "bytes": 5771764,
+      "sha256": "560a7ba177865f76ebfd8197cc69a39f72926caf0a36baeb0176f9bd8d584ebd",
+      "feature_count": 1750,
+      "geometry_types": {
+        "Polygon": 222,
+        "MultiPolygon": 29,
+        "MultiLineString": 4,
+        "Point": 1495
+      },
+      "bbox": [
+        93.618524,
+        15.927147,
+        127.5798,
+        42.706847
+      ],
+      "crs_member": null,
+      "property_keys": [
+        "administrative_rename",
+        "base_county",
+        "base_name",
+        "boundary_evidence",
+        "chgis_feature_id",
+        "color",
+        "coordinate_role",
+        "display_name",
+        "entity_id",
+        "evidence_confidence",
+        "fief_id",
+        "font_size",
+        "geographic_caveat",
+        "geometry_status",
+        "has_inference",
+        "holder",
+        "inferred",
+        "is_multi",
+        "is_seat",
+        "layer",
+        "level",
+        "match_method",
+        "member_names",
+        "member_role",
+        "membership_evidence",
+        "missing_members",
+        "name",
+        "names",
+        "parent_jun",
+        "show_label",
+        "source",
+        "source_components",
+        "source_id",
+        "source_urls",
+        "state",
+        "state_name",
+        "status_at_year_end",
+        "year"
+      ],
+      "id": "user_circa308_web_derivative",
+      "working_year": 308,
+      "dating_window": [
+        308,
+        310
+      ],
+      "exact_snapshot": false,
+      "priority_tier": 2,
+      "web_derivative": {
+        "crs": "EPSG:4326",
+        "simplification_degrees": 0.003,
+        "coordinate_decimal_places": 6,
+        "purpose": "Web display only; original full-resolution GIS delivery unchanged"
+      },
+      "layer_counts": {
+        "province_areas": 21,
+        "prefecture_areas": 172,
+        "unresolved_areas": 21,
+        "kingdom_areas": 37,
+        "province_boundaries": 1,
+        "prefecture_boundaries": 1,
+        "member_boundaries": 1,
+        "territory": 1,
+        "prefecture_seats": 166,
+        "county_seats": 1076,
+        "state_seats": 11,
+        "labels": 242
+      },
+      "prefecture_source_counts": {
+        "用户红线与原图矢量": 132,
+        "CHGIS_V6:v6_time_pref_pgn_utf_wgs84": 40
+      },
+      "dating_evidence": "data/jin-fief-research/map_dating.json",
+      "important_caveat": "本文件已混入CHGIS与封国研究并按0.003度简化，不是纯手绘原图或全分辨率母版；必须按来源字段拆出候选，不能将全部要素降为手绘优先级或升为新原图"
+    }
+  ],
+  "warnings": [
+    "262 jun_guo_names=148是147原名另加1未标郡名显示标签，不是148真实郡。",
+    "281主标签171/源名173/主面165是不同统计口径；含4共同图示面、4年代注记。",
+    "281陈/渔阳参考边是262旧界，不能仅据命名证明281独立支郡政。",
+    "262与281完整源范围含默认展示域外区域；接入需沿用现有用户展示范围裁显，原数据归档保留。",
+    "现有默认年度算法仍289/308切换，尚未接入本清单三底图。"
+  ]
+}

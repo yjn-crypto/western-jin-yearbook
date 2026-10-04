@@ -256,6 +256,10 @@ th { padding: 9px 14px; background: #faf6ee; color: #5f554b; font-size: .86rem; 
 td { padding: 11px 14px; }
 th:first-child, td:first-child { width: 210px; border-right: 1px solid #e4ddd2; }
 tr:last-child td { border-bottom: 0; }
+.jin-kingdom-continues td { border-bottom: 0; }
+.jin-subsidiary-row td:first-child { padding-left: 28px; }
+.jin-kingdom-relation { display: block; width: fit-content; margin: 5px 0; padding: 0; border: 0; background: none; color: #765d34; font: inherit; font-size: .82rem; text-align: left; text-decoration: underline dotted; cursor: pointer; }
+.jin-kingdom-relation.is-inferred { font-style: italic; }
 .pref-name { font-weight: 700; font-size: 1.02rem; }
 .kingdom { font-family: var(--kai); font-weight: 700; letter-spacing: .04em; }
 .changed { font-weight: 700; }

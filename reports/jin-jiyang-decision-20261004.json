@@ -1,0 +1,58 @@
+{
+  "date": "2026-10-04",
+  "id": "DONGHAI_JIYANG",
+  "decision": "display_confirmed_relationship_without_geographic_binding",
+  "display": {
+    "parent_kingdom": "東海國",
+    "label": "另見：濟陽支郡（範圍待考）",
+    "begin": 306,
+    "end": 311,
+    "end_rule": "inclusive_holder_interval_no_new_strict_year_end_conversion",
+    "placement": "expandable_note_below_primary_kingdom",
+    "description": "光熙元年（306），济阳与下邳增封东海王司马越。济阳的县域范围仍有不同解释：《通史》提出可能由陈留部分地域与原济阳合成；本表暂保留原有县属，另记其属东海国的关系。"
+  },
+  "certainty": {
+    "relationship": "confirmed_by_Jinshu_59",
+    "geographic_match": "unresolved",
+    "split_or_merger_year": "unresolved_not_equivalent_to_306_enfeoffment"
+  },
+  "constraints": {
+    "bound_prefecture_ids": [],
+    "bound_county_ids": [],
+    "create_prefecture": false,
+    "create_county_group": false,
+    "counts_as_commandery": false,
+    "counts_as_counties": false,
+    "modify_304_anchor": false,
+    "map_geometry_change": false,
+    "auto_bind_p015": false
+  },
+  "preferred_research_model": {
+    "model": "existing_p015_plus_unspecified_Chenliu_territory",
+    "basis": "通史书页604提出似分陈留合济阳郡为济阳国",
+    "status": "hypothesis_only",
+    "not_proven": ["all_nine_p015_counties_retained", "precise_Chenliu_county_set", "merger_date", "entity_continuity_to_306_grant"]
+  },
+  "alternative_research_model": {
+    "model": "separate_Jiyang_created_from_Chenliu",
+    "basis": "宋书卷35记晋惠分陈留；百科据此补县目",
+    "status": "hypothesis_only_requires_reconciliation_with_Tongshi_rename"
+  },
+  "candidate_counties_not_displayed": [
+    {"id": "c0120", "name": "濟陽", "current_parent": "p013", "current_begin": 266, "current_end": 313},
+    {"id": "c0125", "name": "外黃", "current_parent": "p013", "current_begin": 266, "current_end": 313, "note": "Wikipedia_candidate_requires_primary_support"},
+    {"id": "c0128", "name": "考城", "current_parent": "p013", "current_begin": 266, "current_end": 282, "note": "inactive_in_306_under_current_Tongshi_table_reestablishment_requires_evidence"}
+  ],
+  "sources": [
+    {"id": "JS059", "url": "https://zh.wikisource.org/zh-hans/晉書/卷059", "role": "primary_grant_name_confirmed"},
+    {"id": "SS035", "url": "https://zh.wikisource.org/wiki/宋書/卷35", "role": "primary_Chenliu_origin_not_complete_306_county_list"},
+    {"id": "JS004", "url": "https://zh.wikisource.org/zh-hans/晉書/卷004", "role": "301_prince_title_not_county_scope"},
+    {"id": "TONGSHI604_607", "local": "data/jin-data.js", "book_pages": [604, 606, 607], "role": "retained_local_Markdown_evidence_and_project_base_table"},
+    {"id": "BAIDU_REQUESTED", "url": "https://baike.baidu.com/item/济阳郡/800238", "access": "failed_no_claim_of_body_read"},
+    {"id": "BAIDU_KAOCHENG", "url": "https://bkso.baidu.com/item/考城/9642718", "access": "related_article_passage_returned_by_search", "role": "secondary_candidate_counties"},
+    {"id": "WIKI_JIYANG", "url": "https://zh.wikipedia.org/wiki/济阳郡_(河南)", "role": "secondary_Chenliu_model"},
+    {"id": "WIKI_YANZHOU", "url": "https://zh.wikipedia.org/wiki/西晉兗州行政區劃", "role": "secondary_candidate_counties_with_internal_date_disagreement"},
+    {"id": "WIKI_PRINCES", "url": "https://zh.wikipedia.org/wiki/晉朝藩王列表", "role": "306_grant_and_holder_interval_index"}
+  ],
+  "report": "reports/jin-jiyang-review-20261004.md"
+}
