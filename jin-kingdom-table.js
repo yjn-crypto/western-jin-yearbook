@@ -4,7 +4,7 @@
 
   function apply(states, year, data) {
     const entries = states.flatMap(state => state.rows.map(row => ({state, row})));
-    const find = ids => entries.filter(entry => (ids || []).includes(entry.row.id));
+    const find = ids => entries.filter(entry => !entry.row.phase?.transfer_origin_grouping && (ids || []).includes(entry.row.id));
     const used = new Set();
     const active = (data?.records || []).filter(record => record.begin <= year && year <= record.end)
       .sort((a, b) => b.begin - a.begin);
@@ -72,20 +72,109 @@
       && left.primaryId === right.primaryId && right.role === 'member');
   }
 
-  // An unknown accession year can only be selected using a separate dated attestation.
-  // An undated entry in a succession list is not evidence of presence in every earlier year.
-  function rulerAt(records, fief, year) {
-    const all = records.filter(record => record.fief === fief);
-    const active = all.filter(record => {
-      const dated = record.start != null && Number.isFinite(Number(record.start));
-      const attested = (record.attested_years || []).includes(year)
-        || (record.attested_periods || []).some(period => period.start <= year && year <= period.end);
-      return (dated ? Number(record.start) <= year : attested)
-        && (record.end == null || year <= Number(record.end));
-    }).sort((a, b) => Number(b.start ?? -Infinity) - Number(a.start ?? -Infinity)
-      || Number(b.sequence || 0) - Number(a.sequence || 0));
-    return {all, active, record: active[0] || null};
+  const finite = value => value != null && Number.isFinite(Number(value));
+  const samePerson = (a, b) => String(a || '').normalize('NFKC').replace(/⻢/g, '馬')
+    === String(b || '').normalize('NFKC').replace(/⻢/g, '馬');
+
+  // Missing constraints fail conservatively: a finite source interval can be
+  // used, but one known endpoint never becomes an unbounded reign.
+  function fallbackConstraint(record) {
+    const start = finite(record.start) ? Number(record.start) : null;
+    const end = finite(record.end) ? Number(record.end) : null;
+    const periods = start != null && end != null ? [[start, end]]
+      : start != null ? [[start, start]] : end != null ? [[end, end]] : [];
+    return {start_min:start, start_max:start, end_min:end, end_max:end,
+      accession_known:start != null, display_start:start, certain_periods:periods,
+      note:'未见专门约束；单端日期只证明事件本年，不无限延续。'};
   }
 
-  window.JIN_KINGDOM_TABLE = {apply, displayRows, joinsNext, rulerAt};
+  function constraintFor(record, supplied) {
+    return supplied || window.JIN_RULER_CONSTRAINTS?.princes?.[record.id]
+      || fallbackConstraint(record);
+  }
+
+  function isAttested(record, constraint, year) {
+    if (constraint.identity_unknown || constraint.posthumous) return false;
+    if (year <= 316 && ['eastern_jin','after_western_jin'].includes(constraint.dynasty)) return false;
+    if (finite(constraint.start_min) && year < Number(constraint.start_min)) return false;
+    if (finite(constraint.end_max) && year > Number(constraint.end_max)) return false;
+    return (constraint.certain_periods || []).some(([start,end]) => start <= year && year <= end)
+      || (record.attested_years || []).includes(year)
+      || (record.attested_periods || []).some(period => period.start <= year && year <= period.end);
+  }
+
+  function displayRecord(record, constraint, year) {
+    const reign = (constraint.display_reigns || []).find(p => p.begin <= year && year <= p.end);
+    const start = reign?.accession ?? constraint.display_start;
+    const dated = constraint.accession_known && finite(start);
+    return {...record, source_start:record.start ?? null, source_end:record.end ?? null,
+      start:dated ? Number(start) : null, end:reign?.end ?? record.end,
+      display_start:dated ? Number(start) : null,
+      accession_known:Boolean(dated), constraint,
+      constraint_note:constraint.note || ''};
+  }
+
+  function selectUnique(all, candidates, constraints, year) {
+    const people = [];
+    for (const item of candidates) if (!people.some(person => samePerson(person, item.person))) people.push(item.person);
+    const record = people.length === 1 ? candidates[candidates.length - 1] : null;
+    return {all, active:candidates, record, constraints,
+      display_start:record?.display_start ?? null,
+      accession_known:record?.accession_known || false,
+      status:record ? 'matched' : all.length ? 'gap' : 'absent',
+      reason:record ? (record.constraint_note || '') : people.length > 1
+        ? '本年有不止一位有据国主，不能唯一确定正文姓名；完整世系留在展开资料。'
+        : '现有材料不能确认本年的国主；可能起讫与表列次序不作为任年证明。'};
+  }
+
+  function rulerAt(records, fief, year) {
+    const all = records.filter(record => record.fief === fief);
+    const constraints = all.map(record => ({id:record.id, ...constraintFor(record)}));
+    const active = all.flatMap(record => {
+      const constraint = constraintFor(record);
+      return isAttested(record, constraint, year) ? [displayRecord(record, constraint, year)] : [];
+    });
+    return selectUnique(all, active, constraints, year);
+  }
+
+  function fiveRankAt(fief, year) {
+    const all = fief.holders || [], active = [], constraints = [];
+    all.forEach((holder, holderIndex) => {
+      (holder.periods?.length ? holder.periods : [{}]).forEach((period, periodIndex) => {
+        const key = `${fief.id}:${holderIndex}:${periodIndex}`;
+        const constraint = window.JIN_RULER_CONSTRAINTS?.five_rank?.[key]
+          || fallbackConstraint(period);
+        constraints.push({id:key, ...constraint});
+        const record = {...holder, ...period, id:key, holder_index:holderIndex, period_index:periodIndex};
+        if (holder.person && !['?','？'].includes(holder.person) && isAttested(record, constraint, year)) {
+          active.push(displayRecord(record, constraint, year));
+        }
+      });
+    });
+    const result = selectUnique(all, active, constraints, year);
+    return {...result, holder_names:result.record ? [result.record.person] : [],
+      holder_exact:Boolean(result.record)};
+  }
+
+  // A member-relation window is not a second, independent reign table. The
+  // handwritten holder must pass the same selection as every other prince.
+  function reviewedRulerAt(records, overlay, year) {
+    const result = rulerAt(records, overlay.kingdom_name, year);
+    if (year < overlay.begin || year > overlay.end || !overlay.holder) return result;
+    if (!result.record || !samePerson(result.record.person, overlay.holder)) {
+      return {...result, active:[], record:null, display_start:null, accession_known:false,
+        status:result.all.length ? 'gap' : 'absent',
+        reason:`多郡关系所记${overlay.holder}未通过本年国主约束，不能用关系期段覆盖世系筛选。${result.reason}`};
+    }
+    const declared = overlay.holder_accession_year;
+    const dated = result.accession_known && finite(declared)
+      && Number(declared) === result.display_start;
+    const record = {...result.record, title:`${overlay.kingdom_name}王`,
+      start:dated ? Number(declared) : null, display_start:dated ? Number(declared) : null,
+      accession_known:Boolean(dated)};
+    return {...result, record, display_start:record.display_start, accession_known:record.accession_known,
+      researchNote:overlay.holder_note || overlay.note || ''};
+  }
+
+  window.JIN_KINGDOM_TABLE = {apply, displayRows, joinsNext, rulerAt, fiveRankAt, reviewedRulerAt};
 })();

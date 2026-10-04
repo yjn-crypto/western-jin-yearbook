@@ -138,6 +138,9 @@ select:focus, input:focus { outline: 2px solid rgba(122,46,46,.25); border-color
 .year-map-toolbar button:hover { background: var(--theme-pale); }
 .year-map-toolbar button:disabled { opacity: .45; cursor: default; }
 .year-map-toolbar button[aria-pressed="true"] { border-color: var(--accent); background: var(--theme-pale); }
+.year-map-toolbar [hidden] { display: none !important; }
+.year-map-toolbar label { display: inline-flex; align-items: center; gap: 5px; font-size: .8rem; color: var(--muted); white-space: nowrap; }
+.year-map-toolbar select { width: auto; padding: 5px 7px; border: 1px solid #cfc5b7; background: var(--paper-2); color: var(--ink); font: inherit; }
 .year-map-toolbar input[type="range"] { width: 145px; accent-color: var(--accent); }
 .year-map-toolbar output { min-width: 50px; color: var(--accent); font-weight: 700; text-align: center; }
 .year-map-toolbar span { color: var(--muted); font-size: .75rem; }

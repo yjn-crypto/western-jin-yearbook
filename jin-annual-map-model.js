@@ -6,9 +6,19 @@
   const PREVIOUS_VIDEO_URLS={289:'data/jin-maps/video-trial-289-308/289.json?v=20261002.2',308:'data/jin-maps/video-trial-289-308/308.json?v=20261002.2'};
   const VIDEO_TRIAL_URLS=Object.fromEntries(Array.from({length:51},(_,i)=>[266+i,`data/jin-maps/video-annual/${266+i}.json?v=20261002.3`]));
   const SOURCE_PRIORITY_URLS=Object.fromEntries(Array.from({length:51},(_,i)=>[266+i,`data/jin-maps/source-priority-annual/${266+i}.json?v=20261002.4`]));
+  const THREE_BASEMAP_URLS=Object.fromEntries(Array.from({length:51},(_,i)=>[266+i,`data/jin-maps/three-basemap-annual/${266+i}.json?v=20261004.3`]));
   const VIDEO_LAND_URL='data/jin-maps/jin-video-land.geojson?v=20261002.2';
   async function readMapData(url,fetcher=fetch){
-    if(/^data\/jin-maps\/(?:video-annual|source-priority-annual)\//.test(url)&&typeof DecompressionStream==='function'){
+    if(/^data\/jin-maps\/three-basemap-annual\/.*\.json\.gz(?:\?|$)/.test(url)){
+      const response=await fetcher(url);
+      if(!response.ok)throw new Error(`HTTP ${response.status}`);
+      const bytes=new Uint8Array(await response.arrayBuffer());
+      // Hosts may serve the archive directly or apply Content-Encoding first.
+      if(bytes[0]!==0x1f||bytes[1]!==0x8b)return JSON.parse(new TextDecoder().decode(bytes));
+      if(typeof DecompressionStream!=='function')throw new Error('此瀏覽器不支援大圖解壓，請更新瀏覽器或切換修改前圖。');
+      return await new Response(new Response(bytes).body.pipeThrough(new DecompressionStream('gzip'))).json();
+    }
+    if(/^data\/jin-maps\/(?:video-annual|source-priority-annual|three-basemap-annual)\//.test(url)&&typeof DecompressionStream==='function'){
       const compressed=url.replace(/\.json(?=\?|$)/,'.json.gz');
       try{
         const response=await fetcher(compressed);
@@ -86,6 +96,23 @@
       geojson:{type:'FeatureCollection',features}
     };
   }
-  const api={DATA_URL,REFERENCE_URL,SOURCE_PRIORITY_URLS,VIDEO_TRIAL_URLS,PREVIOUS_VIDEO_URLS,VIDEO_LAND_URL,readMapData,hydrateVideoTrial,hydrate};root.JIN_ANNUAL_MAP_MODEL=api;
+  function hydrateThreeBasemap(bundle,year){
+    const map=hydrateVideoTrial(bundle,year,null,{sourcePriority:true});
+    const presentation=bundle.presentation||{};
+    const fiefColors={...(bundle.fief_colors||presentation.fief_colors||{})};
+    for(const feature of map.geojson.features){
+      const p=feature.properties;
+      if(p.fief_id&&p.color&&!fiefColors[p.fief_id])fiefColors[p.fief_id]=p.color;
+    }
+    const count=layer=>map.geojson.features.filter(f=>f.properties.layer===layer).length;
+    const note=presentation.note?.split(' 本年表內但未能單獨繪界：')[0];
+    return {...map,threeBasemap:true,fiefColors,
+      title:presentation.title||`${year}年　西晉州郡與封國`,
+      subtitle:presentation.subtitle||'據262、281及約308年圖按改置事件取界；CHGIS保留治所。',
+      note:note||'谭圖262、281與CHGIS同級採用；約308圖補晚期局部邊界。政區與支郡依本年文字，改名、整郡改州沿用已有郡界；析置及轉縣局部擬合並註明來源。視頻只補展示域內政治控制。縣面與縣界不展示；州郡大圖使用同一年度的完整矢量邊線。',
+      status:presentation.status||`${year}年：${count('prefecture_areas')}處郡國範圍、${count('county_seats')}處縣治；邊界逐段保留底圖年代與擬合說明。`
+    };
+  }
+  const api={DATA_URL,REFERENCE_URL,SOURCE_PRIORITY_URLS,THREE_BASEMAP_URLS,VIDEO_TRIAL_URLS,PREVIOUS_VIDEO_URLS,VIDEO_LAND_URL,readMapData,hydrateVideoTrial,hydrateThreeBasemap,hydrate};root.JIN_ANNUAL_MAP_MODEL=api;
   if(typeof module!=='undefined'&&module.exports)module.exports=api;
 })(typeof window!=='undefined'?window:globalThis);

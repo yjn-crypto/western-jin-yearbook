@@ -63,7 +63,7 @@
     }
     return best?.point||null;
   }
-  function draw(map,container,{svgNode,seatSymbol,areaGuard,labelAnchors=root.JIN_MAP_LABEL_ANCHORS?.anchors||[]}){
+  function draw(map,container,{svgNode,seatSymbol,areaGuard,boundaryOnly=false,labelAnchors=root.JIN_MAP_LABEL_ANCHORS?.anchors||[]}){
     const [west,south,east,north]=map.extent,[left,top,right,bottom]=map.plot;
     const project=([lon,lat])=>[left+(lon-west)/(east-west)*(right-left),top+(north-lat)/(north-south)*(bottom-top)];
     const fiefColor=id=>map.fiefColors?.[id]||palette(id);
@@ -120,6 +120,7 @@
       const level=rawLevel==='regime'?'state':rawLevel==='fief'?(p.display_level||(/^p/.test(p.entity_id||'')?'prefecture':'county')):rawLevel;
       const name=p.display_name||p.name||'',key=p.entity_id?`entity:${p.entity_id}`:`jin:${layer}:${p.id||features.length}`;
       if(g.type==='Point'){
+        if(boundaryOnly)continue;
         const [x,y]=project(g.coordinates),role=String(p.coordinate_role||'');
         const isText=/label|text|anchor|文字/.test(role)||/label/.test(layer);
         const isSeat=!isText&&/seat|治所|county_seats|prefecture_seats|state_seats/.test(role+' '+layer);
@@ -160,7 +161,7 @@
       else if(layer==='regime_areas')Object.assign(style,{class:'jin-regime-area',fill:p.is_jin?'#e2e5d2':p.is_jin_affiliate?'#eee0b9':'#ffffff',stroke:'none'});
       else if(layer==='regime_boundaries')Object.assign(style,{class:'jin-regime-boundary',fill:'none',stroke:map.sourcePriority?'#6c6043':'#2e3439','stroke-width':map.sourcePriority?2.2:p.is_jin?3.8:2.2,'stroke-dasharray':p.is_jin_affiliate?'7 4':'none','stroke-opacity':1});
       else if(layer==='original_territory_boundary')Object.assign(style,{class:'jin-original-territory-boundary',fill:'none',stroke:'#6c6043','stroke-width':1.8});
-      else if(p.is_reference)Object.assign(style,{class:'jin-reference-boundary',fill:'none',stroke:map.annualVideo&&/province|state/.test(layer)?'none':/province|state/.test(layer)?'#686d73':'#92918b','stroke-width':/province|state/.test(layer)?2.6:.85,'stroke-opacity':1});
+      else if(p.is_reference)Object.assign(style,{class:'jin-reference-boundary',fill:'none',stroke:(polygon&&p.explicit_shared_boundaries)||(map.annualVideo&&!map.threeBasemap&&/province|state/.test(layer))?'none':/province|state/.test(layer)?'#686d73':'#92918b','stroke-width':/province|state/.test(layer)?2.6:.85,'stroke-opacity':1});
       else if(/territory/.test(layer))Object.assign(style,{fill:'#ded3a8',stroke:map.annualVideo?'none':'#6c6043','stroke-width':1.8});
       else if(/kingdom.*area/.test(layer))Object.assign(style,{fill:p.color||fiefColor(p.fief_id||p.name),'fill-opacity':.62,stroke:'#915c32','stroke-width':2.2,'stroke-dasharray':p.has_inference?'6 3':'none'});
       else if(/member.*bound|branch.*bound/.test(layer))Object.assign(style,{stroke:'#766854','stroke-opacity':.24,'stroke-width':.65});
