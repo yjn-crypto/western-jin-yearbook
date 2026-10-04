@@ -5,7 +5,7 @@
     'western-jin': {
       key: 'western-jin', label: '西晉', theme: 'metal', data: window.JIN_DATA,
       years: window.JIN_DATA ? window.JIN_DATA.meta.years : [266,316], defaultYear: 304,
-      subtitle: '選擇公元年份，按州查看該年年末的郡國與所轄縣級政區。'
+      subtitle: '選擇公元年份，按《通史》所列年度查看各州郡國與所轄縣級政區。'
     },
     'southern-liang': {
       key: 'southern-liang', label: '蕭梁', theme: 'fire', data: window.LIANG_DATA,
@@ -919,7 +919,7 @@
     const previousStateMap=mapById(previous.states), removedChanges=[];
     for (const state of current.states) {
       const oldState=previousStateMap.get(state.id), stateNotes=[], stateSources=[];
-      if (!oldState) { stateNotes.push(`${state.name}於本年年末見於表中`); stateSources.push(state.source); }
+      if (!oldState) { stateNotes.push(`${state.name}於本年${currentDynasty.key==='western-jin'?'':'年末'}見於表中`); stateSources.push(state.source); }
       else if (oldState.name!==state.name) { stateNotes.push(`${oldState.name}改稱${state.name}`); stateSources.push(state.source,oldState.source); }
       state.annotation=yearNote(state.entity,year);
       state.qiaoAnnotation=qiaoNote(state.entity,state.phase,year);
@@ -1169,6 +1169,13 @@
           sourceLabel:sources.map(source=>`${source.title}${source.book_page||source.book_pages?'，書內第'+(source.book_page||source.book_pages)+'頁':''}`).join('；'),
           sourceLinks:sources.filter(source=>source.url)};
         container.appendChild(createAuxButton(label,info,`jin-kingdom-relation${inferred?' is-inferred':''}`));
+        if(relation.role==='primary')for(const member of record.pending_members||[]){
+          if(typeof member==='string'||!member.display_label)continue;
+          container.appendChild(createAuxButton(member.display_label,{
+            ...info,title:'支郡見載與範圍待考',summary:member.display_label,
+            paragraphs:[member.note,'此項僅補充封國關係說明，尚未對應獨立行政行，不另增加郡數或縣目。']
+          },'jin-kingdom-relation'));
+        }
         if(item.previousKingdomRuler?.status==='matched')container.appendChild(createAuxButton(
           `原表另載：${item.previousKingdomRuler.record.title}${item.previousKingdomRuler.record.person}`,
           jinRulerInfo(item.previousKingdomRuler,year),'jin-kingdom-relation'));
@@ -2613,14 +2620,14 @@
       ? `南陳·${formatYearLabel(year)}州郡縣表`
       : currentDynasty.key==='southern-liang'
       ? `蕭梁·${formatYearLabel(year)}州郡縣表`
-      : `${currentDynasty.label}·${formatYearLabel(year)}年末州郡縣表`;
+      : `${currentDynasty.label}·${formatYearLabel(year)}州郡縣表`;
     document.title=title;$('pageTitle').textContent=title;
   }
 
   function switchDynasty() {
     currentDynasty=DYNASTIES[dynastySelect.value]||DYNASTIES['western-jin'];document.body.dataset.theme=currentDynasty.theme;
     if($('jinMapVersionControl'))$('jinMapVersionControl').hidden=currentDynasty.key!=='western-jin';
-    $('pageTitle').textContent=currentDynasty.key==='chen'?`${currentDynasty.label}州郡縣表`:`${currentDynasty.label}年末州郡縣表`;$('pageSubtitle').textContent=currentDynasty.subtitle;
+    $('pageTitle').textContent=currentDynasty.key==='southern-liang'?`${currentDynasty.label}年末州郡縣表`:`${currentDynasty.label}州郡縣表`;$('pageSubtitle').textContent=currentDynasty.subtitle;
     $('fiefLegend').innerHTML=currentDynasty.key==='chen'
       ? '<i class="legend-ruler">始興王·某某／侯國·某某</i> 南朝封爵；郡級附爵者顯示為「某某國」；<i class="legend-ruler fief-uncertain-legend">斜體</i> 承襲存疑'
       : currentDynasty.key==='southern-liang'

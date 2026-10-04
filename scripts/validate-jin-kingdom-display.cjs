@@ -251,6 +251,17 @@ for (const year of [281, 289, 304]) {
     assert.equal(actualChen.displayCountyGroup, undefined);
   }
 }
+// A named but geographically unresolved subsidiary is an explanatory note,
+// never an extra commandery or a reassignment of the nine-county Jiyang row.
+for(const year of [305,306,311,312]){
+  const snapshot=snapshots.get(year);
+  const donghai=rowOf(snapshot,'p152');
+  const rendered=context.renderState({...stateOf(snapshot,'p152'),rows:[donghai]},year);
+  assert.equal(rendered.textContent.includes('另見：濟陽支郡（範圍待考）'),year>=306&&year<=311);
+  assertAdministrativeCount([{...stateOf(snapshot,'p152'),rows:[donghai]}],1,'An unresolved member note cannot inflate the prefecture count');
+  const jiyang=rowOf(snapshot,'p015');
+  assert.equal(jiyang.jinKingdom,undefined,'The separate Jiyang entity must not be silently equated with the recorded subsidiary');
+}
 assert.equal(JSON.stringify({data: context.window.JIN_DATA,
   princes: context.window.JIN_PRINCES, research: context.window.JIN_MULTI_KINGDOMS}), sourceBefore,
   'The complete check must not mutate source data or the reviewed research layer');
