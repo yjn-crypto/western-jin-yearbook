@@ -680,6 +680,26 @@ log('zhongqiu_display_start',['p032/c0283','p033'],restorations['zhongqiu']['not
 (ROOT/'data/jin-289-restorations-20261007.js').write_text(
     'window.JIN_289_RESTORATIONS = '+json.dumps(restorations,ensure_ascii=False,separators=(',',':'))+';\n')
 
+# Final, source-reviewed title corrections only change existing prefectures.
+# Missing rulers and the text's control horizon do not establish abolition.
+final_fiefs=json.loads((ROOT/'data/jin-fief-research/reviewed-final-fief-status-20261008.json').read_text())
+for decision in final_fiefs['title_periods']:
+    for pid in decision['ids']:
+        years=[y for y in annual[pid] if decision['begin']<=y<=decision['end']]
+        for y in years:
+            p=annual[pid][y]
+            p.update(name=decision['name'],is_fief=bool(decision['rank']),
+                     fief_rank=decision['rank'],fief_final_review_id=decision['id'])
+            if not decision['rank']:
+                p['fief_suppressed_ids']=list(dict.fromkeys(p.get('fief_suppressed_ids',[])+p.get('fief_record_ids',[])))
+                p['fief_record_ids']=[]
+            if decision['inferred']:
+                p.update(uncertain=True,review_dating='reviewed_fief_display_inference')
+        note(pid,years,decision['note'])
+    log('final_fief_status',decision['ids'],decision['note'],
+        begin=decision['begin'],end=decision['end'],name=decision['name'],rank=decision['rank'],
+        authority=decision['authority'],source_urls=[s['url'] for s in decision['source_links']])
+
 # A copied phase carries status forward, not the old transfer event itself.
 for k,years in annual.items():
     if '/' not in k:continue
@@ -815,7 +835,7 @@ seat_data={'reviewed_at':'2026-10-07','scope':'western_jin','anchor_year':304,
   '益州成都治所僅行政參考，不代表304成都仍受西晉控制。']}
 (ROOT/'data/jin-seat-review-20261007.json').write_text(json.dumps(seat_data,ensure_ascii=False,indent=2)+'\n')
 
-result={'schema_version':'1.2.0','reviewed_at':'2026-10-07',
+result={'schema_version':'1.2.0','reviewed_at':'2026-10-08',
  'source_sha256':hashlib.sha256(source_path.read_bytes()).hexdigest(),
  'policy':{'date_basis':'通史现成年份；当年列示改动后州郡县归属，在新属处注明年初旧州旧郡；不创造不详事件年',
            'unknown_dates':'观察锚点只约束显示，不创造确切始置或转属年',
@@ -826,7 +846,7 @@ result={'schema_version':'1.2.0','reviewed_at':'2026-10-07',
 # The browser only needs patches and policy; full evidence ledger is kept in JSON.
 browser={k:result[k] for k in ['schema_version','reviewed_at','source_sha256','policy','overrides','additions']}
 (ROOT/'data/jin-admin-review.js').write_text('window.JIN_ADMIN_REVIEW_DATA = '+json.dumps(browser,ensure_ascii=False,separators=(',',':'))+';\n')
-annual_out={'meta':{'schema_version':'1.2.0','reviewed_at':'2026-10-07','source_sha256':result['source_sha256'],
+annual_out={'meta':{'schema_version':'1.2.0','reviewed_at':'2026-10-08','source_sha256':result['source_sha256'],
  'policy':result['policy'],'years':[266,316]},'years':export}
 (ROOT/'data/jin-reviewed-annual-rows.json').write_text(json.dumps(annual_out,ensure_ascii=False,separators=(',',':'))+'\n')
 summary={'overrides':len(overrides),'ledger_entries':len(ledger),'reviewed_lineages':len(lineages),

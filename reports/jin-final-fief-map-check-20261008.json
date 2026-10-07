@@ -1,0 +1,527 @@
+{
+  "scope": "本輪51年封國狀態及接壤色彩檢索",
+  "period_count": 42,
+  "status_checks": 221,
+  "unchanged_geometries_checked": 102052,
+  "changed_commandery_years": 200,
+  "years": [
+    {
+      "year": 266,
+      "changed_commandery_statuses": 7
+    },
+    {
+      "year": 267,
+      "changed_commandery_statuses": 7
+    },
+    {
+      "year": 268,
+      "changed_commandery_statuses": 7
+    },
+    {
+      "year": 269,
+      "changed_commandery_statuses": 8
+    },
+    {
+      "year": 270,
+      "changed_commandery_statuses": 8
+    },
+    {
+      "year": 271,
+      "changed_commandery_statuses": 8
+    },
+    {
+      "year": 272,
+      "changed_commandery_statuses": 8
+    },
+    {
+      "year": 273,
+      "changed_commandery_statuses": 8
+    },
+    {
+      "year": 274,
+      "changed_commandery_statuses": 8
+    },
+    {
+      "year": 275,
+      "changed_commandery_statuses": 8
+    },
+    {
+      "year": 276,
+      "changed_commandery_statuses": 8
+    },
+    {
+      "year": 277,
+      "changed_commandery_statuses": 4
+    },
+    {
+      "year": 278,
+      "changed_commandery_statuses": 6
+    },
+    {
+      "year": 279,
+      "changed_commandery_statuses": 6
+    },
+    {
+      "year": 280,
+      "changed_commandery_statuses": 4
+    },
+    {
+      "year": 281,
+      "changed_commandery_statuses": 3
+    },
+    {
+      "year": 282,
+      "changed_commandery_statuses": 3
+    },
+    {
+      "year": 283,
+      "changed_commandery_statuses": 2
+    },
+    {
+      "year": 284,
+      "changed_commandery_statuses": 2
+    },
+    {
+      "year": 285,
+      "changed_commandery_statuses": 2
+    },
+    {
+      "year": 286,
+      "changed_commandery_statuses": 2
+    },
+    {
+      "year": 287,
+      "changed_commandery_statuses": 2
+    },
+    {
+      "year": 288,
+      "changed_commandery_statuses": 2
+    },
+    {
+      "year": 289,
+      "changed_commandery_statuses": 0
+    },
+    {
+      "year": 290,
+      "changed_commandery_statuses": 2
+    },
+    {
+      "year": 291,
+      "changed_commandery_statuses": 0
+    },
+    {
+      "year": 292,
+      "changed_commandery_statuses": 0
+    },
+    {
+      "year": 293,
+      "changed_commandery_statuses": 0
+    },
+    {
+      "year": 294,
+      "changed_commandery_statuses": 0
+    },
+    {
+      "year": 295,
+      "changed_commandery_statuses": 0
+    },
+    {
+      "year": 296,
+      "changed_commandery_statuses": 0
+    },
+    {
+      "year": 297,
+      "changed_commandery_statuses": 0
+    },
+    {
+      "year": 298,
+      "changed_commandery_statuses": 0
+    },
+    {
+      "year": 299,
+      "changed_commandery_statuses": 0
+    },
+    {
+      "year": 300,
+      "changed_commandery_statuses": 4
+    },
+    {
+      "year": 301,
+      "changed_commandery_statuses": 3
+    },
+    {
+      "year": 302,
+      "changed_commandery_statuses": 3
+    },
+    {
+      "year": 303,
+      "changed_commandery_statuses": 2
+    },
+    {
+      "year": 304,
+      "changed_commandery_statuses": 6
+    },
+    {
+      "year": 305,
+      "changed_commandery_statuses": 3
+    },
+    {
+      "year": 306,
+      "changed_commandery_statuses": 3
+    },
+    {
+      "year": 307,
+      "changed_commandery_statuses": 1
+    },
+    {
+      "year": 308,
+      "changed_commandery_statuses": 1
+    },
+    {
+      "year": 309,
+      "changed_commandery_statuses": 1
+    },
+    {
+      "year": 310,
+      "changed_commandery_statuses": 1
+    },
+    {
+      "year": 311,
+      "changed_commandery_statuses": 5
+    },
+    {
+      "year": 312,
+      "changed_commandery_statuses": 9
+    },
+    {
+      "year": 313,
+      "changed_commandery_statuses": 9
+    },
+    {
+      "year": 314,
+      "changed_commandery_statuses": 8
+    },
+    {
+      "year": 315,
+      "changed_commandery_statuses": 8
+    },
+    {
+      "year": 316,
+      "changed_commandery_statuses": 8
+    }
+  ],
+  "period_checks": {
+    "RUYIN_JUN": 11,
+    "BOHAI_FU": 11,
+    "BEFORE_277_p018": 11,
+    "BEFORE_277_p032": 11,
+    "BEFORE_277_p041": 11,
+    "BEFORE_277_p066": 11,
+    "BEFORE_277_p164": 11,
+    "CHENGYANG_JINGDU": 1,
+    "RUNAN_JIAN": 7,
+    "QINGHE_FIRST": 12,
+    "GUANGHAN_ZAN": 3,
+    "CHEN_AFTER_BIN": 4,
+    "BEIHAI_GAP": 6,
+    "SHIPING_WEI": 11,
+    "GAOYANG_JI_GAP": 2,
+    "GUANGLING_290_p155": 1,
+    "GUANGLING_290_p151": 1,
+    "WU_300_p192": 1,
+    "WU_300_p189": 1,
+    "WU_300_p193": 1,
+    "LINHUAI_ZANG_TRANSFER": 8,
+    "YIDU_XIANG": 6,
+    "QIN_301_GAP": 1,
+    "QINGHE_302_p042": 1,
+    "QINGHE_302_p039": 1,
+    "QIAO_CONTINUATION": 9,
+    "LUJIANG_PU": 3,
+    "YUZHANG_304_p200": 1,
+    "YUZHANG_304_p202": 1,
+    "YUZHANG_304_p201": 1,
+    "YUZHANG_311_p200": 6,
+    "YUZHANG_311_p202": 6,
+    "YUZHANG_311_p201": 6,
+    "PEI_ABOLISHED_311": 6,
+    "GAOYANG_AFTER_311": 5,
+    "FANYANG_AFTER_311": 5,
+    "SHUNYANG_AFTER_311": 5,
+    "SUI_AFTER_311": 5,
+    "DONGPING_AFTER_311": 5,
+    "LINHUAI_AFTER_311": 5,
+    "QIN_CROWN_PRINCE_312": 2,
+    "XIHE_AFTER_311": 5
+  },
+  "errors": [],
+  "adjacent_color_conflicts": [],
+  "deferred": [
+    {
+      "ids": [
+        "p251"
+      ],
+      "name": "壯武國",
+      "begin": 291,
+      "end": 299,
+      "reason": "已知壯武縣，但現有同年CHGIS點、262/281/308資料均未找到可用定位或獨立郡面；保留文字及待定位说明，不補造疆域。"
+    },
+    {
+      "ids": [
+        "p015",
+        "p252"
+      ],
+      "name": "濟陽",
+      "begin": 300,
+      "end": 302,
+      "reason": "爵位可考，但同名濟陽的郡域映射仍未確定；不把本輪306新增陳留東側濟陽支郡直接倒灌為早年疆域。"
+    },
+    {
+      "ids": [
+        "p103"
+      ],
+      "name": "廣漢",
+      "begin": 280,
+      "end": 282,
+      "reason": "卷38寔繼廣德後改封北海連寫而不繫年；既有王表以283繼後並改北海。暫不另推280—282廣漢王國，保留待考，非斷言沒有承繼。"
+    }
+  ],
+  "ordinary_commandery_interior_color_overlaps": 0,
+  "coordinate_grid_edge_contacts": [
+    {
+      "year": 277,
+      "period": "CHEN_AFTER_BIN",
+      "adjacent_fief": "jin-陳留",
+      "raw_border_overlap_square_degrees": 7.513576474311366e-09,
+      "interior_overlap_square_degrees": 0.0
+    },
+    {
+      "year": 277,
+      "period": "CHEN_AFTER_BIN",
+      "adjacent_fief": "jin-汝陰",
+      "raw_border_overlap_square_degrees": 3.2936144013223743e-09,
+      "interior_overlap_square_degrees": 0.0
+    },
+    {
+      "year": 278,
+      "period": "CHEN_AFTER_BIN",
+      "adjacent_fief": "jin-陳留",
+      "raw_border_overlap_square_degrees": 7.513576474311366e-09,
+      "interior_overlap_square_degrees": 0.0
+    },
+    {
+      "year": 278,
+      "period": "CHEN_AFTER_BIN",
+      "adjacent_fief": "jin-汝陰",
+      "raw_border_overlap_square_degrees": 3.2936144013223743e-09,
+      "interior_overlap_square_degrees": 0.0
+    },
+    {
+      "year": 279,
+      "period": "CHEN_AFTER_BIN",
+      "adjacent_fief": "jin-陳留",
+      "raw_border_overlap_square_degrees": 7.513576474311366e-09,
+      "interior_overlap_square_degrees": 0.0
+    },
+    {
+      "year": 279,
+      "period": "CHEN_AFTER_BIN",
+      "adjacent_fief": "jin-汝陰",
+      "raw_border_overlap_square_degrees": 3.2936144013223743e-09,
+      "interior_overlap_square_degrees": 0.0
+    },
+    {
+      "year": 280,
+      "period": "CHEN_AFTER_BIN",
+      "adjacent_fief": "jin-陳留",
+      "raw_border_overlap_square_degrees": 7.513576474311366e-09,
+      "interior_overlap_square_degrees": 0.0
+    },
+    {
+      "year": 280,
+      "period": "CHEN_AFTER_BIN",
+      "adjacent_fief": "jin-汝陰",
+      "raw_border_overlap_square_degrees": 3.2936143717069534e-09,
+      "interior_overlap_square_degrees": 0.0
+    },
+    {
+      "year": 301,
+      "period": "LINHUAI_ZANG_TRANSFER",
+      "adjacent_fief": "jin-淮陵",
+      "raw_border_overlap_square_degrees": 1.3825000045487184e-09,
+      "interior_overlap_square_degrees": 0.0
+    },
+    {
+      "year": 302,
+      "period": "QINGHE_302_p042",
+      "adjacent_fief": "jin-廣川",
+      "raw_border_overlap_square_degrees": 2.4468209856097965e-09,
+      "interior_overlap_square_degrees": 0.0
+    },
+    {
+      "year": 302,
+      "period": "QINGHE_302_p042",
+      "adjacent_fief": "jin-長樂",
+      "raw_border_overlap_square_degrees": 1.020800002737074e-08,
+      "interior_overlap_square_degrees": 0.0
+    },
+    {
+      "year": 302,
+      "period": "QINGHE_302_p039",
+      "adjacent_fief": "jin-長樂",
+      "raw_border_overlap_square_degrees": 5.145433109149643e-09,
+      "interior_overlap_square_degrees": 0.0
+    },
+    {
+      "year": 302,
+      "period": "LINHUAI_ZANG_TRANSFER",
+      "adjacent_fief": "jin-淮陵",
+      "raw_border_overlap_square_degrees": 1.3825000045487184e-09,
+      "interior_overlap_square_degrees": 0.0
+    },
+    {
+      "year": 303,
+      "period": "LINHUAI_ZANG_TRANSFER",
+      "adjacent_fief": "jin-淮陵",
+      "raw_border_overlap_square_degrees": 1.3825000045487184e-09,
+      "interior_overlap_square_degrees": 0.0
+    },
+    {
+      "year": 304,
+      "period": "LINHUAI_ZANG_TRANSFER",
+      "adjacent_fief": "jin-淮陵",
+      "raw_border_overlap_square_degrees": 1.3825000045487184e-09,
+      "interior_overlap_square_degrees": 0.0
+    },
+    {
+      "year": 304,
+      "period": "LINHUAI_ZANG_TRANSFER",
+      "adjacent_fief": "jin-廣陵",
+      "raw_border_overlap_square_degrees": 1.5600365863905542e-09,
+      "interior_overlap_square_degrees": 0.0
+    },
+    {
+      "year": 305,
+      "period": "LINHUAI_ZANG_TRANSFER",
+      "adjacent_fief": "jin-淮陵",
+      "raw_border_overlap_square_degrees": 1.3825000045487184e-09,
+      "interior_overlap_square_degrees": 0.0
+    },
+    {
+      "year": 305,
+      "period": "LINHUAI_ZANG_TRANSFER",
+      "adjacent_fief": "jin-廣陵",
+      "raw_border_overlap_square_degrees": 1.5600365863905542e-09,
+      "interior_overlap_square_degrees": 0.0
+    },
+    {
+      "year": 306,
+      "period": "LINHUAI_ZANG_TRANSFER",
+      "adjacent_fief": "jin-淮陵",
+      "raw_border_overlap_square_degrees": 1.3825000045487184e-09,
+      "interior_overlap_square_degrees": 0.0
+    },
+    {
+      "year": 306,
+      "period": "LINHUAI_ZANG_TRANSFER",
+      "adjacent_fief": "jin-廣陵",
+      "raw_border_overlap_square_degrees": 1.5600365863905542e-09,
+      "interior_overlap_square_degrees": 0.0
+    },
+    {
+      "year": 307,
+      "period": "LINHUAI_ZANG_TRANSFER",
+      "adjacent_fief": "jin-廣陵",
+      "raw_border_overlap_square_degrees": 1.5600365863905542e-09,
+      "interior_overlap_square_degrees": 0.0
+    },
+    {
+      "year": 312,
+      "period": "SUI_AFTER_311",
+      "adjacent_fief": "jin-江夏",
+      "raw_border_overlap_square_degrees": 1.1444928273475832e-09,
+      "interior_overlap_square_degrees": 0.0
+    },
+    {
+      "year": 312,
+      "period": "LINHUAI_AFTER_311",
+      "adjacent_fief": "jin-廣陵",
+      "raw_border_overlap_square_degrees": 1.5600365863905542e-09,
+      "interior_overlap_square_degrees": 0.0
+    },
+    {
+      "year": 313,
+      "period": "SUI_AFTER_311",
+      "adjacent_fief": "jin-江夏",
+      "raw_border_overlap_square_degrees": 1.1444928273475832e-09,
+      "interior_overlap_square_degrees": 0.0
+    },
+    {
+      "year": 313,
+      "period": "LINHUAI_AFTER_311",
+      "adjacent_fief": "jin-廣陵",
+      "raw_border_overlap_square_degrees": 1.5600365863905542e-09,
+      "interior_overlap_square_degrees": 0.0
+    },
+    {
+      "year": 314,
+      "period": "LINHUAI_AFTER_311",
+      "adjacent_fief": "jin-廣陵",
+      "raw_border_overlap_square_degrees": 1.5600365863905542e-09,
+      "interior_overlap_square_degrees": 0.0
+    },
+    {
+      "year": 315,
+      "period": "LINHUAI_AFTER_311",
+      "adjacent_fief": "jin-廣陵",
+      "raw_border_overlap_square_degrees": 1.5600365863905542e-09,
+      "interior_overlap_square_degrees": 0.0
+    },
+    {
+      "year": 316,
+      "period": "LINHUAI_AFTER_311",
+      "adjacent_fief": "jin-廣陵",
+      "raw_border_overlap_square_degrees": 1.5600365863905542e-09,
+      "interior_overlap_square_degrees": 0.0
+    }
+  ],
+  "geometry_note": "所有非封國合併面的面線、治所及普通文字錨點均與本輪封國狀態更新前全等。普通郡和相鄰封國共享邊上的28處取整細條均限於一個既存六位坐標網格（0.000001度）內，內縮一格後交面全為0；未因數值精度重畫原界。",
+  "rendered_metadata_checks": 630,
+  "existing_label_anchor_checks": 1454,
+  "detail_patch_bytes": 14955951,
+  "xihe_final_appendix": [
+    {
+      "year": 312,
+      "updated_reference_area_label_and_seat": 1,
+      "removed_kingdom_unions": 1,
+      "unchanged_non_union_geometries": 2143
+    },
+    {
+      "year": 313,
+      "updated_reference_area_label_and_seat": 1,
+      "removed_kingdom_unions": 1,
+      "unchanged_non_union_geometries": 2144
+    },
+    {
+      "year": 314,
+      "updated_reference_area_label_and_seat": 1,
+      "removed_kingdom_unions": 1,
+      "unchanged_non_union_geometries": 2017
+    },
+    {
+      "year": 315,
+      "updated_reference_area_label_and_seat": 1,
+      "removed_kingdom_unions": 1,
+      "unchanged_non_union_geometries": 1997
+    },
+    {
+      "year": 316,
+      "updated_reference_area_label_and_seat": 1,
+      "removed_kingdom_unions": 1,
+      "unchanged_non_union_geometries": 1994
+    }
+  ],
+  "final_appendix_note": "第42項只移除312—316西河封國合併面與顏色，參考面改郡名；其餘郡面、界線、點位、封國色全部沿用41項已通過的檢查，因而不重跑原幾何構造。",
+  "detail_patch_sha256": "00cce4cb9c66e051255ba0449adf96209d31e7ef896a7b1a9fd2f632ac256bb2",
+  "config_sha256": "22feb08b8f9d886e32fe7533ab2ee8f16a3458fa05c0bd687f30542d7f5b7f59"
+}
