@@ -6,7 +6,7 @@
   const PREVIOUS_VIDEO_URLS={289:'data/jin-maps/video-trial-289-308/289.json?v=20261002.2',308:'data/jin-maps/video-trial-289-308/308.json?v=20261002.2'};
   const VIDEO_TRIAL_URLS=Object.fromEntries(Array.from({length:51},(_,i)=>[266+i,`data/jin-maps/video-annual/${266+i}.json?v=20261002.3`]));
   const SOURCE_PRIORITY_URLS=Object.fromEntries(Array.from({length:51},(_,i)=>[266+i,`data/jin-maps/source-priority-annual/${266+i}.json?v=20261002.4`]));
-  const THREE_BASEMAP_URLS=Object.fromEntries(Array.from({length:51},(_,i)=>[266+i,`data/jin-maps/three-basemap-annual/${266+i}.json?v=20261004.4`]));
+  const THREE_BASEMAP_URLS=Object.fromEntries(Array.from({length:51},(_,i)=>[266+i,`data/jin-maps/three-basemap-annual/${266+i}.json?v=20261007.1`]));
   const VIDEO_LAND_URL='data/jin-maps/jin-video-land.geojson?v=20261002.2';
   async function readMapData(url,fetcher=fetch){
     if(/^data\/jin-maps\/three-basemap-annual\/.*\.json\.gz(?:\?|$)/.test(url)){
@@ -103,6 +103,26 @@
       if(!geometry)throw new Error(`Missing annual geometry: ${feature.geometry_id}`);
       return {type:'Feature',geometry,properties:{...feature.properties}};
     });
+    for(const seat of features.filter(feature=>feature.properties.layer==='county_seats')){
+      const p=seat.properties,base=String(p.name).replace(/[縣县國国]$/,'');
+      const addTitle=(id,text,source,inferred)=>features.push({type:'Feature',geometry:seat.geometry,properties:{
+        layer:'labels',level:'fief',display_level:'county',label_type:'county_fief',entity_id:p.entity_id,
+        source_entity_id:p.entity_id,prefecture_id:p.prefecture_id,state_id:p.state_id,year:Number(year),
+        name:text,display_name:text,fief_id:id,show_label:true,color:'#493b2a',font_size:8.6,
+        coordinate_role:'title_annotation_not_seat',source,inferred}});
+      for(const fief of root.JIN_FIVE_RANK_FIEFS.records.filter(record=>record.level==='county')){
+        const period=fief.target_periods.find(period=>period.target_id===p.entity_id&&period.start<=year&&year<=period.end);
+        if(!period)continue;
+        const resolved=root.JIN_KINGDOM_TABLE.fiveRankAt(fief,year),holder=resolved.record;
+        const inferred=Boolean(holder&&(period.uncertain||holder.display_inferred));
+        addTitle(fief.id,`${fief.fief}${fief.rank}${holder?'·'+holder.person:''}${inferred?'（推定）':''}`,fief.source_page_title,inferred);
+      }
+      const ruler=root.JIN_KINGDOM_TABLE.rulerAt(root.JIN_PRINCES.records,base,Number(year),'county');
+      if(ruler.all.length){
+        const holder=ruler.record,inferred=Boolean(holder?.display_inferred);
+        addTitle('county-prince-'+base,`${base}王${holder?'·'+holder.person:''}${inferred?'（推定）':''}`,'晉朝藩王列表；本輪縣王時段約束',inferred);
+      }
+    }
     const presentation=bundle.presentation||{};
     const map={year:Number(year),trial:true,sourcePriority:true,
       width:presentation.width||2400,height:presentation.height||1986,
@@ -114,7 +134,7 @@
       if(p.fief_id&&p.color&&!fiefColors[p.fief_id])fiefColors[p.fief_id]=p.color;
     }
     const count=layer=>map.geojson.features.filter(f=>f.properties.layer===layer).length;
-    const note=presentation.note?.split(' 本年表內但未能單獨繪界：')[0];
+    const note=presentation.note?.replace(/ 本年表內但未能單獨繪界：.*?具體缺據見年度coverage記錄。/,'');
     return {...map,threeBasemap:true,fiefColors,
       title:presentation.title||`${year}年　西晉州郡與封國`,
       subtitle:presentation.subtitle||'據262、281及約308年圖按改置事件取界；CHGIS保留治所。',

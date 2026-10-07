@@ -886,3 +886,8 @@ body[data-theme] input:focus { outline-color: color-mix(in srgb, var(--accent) 2
 .map-symbol-legend { margin: 4px 0 8px; font-size: .82rem; color: #34312d; line-height: 1.6; }
 
 .state-research-note { margin: 8px 16px; color: #645d52; font-size: .88rem; line-height: 1.6; }
+
+/* 多郡王國的引文與論證摘要在既有資料彈窗內展開。 */
+.evidence-passage-locator, .evidence-passage-note { color: var(--muted); font-size: .86rem; }
+.evidence-passage-text { white-space: pre-wrap; }
+blockquote.evidence-passage-text { margin: 10px 0; padding: 8px 14px; border-left: 3px solid #c8b897; background: var(--paper); }

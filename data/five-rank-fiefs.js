@@ -35,8 +35,10 @@ window.JIN_FIVE_RANK_FIEFS = {
         "url": "https://zh.wikipedia.org/wiki/%E6%99%89%E6%9C%9D%E7%94%B7%E7%88%B5%E5%88%97%E8%A1%A8"
       }
     ],
-    "record_count": 104,
-    "ambiguous_year_matches_omitted": 24
+    "record_count": 108,
+    "ambiguous_year_matches_omitted": 24,
+    "reviewed_at": "2026-10-07",
+    "editorial_source": "使用者《兩晉郡級封國相關分析》；展示推定另見年代約束。"
   },
   "records": [
     {
@@ -634,7 +636,7 @@ window.JIN_FIVE_RANK_FIEFS = {
         },
         {
           "start": 302,
-          "end": 316,
+          "end": 302,
           "target_id": "p194",
           "context": "揚州",
           "uncertain": true,
@@ -915,7 +917,7 @@ window.JIN_FIVE_RANK_FIEFS = {
         },
         {
           "start": 292,
-          "end": 309,
+          "end": 306,
           "target_id": "p156",
           "context": "徐州",
           "uncertain": true,
@@ -7311,6 +7313,242 @@ window.JIN_FIVE_RANK_FIEFS = {
           "holder_names": [
             "荀組"
           ]
+        }
+      ]
+    },
+    {
+      "id": "fr100701",
+      "fief": "壯武",
+      "rank": "公",
+      "classification": "郡公",
+      "level": "prefecture",
+      "holders": [
+        {
+          "sequence": "1",
+          "title": "壯武公",
+          "posthumous": "",
+          "person": "張華",
+          "time_text": "元康年間（291—299）受封—300國除；展示291—299",
+          "periods": [
+            {
+              "start": 291,
+              "end": 299,
+              "raw": "291年—299年（展示推定）",
+              "uncertain": true
+            }
+          ],
+          "note": "《晉書》卷36張華傳稱久之進封壯武郡公，元康年間（291—299）受封；依本輪宽年號取首年的规则，暂以291開始展示，非受封確年。300伏誅國除，303追復廣武侯不恢復壯武郡公國。"
+        }
+      ],
+      "title_text": "壯武公國",
+      "description": "《晉書》卷36張華傳稱久之進封壯武郡公，元康年間（291—299）受封；依本輪宽年號取首年的规则，暂以291開始展示，非受封確年。300伏誅國除，303追復廣武侯不恢復壯武郡公國。",
+      "source_url": "https://zh.wikisource.org/wiki/晉書/卷036",
+      "source_page_title": "晉書卷36張華傳；本輪Word校訂",
+      "active_periods": [
+        {
+          "start": 291,
+          "end": 299,
+          "uncertain": true
+        }
+      ],
+      "target_periods": [
+        {
+          "start": 291,
+          "end": 299,
+          "target_id": "p251",
+          "context": "青州",
+          "uncertain": true,
+          "holder_exact": false,
+          "holder_names": [
+            "張華"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fr100702",
+      "fief": "宜都",
+      "rank": "公",
+      "classification": "郡公",
+      "level": "prefecture",
+      "holders": [
+        {
+          "sequence": "1",
+          "title": "宜都公",
+          "posthumous": "",
+          "person": "步闡",
+          "time_text": "272年—272年",
+          "periods": [
+            {
+              "start": 272,
+              "end": 272,
+              "raw": "272年—272年",
+              "uncertain": false
+            }
+          ],
+          "note": "272歸晉受封而旋亡；孫吳未平，本輪作虛封資料，不據爵號畫晉國面。"
+        }
+      ],
+      "title_text": "宜都公國",
+      "description": "272歸晉受封而旋亡；孫吳未平，本輪作虛封資料，不據爵號畫晉國面。",
+      "source_url": "https://zh.wikipedia.org/wiki/晉朝公爵列表",
+      "source_page_title": "晉朝公爵列表；本輪Word校訂",
+      "active_periods": [
+        {
+          "start": 272,
+          "end": 272,
+          "uncertain": false
+        }
+      ],
+      "target_periods": []
+    },
+    {
+      "id": "fr100703",
+      "fief": "宣城",
+      "rank": "公",
+      "classification": "郡公",
+      "level": "prefecture",
+      "holders": [
+        {
+          "sequence": "1",
+          "title": "宣城公",
+          "posthumous": "",
+          "person": "司馬裒",
+          "time_text": "311年—316年（展示推定）",
+          "periods": [
+            {
+              "start": 311,
+              "end": 316,
+              "raw": "311年—316年",
+              "uncertain": true
+            }
+          ],
+          "note": "出繼東安渾後封宣城公，確年未詳；依本輪Word以311為展示起年，非史料確年。"
+        }
+      ],
+      "title_text": "宣城公國",
+      "description": "出繼東安渾後封宣城公，確年未詳；依本輪Word以311為展示起年，非史料確年。",
+      "source_url": "https://zh.wikipedia.org/wiki/晉朝公爵列表",
+      "source_page_title": "晉朝公爵列表；本輪Word校訂",
+      "active_periods": [
+        {
+          "start": 311,
+          "end": 316,
+          "uncertain": true
+        }
+      ],
+      "target_periods": [
+        {
+          "start": 311,
+          "end": 316,
+          "target_id": "p190",
+          "context": "揚州",
+          "uncertain": true,
+          "holder_exact": false,
+          "holder_names": [
+            "司馬裒"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fr100704",
+      "fief": "江夏",
+      "rank": "公",
+      "classification": "郡公",
+      "level": "prefecture",
+      "holders": [
+        {
+          "sequence": "1",
+          "title": "江夏公",
+          "posthumous": "",
+          "person": "衛璪",
+          "time_text": "307年—311年（展示推定）",
+          "periods": [
+            {
+              "start": 307,
+              "end": 311,
+              "raw": "307年—311年",
+              "uncertain": true
+            }
+          ],
+          "note": "永嘉中蘭陵增封東海，衛璪徙江夏；本輪以307展示改封。原承襲世系見蘭陵條，311後承襲未詳。"
+        },
+        {
+          "sequence": "3",
+          "title": "江夏郡開國公",
+          "posthumous": "",
+          "person": "衛崇",
+          "time_text": "",
+          "periods": [],
+          "note": "衛瓘玄孙"
+        },
+        {
+          "sequence": "4",
+          "title": "江夏郡開國公",
+          "posthumous": "",
+          "person": "衛准",
+          "time_text": "",
+          "periods": [],
+          "note": ""
+        },
+        {
+          "sequence": "5",
+          "title": "江夏郡開國公",
+          "posthumous": "",
+          "person": "?",
+          "time_text": "",
+          "periods": [],
+          "note": ""
+        },
+        {
+          "sequence": "6",
+          "title": "江夏郡開國公",
+          "posthumous": "",
+          "person": "衛璵",
+          "time_text": "?―420年",
+          "periods": [
+            {
+              "start": null,
+              "end": 420,
+              "uncertain": true,
+              "raw": "?—420年"
+            }
+          ],
+          "note": "衛准孫"
+        }
+      ],
+      "title_text": "江夏公國",
+      "description": "永嘉中蘭陵增封東海，衛璪徙江夏；本輪以307展示改封。原承襲世系見蘭陵條，311後承襲未詳。 311後本輪保留江夏公國；承襲人年未詳，只於展開保留原蘭陵—江夏世系。",
+      "source_url": "https://zh.wikipedia.org/wiki/晉朝公爵列表",
+      "source_page_title": "晉朝公爵列表；本輪Word校訂",
+      "active_periods": [
+        {
+          "start": 307,
+          "end": 316,
+          "uncertain": true
+        }
+      ],
+      "target_periods": [
+        {
+          "start": 307,
+          "end": 311,
+          "target_id": "p160",
+          "context": "荊州",
+          "uncertain": true,
+          "holder_exact": false,
+          "holder_names": [
+            "衛璪"
+          ]
+        },
+        {
+          "start": 312,
+          "end": 316,
+          "target_id": "p160",
+          "context": "荊州",
+          "uncertain": true,
+          "holder_exact": false,
+          "holder_names": []
         }
       ]
     }

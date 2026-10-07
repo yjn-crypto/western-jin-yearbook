@@ -43,7 +43,7 @@
     };
     return polygons.some(rings=>inRing(rings[0])&&!rings.slice(1).some(inRing));
   }
-  function prefectureName(name){return String(name||'').replace(/(?:支郡|郡|國|国)$/,'');}
+  function prefectureName(name){return String(name||'').replace(/(?:支郡|王國|公國|侯國|伯國|子國|男國|郡|國|国)$/,'');}
   function interiorPoint(g){
     const polygons=g.type==='Polygon'?[g.coordinates]:g.type==='MultiPolygon'?g.coordinates:[];
     const area=ring=>Math.abs(ring.reduce((s,p,i)=>{const q=ring[(i+1)%ring.length];return s+p[0]*q[1]-q[0]*p[1];},0));
@@ -73,6 +73,12 @@
     const labels=[],features=[],controlOverlays=[];
     const pointLabels=map.geojson.features.filter(f=>f.geometry?.type==='Point'&&f.properties?.layer==='labels');
     const countySeats=map.geojson.features.filter(f=>f.properties?.layer==='county_seats');
+    const seatKey=f=>f.geometry.coordinates.map(value=>Number(value).toFixed(6)).join(',');
+    const seatRank={state:3,prefecture:2,county:1},highestSeats=new Map();
+    for(const seat of map.geojson.features.filter(f=>f.geometry?.type==='Point'&&/^(state|prefecture|county)_seats$/.test(f.properties?.layer))){
+      const key=seatKey(seat),previous=highestSeats.get(key);
+      if(!previous||seatRank[seat.properties.level]>seatRank[previous.properties.level])highestSeats.set(key,seat);
+    }
     const sameSeat=(a,b)=>a.source_id&&b.source_id?String(a.source_id)===String(b.source_id):false;
     const matchesCountySeat=(label,seat)=>sameSeat(label.properties,seat.properties)||
       (!label.properties.source_id&&label.properties.entity_id&&label.properties.entity_id===seat.properties.entity_id&&
@@ -125,12 +131,13 @@
         const isText=/label|text|anchor|文字/.test(role)||/label/.test(layer);
         const isSeat=!isText&&/seat|治所|county_seats|prefecture_seats|state_seats/.test(role+' '+layer);
         // Unclassified points can label geography but must not masquerade as seats.
-        if(isSeat){
-          const symbol=seatSymbol(x,y,level,p.is_reference?'#787b7d':p.fief_id?fiefColor(p.fief_id):null);
-          symbol.appendChild(svgNode('title',{},`${name}：${p.source||'來源未載'}；${map.trial?(p.coordinate_time||'治所參考位置'):role}${p.is_reference?`；無色參考層，參考年代${p.reference_year||'未詳'}；${p.reference_reason||''}`:''}${p.control_reason?`；${p.control_reason}`:''}`));
+        const renderSeat=isSeat&&(!highestSeats.has(seatKey(f))||highestSeats.get(seatKey(f))===f);
+        if(renderSeat){
+          const symbol=seatSymbol(x,y,level,p.is_capital?'#d7ab18':p.is_reference?'#787b7d':p.fief_id?fiefColor(p.fief_id):null);
+          symbol.appendChild(svgNode('title',{},`${name}${p.seat_name?'，治'+p.seat_name:''}${p.is_capital?'；都城'+(p.capital_name||''):''}：${p.source||'來源未載'}；${p.seat_note|| (map.trial?(p.coordinate_time||'治所參考位置'):role)}${p.is_reference?`；無色參考層，參考年代${p.reference_year||'未詳'}；${p.reference_reason||''}`:''}${p.control_reason?`；${p.control_reason}`:''}`));
           geometryContainer.appendChild(symbol);
         }
-        features.push({entity_id:p.entity_id||null,x,y,level,label:name,mapKey:key,coordinate_role:role,source:p.source});
+        features.push({entity_id:p.entity_id||null,x,y,level,label:name,mapKey:key,coordinate_role:role,source:p.source,renderSeat});
         const range=rangeForPoint.get(f);
         const seat=level==='county'?(isSeat?f:countySeats.find(item=>matchesCountySeat(f,item))):null;
         const sourceId=seat?.properties.source_id||p.source_id||'';
@@ -163,15 +170,18 @@
       else if(layer==='original_territory_boundary')Object.assign(style,{class:'jin-original-territory-boundary',fill:'none',stroke:'#6c6043','stroke-width':1.8});
       else if(p.is_reference)Object.assign(style,{class:'jin-reference-boundary',fill:'none',stroke:(polygon&&p.explicit_shared_boundaries)||(map.annualVideo&&!map.threeBasemap&&/province|state/.test(layer))?'none':/province|state/.test(layer)?'#686d73':'#92918b','stroke-width':/province|state/.test(layer)?2.6:.85,'stroke-opacity':1});
       else if(/territory/.test(layer))Object.assign(style,{fill:'#ded3a8',stroke:map.annualVideo?'none':'#6c6043','stroke-width':1.8});
-      else if(/kingdom.*area/.test(layer))Object.assign(style,{fill:p.color||fiefColor(p.fief_id||p.name),'fill-opacity':.62,stroke:'#915c32','stroke-width':2.2,'stroke-dasharray':p.has_inference?'6 3':'none'});
+      else if(/kingdom.*area/.test(layer))Object.assign(style,{fill:p.color||fiefColor(p.fief_id||p.name),'fill-opacity':.62,stroke:map.threeBasemap?'none':'#915c32','stroke-width':2.2,'stroke-dasharray':p.has_inference?'6 3':'none'});
       else if(/member.*bound|branch.*bound/.test(layer))Object.assign(style,{stroke:'#766854','stroke-opacity':.24,'stroke-width':.65});
       else if(/province.*bound|state.*bound/.test(layer))Object.assign(style,{class:'jin-province-boundary',stroke:'#292b32','stroke-width':3.2,'stroke-opacity':1});
       else if(/province.*area|state.*area/.test(layer))Object.assign(style,{class:'jin-province-area',fill:'#e2e5d2',stroke:explicitStateBoundaries||map.annualVideo?'none':'#292b32','stroke-width':3.2,'stroke-opacity':1});
-      else if(layer==='prefecture_boundaries'&&map.trial)Object.assign(style,{'data-boundary-level':'prefecture'});
+      else if(layer==='prefecture_boundaries')Object.assign(style,{'data-boundary-level':'prefecture',
+        stroke:p.between_fiefs?'#915c32':p.within_same_fief?'#766854':'#6d624d',
+        'stroke-width':p.between_fiefs?2.2:p.within_same_fief?.65:.9,'stroke-opacity':p.within_same_fief?.24:1});
       else if(layer==='prefecture_areas'&&explicitPrefBoundaries)style.stroke='none';
       else if(layer==='unresolved_areas')Object.assign(style,{fill:`url(#jin-uncertain-${map.year})`,stroke:'none'});
       else if(/coast|river/.test(layer))Object.assign(style,{stroke:'#829aa6','stroke-width':.7});
       if(map.trial&&p.is_context&&/province.*bound/.test(layer))style['stroke-dasharray']='5 4';
+      if(layer==='prefecture_boundaries'&&p.boundary_inferred)style['stroke-dasharray']='6 4';
       if(!p.is_reference&&polygon&&!/kingdom|territory|province|state|regime|land_background/.test(layer))style['stroke-opacity']=.65;
       const path=svgNode('path',style);
       if(p.entity_id){path.dataset.entityId=p.entity_id;path.dataset.mapKey=key;path.dataset.mapLevel=level;path.setAttribute('tabindex','0');path.setAttribute('role','button');}

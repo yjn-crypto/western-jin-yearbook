@@ -12,9 +12,9 @@ from __future__ import annotations
 import argparse, collections, gzip, hashlib, importlib.util, json, math, re, sys
 from concurrent.futures import ProcessPoolExecutor, as_completed
 from pathlib import Path
-from shapely import make_valid, normalize, set_precision, voronoi_polygons
-from shapely.geometry import shape, mapping, Point, Polygon, MultiPoint, box
-from shapely.ops import unary_union
+from shapely import make_valid, normalize, set_precision, voronoi_polygons, union_all
+from shapely.geometry import shape, mapping, Point, Polygon, MultiPoint, LineString, box
+from shapely.ops import unary_union, linemerge, polygonize
 from shapely.strtree import STRtree
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -31,7 +31,8 @@ GEOMETRY_EXCEPTIONS={
     'p109':dict(years=[290,290],mother='巴西郡',book_pages=[666],reason='宕渠復置與領縣有前後限定；本年縣目仍列巴西，無可直接使用的獨立郡面，未補定轉屬年。'),
     'p166':dict(years=[290,290],mother='義陽郡／襄陽郡',book_pages=[709,712,713],reason='新野復置與領縣有前後限定；本年縣目仍列原郡，無可直接使用的獨立郡面，未補定轉屬年。'),
     'p138':dict(years=[313,316],mother='牂柯郡',book_pages=[682,683],reason='通史記313分牂柯置，領平夷、鱉；現存圖面及CHGIS缺這兩縣的可定位源點和郡界，不能把廣東同名平夷點用於寧州。'),
-    'p186':dict(years=[307,316],mother='南郡',book_pages=[725,726],reason='荊州成都起訖為307後至316前，分南郡華容等置；本年無可用治所或豐都縣源點，不能套用益州成都。')
+    'p186':dict(years=[304,312],mother='南郡',book_pages=[725,726],reason='本輪暫定304—312荊州成都國；不得以益州同名成都坐標補荊州治所。'),
+    'p251':dict(years=[291,299],mother='城陽郡',book_pages=[693],reason='壯武公國僅能確知壯武一縣；三底圖無獨立界線，同年CHGIS及原圖也無該縣可定位源點，未從城陽郡任意切出疆域。')
 }
 
 def module(name, path):
@@ -69,6 +70,45 @@ def key(s):
 
 def state_key(name):
     return key(str(name).translate(str.maketrans({'荆':'荊','并':'並','凉':'涼','扬':'揚','兖':'兗','宁':'寧','广':'廣'})))
+
+def curved_partition(mask, seeds):
+    """Fit one shared curved edge network; source compartment edges stay fixed."""
+    parts=old.partition_by_seeds(mask,seeds)
+    if len(parts)<2:return parts
+    curves=[]
+    items=list(parts.items())
+    for i,(left,lg) in enumerate(items):
+        for right,rg in items[i+1:]:
+            shared=lineal(lg.boundary.intersection(rg.boundary))
+            if shared.is_empty:continue
+            merged=shared if shared.geom_type=='LineString' else linemerge(shared)
+            for edge in ([merged] if merged.geom_type=='LineString' else merged.geoms):
+                xy=list(edge.coords)
+                # Round fitted corners without moving network junctions.
+                for _ in range(2):
+                    rounded=[xy[0]]
+                    for a,b in zip(xy,xy[1:]):
+                        rounded.extend([(a[0]*.75+b[0]*.25,a[1]*.75+b[1]*.25),
+                                        (a[0]*.25+b[0]*.75,a[1]*.25+b[1]*.75)])
+                    xy=rounded+[xy[-1]]
+                rounded=LineString(xy)
+                n=max(4,math.ceil(rounded.length/.025));bow=min(.012,rounded.length*.035)
+                coordinates=[]
+                for k in range(n+1):
+                    t=k/n;p=rounded.interpolate(t,normalized=True)
+                    a=rounded.interpolate(max(0,t-.002),normalized=True);b=rounded.interpolate(min(1,t+.002),normalized=True)
+                    dx,dy=b.x-a.x,b.y-a.y;length=math.hypot(dx,dy)
+                    offset=bow*math.sin(math.pi*t)**2
+                    coordinates.append((p.x-dy/length*offset,p.y+dx/length*offset))
+                coordinates[0]=edge.coords[0];coordinates[-1]=edge.coords[-1]
+                curves.append(LineString(coordinates))
+    network=union_all([mask.boundary,*curves],grid_size=GRID)
+    fitted=collections.defaultdict(list)
+    for face in polygonize(network):
+        if not mask.covers(face.representative_point()):continue
+        pid=max(parts,key=lambda p:face.intersection(parts[p]).area)
+        fitted[pid].append(face)
+    return {pid:union(gs) for pid,gs in fitted.items()}
 
 def archive_sources():
     roots={262:Path('/Users/yujiangnan/Documents/Codex/2026-10-02/ni/outputs/三国262年'),
@@ -286,7 +326,22 @@ def pack(trials):
 
 class Builder:
     def __init__(self,rows_path):
-        self.data=annual.load_js(ROOT/'data/jin-data.js');self.entities=annual.all_entities(self.data)
+        self.data=annual.load_js(ROOT/'data/jin-data.js')
+        review=read(ROOT/'data/jin-admin-review.json')
+        added_pids={r['entity']['id'] for r in review['additions'] if r['kind']=='prefecture'}
+        for addition in review['additions']:
+            if addition['kind']=='prefecture':
+                next(s for s in self.data['states'] if s['id']==addition['parent_id'])['prefectures'].append(addition['entity'])
+            elif addition['parent_id'] not in added_pids:
+                next(p for s in self.data['states'] for p in s['prefectures'] if p['id']==addition['parent_id'])['counties'].append(addition['entity'])
+        entity_rows={s['id']:s for s in self.data['states']}
+        for s in self.data['states']:
+            for p in s['prefectures']:
+                entity_rows[p['id']]=p
+                entity_rows.update({p['id']+'/'+c['id']:c for c in p['counties']})
+        for patch in review['overrides']:
+            entity_rows[patch['key']].update({k:patch[k] for k in ('base_name','phases') if k in patch})
+        self.entities=annual.all_entities(self.data)
         self.rows,self.reviewed=load_rows(self.data,rows_path)
         for rows in self.rows.values():
             for cid,row in rows['county'].items():
@@ -309,6 +364,7 @@ class Builder:
         self.units={y:source_units(y) for y in (262,281,308)}
         self.yearpoints={};self.pointreports={};self.rejected_points={};self.maps={};self.events=[];self.mapping=[]
         self.rules=annual.load_js(ROOT/'data/jin-multi-kingdoms.js')
+        self.seat_review=read(ROOT/'data/jin-seat-review-20261007.json')
         self.units[281]=[u for u in self.units[281] if not u['names'].intersection({'樂浪','帶方'})]
         self.domain=clean(union([u['geometry'] for u in self.units[281]]).intersection(box(*old.PRESENTATION['extent'])))
         old_domain=union([clean(shape(f['geometry'])) for f in read(ROOT/'data/jin-maps/308_map.geojson')['features'] if f['properties'].get('layer')=='province_areas'])
@@ -444,6 +500,72 @@ class Builder:
             if u:result[pid]=u['id']
         return result
 
+    def display_seats(self,year):
+        """Use the reviewed 304 county anchors and explicit Tongshi moves."""
+        current=self.get_points(year);anchor=self.get_points(304)
+        result=[f for f in current if f['properties']['level']=='county']
+        unknown={p['id'] for p in self.seat_review['unknown_prefecture_seats']}
+        pref_anchors={p['prefecture_id']:dict(p,name=p['county_name']) for p in self.seat_review['prefecture_seats'] if p.get('county_id')}
+        state_anchors={p['state_id']:p for p in self.seat_review['state_seats']}
+        unresolved=[]
+        for level,definitions in [('prefecture',pref_anchors),('state',state_anchors)]:
+            ids=set(self.rows[year][level])
+            # Chengdu stays an explicitly requested administrative reference.
+            if level=='state' and year>=304:ids.add('s12')
+            for eid in sorted(ids):
+                if level=='prefecture' and eid in unknown:continue
+                if level=='prefecture' and names_for(self.rows[year][level][eid])&{'樂浪','帶方'}:continue
+                spec=definitions.get(eid)
+                migration=next((r for r in self.seat_review['source_migrations'] if r['kind']==level and r['id']==eid and r['begin']<=year<=r['end']),None)
+                if migration:spec=dict(spec or {},**migration)
+                row=self.rows[year][level].get(eid)
+                if not spec and level=='prefecture':
+                    # Transfer between states can give the same prefecture a
+                    # new table ID; retain the 304 seat of that named unit.
+                    matches=[p for p in pref_anchors.values() if key(p['prefecture_name']) in names_for(row)]
+                    if len(matches)==1:spec=matches[0]
+                if not spec:
+                    entity=self.entities[level][eid]['entity']
+                    excerpt=entity.get('source',{}).get('excerpt','')
+                    match=re.search(r'——治([^（，。\s]+)',excerpt)
+                    candidates=[c for c in self.rows[year]['county'].values() if c['prefecture_id']==eid and match and annual.county_key(c['name'])==annual.county_key(match[1])]
+                    if candidates:spec=dict(county_id=candidates[0]['yearbook_entity_id'],prefecture_id=eid,name=candidates[0]['name'],basis='通史郡治原文')
+                    else:continue
+                if migration and not spec.get('county_id'):
+                    unresolved.append(dict(level=level,entity_id=eid,seat_name=spec['name'],reason='通史遷治明確，但現有來源缺少可定位治所點；未沿用舊治坐標'))
+                    continue
+                cid=spec['county_id'];pid=spec.get('prefecture_id',eid)
+                def county_point(fs):
+                    return next((f for f in fs if f['properties']['level']=='county' and self.rows[f['properties']['year']]['county'][f['properties']['entity_id']]['yearbook_entity_id']==cid),None)
+                point=county_point(current) or county_point(anchor)
+                if point is None:
+                    point=next((f for f in current+anchor if f['properties']['level']=='prefecture' and f['properties']['entity_id']==pid),None)
+                if point is None and level=='state':
+                    point=next((f for f in anchor if f['properties']['level']=='state' and f['properties']['entity_id']==eid),None)
+                if point is None and level=='prefecture':
+                    same_county_states={sid for sid,specification in state_anchors.items() if specification['county_id']==cid}
+                    point=next((f for f in current+anchor if f['properties']['level']=='state' and f['properties']['entity_id'] in same_county_states),None)
+                if point is None and pid in self.points.original:
+                    original=self.points.original[pid]
+                    point=dict(type='Feature',geometry=mapping(original['geometry']),properties=dict(source=original['source'],source_id=original.get('source_id'),source_coordinates=list(original['geometry'].coords[0])))
+                if point is None:
+                    unresolved.append(dict(level=level,entity_id=eid,seat_name=spec['name'],reason='304治所名已定，現有來源尚缺可定位點'))
+                    continue
+                inferred=(year!=304 and not migration) or bool(migration and migration.get('inferred'))
+                certainty='inferred_from_304' if inferred else 'documented_transfer' if migration else 'reviewed_304'
+                note=spec.get('note') or ('通史明載遷治；按原文年份移動。' if migration else '304年使用者校定治所；其他年份沿304年位置推定。')
+                p=dict(point['properties'],entity_id=eid,name=(row or {}).get('name',spec.get('state_name')),display_name=(row or {}).get('name',spec.get('state_name')),
+                    level=level,layer=level+'_seats',year=year,show_label=False,coordinate_role='administrative_seat',
+                    seat_name=spec['name'],seat_county_id=cid,seat_county_key=pid+'/'+cid,seat_source_year=304,
+                    seat_certainty=certainty,seat_inferred=inferred,seat_note=note,seat_review_source='data/jin-seat-review-20261007.json')
+                if row:p.update(state_id=row['state_id'],state_name=row['state_name'])
+                if level=='state':p['state_id']=eid
+                if eid=='s12' and year>=304:p.update(is_reference=True,seat_note=note+' 成都僅為益州行政治所參考，不表示仍由西晉控制。')
+                if level=='state' and ((eid=='s01' and year<=311) or (eid=='s08' and year>=313)):
+                    p.update(is_capital=True,capital_name=spec['name'])
+                result.append(dict(point,properties=p))
+        return result,unresolved
+
     def geography(self,year):
         rows=self.rows[year];points=self.get_points(year);matched=self.match_rows(year)
         byunit=collections.defaultdict(set)
@@ -543,7 +665,7 @@ class Builder:
                         elif pid in local_candidates:valid.append((pid,local_candidates[pid]['geometry'].representative_point()))
                         elif len(anchors)==1:valid.append((pid,anchors[0]))
                         else:valid.append((pid,mask.representative_point()))
-                    for pid,g in old.partition_by_seeds(remaining,valid).items():parts[pid]=union([parts.get(pid,Polygon()),g])
+                    for pid,g in curved_partition(remaining,valid).items():parts[pid]=union([parts.get(pid,Polygon()),g])
             for pid,g in parts.items():
                 additions[pid].append(g)
                 provenance[pid].append(dict(source_id=u['id'],source_year=281,geometry_status=allocation,
@@ -561,6 +683,9 @@ class Builder:
     def build(self,year):
         print(f'{year}: constructing source compartments and dated local amendments',flush=True)
         rows=self.rows[year];full,provenance,missing,retained_references=self.geography(year)
+        # 雲杜益封汝南 is a cross-state fief attachment, not a new island of
+        # Yuzhou. Keep the original Jingzhou setting for province geometry.
+        yundu=clean(full['p023'].intersection(union([u['geometry'] for u in self.units[281] if '江夏' in u['names']]))) if year>=305 and 'p023' in full else Polygon()
         political,jin,others,control_audit=self.political_control(year)
         final={pid:clean(g.intersection(jin)) for pid,g in full.items()}
         features=[]
@@ -592,7 +717,12 @@ class Builder:
                 source_policy='2026-10-04-three-basemap',time_uncertain=row.get('uncertain',False))
             if pid in member:
                 fid,role,certainty,label=member[pid];p.update(fief_id=fid,member_role=role,membership_evidence=certainty);kingdom_parts[fid].append(g)
-            add(g,p);state_parts[row['state_id']].append(full[pid])
+            if pid=='p166':
+                p['boundary_note']='內部閉合郡界為義陽郡朝陽縣的推定轄區；《通史》仍將朝陽繫於義陽，並非新野郡界重複。界形僅為縣屬擬合。'
+            if pid=='p023' and not yundu.is_empty:p['explanation']='雲杜益封汝南，保留原荊州地理州屬；以郡界及封國色表達飛地，不圍出豫州州界小圈。'
+            add(g,p)
+            state_parts[row['state_id']].append(clean(full[pid].difference(yundu)) if pid=='p023' else full[pid])
+            if pid=='p023' and not yundu.is_empty:state_parts['s16'].append(yundu)
             # Shared boundaries are emitted once below, never polygon outlines.
             if not g.is_empty:
                 add(g.representative_point(),dict(p,layer='labels',label_type='prefecture',coordinate_role='territory_label_not_capital',show_label=True))
@@ -600,6 +730,9 @@ class Builder:
         # a political frontier is not re-labelled as a province boundary.
         boundary_units=[dict(id=pid,geometry=g,state_key=rows['prefecture'][pid]['state_id'],reference=False)
                         for pid,g in full.items()]
+        if not yundu.is_empty:
+            next(u for u in boundary_units if u['id']=='p023')['geometry']=clean(full['p023'].difference(yundu))
+            boundary_units.append(dict(id='p023',geometry=yundu,state_key='s16',reference=False))
         state_ids={state_key(r['name']):sid for sid,r in rows['state'].items()}
         boundary_units.extend(dict(id=u['id'],geometry=u['geometry'],
             state_key=state_ids.get(state_key(u['state']),'reference-state-'+state_key(u['state'])),reference=True)
@@ -613,11 +746,23 @@ class Builder:
                 line=lineal(left['geometry'].boundary.intersection(right['geometry'].boundary).intersection(jin))
                 if line.length<.00001:continue
                 layer='province_boundaries' if left['state_key']!=right['state_key'] else 'prefecture_boundaries'
-                add(line,dict(layer=layer,level='state' if layer=='province_boundaries' else 'prefecture',year=year,
+                properties=dict(layer=layer,level='state' if layer=='province_boundaries' else 'prefecture',year=year,
                     name='州界' if layer=='province_boundaries' else '郡国界',
                     adjacent_entity_ids=[left['id'],right['id']],adjacent_state_ids=[left['state_key'],right['state_key']],
                     includes_retained_reference=left['reference'] or right['reference'],
-                    geometry_status='single_shared_boundary',source='三底图共同分区共享线',coordinate_role='boundary'))
+                    geometry_status='single_shared_boundary',source='三底图共同分区共享线',coordinate_role='boundary')
+                lf=member.get(left['id'],(None,))[0];rf=member.get(right['id'],(None,))[0]
+                properties.update(adjacent_fief_ids=[lf,rf],between_fiefs=lf!=rf and bool(lf or rf),within_same_fief=bool(lf and lf==rf))
+                if layer=='prefecture_boundaries':
+                    refs=[r for pid in (left['id'],right['id']) for r in provenance.get(pid,[])]
+                    unit_ids={r.get(k) for r in refs for k in ('source_id','local_source_id')}
+                    source_edges=unary_union([u['geometry'].boundary for units in self.units.values() for u in units if u['id'] in unit_ids]+[
+                        clean(u['geometry']).boundary for u in self.chgis_areas if 'CHGIS-'+str(u['source_id']) in unit_ids])
+                    inferred=lineal(line.difference(source_edges));retained=lineal(line.intersection(source_edges))
+                    add(retained,dict(properties,boundary_inferred=False))
+                    add(inferred,dict(properties,boundary_inferred=True,boundary_style='curved_interrupted',
+                        boundary_evidence='局部縣屬與底圖共同範圍擬合；間斷線不表示有精確史載界址'))
+                else:add(line,properties)
         # Wu and later non-Jin space needs geographical reference names, not
         # the nearest surviving Jin prefecture stretched over foreign control.
         ref_year=262 if year<280 else 281
@@ -658,7 +803,7 @@ class Builder:
             g=union(parts);r=rows['state'][sid]
             add(clean(g.intersection(jin)),dict(layer='province_areas',level='state',entity_id=sid,state_id=sid,name=r['name'],display_name=r['name'],year=year,
                 is_context=r.get('is_context',False),lapsed_state_context=r.get('is_context',False),
-                geometry_status='whole_dated_prefecture_union',source='完整年度郡面按当年州属组合'))
+                geometry_status='whole_dated_prefecture_union',source='完整年度郡面按当年州属组合；雲杜益封仍保留原荊州地理州屬' if not yundu.is_empty and sid in ('s03','s16') else '完整年度郡面按当年州属组合'))
             if not g.intersection(jin).is_empty:add(g.intersection(jin).representative_point(),dict(layer='labels',level='state',label_type='province',entity_id=sid,name=r['name'],display_name=r['name'],show_label=True,year=year,coordinate_role='territory_label_not_capital'))
         fief_geoms={}
         for fid,parts in kingdom_parts.items():
@@ -669,7 +814,8 @@ class Builder:
             add(g,dict(layer='kingdom_areas',level='fief',fief_id=fid,year=year,name=fiefs[fid]['name'],display_name=fiefs[fid]['name'],
                 member_entity_ids=pids,is_multi=len(pids)>1,has_inference=any(member[pid][2]!='confirmed' for pid in pids),
                 source='本轮复核多郡王国关系；州属单列'))
-        for f in self.get_points(year):
+        display_points,unlocated_seats=self.display_seats(year)
+        for f in display_points:
             p=dict(f['properties']);pt=shape(f['geometry'])
             row=rows['county'].get(p.get('entity_id')) if p.get('level')=='county' else rows['prefecture'].get(p.get('entity_id'))
             parent=rows['prefecture'].get(row.get('prefecture_id')) if row and p.get('level')=='county' else row
@@ -711,6 +857,7 @@ class Builder:
         report['political_control']=control_audit
         report['unassigned_atlas_references']=[dict(source_id=u['id'],name=u['name'],state=u['state'],reference_year=281) for u in retained_references if u['geometry'].intersects(jin)]
         report['nearest_successor_assignments']=0
+        report['unlocated_reviewed_seats']=unlocated_seats
         exceptions=[]
         for pid in missing:
             exception=GEOMETRY_EXCEPTIONS.get(pid)
@@ -736,6 +883,10 @@ class Builder:
         if year<271:trial['presentation']['note']+=' '+EARLY_JIAO_NOTE
         if retained_reference_parts:trial['presentation']['note']+=' 本年無同名或縣屬承繼依據的底圖單元，保留原州郡名稱與邊界作參考，不併入最近有效郡或封國。'
         if exceptions:trial['presentation']['note']+=' 本年表內但未能單獨繪界：'+ '、'.join(e['name'] for e in exceptions)+'；仍保留有據母範圍，具體缺據見年度coverage記錄。'
+        trial['presentation']['note']+=' 州郡治依304年校定，其他年沿用推定；《通史》有明確遷治則隨之。新擬合郡界以曲線間斷表示，州界樣式不變。'
+        if 'p166' in rows['prefecture']:trial['presentation']['note']+=' 新野內圈為仍屬義陽的朝陽縣推定轄區，並非重複郡界。'
+        if not yundu.is_empty:trial['presentation']['note']+=' 雲杜益封汝南的飛地保留原荊州地理州屬，僅以郡界和封國色表示，不新增豫州閉合州界圈。'
+        if unlocated_seats:trial['presentation']['note']+=' 治所已知但缺少可用源坐標：'+'、'.join(p['seat_name'] for p in unlocated_seats)+'；未借用舊治或同名異地坐標。'
         self.maps[year]=trial
         write(LOCAL/f'{year}.geojson',dict(trial,type='FeatureCollection'))
         return fief_geoms

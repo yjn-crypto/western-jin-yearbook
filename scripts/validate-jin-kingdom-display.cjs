@@ -63,7 +63,7 @@ function extract(name) {
 }
 for (const name of ['activePhase', 'effectiveOrder', 'isKingdom', 'baseFiefName',
   'chineseNumber', 'reignYearLabel', 'findJinRuler', 'findJinFiveRank',
-  'jinFiveRankLabel', 'jinConstraintNote', 'jinFiveRankInfo', 'jinRulerInfo', 'buildJinSnapshot',
+  'jinPrefectureFiefRank', 'jinFiveRankLabel', 'jinConstraintNote', 'jinFiveRankInfo', 'jinRulerInfo', 'buildJinSnapshot',
   'itemDisplayName', 'itemDisplaysAsKingdom', 'appendFiefDetails', 'makeNameSpan',
   'createGovernorIndexButton', 'renderLocalOfficerBox', 'renderState', 'renderSummary']) {
   vm.runInContext(extract(name), context, {filename: `app.js:${name}`});
@@ -230,8 +230,8 @@ const chengduStates = in289.states.map(state => ({...state, rows: state.rows.fil
 assertAdministrativeCount(chengduStates, 4, 'The actual four commanderies of Chengdu must count as four, across their original states');
 
 // Chen inside Liang is a presentation partition of the existing county list, not
-// an additional administrative commandery. Its evidence does not move Yangxia out
-// of the independently attested Chen commandery in the 304 manual baseline.
+// an additional administrative commandery. The Oct 7 Word instruction includes
+// Yangxia and removes the formerly independent Chen row.
 const chenCountyIds = new Set(['c0231', 'c0232', 'c0233', 'c0234']);
 for (const year of [281, 282, 289, 304]) {
   const snapshot = snapshots.get(year);
@@ -256,24 +256,21 @@ for (const year of [281, 282, 289, 304]) {
   assert.ok(rowElement(rendered, group.id).classList.contains('jin-subsidiary-row'));
   assert.ok(rowElement(rendered, 'p025').classList.contains('jin-kingdom-continues'));
   if (year === 304) {
-    assert.equal(group.counties.length, 3);
-    assert.ok(!group.counties.some(county => county.id === 'c0233' || county.name === '陽夏'));
-    const actualChen = rowOf(snapshot, 'p026');
-    assert.equal(actualChen.name, '陳郡');
-    assert.deepEqual(plain(actualChen.counties.map(county => county.name)), ['陽夏']);
-    assert.equal(actualChen.displayCountyGroup, undefined);
+    assert.equal(group.counties.length, 4);
+    assert.ok(group.counties.some(county => county.id === 'c0233' && county.name === '陽夏'));
+    assert.ok(!snapshot.states.some(state=>state.rows.some(row=>row.id==='p026')));
   }
 }
-// A named but geographically unresolved subsidiary is an explanatory note,
-// never an extra commandery or a reassignment of the nine-county Jiyang row.
+// The Oct 7 display choice places Jiyang under Donghai from 306 until the
+// 311 abolition; its original state remains unchanged.
 for(const year of [305,306,311,312]){
   const snapshot=snapshots.get(year);
   const donghai=rowOf(snapshot,'p152');
   const rendered=context.renderState({...stateOf(snapshot,'p152'),rows:[donghai]},year);
-  assert.equal(rendered.textContent.includes('另見：濟陽支郡（範圍待考）'),year>=306&&year<=311);
-  assertAdministrativeCount([{...stateOf(snapshot,'p152'),rows:[donghai]}],1,'An unresolved member note cannot inflate the prefecture count');
+  assert.equal(rendered.textContent.includes('另見：濟陽支郡（範圍待考）'),false);
+  assertAdministrativeCount([{...stateOf(snapshot,'p152'),rows:[donghai]}],1,'The primary commandery counts once');
   const jiyang=rowOf(snapshot,'p015');
-  assert.equal(jiyang.jinKingdom,undefined,'The separate Jiyang entity must not be silently equated with the recorded subsidiary');
+  assert.equal(jiyang.jinKingdom?.primaryId,year>=306&&year<311?'p152':undefined);
 }
 assert.equal(JSON.stringify({data: context.window.JIN_DATA,
   princes: context.window.JIN_PRINCES, research: context.window.JIN_MULTI_KINGDOMS}), sourceBefore,

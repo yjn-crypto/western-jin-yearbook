@@ -55,7 +55,7 @@ assert.equal(county(266,'c0028')[0].transfer_event_year,null);
 assert.equal(county(266,'c0217')[0].transfer_event_certainty,'inferred_source_year');
 assert.equal(county(266,'c0217')[0].transfer_event_year,null);
 const geographicTransfers = Object.values(data.years).flatMap(rs=>rs.flatMap(r=>r.counties)).filter(c=>c.transfer_event_certainty==='dated_in_source');
-assert.equal(geographicTransfers.length,142,'All dated transfer endpoints, including the formerly overlapping 266 pairs, have map metadata');
+assert.equal(geographicTransfers.length,141,'Dated source transfers remain; the superseded Yangxia return is removed by the Word ruling');
 for (const c of geographicTransfers) {
   assert.equal(c.prefecture_id,c.transfer_destination_id,'The event-year text is already in the destination');
   assert.equal(c.state_id,c.transfer_destination_state_id);
@@ -72,7 +72,8 @@ assert.match(county(281,'c0231')[0].year_note,/本年初屬豫州陳國；281年
 for (const name of ['武邑', '武遂', '觀津']) {
   assert.deepEqual(owners(289, name), ['p036']);
   assert.deepEqual(owners(290, name), ['p036']);
-  assert.deepEqual(owners(291, name), ['p035']);
+  assert.deepEqual(owners(291, name), ['p036']);
+  assert.deepEqual(owners(304, name), ['p036']);
 }
 assert.deepEqual(owners(304, '歷陽'), ['p205']);
 assert.deepEqual(owners(305, '歷陽'), ['p205']);
@@ -101,4 +102,4 @@ assert.equal(county(281,'c0949')[0].name,'新香');
 assert.match(county(281,'c0949')[0].year_note,/新沓/);
 assert.equal(county(281,'c0981')[0].name,'黔');
 assert.match(county(281,'c0981')[0].year_note,/黔陬/);
-console.log('Jin administrative review OK: replay cache, immutable source, 51 slices, 131 candidates, bounded dates, 142 event-year destinations with old-affiliation notes, no obsolete origin groups, scoped IDs and real homonyms.');
+console.log('Jin administrative review OK: replay cache, immutable source, 51 slices, 131 candidates, bounded dates, 141 event-year destinations with old-affiliation notes, no obsolete origin groups, scoped IDs and real homonyms.');

@@ -1,8 +1,14 @@
 {
-  "schema_version": "1.0.0",
-  "reviewed_at": "2026-10-04",
+  "schema_version": "1.1.0",
+  "reviewed_at": "2026-10-07",
   "policy": "只在有据的在年区间确认姓名；可能上下界、前后任次序和年号窗口不等于精确即位。追封不作为当年在世封君。原世系完整保留。",
   "sources": [
+    {
+      "id": "USER_DOCX_20261007",
+      "title": "使用者《兩晉郡級封國相關分析》",
+      "local": "work/jin-docx-review-20261007/source-text.txt",
+      "note": "日期與地圖展示推定依本輪Word；不充作原典確證。"
+    },
     {
       "id": "PRINCES_LOCAL",
       "title": "项目既有晋朝藩王列表及逐项年号注释",
@@ -17,6 +23,16 @@
       "id": "JS038",
       "title": "晋书卷三十八，燕王机等传",
       "url": "https://zh.wikisource.org/zh-hans/晉書/卷038"
+    },
+    {
+      "id": "JS039",
+      "title": "晉書卷三十九，荀勖傳",
+      "url": "https://zh.wikisource.org/zh-hant/晉書/卷039"
+    },
+    {
+      "id": "JS040",
+      "title": "晉書卷四十，賈充傳",
+      "url": "https://zh.wikisource.org/zh-hans/晉書/卷040"
     },
     {
       "id": "JS004",
@@ -90,7 +106,17 @@
       "end_max": 309,
       "accession_known": true,
       "posthumous": false,
-      "note": "保留原表明确有限期段；问号、年代与世系次序仅约束可能范围，不补成连续在位。",
+      "note": "本輪暫以309國絕、310回郡；309是展示推定，不是确證卒年。",
+      "display_periods": [
+        [
+          284,
+          309
+        ]
+      ],
+      "display_inferred": true,
+      "source_ids": [
+        "USER_DOCX_20261007"
+      ],
       "certain_periods": [
         [
           284,
@@ -185,11 +211,12 @@
       "start_min": 301,
       "start_max": null,
       "end_min": null,
-      "end_max": null,
+      "end_max": 316,
       "accession_known": false,
       "posthumous": false,
-      "note": "原注为永宁元年以后复封，不是301年确封；未有可定位在年身份。",
+      "note": "301以後復封棘陽縣王，始終年未詳；只在西晉可能範圍提供縣王爵號與世系，不當郡國。",
       "certain_periods": [],
+      "level": "county",
       "display_start": null
     },
     "w0011": {
@@ -473,15 +500,16 @@
     "w0028": {
       "start_min": 270,
       "start_max": 270,
-      "end_min": 289,
-      "end_max": 289,
+      "end_min": 288,
+      "end_max": 288,
       "accession_known": true,
       "posthumous": false,
-      "note": "保留原表明确有限期段；问号、年代与世系次序仅约束可能范围，不补成连续在位。",
+      "note": "270封南宮縣王，289進武邑郡王；當年按變更後結果，縣王止288。",
+      "level": "county",
       "certain_periods": [
         [
           270,
-          289
+          288
         ]
       ],
       "display_start": 270
@@ -490,10 +518,20 @@
       "start_min": 289,
       "start_max": 289,
       "end_min": null,
-      "end_max": null,
+      "end_max": 298,
       "accession_known": true,
       "posthumous": false,
-      "note": "保留原表明确有限期段；问号、年代与世系次序仅约束可能范围，不补成连续在位。",
+      "note": "承卒只知惠帝時；本輪暫置298，故武邑獨國展示止297，298歸長樂作支郡。",
+      "display_periods": [
+        [
+          289,
+          297
+        ]
+      ],
+      "display_inferred": true,
+      "source_ids": [
+        "USER_DOCX_20261007"
+      ],
       "certain_periods": [
         [
           289,
@@ -537,15 +575,25 @@
     "w0032": {
       "start_min": 302,
       "start_max": 302,
-      "end_min": 311,
-      "end_max": 311,
+      "end_min": null,
+      "end_max": 305,
       "accession_known": true,
       "posthumous": false,
-      "note": "保留原表明确有限期段；问号、年代与世系次序仅约束可能范围，不补成连续在位。",
+      "note": "原311終年僅疑推；為與306東海增封下邳不衝突，本輪獨國展示暫止305，不稱305卒年。",
+      "display_periods": [
+        [
+          302,
+          305
+        ]
+      ],
+      "display_inferred": true,
+      "source_ids": [
+        "USER_DOCX_20261007"
+      ],
       "certain_periods": [
         [
           302,
-          311
+          302
         ]
       ],
       "display_start": 302
@@ -617,6 +665,7 @@
       "accession_known": true,
       "posthumous": false,
       "note": "保留原表明确有限期段；问号、年代与世系次序仅约束可能范围，不补成连续在位。",
+      "level": "county",
       "certain_periods": [
         [
           306,
@@ -633,6 +682,7 @@
       "accession_known": false,
       "posthumous": false,
       "note": "建兴间（313—316）袭乐成；窗口末316以后可确认人名，但不能伪造元年。",
+      "level": "county",
       "certain_periods": [
         [
           316,
@@ -797,7 +847,7 @@
       "posthumous": false,
       "note": "保留原表明确有限期段；问号、年代与世系次序仅约束可能范围，不补成连续在位。",
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。"
+        "前列表項起年只作最早可能年約束，非繼位確年。"
       ],
       "certain_periods": [
         [
@@ -1837,7 +1887,7 @@
       "posthumous": false,
       "note": "保留原表明确有限期段；问号、年代与世系次序仅约束可能范围，不补成连续在位。",
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。"
+        "前列表項起年只作最早可能年約束，非繼位確年。"
       ],
       "certain_periods": [
         [
@@ -1965,12 +2015,12 @@
     },
     "w0119": {
       "start_min": 291,
-      "start_max": 291,
+      "start_max": 293,
       "end_min": 326,
       "end_max": 326,
-      "accession_known": true,
+      "accession_known": false,
       "posthumous": false,
-      "note": "原数值300与本条291封王相抵；惠帝纪元康元年八月明载进西阳公为王。304被废，306复爵，305不显示姓名。",
+      "note": "291先為縣王；本輪因元康初及官歷暫以293進郡王。305廢，306復爵；293為展示推定，不改稱史料確年。",
       "certain_periods": [
         [
           291,
@@ -1984,20 +2034,56 @@
       "display_reigns": [
         {
           "begin": 291,
+          "end": 292,
+          "accession": 291,
+          "accession_known": true
+        },
+        {
+          "begin": 293,
           "end": 304,
-          "accession": 291
+          "accession": null,
+          "accession_known": false
         },
         {
           "begin": 306,
           "end": 326,
-          "accession": 306
+          "accession": 306,
+          "accession_known": true
         }
       ],
       "source_ids": [
         "JS004",
         "JS059"
       ],
-      "display_start": 291
+      "level_periods": [
+        {
+          "begin": 291,
+          "end": 292,
+          "level": "county"
+        },
+        {
+          "begin": 293,
+          "end": 304,
+          "level": "prefecture"
+        },
+        {
+          "begin": 306,
+          "end": 326,
+          "level": "prefecture"
+        }
+      ],
+      "display_inferred": true,
+      "display_periods": [
+        [
+          291,
+          304
+        ],
+        [
+          306,
+          316
+        ]
+      ],
+      "display_start": null
     },
     "w0120": {
       "start_min": 326,
@@ -2039,7 +2125,9 @@
       "end_max": 311,
       "accession_known": true,
       "posthumous": false,
-      "note": "保留原表明确有限期段；问号、年代与世系次序仅约束可能范围，不补成连续在位。",
+      "note": "本輪Word按由汝陽公進封及兄弟子國關係作郡王展示，至少有汝陽縣；原王表稱縣王，保留此異說。",
+      "level": "prefecture",
+      "display_inferred": true,
       "certain_periods": [
         [
           305,
@@ -2383,25 +2471,35 @@
     },
     "w0143": {
       "start_min": 304,
-      "start_max": null,
+      "start_max": 306,
       "end_min": null,
-      "end_max": null,
+      "end_max": 306,
       "accession_known": false,
       "posthumous": false,
-      "note": "出继东安繇（304死）后，不久死；不把未知死年续至316。",
+      "note": "繼繇後尋薨；依本輪Word暫以305—306作展示期，非确證嗣卒年。",
       "certain_periods": [],
+      "display_periods": [
+        [
+          305,
+          306
+        ]
+      ],
+      "display_inferred": true,
+      "source_ids": [
+        "USER_DOCX_20261007"
+      ],
       "display_start": null
     },
     "w0144": {
       "start_min": 301,
       "start_max": 301,
       "end_min": null,
-      "end_max": 399,
+      "end_max": 306,
       "accession_known": true,
       "posthumous": false,
-      "note": "保留原表明确有限期段；问号、年代与世系次序仅约束可能范围，不补成连续在位。",
-      "derived": [
-        "后列表项起年只作最晚可能年约束，非终年确证。"
+      "note": "301進淮陵王，其後漼卒融嗣，交替年未詳；本輪只將封國展示止306，307回郡，不填本年姓名。",
+      "source_ids": [
+        "JS038"
       ],
       "certain_periods": [
         [
@@ -2415,10 +2513,10 @@
       "start_min": 301,
       "start_max": null,
       "end_min": null,
-      "end_max": 399,
+      "end_max": 306,
       "accession_known": false,
       "posthumous": false,
-      "note": "继淮陵漼（301封）后，无子而绝；399另封蘊，之间不能按顺序补满。",
+      "note": "漼卒後融嗣，無子國絕；本輪307回郡純為展示推定，不能確定各年在位人。",
       "certain_periods": [],
       "display_start": null
     },
@@ -2848,15 +2946,16 @@
     "w0172": {
       "start_min": 302,
       "start_max": 302,
-      "end_min": 303,
-      "end_max": 303,
+      "end_min": 302,
+      "end_max": 302,
       "accession_known": true,
       "posthumous": false,
       "note": "保留原表明确有限期段；问号、年代与世系次序仅约束可能范围，不补成连续在位。",
+      "level": "county",
       "certain_periods": [
         [
           302,
-          303
+          302
         ]
       ],
       "display_start": 302
@@ -3206,15 +3305,25 @@
       "start_min": 280,
       "start_max": 280,
       "end_min": null,
-      "end_max": null,
+      "end_max": 281,
       "accession_known": true,
       "posthumous": false,
-      "note": "280封乐平后不久卒国除；不久不能转换成任意固定年数或延续至后世。",
+      "note": "病重受封後尋薨；本輪以282國除作展示推定，280—281顯示樂平國。",
       "certain_periods": [
         [
           280,
           280
         ]
+      ],
+      "display_periods": [
+        [
+          280,
+          281
+        ]
+      ],
+      "display_inferred": true,
+      "source_ids": [
+        "USER_DOCX_20261007"
       ],
       "display_start": 280
     },
@@ -3352,18 +3461,25 @@
     "w0203": {
       "start_min": 301,
       "start_max": 301,
-      "end_min": 306,
-      "end_max": 311,
+      "end_min": null,
+      "end_max": 306,
       "accession_known": true,
       "posthumous": false,
-      "note": "301封汉，永嘉（307—312）改济南且311遇害，故汉位终止窗口为307—311。",
+      "note": "永嘉改濟南，本輪暫取307，漢王展示止306。",
       "source_ids": [
-        "JS064"
+        "USER_DOCX_20261007"
       ],
-      "certain_periods": [
+      "display_periods": [
         [
           301,
           306
+        ]
+      ],
+      "display_inferred": true,
+      "certain_periods": [
+        [
+          301,
+          301
         ]
       ],
       "display_start": 301
@@ -3375,10 +3491,17 @@
       "end_max": 311,
       "accession_known": false,
       "posthumous": false,
-      "note": "承接同人汉王条，永嘉改济南而311遇害；起年307—311，不能填满该窗口。",
+      "note": "永嘉改濟南，本輪暫取最早307作展示，起年非史載確年。",
       "source_ids": [
-        "JS064"
+        "USER_DOCX_20261007"
       ],
+      "display_periods": [
+        [
+          307,
+          311
+        ]
+      ],
+      "display_inferred": true,
       "certain_periods": [
         [
           311,
@@ -3490,10 +3613,17 @@
       "end_max": 311,
       "accession_known": false,
       "posthumous": false,
-      "note": "永嘉间由宜都嗣淮南，311遇害；只能由窗口约束确认311，不强定307。",
+      "note": "永嘉由宜都轉淮南，本輪暫取307展示。",
       "source_ids": [
-        "JS064"
+        "USER_DOCX_20261007"
       ],
+      "display_periods": [
+        [
+          307,
+          311
+        ]
+      ],
+      "display_inferred": true,
       "certain_periods": [
         [
           311,
@@ -3582,19 +3712,24 @@
       "display_start": null
     },
     "w0217": {
-      "start_min": 290,
-      "start_max": 306,
-      "end_min": 306,
-      "end_max": 306,
+      "start_min": 301,
+      "start_max": 305,
+      "end_min": 305,
+      "end_max": 305,
       "accession_known": false,
       "posthumous": false,
-      "note": "惠帝末封上庸，306改豫章；帝世限290—306，只有306转换年可定。",
-      "certain_periods": [
+      "note": "惠帝末受封上庸，本輪依表候選以301展示，306改豫章；301非确年。",
+      "display_periods": [
         [
-          306,
-          306
+          301,
+          305
         ]
       ],
+      "display_inferred": true,
+      "source_ids": [
+        "USER_DOCX_20261007"
+      ],
+      "certain_periods": [],
       "display_start": null
     },
     "w0218": {
@@ -3614,19 +3749,24 @@
       "display_start": 306
     },
     "w0219": {
-      "start_min": 290,
+      "start_min": 301,
       "start_max": 306,
-      "end_min": 307,
-      "end_max": 307,
+      "end_min": 306,
+      "end_max": 306,
       "accession_known": false,
       "posthumous": false,
-      "note": "惠帝末封广川，307改豫章；帝世限290—306。",
-      "certain_periods": [
+      "note": "惠帝末受封廣川，本輪依表候選以301展示，307改豫章；301非确年。",
+      "display_periods": [
         [
-          306,
-          307
+          301,
+          306
         ]
       ],
+      "display_inferred": true,
+      "source_ids": [
+        "USER_DOCX_20261007"
+      ],
+      "certain_periods": [],
       "display_start": null
     },
     "w0220": {
@@ -3652,7 +3792,17 @@
       "end_max": 286,
       "accession_known": false,
       "posthumous": false,
-      "note": "原注约咸宁三年后封，286卒；下界277仅宽约束，286人名可定。",
+      "note": "原表約咸寧三年後封，本輪暫以277開始展示；非受封確年。",
+      "display_periods": [
+        [
+          277,
+          286
+        ]
+      ],
+      "display_inferred": true,
+      "source_ids": [
+        "USER_DOCX_20261007"
+      ],
       "certain_periods": [
         [
           286,
@@ -3761,10 +3911,10 @@
       "start_min": 307,
       "start_max": null,
       "end_min": null,
-      "end_max": 316,
+      "end_max": 312,
       "accession_known": false,
       "posthumous": false,
-      "note": "永嘉初先华容，后复成都；307和311均旧表疑数，王号转换年未明，不能径作成都确定在位段。",
+      "note": "先華容縣王、後成都王；本輪荊州成都國起304為地圖採用方案，通史作永嘉中仍留异說。建興中省郡暫取313，姓名不因疆域展示而確定。",
       "certain_periods": [],
       "display_start": null
     },
@@ -3833,13 +3983,23 @@
       "display_start": 301
     },
     "w0233": {
-      "start_min": 289,
+      "start_min": 301,
       "start_max": 301,
       "end_min": 301,
       "end_max": 301,
       "accession_known": false,
       "posthumous": false,
-      "note": "晏子祥初封南平年未明，301转宜都；只由转换年确认南平身份。",
+      "note": "初封南平無確年，本輪以父王301復爵之年暫定；同年改宜都。",
+      "display_periods": [
+        [
+          301,
+          301
+        ]
+      ],
+      "display_inferred": true,
+      "source_ids": [
+        "USER_DOCX_20261007"
+      ],
       "certain_periods": [
         [
           301,
@@ -3851,28 +4011,48 @@
     "w0234": {
       "start_min": 301,
       "start_max": 301,
-      "end_min": 306,
-      "end_max": 311,
+      "end_min": null,
+      "end_max": 306,
       "accession_known": true,
       "posthumous": false,
-      "note": "301封宜都，永嘉307—311间转淮南；不续至未知终年。",
-      "certain_periods": [
+      "note": "301改宜都，永嘉改淮南本輪取307，因此宜都展示止306。",
+      "display_periods": [
         [
           301,
           306
         ]
       ],
+      "display_inferred": true,
+      "source_ids": [
+        "USER_DOCX_20261007"
+      ],
+      "certain_periods": [
+        [
+          301,
+          301
+        ]
+      ],
       "display_start": 301
     },
     "w0235": {
-      "start_min": 289,
+      "start_min": 301,
       "start_max": null,
       "end_min": null,
-      "end_max": 311,
+      "end_max": 306,
       "accession_known": false,
       "posthumous": false,
-      "note": "晏子衍初封新都，无确年；永嘉间转济阴，不能占满277年新都该以后所有年份。",
+      "note": "新都初封未載，本輪暫以301受封、307轉濟陰展示；新都地望未定，不把新安郡整面當國。",
       "certain_periods": [],
+      "display_periods": [
+        [
+          301,
+          306
+        ]
+      ],
+      "display_inferred": true,
+      "source_ids": [
+        "USER_DOCX_20261007"
+      ],
       "display_start": null
     },
     "w0236": {
@@ -3882,7 +4062,17 @@
       "end_max": 311,
       "accession_known": false,
       "posthumous": false,
-      "note": "同人新都条记永嘉改济阴且311遇害；不将问号扩至265。",
+      "note": "永嘉改濟陰暫取307展示；其地望與東海濟陽支郡有衝突，文字保留王爵而不任意畫另一重郡國。",
+      "display_periods": [
+        [
+          307,
+          311
+        ]
+      ],
+      "display_inferred": true,
+      "source_ids": [
+        "USER_DOCX_20261007"
+      ],
       "certain_periods": [
         [
           311,
@@ -4405,6 +4595,45 @@
         ]
       ],
       "display_start": 419
+    },
+    "w0268": {
+      "start_min": 312,
+      "start_max": null,
+      "end_min": null,
+      "end_max": 317,
+      "accession_known": false,
+      "posthumous": false,
+      "note": "澹311死後喆嗣、亦為石勒所害，卒年未知；318晞繼以前的世系，不把父子同算311卒。",
+      "certain_periods": [],
+      "source_ids": [
+        "JS038",
+        "USER_DOCX_20261007"
+      ],
+      "display_start": null
+    },
+    "w0269": {
+      "start_min": 266,
+      "start_max": null,
+      "end_min": null,
+      "end_max": 287,
+      "accession_known": false,
+      "posthumous": false,
+      "note": "隨縣王封年未詳，288進郡王；西晉266—287只是可能顯示範圍，只標爵號、不確認本年姓名。",
+      "level": "county",
+      "certain_periods": [],
+      "display_start": null
+    },
+    "w0270": {
+      "start_min": 307,
+      "start_max": null,
+      "end_min": null,
+      "end_max": 312,
+      "accession_known": false,
+      "posthumous": false,
+      "note": "永嘉初先封華容縣王、後復成都王；具體轉換年未詳，307—312僅可能範圍。",
+      "level": "county",
+      "certain_periods": [],
+      "display_start": null
     }
   },
   "five_rank": {
@@ -4427,17 +4656,17 @@
       "display_start": 265
     },
     "fr0001:1:0": {
-      "start_min": 265,
-      "start_max": null,
+      "start_min": 274,
+      "start_max": 274,
       "end_min": 300,
       "end_max": 300,
       "accession_known": false,
       "posthumous": false,
-      "note": "保留原表明确有限期段；问号、年代与世系次序仅约束可能范围，不补成连续在位。",
+      "note": "依本輪Word採父石苞273卒後隔年274承襲；274為展示排年。",
       "holder_index": 1,
       "period_index": 0,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。"
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。"
       ],
       "certain_periods": [
         [
@@ -4445,7 +4674,17 @@
           300
         ]
       ],
-      "display_start": null
+      "display_start": null,
+      "display_periods": [
+        [
+          274,
+          300
+        ]
+      ],
+      "display_inferred": true,
+      "source_ids": [
+        "USER_DOCX_20261007"
+      ]
     },
     "fr0001:2:0": {
       "start_min": 301,
@@ -4484,24 +4723,34 @@
       "display_start": 265
     },
     "fr0002:1:0": {
-      "start_min": 265,
-      "start_max": null,
+      "start_min": 282,
+      "start_max": 282,
       "end_min": null,
       "end_max": 377,
       "accession_known": false,
       "posthumous": false,
-      "note": "保留原表明确有限期段；问号、年代与世系次序仅约束可能范围，不补成连续在位。",
+      "note": "父陳騫281卒，本輪暫定282承襲；終年仍未詳，不能把282後所有年份都指為陳輿。",
       "holder_index": 1,
       "period_index": 0,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。",
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。",
         "后列表项起年只作最晚可能年约束，非终年确证。"
       ],
       "certain_periods": [],
-      "display_start": null
+      "display_start": null,
+      "display_periods": [
+        [
+          282,
+          282
+        ]
+      ],
+      "display_inferred": true,
+      "source_ids": [
+        "USER_DOCX_20261007"
+      ]
     },
     "fr0002:2:0": {
-      "start_min": 265,
+      "start_min": 282,
       "start_max": null,
       "end_min": null,
       "end_max": 377,
@@ -4511,14 +4760,14 @@
       "holder_index": 2,
       "period_index": 0,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。",
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。",
         "后列表项起年只作最晚可能年约束，非终年确证。"
       ],
       "certain_periods": [],
       "display_start": null
     },
     "fr0002:3:0": {
-      "start_min": 265,
+      "start_min": 282,
       "start_max": null,
       "end_min": 310,
       "end_max": 319,
@@ -4528,7 +4777,7 @@
       "holder_index": 3,
       "period_index": 0,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。"
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。"
       ],
       "certain_periods": [
         [
@@ -4564,7 +4813,7 @@
       "holder_index": 5,
       "period_index": 0,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。"
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。"
       ],
       "dynasty": "after_western_jin",
       "certain_periods": [
@@ -4607,17 +4856,17 @@
       "display_start": 282
     },
     "fr0003:2:0": {
-      "start_min": 282,
-      "start_max": null,
+      "start_min": 283,
+      "start_max": 283,
       "end_min": 300,
       "end_max": 300,
       "accession_known": false,
       "posthumous": false,
-      "note": "保留原表明确有限期段；问号、年代与世系次序仅约束可能范围，不补成连续在位。",
+      "note": "充282卒，本輪依隔年承襲規則以283作賈謐展示起年。",
       "holder_index": 2,
       "period_index": 0,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。"
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。"
       ],
       "certain_periods": [
         [
@@ -4625,46 +4874,65 @@
           300
         ]
       ],
-      "display_start": null
+      "display_start": null,
+      "source_ids": [
+        "JS040",
+        "USER_DOCX_20261007"
+      ],
+      "display_periods": [
+        [
+          283,
+          300
+        ]
+      ],
+      "display_inferred": true
     },
     "fr0003:3:0": {
       "start_min": 301,
       "start_max": 301,
-      "end_min": null,
-      "end_max": null,
-      "accession_known": true,
-      "posthumous": false,
-      "note": "保留原表明确有限期段；问号、年代与世系次序仅约束可能范围，不补成连续在位。",
-      "holder_index": 3,
-      "period_index": 0,
-      "certain_periods": [
-        [
-          301,
-          301
-        ]
-      ],
-      "display_start": 301
-    },
-    "fr0003:4:0": {
-      "start_min": 301,
-      "start_max": null,
-      "end_min": 310,
-      "end_max": 319,
+      "end_min": 304,
+      "end_max": 306,
       "accession_known": false,
       "posthumous": false,
-      "note": "保留原表明确有限期段；问号、年代与世系次序仅约束可能范围，不补成连续在位。",
+      "note": "本輪Word優先於舊稿：禿301趙王倫敗後封；病卒在304—306之間，湛必於禿卒後受封。301為展示排年，304後交替不定，不強填某一人。",
+      "holder_index": 3,
+      "period_index": 0,
+      "certain_periods": [],
+      "display_start": null,
+      "source_ids": [
+        "JS040",
+        "USER_DOCX_20261007"
+      ],
+      "display_periods": [
+        [
+          301,
+          303
+        ]
+      ],
+      "display_inferred": true
+    },
+    "fr0003:4:0": {
+      "start_min": 304,
+      "start_max": 306,
+      "end_min": null,
+      "end_max": 316,
+      "accession_known": false,
+      "posthumous": false,
+      "note": "湛在永興304—306中且禿卒後受封；316遇亂卒國除仍僅本輪展示推定，不延至東晉。",
       "holder_index": 4,
       "period_index": 0,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。"
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。"
       ],
-      "certain_periods": [
-        [
-          310,
-          310
-        ]
+      "certain_periods": [],
+      "display_start": null,
+      "inferred_end": 316,
+      "inferred_end_reason": "依使用者本輪裁定，以西晉覆滅年暫收束遭亂死及國除；不是史料明載卒年。",
+      "source_ids": [
+        "JS040",
+        "USER_DOCX_20261007"
       ],
-      "display_start": null
+      "display_inferred": true
     },
     "fr0004:0:0": {
       "start_min": 265,
@@ -4685,21 +4953,31 @@
       "display_start": 265
     },
     "fr0004:1:0": {
-      "start_min": 265,
-      "start_max": null,
-      "end_min": null,
-      "end_max": 275,
+      "start_min": 272,
+      "start_max": 272,
+      "end_min": 274,
+      "end_max": 274,
       "accession_known": false,
       "posthumous": false,
-      "note": "保留原表明确有限期段；问号、年代与世系次序仅约束可能范围，不补成连续在位。",
+      "note": "父裴秀271卒、弟裴頠275承襲，本輪暫排裴濬272—274。",
       "holder_index": 1,
       "period_index": 0,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。",
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。",
         "后列表项起年只作最晚可能年约束，非终年确证。"
       ],
       "certain_periods": [],
-      "display_start": null
+      "display_start": null,
+      "display_periods": [
+        [
+          272,
+          274
+        ]
+      ],
+      "display_inferred": true,
+      "source_ids": [
+        "USER_DOCX_20261007"
+      ]
     },
     "fr0004:2:0": {
       "start_min": 275,
@@ -4775,21 +5053,25 @@
       "display_start": 270
     },
     "fr0005:1:0": {
-      "start_min": 270,
+      "start_min": null,
       "start_max": null,
-      "end_min": 310,
-      "end_max": 319,
+      "end_min": null,
+      "end_max": 302,
       "accession_known": false,
       "posthumous": false,
-      "note": "保留原表明确有限期段；问号、年代与世系次序仅约束可能范围，不补成连续在位。",
+      "note": "孫秀後是否續封不詳；本輪303起不再作會稽公國。",
       "holder_index": 1,
       "period_index": 0,
       "identity_unknown": true,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。"
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。"
       ],
       "certain_periods": [],
-      "display_start": null
+      "display_start": null,
+      "display_inferred": true,
+      "source_ids": [
+        "USER_DOCX_20261007"
+      ]
     },
     "fr0007:0:0": {
       "start_min": 277,
@@ -4852,7 +5134,7 @@
       "holder_index": 3,
       "period_index": 0,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。"
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。"
       ],
       "dynasty": "after_western_jin",
       "certain_periods": [
@@ -4895,17 +5177,17 @@
       "display_start": 291
     },
     "fr0009:1:0": {
-      "start_min": 291,
+      "start_min": 292,
       "start_max": null,
       "end_min": 311,
       "end_max": 311,
       "accession_known": false,
       "posthumous": false,
-      "note": "保留原表明确有限期段；问号、年代与世系次序仅约束可能范围，不补成连续在位。",
+      "note": "本輪將永嘉改封江夏暫置307；蘭陵與江夏分段展示，同人世系保留。",
       "holder_index": 1,
       "period_index": 0,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。"
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。"
       ],
       "certain_periods": [
         [
@@ -4913,10 +5195,14 @@
           311
         ]
       ],
-      "display_start": null
+      "display_start": null,
+      "display_inferred": true,
+      "source_ids": [
+        "USER_DOCX_20261007"
+      ]
     },
     "fr0009:2:0": {
-      "start_min": 291,
+      "start_min": 312,
       "start_max": null,
       "end_min": null,
       "end_max": null,
@@ -4926,13 +5212,13 @@
       "holder_index": 2,
       "period_index": 0,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。"
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。"
       ],
       "certain_periods": [],
       "display_start": null
     },
     "fr0009:3:0": {
-      "start_min": 291,
+      "start_min": 312,
       "start_max": null,
       "end_min": null,
       "end_max": null,
@@ -4942,13 +5228,13 @@
       "holder_index": 3,
       "period_index": 0,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。"
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。"
       ],
       "certain_periods": [],
       "display_start": null
     },
     "fr0009:4:0": {
-      "start_min": 291,
+      "start_min": 312,
       "start_max": null,
       "end_min": null,
       "end_max": null,
@@ -4959,13 +5245,13 @@
       "period_index": 0,
       "identity_unknown": true,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。"
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。"
       ],
       "certain_periods": [],
       "display_start": null
     },
     "fr0009:5:0": {
-      "start_min": 291,
+      "start_min": 312,
       "start_max": null,
       "end_min": 420,
       "end_max": 420,
@@ -4975,7 +5261,7 @@
       "holder_index": 5,
       "period_index": 0,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。"
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。"
       ],
       "certain_periods": [
         [
@@ -5004,66 +5290,81 @@
       "display_start": 300
     },
     "fr0011:1:0": {
-      "start_min": 300,
-      "start_max": null,
-      "end_min": null,
+      "start_min": 301,
+      "start_max": 301,
+      "end_min": 317,
       "end_max": null,
       "accession_known": false,
       "posthumous": false,
-      "note": "保留原表明确有限期段；问号、年代与世系次序仅约束可能范围，不补成连续在位。",
+      "note": "陳準300卒，本輪暫排陳眕301嗣；過江依元帝，故至少活至317以後，西晉段可作此展示。",
       "holder_index": 1,
       "period_index": 0,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。"
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。"
       ],
       "certain_periods": [],
-      "display_start": null
+      "display_start": null,
+      "display_periods": [
+        [
+          301,
+          316
+        ]
+      ],
+      "display_inferred": true,
+      "source_ids": [
+        "USER_DOCX_20261007"
+      ]
     },
     "fr0011:2:0": {
-      "start_min": 300,
+      "start_min": 318,
       "start_max": null,
       "end_min": null,
       "end_max": null,
       "accession_known": false,
       "posthumous": false,
-      "note": "保留原表明确有限期段；问号、年代与世系次序仅约束可能范围，不补成连续在位。",
+      "note": "陳逵為眕子，須在眕去世後承襲；眕317後尚生存，子不得回填西晉。",
       "holder_index": 2,
       "period_index": 0,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。"
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。"
       ],
       "certain_periods": [],
-      "display_start": null
+      "display_start": null,
+      "dynasty": "after_western_jin",
+      "display_inferred": true,
+      "source_ids": [
+        "USER_DOCX_20261007"
+      ]
     },
     "fr0011:3:0": {
-      "start_min": 300,
+      "start_min": 318,
       "start_max": null,
       "end_min": 420,
       "end_max": 420,
       "accession_known": false,
       "posthumous": false,
-      "note": "保留原表明确有限期段；问号、年代与世系次序仅约束可能范围，不补成连续在位。",
+      "note": "陳準七世孫，不得以前代未知卒年倒填西晉。",
       "holder_index": 3,
       "period_index": 0,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。"
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。"
       ],
-      "certain_periods": [
-        [
-          420,
-          420
-        ]
-      ],
-      "display_start": null
+      "certain_periods": [],
+      "display_start": null,
+      "dynasty": "after_western_jin",
+      "display_inferred": true,
+      "source_ids": [
+        "USER_DOCX_20261007"
+      ]
     },
     "fr0012:0:0": {
       "start_min": 303,
       "start_max": 303,
-      "end_min": null,
-      "end_max": 318,
-      "accession_known": true,
+      "end_min": 310,
+      "end_max": 317,
+      "accession_known": false,
       "posthumous": false,
-      "note": "保留原表明确有限期段；问号、年代与世系次序仅约束可能范围，不补成连续在位。",
+      "note": "段務勿塵卒年未知，生平至少延續至310；子不得在此前即位。",
       "holder_index": 0,
       "period_index": 0,
       "derived": [
@@ -5072,23 +5373,27 @@
       "certain_periods": [
         [
           303,
-          303
+          310
         ]
       ],
-      "display_start": 303
+      "display_start": null,
+      "display_inferred": true,
+      "source_ids": [
+        "USER_DOCX_20261007"
+      ]
     },
     "fr0012:1:0": {
-      "start_min": 303,
-      "start_max": null,
+      "start_min": 311,
+      "start_max": 318,
       "end_min": 318,
       "end_max": 318,
       "accession_known": false,
       "posthumous": false,
-      "note": "保留原表明确有限期段；问号、年代与世系次序仅约束可能范围，不补成连续在位。",
+      "note": "父務勿塵310以後卒，按隔年承襲下限311，實際即位年仍未詳。",
       "holder_index": 1,
       "period_index": 0,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。"
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。"
       ],
       "certain_periods": [
         [
@@ -5096,7 +5401,11 @@
           318
         ]
       ],
-      "display_start": null
+      "display_start": null,
+      "display_inferred": true,
+      "source_ids": [
+        "USER_DOCX_20261007"
+      ]
     },
     "fr0012:2:0": {
       "start_min": 318,
@@ -5188,7 +5497,7 @@
       "display_start": 306
     },
     "fr0013:1:0": {
-      "start_min": 306,
+      "start_min": 307,
       "start_max": null,
       "end_min": null,
       "end_max": null,
@@ -5198,7 +5507,7 @@
       "holder_index": 1,
       "period_index": 0,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。"
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。"
       ],
       "certain_periods": [],
       "display_start": null
@@ -5408,7 +5717,7 @@
       "display_start": 384
     },
     "fr0019:8:0": {
-      "start_min": 384,
+      "start_min": 399,
       "start_max": null,
       "end_min": null,
       "end_max": null,
@@ -5419,7 +5728,7 @@
       "period_index": 0,
       "identity_unknown": true,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。"
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。"
       ],
       "dynasty": "after_western_jin",
       "certain_periods": [],
@@ -5526,7 +5835,7 @@
       "holder_index": 1,
       "period_index": 0,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。"
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。"
       ],
       "certain_periods": [],
       "display_start": null
@@ -5550,7 +5859,7 @@
       "display_start": 265
     },
     "fr0041:1:0": {
-      "start_min": 265,
+      "start_min": 275,
       "start_max": null,
       "end_min": null,
       "end_max": null,
@@ -5560,13 +5869,13 @@
       "holder_index": 1,
       "period_index": 0,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。"
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。"
       ],
       "certain_periods": [],
       "display_start": null
     },
     "fr0041:2:0": {
-      "start_min": 265,
+      "start_min": 275,
       "start_max": null,
       "end_min": 310,
       "end_max": 319,
@@ -5576,7 +5885,7 @@
       "holder_index": 2,
       "period_index": 0,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。"
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。"
       ],
       "certain_periods": [
         [
@@ -5605,7 +5914,7 @@
       "display_start": 265
     },
     "fr0043:1:0": {
-      "start_min": 265,
+      "start_min": 279,
       "start_max": null,
       "end_min": 301,
       "end_max": 301,
@@ -5615,7 +5924,7 @@
       "holder_index": 1,
       "period_index": 0,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。"
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。"
       ],
       "certain_periods": [
         [
@@ -5626,7 +5935,7 @@
       "display_start": null
     },
     "fr0043:2:0": {
-      "start_min": 265,
+      "start_min": 302,
       "start_max": null,
       "end_min": null,
       "end_max": 377,
@@ -5636,14 +5945,14 @@
       "holder_index": 2,
       "period_index": 0,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。",
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。",
         "后列表项起年只作最晚可能年约束，非终年确证。"
       ],
       "certain_periods": [],
       "display_start": null
     },
     "fr0043:3:0": {
-      "start_min": 265,
+      "start_min": 302,
       "start_max": null,
       "end_min": 311,
       "end_max": 311,
@@ -5653,7 +5962,7 @@
       "holder_index": 3,
       "period_index": 0,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。"
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。"
       ],
       "certain_periods": [
         [
@@ -5819,7 +6128,7 @@
       "holder_index": 1,
       "period_index": 0,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。"
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。"
       ],
       "certain_periods": [],
       "display_start": null
@@ -5835,7 +6144,7 @@
       "holder_index": 2,
       "period_index": 0,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。"
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。"
       ],
       "certain_periods": [
         [
@@ -5893,7 +6202,7 @@
       "period_index": 0,
       "identity_unknown": true,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。"
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。"
       ],
       "certain_periods": [],
       "display_start": null
@@ -5917,7 +6226,7 @@
       "display_start": 291
     },
     "fr0056:1:0": {
-      "start_min": 291,
+      "start_min": 295,
       "start_max": null,
       "end_min": 310,
       "end_max": 319,
@@ -5927,7 +6236,7 @@
       "holder_index": 1,
       "period_index": 0,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。"
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。"
       ],
       "certain_periods": [
         [
@@ -6046,7 +6355,7 @@
       "display_start": 301
     },
     "fr0065:1:0": {
-      "start_min": 301,
+      "start_min": 309,
       "start_max": null,
       "end_min": null,
       "end_max": null,
@@ -6057,7 +6366,7 @@
       "period_index": 0,
       "identity_unknown": true,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。"
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。"
       ],
       "certain_periods": [],
       "display_start": null
@@ -6117,7 +6426,7 @@
       "display_start": 301
     },
     "fr0068:1:0": {
-      "start_min": 301,
+      "start_min": 303,
       "start_max": null,
       "end_min": null,
       "end_max": null,
@@ -6127,7 +6436,7 @@
       "holder_index": 1,
       "period_index": 0,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。"
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。"
       ],
       "certain_periods": [],
       "display_start": null
@@ -6205,7 +6514,7 @@
       "display_start": 302
     },
     "fr0075:1:0": {
-      "start_min": 302,
+      "start_min": 314,
       "start_max": null,
       "end_min": 328,
       "end_max": 328,
@@ -6215,7 +6524,7 @@
       "holder_index": 1,
       "period_index": 0,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。"
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。"
       ],
       "certain_periods": [
         [
@@ -6226,7 +6535,7 @@
       "display_start": null
     },
     "fr0075:2:0": {
-      "start_min": 302,
+      "start_min": 329,
       "start_max": null,
       "end_min": null,
       "end_max": null,
@@ -6236,8 +6545,9 @@
       "holder_index": 2,
       "period_index": 0,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。"
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。"
       ],
+      "dynasty": "after_western_jin",
       "certain_periods": [],
       "display_start": null
     },
@@ -6260,7 +6570,7 @@
       "display_start": null
     },
     "fr0076:1:0": {
-      "start_min": 300,
+      "start_min": 304,
       "start_max": null,
       "end_min": 310,
       "end_max": 319,
@@ -6271,7 +6581,7 @@
       "period_index": 0,
       "identity_unknown": true,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。"
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。"
       ],
       "certain_periods": [],
       "display_start": null
@@ -6313,7 +6623,7 @@
       "display_start": 306
     },
     "fr0078:1:0": {
-      "start_min": 306,
+      "start_min": 308,
       "start_max": null,
       "end_min": 310,
       "end_max": 319,
@@ -6323,7 +6633,7 @@
       "holder_index": 1,
       "period_index": 0,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。"
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。"
       ],
       "certain_periods": [
         [
@@ -6424,7 +6734,7 @@
       "display_start": 313
     },
     "fr0085:1:0": {
-      "start_min": 313,
+      "start_min": 314,
       "start_max": null,
       "end_min": 324,
       "end_max": 324,
@@ -6434,7 +6744,7 @@
       "holder_index": 1,
       "period_index": 0,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。"
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。"
       ],
       "certain_periods": [
         [
@@ -6499,7 +6809,7 @@
       "display_start": 265
     },
     "fr0117:1:0": {
-      "start_min": 265,
+      "start_min": 275,
       "start_max": null,
       "end_min": null,
       "end_max": null,
@@ -6510,7 +6820,7 @@
       "period_index": 0,
       "identity_unknown": true,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。"
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。"
       ],
       "certain_periods": [],
       "display_start": null
@@ -6534,7 +6844,7 @@
       "display_start": 265
     },
     "fr0118:1:0": {
-      "start_min": 265,
+      "start_min": 279,
       "start_max": null,
       "end_min": null,
       "end_max": null,
@@ -6545,7 +6855,7 @@
       "period_index": 0,
       "identity_unknown": true,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。"
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。"
       ],
       "certain_periods": [],
       "display_start": null
@@ -6580,7 +6890,7 @@
       "period_index": 0,
       "identity_unknown": true,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。"
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。"
       ],
       "certain_periods": [],
       "display_start": null
@@ -6614,7 +6924,7 @@
       "holder_index": 1,
       "period_index": 0,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。"
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。"
       ],
       "certain_periods": [],
       "display_start": null
@@ -6778,7 +7088,7 @@
       "display_start": 280
     },
     "fr0134:1:0": {
-      "start_min": 280,
+      "start_min": 298,
       "start_max": null,
       "end_min": null,
       "end_max": null,
@@ -6788,7 +7098,7 @@
       "holder_index": 1,
       "period_index": 0,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。"
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。"
       ],
       "certain_periods": [],
       "display_start": null
@@ -6812,55 +7122,70 @@
       "display_start": 265
     },
     "fr0136:1:0": {
-      "start_min": 265,
+      "start_min": 290,
       "start_max": null,
       "end_min": null,
       "end_max": 377,
       "accession_known": false,
       "posthumous": false,
-      "note": "保留原表明确有限期段；问号、年代与世系次序仅约束可能范围，不补成连续在位。",
+      "note": "荀勖289卒，荀輯依本輪隔年承襲展示規則不早於290；嗣卒年未詳。",
       "holder_index": 1,
       "period_index": 0,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。",
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。",
         "后列表项起年只作最晚可能年约束，非终年确证。"
       ],
       "certain_periods": [],
-      "display_start": null
+      "display_start": null,
+      "source_ids": [
+        "JS039",
+        "USER_DOCX_20261007"
+      ],
+      "display_inferred": true
     },
     "fr0136:2:0": {
-      "start_min": 265,
+      "start_min": 290,
       "start_max": null,
       "end_min": null,
       "end_max": 377,
       "accession_known": false,
       "posthumous": false,
-      "note": "保留原表明确有限期段；问号、年代与世系次序仅约束可能范围，不补成连续在位。",
+      "note": "荀輯卒後畯嗣，輯卒年未詳；只保留不早於前代荀勖289卒的寬下界，不補定確切在年。",
       "holder_index": 2,
       "period_index": 0,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。",
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。",
         "后列表项起年只作最晚可能年约束，非终年确证。"
       ],
       "certain_periods": [],
-      "display_start": null
+      "display_start": null,
+      "source_ids": [
+        "JS039",
+        "USER_DOCX_20261007"
+      ],
+      "display_inferred": true
     },
     "fr0136:3:0": {
-      "start_min": 265,
+      "start_min": 290,
       "start_max": null,
       "end_min": null,
       "end_max": 377,
       "accession_known": false,
       "posthumous": false,
-      "note": "保留原表明确有限期段；问号、年代与世系次序仅约束可能范围，不补成连续在位。",
+      "note": "荀畯無子，弟子荀識承襲；前任卒年未詳，依次承襲不等於可以把空段填滿。",
       "holder_index": 3,
       "period_index": 0,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。",
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。",
         "后列表项起年只作最晚可能年约束，非终年确证。"
       ],
       "certain_periods": [],
-      "display_start": null
+      "display_start": null,
+      "source_ids": [
+        "JS039",
+        "USER_DOCX_20261007"
+      ],
+      "display_inferred": true
     },
     "fr0136:4:0": {
       "start_min": 377,
@@ -6928,7 +7253,7 @@
       "holder_index": 1,
       "period_index": 0,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。"
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。"
       ],
       "certain_periods": [],
       "display_start": null
@@ -6952,7 +7277,7 @@
       "display_start": 264
     },
     "fr0140:1:0": {
-      "start_min": 264,
+      "start_min": 285,
       "start_max": null,
       "end_min": null,
       "end_max": null,
@@ -6962,7 +7287,7 @@
       "holder_index": 1,
       "period_index": 0,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。"
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。"
       ],
       "certain_periods": [],
       "display_start": null
@@ -7014,7 +7339,7 @@
       "holder_index": 1,
       "period_index": 0,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。"
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。"
       ],
       "certain_periods": [],
       "display_start": null
@@ -7084,7 +7409,7 @@
       "holder_index": 1,
       "period_index": 0,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。"
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。"
       ],
       "certain_periods": [],
       "display_start": null
@@ -7100,7 +7425,7 @@
       "holder_index": 2,
       "period_index": 0,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。"
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。"
       ],
       "certain_periods": [],
       "display_start": null
@@ -7124,7 +7449,7 @@
       "display_start": null
     },
     "fr0152:1:0": {
-      "start_min": 270,
+      "start_min": 281,
       "start_max": null,
       "end_min": null,
       "end_max": null,
@@ -7134,7 +7459,7 @@
       "holder_index": 1,
       "period_index": 0,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。"
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。"
       ],
       "certain_periods": [],
       "display_start": null
@@ -7238,7 +7563,7 @@
       "display_start": 308
     },
     "fr0161:1:0": {
-      "start_min": 308,
+      "start_min": 309,
       "start_max": null,
       "end_min": null,
       "end_max": null,
@@ -7248,13 +7573,13 @@
       "holder_index": 1,
       "period_index": 0,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。"
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。"
       ],
       "certain_periods": [],
       "display_start": null
     },
     "fr0161:2:0": {
-      "start_min": 308,
+      "start_min": 309,
       "start_max": null,
       "end_min": null,
       "end_max": null,
@@ -7264,7 +7589,7 @@
       "holder_index": 2,
       "period_index": 0,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。"
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。"
       ],
       "certain_periods": [],
       "display_start": null
@@ -7334,7 +7659,7 @@
       "holder_index": 1,
       "period_index": 0,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。"
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。"
       ],
       "certain_periods": [
         [
@@ -7345,7 +7670,7 @@
       "display_start": null
     },
     "fr0216:2:0": {
-      "start_min": 264,
+      "start_min": 293,
       "start_max": null,
       "end_min": null,
       "end_max": null,
@@ -7355,7 +7680,7 @@
       "holder_index": 2,
       "period_index": 0,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。"
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。"
       ],
       "certain_periods": [],
       "display_start": null
@@ -7379,7 +7704,7 @@
       "display_start": null
     },
     "fr0219:1:0": {
-      "start_min": null,
+      "start_min": 276,
       "start_max": null,
       "end_min": null,
       "end_max": null,
@@ -7388,6 +7713,9 @@
       "note": "保留原表明确有限期段；问号、年代与世系次序仅约束可能范围，不补成连续在位。",
       "holder_index": 1,
       "period_index": 0,
+      "derived": [
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。"
+      ],
       "certain_periods": [],
       "display_start": null
     },
@@ -7410,7 +7738,7 @@
       "display_start": 302
     },
     "fr0228:1:0": {
-      "start_min": 302,
+      "start_min": 313,
       "start_max": null,
       "end_min": 317,
       "end_max": 317,
@@ -7420,7 +7748,7 @@
       "holder_index": 1,
       "period_index": 0,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。"
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。"
       ],
       "certain_periods": [
         [
@@ -7467,7 +7795,7 @@
       "display_start": 264
     },
     "fr0246:1:0": {
-      "start_min": 264,
+      "start_min": 279,
       "start_max": null,
       "end_min": null,
       "end_max": 324,
@@ -7477,14 +7805,14 @@
       "holder_index": 1,
       "period_index": 0,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。",
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。",
         "后列表项起年只作最晚可能年约束，非终年确证。"
       ],
       "certain_periods": [],
       "display_start": null
     },
     "fr0246:2:0": {
-      "start_min": 264,
+      "start_min": 279,
       "start_max": null,
       "end_min": 324,
       "end_max": 324,
@@ -7494,7 +7822,7 @@
       "holder_index": 2,
       "period_index": 0,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。"
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。"
       ],
       "certain_periods": [
         [
@@ -7713,6 +8041,10 @@
       "note": "谢奕承父谢裒（346卒）后，358卒，不能提前到西晋。",
       "holder_index": 1,
       "period_index": 0,
+      "derived": [
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。"
+      ],
+      "dynasty": "after_western_jin",
       "certain_periods": [
         [
           358,
@@ -7731,6 +8063,10 @@
       "note": "谢渊承父谢奕（358卒）之后，起讫不详，不能提前到西晋。",
       "holder_index": 2,
       "period_index": 0,
+      "derived": [
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。"
+      ],
+      "dynasty": "after_western_jin",
       "certain_periods": [],
       "display_start": null
     },
@@ -7799,7 +8135,7 @@
       "holder_index": 1,
       "period_index": 0,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。"
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。"
       ],
       "certain_periods": [],
       "display_start": null
@@ -7815,7 +8151,7 @@
       "holder_index": 2,
       "period_index": 0,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。"
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。"
       ],
       "certain_periods": [
         [
@@ -7826,7 +8162,7 @@
       "display_start": null
     },
     "fr0283:3:0": {
-      "start_min": 264,
+      "start_min": 311,
       "start_max": null,
       "end_min": null,
       "end_max": null,
@@ -7836,13 +8172,13 @@
       "holder_index": 3,
       "period_index": 0,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。"
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。"
       ],
       "certain_periods": [],
       "display_start": null
     },
     "fr0283:4:0": {
-      "start_min": 264,
+      "start_min": 311,
       "start_max": null,
       "end_min": null,
       "end_max": null,
@@ -7852,13 +8188,13 @@
       "holder_index": 4,
       "period_index": 0,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。"
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。"
       ],
       "certain_periods": [],
       "display_start": null
     },
     "fr0283:5:0": {
-      "start_min": 264,
+      "start_min": 311,
       "start_max": null,
       "end_min": 420,
       "end_max": 420,
@@ -7868,7 +8204,7 @@
       "holder_index": 5,
       "period_index": 0,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。"
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。"
       ],
       "certain_periods": [
         [
@@ -7897,7 +8233,7 @@
       "display_start": 265
     },
     "fr0285:1:0": {
-      "start_min": 265,
+      "start_min": 288,
       "start_max": null,
       "end_min": null,
       "end_max": null,
@@ -7908,7 +8244,7 @@
       "period_index": 0,
       "identity_unknown": true,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。"
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。"
       ],
       "certain_periods": [],
       "display_start": null
@@ -7932,7 +8268,7 @@
       "display_start": 302
     },
     "fr0317:1:0": {
-      "start_min": 302,
+      "start_min": 311,
       "start_max": null,
       "end_min": null,
       "end_max": null,
@@ -7943,7 +8279,7 @@
       "period_index": 0,
       "identity_unknown": true,
       "derived": [
-        "前列表项起年只作最早可能年约束，非继位确年。"
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。"
       ],
       "certain_periods": [],
       "display_start": null
@@ -7965,6 +8301,168 @@
         ]
       ],
       "display_start": 304
+    },
+    "fr100701:0:0": {
+      "start_min": 291,
+      "start_max": 299,
+      "end_min": 299,
+      "end_max": 299,
+      "accession_known": false,
+      "posthumous": false,
+      "note": "張華元康291—299年間受封，本輪採寬年號取首年291的展示規則，非史料確年；300國除。",
+      "holder_index": 0,
+      "period_index": 0,
+      "certain_periods": [],
+      "display_start": null,
+      "display_periods": [
+        [
+          291,
+          299
+        ]
+      ],
+      "display_inferred": true,
+      "source_ids": [
+        "USER_DOCX_20261007"
+      ]
+    },
+    "fr100702:0:0": {
+      "start_min": 272,
+      "start_max": 272,
+      "end_min": 272,
+      "end_max": 272,
+      "accession_known": true,
+      "posthumous": false,
+      "note": "保留原表明确有限期段；问号、年代与世系次序仅约束可能范围，不补成连续在位。",
+      "holder_index": 0,
+      "period_index": 0,
+      "certain_periods": [
+        [
+          272,
+          272
+        ]
+      ],
+      "display_start": 272
+    },
+    "fr100703:0:0": {
+      "start_min": 311,
+      "start_max": 317,
+      "end_min": 316,
+      "end_max": 316,
+      "accession_known": false,
+      "posthumous": false,
+      "note": "宣城裒受封未詳，本輪暫取311展示，不是史料確年。",
+      "holder_index": 0,
+      "period_index": 0,
+      "certain_periods": [],
+      "display_start": null,
+      "display_periods": [
+        [
+          311,
+          316
+        ]
+      ],
+      "display_inferred": true,
+      "source_ids": [
+        "USER_DOCX_20261007"
+      ]
+    },
+    "fr100704:0:0": {
+      "start_min": 307,
+      "start_max": 311,
+      "end_min": 311,
+      "end_max": 311,
+      "accession_known": false,
+      "posthumous": false,
+      "note": "永嘉中徙江夏，本輪暫置307。",
+      "holder_index": 0,
+      "period_index": 0,
+      "certain_periods": [
+        [
+          311,
+          311
+        ]
+      ],
+      "display_start": null,
+      "display_periods": [
+        [
+          307,
+          311
+        ]
+      ],
+      "display_inferred": true,
+      "source_ids": [
+        "USER_DOCX_20261007"
+      ]
+    },
+    "fr100704:1:0": {
+      "start_min": 312,
+      "start_max": null,
+      "end_min": null,
+      "end_max": null,
+      "accession_known": false,
+      "posthumous": false,
+      "note": "保留原表明确有限期段；问号、年代与世系次序仅约束可能范围，不补成连续在位。",
+      "holder_index": 1,
+      "period_index": 0,
+      "derived": [
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。"
+      ],
+      "certain_periods": [],
+      "display_start": null
+    },
+    "fr100704:2:0": {
+      "start_min": 312,
+      "start_max": null,
+      "end_min": null,
+      "end_max": null,
+      "accession_known": false,
+      "posthumous": false,
+      "note": "保留原表明确有限期段；问号、年代与世系次序仅约束可能范围，不补成连续在位。",
+      "holder_index": 2,
+      "period_index": 0,
+      "derived": [
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。"
+      ],
+      "certain_periods": [],
+      "display_start": null
+    },
+    "fr100704:3:0": {
+      "start_min": 312,
+      "start_max": null,
+      "end_min": null,
+      "end_max": null,
+      "accession_known": false,
+      "posthumous": false,
+      "note": "保留原表明确有限期段；问号、年代与世系次序仅约束可能范围，不补成连续在位。",
+      "holder_index": 3,
+      "period_index": 0,
+      "identity_unknown": true,
+      "derived": [
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。"
+      ],
+      "certain_periods": [],
+      "display_start": null
+    },
+    "fr100704:4:0": {
+      "start_min": 312,
+      "start_max": null,
+      "end_min": 420,
+      "end_max": 420,
+      "accession_known": false,
+      "posthumous": false,
+      "note": "保留原表明确有限期段；问号、年代与世系次序仅约束可能范围，不补成连续在位。",
+      "holder_index": 4,
+      "period_index": 0,
+      "derived": [
+        "依2026-10-07使用者規則，起年不詳者暫自前任已知卒年下一年約束；此為展示排年，不是確切即位年。"
+      ],
+      "certain_periods": [
+        [
+          420,
+          420
+        ]
+      ],
+      "display_start": null
     }
   }
 }

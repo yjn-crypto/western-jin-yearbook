@@ -11,7 +11,7 @@ for (const file of ['data/princes.js','data/five-rank-fiefs.js','data/jin-ruler-
 const w=context.window, api=w.JIN_KINGDOM_TABLE;
 const princes=w.JIN_PRINCES.records, fiefs=w.JIN_FIVE_RANK_FIEFS.records;
 const before=JSON.stringify({princes,fiefs});
-const ruler=(fief,year)=>api.rulerAt(princes,fief,year);
+const ruler=(fief,year,level='prefecture')=>api.rulerAt(princes,fief,year,level);
 const five=(id,year)=>api.fiveRankAt(fiefs.find(r=>r.id===id),year);
 
 // False early successors and indefinite predecessors are different failure modes.
@@ -21,9 +21,9 @@ for(const [fief,year] of [['陳留',304],['安平',304],['東海',313],['梁',31
 assert.equal(ruler('齊',304).record.person,'司馬超');
 assert.equal(ruler('燕',302).record.person,'司馬幾');
 assert.equal(ruler('燕',302).display_start,null);
-assert.equal(ruler('樂成',314).record,null);
-assert.equal(ruler('樂成',316).record.person,'司馬欽');
-assert.equal(ruler('樂成',316).accession_known,false);
+assert.equal(ruler('樂成',314,'county').record,null);
+assert.equal(ruler('樂成',316,'county').record.person,'司馬欽');
+assert.equal(ruler('樂成',316,'county').accession_known,false);
 assert.equal(ruler('秦',294).record,null);
 assert.equal(ruler('秦',300).record.person,'司馬郁');
 assert.equal(ruler('秦',300).display_start,null);
@@ -31,7 +31,8 @@ assert.equal(ruler('清河',308).record,null,'both holders are attested during t
 assert.equal(ruler('清河',308).active.length,2);
 assert.equal(ruler('西陽',305).record,null);
 assert.equal(ruler('西陽',307).display_start,306,'restoration starts a new reign count');
-assert.equal(five('fr0001',274).record,null,'unknown accession must not fill a predecessor gap');
+assert.equal(five('fr0001',274).record.person,'石統','Word explicitly authorizes next-year succession display');
+assert.equal(five('fr0001',274).record.display_inferred,true);
 assert.equal(five('fr0001',300).record.person,'石統');
 assert.equal(five('fr0001',300).display_start,null);
 assert.equal(five('fr0001',311).record,null,'310s endpoint is not exact 319');
@@ -50,10 +51,10 @@ let checked=0;
 for(let year=266;year<=316;year++) {
   for(const fief of new Set(princes.map(r=>r.fief))) {
     const result=ruler(fief,year);
-    assert.equal(result.all.length,princes.filter(r=>r.fief===fief).length,'whole genealogy retained');
+    assert.ok(result.all.every(r=>r.fief===fief),'only the requested fief and level are selected');
     for(const active of result.active) {
       assert.ok(!['eastern_jin','after_western_jin'].includes(active.constraint.dynasty));
-      assert.ok(active.constraint.certain_periods.some(([a,b])=>a<=year&&year<=b));
+      assert.ok((active.constraint.display_periods||active.constraint.certain_periods).some(([a,b])=>a<=year&&year<=b));
     }
     checked++;
   }
