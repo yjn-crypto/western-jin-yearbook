@@ -1715,7 +1715,7 @@
     },
     {
       "prefecture_id": "p032",
-      "prefecture_name": "趙國",
+      "prefecture_name": "趙郡",
       "state_id": "s04",
       "county_id": "c0279",
       "county_name": "房子",
@@ -2186,7 +2186,7 @@
     },
     {
       "prefecture_id": "p045",
-      "prefecture_name": "中山國",
+      "prefecture_name": "中山郡",
       "state_id": "s04",
       "county_id": "c0355",
       "county_name": "盧奴",
@@ -2235,7 +2235,7 @@
     },
     {
       "prefecture_id": "p046",
-      "prefecture_name": "常山國",
+      "prefecture_name": "常山郡",
       "state_id": "s04",
       "county_id": "c0364",
       "county_name": "真定",
@@ -2367,7 +2367,7 @@
     },
     {
       "prefecture_id": "p049",
-      "prefecture_name": "燕國",
+      "prefecture_name": "燕郡",
       "state_id": "s05",
       "county_id": "c0385",
       "county_name": "薊",
@@ -2701,7 +2701,7 @@
     },
     {
       "prefecture_id": "p065",
-      "prefecture_name": "太原國",
+      "prefecture_name": "太原郡",
       "state_id": "s07",
       "county_id": "c0461",
       "county_name": "晉陽",
@@ -4558,7 +4558,7 @@
     },
     {
       "prefecture_id": "p142",
-      "prefecture_name": "北海國",
+      "prefecture_name": "北海郡",
       "state_id": "s14",
       "county_id": "c0951",
       "county_name": "平壽",
@@ -4636,7 +4636,7 @@
     },
     {
       "prefecture_id": "p144",
-      "prefecture_name": "樂安國",
+      "prefecture_name": "樂安郡",
       "state_id": "s14",
       "county_id": "c0966",
       "county_name": "高苑",

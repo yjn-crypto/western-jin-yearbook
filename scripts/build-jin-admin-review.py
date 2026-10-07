@@ -598,6 +598,23 @@ for item in word_decisions['notes']:
     for pid in item['ids']:
         note(pid,[y for y in annual[pid] if item['begin']<=y<=item['end']],item['text'])
 
+# Explicit loss of a title overrides Tongshi's undivided 郡/國 heading.
+# Unknown reign dates alone never establish the abolition of a fief.
+abolitions=json.loads((ROOT/'data/jin-fief-abolitions-20261007.json').read_text())
+for decision in abolitions['records']:
+    names={pid:decision['name'] for pid in decision['entity_ids']}
+    names.update(decision['branch_entity_ids'])
+    for pid,name in names.items():
+        years=[y for y in annual[pid] if decision['begin']<=y<=decision['end']]
+        for y in years:
+            annual[pid][y].update(name=name,is_fief=False,fief_rank=None,fief_record_ids=[],
+                                  fief_abolition_id=decision['id'])
+        note(pid,years,decision['source_note'])
+    log('attested_fief_abolition',list(names),decision['source_note'],
+        begin=decision['begin'],end=decision['end'],source_urls=[s['url'] for s in decision['source_links']])
+(ROOT/'data/jin-fief-abolitions-20261007.js').write_text(
+    'window.JIN_FIEF_ABOLITIONS = '+json.dumps(abolitions,ensure_ascii=False,indent=2)+';\n')
+
 # A copied phase carries status forward, not the old transfer event itself.
 for k,years in annual.items():
     if '/' not in k:continue

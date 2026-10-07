@@ -1,0 +1,1064 @@
+[
+  {
+    "year": 276,
+    "changes": [
+      {
+        "type": "xinye_fit_slivers_to_xiangyang",
+        "from": "p166",
+        "to": "p163",
+        "area_degrees2": 0.0034670916714997055
+      }
+    ],
+    "connected_entities": [
+      "p163",
+      "p166"
+    ],
+    "union_area_difference": 4.994226259210286e-12,
+    "overlap_area": 2.2001067634391802e-11,
+    "county_points_preserved_in_own_area": 8,
+    "county_coordinates_changed": 0,
+    "province_or_coast_geometry_changed": false,
+    "province_boundary_max_shift_degrees": 0,
+    "geometry_replacements": 6,
+    "removed_lines": 0,
+    "new_boundary_features": 1
+  },
+  {
+    "year": 277,
+    "changes": [
+      {
+        "type": "xinye_fit_slivers_to_xiangyang",
+        "from": "p166",
+        "to": "p163",
+        "area_degrees2": 0.0034670916714997055
+      }
+    ],
+    "connected_entities": [
+      "p163",
+      "p166"
+    ],
+    "union_area_difference": 4.994226259210286e-12,
+    "overlap_area": 2.2001067634391802e-11,
+    "county_points_preserved_in_own_area": 8,
+    "county_coordinates_changed": 0,
+    "province_or_coast_geometry_changed": false,
+    "province_boundary_max_shift_degrees": 0,
+    "geometry_replacements": 6,
+    "removed_lines": 0,
+    "new_boundary_features": 1
+  },
+  {
+    "year": 278,
+    "changes": [
+      {
+        "type": "xinye_fit_slivers_to_xiangyang",
+        "from": "p166",
+        "to": "p163",
+        "area_degrees2": 0.0034670916714997055
+      }
+    ],
+    "connected_entities": [
+      "p163",
+      "p166"
+    ],
+    "union_area_difference": 4.994226259210286e-12,
+    "overlap_area": 2.2001067634391802e-11,
+    "county_points_preserved_in_own_area": 8,
+    "county_coordinates_changed": 0,
+    "province_or_coast_geometry_changed": false,
+    "province_boundary_max_shift_degrees": 0,
+    "geometry_replacements": 6,
+    "removed_lines": 0,
+    "new_boundary_features": 1
+  },
+  {
+    "year": 279,
+    "changes": [
+      {
+        "type": "xinye_fit_slivers_to_xiangyang",
+        "from": "p166",
+        "to": "p163",
+        "area_degrees2": 0.0034670916714997055
+      }
+    ],
+    "connected_entities": [
+      "p163",
+      "p166"
+    ],
+    "union_area_difference": 4.994226259210286e-12,
+    "overlap_area": 2.2001067634391802e-11,
+    "county_points_preserved_in_own_area": 8,
+    "county_coordinates_changed": 0,
+    "province_or_coast_geometry_changed": false,
+    "province_boundary_max_shift_degrees": 0,
+    "geometry_replacements": 6,
+    "removed_lines": 0,
+    "new_boundary_features": 1
+  },
+  {
+    "year": 291,
+    "changes": [
+      {
+        "type": "xinye_fit_slivers_to_xiangyang",
+        "from": "p166",
+        "to": "p163",
+        "area_degrees2": 0.0034670916714997055
+      },
+      {
+        "type": "chaoyang_to_yiyang_short_passage",
+        "from": "p166",
+        "to": "p165",
+        "area_degrees2": 0.011923069090000267
+      }
+    ],
+    "connected_entities": [
+      "p163",
+      "p165",
+      "p166"
+    ],
+    "union_area_difference": 0.0,
+    "overlap_area": 2.2001511723601652e-11,
+    "county_points_preserved_in_own_area": 14,
+    "county_coordinates_changed": 0,
+    "province_or_coast_geometry_changed": false,
+    "province_boundary_max_shift_degrees": 0,
+    "geometry_replacements": 8,
+    "removed_lines": 0,
+    "new_boundary_features": 2
+  },
+  {
+    "year": 292,
+    "changes": [
+      {
+        "type": "xinye_fit_slivers_to_xiangyang",
+        "from": "p166",
+        "to": "p163",
+        "area_degrees2": 0.0034670916714997055
+      },
+      {
+        "type": "chaoyang_to_yiyang_short_passage",
+        "from": "p166",
+        "to": "p165",
+        "area_degrees2": 0.011923069090000267
+      }
+    ],
+    "connected_entities": [
+      "p163",
+      "p165",
+      "p166"
+    ],
+    "union_area_difference": 0.0,
+    "overlap_area": 2.2001511723601652e-11,
+    "county_points_preserved_in_own_area": 14,
+    "county_coordinates_changed": 0,
+    "province_or_coast_geometry_changed": false,
+    "province_boundary_max_shift_degrees": 0,
+    "geometry_replacements": 8,
+    "removed_lines": 0,
+    "new_boundary_features": 2
+  },
+  {
+    "year": 293,
+    "changes": [
+      {
+        "type": "xinye_fit_slivers_to_xiangyang",
+        "from": "p166",
+        "to": "p163",
+        "area_degrees2": 0.0034670916714997055
+      },
+      {
+        "type": "chaoyang_to_yiyang_short_passage",
+        "from": "p166",
+        "to": "p165",
+        "area_degrees2": 0.011923069090000267
+      }
+    ],
+    "connected_entities": [
+      "p163",
+      "p165",
+      "p166"
+    ],
+    "union_area_difference": 0.0,
+    "overlap_area": 2.2001511723601652e-11,
+    "county_points_preserved_in_own_area": 14,
+    "county_coordinates_changed": 0,
+    "province_or_coast_geometry_changed": false,
+    "province_boundary_max_shift_degrees": 0,
+    "geometry_replacements": 8,
+    "removed_lines": 0,
+    "new_boundary_features": 2
+  },
+  {
+    "year": 294,
+    "changes": [
+      {
+        "type": "xinye_fit_slivers_to_xiangyang",
+        "from": "p166",
+        "to": "p163",
+        "area_degrees2": 0.0034670916714997055
+      },
+      {
+        "type": "chaoyang_to_yiyang_short_passage",
+        "from": "p166",
+        "to": "p165",
+        "area_degrees2": 0.011923069090000267
+      }
+    ],
+    "connected_entities": [
+      "p163",
+      "p165",
+      "p166"
+    ],
+    "union_area_difference": 0.0,
+    "overlap_area": 2.2001511723601652e-11,
+    "county_points_preserved_in_own_area": 14,
+    "county_coordinates_changed": 0,
+    "province_or_coast_geometry_changed": false,
+    "province_boundary_max_shift_degrees": 0,
+    "geometry_replacements": 8,
+    "removed_lines": 0,
+    "new_boundary_features": 2
+  },
+  {
+    "year": 295,
+    "changes": [
+      {
+        "type": "xinye_fit_slivers_to_xiangyang",
+        "from": "p166",
+        "to": "p163",
+        "area_degrees2": 0.0034670916714997055
+      },
+      {
+        "type": "chaoyang_to_yiyang_short_passage",
+        "from": "p166",
+        "to": "p165",
+        "area_degrees2": 0.011923069090000267
+      }
+    ],
+    "connected_entities": [
+      "p163",
+      "p165",
+      "p166"
+    ],
+    "union_area_difference": 0.0,
+    "overlap_area": 2.2001511723601652e-11,
+    "county_points_preserved_in_own_area": 14,
+    "county_coordinates_changed": 0,
+    "province_or_coast_geometry_changed": false,
+    "province_boundary_max_shift_degrees": 0,
+    "geometry_replacements": 8,
+    "removed_lines": 0,
+    "new_boundary_features": 2
+  },
+  {
+    "year": 296,
+    "changes": [
+      {
+        "type": "xinye_fit_slivers_to_xiangyang",
+        "from": "p166",
+        "to": "p163",
+        "area_degrees2": 0.0034670916714997055
+      },
+      {
+        "type": "chaoyang_to_yiyang_short_passage",
+        "from": "p166",
+        "to": "p165",
+        "area_degrees2": 0.011923069090000267
+      }
+    ],
+    "connected_entities": [
+      "p163",
+      "p165",
+      "p166"
+    ],
+    "union_area_difference": 0.0,
+    "overlap_area": 2.2001511723601652e-11,
+    "county_points_preserved_in_own_area": 14,
+    "county_coordinates_changed": 0,
+    "province_or_coast_geometry_changed": false,
+    "province_boundary_max_shift_degrees": 0.0,
+    "geometry_replacements": 7,
+    "removed_lines": 0,
+    "new_boundary_features": 2
+  },
+  {
+    "year": 297,
+    "changes": [
+      {
+        "type": "xinye_fit_slivers_to_xiangyang",
+        "from": "p166",
+        "to": "p163",
+        "area_degrees2": 0.0034670916714997055
+      },
+      {
+        "type": "chaoyang_to_yiyang_short_passage",
+        "from": "p166",
+        "to": "p165",
+        "area_degrees2": 0.011923069090000267
+      },
+      {
+        "type": "huailing_across_xiapi_southeast_corner",
+        "from": "p150",
+        "to": "p158",
+        "area_degrees2": 0.010454934968999987
+      }
+    ],
+    "connected_entities": [
+      "p150",
+      "p158",
+      "p163",
+      "p165",
+      "p166"
+    ],
+    "union_area_difference": 1.4260000198972033e-09,
+    "overlap_area": 2.19957385638736e-11,
+    "county_points_preserved_in_own_area": 21,
+    "county_coordinates_changed": 0,
+    "province_or_coast_geometry_changed": false,
+    "province_boundary_max_shift_degrees": 0.0,
+    "geometry_replacements": 13,
+    "removed_lines": 2,
+    "new_boundary_features": 5
+  },
+  {
+    "year": 298,
+    "changes": [
+      {
+        "type": "xinye_fit_slivers_to_xiangyang",
+        "from": "p166",
+        "to": "p163",
+        "area_degrees2": 0.0034670916714997055
+      },
+      {
+        "type": "chaoyang_to_yiyang_short_passage",
+        "from": "p166",
+        "to": "p165",
+        "area_degrees2": 0.011923069090000267
+      },
+      {
+        "type": "huailing_across_xiapi_southeast_corner",
+        "from": "p150",
+        "to": "p158",
+        "area_degrees2": 0.010454934968999987
+      }
+    ],
+    "connected_entities": [
+      "p150",
+      "p158",
+      "p163",
+      "p165",
+      "p166"
+    ],
+    "union_area_difference": 1.4260000198972033e-09,
+    "overlap_area": 2.19957385638736e-11,
+    "county_points_preserved_in_own_area": 21,
+    "county_coordinates_changed": 0,
+    "province_or_coast_geometry_changed": false,
+    "province_boundary_max_shift_degrees": 0.0,
+    "geometry_replacements": 13,
+    "removed_lines": 2,
+    "new_boundary_features": 5
+  },
+  {
+    "year": 299,
+    "changes": [
+      {
+        "type": "xinye_fit_slivers_to_xiangyang",
+        "from": "p166",
+        "to": "p163",
+        "area_degrees2": 0.0034670916714997055
+      },
+      {
+        "type": "chaoyang_to_yiyang_short_passage",
+        "from": "p166",
+        "to": "p165",
+        "area_degrees2": 0.011923069090000267
+      },
+      {
+        "type": "huailing_across_xiapi_southeast_corner",
+        "from": "p150",
+        "to": "p158",
+        "area_degrees2": 0.010454934968999987
+      }
+    ],
+    "connected_entities": [
+      "p150",
+      "p158",
+      "p163",
+      "p165",
+      "p166"
+    ],
+    "union_area_difference": 1.4260000198972033e-09,
+    "overlap_area": 2.19957385638736e-11,
+    "county_points_preserved_in_own_area": 21,
+    "county_coordinates_changed": 0,
+    "province_or_coast_geometry_changed": false,
+    "province_boundary_max_shift_degrees": 0.0,
+    "geometry_replacements": 13,
+    "removed_lines": 2,
+    "new_boundary_features": 5
+  },
+  {
+    "year": 300,
+    "changes": [
+      {
+        "type": "xinye_fit_slivers_to_xiangyang",
+        "from": "p166",
+        "to": "p163",
+        "area_degrees2": 0.0034670916714997055
+      },
+      {
+        "type": "chaoyang_to_yiyang_short_passage",
+        "from": "p166",
+        "to": "p165",
+        "area_degrees2": 0.011923069090000267
+      },
+      {
+        "type": "huailing_across_xiapi_southeast_corner",
+        "from": "p150",
+        "to": "p158",
+        "area_degrees2": 0.010454934968999987
+      }
+    ],
+    "connected_entities": [
+      "p150",
+      "p158",
+      "p163",
+      "p165",
+      "p166"
+    ],
+    "union_area_difference": 1.4260000198972033e-09,
+    "overlap_area": 2.19957385638736e-11,
+    "county_points_preserved_in_own_area": 21,
+    "county_coordinates_changed": 0,
+    "province_or_coast_geometry_changed": false,
+    "province_boundary_max_shift_degrees": 0.0,
+    "geometry_replacements": 13,
+    "removed_lines": 2,
+    "new_boundary_features": 5
+  },
+  {
+    "year": 301,
+    "changes": [
+      {
+        "type": "xinye_fit_slivers_to_xiangyang",
+        "from": "p166",
+        "to": "p163",
+        "area_degrees2": 0.0034670916714997055
+      },
+      {
+        "type": "chaoyang_to_yiyang_short_passage",
+        "from": "p166",
+        "to": "p165",
+        "area_degrees2": 0.011923069090000267
+      },
+      {
+        "type": "huailing_across_xiapi_southeast_corner",
+        "from": "p150",
+        "to": "p158",
+        "area_degrees2": 0.010454934968999987
+      }
+    ],
+    "connected_entities": [
+      "p150",
+      "p158",
+      "p163",
+      "p165",
+      "p166"
+    ],
+    "union_area_difference": 1.4260000198972033e-09,
+    "overlap_area": 2.19957385638736e-11,
+    "county_points_preserved_in_own_area": 21,
+    "county_coordinates_changed": 0,
+    "province_or_coast_geometry_changed": false,
+    "province_boundary_max_shift_degrees": 0.0,
+    "geometry_replacements": 13,
+    "removed_lines": 2,
+    "new_boundary_features": 5
+  },
+  {
+    "year": 302,
+    "changes": [
+      {
+        "type": "xinye_fit_slivers_to_xiangyang",
+        "from": "p166",
+        "to": "p163",
+        "area_degrees2": 0.0034670916714997055
+      },
+      {
+        "type": "chaoyang_to_yiyang_short_passage",
+        "from": "p166",
+        "to": "p165",
+        "area_degrees2": 0.011923069090000267
+      },
+      {
+        "type": "huailing_across_xiapi_southeast_corner",
+        "from": "p150",
+        "to": "p158",
+        "area_degrees2": 0.010454934968999987
+      }
+    ],
+    "connected_entities": [
+      "p150",
+      "p158",
+      "p163",
+      "p165",
+      "p166"
+    ],
+    "union_area_difference": 1.4260000198972033e-09,
+    "overlap_area": 2.19957385638736e-11,
+    "county_points_preserved_in_own_area": 21,
+    "county_coordinates_changed": 0,
+    "province_or_coast_geometry_changed": false,
+    "province_boundary_max_shift_degrees": 0.0,
+    "geometry_replacements": 13,
+    "removed_lines": 2,
+    "new_boundary_features": 5
+  },
+  {
+    "year": 303,
+    "changes": [
+      {
+        "type": "xinye_fit_slivers_to_xiangyang",
+        "from": "p166",
+        "to": "p163",
+        "area_degrees2": 0.0034670916714997055
+      },
+      {
+        "type": "chaoyang_to_yiyang_short_passage",
+        "from": "p166",
+        "to": "p165",
+        "area_degrees2": 0.011923069090000267
+      },
+      {
+        "type": "huailing_across_xiapi_southeast_corner",
+        "from": "p150",
+        "to": "p158",
+        "area_degrees2": 0.010454934968999987
+      }
+    ],
+    "connected_entities": [
+      "p150",
+      "p158",
+      "p163",
+      "p165",
+      "p166"
+    ],
+    "union_area_difference": 1.4260000198972033e-09,
+    "overlap_area": 2.19957385638736e-11,
+    "county_points_preserved_in_own_area": 21,
+    "county_coordinates_changed": 0,
+    "province_or_coast_geometry_changed": false,
+    "province_boundary_max_shift_degrees": 0.0,
+    "geometry_replacements": 13,
+    "removed_lines": 2,
+    "new_boundary_features": 5
+  },
+  {
+    "year": 304,
+    "changes": [
+      {
+        "type": "xinye_fit_slivers_to_xiangyang",
+        "from": "p166",
+        "to": "p163",
+        "area_degrees2": 0.0034670916714997055
+      },
+      {
+        "type": "chaoyang_to_yiyang_short_passage",
+        "from": "p166",
+        "to": "p165",
+        "area_degrees2": 0.011923069090000267
+      },
+      {
+        "type": "huailing_across_xiapi_southeast_corner",
+        "from": "p150",
+        "to": "p158",
+        "area_degrees2": 0.010454934968999987
+      }
+    ],
+    "connected_entities": [
+      "p150",
+      "p158",
+      "p163",
+      "p165",
+      "p166"
+    ],
+    "union_area_difference": 1.4260000198972033e-09,
+    "overlap_area": 2.19957385638736e-11,
+    "county_points_preserved_in_own_area": 21,
+    "county_coordinates_changed": 0,
+    "province_or_coast_geometry_changed": false,
+    "province_boundary_max_shift_degrees": 0.0,
+    "geometry_replacements": 13,
+    "removed_lines": 2,
+    "new_boundary_features": 5
+  },
+  {
+    "year": 305,
+    "changes": [
+      {
+        "type": "xinye_fit_slivers_to_xiangyang",
+        "from": "p166",
+        "to": "p163",
+        "area_degrees2": 0.0034670916714997055
+      },
+      {
+        "type": "chaoyang_to_yiyang_short_passage",
+        "from": "p166",
+        "to": "p165",
+        "area_degrees2": 0.011923069090000267
+      },
+      {
+        "type": "huailing_across_xiapi_southeast_corner",
+        "from": "p150",
+        "to": "p158",
+        "area_degrees2": 0.010454934968999987
+      }
+    ],
+    "connected_entities": [
+      "p150",
+      "p158",
+      "p163",
+      "p165",
+      "p166"
+    ],
+    "union_area_difference": 1.4260000198972033e-09,
+    "overlap_area": 2.19957385638736e-11,
+    "county_points_preserved_in_own_area": 21,
+    "county_coordinates_changed": 0,
+    "province_or_coast_geometry_changed": false,
+    "province_boundary_max_shift_degrees": 0.0,
+    "geometry_replacements": 13,
+    "removed_lines": 2,
+    "new_boundary_features": 5
+  },
+  {
+    "year": 306,
+    "changes": [
+      {
+        "type": "xinye_fit_slivers_to_xiangyang",
+        "from": "p166",
+        "to": "p163",
+        "area_degrees2": 0.0034670916714997055
+      },
+      {
+        "type": "chaoyang_to_yiyang_short_passage",
+        "from": "p166",
+        "to": "p165",
+        "area_degrees2": 0.011923069090000267
+      },
+      {
+        "type": "huailing_across_xiapi_southeast_corner",
+        "from": "p150",
+        "to": "p158",
+        "area_degrees2": 0.010454934968999987
+      }
+    ],
+    "connected_entities": [
+      "p150",
+      "p158",
+      "p163",
+      "p165",
+      "p166"
+    ],
+    "union_area_difference": 1.4260000198972033e-09,
+    "overlap_area": 2.19957385638736e-11,
+    "county_points_preserved_in_own_area": 21,
+    "county_coordinates_changed": 0,
+    "province_or_coast_geometry_changed": false,
+    "province_boundary_max_shift_degrees": 0.0,
+    "geometry_replacements": 14,
+    "removed_lines": 2,
+    "new_boundary_features": 5
+  },
+  {
+    "year": 307,
+    "changes": [
+      {
+        "type": "xinye_fit_slivers_to_xiangyang",
+        "from": "p166",
+        "to": "p163",
+        "area_degrees2": 0.0034670916714997055
+      },
+      {
+        "type": "chaoyang_to_yiyang_short_passage",
+        "from": "p166",
+        "to": "p165",
+        "area_degrees2": 0.011923069090000267
+      },
+      {
+        "type": "huailing_across_xiapi_southeast_corner",
+        "from": "p150",
+        "to": "p158",
+        "area_degrees2": 0.010454934968999987
+      }
+    ],
+    "connected_entities": [
+      "p150",
+      "p158",
+      "p163",
+      "p165",
+      "p166"
+    ],
+    "union_area_difference": 1.4260000198972033e-09,
+    "overlap_area": 2.19957385638736e-11,
+    "county_points_preserved_in_own_area": 21,
+    "county_coordinates_changed": 0,
+    "province_or_coast_geometry_changed": false,
+    "province_boundary_max_shift_degrees": 0.0,
+    "geometry_replacements": 14,
+    "removed_lines": 2,
+    "new_boundary_features": 5
+  },
+  {
+    "year": 308,
+    "changes": [
+      {
+        "type": "xinye_fit_slivers_to_xiangyang",
+        "from": "p166",
+        "to": "p163",
+        "area_degrees2": 0.0034670916714997055
+      },
+      {
+        "type": "chaoyang_to_yiyang_short_passage",
+        "from": "p166",
+        "to": "p165",
+        "area_degrees2": 0.011923069090000267
+      },
+      {
+        "type": "huailing_across_xiapi_southeast_corner",
+        "from": "p150",
+        "to": "p158",
+        "area_degrees2": 0.010454934968999987
+      }
+    ],
+    "connected_entities": [
+      "p150",
+      "p158",
+      "p163",
+      "p165",
+      "p166"
+    ],
+    "union_area_difference": 1.4260000198972033e-09,
+    "overlap_area": 2.19957385638736e-11,
+    "county_points_preserved_in_own_area": 21,
+    "county_coordinates_changed": 0,
+    "province_or_coast_geometry_changed": false,
+    "province_boundary_max_shift_degrees": 0.0,
+    "geometry_replacements": 14,
+    "removed_lines": 2,
+    "new_boundary_features": 5
+  },
+  {
+    "year": 309,
+    "changes": [
+      {
+        "type": "xinye_fit_slivers_to_xiangyang",
+        "from": "p166",
+        "to": "p163",
+        "area_degrees2": 0.0034670916714997055
+      },
+      {
+        "type": "chaoyang_to_yiyang_short_passage",
+        "from": "p166",
+        "to": "p165",
+        "area_degrees2": 0.011923069090000267
+      },
+      {
+        "type": "huailing_across_xiapi_southeast_corner",
+        "from": "p150",
+        "to": "p158",
+        "area_degrees2": 0.010454934968999987
+      }
+    ],
+    "connected_entities": [
+      "p150",
+      "p158",
+      "p163",
+      "p165",
+      "p166"
+    ],
+    "union_area_difference": 1.4260000198972033e-09,
+    "overlap_area": 2.19957385638736e-11,
+    "county_points_preserved_in_own_area": 21,
+    "county_coordinates_changed": 0,
+    "province_or_coast_geometry_changed": false,
+    "province_boundary_max_shift_degrees": 0.0,
+    "geometry_replacements": 14,
+    "removed_lines": 2,
+    "new_boundary_features": 5
+  },
+  {
+    "year": 310,
+    "changes": [
+      {
+        "type": "xinye_fit_slivers_to_xiangyang",
+        "from": "p166",
+        "to": "p163",
+        "area_degrees2": 0.0034670916714997055
+      },
+      {
+        "type": "chaoyang_to_yiyang_short_passage",
+        "from": "p166",
+        "to": "p165",
+        "area_degrees2": 0.011923069090000267
+      },
+      {
+        "type": "huailing_across_xiapi_southeast_corner",
+        "from": "p150",
+        "to": "p158",
+        "area_degrees2": 0.010454934968999987
+      }
+    ],
+    "connected_entities": [
+      "p150",
+      "p158",
+      "p163",
+      "p165",
+      "p166"
+    ],
+    "union_area_difference": 1.4260000198972033e-09,
+    "overlap_area": 2.19957385638736e-11,
+    "county_points_preserved_in_own_area": 21,
+    "county_coordinates_changed": 0,
+    "province_or_coast_geometry_changed": false,
+    "province_boundary_max_shift_degrees": 0.0,
+    "geometry_replacements": 14,
+    "removed_lines": 2,
+    "new_boundary_features": 5
+  },
+  {
+    "year": 311,
+    "changes": [
+      {
+        "type": "xinye_fit_slivers_to_xiangyang",
+        "from": "p166",
+        "to": "p163",
+        "area_degrees2": 0.0034670916714997055
+      },
+      {
+        "type": "chaoyang_to_yiyang_short_passage",
+        "from": "p166",
+        "to": "p165",
+        "area_degrees2": 0.011923069090000267
+      },
+      {
+        "type": "huailing_across_xiapi_southeast_corner",
+        "from": "p150",
+        "to": "p158",
+        "area_degrees2": 0.010454934968999987
+      }
+    ],
+    "connected_entities": [
+      "p150",
+      "p158",
+      "p163",
+      "p165",
+      "p166"
+    ],
+    "union_area_difference": 1.4260000198972033e-09,
+    "overlap_area": 2.19957385638736e-11,
+    "county_points_preserved_in_own_area": 21,
+    "county_coordinates_changed": 0,
+    "province_or_coast_geometry_changed": false,
+    "province_boundary_max_shift_degrees": 0.0,
+    "geometry_replacements": 13,
+    "removed_lines": 2,
+    "new_boundary_features": 5
+  },
+  {
+    "year": 312,
+    "changes": [
+      {
+        "type": "xinye_fit_slivers_to_xiangyang",
+        "from": "p166",
+        "to": "p163",
+        "area_degrees2": 0.0034670916714997055
+      },
+      {
+        "type": "chaoyang_to_yiyang_short_passage",
+        "from": "p166",
+        "to": "p165",
+        "area_degrees2": 0.011923069090000267
+      },
+      {
+        "type": "huailing_across_xiapi_southeast_corner",
+        "from": "p150",
+        "to": "p158",
+        "area_degrees2": 0.010454934968999987
+      }
+    ],
+    "connected_entities": [
+      "p150",
+      "p158",
+      "p163",
+      "p165",
+      "p166"
+    ],
+    "union_area_difference": 1.4260000198972033e-09,
+    "overlap_area": 2.19957385638736e-11,
+    "county_points_preserved_in_own_area": 19,
+    "county_coordinates_changed": 0,
+    "province_or_coast_geometry_changed": false,
+    "province_boundary_max_shift_degrees": 0.0,
+    "geometry_replacements": 13,
+    "removed_lines": 2,
+    "new_boundary_features": 5
+  },
+  {
+    "year": 313,
+    "changes": [
+      {
+        "type": "xinye_fit_slivers_to_xiangyang",
+        "from": "p166",
+        "to": "p163",
+        "area_degrees2": 0.0034670916714997055
+      },
+      {
+        "type": "chaoyang_to_yiyang_short_passage",
+        "from": "p166",
+        "to": "p165",
+        "area_degrees2": 0.011923069090000267
+      },
+      {
+        "type": "huailing_across_xiapi_southeast_corner",
+        "from": "p150",
+        "to": "p158",
+        "area_degrees2": 0.010454934968999987
+      }
+    ],
+    "connected_entities": [
+      "p150",
+      "p158",
+      "p163",
+      "p165",
+      "p166"
+    ],
+    "union_area_difference": 1.4260000198972033e-09,
+    "overlap_area": 2.19957385638736e-11,
+    "county_points_preserved_in_own_area": 19,
+    "county_coordinates_changed": 0,
+    "province_or_coast_geometry_changed": false,
+    "province_boundary_max_shift_degrees": 0.0,
+    "geometry_replacements": 13,
+    "removed_lines": 2,
+    "new_boundary_features": 5
+  },
+  {
+    "year": 314,
+    "changes": [
+      {
+        "type": "xinye_fit_slivers_to_xiangyang",
+        "from": "p166",
+        "to": "p163",
+        "area_degrees2": 0.0034670916714997055
+      },
+      {
+        "type": "chaoyang_to_yiyang_short_passage",
+        "from": "p166",
+        "to": "p165",
+        "area_degrees2": 0.011923069090000267
+      },
+      {
+        "type": "huailing_across_xiapi_southeast_corner",
+        "from": "p150",
+        "to": "p158",
+        "area_degrees2": 0.010454934968999987
+      }
+    ],
+    "connected_entities": [
+      "p150",
+      "p158",
+      "p163",
+      "p165",
+      "p166"
+    ],
+    "union_area_difference": 1.4260000198972033e-09,
+    "overlap_area": 2.19957385638736e-11,
+    "county_points_preserved_in_own_area": 19,
+    "county_coordinates_changed": 0,
+    "province_or_coast_geometry_changed": false,
+    "province_boundary_max_shift_degrees": 0,
+    "geometry_replacements": 12,
+    "removed_lines": 2,
+    "new_boundary_features": 4
+  },
+  {
+    "year": 315,
+    "changes": [
+      {
+        "type": "xinye_fit_slivers_to_xiangyang",
+        "from": "p166",
+        "to": "p163",
+        "area_degrees2": 0.0034670916714997055
+      },
+      {
+        "type": "chaoyang_to_yiyang_short_passage",
+        "from": "p166",
+        "to": "p165",
+        "area_degrees2": 0.011923069090000267
+      },
+      {
+        "type": "huailing_across_xiapi_southeast_corner",
+        "from": "p150",
+        "to": "p158",
+        "area_degrees2": 0.010454934968999987
+      }
+    ],
+    "connected_entities": [
+      "p150",
+      "p158",
+      "p163",
+      "p165",
+      "p166"
+    ],
+    "union_area_difference": 1.4260000198972033e-09,
+    "overlap_area": 2.19957385638736e-11,
+    "county_points_preserved_in_own_area": 19,
+    "county_coordinates_changed": 0,
+    "province_or_coast_geometry_changed": false,
+    "province_boundary_max_shift_degrees": 0,
+    "geometry_replacements": 12,
+    "removed_lines": 2,
+    "new_boundary_features": 4
+  },
+  {
+    "year": 316,
+    "changes": [
+      {
+        "type": "xinye_fit_slivers_to_xiangyang",
+        "from": "p166",
+        "to": "p163",
+        "area_degrees2": 0.0034670916714997055
+      },
+      {
+        "type": "chaoyang_to_yiyang_short_passage",
+        "from": "p166",
+        "to": "p165",
+        "area_degrees2": 0.011923069090000267
+      },
+      {
+        "type": "huailing_across_xiapi_southeast_corner",
+        "from": "p150",
+        "to": "p158",
+        "area_degrees2": 0.010454934968999987
+      }
+    ],
+    "connected_entities": [
+      "p150",
+      "p158",
+      "p163",
+      "p165",
+      "p166"
+    ],
+    "union_area_difference": 1.4260000198972033e-09,
+    "overlap_area": 2.19957385638736e-11,
+    "county_points_preserved_in_own_area": 19,
+    "county_coordinates_changed": 0,
+    "province_or_coast_geometry_changed": false,
+    "province_boundary_max_shift_degrees": 0,
+    "geometry_replacements": 12,
+    "removed_lines": 2,
+    "new_boundary_features": 4
+  }
+]

@@ -2592,6 +2592,19 @@
         sourceLabel:'《兩晉郡級封國相關分析》；各項原典、論文及可視化推定分列於相關封國資料。',
         sourceLinks:(window.JIN_MULTI_KINGDOMS?.sources||[]).filter(source=>review.some(item=>item.source_ids.includes(source.id))&&source.url)
       },'jin-kingdom-relation'));
+      const abolished=window.JIN_FIEF_ABOLITIONS.records;
+      box.appendChild(createAuxButton('廢國、改封後改郡：本輪更名與依據',{
+        title:'廢國、改封後改郡',summary:window.JIN_FIEF_ABOLITIONS.policy,
+        paragraphs:abolished.map(item=>`${item.begin}年起${item.name}：${item.source_note}`),
+        sourceLinks:[...new Map(abolished.flatMap(item=>item.source_links).map(source=>[source.url,source])).values()]
+      },'jin-kingdom-relation'));
+      const mapFiefs=window.JIN_MAP_REFERENCE_FIEFS.records;
+      box.appendChild(createAuxButton('地圖參考區內仍存續的封國',{
+        title:'地圖參考區內仍存續的封國',
+        summary:'文字依西晉實際控制範圍取捨；地圖依三底圖範圍呈現有據封國，不因此認定其地仍受西晉實際控制。',
+        paragraphs:mapFiefs.map(item=>`${item.begin}—${item.end}年 ${item.name}：${item.source_note}`),
+        sourceLinks:[...new Map(mapFiefs.flatMap(item=>item.source_links).map(source=>[source.url,source])).values()]
+      },'jin-kingdom-relation'));
     }
     $('footerText').textContent=currentDynasty.key==='chen'
       ? '資料依據：《中國行政區劃通史·三國兩晉南朝卷（下）》南朝陳政區；master_officials_final.xlsx任次主表及既有人工裁決、證據映射；魯力《魏晉南北朝方鎮年表新編·宋齊梁陳卷》方鎮長官；史圖館中國歷代疆域變遷地圖；封爵資料另見頁面說明。'
