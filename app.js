@@ -2024,21 +2024,27 @@
     const legendGap=14/scale;
     let legendX=plot[0]+legendGap,legendY=baseHeight+42/scale,legendRowHeight=0,legendCount=0,renderHeight=baseHeight;
     labels.sort((a,b)=>b.priority-a.priority||a.y-b.y||a.x-b.x||a.text.localeCompare(b.text));
-    for(const source of labels) {
+    const pending=[...labels];
+    for(const source of pending) {
       const isArea=source.kind.includes('area');
       const limits=source.politicalLabel?[28,38]:source.smallAnnotation?[9,10]:isArea?(source.level==='state'?[22,28]:[17,21]):(source.level==='county'?[11,12]:[12,13]);
       const preferredSize=Math.max(limits[0],Math.min(limits[1],source.fontSize*scale))/scale;
       // A narrow Jin prefecture can fit its range name at a smaller size.
-      // Try the usual large type first; every fallback still obeys its border
-      // and the shared collision rules. Other maps retain their original size.
+      // Try the usual large type and then smaller type inside its border first;
+      // the later branch-name callout still uses the same collision rules.
       const fontSizes=[preferredSize,...(isArea&&source.allowAreaFontShrink?[14,12,10].map(size=>size/scale).filter(size=>size<preferredSize):[])];
       let placement=null,fontSize=preferredSize,label,width,height;
       for(const candidateSize of fontSizes) {
         fontSize=candidateSize;label={...source,fontSize};width=labelWidth(label.text,fontSize)+fontSize*.35;height=fontSize*1.4;
+        if(source.areaNameCallout)label.areaGuard=null;
         for(const [x,y,anchor] of labelCandidates(label,width,height,plot)) {
           const left=anchor==='middle'?x-width/2:anchor==='end'?x-width:x;
           const box=[left,y-height/2,left+width,y+height/2];
           if(box[0]<plot[0]||box[1]<plot[1]||box[2]>plot[2]||box[3]>plot[3])continue;
+          if(source.areaNameCallout) {
+            const distance=Math.hypot(Math.max(box[0]-source.x,0,source.x-box[2]),Math.max(box[1]-source.y,0,source.y-box[3]));
+            if(distance<fontSize||distance>fontSize*6)continue;
+          }
           if(label.areaGuard&&!label.areaGuard.containsBox([box[0]-1.4/scale,box[1]-1.4/scale,box[2]+1.4/scale,box[3]+1.4/scale]))continue;
           if(label.outsideChen) {
             const halo=1.4/scale;
@@ -2047,6 +2053,11 @@
           placement={x,y,anchor,box};break;
         }
         if(placement)break;
+      }
+      // Keep all existing placements first. Only a Jin branch name that could
+      // not fit inside its own area is retried nearby, with a short leader.
+      if(!placement&&source.allowAreaNameCallout&&!source.areaNameCallout) {
+        pending.push({...source,areaNameCallout:true});continue;
       }
       // Do not send northern reference names to the southern overflow panel.
       // A border label with no room remains available from its original point.
@@ -2087,7 +2098,7 @@
       const sourceEndX=Math.max(placement.box[0],Math.min(placement.box[2],label.x));
       const sourceEndY=Math.max(placement.box[1],Math.min(placement.box[3],label.y));
       const displacedArea=!label.kind.includes('area')||Math.hypot(sourceEndX-label.x,sourceEndY-label.y)>fontSize*.9;
-      if((!isArea||label.politicalLabel)&&displacedArea&&Math.hypot(endX-anchorX,endY-anchorY)>fontSize*.9) {
+      if((!isArea||label.politicalLabel||label.areaNameCallout)&&displacedArea&&Math.hypot(endX-anchorX,endY-anchorY)>fontSize*.9) {
         const line=svgNode('line',{x1:anchorX,y1:anchorY,x2:endX,y2:endY,class:'map-label-leader','data-label-level':label.level,'data-map-key':label.mapKey,stroke:'#766d5b','stroke-width':.8/scale,'stroke-opacity':.7,'pointer-events':'none'});
         leaders.appendChild(line);
         text.addEventListener('mouseenter',()=>line.classList.add('is-hover'));

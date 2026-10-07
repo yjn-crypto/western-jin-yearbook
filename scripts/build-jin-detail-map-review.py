@@ -2,7 +2,7 @@
 """Dated, local amendments layered after the existing 289 and connectivity work.
 Run with the bundled Python, PYTHONPATH=work/_gis_deps. No annual atlas is rebuilt.
 """
-import gzip, hashlib, json, subprocess
+import gzip, hashlib, json, subprocess, sys
 from copy import deepcopy
 from pathlib import Path
 from shapely import normalize, set_precision
@@ -30,6 +30,75 @@ def curve(points):
             t=k/15
             result.append(tuple(.5*((2*b[j])+(-a[j]+c[j])*t+(2*a[j]-5*b[j]+4*c[j]-d[j])*t*t+(-a[j]+3*b[j]-3*c[j]+d[j])*t*t*t) for j in [0,1]))
     return result+[points[-1]]
+
+def enclave_annotations(areas,year,colors):
+    """Name single-commandery fragments separately from whole branch commanderies."""
+    result=[]
+    for fid in ['jin-汝南','jin-吳','jin-西陽','jin-東海']:
+        members=[f for f in areas if f['properties'].get('fief_id')==fid]
+        if not members:continue
+        country_parts=parts(clean(unary_union([f['_shape'] for f in members])))
+        primary_points=[max(parts(f['_shape']),key=lambda g:g.area).representative_point()
+                        for f in members if f['properties'].get('member_role')!='branch']
+        primary_parts=[part for part in country_parts if any(part.covers(point) for point in primary_points)]
+        for member in members:
+            p=member['properties'];pid=p.get('entity_id') or p['id']
+            components=sorted(parts(member['_shape']),key=lambda g:-g.area)
+            def annotation(component,name,role,suffix):
+                result.append({'geometry':component.representative_point(),'properties':{
+                    'layer':'labels','level':'fief','display_level':'prefecture','entity_id':role+'-'+pid+'-'+suffix,
+                    'source_entity_id':p.get('entity_id'),'prefecture_id':p.get('entity_id'),'parent_fief_id':fid,
+                    'name':name,'display_name':name,'year':year,'label_type':'prefecture','show_label':True,
+                    'color':colors[fid],'coordinate_role':role,'font_size':9,
+                    'source':'按單個郡級面判斷飛地；獨立支郡保留全名，所屬另以副注表示。邊界與治所不變。'}})
+            for n,component in enumerate(components[1:],1):
+                if component.area>=.0001:
+                    annotation(component,'屬'+p['display_name'],'enclave_affiliation_annotation',str(n))
+            if p.get('member_role')=='branch' and primary_parts and not any(
+                    part.covers(components[0].representative_point()) for part in primary_parts):
+                annotation(components[0],'屬'+fid.removeprefix('jin-')+'國','branch_affiliation_annotation','main')
+    return result
+
+def refresh_annotations():
+    """Update labels only, reusing every saved area, line and seat coordinate."""
+    subprocess.run([str(NODE),'scripts/export-jin-detail-map-input.cjs'],cwd=ROOT,check=True)
+    target=ROOT/'data/jin-detail-map-review-20261007.js'
+    out=json.loads(target.read_text().split(' = ',1)[1].rstrip(';\n'))
+    report_path=ROOT/'reports/jin-detail-map-review-20261007.json'
+    report=json.loads(report_path.read_text());report_by_year={r['year']:r for r in report}
+    roles={'enclave_affiliation_annotation','branch_affiliation_annotation'}
+    for year in range(266,317):
+        source=json.loads((Path('/private/tmp/jin-detail-input')/f'{year}.json').read_text())
+        patch=out['years'][str(year)]
+        old_annotations=[f for f in patch['add'] if f['properties'].get('coordinate_role') in roles]
+        patch['add']=[f for f in patch['add'] if f not in old_annotations]
+        annotation_keys={key(f) for f in old_annotations}
+        patch['remove']=[k for k in patch['remove'] if k not in annotation_keys]
+        features=[f for f in source['geojson']['features'] if key(f) not in patch['remove']]
+        features += [{'geometry':out['geometries'][f['geometry_id']],'properties':f['properties']} for f in patch['add']]
+        areas=[{**f,'_shape':shape(f['geometry'])} for f in features if f['properties']['layer'] in ['prefecture_areas','reference_prefecture_areas']]
+        for f in patch['add']:
+            p=f['properties']
+            if p['layer']=='prefecture_seats' and p.get('entity_id')=='p252':
+                area_properties=next(a['properties'] for a in areas if a['properties'].get('entity_id')=='p252')
+                for field in ['name','display_name','fief_id','member_role','membership_evidence','color']:
+                    p[field]=area_properties.get(field)
+                if not p['fief_id']:p['color']=None
+        colors={**source['fiefColors'],**patch['colors']}
+        labels=enclave_annotations(areas,year,colors)
+        for item in labels:
+            geometry=mapping(normalize(item['geometry']));raw=json.dumps(geometry,separators=(',',':'))
+            gid='detail-'+hashlib.sha256(raw.encode()).hexdigest()[:16];out['geometries'][gid]=geometry
+            f={'type':'Feature','geometry_id':gid,'properties':item['properties']}
+            patch['add'].append(f);patch['remove'].append(key(f))
+        patch['remove'].sort()
+        report_by_year[year]['enclave_affiliation_labels']=sum(i['properties']['coordinate_role']=='enclave_affiliation_annotation' for i in labels)
+        report_by_year[year]['branch_affiliation_labels']=sum(i['properties']['coordinate_role']=='branch_affiliation_annotation' for i in labels)
+    used={f['geometry_id'] for p in out['years'].values() for f in p['add']}
+    out['geometries']={gid:g for gid,g in out['geometries'].items() if gid in used}
+    target.write_text('window.JIN_DETAIL_MAP_REVIEW = '+json.dumps(out,ensure_ascii=False,separators=(',',':'))+';\n')
+    report_path.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
+    print('Labels only:',target.stat().st_size,'bytes; unchanged area/line/seat geometries.')
 
 def build():
     subprocess.run([str(NODE),'scripts/export-jin-detail-map-input.cjs'],cwd=ROOT,check=True)
@@ -168,6 +237,7 @@ def build():
                 jp=source_seat['properties']
                 add(shape(kao['geometry']),{**deepcopy(jp),'entity_id':'c0128','name':'考城','display_name':'考城','county_key':'p252/c0128','source_id':'82331','source_name':'考城縣','source':'CHGIS_V6:v6_time_cnty_pts_utf_wgs84','prefecture_id':'p252','prefecture_name':name})
                 add(shape(jiyang['geometry']),{'layer':'prefecture_seats','level':'prefecture','entity_id':'p252','name':name,'display_name':name,'state_id':'s02','state_name':'兗州','year':year,
+                    'fief_id':fid,'member_role':'branch' if fid else None,'membership_evidence':'inferred' if fid else None,
                     'seat_name':'濟陽','seat_county_id':'c0120','seat_county_key':'p252/c0120','source_id':'44379','source':'CHGIS濟陽縣原坐標；郡治依首縣展示','coordinate_role':'prefecture_seat'})
                 remove(source_seat) # Same-site symbols retain only the highest level.
             # Old p015 has always used the Jiyin source compartment, not Jiyang.
@@ -237,22 +307,10 @@ def build():
                 'source':NOTE,'geometry_status':'local_detail_fief_union','actual_control_claim':False})
             for f in fs:
                 if f['properties'].get('fief_id')==fid:touch(f);f['properties']['color']=color
-        # Label sizeable separate components of the two requested fiefs in place.
-        enclave_count=0
-        for fid in ['jin-西陽','jin-東海']:
-            if fid not in unions:continue
-            components=sorted(parts(unions[fid]),key=lambda g:-g.area)
-            if len(components)<2:continue
-            for n,component in enumerate(components[1:],1):
-                if component.area<.0001:continue
-                point=component.representative_point()
-                # A component already bearing a full member name still gets its
-                # country affiliation; this is essential for remote branch land.
-                add(point,{'layer':'labels','level':'fief','display_level':'prefecture','entity_id':'enclave-'+fid+'-'+str(n),'name':'屬'+fid.replace('jin-','')+'國',
-                    'display_name':'屬'+fid.replace('jin-','')+'國','year':year,'label_type':'prefecture','show_label':True,'parent_fief_id':fid,'color':colors[fid],
-                    'coordinate_role':'enclave_affiliation_annotation','source':'既有多片封國面之所屬提示；不改郡界、縣屬或治所。','font_size':9})
-                enclave_count+=1
-        checks['enclave_affiliation_labels']=enclave_count
+        labels=enclave_annotations(areas,year,colors)
+        for item in labels:add(item['geometry'],item['properties'])
+        checks['enclave_affiliation_labels']=sum(i['properties']['coordinate_role']=='enclave_affiliation_annotation' for i in labels)
+        checks['branch_affiliation_labels']=sum(i['properties']['coordinate_role']=='branch_affiliation_annotation' for i in labels)
         patch['remove']=sorted(changed)
         for f in fs:
             if key(f) in changed:patch['add'].append({'type':'Feature','geometry_id':save(f['_shape']),'properties':f['properties']})
@@ -262,4 +320,5 @@ def build():
     (ROOT/'reports/jin-detail-map-review-20261007.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
     print(len(out['geometries']),'geometries;',target.stat().st_size,'bytes')
 
-if __name__=='__main__':build()
+if __name__=='__main__':
+    refresh_annotations() if '--labels-only' in sys.argv else build()

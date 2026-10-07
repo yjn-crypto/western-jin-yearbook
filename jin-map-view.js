@@ -216,6 +216,7 @@
         const fiefId=p.fief_id||rp.fief_id;
         labels.push({text:text+(inferred?'※':''),sourceName:p.name||name,x,y,level:'prefecture',entityId:range.entityId,mapKey:range.mapKey,mapGroup:range.mapKey,
           kind:'prefecture-area',fontSize:16.5,priority:p.is_reference?300:900,isTextAnchor:true,areaGuard:areaGuard?.(d),areaId:range.mapKey,allowAreaFontShrink:true,
+          allowAreaNameCallout:p.member_role==='branch'||rp.member_role==='branch',
           labelIdentity:fiefId?`jin-fief:${fiefId}`:null,fief:Boolean(fiefId),color:p.is_reference?'#787b7d':fiefId?'#493b2a':null,uncertain:inferred,
           coordinateRole:range.original?'image_label_anchor_not_seat':'derived_area_label_not_seat',originalAnchorId:range.original?.id||null});
         features.push({entity_id:range.entityId,x,y,level:'prefecture',label:text,mapKey:range.mapKey,coordinate_role:range.original?'image_label_anchor_not_seat':'derived_area_label_not_seat',source:range.original?'原图已确认郡名文字锚点':p.source});
