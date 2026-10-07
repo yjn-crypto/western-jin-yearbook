@@ -1,0 +1,8284 @@
+{
+  "reviewed_at": "2026-10-07",
+  "scope": "western_jin",
+  "anchor_year": 304,
+  "policy": "304年每郡第一縣為郡治，指定八郡不標郡治；其他年以304推定，有通史遷治記錄則隨之；同地只顯最高級符號",
+  "state_seats": [
+    {
+      "state_id": "s01",
+      "state_name": "司州",
+      "prefecture_id": "p001",
+      "county_id": "c0001",
+      "entity_key": "p001/c0001",
+      "name": "洛陽",
+      "basis": "本輪Word指定"
+    },
+    {
+      "state_id": "s02",
+      "state_name": "兗州",
+      "prefecture_id": "p014",
+      "county_id": "c0130",
+      "entity_key": "p014/c0130",
+      "name": "廩丘",
+      "basis": "本輪Word指定"
+    },
+    {
+      "state_id": "s03",
+      "state_name": "豫州",
+      "prefecture_id": "p025",
+      "county_id": "c0231",
+      "entity_key": "p025/c0231",
+      "name": "陳",
+      "basis": "本輪Word指定"
+    },
+    {
+      "state_id": "s04",
+      "state_name": "冀州",
+      "prefecture_id": "p035",
+      "county_id": "c0293",
+      "entity_key": "p035/c0293",
+      "name": "長樂",
+      "basis": "本輪Word指定"
+    },
+    {
+      "state_id": "s05",
+      "state_name": "幽州",
+      "prefecture_id": "p049",
+      "county_id": "c0385",
+      "entity_key": "p049/c0385",
+      "name": "薊",
+      "basis": "本輪Word指定"
+    },
+    {
+      "state_id": "s06",
+      "state_name": "平州",
+      "prefecture_id": "p061",
+      "county_id": "c0437",
+      "entity_key": "p061/c0437",
+      "name": "襄平",
+      "basis": "本輪Word指定"
+    },
+    {
+      "state_id": "s07",
+      "state_name": "並州",
+      "prefecture_id": "p065",
+      "county_id": "c0461",
+      "entity_key": "p065/c0461",
+      "name": "晉陽",
+      "basis": "本輪Word指定"
+    },
+    {
+      "state_id": "s08",
+      "state_name": "雍州",
+      "prefecture_id": "p071",
+      "county_id": "c0506",
+      "entity_key": "p071/c0506",
+      "name": "長安",
+      "basis": "本輪Word指定"
+    },
+    {
+      "state_id": "s09",
+      "state_name": "涼州",
+      "prefecture_id": "p086",
+      "county_id": "c0590",
+      "entity_key": "p086/c0590",
+      "name": "姑臧",
+      "basis": "本輪Word指定"
+    },
+    {
+      "state_id": "s10",
+      "state_name": "秦州",
+      "prefecture_id": "p095",
+      "county_id": "c0643",
+      "entity_key": "p095/c0643",
+      "name": "上邽",
+      "basis": "本輪Word指定"
+    },
+    {
+      "state_id": "s11",
+      "state_name": "梁州",
+      "prefecture_id": "p101",
+      "county_id": "c0675",
+      "entity_key": "p101/c0675",
+      "name": "南鄭",
+      "basis": "本輪Word指定"
+    },
+    {
+      "state_id": "s12",
+      "state_name": "益州",
+      "prefecture_id": "p115",
+      "county_id": "c0756",
+      "entity_key": "p115/c0756",
+      "name": "成都",
+      "basis": "本輪Word指定"
+    },
+    {
+      "state_id": "s13",
+      "state_name": "寧州",
+      "prefecture_id": "p137",
+      "county_id": "c0928",
+      "entity_key": "p137/c0928",
+      "name": "滇池",
+      "basis": "本輪Word指定"
+    },
+    {
+      "state_id": "s14",
+      "state_name": "青州",
+      "prefecture_id": "p141",
+      "county_id": "c0943",
+      "entity_key": "p141/c0943",
+      "name": "臨淄",
+      "basis": "本輪Word指定"
+    },
+    {
+      "state_id": "s15",
+      "state_name": "徐州",
+      "prefecture_id": "p149",
+      "county_id": "c1012",
+      "entity_key": "p149/c1012",
+      "name": "彭城",
+      "basis": "本輪Word指定"
+    },
+    {
+      "state_id": "s16",
+      "state_name": "荊州",
+      "prefecture_id": "p161",
+      "county_id": "c1111",
+      "entity_key": "p161/c1111",
+      "name": "江陵",
+      "basis": "本輪Word指定"
+    },
+    {
+      "state_id": "s17",
+      "state_name": "揚州",
+      "prefecture_id": "p189",
+      "county_id": "c1337",
+      "entity_key": "p189/c1337",
+      "name": "秣陵",
+      "basis": "本輪Word指定"
+    },
+    {
+      "state_id": "s18",
+      "state_name": "湘州",
+      "prefecture_id": "p207",
+      "county_id": "c1506",
+      "entity_key": "p207/c1506",
+      "name": "臨湘",
+      "basis": "通史湘州原文"
+    },
+    {
+      "state_id": "s19",
+      "state_name": "江州",
+      "prefecture_id": "p217",
+      "county_id": "c1577",
+      "entity_key": "p217/c1577",
+      "name": "南昌",
+      "basis": "本輪Word指定"
+    },
+    {
+      "state_id": "s20",
+      "state_name": "交州",
+      "prefecture_id": "p229",
+      "county_id": "c1672",
+      "entity_key": "p229/c1672",
+      "name": "龍編",
+      "basis": "本輪Word指定"
+    },
+    {
+      "state_id": "s21",
+      "state_name": "廣州",
+      "prefecture_id": "p235",
+      "county_id": "c1730",
+      "entity_key": "p235/c1730",
+      "name": "番禺",
+      "basis": "本輪Word指定"
+    }
+  ],
+  "unknown_prefecture_seats": [
+    {
+      "id": "p145",
+      "name": "城陽郡"
+    },
+    {
+      "id": "p148",
+      "name": "高密國"
+    },
+    {
+      "id": "p154",
+      "name": "東莞郡"
+    },
+    {
+      "id": "p158",
+      "name": "淮陵國"
+    },
+    {
+      "id": "p166",
+      "name": "新野國"
+    },
+    {
+      "id": "p230",
+      "name": "新昌郡"
+    },
+    {
+      "id": "p231",
+      "name": "武平郡"
+    },
+    {
+      "id": "p233",
+      "name": "九德郡"
+    }
+  ],
+  "prefecture_seats": [
+    {
+      "prefecture_id": "p001",
+      "prefecture_name": "河南尹",
+      "state_id": "s01",
+      "county_id": "c0001",
+      "county_name": "洛陽",
+      "county_order": [
+        {
+          "id": "c0001",
+          "name": "洛陽",
+          "entity_key": "p001/c0001"
+        },
+        {
+          "id": "c0002",
+          "name": "鞏",
+          "entity_key": "p001/c0002"
+        },
+        {
+          "id": "c0003",
+          "name": "河南",
+          "entity_key": "p001/c0003"
+        },
+        {
+          "id": "c0004",
+          "name": "河陰",
+          "entity_key": "p001/c0004"
+        },
+        {
+          "id": "c0005",
+          "name": "成皋",
+          "entity_key": "p001/c0005"
+        },
+        {
+          "id": "c0006",
+          "name": "緱氏",
+          "entity_key": "p001/c0006"
+        },
+        {
+          "id": "c0007",
+          "name": "新城",
+          "entity_key": "p001/c0007"
+        },
+        {
+          "id": "c0008",
+          "name": "陸渾",
+          "entity_key": "p001/c0008"
+        },
+        {
+          "id": "c0009",
+          "name": "陽翟",
+          "entity_key": "p001/c0009"
+        },
+        {
+          "id": "c0010",
+          "name": "梁",
+          "entity_key": "p001/c0010"
+        },
+        {
+          "id": "c0012",
+          "name": "陽城",
+          "entity_key": "p001/c0012"
+        },
+        {
+          "id": "c0013",
+          "name": "新安",
+          "entity_key": "p001/c0013"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p002",
+      "prefecture_name": "滎陽郡",
+      "state_id": "s01",
+      "county_id": "c0014",
+      "county_name": "滎陽",
+      "county_order": [
+        {
+          "id": "c0014",
+          "name": "滎陽",
+          "entity_key": "p002/c0014"
+        },
+        {
+          "id": "c0015",
+          "name": "京",
+          "entity_key": "p002/c0015"
+        },
+        {
+          "id": "c0016",
+          "name": "密",
+          "entity_key": "p002/c0016"
+        },
+        {
+          "id": "c0017",
+          "name": "卷",
+          "entity_key": "p002/c0017"
+        },
+        {
+          "id": "c0018",
+          "name": "陽武",
+          "entity_key": "p002/c0018"
+        },
+        {
+          "id": "c0019",
+          "name": "苑陵",
+          "entity_key": "p002/c0019"
+        },
+        {
+          "id": "c0020",
+          "name": "中牟",
+          "entity_key": "p002/c0020"
+        },
+        {
+          "id": "c0021",
+          "name": "開封",
+          "entity_key": "p002/c0021"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p003",
+      "prefecture_name": "弘農郡",
+      "state_id": "s01",
+      "county_id": "c0022",
+      "county_name": "弘農",
+      "county_order": [
+        {
+          "id": "c0022",
+          "name": "弘農",
+          "entity_key": "p003/c0022"
+        },
+        {
+          "id": "c0023",
+          "name": "湖",
+          "entity_key": "p003/c0023"
+        },
+        {
+          "id": "c0024",
+          "name": "宜陽",
+          "entity_key": "p003/c0024"
+        },
+        {
+          "id": "c0025",
+          "name": "黽池",
+          "entity_key": "p003/c0025"
+        },
+        {
+          "id": "c0026",
+          "name": "華陰",
+          "entity_key": "p003/c0026"
+        },
+        {
+          "id": "c0027",
+          "name": "陝",
+          "entity_key": "p003/c0027"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p004",
+      "prefecture_name": "上洛郡",
+      "state_id": "s01",
+      "county_id": "c0031",
+      "county_name": "商",
+      "county_order": [
+        {
+          "id": "c0031",
+          "name": "商",
+          "entity_key": "p004/c0031"
+        },
+        {
+          "id": "c0032",
+          "name": "上洛",
+          "entity_key": "p004/c0032"
+        },
+        {
+          "id": "c0033",
+          "name": "盧氏",
+          "entity_key": "p004/c0033"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p005",
+      "prefecture_name": "平陽郡",
+      "state_id": "s01",
+      "county_id": "c0036",
+      "county_name": "平陽",
+      "county_order": [
+        {
+          "id": "c0036",
+          "name": "平陽",
+          "entity_key": "p005/c0036"
+        },
+        {
+          "id": "c0037",
+          "name": "楊",
+          "entity_key": "p005/c0037"
+        },
+        {
+          "id": "c0038",
+          "name": "端氏",
+          "entity_key": "p005/c0038"
+        },
+        {
+          "id": "c0039",
+          "name": "永安",
+          "entity_key": "p005/c0039"
+        },
+        {
+          "id": "c0040",
+          "name": "蒲子",
+          "entity_key": "p005/c0040"
+        },
+        {
+          "id": "c0041",
+          "name": "狐讘",
+          "entity_key": "p005/c0041"
+        },
+        {
+          "id": "c0042",
+          "name": "襄陵",
+          "entity_key": "p005/c0042"
+        },
+        {
+          "id": "c0043",
+          "name": "絳邑",
+          "entity_key": "p005/c0043"
+        },
+        {
+          "id": "c0044",
+          "name": "濩澤",
+          "entity_key": "p005/c0044"
+        },
+        {
+          "id": "c0045",
+          "name": "臨汾",
+          "entity_key": "p005/c0045"
+        },
+        {
+          "id": "c0046",
+          "name": "北屈",
+          "entity_key": "p005/c0046"
+        },
+        {
+          "id": "c0047",
+          "name": "皮氏",
+          "entity_key": "p005/c0047"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p006",
+      "prefecture_name": "河東郡",
+      "state_id": "s01",
+      "county_id": "c0048",
+      "county_name": "安邑",
+      "county_order": [
+        {
+          "id": "c0048",
+          "name": "安邑",
+          "entity_key": "p006/c0048"
+        },
+        {
+          "id": "c0049",
+          "name": "聞喜",
+          "entity_key": "p006/c0049"
+        },
+        {
+          "id": "c0050",
+          "name": "東垣",
+          "entity_key": "p006/c0050"
+        },
+        {
+          "id": "c0051",
+          "name": "汾陰",
+          "entity_key": "p006/c0051"
+        },
+        {
+          "id": "c0052",
+          "name": "大陽",
+          "entity_key": "p006/c0052"
+        },
+        {
+          "id": "c0053",
+          "name": "猗氏",
+          "entity_key": "p006/c0053"
+        },
+        {
+          "id": "c0054",
+          "name": "解",
+          "entity_key": "p006/c0054"
+        },
+        {
+          "id": "c0055",
+          "name": "蒲阪",
+          "entity_key": "p006/c0055"
+        },
+        {
+          "id": "c0056",
+          "name": "河北",
+          "entity_key": "p006/c0056"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p007",
+      "prefecture_name": "汲郡",
+      "state_id": "s01",
+      "county_id": "c0057",
+      "county_name": "汲",
+      "county_order": [
+        {
+          "id": "c0057",
+          "name": "汲",
+          "entity_key": "p007/c0057"
+        },
+        {
+          "id": "c0058",
+          "name": "朝歌",
+          "entity_key": "p007/c0058"
+        },
+        {
+          "id": "c0059",
+          "name": "共",
+          "entity_key": "p007/c0059"
+        },
+        {
+          "id": "c0060",
+          "name": "林慮",
+          "entity_key": "p007/c0060"
+        },
+        {
+          "id": "c0061",
+          "name": "獲嘉",
+          "entity_key": "p007/c0061"
+        },
+        {
+          "id": "c0062",
+          "name": "修武",
+          "entity_key": "p007/c0062"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p008",
+      "prefecture_name": "河內郡",
+      "state_id": "s01",
+      "county_id": "c0063",
+      "county_name": "野王",
+      "county_order": [
+        {
+          "id": "c0063",
+          "name": "野王",
+          "entity_key": "p008/c0063"
+        },
+        {
+          "id": "c0064",
+          "name": "州",
+          "entity_key": "p008/c0064"
+        },
+        {
+          "id": "c0065",
+          "name": "懷",
+          "entity_key": "p008/c0065"
+        },
+        {
+          "id": "c0066",
+          "name": "平皋",
+          "entity_key": "p008/c0066"
+        },
+        {
+          "id": "c0067",
+          "name": "河陽",
+          "entity_key": "p008/c0067"
+        },
+        {
+          "id": "c0068",
+          "name": "沁水",
+          "entity_key": "p008/c0068"
+        },
+        {
+          "id": "c0069",
+          "name": "軹",
+          "entity_key": "p008/c0069"
+        },
+        {
+          "id": "c0070",
+          "name": "山陽",
+          "entity_key": "p008/c0070"
+        },
+        {
+          "id": "c0071",
+          "name": "溫",
+          "entity_key": "p008/c0071"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p009",
+      "prefecture_name": "廣平郡",
+      "state_id": "s01",
+      "county_id": "c0077",
+      "county_name": "曲梁",
+      "county_order": [
+        {
+          "id": "c0077",
+          "name": "曲梁",
+          "entity_key": "p009/c0077"
+        },
+        {
+          "id": "c0078",
+          "name": "廣平",
+          "entity_key": "p009/c0078"
+        },
+        {
+          "id": "c0079",
+          "name": "邯鄲",
+          "entity_key": "p009/c0079"
+        },
+        {
+          "id": "c0080",
+          "name": "易陽",
+          "entity_key": "p009/c0080"
+        },
+        {
+          "id": "c0081",
+          "name": "武安",
+          "entity_key": "p009/c0081"
+        },
+        {
+          "id": "c0082",
+          "name": "涉",
+          "entity_key": "p009/c0082"
+        },
+        {
+          "id": "c0083",
+          "name": "襄國",
+          "entity_key": "p009/c0083"
+        },
+        {
+          "id": "c0084",
+          "name": "南和",
+          "entity_key": "p009/c0084"
+        },
+        {
+          "id": "c0085",
+          "name": "任",
+          "entity_key": "p009/c0085"
+        },
+        {
+          "id": "c0086",
+          "name": "列人",
+          "entity_key": "p009/c0086"
+        },
+        {
+          "id": "c0087",
+          "name": "肥鄉",
+          "entity_key": "p009/c0087"
+        },
+        {
+          "id": "c0088",
+          "name": "臨水",
+          "entity_key": "p009/c0088"
+        },
+        {
+          "id": "c0089",
+          "name": "廣年",
+          "entity_key": "p009/c0089"
+        },
+        {
+          "id": "c0090",
+          "name": "斥漳",
+          "entity_key": "p009/c0090"
+        },
+        {
+          "id": "c0091",
+          "name": "平恩",
+          "entity_key": "p009/c0091"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p010",
+      "prefecture_name": "陽平郡",
+      "state_id": "s01",
+      "county_id": "c0092",
+      "county_name": "館陶",
+      "county_order": [
+        {
+          "id": "c0092",
+          "name": "館陶",
+          "entity_key": "p010/c0092"
+        },
+        {
+          "id": "c0093",
+          "name": "元城",
+          "entity_key": "p010/c0093"
+        },
+        {
+          "id": "c0094",
+          "name": "清淵",
+          "entity_key": "p010/c0094"
+        },
+        {
+          "id": "c0095",
+          "name": "發乾",
+          "entity_key": "p010/c0095"
+        },
+        {
+          "id": "c0096",
+          "name": "樂平",
+          "entity_key": "p010/c0096"
+        },
+        {
+          "id": "c0097",
+          "name": "陽平",
+          "entity_key": "p010/c0097"
+        },
+        {
+          "id": "c0098",
+          "name": "東武陽",
+          "entity_key": "p010/c0098"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p011",
+      "prefecture_name": "頓丘郡",
+      "state_id": "s01",
+      "county_id": "c0103",
+      "county_name": "頓丘",
+      "county_order": [
+        {
+          "id": "c0103",
+          "name": "頓丘",
+          "entity_key": "p011/c0103"
+        },
+        {
+          "id": "c0104",
+          "name": "繁陽",
+          "entity_key": "p011/c0104"
+        },
+        {
+          "id": "c0105",
+          "name": "陰安",
+          "entity_key": "p011/c0105"
+        },
+        {
+          "id": "c0106",
+          "name": "衛",
+          "entity_key": "p011/c0106"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p012",
+      "prefecture_name": "魏郡",
+      "state_id": "s01",
+      "county_id": "c0107",
+      "county_name": "鄴",
+      "county_order": [
+        {
+          "id": "c0107",
+          "name": "鄴",
+          "entity_key": "p012/c0107"
+        },
+        {
+          "id": "c0108",
+          "name": "內黃",
+          "entity_key": "p012/c0108"
+        },
+        {
+          "id": "c0109",
+          "name": "長樂",
+          "entity_key": "p012/c0109"
+        },
+        {
+          "id": "c0110",
+          "name": "魏",
+          "entity_key": "p012/c0110"
+        },
+        {
+          "id": "c0111",
+          "name": "蕩陰",
+          "entity_key": "p012/c0111"
+        },
+        {
+          "id": "c0112",
+          "name": "安陽",
+          "entity_key": "p012/c0112"
+        },
+        {
+          "id": "c0113",
+          "name": "斥丘",
+          "entity_key": "p012/c0113"
+        },
+        {
+          "id": "c0114",
+          "name": "黎陽",
+          "entity_key": "p012/c0114"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p013",
+      "prefecture_name": "陳留國",
+      "state_id": "s02",
+      "county_id": "c0116",
+      "county_name": "小黃",
+      "county_order": [
+        {
+          "id": "c0116",
+          "name": "小黃",
+          "entity_key": "p013/c0116"
+        },
+        {
+          "id": "c0117",
+          "name": "浚儀",
+          "entity_key": "p013/c0117"
+        },
+        {
+          "id": "c0118",
+          "name": "封丘",
+          "entity_key": "p013/c0118"
+        },
+        {
+          "id": "c0119",
+          "name": "酸棗",
+          "entity_key": "p013/c0119"
+        },
+        {
+          "id": "c0120",
+          "name": "濟陽",
+          "entity_key": "p013/c0120"
+        },
+        {
+          "id": "c0121",
+          "name": "長垣",
+          "entity_key": "p013/c0121"
+        },
+        {
+          "id": "c0122",
+          "name": "雍丘",
+          "entity_key": "p013/c0122"
+        },
+        {
+          "id": "c0123",
+          "name": "尉氏",
+          "entity_key": "p013/c0123"
+        },
+        {
+          "id": "c0124",
+          "name": "襄邑",
+          "entity_key": "p013/c0124"
+        },
+        {
+          "id": "c0125",
+          "name": "外黃",
+          "entity_key": "p013/c0125"
+        },
+        {
+          "id": "c0126",
+          "name": "圉",
+          "entity_key": "p013/c0126"
+        },
+        {
+          "id": "c0127",
+          "name": "扶溝",
+          "entity_key": "p013/c0127"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p014",
+      "prefecture_name": "濮陽郡",
+      "state_id": "s02",
+      "county_id": "c0129",
+      "county_name": "濮陽",
+      "county_order": [
+        {
+          "id": "c0129",
+          "name": "濮陽",
+          "entity_key": "p014/c0129"
+        },
+        {
+          "id": "c0130",
+          "name": "廩丘",
+          "entity_key": "p014/c0130"
+        },
+        {
+          "id": "c0131",
+          "name": "白馬",
+          "entity_key": "p014/c0131"
+        },
+        {
+          "id": "c0132",
+          "name": "鄄城",
+          "entity_key": "p014/c0132"
+        },
+        {
+          "id": "c0133",
+          "name": "燕",
+          "entity_key": "p014/c0133"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p015",
+      "prefecture_name": "濟陽郡",
+      "state_id": "s02",
+      "county_id": "c0138",
+      "county_name": "定陶",
+      "county_order": [
+        {
+          "id": "c0138",
+          "name": "定陶",
+          "entity_key": "p015/c0138"
+        },
+        {
+          "id": "c0139",
+          "name": "乘氏",
+          "entity_key": "p015/c0139"
+        },
+        {
+          "id": "c0140",
+          "name": "句陽",
+          "entity_key": "p015/c0140"
+        },
+        {
+          "id": "c0141",
+          "name": "離狐",
+          "entity_key": "p015/c0141"
+        },
+        {
+          "id": "c0142",
+          "name": "冤句",
+          "entity_key": "p015/c0142"
+        },
+        {
+          "id": "c0143",
+          "name": "已氏",
+          "entity_key": "p015/c0143"
+        },
+        {
+          "id": "c0144",
+          "name": "城武",
+          "entity_key": "p015/c0144"
+        },
+        {
+          "id": "c0145",
+          "name": "單父",
+          "entity_key": "p015/c0145"
+        },
+        {
+          "id": "c0146",
+          "name": "成陽",
+          "entity_key": "p015/c0146"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p016",
+      "prefecture_name": "濟北侯國",
+      "state_id": "s02",
+      "county_id": "c0147",
+      "county_name": "盧",
+      "county_order": [
+        {
+          "id": "c0147",
+          "name": "盧",
+          "entity_key": "p016/c0147"
+        },
+        {
+          "id": "c0148",
+          "name": "蛇丘",
+          "entity_key": "p016/c0148"
+        },
+        {
+          "id": "c0149",
+          "name": "東阿",
+          "entity_key": "p016/c0149"
+        },
+        {
+          "id": "c0150",
+          "name": "谷城",
+          "entity_key": "p016/c0150"
+        },
+        {
+          "id": "c0151",
+          "name": "臨邑",
+          "entity_key": "p016/c0151"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p017",
+      "prefecture_name": "東平國",
+      "state_id": "s02",
+      "county_id": "c0152",
+      "county_name": "壽張",
+      "county_order": [
+        {
+          "id": "c0152",
+          "name": "壽張",
+          "entity_key": "p017/c0152"
+        },
+        {
+          "id": "c0153",
+          "name": "須昌",
+          "entity_key": "p017/c0153"
+        },
+        {
+          "id": "c0154",
+          "name": "範",
+          "entity_key": "p017/c0154"
+        },
+        {
+          "id": "c0155",
+          "name": "無鹽",
+          "entity_key": "p017/c0155"
+        },
+        {
+          "id": "c0156",
+          "name": "富城",
+          "entity_key": "p017/c0156"
+        },
+        {
+          "id": "c0157",
+          "name": "東平陸",
+          "entity_key": "p017/c0157"
+        },
+        {
+          "id": "c0158",
+          "name": "剛平",
+          "entity_key": "p017/c0158"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p018",
+      "prefecture_name": "任城國",
+      "state_id": "s02",
+      "county_id": "c0159",
+      "county_name": "任城",
+      "county_order": [
+        {
+          "id": "c0159",
+          "name": "任城",
+          "entity_key": "p018/c0159"
+        },
+        {
+          "id": "c0160",
+          "name": "亢父",
+          "entity_key": "p018/c0160"
+        },
+        {
+          "id": "c0161",
+          "name": "樊",
+          "entity_key": "p018/c0161"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p019",
+      "prefecture_name": "泰山郡",
+      "state_id": "s02",
+      "county_id": "c0162",
+      "county_name": "奉高",
+      "county_order": [
+        {
+          "id": "c0162",
+          "name": "奉高",
+          "entity_key": "p019/c0162"
+        },
+        {
+          "id": "c0163",
+          "name": "博",
+          "entity_key": "p019/c0163"
+        },
+        {
+          "id": "c0164",
+          "name": "嬴",
+          "entity_key": "p019/c0164"
+        },
+        {
+          "id": "c0165",
+          "name": "南城",
+          "entity_key": "p019/c0165"
+        },
+        {
+          "id": "c0166",
+          "name": "梁父",
+          "entity_key": "p019/c0166"
+        },
+        {
+          "id": "c0167",
+          "name": "山荏",
+          "entity_key": "p019/c0167"
+        },
+        {
+          "id": "c0169",
+          "name": "南武陽",
+          "entity_key": "p019/c0169"
+        },
+        {
+          "id": "c0171",
+          "name": "牟",
+          "entity_key": "p019/c0171"
+        },
+        {
+          "id": "c0172",
+          "name": "矩平",
+          "entity_key": "p019/c0172"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p020",
+      "prefecture_name": "高平公國",
+      "state_id": "s02",
+      "county_id": "c0173",
+      "county_name": "昌邑",
+      "county_order": [
+        {
+          "id": "c0173",
+          "name": "昌邑",
+          "entity_key": "p020/c0173"
+        },
+        {
+          "id": "c0174",
+          "name": "巨野",
+          "entity_key": "p020/c0174"
+        },
+        {
+          "id": "c0175",
+          "name": "方與",
+          "entity_key": "p020/c0175"
+        },
+        {
+          "id": "c0176",
+          "name": "金鄉",
+          "entity_key": "p020/c0176"
+        },
+        {
+          "id": "c0177",
+          "name": "高平",
+          "entity_key": "p020/c0177"
+        },
+        {
+          "id": "c0178",
+          "name": "南平陽",
+          "entity_key": "p020/c0178"
+        },
+        {
+          "id": "c0179",
+          "name": "湖陸",
+          "entity_key": "p020/c0179"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p021",
+      "prefecture_name": "潁川郡",
+      "state_id": "s03",
+      "county_id": "c0182",
+      "county_name": "許昌",
+      "county_order": [
+        {
+          "id": "c0182",
+          "name": "許昌",
+          "entity_key": "p021/c0182"
+        },
+        {
+          "id": "c0183",
+          "name": "長社",
+          "entity_key": "p021/c0183"
+        },
+        {
+          "id": "c0184",
+          "name": "穎陰",
+          "entity_key": "p021/c0184"
+        },
+        {
+          "id": "c0185",
+          "name": "臨穎",
+          "entity_key": "p021/c0185"
+        },
+        {
+          "id": "c0186",
+          "name": "郾",
+          "entity_key": "p021/c0186"
+        },
+        {
+          "id": "c0187",
+          "name": "召陵",
+          "entity_key": "p021/c0187"
+        },
+        {
+          "id": "c0188",
+          "name": "鄢陵",
+          "entity_key": "p021/c0188"
+        },
+        {
+          "id": "c0189",
+          "name": "新汲",
+          "entity_key": "p021/c0189"
+        },
+        {
+          "id": "c0190",
+          "name": "長平",
+          "entity_key": "p021/c0190"
+        },
+        {
+          "id": "c0191",
+          "name": "西華",
+          "entity_key": "p021/c0191"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p022",
+      "prefecture_name": "襄城郡",
+      "state_id": "s03",
+      "county_id": "c0192",
+      "county_name": "襄城",
+      "county_order": [
+        {
+          "id": "c0192",
+          "name": "襄城",
+          "entity_key": "p022/c0192"
+        },
+        {
+          "id": "c0193",
+          "name": "繁昌",
+          "entity_key": "p022/c0193"
+        },
+        {
+          "id": "c0194",
+          "name": "郟",
+          "entity_key": "p022/c0194"
+        },
+        {
+          "id": "c0195",
+          "name": "定陵",
+          "entity_key": "p022/c0195"
+        },
+        {
+          "id": "c0196",
+          "name": "父城",
+          "entity_key": "p022/c0196"
+        },
+        {
+          "id": "c0197",
+          "name": "昆陽",
+          "entity_key": "p022/c0197"
+        },
+        {
+          "id": "c0198",
+          "name": "舞陽",
+          "entity_key": "p022/c0198"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p023",
+      "prefecture_name": "汝南國",
+      "state_id": "s03",
+      "county_id": "c0199",
+      "county_name": "新息",
+      "county_order": [
+        {
+          "id": "c0199",
+          "name": "新息",
+          "entity_key": "p023/c0199"
+        },
+        {
+          "id": "c0200",
+          "name": "南安陽",
+          "entity_key": "p023/c0200"
+        },
+        {
+          "id": "c0201",
+          "name": "安成",
+          "entity_key": "p023/c0201"
+        },
+        {
+          "id": "c0202",
+          "name": "慎陽",
+          "entity_key": "p023/c0202"
+        },
+        {
+          "id": "c0203",
+          "name": "北宜春",
+          "entity_key": "p023/c0203"
+        },
+        {
+          "id": "c0204",
+          "name": "朗陵",
+          "entity_key": "p023/c0204"
+        },
+        {
+          "id": "c0205",
+          "name": "陽安",
+          "entity_key": "p023/c0205"
+        },
+        {
+          "id": "c0206",
+          "name": "上蔡",
+          "entity_key": "p023/c0206"
+        },
+        {
+          "id": "c0207",
+          "name": "平輿",
+          "entity_key": "p023/c0207"
+        },
+        {
+          "id": "c0208",
+          "name": "定穎",
+          "entity_key": "p023/c0208"
+        },
+        {
+          "id": "c0209",
+          "name": "灈陽",
+          "entity_key": "p023/c0209"
+        },
+        {
+          "id": "c0210",
+          "name": "南頓",
+          "entity_key": "p023/c0210"
+        },
+        {
+          "id": "c0211",
+          "name": "汝陽",
+          "entity_key": "p023/c0211"
+        },
+        {
+          "id": "c0212",
+          "name": "吳房",
+          "entity_key": "p023/c0212"
+        },
+        {
+          "id": "c0213",
+          "name": "西平",
+          "entity_key": "p023/c0213"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p024",
+      "prefecture_name": "汝陰郡",
+      "state_id": "s03",
+      "county_id": "c0215",
+      "county_name": "汝陰",
+      "county_order": [
+        {
+          "id": "c0215",
+          "name": "汝陰",
+          "entity_key": "p024/c0215"
+        },
+        {
+          "id": "c0216",
+          "name": "慎",
+          "entity_key": "p024/c0216"
+        },
+        {
+          "id": "c0218",
+          "name": "原鹿",
+          "entity_key": "p024/c0218"
+        },
+        {
+          "id": "c0219",
+          "name": "固始",
+          "entity_key": "p024/c0219"
+        },
+        {
+          "id": "c0220",
+          "name": "新蔡",
+          "entity_key": "p024/c0220"
+        },
+        {
+          "id": "c0221",
+          "name": "宋",
+          "entity_key": "p024/c0221"
+        },
+        {
+          "id": "c0222",
+          "name": "褒信",
+          "entity_key": "p024/c0222"
+        },
+        {
+          "id": "c0223",
+          "name": "鮦陽",
+          "entity_key": "p024/c0223"
+        },
+        {
+          "id": "c0224",
+          "name": "樓煩",
+          "entity_key": "p024/c0224"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p025",
+      "prefecture_name": "梁國",
+      "state_id": "s03",
+      "county_id": "c0225",
+      "county_name": "睢陽",
+      "county_order": [
+        {
+          "id": "c0225",
+          "name": "睢陽",
+          "entity_key": "p025/c0225"
+        },
+        {
+          "id": "c0226",
+          "name": "蒙",
+          "entity_key": "p025/c0226"
+        },
+        {
+          "id": "c0227",
+          "name": "虞",
+          "entity_key": "p025/c0227"
+        },
+        {
+          "id": "c0228",
+          "name": "下邑",
+          "entity_key": "p025/c0228"
+        },
+        {
+          "id": "c0229",
+          "name": "寧陵",
+          "entity_key": "p025/c0229"
+        },
+        {
+          "id": "c0230",
+          "name": "谷熟",
+          "entity_key": "p025/c0230"
+        },
+        {
+          "id": "c0231",
+          "name": "陳",
+          "entity_key": "p025/c0231"
+        },
+        {
+          "id": "c0232",
+          "name": "項",
+          "entity_key": "p025/c0232"
+        },
+        {
+          "id": "c0233",
+          "name": "陽夏",
+          "entity_key": "p025/c0233"
+        },
+        {
+          "id": "c0234",
+          "name": "武平",
+          "entity_key": "p025/c0234"
+        },
+        {
+          "id": "c0235",
+          "name": "苦",
+          "entity_key": "p025/c0235"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p027",
+      "prefecture_name": "沛國",
+      "state_id": "s03",
+      "county_id": "c0242",
+      "county_name": "沛",
+      "county_order": [
+        {
+          "id": "c0242",
+          "name": "沛",
+          "entity_key": "p027/c0242"
+        },
+        {
+          "id": "c0243",
+          "name": "相",
+          "entity_key": "p027/c0243"
+        },
+        {
+          "id": "c0244",
+          "name": "豐",
+          "entity_key": "p027/c0244"
+        },
+        {
+          "id": "c0245",
+          "name": "竹邑",
+          "entity_key": "p027/c0245"
+        },
+        {
+          "id": "c0246",
+          "name": "符離",
+          "entity_key": "p027/c0246"
+        },
+        {
+          "id": "c0247",
+          "name": "杼秋",
+          "entity_key": "p027/c0247"
+        },
+        {
+          "id": "c0248",
+          "name": "蕭",
+          "entity_key": "p027/c0248"
+        },
+        {
+          "id": "c0249",
+          "name": "洨",
+          "entity_key": "p027/c0249"
+        },
+        {
+          "id": "c0250",
+          "name": "虹",
+          "entity_key": "p027/c0250"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p028",
+      "prefecture_name": "譙郡",
+      "state_id": "s03",
+      "county_id": "c0252",
+      "county_name": "譙",
+      "county_order": [
+        {
+          "id": "c0252",
+          "name": "譙",
+          "entity_key": "p028/c0252"
+        },
+        {
+          "id": "c0253",
+          "name": "城父",
+          "entity_key": "p028/c0253"
+        },
+        {
+          "id": "c0254",
+          "name": "鄼",
+          "entity_key": "p028/c0254"
+        },
+        {
+          "id": "c0255",
+          "name": "山桑",
+          "entity_key": "p028/c0255"
+        },
+        {
+          "id": "c0256",
+          "name": "龍亢",
+          "entity_key": "p028/c0256"
+        },
+        {
+          "id": "c0257",
+          "name": "蘄",
+          "entity_key": "p028/c0257"
+        },
+        {
+          "id": "c0258",
+          "name": "銍",
+          "entity_key": "p028/c0258"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p029",
+      "prefecture_name": "魯公國",
+      "state_id": "s03",
+      "county_id": "c0260",
+      "county_name": "魯",
+      "county_order": [
+        {
+          "id": "c0260",
+          "name": "魯",
+          "entity_key": "p029/c0260"
+        },
+        {
+          "id": "c0261",
+          "name": "汶陽",
+          "entity_key": "p029/c0261"
+        },
+        {
+          "id": "c0262",
+          "name": "卞",
+          "entity_key": "p029/c0262"
+        },
+        {
+          "id": "c0263",
+          "name": "鄒",
+          "entity_key": "p029/c0263"
+        },
+        {
+          "id": "c0266",
+          "name": "公丘",
+          "entity_key": "p029/c0266"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p030",
+      "prefecture_name": "弋陽郡",
+      "state_id": "s03",
+      "county_id": "c0268",
+      "county_name": "弋陽",
+      "county_order": [
+        {
+          "id": "c0268",
+          "name": "弋陽",
+          "entity_key": "p030/c0268"
+        },
+        {
+          "id": "c0269",
+          "name": "軑",
+          "entity_key": "p030/c0269"
+        },
+        {
+          "id": "c0270",
+          "name": "西陵",
+          "entity_key": "p030/c0270"
+        },
+        {
+          "id": "c0271",
+          "name": "期思",
+          "entity_key": "p030/c0271"
+        },
+        {
+          "id": "c0272",
+          "name": "蘄春",
+          "entity_key": "p030/c0272"
+        },
+        {
+          "id": "c0273",
+          "name": "邾",
+          "entity_key": "p030/c0273"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p247",
+      "prefecture_name": "西陽國",
+      "state_id": "s03",
+      "county_id": "c0267",
+      "county_name": "西陽",
+      "county_order": [
+        {
+          "id": "c0267",
+          "name": "西陽",
+          "entity_key": "p247/c0267"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p031",
+      "prefecture_name": "安豐郡",
+      "state_id": "s03",
+      "county_id": "c0274",
+      "county_name": "安風",
+      "county_order": [
+        {
+          "id": "c0274",
+          "name": "安風",
+          "entity_key": "p031/c0274"
+        },
+        {
+          "id": "c0275",
+          "name": "松滋",
+          "entity_key": "p031/c0275"
+        },
+        {
+          "id": "c0276",
+          "name": "安豐",
+          "entity_key": "p031/c0276"
+        },
+        {
+          "id": "c0277",
+          "name": "蓼",
+          "entity_key": "p031/c0277"
+        },
+        {
+          "id": "c0278",
+          "name": "雩婁",
+          "entity_key": "p031/c0278"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p032",
+      "prefecture_name": "趙國",
+      "state_id": "s04",
+      "county_id": "c0279",
+      "county_name": "房子",
+      "county_order": [
+        {
+          "id": "c0279",
+          "name": "房子",
+          "entity_key": "p032/c0279"
+        },
+        {
+          "id": "c0280",
+          "name": "元氏",
+          "entity_key": "p032/c0280"
+        },
+        {
+          "id": "c0281",
+          "name": "平棘",
+          "entity_key": "p032/c0281"
+        },
+        {
+          "id": "c0282",
+          "name": "高邑",
+          "entity_key": "p032/c0282"
+        },
+        {
+          "id": "c0284",
+          "name": "柏人",
+          "entity_key": "p032/c0284"
+        },
+        {
+          "id": "c0285",
+          "name": "平鄉",
+          "entity_key": "p032/c0285"
+        },
+        {
+          "id": "c0286",
+          "name": "下曲陽",
+          "entity_key": "p032/c0286"
+        },
+        {
+          "id": "c0287",
+          "name": "鄡",
+          "entity_key": "p032/c0287"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p033",
+      "prefecture_name": "中丘郡",
+      "state_id": "s04",
+      "county_id": "c0283",
+      "county_name": "中丘",
+      "county_order": [
+        {
+          "id": "c0283",
+          "name": "中丘",
+          "entity_key": "p033/c0283"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p034",
+      "prefecture_name": "鉅鹿公國",
+      "state_id": "s04",
+      "county_id": "c0288",
+      "county_name": "廮陶",
+      "county_order": [
+        {
+          "id": "c0288",
+          "name": "廮陶",
+          "entity_key": "p034/c0288"
+        },
+        {
+          "id": "c0289",
+          "name": "巨鹿",
+          "entity_key": "p034/c0289"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p035",
+      "prefecture_name": "長樂國",
+      "state_id": "s04",
+      "county_id": "c0293",
+      "county_name": "長樂",
+      "county_order": [
+        {
+          "id": "c0293",
+          "name": "長樂",
+          "entity_key": "p035/c0293"
+        },
+        {
+          "id": "c0294",
+          "name": "下博",
+          "entity_key": "p035/c0294"
+        },
+        {
+          "id": "c0295",
+          "name": "扶柳",
+          "entity_key": "p035/c0295"
+        },
+        {
+          "id": "c0296",
+          "name": "廣宗",
+          "entity_key": "p035/c0296"
+        },
+        {
+          "id": "c0297",
+          "name": "經",
+          "entity_key": "p035/c0297"
+        },
+        {
+          "id": "c0298",
+          "name": "南宮",
+          "entity_key": "p035/c0298"
+        },
+        {
+          "id": "c0299",
+          "name": "堂陽",
+          "entity_key": "p035/c0299"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p036",
+      "prefecture_name": "武邑郡",
+      "state_id": "s04",
+      "county_id": "c0303",
+      "county_name": "武邑",
+      "county_order": [
+        {
+          "id": "c0303",
+          "name": "武邑",
+          "entity_key": "p036/c0303"
+        },
+        {
+          "id": "c0304",
+          "name": "武遂",
+          "entity_key": "p036/c0304"
+        },
+        {
+          "id": "c0305",
+          "name": "觀津",
+          "entity_key": "p036/c0305"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p037",
+      "prefecture_name": "平原國",
+      "state_id": "s04",
+      "county_id": "c0306",
+      "county_name": "平原",
+      "county_order": [
+        {
+          "id": "c0306",
+          "name": "平原",
+          "entity_key": "p037/c0306"
+        },
+        {
+          "id": "c0307",
+          "name": "高唐",
+          "entity_key": "p037/c0307"
+        },
+        {
+          "id": "c0308",
+          "name": "茌平",
+          "entity_key": "p037/c0308"
+        },
+        {
+          "id": "c0309",
+          "name": "博平",
+          "entity_key": "p037/c0309"
+        },
+        {
+          "id": "c0310",
+          "name": "聊城",
+          "entity_key": "p037/c0310"
+        },
+        {
+          "id": "c0311",
+          "name": "安德",
+          "entity_key": "p037/c0311"
+        },
+        {
+          "id": "c0312",
+          "name": "西平昌",
+          "entity_key": "p037/c0312"
+        },
+        {
+          "id": "c0313",
+          "name": "般",
+          "entity_key": "p037/c0313"
+        },
+        {
+          "id": "c0314",
+          "name": "鬲",
+          "entity_key": "p037/c0314"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p038",
+      "prefecture_name": "樂陵公國",
+      "state_id": "s04",
+      "county_id": "c0315",
+      "county_name": "厭次",
+      "county_order": [
+        {
+          "id": "c0315",
+          "name": "厭次",
+          "entity_key": "p038/c0315"
+        },
+        {
+          "id": "c0316",
+          "name": "陽信",
+          "entity_key": "p038/c0316"
+        },
+        {
+          "id": "c0317",
+          "name": "漯沃",
+          "entity_key": "p038/c0317"
+        },
+        {
+          "id": "c0318",
+          "name": "新樂",
+          "entity_key": "p038/c0318"
+        },
+        {
+          "id": "c0319",
+          "name": "樂陵",
+          "entity_key": "p038/c0319"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p039",
+      "prefecture_name": "勃海郡",
+      "state_id": "s04",
+      "county_id": "c0320",
+      "county_name": "南皮",
+      "county_order": [
+        {
+          "id": "c0320",
+          "name": "南皮",
+          "entity_key": "p039/c0320"
+        },
+        {
+          "id": "c0321",
+          "name": "東光",
+          "entity_key": "p039/c0321"
+        },
+        {
+          "id": "c0322",
+          "name": "浮陽",
+          "entity_key": "p039/c0322"
+        },
+        {
+          "id": "c0323",
+          "name": "饒安",
+          "entity_key": "p039/c0323"
+        },
+        {
+          "id": "c0324",
+          "name": "高城",
+          "entity_key": "p039/c0324"
+        },
+        {
+          "id": "c0325",
+          "name": "重合",
+          "entity_key": "p039/c0325"
+        },
+        {
+          "id": "c0326",
+          "name": "東安陵",
+          "entity_key": "p039/c0326"
+        },
+        {
+          "id": "c0327",
+          "name": "蓨",
+          "entity_key": "p039/c0327"
+        },
+        {
+          "id": "c0329",
+          "name": "阜城",
+          "entity_key": "p039/c0329"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p040",
+      "prefecture_name": "河間國",
+      "state_id": "s04",
+      "county_id": "c0330",
+      "county_name": "樂城",
+      "county_order": [
+        {
+          "id": "c0330",
+          "name": "樂城",
+          "entity_key": "p040/c0330"
+        },
+        {
+          "id": "c0331",
+          "name": "武垣",
+          "entity_key": "p040/c0331"
+        },
+        {
+          "id": "c0332",
+          "name": "鄚",
+          "entity_key": "p040/c0332"
+        },
+        {
+          "id": "c0333",
+          "name": "易",
+          "entity_key": "p040/c0333"
+        },
+        {
+          "id": "c0334",
+          "name": "中水",
+          "entity_key": "p040/c0334"
+        },
+        {
+          "id": "c0335",
+          "name": "成平",
+          "entity_key": "p040/c0335"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p041",
+      "prefecture_name": "章武國",
+      "state_id": "s04",
+      "county_id": "c0336",
+      "county_name": "東平舒",
+      "county_order": [
+        {
+          "id": "c0336",
+          "name": "東平舒",
+          "entity_key": "p041/c0336"
+        },
+        {
+          "id": "c0337",
+          "name": "文安",
+          "entity_key": "p041/c0337"
+        },
+        {
+          "id": "c0338",
+          "name": "束州",
+          "entity_key": "p041/c0338"
+        },
+        {
+          "id": "c0339",
+          "name": "章武",
+          "entity_key": "p041/c0339"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p042",
+      "prefecture_name": "清河郡",
+      "state_id": "s04",
+      "county_id": "c0340",
+      "county_name": "清河",
+      "county_order": [
+        {
+          "id": "c0340",
+          "name": "清河",
+          "entity_key": "p042/c0340"
+        },
+        {
+          "id": "c0341",
+          "name": "東武城",
+          "entity_key": "p042/c0341"
+        },
+        {
+          "id": "c0342",
+          "name": "繹幕",
+          "entity_key": "p042/c0342"
+        },
+        {
+          "id": "c0343",
+          "name": "貝丘",
+          "entity_key": "p042/c0343"
+        },
+        {
+          "id": "c0344",
+          "name": "靈",
+          "entity_key": "p042/c0344"
+        },
+        {
+          "id": "c0345",
+          "name": "鄃",
+          "entity_key": "p042/c0345"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p250",
+      "prefecture_name": "廣川國",
+      "state_id": "s04",
+      "county_id": "c0346",
+      "county_name": "廣川",
+      "county_order": [
+        {
+          "id": "c0346",
+          "name": "廣川",
+          "entity_key": "p250/c0346"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p043",
+      "prefecture_name": "博陵公國",
+      "state_id": "s04",
+      "county_id": "c0347",
+      "county_name": "安平",
+      "county_order": [
+        {
+          "id": "c0347",
+          "name": "安平",
+          "entity_key": "p043/c0347"
+        },
+        {
+          "id": "c0348",
+          "name": "饒陽",
+          "entity_key": "p043/c0348"
+        },
+        {
+          "id": "c0349",
+          "name": "南深澤",
+          "entity_key": "p043/c0349"
+        },
+        {
+          "id": "c0350",
+          "name": "安國",
+          "entity_key": "p043/c0350"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p044",
+      "prefecture_name": "高陽國",
+      "state_id": "s04",
+      "county_id": "c0351",
+      "county_name": "博陸",
+      "county_order": [
+        {
+          "id": "c0351",
+          "name": "博陸",
+          "entity_key": "p044/c0351"
+        },
+        {
+          "id": "c0352",
+          "name": "高陽",
+          "entity_key": "p044/c0352"
+        },
+        {
+          "id": "c0353",
+          "name": "蠡吾",
+          "entity_key": "p044/c0353"
+        },
+        {
+          "id": "c0354",
+          "name": "北新城",
+          "entity_key": "p044/c0354"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p045",
+      "prefecture_name": "中山國",
+      "state_id": "s04",
+      "county_id": "c0355",
+      "county_name": "盧奴",
+      "county_order": [
+        {
+          "id": "c0355",
+          "name": "盧奴",
+          "entity_key": "p045/c0355"
+        },
+        {
+          "id": "c0356",
+          "name": "魏昌",
+          "entity_key": "p045/c0356"
+        },
+        {
+          "id": "c0357",
+          "name": "新市",
+          "entity_key": "p045/c0357"
+        },
+        {
+          "id": "c0358",
+          "name": "蒲陰",
+          "entity_key": "p045/c0358"
+        },
+        {
+          "id": "c0359",
+          "name": "望都",
+          "entity_key": "p045/c0359"
+        },
+        {
+          "id": "c0360",
+          "name": "唐",
+          "entity_key": "p045/c0360"
+        },
+        {
+          "id": "c0361",
+          "name": "北平",
+          "entity_key": "p045/c0361"
+        },
+        {
+          "id": "c0362",
+          "name": "安喜",
+          "entity_key": "p045/c0362"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p046",
+      "prefecture_name": "常山國",
+      "state_id": "s04",
+      "county_id": "c0364",
+      "county_name": "真定",
+      "county_order": [
+        {
+          "id": "c0364",
+          "name": "真定",
+          "entity_key": "p046/c0364"
+        },
+        {
+          "id": "c0365",
+          "name": "石邑",
+          "entity_key": "p046/c0365"
+        },
+        {
+          "id": "c0366",
+          "name": "井陘",
+          "entity_key": "p046/c0366"
+        },
+        {
+          "id": "c0367",
+          "name": "蒲吾",
+          "entity_key": "p046/c0367"
+        },
+        {
+          "id": "c0368",
+          "name": "南行唐",
+          "entity_key": "p046/c0368"
+        },
+        {
+          "id": "c0369",
+          "name": "靈壽",
+          "entity_key": "p046/c0369"
+        },
+        {
+          "id": "c0370",
+          "name": "九門",
+          "entity_key": "p046/c0370"
+        },
+        {
+          "id": "c0371",
+          "name": "上曲陽",
+          "entity_key": "p046/c0371"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p047",
+      "prefecture_name": "範陽國",
+      "state_id": "s05",
+      "county_id": "c0372",
+      "county_name": "涿",
+      "county_order": [
+        {
+          "id": "c0372",
+          "name": "涿",
+          "entity_key": "p047/c0372"
+        },
+        {
+          "id": "c0373",
+          "name": "良鄉",
+          "entity_key": "p047/c0373"
+        },
+        {
+          "id": "c0374",
+          "name": "方城",
+          "entity_key": "p047/c0374"
+        },
+        {
+          "id": "c0375",
+          "name": "長鄉",
+          "entity_key": "p047/c0375"
+        },
+        {
+          "id": "c0376",
+          "name": "遒",
+          "entity_key": "p047/c0376"
+        },
+        {
+          "id": "c0377",
+          "name": "故安",
+          "entity_key": "p047/c0377"
+        },
+        {
+          "id": "c0378",
+          "name": "範陽",
+          "entity_key": "p047/c0378"
+        },
+        {
+          "id": "c0379",
+          "name": "容城",
+          "entity_key": "p047/c0379"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p048",
+      "prefecture_name": "漁陽郡",
+      "state_id": "s05",
+      "county_id": "c0380",
+      "county_name": "潞",
+      "county_order": [
+        {
+          "id": "c0380",
+          "name": "潞",
+          "entity_key": "p048/c0380"
+        },
+        {
+          "id": "c0381",
+          "name": "雍奴",
+          "entity_key": "p048/c0381"
+        },
+        {
+          "id": "c0382",
+          "name": "安樂",
+          "entity_key": "p048/c0382"
+        },
+        {
+          "id": "c0383",
+          "name": "泉州",
+          "entity_key": "p048/c0383"
+        },
+        {
+          "id": "c0384",
+          "name": "狐奴",
+          "entity_key": "p048/c0384"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p049",
+      "prefecture_name": "燕國",
+      "state_id": "s05",
+      "county_id": "c0385",
+      "county_name": "薊",
+      "county_order": [
+        {
+          "id": "c0385",
+          "name": "薊",
+          "entity_key": "p049/c0385"
+        },
+        {
+          "id": "c0386",
+          "name": "安次",
+          "entity_key": "p049/c0386"
+        },
+        {
+          "id": "c0387",
+          "name": "昌平",
+          "entity_key": "p049/c0387"
+        },
+        {
+          "id": "c0388",
+          "name": "軍都",
+          "entity_key": "p049/c0388"
+        },
+        {
+          "id": "c0389",
+          "name": "廣陽",
+          "entity_key": "p049/c0389"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p050",
+      "prefecture_name": "北平郡",
+      "state_id": "s05",
+      "county_id": "c0395",
+      "county_name": "徐無",
+      "county_order": [
+        {
+          "id": "c0395",
+          "name": "徐無",
+          "entity_key": "p050/c0395"
+        },
+        {
+          "id": "c0396",
+          "name": "土垠",
+          "entity_key": "p050/c0396"
+        },
+        {
+          "id": "c0397",
+          "name": "無終",
+          "entity_key": "p050/c0397"
+        },
+        {
+          "id": "c0398",
+          "name": "俊靡",
+          "entity_key": "p050/c0398"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p051",
+      "prefecture_name": "上谷郡",
+      "state_id": "s05",
+      "county_id": "c0399",
+      "county_name": "沮陽",
+      "county_order": [
+        {
+          "id": "c0399",
+          "name": "沮陽",
+          "entity_key": "p051/c0399"
+        },
+        {
+          "id": "c0400",
+          "name": "居庸",
+          "entity_key": "p051/c0400"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p052",
+      "prefecture_name": "廣寧郡",
+      "state_id": "s05",
+      "county_id": "c0404",
+      "county_name": "下洛",
+      "county_order": [
+        {
+          "id": "c0404",
+          "name": "下洛",
+          "entity_key": "p052/c0404"
+        },
+        {
+          "id": "c0405",
+          "name": "潘",
+          "entity_key": "p052/c0405"
+        },
+        {
+          "id": "c0406",
+          "name": "涿鹿",
+          "entity_key": "p052/c0406"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p053",
+      "prefecture_name": "代郡",
+      "state_id": "s05",
+      "county_id": "c0407",
+      "county_name": "代",
+      "county_order": [
+        {
+          "id": "c0407",
+          "name": "代",
+          "entity_key": "p053/c0407"
+        },
+        {
+          "id": "c0408",
+          "name": "平舒",
+          "entity_key": "p053/c0408"
+        },
+        {
+          "id": "c0409",
+          "name": "當城",
+          "entity_key": "p053/c0409"
+        },
+        {
+          "id": "c0410",
+          "name": "廣昌",
+          "entity_key": "p053/c0410"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p054",
+      "prefecture_name": "遼西公國",
+      "state_id": "s05",
+      "county_id": "c0411",
+      "county_name": "陽樂",
+      "county_order": [
+        {
+          "id": "c0411",
+          "name": "陽樂",
+          "entity_key": "p054/c0411"
+        },
+        {
+          "id": "c0412",
+          "name": "肥如",
+          "entity_key": "p054/c0412"
+        },
+        {
+          "id": "c0413",
+          "name": "海陽",
+          "entity_key": "p054/c0413"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p060",
+      "prefecture_name": "昌黎郡",
+      "state_id": "s06",
+      "county_id": "c0435",
+      "county_name": "昌黎",
+      "county_order": [
+        {
+          "id": "c0435",
+          "name": "昌黎",
+          "entity_key": "p060/c0435"
+        },
+        {
+          "id": "c0436",
+          "name": "賓徒",
+          "entity_key": "p060/c0436"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p061",
+      "prefecture_name": "遼東郡",
+      "state_id": "s06",
+      "county_id": "c0437",
+      "county_name": "襄平",
+      "county_order": [
+        {
+          "id": "c0437",
+          "name": "襄平",
+          "entity_key": "p061/c0437"
+        },
+        {
+          "id": "c0438",
+          "name": "汶",
+          "entity_key": "p061/c0438"
+        },
+        {
+          "id": "c0439",
+          "name": "居就",
+          "entity_key": "p061/c0439"
+        },
+        {
+          "id": "c0440",
+          "name": "樂就",
+          "entity_key": "p061/c0440"
+        },
+        {
+          "id": "c0441",
+          "name": "安市",
+          "entity_key": "p061/c0441"
+        },
+        {
+          "id": "c0442",
+          "name": "西安平",
+          "entity_key": "p061/c0442"
+        },
+        {
+          "id": "c0443",
+          "name": "新昌",
+          "entity_key": "p061/c0443"
+        },
+        {
+          "id": "c0444",
+          "name": "力城",
+          "entity_key": "p061/c0444"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p062",
+      "prefecture_name": "樂浪郡",
+      "state_id": "s06",
+      "county_id": "c0445",
+      "county_name": "朝鮮",
+      "county_order": [
+        {
+          "id": "c0445",
+          "name": "朝鮮",
+          "entity_key": "p062/c0445"
+        },
+        {
+          "id": "c0446",
+          "name": "屯有",
+          "entity_key": "p062/c0446"
+        },
+        {
+          "id": "c0447",
+          "name": "渾彌",
+          "entity_key": "p062/c0447"
+        },
+        {
+          "id": "c0448",
+          "name": "遂城",
+          "entity_key": "p062/c0448"
+        },
+        {
+          "id": "c0449",
+          "name": "鏤方",
+          "entity_key": "p062/c0449"
+        },
+        {
+          "id": "c0450",
+          "name": "駟望",
+          "entity_key": "p062/c0450"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p063",
+      "prefecture_name": "玄菟郡",
+      "state_id": "s06",
+      "county_id": "c0451",
+      "county_name": "高句驪",
+      "county_order": [
+        {
+          "id": "c0451",
+          "name": "高句驪",
+          "entity_key": "p063/c0451"
+        },
+        {
+          "id": "c0452",
+          "name": "高顯",
+          "entity_key": "p063/c0452"
+        },
+        {
+          "id": "c0453",
+          "name": "望平",
+          "entity_key": "p063/c0453"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p064",
+      "prefecture_name": "帶方郡",
+      "state_id": "s06",
+      "county_id": "c0454",
+      "county_name": "帶方",
+      "county_order": [
+        {
+          "id": "c0454",
+          "name": "帶方",
+          "entity_key": "p064/c0454"
+        },
+        {
+          "id": "c0455",
+          "name": "列口",
+          "entity_key": "p064/c0455"
+        },
+        {
+          "id": "c0456",
+          "name": "海冥",
+          "entity_key": "p064/c0456"
+        },
+        {
+          "id": "c0457",
+          "name": "長岑",
+          "entity_key": "p064/c0457"
+        },
+        {
+          "id": "c0458",
+          "name": "提奚",
+          "entity_key": "p064/c0458"
+        },
+        {
+          "id": "c0459",
+          "name": "含資",
+          "entity_key": "p064/c0459"
+        },
+        {
+          "id": "c0460",
+          "name": "南新",
+          "entity_key": "p064/c0460"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p065",
+      "prefecture_name": "太原國",
+      "state_id": "s07",
+      "county_id": "c0461",
+      "county_name": "晉陽",
+      "county_order": [
+        {
+          "id": "c0461",
+          "name": "晉陽",
+          "entity_key": "p065/c0461"
+        },
+        {
+          "id": "c0462",
+          "name": "陽曲",
+          "entity_key": "p065/c0462"
+        },
+        {
+          "id": "c0463",
+          "name": "榆次",
+          "entity_key": "p065/c0463"
+        },
+        {
+          "id": "c0464",
+          "name": "於離",
+          "entity_key": "p065/c0464"
+        },
+        {
+          "id": "c0465",
+          "name": "盂",
+          "entity_key": "p065/c0465"
+        },
+        {
+          "id": "c0466",
+          "name": "狼孟",
+          "entity_key": "p065/c0466"
+        },
+        {
+          "id": "c0467",
+          "name": "陽邑",
+          "entity_key": "p065/c0467"
+        },
+        {
+          "id": "c0468",
+          "name": "大陵",
+          "entity_key": "p065/c0468"
+        },
+        {
+          "id": "c0469",
+          "name": "祁",
+          "entity_key": "p065/c0469"
+        },
+        {
+          "id": "c0470",
+          "name": "平陶",
+          "entity_key": "p065/c0470"
+        },
+        {
+          "id": "c0471",
+          "name": "京陵",
+          "entity_key": "p065/c0471"
+        },
+        {
+          "id": "c0472",
+          "name": "中都",
+          "entity_key": "p065/c0472"
+        },
+        {
+          "id": "c0473",
+          "name": "鄔",
+          "entity_key": "p065/c0473"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p066",
+      "prefecture_name": "西河國",
+      "state_id": "s07",
+      "county_id": "c0474",
+      "county_name": "隰城",
+      "county_order": [
+        {
+          "id": "c0474",
+          "name": "隰城",
+          "entity_key": "p066/c0474"
+        },
+        {
+          "id": "c0475",
+          "name": "離石",
+          "entity_key": "p066/c0475"
+        },
+        {
+          "id": "c0476",
+          "name": "中陽",
+          "entity_key": "p066/c0476"
+        },
+        {
+          "id": "c0477",
+          "name": "界休",
+          "entity_key": "p066/c0477"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p067",
+      "prefecture_name": "上黨郡",
+      "state_id": "s07",
+      "county_id": "c0478",
+      "county_name": "泫氏",
+      "county_order": [
+        {
+          "id": "c0478",
+          "name": "泫氏",
+          "entity_key": "p067/c0478"
+        },
+        {
+          "id": "c0479",
+          "name": "屯留",
+          "entity_key": "p067/c0479"
+        },
+        {
+          "id": "c0480",
+          "name": "長子",
+          "entity_key": "p067/c0480"
+        },
+        {
+          "id": "c0481",
+          "name": "壺關",
+          "entity_key": "p067/c0481"
+        },
+        {
+          "id": "c0482",
+          "name": "高都",
+          "entity_key": "p067/c0482"
+        },
+        {
+          "id": "c0483",
+          "name": "銅鞮",
+          "entity_key": "p067/c0483"
+        },
+        {
+          "id": "c0484",
+          "name": "涅",
+          "entity_key": "p067/c0484"
+        },
+        {
+          "id": "c0485",
+          "name": "襄垣",
+          "entity_key": "p067/c0485"
+        },
+        {
+          "id": "c0486",
+          "name": "武鄉",
+          "entity_key": "p067/c0486"
+        },
+        {
+          "id": "c0487",
+          "name": "潞",
+          "entity_key": "p067/c0487"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p068",
+      "prefecture_name": "樂平郡",
+      "state_id": "s07",
+      "county_id": "c0488",
+      "county_name": "沾",
+      "county_order": [
+        {
+          "id": "c0488",
+          "name": "沾",
+          "entity_key": "p068/c0488"
+        },
+        {
+          "id": "c0489",
+          "name": "樂平",
+          "entity_key": "p068/c0489"
+        },
+        {
+          "id": "c0490",
+          "name": "轑陽",
+          "entity_key": "p068/c0490"
+        },
+        {
+          "id": "c0491",
+          "name": "壽陽",
+          "entity_key": "p068/c0491"
+        },
+        {
+          "id": "c0492",
+          "name": "上艾",
+          "entity_key": "p068/c0492"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p069",
+      "prefecture_name": "雁門郡",
+      "state_id": "s07",
+      "county_id": "c0493",
+      "county_name": "廣武",
+      "county_order": [
+        {
+          "id": "c0493",
+          "name": "廣武",
+          "entity_key": "p069/c0493"
+        },
+        {
+          "id": "c0494",
+          "name": "原平",
+          "entity_key": "p069/c0494"
+        },
+        {
+          "id": "c0495",
+          "name": "汪陶",
+          "entity_key": "p069/c0495"
+        },
+        {
+          "id": "c0496",
+          "name": "崞",
+          "entity_key": "p069/c0496"
+        },
+        {
+          "id": "c0497",
+          "name": "繁畤",
+          "entity_key": "p069/c0497"
+        },
+        {
+          "id": "c0498",
+          "name": "平城",
+          "entity_key": "p069/c0498"
+        },
+        {
+          "id": "c0499",
+          "name": "葰人",
+          "entity_key": "p069/c0499"
+        },
+        {
+          "id": "c0500",
+          "name": "馬邑",
+          "entity_key": "p069/c0500"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p070",
+      "prefecture_name": "晉昌郡",
+      "state_id": "s07",
+      "county_id": "c0501",
+      "county_name": "九原",
+      "county_order": [
+        {
+          "id": "c0501",
+          "name": "九原",
+          "entity_key": "p070/c0501"
+        },
+        {
+          "id": "c0502",
+          "name": "定襄",
+          "entity_key": "p070/c0502"
+        },
+        {
+          "id": "c0503",
+          "name": "雲中",
+          "entity_key": "p070/c0503"
+        },
+        {
+          "id": "c0504",
+          "name": "廣牧",
+          "entity_key": "p070/c0504"
+        },
+        {
+          "id": "c0505",
+          "name": "晉昌",
+          "entity_key": "p070/c0505"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p071",
+      "prefecture_name": "京兆郡",
+      "state_id": "s08",
+      "county_id": "c0506",
+      "county_name": "長安",
+      "county_order": [
+        {
+          "id": "c0506",
+          "name": "長安",
+          "entity_key": "p071/c0506"
+        },
+        {
+          "id": "c0507",
+          "name": "杜陵",
+          "entity_key": "p071/c0507"
+        },
+        {
+          "id": "c0508",
+          "name": "霸城",
+          "entity_key": "p071/c0508"
+        },
+        {
+          "id": "c0509",
+          "name": "藍田",
+          "entity_key": "p071/c0509"
+        },
+        {
+          "id": "c0510",
+          "name": "高陸",
+          "entity_key": "p071/c0510"
+        },
+        {
+          "id": "c0511",
+          "name": "萬年",
+          "entity_key": "p071/c0511"
+        },
+        {
+          "id": "c0512",
+          "name": "新豐",
+          "entity_key": "p071/c0512"
+        },
+        {
+          "id": "c0513",
+          "name": "陰槃",
+          "entity_key": "p071/c0513"
+        },
+        {
+          "id": "c0514",
+          "name": "鄭",
+          "entity_key": "p071/c0514"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p072",
+      "prefecture_name": "馮翊郡",
+      "state_id": "s08",
+      "county_id": "c0517",
+      "county_name": "臨晉",
+      "county_order": [
+        {
+          "id": "c0517",
+          "name": "臨晉",
+          "entity_key": "p072/c0517"
+        },
+        {
+          "id": "c0518",
+          "name": "下邽",
+          "entity_key": "p072/c0518"
+        },
+        {
+          "id": "c0519",
+          "name": "重泉",
+          "entity_key": "p072/c0519"
+        },
+        {
+          "id": "c0520",
+          "name": "頻陽",
+          "entity_key": "p072/c0520"
+        },
+        {
+          "id": "c0521",
+          "name": "粟邑",
+          "entity_key": "p072/c0521"
+        },
+        {
+          "id": "c0522",
+          "name": "蓮芍",
+          "entity_key": "p072/c0522"
+        },
+        {
+          "id": "c0523",
+          "name": "郃陽",
+          "entity_key": "p072/c0523"
+        },
+        {
+          "id": "c0524",
+          "name": "夏陽",
+          "entity_key": "p072/c0524"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p073",
+      "prefecture_name": "秦國",
+      "state_id": "s08",
+      "county_id": "c0525",
+      "county_name": "池陽",
+      "county_order": [
+        {
+          "id": "c0525",
+          "name": "池陽",
+          "entity_key": "p073/c0525"
+        },
+        {
+          "id": "c0526",
+          "name": "郿",
+          "entity_key": "p073/c0526"
+        },
+        {
+          "id": "c0527",
+          "name": "雍",
+          "entity_key": "p073/c0527"
+        },
+        {
+          "id": "c0528",
+          "name": "汧",
+          "entity_key": "p073/c0528"
+        },
+        {
+          "id": "c0529",
+          "name": "陳倉",
+          "entity_key": "p073/c0529"
+        },
+        {
+          "id": "c0530",
+          "name": "美陽",
+          "entity_key": "p073/c0530"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p074",
+      "prefecture_name": "始平郡",
+      "state_id": "s08",
+      "county_id": "c0535",
+      "county_name": "槐里",
+      "county_order": [
+        {
+          "id": "c0535",
+          "name": "槐里",
+          "entity_key": "p074/c0535"
+        },
+        {
+          "id": "c0536",
+          "name": "始平",
+          "entity_key": "p074/c0536"
+        },
+        {
+          "id": "c0537",
+          "name": "武功",
+          "entity_key": "p074/c0537"
+        },
+        {
+          "id": "c0538",
+          "name": "鄠",
+          "entity_key": "p074/c0538"
+        },
+        {
+          "id": "c0539",
+          "name": "蒯城",
+          "entity_key": "p074/c0539"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p075",
+      "prefecture_name": "安定郡",
+      "state_id": "s08",
+      "county_id": "c0540",
+      "county_name": "臨涇",
+      "county_order": [
+        {
+          "id": "c0540",
+          "name": "臨涇",
+          "entity_key": "p075/c0540"
+        },
+        {
+          "id": "c0541",
+          "name": "朝那",
+          "entity_key": "p075/c0541"
+        },
+        {
+          "id": "c0542",
+          "name": "烏氏",
+          "entity_key": "p075/c0542"
+        },
+        {
+          "id": "c0543",
+          "name": "鶉觚",
+          "entity_key": "p075/c0543"
+        },
+        {
+          "id": "c0544",
+          "name": "陰密",
+          "entity_key": "p075/c0544"
+        },
+        {
+          "id": "c0545",
+          "name": "西川",
+          "entity_key": "p075/c0545"
+        },
+        {
+          "id": "c0546",
+          "name": "都盧",
+          "entity_key": "p075/c0546"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p076",
+      "prefecture_name": "北地郡",
+      "state_id": "s08",
+      "county_id": "c0547",
+      "county_name": "泥陽",
+      "county_order": [
+        {
+          "id": "c0547",
+          "name": "泥陽",
+          "entity_key": "p076/c0547"
+        },
+        {
+          "id": "c0548",
+          "name": "富平",
+          "entity_key": "p076/c0548"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p077",
+      "prefecture_name": "新平郡",
+      "state_id": "s08",
+      "county_id": "c0550",
+      "county_name": "漆",
+      "county_order": [
+        {
+          "id": "c0550",
+          "name": "漆",
+          "entity_key": "p077/c0550"
+        },
+        {
+          "id": "c0551",
+          "name": "邠邑",
+          "entity_key": "p077/c0551"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p084",
+      "prefecture_name": "金城郡",
+      "state_id": "s09",
+      "county_id": "c0579",
+      "county_name": "榆中",
+      "county_order": [
+        {
+          "id": "c0579",
+          "name": "榆中",
+          "entity_key": "p084/c0579"
+        },
+        {
+          "id": "c0580",
+          "name": "允街",
+          "entity_key": "p084/c0580"
+        },
+        {
+          "id": "c0581",
+          "name": "金城",
+          "entity_key": "p084/c0581"
+        },
+        {
+          "id": "c0582",
+          "name": "白土",
+          "entity_key": "p084/c0582"
+        },
+        {
+          "id": "c0583",
+          "name": "浩亶",
+          "entity_key": "p084/c0583"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p085",
+      "prefecture_name": "西平郡",
+      "state_id": "s09",
+      "county_id": "c0585",
+      "county_name": "西都",
+      "county_order": [
+        {
+          "id": "c0585",
+          "name": "西都",
+          "entity_key": "p085/c0585"
+        },
+        {
+          "id": "c0586",
+          "name": "臨羌",
+          "entity_key": "p085/c0586"
+        },
+        {
+          "id": "c0587",
+          "name": "安夷",
+          "entity_key": "p085/c0587"
+        },
+        {
+          "id": "c0588",
+          "name": "破羌",
+          "entity_key": "p085/c0588"
+        },
+        {
+          "id": "c0589",
+          "name": "長寧",
+          "entity_key": "p085/c0589"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p086",
+      "prefecture_name": "武威郡",
+      "state_id": "s09",
+      "county_id": "c0590",
+      "county_name": "姑臧",
+      "county_order": [
+        {
+          "id": "c0590",
+          "name": "姑臧",
+          "entity_key": "p086/c0590"
+        },
+        {
+          "id": "c0591",
+          "name": "宣威",
+          "entity_key": "p086/c0591"
+        },
+        {
+          "id": "c0592",
+          "name": "揟次",
+          "entity_key": "p086/c0592"
+        },
+        {
+          "id": "c0593",
+          "name": "倉松",
+          "entity_key": "p086/c0593"
+        },
+        {
+          "id": "c0594",
+          "name": "顯美",
+          "entity_key": "p086/c0594"
+        },
+        {
+          "id": "c0595",
+          "name": "驪靬",
+          "entity_key": "p086/c0595"
+        },
+        {
+          "id": "c0596",
+          "name": "番和",
+          "entity_key": "p086/c0596"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p087",
+      "prefecture_name": "張掖郡",
+      "state_id": "s09",
+      "county_id": "c0597",
+      "county_name": "永平",
+      "county_order": [
+        {
+          "id": "c0597",
+          "name": "永平",
+          "entity_key": "p087/c0597"
+        },
+        {
+          "id": "c0598",
+          "name": "臨澤",
+          "entity_key": "p087/c0598"
+        },
+        {
+          "id": "c0599",
+          "name": "屋蘭",
+          "entity_key": "p087/c0599"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p088",
+      "prefecture_name": "西郡",
+      "state_id": "s09",
+      "county_id": "c0601",
+      "county_name": "日勒",
+      "county_order": [
+        {
+          "id": "c0601",
+          "name": "日勒",
+          "entity_key": "p088/c0601"
+        },
+        {
+          "id": "c0602",
+          "name": "刪丹",
+          "entity_key": "p088/c0602"
+        },
+        {
+          "id": "c0603",
+          "name": "仙提",
+          "entity_key": "p088/c0603"
+        },
+        {
+          "id": "c0604",
+          "name": "萬歲",
+          "entity_key": "p088/c0604"
+        },
+        {
+          "id": "c0605",
+          "name": "蘭池",
+          "entity_key": "p088/c0605"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p089",
+      "prefecture_name": "酒泉郡",
+      "state_id": "s09",
+      "county_id": "c0606",
+      "county_name": "福祿",
+      "county_order": [
+        {
+          "id": "c0606",
+          "name": "福祿",
+          "entity_key": "p089/c0606"
+        },
+        {
+          "id": "c0607",
+          "name": "表氏",
+          "entity_key": "p089/c0607"
+        },
+        {
+          "id": "c0608",
+          "name": "樂涫",
+          "entity_key": "p089/c0608"
+        },
+        {
+          "id": "c0609",
+          "name": "玉門",
+          "entity_key": "p089/c0609"
+        },
+        {
+          "id": "c0610",
+          "name": "會水",
+          "entity_key": "p089/c0610"
+        },
+        {
+          "id": "c0611",
+          "name": "安彌",
+          "entity_key": "p089/c0611"
+        },
+        {
+          "id": "c0612",
+          "name": "延壽",
+          "entity_key": "p089/c0612"
+        },
+        {
+          "id": "c0614",
+          "name": "騂馬",
+          "entity_key": "p089/c0614"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p090",
+      "prefecture_name": "敦煌郡",
+      "state_id": "s09",
+      "county_id": "c0615",
+      "county_name": "敦煌",
+      "county_order": [
+        {
+          "id": "c0615",
+          "name": "敦煌",
+          "entity_key": "p090/c0615"
+        },
+        {
+          "id": "c0616",
+          "name": "效谷",
+          "entity_key": "p090/c0616"
+        },
+        {
+          "id": "c0618",
+          "name": "龍勒",
+          "entity_key": "p090/c0618"
+        },
+        {
+          "id": "c0623",
+          "name": "昌蒲",
+          "entity_key": "p090/c0623"
+        },
+        {
+          "id": "c0624",
+          "name": "陽關",
+          "entity_key": "p090/c0624"
+        },
+        {
+          "id": "c0625",
+          "name": "乾齊",
+          "entity_key": "p090/c0625"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p091",
+      "prefecture_name": "西海郡",
+      "state_id": "s09",
+      "county_id": "c1901",
+      "county_name": "居延",
+      "county_order": [
+        {
+          "id": "c1901",
+          "name": "居延",
+          "entity_key": "p091/c1901"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p092",
+      "prefecture_name": "晉昌郡",
+      "state_id": "s09",
+      "county_id": "c0626",
+      "county_name": "冥安",
+      "county_order": [
+        {
+          "id": "c0626",
+          "name": "冥安",
+          "entity_key": "p092/c0626"
+        },
+        {
+          "id": "c0627",
+          "name": "伊吾",
+          "entity_key": "p092/c0627"
+        },
+        {
+          "id": "c0628",
+          "name": "宜禾",
+          "entity_key": "p092/c0628"
+        },
+        {
+          "id": "c0629",
+          "name": "淵泉",
+          "entity_key": "p092/c0629"
+        },
+        {
+          "id": "c0630",
+          "name": "廣至",
+          "entity_key": "p092/c0630"
+        },
+        {
+          "id": "c0631",
+          "name": "沙頭",
+          "entity_key": "p092/c0631"
+        },
+        {
+          "id": "c0632",
+          "name": "會稽",
+          "entity_key": "p092/c0632"
+        },
+        {
+          "id": "c0633",
+          "name": "新鄉",
+          "entity_key": "p092/c0633"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p093",
+      "prefecture_name": "隴西郡",
+      "state_id": "s10",
+      "county_id": "c0634",
+      "county_name": "襄武",
+      "county_order": [
+        {
+          "id": "c0634",
+          "name": "襄武",
+          "entity_key": "p093/c0634"
+        },
+        {
+          "id": "c0635",
+          "name": "首陽",
+          "entity_key": "p093/c0635"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p094",
+      "prefecture_name": "南安郡",
+      "state_id": "s10",
+      "county_id": "c0639",
+      "county_name": "獂道",
+      "county_order": [
+        {
+          "id": "c0639",
+          "name": "獂道",
+          "entity_key": "p094/c0639"
+        },
+        {
+          "id": "c0640",
+          "name": "中陶",
+          "entity_key": "p094/c0640"
+        },
+        {
+          "id": "c0641",
+          "name": "新興",
+          "entity_key": "p094/c0641"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p095",
+      "prefecture_name": "天水郡",
+      "state_id": "s10",
+      "county_id": "c0642",
+      "county_name": "冀",
+      "county_order": [
+        {
+          "id": "c0642",
+          "name": "冀",
+          "entity_key": "p095/c0642"
+        },
+        {
+          "id": "c0643",
+          "name": "上邽",
+          "entity_key": "p095/c0643"
+        },
+        {
+          "id": "c0644",
+          "name": "顯親",
+          "entity_key": "p095/c0644"
+        },
+        {
+          "id": "c0645",
+          "name": "始昌",
+          "entity_key": "p095/c0645"
+        },
+        {
+          "id": "c0646",
+          "name": "新陽",
+          "entity_key": "p095/c0646"
+        },
+        {
+          "id": "c0647",
+          "name": "成紀",
+          "entity_key": "p095/c0647"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p096",
+      "prefecture_name": "略陽郡",
+      "state_id": "s10",
+      "county_id": "c0648",
+      "county_name": "臨渭",
+      "county_order": [
+        {
+          "id": "c0648",
+          "name": "臨渭",
+          "entity_key": "p096/c0648"
+        },
+        {
+          "id": "c0649",
+          "name": "平襄",
+          "entity_key": "p096/c0649"
+        },
+        {
+          "id": "c0650",
+          "name": "略陽",
+          "entity_key": "p096/c0650"
+        },
+        {
+          "id": "c0651",
+          "name": "清水",
+          "entity_key": "p096/c0651"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p097",
+      "prefecture_name": "武都郡",
+      "state_id": "s10",
+      "county_id": "c0652",
+      "county_name": "下辨",
+      "county_order": [
+        {
+          "id": "c0652",
+          "name": "下辨",
+          "entity_key": "p097/c0652"
+        },
+        {
+          "id": "c0653",
+          "name": "河池",
+          "entity_key": "p097/c0653"
+        },
+        {
+          "id": "c0654",
+          "name": "故道",
+          "entity_key": "p097/c0654"
+        },
+        {
+          "id": "c0655",
+          "name": "沮",
+          "entity_key": "p097/c0655"
+        },
+        {
+          "id": "c0656",
+          "name": "武都",
+          "entity_key": "p097/c0656"
+        },
+        {
+          "id": "c0657",
+          "name": "氐道",
+          "entity_key": "p097/c0657"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p098",
+      "prefecture_name": "陰平郡",
+      "state_id": "s10",
+      "county_id": "c0658",
+      "county_name": "陰平",
+      "county_order": [
+        {
+          "id": "c0658",
+          "name": "陰平",
+          "entity_key": "p098/c0658"
+        },
+        {
+          "id": "c0659",
+          "name": "平武",
+          "entity_key": "p098/c0659"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p099",
+      "prefecture_name": "狄道郡",
+      "state_id": "s10",
+      "county_id": "c0660",
+      "county_name": "狄道",
+      "county_order": [
+        {
+          "id": "c0660",
+          "name": "狄道",
+          "entity_key": "p099/c0660"
+        },
+        {
+          "id": "c0661",
+          "name": "臨洮",
+          "entity_key": "p099/c0661"
+        },
+        {
+          "id": "c0662",
+          "name": "河關",
+          "entity_key": "p099/c0662"
+        },
+        {
+          "id": "c0663",
+          "name": "洮陽",
+          "entity_key": "p099/c0663"
+        },
+        {
+          "id": "c0664",
+          "name": "遂平",
+          "entity_key": "p099/c0664"
+        },
+        {
+          "id": "c0665",
+          "name": "武街",
+          "entity_key": "p099/c0665"
+        },
+        {
+          "id": "c0666",
+          "name": "始興",
+          "entity_key": "p099/c0666"
+        },
+        {
+          "id": "c0667",
+          "name": "第五",
+          "entity_key": "p099/c0667"
+        },
+        {
+          "id": "c0668",
+          "name": "真仇",
+          "entity_key": "p099/c0668"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p101",
+      "prefecture_name": "漢中郡",
+      "state_id": "s11",
+      "county_id": "c0675",
+      "county_name": "南鄭",
+      "county_order": [
+        {
+          "id": "c0675",
+          "name": "南鄭",
+          "entity_key": "p101/c0675"
+        },
+        {
+          "id": "c0676",
+          "name": "褒中",
+          "entity_key": "p101/c0676"
+        },
+        {
+          "id": "c0677",
+          "name": "沔陽",
+          "entity_key": "p101/c0677"
+        },
+        {
+          "id": "c0678",
+          "name": "西鄉",
+          "entity_key": "p101/c0678"
+        },
+        {
+          "id": "c0679",
+          "name": "成固",
+          "entity_key": "p101/c0679"
+        },
+        {
+          "id": "c0680",
+          "name": "蒲池",
+          "entity_key": "p101/c0680"
+        },
+        {
+          "id": "c0681",
+          "name": "興道",
+          "entity_key": "p101/c0681"
+        },
+        {
+          "id": "c0682",
+          "name": "黃金",
+          "entity_key": "p101/c0682"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p109",
+      "prefecture_name": "宕渠郡",
+      "state_id": "s11",
+      "county_id": "c0728",
+      "county_name": "宕渠",
+      "county_order": [
+        {
+          "id": "c0728",
+          "name": "宕渠",
+          "entity_key": "p109/c0728"
+        },
+        {
+          "id": "c0729",
+          "name": "漢昌",
+          "entity_key": "p109/c0729"
+        },
+        {
+          "id": "c0730",
+          "name": "宣漢",
+          "entity_key": "p109/c0730"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p112",
+      "prefecture_name": "新城郡",
+      "state_id": "s11",
+      "county_id": "c0739",
+      "county_name": "房陵",
+      "county_order": [
+        {
+          "id": "c0739",
+          "name": "房陵",
+          "entity_key": "p112/c0739"
+        },
+        {
+          "id": "c0740",
+          "name": "綏陽",
+          "entity_key": "p112/c0740"
+        },
+        {
+          "id": "c0741",
+          "name": "昌魏",
+          "entity_key": "p112/c0741"
+        },
+        {
+          "id": "c0742",
+          "name": "沶鄉",
+          "entity_key": "p112/c0742"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p113",
+      "prefecture_name": "魏興郡",
+      "state_id": "s11",
+      "county_id": "c0743",
+      "county_name": "興晉",
+      "county_order": [
+        {
+          "id": "c0743",
+          "name": "興晉",
+          "entity_key": "p113/c0743"
+        },
+        {
+          "id": "c0744",
+          "name": "安康",
+          "entity_key": "p113/c0744"
+        },
+        {
+          "id": "c0745",
+          "name": "西城",
+          "entity_key": "p113/c0745"
+        },
+        {
+          "id": "c0746",
+          "name": "錫",
+          "entity_key": "p113/c0746"
+        },
+        {
+          "id": "c0747",
+          "name": "長利",
+          "entity_key": "p113/c0747"
+        },
+        {
+          "id": "c0748",
+          "name": "洵陽",
+          "entity_key": "p113/c0748"
+        },
+        {
+          "id": "c0749",
+          "name": "鄖鄉",
+          "entity_key": "p113/c0749"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p114",
+      "prefecture_name": "上庸國",
+      "state_id": "s11",
+      "county_id": "c0750",
+      "county_name": "上庸",
+      "county_order": [
+        {
+          "id": "c0750",
+          "name": "上庸",
+          "entity_key": "p114/c0750"
+        },
+        {
+          "id": "c0751",
+          "name": "安富",
+          "entity_key": "p114/c0751"
+        },
+        {
+          "id": "c0752",
+          "name": "北巫",
+          "entity_key": "p114/c0752"
+        },
+        {
+          "id": "c0753",
+          "name": "武陵",
+          "entity_key": "p114/c0753"
+        },
+        {
+          "id": "c0754",
+          "name": "上廉",
+          "entity_key": "p114/c0754"
+        },
+        {
+          "id": "c0755",
+          "name": "微陽",
+          "entity_key": "p114/c0755"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p116",
+      "prefecture_name": "犍為郡",
+      "state_id": "s12",
+      "county_id": "c0762",
+      "county_name": "武陽",
+      "county_order": [
+        {
+          "id": "c0762",
+          "name": "武陽",
+          "entity_key": "p116/c0762"
+        },
+        {
+          "id": "c0763",
+          "name": "南安",
+          "entity_key": "p116/c0763"
+        },
+        {
+          "id": "c0764",
+          "name": "僰道",
+          "entity_key": "p116/c0764"
+        },
+        {
+          "id": "c0765",
+          "name": "資中",
+          "entity_key": "p116/c0765"
+        },
+        {
+          "id": "c0766",
+          "name": "牛鞞",
+          "entity_key": "p116/c0766"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p119",
+      "prefecture_name": "江陽郡",
+      "state_id": "s12",
+      "county_id": "c0779",
+      "county_name": "江陽",
+      "county_order": [
+        {
+          "id": "c0779",
+          "name": "江陽",
+          "entity_key": "p119/c0779"
+        },
+        {
+          "id": "c0780",
+          "name": "符",
+          "entity_key": "p119/c0780"
+        },
+        {
+          "id": "c0781",
+          "name": "漢安",
+          "entity_key": "p119/c0781"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p127",
+      "prefecture_name": "巴東郡",
+      "state_id": "s12",
+      "county_id": "c0849",
+      "county_name": "魚復",
+      "county_order": [
+        {
+          "id": "c0849",
+          "name": "魚復",
+          "entity_key": "p127/c0849"
+        },
+        {
+          "id": "c0850",
+          "name": "朐忍",
+          "entity_key": "p127/c0850"
+        },
+        {
+          "id": "c0851",
+          "name": "南浦",
+          "entity_key": "p127/c0851"
+        },
+        {
+          "id": "c0852",
+          "name": "漢豐",
+          "entity_key": "p127/c0852"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p128",
+      "prefecture_name": "涪陵郡",
+      "state_id": "s12",
+      "county_id": "c0853",
+      "county_name": "漢復",
+      "county_order": [
+        {
+          "id": "c0853",
+          "name": "漢復",
+          "entity_key": "p128/c0853"
+        },
+        {
+          "id": "c0854",
+          "name": "涪陵",
+          "entity_key": "p128/c0854"
+        },
+        {
+          "id": "c0855",
+          "name": "漢葭",
+          "entity_key": "p128/c0855"
+        },
+        {
+          "id": "c0856",
+          "name": "漢平",
+          "entity_key": "p128/c0856"
+        },
+        {
+          "id": "c0857",
+          "name": "萬寧",
+          "entity_key": "p128/c0857"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p129",
+      "prefecture_name": "巴郡",
+      "state_id": "s12",
+      "county_id": "c0858",
+      "county_name": "江州",
+      "county_order": [
+        {
+          "id": "c0858",
+          "name": "江州",
+          "entity_key": "p129/c0858"
+        },
+        {
+          "id": "c0859",
+          "name": "枳",
+          "entity_key": "p129/c0859"
+        },
+        {
+          "id": "c0860",
+          "name": "臨江",
+          "entity_key": "p129/c0860"
+        },
+        {
+          "id": "c0861",
+          "name": "墊江",
+          "entity_key": "p129/c0861"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p130",
+      "prefecture_name": "雲南郡",
+      "state_id": "s13",
+      "county_id": "c0862",
+      "county_name": "雲南",
+      "county_order": [
+        {
+          "id": "c0862",
+          "name": "雲南",
+          "entity_key": "p130/c0862"
+        },
+        {
+          "id": "c0863",
+          "name": "梇棟",
+          "entity_key": "p130/c0863"
+        },
+        {
+          "id": "c0864",
+          "name": "雲平",
+          "entity_key": "p130/c0864"
+        },
+        {
+          "id": "c0865",
+          "name": "青蛉",
+          "entity_key": "p130/c0865"
+        },
+        {
+          "id": "c0866",
+          "name": "楪榆",
+          "entity_key": "p130/c0866"
+        },
+        {
+          "id": "c0867",
+          "name": "姑復",
+          "entity_key": "p130/c0867"
+        },
+        {
+          "id": "c0868",
+          "name": "邪龍",
+          "entity_key": "p130/c0868"
+        },
+        {
+          "id": "c0869",
+          "name": "遂久",
+          "entity_key": "p130/c0869"
+        },
+        {
+          "id": "c0870",
+          "name": "永寧",
+          "entity_key": "p130/c0870"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p131",
+      "prefecture_name": "興古郡",
+      "state_id": "s13",
+      "county_id": "c0871",
+      "county_name": "勝休",
+      "county_order": [
+        {
+          "id": "c0871",
+          "name": "勝休",
+          "entity_key": "p131/c0871"
+        },
+        {
+          "id": "c0872",
+          "name": "句町",
+          "entity_key": "p131/c0872"
+        },
+        {
+          "id": "c0873",
+          "name": "宛溫",
+          "entity_key": "p131/c0873"
+        },
+        {
+          "id": "c0874",
+          "name": "漏臥",
+          "entity_key": "p131/c0874"
+        },
+        {
+          "id": "c0875",
+          "name": "賁古",
+          "entity_key": "p131/c0875"
+        },
+        {
+          "id": "c0876",
+          "name": "毋掇",
+          "entity_key": "p131/c0876"
+        },
+        {
+          "id": "c0877",
+          "name": "鐔封",
+          "entity_key": "p131/c0877"
+        },
+        {
+          "id": "c0878",
+          "name": "律高",
+          "entity_key": "p131/c0878"
+        },
+        {
+          "id": "c0879",
+          "name": "漢興",
+          "entity_key": "p131/c0879"
+        },
+        {
+          "id": "c0880",
+          "name": "進乘",
+          "entity_key": "p131/c0880"
+        },
+        {
+          "id": "c0881",
+          "name": "都唐",
+          "entity_key": "p131/c0881"
+        },
+        {
+          "id": "c0882",
+          "name": "西隨",
+          "entity_key": "p131/c0882"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p132",
+      "prefecture_name": "建寧郡",
+      "state_id": "s13",
+      "county_id": "c0883",
+      "county_name": "味",
+      "county_order": [
+        {
+          "id": "c0883",
+          "name": "味",
+          "entity_key": "p132/c0883"
+        },
+        {
+          "id": "c0884",
+          "name": "昆澤",
+          "entity_key": "p132/c0884"
+        },
+        {
+          "id": "c0885",
+          "name": "存䣖",
+          "entity_key": "p132/c0885"
+        },
+        {
+          "id": "c0886",
+          "name": "新定",
+          "entity_key": "p132/c0886"
+        },
+        {
+          "id": "c0887",
+          "name": "談槀",
+          "entity_key": "p132/c0887"
+        },
+        {
+          "id": "c0888",
+          "name": "漏江",
+          "entity_key": "p132/c0888"
+        },
+        {
+          "id": "c0889",
+          "name": "毋單",
+          "entity_key": "p132/c0889"
+        },
+        {
+          "id": "c0890",
+          "name": "同瀨",
+          "entity_key": "p132/c0890"
+        },
+        {
+          "id": "c0891",
+          "name": "牧麻",
+          "entity_key": "p132/c0891"
+        },
+        {
+          "id": "c0897",
+          "name": "修雲",
+          "entity_key": "p132/c0897"
+        },
+        {
+          "id": "c0898",
+          "name": "冷丘",
+          "entity_key": "p132/c0898"
+        },
+        {
+          "id": "c0901",
+          "name": "同樂",
+          "entity_key": "p132/c0901"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p133",
+      "prefecture_name": "永昌郡",
+      "state_id": "s13",
+      "county_id": "c0902",
+      "county_name": "不韋",
+      "county_order": [
+        {
+          "id": "c0902",
+          "name": "不韋",
+          "entity_key": "p133/c0902"
+        },
+        {
+          "id": "c0903",
+          "name": "巂唐",
+          "entity_key": "p133/c0903"
+        },
+        {
+          "id": "c0904",
+          "name": "袁牢",
+          "entity_key": "p133/c0904"
+        },
+        {
+          "id": "c0905",
+          "name": "博南",
+          "entity_key": "p133/c0905"
+        },
+        {
+          "id": "c0906",
+          "name": "比蘇",
+          "entity_key": "p133/c0906"
+        },
+        {
+          "id": "c0907",
+          "name": "雍鄉",
+          "entity_key": "p133/c0907"
+        },
+        {
+          "id": "c0908",
+          "name": "南涪",
+          "entity_key": "p133/c0908"
+        },
+        {
+          "id": "c0909",
+          "name": "永壽",
+          "entity_key": "p133/c0909"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p134",
+      "prefecture_name": "朱提郡",
+      "state_id": "s13",
+      "county_id": "c0910",
+      "county_name": "朱提",
+      "county_order": [
+        {
+          "id": "c0910",
+          "name": "朱提",
+          "entity_key": "p134/c0910"
+        },
+        {
+          "id": "c0911",
+          "name": "南廣",
+          "entity_key": "p134/c0911"
+        },
+        {
+          "id": "c0912",
+          "name": "漢陽",
+          "entity_key": "p134/c0912"
+        },
+        {
+          "id": "c0913",
+          "name": "堂狼",
+          "entity_key": "p134/c0913"
+        },
+        {
+          "id": "c0914",
+          "name": "南秦",
+          "entity_key": "p134/c0914"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p135",
+      "prefecture_name": "越巂郡",
+      "state_id": "s13",
+      "county_id": "c0915",
+      "county_name": "邛都",
+      "county_order": [
+        {
+          "id": "c0915",
+          "name": "邛都",
+          "entity_key": "p135/c0915"
+        },
+        {
+          "id": "c0916",
+          "name": "會無",
+          "entity_key": "p135/c0916"
+        },
+        {
+          "id": "c0917",
+          "name": "卑水",
+          "entity_key": "p135/c0917"
+        },
+        {
+          "id": "c0918",
+          "name": "定莋",
+          "entity_key": "p135/c0918"
+        },
+        {
+          "id": "c0919",
+          "name": "台登",
+          "entity_key": "p135/c0919"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p136",
+      "prefecture_name": "牂柯郡",
+      "state_id": "s13",
+      "county_id": "c0920",
+      "county_name": "萬壽",
+      "county_order": [
+        {
+          "id": "c0920",
+          "name": "萬壽",
+          "entity_key": "p136/c0920"
+        },
+        {
+          "id": "c0921",
+          "name": "且蘭",
+          "entity_key": "p136/c0921"
+        },
+        {
+          "id": "c0922",
+          "name": "談指",
+          "entity_key": "p136/c0922"
+        },
+        {
+          "id": "c0923",
+          "name": "夜郎",
+          "entity_key": "p136/c0923"
+        },
+        {
+          "id": "c0924",
+          "name": "毋斂",
+          "entity_key": "p136/c0924"
+        },
+        {
+          "id": "c0925",
+          "name": "鄨",
+          "entity_key": "p136/c0925"
+        },
+        {
+          "id": "c0926",
+          "name": "並渠",
+          "entity_key": "p136/c0926"
+        },
+        {
+          "id": "c0927",
+          "name": "平夷",
+          "entity_key": "p136/c0927"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p137",
+      "prefecture_name": "益州郡",
+      "state_id": "s13",
+      "county_id": "c0928",
+      "county_name": "滇池",
+      "county_order": [
+        {
+          "id": "c0928",
+          "name": "滇池",
+          "entity_key": "p137/c0928"
+        },
+        {
+          "id": "c0929",
+          "name": "秦臧",
+          "entity_key": "p137/c0929"
+        },
+        {
+          "id": "c0930",
+          "name": "連然",
+          "entity_key": "p137/c0930"
+        },
+        {
+          "id": "c0931",
+          "name": "建伶",
+          "entity_key": "p137/c0931"
+        },
+        {
+          "id": "c0932",
+          "name": "谷昌",
+          "entity_key": "p137/c0932"
+        },
+        {
+          "id": "c0933",
+          "name": "雙柏",
+          "entity_key": "p137/c0933"
+        },
+        {
+          "id": "c0934",
+          "name": "俞元",
+          "entity_key": "p137/c0934"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p141",
+      "prefecture_name": "齊國",
+      "state_id": "s14",
+      "county_id": "c0943",
+      "county_name": "臨淄",
+      "county_order": [
+        {
+          "id": "c0943",
+          "name": "臨淄",
+          "entity_key": "p141/c0943"
+        },
+        {
+          "id": "c0944",
+          "name": "西安",
+          "entity_key": "p141/c0944"
+        },
+        {
+          "id": "c0945",
+          "name": "東安平",
+          "entity_key": "p141/c0945"
+        },
+        {
+          "id": "c0946",
+          "name": "廣饒",
+          "entity_key": "p141/c0946"
+        },
+        {
+          "id": "c0947",
+          "name": "昌國",
+          "entity_key": "p141/c0947"
+        },
+        {
+          "id": "c0948",
+          "name": "般陽",
+          "entity_key": "p141/c0948"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p142",
+      "prefecture_name": "北海國",
+      "state_id": "s14",
+      "county_id": "c0951",
+      "county_name": "平壽",
+      "county_order": [
+        {
+          "id": "c0951",
+          "name": "平壽",
+          "entity_key": "p142/c0951"
+        },
+        {
+          "id": "c0952",
+          "name": "都昌",
+          "entity_key": "p142/c0952"
+        },
+        {
+          "id": "c0953",
+          "name": "即墨",
+          "entity_key": "p142/c0953"
+        },
+        {
+          "id": "c0954",
+          "name": "下密",
+          "entity_key": "p142/c0954"
+        },
+        {
+          "id": "c0955",
+          "name": "膠東",
+          "entity_key": "p142/c0955"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p143",
+      "prefecture_name": "濟南郡",
+      "state_id": "s14",
+      "county_id": "c0956",
+      "county_name": "平陵",
+      "county_order": [
+        {
+          "id": "c0956",
+          "name": "平陵",
+          "entity_key": "p143/c0956"
+        },
+        {
+          "id": "c0957",
+          "name": "歷城",
+          "entity_key": "p143/c0957"
+        },
+        {
+          "id": "c0958",
+          "name": "祝阿",
+          "entity_key": "p143/c0958"
+        },
+        {
+          "id": "c0960",
+          "name": "隰陰",
+          "entity_key": "p143/c0960"
+        },
+        {
+          "id": "c0962",
+          "name": "菅",
+          "entity_key": "p143/c0962"
+        },
+        {
+          "id": "c0963",
+          "name": "著",
+          "entity_key": "p143/c0963"
+        },
+        {
+          "id": "c0964",
+          "name": "鄒平",
+          "entity_key": "p143/c0964"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p144",
+      "prefecture_name": "樂安國",
+      "state_id": "s14",
+      "county_id": "c0966",
+      "county_name": "高苑",
+      "county_order": [
+        {
+          "id": "c0966",
+          "name": "高苑",
+          "entity_key": "p144/c0966"
+        },
+        {
+          "id": "c0967",
+          "name": "臨濟",
+          "entity_key": "p144/c0967"
+        },
+        {
+          "id": "c0968",
+          "name": "博昌",
+          "entity_key": "p144/c0968"
+        },
+        {
+          "id": "c0969",
+          "name": "蓼城",
+          "entity_key": "p144/c0969"
+        },
+        {
+          "id": "c0970",
+          "name": "壽光",
+          "entity_key": "p144/c0970"
+        },
+        {
+          "id": "c0971",
+          "name": "利",
+          "entity_key": "p144/c0971"
+        },
+        {
+          "id": "c0972",
+          "name": "益",
+          "entity_key": "p144/c0972"
+        },
+        {
+          "id": "c0973",
+          "name": "梁鄒",
+          "entity_key": "p144/c0973"
+        },
+        {
+          "id": "c0974",
+          "name": "東朝陽",
+          "entity_key": "p144/c0974"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p145",
+      "prefecture_name": "城陽郡",
+      "state_id": "s14",
+      "county_id": null,
+      "county_name": null,
+      "county_order": [
+        {
+          "id": "c0978",
+          "name": "壯武",
+          "entity_key": "p145/c0978"
+        },
+        {
+          "id": "c0984",
+          "name": "夷安",
+          "entity_key": "p145/c0984"
+        },
+        {
+          "id": "c0985",
+          "name": "朱虛",
+          "entity_key": "p145/c0985"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p146",
+      "prefecture_name": "東萊郡",
+      "state_id": "s14",
+      "county_id": "c0988",
+      "county_name": "掖",
+      "county_order": [
+        {
+          "id": "c0988",
+          "name": "掖",
+          "entity_key": "p146/c0988"
+        },
+        {
+          "id": "c0989",
+          "name": "黃",
+          "entity_key": "p146/c0989"
+        },
+        {
+          "id": "c0990",
+          "name": "當利",
+          "entity_key": "p146/c0990"
+        },
+        {
+          "id": "c0991",
+          "name": "盧鄉",
+          "entity_key": "p146/c0991"
+        },
+        {
+          "id": "c0992",
+          "name": "曲城",
+          "entity_key": "p146/c0992"
+        },
+        {
+          "id": "c0993",
+          "name": "㡉",
+          "entity_key": "p146/c0993"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p147",
+      "prefecture_name": "長廣郡",
+      "state_id": "s14",
+      "county_id": "c0997",
+      "county_name": "不其",
+      "county_order": [
+        {
+          "id": "c0997",
+          "name": "不其",
+          "entity_key": "p147/c0997"
+        },
+        {
+          "id": "c0998",
+          "name": "長廣",
+          "entity_key": "p147/c0998"
+        },
+        {
+          "id": "c0999",
+          "name": "挺",
+          "entity_key": "p147/c0999"
+        },
+        {
+          "id": "c1000",
+          "name": "昌陽",
+          "entity_key": "p147/c1000"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p148",
+      "prefecture_name": "高密國",
+      "state_id": "s14",
+      "county_id": null,
+      "county_name": null,
+      "county_order": [
+        {
+          "id": "c1001",
+          "name": "黔陬",
+          "entity_key": "p148/c1001"
+        },
+        {
+          "id": "c1003",
+          "name": "淳於",
+          "entity_key": "p148/c1003"
+        },
+        {
+          "id": "c1004",
+          "name": "昌安",
+          "entity_key": "p148/c1004"
+        },
+        {
+          "id": "c1005",
+          "name": "高密",
+          "entity_key": "p148/c1005"
+        },
+        {
+          "id": "c1006",
+          "name": "平昌",
+          "entity_key": "p148/c1006"
+        },
+        {
+          "id": "c1007",
+          "name": "營陵",
+          "entity_key": "p148/c1007"
+        },
+        {
+          "id": "c1008",
+          "name": "安丘",
+          "entity_key": "p148/c1008"
+        },
+        {
+          "id": "c1009",
+          "name": "廣",
+          "entity_key": "p148/c1009"
+        },
+        {
+          "id": "c1010",
+          "name": "劇",
+          "entity_key": "p148/c1010"
+        },
+        {
+          "id": "c1011",
+          "name": "臨朐",
+          "entity_key": "p148/c1011"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p149",
+      "prefecture_name": "彭城國",
+      "state_id": "s15",
+      "county_id": "c1012",
+      "county_name": "彭城",
+      "county_order": [
+        {
+          "id": "c1012",
+          "name": "彭城",
+          "entity_key": "p149/c1012"
+        },
+        {
+          "id": "c1013",
+          "name": "留",
+          "entity_key": "p149/c1013"
+        },
+        {
+          "id": "c1014",
+          "name": "傅陽",
+          "entity_key": "p149/c1014"
+        },
+        {
+          "id": "c1015",
+          "name": "武原",
+          "entity_key": "p149/c1015"
+        },
+        {
+          "id": "c1016",
+          "name": "呂",
+          "entity_key": "p149/c1016"
+        },
+        {
+          "id": "c1017",
+          "name": "梧",
+          "entity_key": "p149/c1017"
+        },
+        {
+          "id": "c1018",
+          "name": "廣戚",
+          "entity_key": "p149/c1018"
+        },
+        {
+          "id": "c1019",
+          "name": "蕃",
+          "entity_key": "p149/c1019"
+        },
+        {
+          "id": "c1020",
+          "name": "薛",
+          "entity_key": "p149/c1020"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p150",
+      "prefecture_name": "下邳國",
+      "state_id": "s15",
+      "county_id": "c1021",
+      "county_name": "下邳",
+      "county_order": [
+        {
+          "id": "c1021",
+          "name": "下邳",
+          "entity_key": "p150/c1021"
+        },
+        {
+          "id": "c1022",
+          "name": "睢陵",
+          "entity_key": "p150/c1022"
+        },
+        {
+          "id": "c1023",
+          "name": "夏丘",
+          "entity_key": "p150/c1023"
+        },
+        {
+          "id": "c1024",
+          "name": "取慮",
+          "entity_key": "p150/c1024"
+        },
+        {
+          "id": "c1025",
+          "name": "僮",
+          "entity_key": "p150/c1025"
+        },
+        {
+          "id": "c1026",
+          "name": "良城",
+          "entity_key": "p150/c1026"
+        },
+        {
+          "id": "c1031",
+          "name": "北凌",
+          "entity_key": "p150/c1031"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p151",
+      "prefecture_name": "臨淮郡",
+      "state_id": "s15",
+      "county_id": "c1032",
+      "county_name": "盱眙",
+      "county_order": [
+        {
+          "id": "c1032",
+          "name": "盱眙",
+          "entity_key": "p151/c1032"
+        },
+        {
+          "id": "c1033",
+          "name": "東陽",
+          "entity_key": "p151/c1033"
+        },
+        {
+          "id": "c1034",
+          "name": "高山",
+          "entity_key": "p151/c1034"
+        },
+        {
+          "id": "c1035",
+          "name": "潘旌",
+          "entity_key": "p151/c1035"
+        },
+        {
+          "id": "c1036",
+          "name": "贅其",
+          "entity_key": "p151/c1036"
+        },
+        {
+          "id": "c1037",
+          "name": "高郵",
+          "entity_key": "p151/c1037"
+        },
+        {
+          "id": "c1038",
+          "name": "淮陵",
+          "entity_key": "p151/c1038"
+        },
+        {
+          "id": "c1040",
+          "name": "下相",
+          "entity_key": "p151/c1040"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p152",
+      "prefecture_name": "東海國",
+      "state_id": "s15",
+      "county_id": "c1043",
+      "county_name": "郯",
+      "county_order": [
+        {
+          "id": "c1043",
+          "name": "郯",
+          "entity_key": "p152/c1043"
+        },
+        {
+          "id": "c1044",
+          "name": "祝其",
+          "entity_key": "p152/c1044"
+        },
+        {
+          "id": "c1045",
+          "name": "朐",
+          "entity_key": "p152/c1045"
+        },
+        {
+          "id": "c1046",
+          "name": "襄賁",
+          "entity_key": "p152/c1046"
+        },
+        {
+          "id": "c1048",
+          "name": "厚丘",
+          "entity_key": "p152/c1048"
+        },
+        {
+          "id": "c1053",
+          "name": "利城",
+          "entity_key": "p152/c1053"
+        },
+        {
+          "id": "c1054",
+          "name": "贛榆",
+          "entity_key": "p152/c1054"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p153",
+      "prefecture_name": "琅邪國",
+      "state_id": "s15",
+      "county_id": "c1055",
+      "county_name": "開陽",
+      "county_order": [
+        {
+          "id": "c1055",
+          "name": "開陽",
+          "entity_key": "p153/c1055"
+        },
+        {
+          "id": "c1056",
+          "name": "臨沂",
+          "entity_key": "p153/c1056"
+        },
+        {
+          "id": "c1057",
+          "name": "陽都",
+          "entity_key": "p153/c1057"
+        },
+        {
+          "id": "c1058",
+          "name": "縉",
+          "entity_key": "p153/c1058"
+        },
+        {
+          "id": "c1059",
+          "name": "即丘",
+          "entity_key": "p153/c1059"
+        },
+        {
+          "id": "c1060",
+          "name": "費",
+          "entity_key": "p153/c1060"
+        },
+        {
+          "id": "c1061",
+          "name": "華",
+          "entity_key": "p153/c1061"
+        },
+        {
+          "id": "c1062",
+          "name": "蒙陰",
+          "entity_key": "p153/c1062"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p154",
+      "prefecture_name": "東莞郡",
+      "state_id": "s15",
+      "county_id": null,
+      "county_name": null,
+      "county_order": [
+        {
+          "id": "c1070",
+          "name": "東莞",
+          "entity_key": "p154/c1070"
+        },
+        {
+          "id": "c1078",
+          "name": "東武",
+          "entity_key": "p154/c1078"
+        },
+        {
+          "id": "c1080",
+          "name": "莒",
+          "entity_key": "p154/c1080"
+        },
+        {
+          "id": "c1081",
+          "name": "諸",
+          "entity_key": "p154/c1081"
+        },
+        {
+          "id": "c1082",
+          "name": "姑幕",
+          "entity_key": "p154/c1082"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p155",
+      "prefecture_name": "廣陵公國",
+      "state_id": "s15",
+      "county_id": "c1085",
+      "county_name": "射陽",
+      "county_order": [
+        {
+          "id": "c1085",
+          "name": "射陽",
+          "entity_key": "p155/c1085"
+        },
+        {
+          "id": "c1084",
+          "name": "淮陰",
+          "entity_key": "p155/c1084"
+        },
+        {
+          "id": "c1086",
+          "name": "輿",
+          "entity_key": "p155/c1086"
+        },
+        {
+          "id": "c1087",
+          "name": "海陵",
+          "entity_key": "p155/c1087"
+        },
+        {
+          "id": "c1088",
+          "name": "廣陵",
+          "entity_key": "p155/c1088"
+        },
+        {
+          "id": "c1089",
+          "name": "鹽瀆",
+          "entity_key": "p155/c1089"
+        },
+        {
+          "id": "c1090",
+          "name": "淮浦",
+          "entity_key": "p155/c1090"
+        },
+        {
+          "id": "c1091",
+          "name": "江都",
+          "entity_key": "p155/c1091"
+        },
+        {
+          "id": "c1092",
+          "name": "海西",
+          "entity_key": "p155/c1092"
+        },
+        {
+          "id": "c1093",
+          "name": "凌",
+          "entity_key": "p155/c1093"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p156",
+      "prefecture_name": "蘭陵公國",
+      "state_id": "s15",
+      "county_id": "c1094",
+      "county_name": "承",
+      "county_order": [
+        {
+          "id": "c1094",
+          "name": "承",
+          "entity_key": "p156/c1094"
+        },
+        {
+          "id": "c1095",
+          "name": "蘭陵",
+          "entity_key": "p156/c1095"
+        },
+        {
+          "id": "c1096",
+          "name": "戚",
+          "entity_key": "p156/c1096"
+        },
+        {
+          "id": "c1097",
+          "name": "合鄉",
+          "entity_key": "p156/c1097"
+        },
+        {
+          "id": "c1098",
+          "name": "昌慮",
+          "entity_key": "p156/c1098"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p157",
+      "prefecture_name": "東安國",
+      "state_id": "s15",
+      "county_id": "c1099",
+      "county_name": "蓋",
+      "county_order": [
+        {
+          "id": "c1099",
+          "name": "蓋",
+          "entity_key": "p157/c1099"
+        },
+        {
+          "id": "c1100",
+          "name": "東安",
+          "entity_key": "p157/c1100"
+        },
+        {
+          "id": "c0168",
+          "name": "新泰",
+          "entity_key": "p157/c0168"
+        },
+        {
+          "id": "c1902",
+          "name": "發干",
+          "entity_key": "p157/c1902"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p158",
+      "prefecture_name": "淮陵國",
+      "state_id": "s15",
+      "county_id": null,
+      "county_name": null,
+      "county_order": [
+        {
+          "id": "c1101",
+          "name": "司吾",
+          "entity_key": "p158/c1101"
+        },
+        {
+          "id": "c1102",
+          "name": "徐",
+          "entity_key": "p158/c1102"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p159",
+      "prefecture_name": "堂邑郡",
+      "state_id": "s15",
+      "county_id": "c1042",
+      "county_name": "堂邑",
+      "county_order": [
+        {
+          "id": "c1042",
+          "name": "堂邑",
+          "entity_key": "p159/c1042"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p160",
+      "prefecture_name": "江夏郡",
+      "state_id": "s16",
+      "county_id": "c1103",
+      "county_name": "安陸",
+      "county_order": [
+        {
+          "id": "c1103",
+          "name": "安陸",
+          "entity_key": "p160/c1103"
+        },
+        {
+          "id": "c1104",
+          "name": "曲陵",
+          "entity_key": "p160/c1104"
+        },
+        {
+          "id": "c1105",
+          "name": "鄳",
+          "entity_key": "p160/c1105"
+        },
+        {
+          "id": "c1107",
+          "name": "平春",
+          "entity_key": "p160/c1107"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p161",
+      "prefecture_name": "南郡",
+      "state_id": "s16",
+      "county_id": "c1111",
+      "county_name": "江陵",
+      "county_order": [
+        {
+          "id": "c1111",
+          "name": "江陵",
+          "entity_key": "p161/c1111"
+        },
+        {
+          "id": "c1112",
+          "name": "編",
+          "entity_key": "p161/c1112"
+        },
+        {
+          "id": "c1113",
+          "name": "當陽",
+          "entity_key": "p161/c1113"
+        },
+        {
+          "id": "c1115",
+          "name": "鄀",
+          "entity_key": "p161/c1115"
+        },
+        {
+          "id": "c1116",
+          "name": "枝江",
+          "entity_key": "p161/c1116"
+        },
+        {
+          "id": "c1117",
+          "name": "旌陽",
+          "entity_key": "p161/c1117"
+        },
+        {
+          "id": "c1120",
+          "name": "石首",
+          "entity_key": "p161/c1120"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p162",
+      "prefecture_name": "南平郡",
+      "state_id": "s16",
+      "county_id": "c1123",
+      "county_name": "江安",
+      "county_order": [
+        {
+          "id": "c1123",
+          "name": "江安",
+          "entity_key": "p162/c1123"
+        },
+        {
+          "id": "c1121",
+          "name": "作唐",
+          "entity_key": "p162/c1121"
+        },
+        {
+          "id": "c1122",
+          "name": "孱陵",
+          "entity_key": "p162/c1122"
+        },
+        {
+          "id": "c1124",
+          "name": "安南",
+          "entity_key": "p162/c1124"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p163",
+      "prefecture_name": "襄陽郡",
+      "state_id": "s16",
+      "county_id": "c1125",
+      "county_name": "襄陽",
+      "county_order": [
+        {
+          "id": "c1125",
+          "name": "襄陽",
+          "entity_key": "p163/c1125"
+        },
+        {
+          "id": "c1126",
+          "name": "臨沮",
+          "entity_key": "p163/c1126"
+        },
+        {
+          "id": "c1127",
+          "name": "宜城",
+          "entity_key": "p163/c1127"
+        },
+        {
+          "id": "c1128",
+          "name": "邔",
+          "entity_key": "p163/c1128"
+        },
+        {
+          "id": "c1129",
+          "name": "中盧",
+          "entity_key": "p163/c1129"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p164",
+      "prefecture_name": "南陽國",
+      "state_id": "s16",
+      "county_id": "c1133",
+      "county_name": "宛",
+      "county_order": [
+        {
+          "id": "c1133",
+          "name": "宛",
+          "entity_key": "p164/c1133"
+        },
+        {
+          "id": "c1134",
+          "name": "西鄂",
+          "entity_key": "p164/c1134"
+        },
+        {
+          "id": "c1135",
+          "name": "雉",
+          "entity_key": "p164/c1135"
+        },
+        {
+          "id": "c1136",
+          "name": "魯陽",
+          "entity_key": "p164/c1136"
+        },
+        {
+          "id": "c1137",
+          "name": "犨",
+          "entity_key": "p164/c1137"
+        },
+        {
+          "id": "c1138",
+          "name": "博望",
+          "entity_key": "p164/c1138"
+        },
+        {
+          "id": "c1139",
+          "name": "堵陽",
+          "entity_key": "p164/c1139"
+        },
+        {
+          "id": "c1140",
+          "name": "葉",
+          "entity_key": "p164/c1140"
+        },
+        {
+          "id": "c1141",
+          "name": "舞陰",
+          "entity_key": "p164/c1141"
+        },
+        {
+          "id": "c1142",
+          "name": "比陽",
+          "entity_key": "p164/c1142"
+        },
+        {
+          "id": "c1143",
+          "name": "冠軍",
+          "entity_key": "p164/c1143"
+        },
+        {
+          "id": "c1144",
+          "name": "酈",
+          "entity_key": "p164/c1144"
+        },
+        {
+          "id": "c1145",
+          "name": "涅陽",
+          "entity_key": "p164/c1145"
+        },
+        {
+          "id": "c1146",
+          "name": "育陽",
+          "entity_key": "p164/c1146"
+        },
+        {
+          "id": "c1147",
+          "name": "襄鄉",
+          "entity_key": "p164/c1147"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p165",
+      "prefecture_name": "義陽郡",
+      "state_id": "s16",
+      "county_id": "c1157",
+      "county_name": "安昌",
+      "county_order": [
+        {
+          "id": "c1157",
+          "name": "安昌",
+          "entity_key": "p165/c1157"
+        },
+        {
+          "id": "c1159",
+          "name": "平氏",
+          "entity_key": "p165/c1159"
+        },
+        {
+          "id": "c1160",
+          "name": "義陽",
+          "entity_key": "p165/c1160"
+        },
+        {
+          "id": "c1166",
+          "name": "厥西",
+          "entity_key": "p165/c1166"
+        },
+        {
+          "id": "c1168",
+          "name": "朝陽",
+          "entity_key": "p165/c1168"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p166",
+      "prefecture_name": "新野國",
+      "state_id": "s16",
+      "county_id": null,
+      "county_name": null,
+      "county_order": [
+        {
+          "id": "c1169",
+          "name": "棘陽",
+          "entity_key": "p166/c1169"
+        },
+        {
+          "id": "c1170",
+          "name": "蔡陽",
+          "entity_key": "p166/c1170"
+        },
+        {
+          "id": "c1171",
+          "name": "穰",
+          "entity_key": "p166/c1171"
+        },
+        {
+          "id": "c1172",
+          "name": "鄧",
+          "entity_key": "p166/c1172"
+        },
+        {
+          "id": "c1173",
+          "name": "山都",
+          "entity_key": "p166/c1173"
+        },
+        {
+          "id": "c1174",
+          "name": "新野",
+          "entity_key": "p166/c1174"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p167",
+      "prefecture_name": "順陽國",
+      "state_id": "s16",
+      "county_id": "c1175",
+      "county_name": "酇",
+      "county_order": [
+        {
+          "id": "c1175",
+          "name": "酇",
+          "entity_key": "p167/c1175"
+        },
+        {
+          "id": "c1176",
+          "name": "順陽",
+          "entity_key": "p167/c1176"
+        },
+        {
+          "id": "c1177",
+          "name": "南鄉",
+          "entity_key": "p167/c1177"
+        },
+        {
+          "id": "c1178",
+          "name": "丹水",
+          "entity_key": "p167/c1178"
+        },
+        {
+          "id": "c1179",
+          "name": "武當",
+          "entity_key": "p167/c1179"
+        },
+        {
+          "id": "c1180",
+          "name": "陰",
+          "entity_key": "p167/c1180"
+        },
+        {
+          "id": "c1181",
+          "name": "築陽",
+          "entity_key": "p167/c1181"
+        },
+        {
+          "id": "c1182",
+          "name": "析",
+          "entity_key": "p167/c1182"
+        },
+        {
+          "id": "c1183",
+          "name": "汎陽",
+          "entity_key": "p167/c1183"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p171",
+      "prefecture_name": "建平郡",
+      "state_id": "s16",
+      "county_id": "c1202",
+      "county_name": "巫",
+      "county_order": [
+        {
+          "id": "c1202",
+          "name": "巫",
+          "entity_key": "p171/c1202"
+        },
+        {
+          "id": "c1203",
+          "name": "北井",
+          "entity_key": "p171/c1203"
+        },
+        {
+          "id": "c1204",
+          "name": "泰昌",
+          "entity_key": "p171/c1204"
+        },
+        {
+          "id": "c1205",
+          "name": "信陵",
+          "entity_key": "p171/c1205"
+        },
+        {
+          "id": "c1206",
+          "name": "興山",
+          "entity_key": "p171/c1206"
+        },
+        {
+          "id": "c1207",
+          "name": "建始",
+          "entity_key": "p171/c1207"
+        },
+        {
+          "id": "c1208",
+          "name": "秭歸",
+          "entity_key": "p171/c1208"
+        },
+        {
+          "id": "c1209",
+          "name": "沙渠",
+          "entity_key": "p171/c1209"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p172",
+      "prefecture_name": "宜都郡",
+      "state_id": "s16",
+      "county_id": "c1210",
+      "county_name": "夷陵",
+      "county_order": [
+        {
+          "id": "c1210",
+          "name": "夷陵",
+          "entity_key": "p172/c1210"
+        },
+        {
+          "id": "c1211",
+          "name": "夷道",
+          "entity_key": "p172/c1211"
+        },
+        {
+          "id": "c1212",
+          "name": "佷山",
+          "entity_key": "p172/c1212"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p173",
+      "prefecture_name": "武陵國",
+      "state_id": "s16",
+      "county_id": "c1213",
+      "county_name": "臨沅",
+      "county_order": [
+        {
+          "id": "c1213",
+          "name": "臨沅",
+          "entity_key": "p173/c1213"
+        },
+        {
+          "id": "c1214",
+          "name": "漢壽",
+          "entity_key": "p173/c1214"
+        },
+        {
+          "id": "c1215",
+          "name": "沅陵",
+          "entity_key": "p173/c1215"
+        },
+        {
+          "id": "c1216",
+          "name": "舞陽",
+          "entity_key": "p173/c1216"
+        },
+        {
+          "id": "c1217",
+          "name": "酉陽",
+          "entity_key": "p173/c1217"
+        },
+        {
+          "id": "c1218",
+          "name": "遷陵",
+          "entity_key": "p173/c1218"
+        },
+        {
+          "id": "c1219",
+          "name": "鐔城",
+          "entity_key": "p173/c1219"
+        },
+        {
+          "id": "c1220",
+          "name": "沅南",
+          "entity_key": "p173/c1220"
+        },
+        {
+          "id": "c1221",
+          "name": "龍陽",
+          "entity_key": "p173/c1221"
+        },
+        {
+          "id": "c1222",
+          "name": "黚陽",
+          "entity_key": "p173/c1222"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p174",
+      "prefecture_name": "天門郡",
+      "state_id": "s16",
+      "county_id": "c1223",
+      "county_name": "零陽",
+      "county_order": [
+        {
+          "id": "c1223",
+          "name": "零陽",
+          "entity_key": "p174/c1223"
+        },
+        {
+          "id": "c1224",
+          "name": "充",
+          "entity_key": "p174/c1224"
+        },
+        {
+          "id": "c1225",
+          "name": "漊中",
+          "entity_key": "p174/c1225"
+        },
+        {
+          "id": "c1226",
+          "name": "臨澧",
+          "entity_key": "p174/c1226"
+        },
+        {
+          "id": "c1227",
+          "name": "澧陽",
+          "entity_key": "p174/c1227"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p175",
+      "prefecture_name": "長沙郡",
+      "state_id": "s16",
+      "county_id": "c1228",
+      "county_name": "臨湘",
+      "county_order": [
+        {
+          "id": "c1228",
+          "name": "臨湘",
+          "entity_key": "p175/c1228"
+        },
+        {
+          "id": "c1229",
+          "name": "攸",
+          "entity_key": "p175/c1229"
+        },
+        {
+          "id": "c1231",
+          "name": "醴陵",
+          "entity_key": "p175/c1231"
+        },
+        {
+          "id": "c1232",
+          "name": "羅",
+          "entity_key": "p175/c1232"
+        },
+        {
+          "id": "c1233",
+          "name": "吳昌",
+          "entity_key": "p175/c1233"
+        },
+        {
+          "id": "c1234",
+          "name": "劉陽",
+          "entity_key": "p175/c1234"
+        },
+        {
+          "id": "c1235",
+          "name": "建寧",
+          "entity_key": "p175/c1235"
+        },
+        {
+          "id": "c1236",
+          "name": "蒲圻",
+          "entity_key": "p175/c1236"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p176",
+      "prefecture_name": "衡陽郡",
+      "state_id": "s16",
+      "county_id": "c1238",
+      "county_name": "湘南",
+      "county_order": [
+        {
+          "id": "c1238",
+          "name": "湘南",
+          "entity_key": "p176/c1238"
+        },
+        {
+          "id": "c1239",
+          "name": "湘鄉",
+          "entity_key": "p176/c1239"
+        },
+        {
+          "id": "c1240",
+          "name": "益陽",
+          "entity_key": "p176/c1240"
+        },
+        {
+          "id": "c1241",
+          "name": "新康",
+          "entity_key": "p176/c1241"
+        },
+        {
+          "id": "c1242",
+          "name": "衡山",
+          "entity_key": "p176/c1242"
+        },
+        {
+          "id": "c1243",
+          "name": "重安",
+          "entity_key": "p176/c1243"
+        },
+        {
+          "id": "c1244",
+          "name": "烝陽",
+          "entity_key": "p176/c1244"
+        },
+        {
+          "id": "c1245",
+          "name": "湘西",
+          "entity_key": "p176/c1245"
+        },
+        {
+          "id": "c1246",
+          "name": "連道",
+          "entity_key": "p176/c1246"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p177",
+      "prefecture_name": "湘東郡",
+      "state_id": "s16",
+      "county_id": "c1247",
+      "county_name": "酃",
+      "county_order": [
+        {
+          "id": "c1247",
+          "name": "酃",
+          "entity_key": "p177/c1247"
+        },
+        {
+          "id": "c1248",
+          "name": "新平",
+          "entity_key": "p177/c1248"
+        },
+        {
+          "id": "c1249",
+          "name": "利陽",
+          "entity_key": "p177/c1249"
+        },
+        {
+          "id": "c1250",
+          "name": "陰山",
+          "entity_key": "p177/c1250"
+        },
+        {
+          "id": "c1251",
+          "name": "臨烝",
+          "entity_key": "p177/c1251"
+        },
+        {
+          "id": "c1252",
+          "name": "茶陵",
+          "entity_key": "p177/c1252"
+        },
+        {
+          "id": "c1253",
+          "name": "新寧",
+          "entity_key": "p177/c1253"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p178",
+      "prefecture_name": "零陵郡",
+      "state_id": "s16",
+      "county_id": "c1254",
+      "county_name": "泉陵",
+      "county_order": [
+        {
+          "id": "c1254",
+          "name": "泉陵",
+          "entity_key": "p178/c1254"
+        },
+        {
+          "id": "c1255",
+          "name": "祁陽",
+          "entity_key": "p178/c1255"
+        },
+        {
+          "id": "c1256",
+          "name": "永昌",
+          "entity_key": "p178/c1256"
+        },
+        {
+          "id": "c1257",
+          "name": "零陵",
+          "entity_key": "p178/c1257"
+        },
+        {
+          "id": "c1258",
+          "name": "洮陽",
+          "entity_key": "p178/c1258"
+        },
+        {
+          "id": "c1259",
+          "name": "觀陽",
+          "entity_key": "p178/c1259"
+        },
+        {
+          "id": "c1260",
+          "name": "營浦",
+          "entity_key": "p178/c1260"
+        },
+        {
+          "id": "c1261",
+          "name": "營道",
+          "entity_key": "p178/c1261"
+        },
+        {
+          "id": "c1262",
+          "name": "泠道",
+          "entity_key": "p178/c1262"
+        },
+        {
+          "id": "c1263",
+          "name": "春陵",
+          "entity_key": "p178/c1263"
+        },
+        {
+          "id": "c1264",
+          "name": "應陽",
+          "entity_key": "p178/c1264"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p179",
+      "prefecture_name": "邵陵郡",
+      "state_id": "s16",
+      "county_id": "c1265",
+      "county_name": "邵陵",
+      "county_order": [
+        {
+          "id": "c1265",
+          "name": "邵陵",
+          "entity_key": "p179/c1265"
+        },
+        {
+          "id": "c1266",
+          "name": "邵陽",
+          "entity_key": "p179/c1266"
+        },
+        {
+          "id": "c1267",
+          "name": "高平",
+          "entity_key": "p179/c1267"
+        },
+        {
+          "id": "c1268",
+          "name": "都梁",
+          "entity_key": "p179/c1268"
+        },
+        {
+          "id": "c1269",
+          "name": "夫夷",
+          "entity_key": "p179/c1269"
+        },
+        {
+          "id": "c1270",
+          "name": "新",
+          "entity_key": "p179/c1270"
+        },
+        {
+          "id": "c1271",
+          "name": "建興",
+          "entity_key": "p179/c1271"
+        },
+        {
+          "id": "c1272",
+          "name": "武剛",
+          "entity_key": "p179/c1272"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p183",
+      "prefecture_name": "隨國",
+      "state_id": "s16",
+      "county_id": "c1295",
+      "county_name": "隨",
+      "county_order": [
+        {
+          "id": "c1295",
+          "name": "隨",
+          "entity_key": "p183/c1295"
+        },
+        {
+          "id": "c1296",
+          "name": "平林",
+          "entity_key": "p183/c1296"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p184",
+      "prefecture_name": "竟陵郡",
+      "state_id": "s16",
+      "county_id": "c1297",
+      "county_name": "雲杜",
+      "county_order": [
+        {
+          "id": "c1297",
+          "name": "雲杜",
+          "entity_key": "p184/c1297"
+        },
+        {
+          "id": "c1298",
+          "name": "竟陵",
+          "entity_key": "p184/c1298"
+        },
+        {
+          "id": "c1299",
+          "name": "南新市",
+          "entity_key": "p184/c1299"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p185",
+      "prefecture_name": "建昌郡",
+      "state_id": "s16",
+      "county_id": "c1300",
+      "county_name": "下雋",
+      "county_order": [
+        {
+          "id": "c1300",
+          "name": "下雋",
+          "entity_key": "p185/c1300"
+        },
+        {
+          "id": "c1301",
+          "name": "巴陵",
+          "entity_key": "p185/c1301"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p186",
+      "prefecture_name": "成都國",
+      "state_id": "s16",
+      "county_id": "c1302",
+      "county_name": "華容",
+      "county_order": [
+        {
+          "id": "c1302",
+          "name": "華容",
+          "entity_key": "p186/c1302"
+        },
+        {
+          "id": "c1303",
+          "name": "州陵",
+          "entity_key": "p186/c1303"
+        },
+        {
+          "id": "c1304",
+          "name": "監利",
+          "entity_key": "p186/c1304"
+        },
+        {
+          "id": "c1305",
+          "name": "豐都",
+          "entity_key": "p186/c1305"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p187",
+      "prefecture_name": "淮南郡",
+      "state_id": "s17",
+      "county_id": "c1306",
+      "county_name": "壽春",
+      "county_order": [
+        {
+          "id": "c1306",
+          "name": "壽春",
+          "entity_key": "p187/c1306"
+        },
+        {
+          "id": "c1307",
+          "name": "成德",
+          "entity_key": "p187/c1307"
+        },
+        {
+          "id": "c1308",
+          "name": "下蔡",
+          "entity_key": "p187/c1308"
+        },
+        {
+          "id": "c1309",
+          "name": "義城",
+          "entity_key": "p187/c1309"
+        },
+        {
+          "id": "c1310",
+          "name": "西曲陽",
+          "entity_key": "p187/c1310"
+        },
+        {
+          "id": "c1311",
+          "name": "平阿",
+          "entity_key": "p187/c1311"
+        },
+        {
+          "id": "c1312",
+          "name": "全椒",
+          "entity_key": "p187/c1312"
+        },
+        {
+          "id": "c1313",
+          "name": "阜陵",
+          "entity_key": "p187/c1313"
+        },
+        {
+          "id": "c1314",
+          "name": "合肥",
+          "entity_key": "p187/c1314"
+        },
+        {
+          "id": "c1315",
+          "name": "陰陵",
+          "entity_key": "p187/c1315"
+        },
+        {
+          "id": "c1316",
+          "name": "鍾離",
+          "entity_key": "p187/c1316"
+        },
+        {
+          "id": "c1318",
+          "name": "當塗",
+          "entity_key": "p187/c1318"
+        },
+        {
+          "id": "c1319",
+          "name": "逡遒",
+          "entity_key": "p187/c1319"
+        },
+        {
+          "id": "c1320",
+          "name": "東城",
+          "entity_key": "p187/c1320"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p188",
+      "prefecture_name": "廬江郡",
+      "state_id": "s17",
+      "county_id": "c1322",
+      "county_name": "舒",
+      "county_order": [
+        {
+          "id": "c1322",
+          "name": "舒",
+          "entity_key": "p188/c1322"
+        },
+        {
+          "id": "c1323",
+          "name": "六安",
+          "entity_key": "p188/c1323"
+        },
+        {
+          "id": "c1324",
+          "name": "龍舒",
+          "entity_key": "p188/c1324"
+        },
+        {
+          "id": "c1325",
+          "name": "灊",
+          "entity_key": "p188/c1325"
+        },
+        {
+          "id": "c1326",
+          "name": "居巢",
+          "entity_key": "p188/c1326"
+        },
+        {
+          "id": "c1327",
+          "name": "皖",
+          "entity_key": "p188/c1327"
+        },
+        {
+          "id": "c1329",
+          "name": "臨湖",
+          "entity_key": "p188/c1329"
+        },
+        {
+          "id": "c1330",
+          "name": "襄安",
+          "entity_key": "p188/c1330"
+        },
+        {
+          "id": "c1331",
+          "name": "陽泉",
+          "entity_key": "p188/c1331"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p189",
+      "prefecture_name": "丹楊郡",
+      "state_id": "s17",
+      "county_id": "c1337",
+      "county_name": "秣陵",
+      "county_order": [
+        {
+          "id": "c1337",
+          "name": "秣陵",
+          "entity_key": "p189/c1337"
+        },
+        {
+          "id": "c1338",
+          "name": "建鄴",
+          "entity_key": "p189/c1338"
+        },
+        {
+          "id": "c1339",
+          "name": "江寧",
+          "entity_key": "p189/c1339"
+        },
+        {
+          "id": "c1340",
+          "name": "丹楊",
+          "entity_key": "p189/c1340"
+        },
+        {
+          "id": "c1341",
+          "name": "於湖",
+          "entity_key": "p189/c1341"
+        },
+        {
+          "id": "c1342",
+          "name": "蕪湖",
+          "entity_key": "p189/c1342"
+        },
+        {
+          "id": "c1344",
+          "name": "句容",
+          "entity_key": "p189/c1344"
+        },
+        {
+          "id": "c1345",
+          "name": "溧陽",
+          "entity_key": "p189/c1345"
+        },
+        {
+          "id": "c1346",
+          "name": "湖熟",
+          "entity_key": "p189/c1346"
+        },
+        {
+          "id": "c1347",
+          "name": "江乘",
+          "entity_key": "p189/c1347"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p190",
+      "prefecture_name": "宣城郡",
+      "state_id": "s17",
+      "county_id": "c1348",
+      "county_name": "宛陵",
+      "county_order": [
+        {
+          "id": "c1348",
+          "name": "宛陵",
+          "entity_key": "p190/c1348"
+        },
+        {
+          "id": "c1349",
+          "name": "宣城",
+          "entity_key": "p190/c1349"
+        },
+        {
+          "id": "c1350",
+          "name": "陵陽",
+          "entity_key": "p190/c1350"
+        },
+        {
+          "id": "c1351",
+          "name": "安吳",
+          "entity_key": "p190/c1351"
+        },
+        {
+          "id": "c1352",
+          "name": "涇",
+          "entity_key": "p190/c1352"
+        },
+        {
+          "id": "c1353",
+          "name": "廣德",
+          "entity_key": "p190/c1353"
+        },
+        {
+          "id": "c1354",
+          "name": "寧國",
+          "entity_key": "p190/c1354"
+        },
+        {
+          "id": "c1355",
+          "name": "懷安",
+          "entity_key": "p190/c1355"
+        },
+        {
+          "id": "c1356",
+          "name": "石城",
+          "entity_key": "p190/c1356"
+        },
+        {
+          "id": "c1357",
+          "name": "臨城",
+          "entity_key": "p190/c1357"
+        },
+        {
+          "id": "c1358",
+          "name": "春谷",
+          "entity_key": "p190/c1358"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p191",
+      "prefecture_name": "毗陵郡",
+      "state_id": "s17",
+      "county_id": "c1361",
+      "county_name": "毗陵",
+      "county_order": [
+        {
+          "id": "c1361",
+          "name": "毗陵",
+          "entity_key": "p191/c1361"
+        },
+        {
+          "id": "c1359",
+          "name": "丹徒",
+          "entity_key": "p191/c1359"
+        },
+        {
+          "id": "c1360",
+          "name": "曲阿",
+          "entity_key": "p191/c1360"
+        },
+        {
+          "id": "c1362",
+          "name": "武進",
+          "entity_key": "p191/c1362"
+        },
+        {
+          "id": "c1363",
+          "name": "延陵",
+          "entity_key": "p191/c1363"
+        },
+        {
+          "id": "c1364",
+          "name": "無錫",
+          "entity_key": "p191/c1364"
+        },
+        {
+          "id": "c1365",
+          "name": "暨陽",
+          "entity_key": "p191/c1365"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p192",
+      "prefecture_name": "吳郡",
+      "state_id": "s17",
+      "county_id": "c1366",
+      "county_name": "吳",
+      "county_order": [
+        {
+          "id": "c1366",
+          "name": "吳",
+          "entity_key": "p192/c1366"
+        },
+        {
+          "id": "c1367",
+          "name": "海鹽",
+          "entity_key": "p192/c1367"
+        },
+        {
+          "id": "c1368",
+          "name": "嘉興",
+          "entity_key": "p192/c1368"
+        },
+        {
+          "id": "c1369",
+          "name": "鹽官",
+          "entity_key": "p192/c1369"
+        },
+        {
+          "id": "c1370",
+          "name": "錢唐",
+          "entity_key": "p192/c1370"
+        },
+        {
+          "id": "c1371",
+          "name": "婁",
+          "entity_key": "p192/c1371"
+        },
+        {
+          "id": "c1372",
+          "name": "富春",
+          "entity_key": "p192/c1372"
+        },
+        {
+          "id": "c1373",
+          "name": "建德",
+          "entity_key": "p192/c1373"
+        },
+        {
+          "id": "c1374",
+          "name": "桐廬",
+          "entity_key": "p192/c1374"
+        },
+        {
+          "id": "c1375",
+          "name": "壽昌",
+          "entity_key": "p192/c1375"
+        },
+        {
+          "id": "c1376",
+          "name": "海虞",
+          "entity_key": "p192/c1376"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p193",
+      "prefecture_name": "吳興郡",
+      "state_id": "s17",
+      "county_id": "c1379",
+      "county_name": "烏程",
+      "county_order": [
+        {
+          "id": "c1379",
+          "name": "烏程",
+          "entity_key": "p193/c1379"
+        },
+        {
+          "id": "c1381",
+          "name": "武康",
+          "entity_key": "p193/c1381"
+        },
+        {
+          "id": "c1382",
+          "name": "餘杭",
+          "entity_key": "p193/c1382"
+        },
+        {
+          "id": "c1383",
+          "name": "臨安",
+          "entity_key": "p193/c1383"
+        },
+        {
+          "id": "c1384",
+          "name": "故鄣",
+          "entity_key": "p193/c1384"
+        },
+        {
+          "id": "c1385",
+          "name": "安吉",
+          "entity_key": "p193/c1385"
+        },
+        {
+          "id": "c1386",
+          "name": "原鄉",
+          "entity_key": "p193/c1386"
+        },
+        {
+          "id": "c1387",
+          "name": "於潛",
+          "entity_key": "p193/c1387"
+        },
+        {
+          "id": "c1388",
+          "name": "東遷",
+          "entity_key": "p193/c1388"
+        },
+        {
+          "id": "c1389",
+          "name": "長城",
+          "entity_key": "p193/c1389"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p194",
+      "prefecture_name": "會稽郡",
+      "state_id": "s17",
+      "county_id": "c1390",
+      "county_name": "山陰",
+      "county_order": [
+        {
+          "id": "c1390",
+          "name": "山陰",
+          "entity_key": "p194/c1390"
+        },
+        {
+          "id": "c1391",
+          "name": "上虞",
+          "entity_key": "p194/c1391"
+        },
+        {
+          "id": "c1392",
+          "name": "始寧",
+          "entity_key": "p194/c1392"
+        },
+        {
+          "id": "c1393",
+          "name": "余姚",
+          "entity_key": "p194/c1393"
+        },
+        {
+          "id": "c1394",
+          "name": "句章",
+          "entity_key": "p194/c1394"
+        },
+        {
+          "id": "c1395",
+          "name": "鄞",
+          "entity_key": "p194/c1395"
+        },
+        {
+          "id": "c1396",
+          "name": "鄮",
+          "entity_key": "p194/c1396"
+        },
+        {
+          "id": "c1397",
+          "name": "剡",
+          "entity_key": "p194/c1397"
+        },
+        {
+          "id": "c1398",
+          "name": "諸暨",
+          "entity_key": "p194/c1398"
+        },
+        {
+          "id": "c1399",
+          "name": "永興",
+          "entity_key": "p194/c1399"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p195",
+      "prefecture_name": "東陽郡",
+      "state_id": "s17",
+      "county_id": "c1400",
+      "county_name": "長山",
+      "county_order": [
+        {
+          "id": "c1400",
+          "name": "長山",
+          "entity_key": "p195/c1400"
+        },
+        {
+          "id": "c1401",
+          "name": "烏傷",
+          "entity_key": "p195/c1401"
+        },
+        {
+          "id": "c1402",
+          "name": "太末",
+          "entity_key": "p195/c1402"
+        },
+        {
+          "id": "c1403",
+          "name": "信安",
+          "entity_key": "p195/c1403"
+        },
+        {
+          "id": "c1404",
+          "name": "定陽",
+          "entity_key": "p195/c1404"
+        },
+        {
+          "id": "c1405",
+          "name": "吳寧",
+          "entity_key": "p195/c1405"
+        },
+        {
+          "id": "c1406",
+          "name": "豐安",
+          "entity_key": "p195/c1406"
+        },
+        {
+          "id": "c1407",
+          "name": "遂昌",
+          "entity_key": "p195/c1407"
+        },
+        {
+          "id": "c1408",
+          "name": "永康",
+          "entity_key": "p195/c1408"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p196",
+      "prefecture_name": "新安郡",
+      "state_id": "s17",
+      "county_id": "c1409",
+      "county_name": "始新",
+      "county_order": [
+        {
+          "id": "c1409",
+          "name": "始新",
+          "entity_key": "p196/c1409"
+        },
+        {
+          "id": "c1410",
+          "name": "歙",
+          "entity_key": "p196/c1410"
+        },
+        {
+          "id": "c1411",
+          "name": "黟",
+          "entity_key": "p196/c1411"
+        },
+        {
+          "id": "c1412",
+          "name": "遂安",
+          "entity_key": "p196/c1412"
+        },
+        {
+          "id": "c1413",
+          "name": "黎陽",
+          "entity_key": "p196/c1413"
+        },
+        {
+          "id": "c1414",
+          "name": "海寧",
+          "entity_key": "p196/c1414"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p197",
+      "prefecture_name": "臨海郡",
+      "state_id": "s17",
+      "county_id": "c1415",
+      "county_name": "章安",
+      "county_order": [
+        {
+          "id": "c1415",
+          "name": "章安",
+          "entity_key": "p197/c1415"
+        },
+        {
+          "id": "c1416",
+          "name": "永寧",
+          "entity_key": "p197/c1416"
+        },
+        {
+          "id": "c1417",
+          "name": "臨海",
+          "entity_key": "p197/c1417"
+        },
+        {
+          "id": "c1418",
+          "name": "始豐",
+          "entity_key": "p197/c1418"
+        },
+        {
+          "id": "c1419",
+          "name": "寧海",
+          "entity_key": "p197/c1419"
+        },
+        {
+          "id": "c1420",
+          "name": "松陽",
+          "entity_key": "p197/c1420"
+        },
+        {
+          "id": "c1421",
+          "name": "安固",
+          "entity_key": "p197/c1421"
+        },
+        {
+          "id": "c1422",
+          "name": "橫陽",
+          "entity_key": "p197/c1422"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p205",
+      "prefecture_name": "歷陽郡",
+      "state_id": "s17",
+      "county_id": "c1498",
+      "county_name": "歷陽",
+      "county_order": [
+        {
+          "id": "c1498",
+          "name": "歷陽",
+          "entity_key": "p205/c1498"
+        },
+        {
+          "id": "c1499",
+          "name": "烏江",
+          "entity_key": "p205/c1499"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p206",
+      "prefecture_name": "義興郡",
+      "state_id": "s17",
+      "county_id": "c1500",
+      "county_name": "陽羨",
+      "county_order": [
+        {
+          "id": "c1500",
+          "name": "陽羨",
+          "entity_key": "p206/c1500"
+        },
+        {
+          "id": "c1501",
+          "name": "義鄉",
+          "entity_key": "p206/c1501"
+        },
+        {
+          "id": "c1502",
+          "name": "國山",
+          "entity_key": "p206/c1502"
+        },
+        {
+          "id": "c1503",
+          "name": "臨津",
+          "entity_key": "p206/c1503"
+        },
+        {
+          "id": "c1504",
+          "name": "永世",
+          "entity_key": "p206/c1504"
+        },
+        {
+          "id": "c1505",
+          "name": "平陵",
+          "entity_key": "p206/c1505"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p217",
+      "prefecture_name": "豫章郡",
+      "state_id": "s19",
+      "county_id": "c1577",
+      "county_name": "南昌",
+      "county_order": [
+        {
+          "id": "c1577",
+          "name": "南昌",
+          "entity_key": "p217/c1577"
+        },
+        {
+          "id": "c1578",
+          "name": "建城",
+          "entity_key": "p217/c1578"
+        },
+        {
+          "id": "c1579",
+          "name": "新淦",
+          "entity_key": "p217/c1579"
+        },
+        {
+          "id": "c1580",
+          "name": "海昏",
+          "entity_key": "p217/c1580"
+        },
+        {
+          "id": "c1581",
+          "name": "豫寧",
+          "entity_key": "p217/c1581"
+        },
+        {
+          "id": "c1582",
+          "name": "宜豐",
+          "entity_key": "p217/c1582"
+        },
+        {
+          "id": "c1583",
+          "name": "艾",
+          "entity_key": "p217/c1583"
+        },
+        {
+          "id": "c1584",
+          "name": "彭澤",
+          "entity_key": "p217/c1584"
+        },
+        {
+          "id": "c1585",
+          "name": "建昌",
+          "entity_key": "p217/c1585"
+        },
+        {
+          "id": "c1586",
+          "name": "望蔡",
+          "entity_key": "p217/c1586"
+        },
+        {
+          "id": "c1587",
+          "name": "新吳",
+          "entity_key": "p217/c1587"
+        },
+        {
+          "id": "c1588",
+          "name": "永修",
+          "entity_key": "p217/c1588"
+        },
+        {
+          "id": "c1589",
+          "name": "吳平",
+          "entity_key": "p217/c1589"
+        },
+        {
+          "id": "c1590",
+          "name": "豐城",
+          "entity_key": "p217/c1590"
+        },
+        {
+          "id": "c1591",
+          "name": "康樂",
+          "entity_key": "p217/c1591"
+        },
+        {
+          "id": "c1592",
+          "name": "鐘陵",
+          "entity_key": "p217/c1592"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p218",
+      "prefecture_name": "鄱陽郡",
+      "state_id": "s19",
+      "county_id": "c1593",
+      "county_name": "廣晉",
+      "county_order": [
+        {
+          "id": "c1593",
+          "name": "廣晉",
+          "entity_key": "p218/c1593"
+        },
+        {
+          "id": "c1594",
+          "name": "鄱陽",
+          "entity_key": "p218/c1594"
+        },
+        {
+          "id": "c1595",
+          "name": "歷陵",
+          "entity_key": "p218/c1595"
+        },
+        {
+          "id": "c1596",
+          "name": "余乾",
+          "entity_key": "p218/c1596"
+        },
+        {
+          "id": "c1597",
+          "name": "樂安",
+          "entity_key": "p218/c1597"
+        },
+        {
+          "id": "c1598",
+          "name": "鄡陽",
+          "entity_key": "p218/c1598"
+        },
+        {
+          "id": "c1599",
+          "name": "葛陽",
+          "entity_key": "p218/c1599"
+        },
+        {
+          "id": "c1600",
+          "name": "晉興",
+          "entity_key": "p218/c1600"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p219",
+      "prefecture_name": "廬陵郡",
+      "state_id": "s19",
+      "county_id": "c1601",
+      "county_name": "石陽",
+      "county_order": [
+        {
+          "id": "c1601",
+          "name": "石陽",
+          "entity_key": "p219/c1601"
+        },
+        {
+          "id": "c1602",
+          "name": "西昌",
+          "entity_key": "p219/c1602"
+        },
+        {
+          "id": "c1603",
+          "name": "南野",
+          "entity_key": "p219/c1603"
+        },
+        {
+          "id": "c1604",
+          "name": "東昌",
+          "entity_key": "p219/c1604"
+        },
+        {
+          "id": "c1605",
+          "name": "遂興",
+          "entity_key": "p219/c1605"
+        },
+        {
+          "id": "c1606",
+          "name": "巴丘",
+          "entity_key": "p219/c1606"
+        },
+        {
+          "id": "c1607",
+          "name": "興平",
+          "entity_key": "p219/c1607"
+        },
+        {
+          "id": "c1608",
+          "name": "吉陽",
+          "entity_key": "p219/c1608"
+        },
+        {
+          "id": "c1609",
+          "name": "陽豐",
+          "entity_key": "p219/c1609"
+        },
+        {
+          "id": "c1610",
+          "name": "高昌",
+          "entity_key": "p219/c1610"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p220",
+      "prefecture_name": "臨川郡",
+      "state_id": "s19",
+      "county_id": "c1611",
+      "county_name": "臨汝",
+      "county_order": [
+        {
+          "id": "c1611",
+          "name": "臨汝",
+          "entity_key": "p220/c1611"
+        },
+        {
+          "id": "c1612",
+          "name": "新南城",
+          "entity_key": "p220/c1612"
+        },
+        {
+          "id": "c1613",
+          "name": "新建",
+          "entity_key": "p220/c1613"
+        },
+        {
+          "id": "c1614",
+          "name": "南豐",
+          "entity_key": "p220/c1614"
+        },
+        {
+          "id": "c1615",
+          "name": "宜黃",
+          "entity_key": "p220/c1615"
+        },
+        {
+          "id": "c1616",
+          "name": "安浦",
+          "entity_key": "p220/c1616"
+        },
+        {
+          "id": "c1617",
+          "name": "西豐",
+          "entity_key": "p220/c1617"
+        },
+        {
+          "id": "c1618",
+          "name": "西寧",
+          "entity_key": "p220/c1618"
+        },
+        {
+          "id": "c1619",
+          "name": "東興",
+          "entity_key": "p220/c1619"
+        },
+        {
+          "id": "c1620",
+          "name": "永城",
+          "entity_key": "p220/c1620"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p221",
+      "prefecture_name": "南康郡",
+      "state_id": "s19",
+      "county_id": "c1621",
+      "county_name": "雩都",
+      "county_order": [
+        {
+          "id": "c1621",
+          "name": "雩都",
+          "entity_key": "p221/c1621"
+        },
+        {
+          "id": "c1622",
+          "name": "陂陽",
+          "entity_key": "p221/c1622"
+        },
+        {
+          "id": "c1623",
+          "name": "贛",
+          "entity_key": "p221/c1623"
+        },
+        {
+          "id": "c1624",
+          "name": "平固",
+          "entity_key": "p221/c1624"
+        },
+        {
+          "id": "c1625",
+          "name": "南康",
+          "entity_key": "p221/c1625"
+        },
+        {
+          "id": "c1626",
+          "name": "寧都",
+          "entity_key": "p221/c1626"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p222",
+      "prefecture_name": "建安郡",
+      "state_id": "s19",
+      "county_id": "c1627",
+      "county_name": "建安",
+      "county_order": [
+        {
+          "id": "c1627",
+          "name": "建安",
+          "entity_key": "p222/c1627"
+        },
+        {
+          "id": "c1628",
+          "name": "建陽",
+          "entity_key": "p222/c1628"
+        },
+        {
+          "id": "c1629",
+          "name": "將樂",
+          "entity_key": "p222/c1629"
+        },
+        {
+          "id": "c1630",
+          "name": "邵武",
+          "entity_key": "p222/c1630"
+        },
+        {
+          "id": "c1631",
+          "name": "吳興",
+          "entity_key": "p222/c1631"
+        },
+        {
+          "id": "c1632",
+          "name": "延平",
+          "entity_key": "p222/c1632"
+        },
+        {
+          "id": "c1633",
+          "name": "東平",
+          "entity_key": "p222/c1633"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p223",
+      "prefecture_name": "晉安郡",
+      "state_id": "s19",
+      "county_id": "c1634",
+      "county_name": "候官",
+      "county_order": [
+        {
+          "id": "c1634",
+          "name": "候官",
+          "entity_key": "p223/c1634"
+        },
+        {
+          "id": "c1635",
+          "name": "原豐",
+          "entity_key": "p223/c1635"
+        },
+        {
+          "id": "c1636",
+          "name": "新羅",
+          "entity_key": "p223/c1636"
+        },
+        {
+          "id": "c1637",
+          "name": "宛平",
+          "entity_key": "p223/c1637"
+        },
+        {
+          "id": "c1638",
+          "name": "同安",
+          "entity_key": "p223/c1638"
+        },
+        {
+          "id": "c1639",
+          "name": "晉安",
+          "entity_key": "p223/c1639"
+        },
+        {
+          "id": "c1640",
+          "name": "羅江",
+          "entity_key": "p223/c1640"
+        },
+        {
+          "id": "c1641",
+          "name": "溫麻",
+          "entity_key": "p223/c1641"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p224",
+      "prefecture_name": "武昌郡",
+      "state_id": "s19",
+      "county_id": "c1642",
+      "county_name": "武昌",
+      "county_order": [
+        {
+          "id": "c1642",
+          "name": "武昌",
+          "entity_key": "p224/c1642"
+        },
+        {
+          "id": "c1643",
+          "name": "沙陽",
+          "entity_key": "p224/c1643"
+        },
+        {
+          "id": "c1645",
+          "name": "陽新",
+          "entity_key": "p224/c1645"
+        },
+        {
+          "id": "c1646",
+          "name": "沙羨",
+          "entity_key": "p224/c1646"
+        },
+        {
+          "id": "c1647",
+          "name": "鄂",
+          "entity_key": "p224/c1647"
+        },
+        {
+          "id": "c1648",
+          "name": "高陵",
+          "entity_key": "p224/c1648"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p225",
+      "prefecture_name": "桂陽郡",
+      "state_id": "s19",
+      "county_id": "c1649",
+      "county_name": "郴",
+      "county_order": [
+        {
+          "id": "c1649",
+          "name": "郴",
+          "entity_key": "p225/c1649"
+        },
+        {
+          "id": "c1650",
+          "name": "便",
+          "entity_key": "p225/c1650"
+        },
+        {
+          "id": "c1651",
+          "name": "耒陽",
+          "entity_key": "p225/c1651"
+        },
+        {
+          "id": "c1652",
+          "name": "南平",
+          "entity_key": "p225/c1652"
+        },
+        {
+          "id": "c1653",
+          "name": "臨武",
+          "entity_key": "p225/c1653"
+        },
+        {
+          "id": "c1654",
+          "name": "晉寧",
+          "entity_key": "p225/c1654"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p226",
+      "prefecture_name": "安成郡",
+      "state_id": "s19",
+      "county_id": "c1655",
+      "county_name": "平都",
+      "county_order": [
+        {
+          "id": "c1655",
+          "name": "平都",
+          "entity_key": "p226/c1655"
+        },
+        {
+          "id": "c1656",
+          "name": "新諭",
+          "entity_key": "p226/c1656"
+        },
+        {
+          "id": "c1657",
+          "name": "宜春",
+          "entity_key": "p226/c1657"
+        },
+        {
+          "id": "c1658",
+          "name": "永新",
+          "entity_key": "p226/c1658"
+        },
+        {
+          "id": "c1659",
+          "name": "安復",
+          "entity_key": "p226/c1659"
+        },
+        {
+          "id": "c1660",
+          "name": "萍鄉",
+          "entity_key": "p226/c1660"
+        },
+        {
+          "id": "c1661",
+          "name": "廣興",
+          "entity_key": "p226/c1661"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p227",
+      "prefecture_name": "尋陽郡",
+      "state_id": "s19",
+      "county_id": "c1662",
+      "county_name": "柴桑",
+      "county_order": [
+        {
+          "id": "c1662",
+          "name": "柴桑",
+          "entity_key": "p227/c1662"
+        },
+        {
+          "id": "c1663",
+          "name": "尋陽",
+          "entity_key": "p227/c1663"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p228",
+      "prefecture_name": "合浦郡",
+      "state_id": "s20",
+      "county_id": "c1665",
+      "county_name": "合浦",
+      "county_order": [
+        {
+          "id": "c1665",
+          "name": "合浦",
+          "entity_key": "p228/c1665"
+        },
+        {
+          "id": "c1666",
+          "name": "珠官",
+          "entity_key": "p228/c1666"
+        },
+        {
+          "id": "c1667",
+          "name": "徐聞",
+          "entity_key": "p228/c1667"
+        },
+        {
+          "id": "c1668",
+          "name": "蕩昌",
+          "entity_key": "p228/c1668"
+        },
+        {
+          "id": "c1669",
+          "name": "南平",
+          "entity_key": "p228/c1669"
+        },
+        {
+          "id": "c1670",
+          "name": "毒質",
+          "entity_key": "p228/c1670"
+        },
+        {
+          "id": "c1671",
+          "name": "晉始",
+          "entity_key": "p228/c1671"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p229",
+      "prefecture_name": "交趾郡",
+      "state_id": "s20",
+      "county_id": "c1672",
+      "county_name": "龍編",
+      "county_order": [
+        {
+          "id": "c1672",
+          "name": "龍編",
+          "entity_key": "p229/c1672"
+        },
+        {
+          "id": "c1673",
+          "name": "羸縷",
+          "entity_key": "p229/c1673"
+        },
+        {
+          "id": "c1674",
+          "name": "定安",
+          "entity_key": "p229/c1674"
+        },
+        {
+          "id": "c1675",
+          "name": "苟屚",
+          "entity_key": "p229/c1675"
+        },
+        {
+          "id": "c1676",
+          "name": "曲易",
+          "entity_key": "p229/c1676"
+        },
+        {
+          "id": "c1677",
+          "name": "北帶",
+          "entity_key": "p229/c1677"
+        },
+        {
+          "id": "c1678",
+          "name": "稽徐",
+          "entity_key": "p229/c1678"
+        },
+        {
+          "id": "c1679",
+          "name": "西於",
+          "entity_key": "p229/c1679"
+        },
+        {
+          "id": "c1680",
+          "name": "朱鳶",
+          "entity_key": "p229/c1680"
+        },
+        {
+          "id": "c1681",
+          "name": "望海",
+          "entity_key": "p229/c1681"
+        },
+        {
+          "id": "c1682",
+          "name": "交興",
+          "entity_key": "p229/c1682"
+        },
+        {
+          "id": "c1683",
+          "name": "南定",
+          "entity_key": "p229/c1683"
+        },
+        {
+          "id": "c1684",
+          "name": "武寧",
+          "entity_key": "p229/c1684"
+        },
+        {
+          "id": "c1685",
+          "name": "海平",
+          "entity_key": "p229/c1685"
+        },
+        {
+          "id": "c1686",
+          "name": "封溪",
+          "entity_key": "p229/c1686"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p230",
+      "prefecture_name": "新昌郡",
+      "state_id": "s20",
+      "county_id": null,
+      "county_name": null,
+      "county_order": [
+        {
+          "id": "c1688",
+          "name": "麊冷",
+          "entity_key": "p230/c1688"
+        },
+        {
+          "id": "c1689",
+          "name": "嘉寧",
+          "entity_key": "p230/c1689"
+        },
+        {
+          "id": "c1690",
+          "name": "吳定",
+          "entity_key": "p230/c1690"
+        },
+        {
+          "id": "c1691",
+          "name": "封山",
+          "entity_key": "p230/c1691"
+        },
+        {
+          "id": "c1692",
+          "name": "臨西",
+          "entity_key": "p230/c1692"
+        },
+        {
+          "id": "c1693",
+          "name": "西道",
+          "entity_key": "p230/c1693"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p231",
+      "prefecture_name": "武平郡",
+      "state_id": "s20",
+      "county_id": null,
+      "county_name": null,
+      "county_order": [
+        {
+          "id": "c1694",
+          "name": "武興",
+          "entity_key": "p231/c1694"
+        },
+        {
+          "id": "c1695",
+          "name": "進山",
+          "entity_key": "p231/c1695"
+        },
+        {
+          "id": "c1696",
+          "name": "根寧",
+          "entity_key": "p231/c1696"
+        },
+        {
+          "id": "c1697",
+          "name": "安武",
+          "entity_key": "p231/c1697"
+        },
+        {
+          "id": "c1698",
+          "name": "扶安",
+          "entity_key": "p231/c1698"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p232",
+      "prefecture_name": "九真郡",
+      "state_id": "s20",
+      "county_id": "c1699",
+      "county_name": "胥浦",
+      "county_order": [
+        {
+          "id": "c1699",
+          "name": "胥浦",
+          "entity_key": "p232/c1699"
+        },
+        {
+          "id": "c1700",
+          "name": "移風",
+          "entity_key": "p232/c1700"
+        },
+        {
+          "id": "c1701",
+          "name": "常樂",
+          "entity_key": "p232/c1701"
+        },
+        {
+          "id": "c1702",
+          "name": "建初",
+          "entity_key": "p232/c1702"
+        },
+        {
+          "id": "c1703",
+          "name": "津梧",
+          "entity_key": "p232/c1703"
+        },
+        {
+          "id": "c1704",
+          "name": "松原",
+          "entity_key": "p232/c1704"
+        },
+        {
+          "id": "c1705",
+          "name": "扶樂",
+          "entity_key": "p232/c1705"
+        },
+        {
+          "id": "c1706",
+          "name": "高安",
+          "entity_key": "p232/c1706"
+        },
+        {
+          "id": "c1707",
+          "name": "寧夷",
+          "entity_key": "p232/c1707"
+        },
+        {
+          "id": "c1708",
+          "name": "軍安",
+          "entity_key": "p232/c1708"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p233",
+      "prefecture_name": "九德郡",
+      "state_id": "s20",
+      "county_id": null,
+      "county_name": null,
+      "county_order": [
+        {
+          "id": "c1709",
+          "name": "九德",
+          "entity_key": "p233/c1709"
+        },
+        {
+          "id": "c1710",
+          "name": "陽遠",
+          "entity_key": "p233/c1710"
+        },
+        {
+          "id": "c1711",
+          "name": "咸驩",
+          "entity_key": "p233/c1711"
+        },
+        {
+          "id": "c1712",
+          "name": "南陵",
+          "entity_key": "p233/c1712"
+        },
+        {
+          "id": "c1713",
+          "name": "蒲陽",
+          "entity_key": "p233/c1713"
+        },
+        {
+          "id": "c1714",
+          "name": "曲胥",
+          "entity_key": "p233/c1714"
+        },
+        {
+          "id": "c1715",
+          "name": "都洨",
+          "entity_key": "p233/c1715"
+        },
+        {
+          "id": "c1716",
+          "name": "扶苓",
+          "entity_key": "p233/c1716"
+        },
+        {
+          "id": "c1717",
+          "name": "西安",
+          "entity_key": "p233/c1717"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p234",
+      "prefecture_name": "日南郡",
+      "state_id": "s20",
+      "county_id": "c1723",
+      "county_name": "盧容",
+      "county_order": [
+        {
+          "id": "c1723",
+          "name": "盧容",
+          "entity_key": "p234/c1723"
+        },
+        {
+          "id": "c1724",
+          "name": "象林",
+          "entity_key": "p234/c1724"
+        },
+        {
+          "id": "c1725",
+          "name": "朱吾",
+          "entity_key": "p234/c1725"
+        },
+        {
+          "id": "c1726",
+          "name": "西卷",
+          "entity_key": "p234/c1726"
+        },
+        {
+          "id": "c1727",
+          "name": "比景",
+          "entity_key": "p234/c1727"
+        },
+        {
+          "id": "c1728",
+          "name": "無勞",
+          "entity_key": "p234/c1728"
+        },
+        {
+          "id": "c1729",
+          "name": "壽泠",
+          "entity_key": "p234/c1729"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p235",
+      "prefecture_name": "南海郡",
+      "state_id": "s21",
+      "county_id": "c1730",
+      "county_name": "番禺",
+      "county_order": [
+        {
+          "id": "c1730",
+          "name": "番禺",
+          "entity_key": "p235/c1730"
+        },
+        {
+          "id": "c1731",
+          "name": "四會",
+          "entity_key": "p235/c1731"
+        },
+        {
+          "id": "c1732",
+          "name": "博羅",
+          "entity_key": "p235/c1732"
+        },
+        {
+          "id": "c1733",
+          "name": "龍川",
+          "entity_key": "p235/c1733"
+        },
+        {
+          "id": "c1734",
+          "name": "平夷",
+          "entity_key": "p235/c1734"
+        },
+        {
+          "id": "c1735",
+          "name": "增城",
+          "entity_key": "p235/c1735"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p236",
+      "prefecture_name": "蒼梧郡",
+      "state_id": "s21",
+      "county_id": "c1737",
+      "county_name": "廣信",
+      "county_order": [
+        {
+          "id": "c1737",
+          "name": "廣信",
+          "entity_key": "p236/c1737"
+        },
+        {
+          "id": "c1738",
+          "name": "端溪",
+          "entity_key": "p236/c1738"
+        },
+        {
+          "id": "c1739",
+          "name": "高要",
+          "entity_key": "p236/c1739"
+        },
+        {
+          "id": "c1740",
+          "name": "鄣平",
+          "entity_key": "p236/c1740"
+        },
+        {
+          "id": "c1741",
+          "name": "猛陵",
+          "entity_key": "p236/c1741"
+        },
+        {
+          "id": "c1742",
+          "name": "豐城",
+          "entity_key": "p236/c1742"
+        },
+        {
+          "id": "c1743",
+          "name": "臨允",
+          "entity_key": "p236/c1743"
+        },
+        {
+          "id": "c1744",
+          "name": "建陵",
+          "entity_key": "p236/c1744"
+        },
+        {
+          "id": "c1745",
+          "name": "寧新",
+          "entity_key": "p236/c1745"
+        },
+        {
+          "id": "c1746",
+          "name": "都羅",
+          "entity_key": "p236/c1746"
+        },
+        {
+          "id": "c1747",
+          "name": "元溪",
+          "entity_key": "p236/c1747"
+        },
+        {
+          "id": "c1748",
+          "name": "武城",
+          "entity_key": "p236/c1748"
+        },
+        {
+          "id": "c1749",
+          "name": "丁留",
+          "entity_key": "p236/c1749"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p237",
+      "prefecture_name": "郁林郡",
+      "state_id": "s21",
+      "county_id": "c1750",
+      "county_name": "布山",
+      "county_order": [
+        {
+          "id": "c1750",
+          "name": "布山",
+          "entity_key": "p237/c1750"
+        },
+        {
+          "id": "c1751",
+          "name": "阿林",
+          "entity_key": "p237/c1751"
+        },
+        {
+          "id": "c1752",
+          "name": "安廣",
+          "entity_key": "p237/c1752"
+        },
+        {
+          "id": "c1753",
+          "name": "領方",
+          "entity_key": "p237/c1753"
+        },
+        {
+          "id": "c1754",
+          "name": "郁平",
+          "entity_key": "p237/c1754"
+        },
+        {
+          "id": "c1755",
+          "name": "新邑",
+          "entity_key": "p237/c1755"
+        },
+        {
+          "id": "c1756",
+          "name": "安始",
+          "entity_key": "p237/c1756"
+        },
+        {
+          "id": "c1757",
+          "name": "晉平",
+          "entity_key": "p237/c1757"
+        },
+        {
+          "id": "c1758",
+          "name": "武熙",
+          "entity_key": "p237/c1758"
+        },
+        {
+          "id": "c1759",
+          "name": "安遠",
+          "entity_key": "p237/c1759"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p238",
+      "prefecture_name": "桂林郡",
+      "state_id": "s21",
+      "county_id": "c1760",
+      "county_name": "潭中",
+      "county_order": [
+        {
+          "id": "c1760",
+          "name": "潭中",
+          "entity_key": "p238/c1760"
+        },
+        {
+          "id": "c1761",
+          "name": "武豐",
+          "entity_key": "p238/c1761"
+        },
+        {
+          "id": "c1762",
+          "name": "粟平",
+          "entity_key": "p238/c1762"
+        },
+        {
+          "id": "c1763",
+          "name": "洋平",
+          "entity_key": "p238/c1763"
+        },
+        {
+          "id": "c1764",
+          "name": "龍岡",
+          "entity_key": "p238/c1764"
+        },
+        {
+          "id": "c1765",
+          "name": "夾陽",
+          "entity_key": "p238/c1765"
+        },
+        {
+          "id": "c1766",
+          "name": "軍騰",
+          "entity_key": "p238/c1766"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p239",
+      "prefecture_name": "高涼郡",
+      "state_id": "s21",
+      "county_id": "c1768",
+      "county_name": "思平",
+      "county_order": [
+        {
+          "id": "c1768",
+          "name": "思平",
+          "entity_key": "p239/c1768"
+        },
+        {
+          "id": "c1769",
+          "name": "高涼",
+          "entity_key": "p239/c1769"
+        },
+        {
+          "id": "c1770",
+          "name": "安寧",
+          "entity_key": "p239/c1770"
+        },
+        {
+          "id": "c1771",
+          "name": "廣化",
+          "entity_key": "p239/c1771"
+        },
+        {
+          "id": "c1772",
+          "name": "海安",
+          "entity_key": "p239/c1772"
+        },
+        {
+          "id": "c1773",
+          "name": "莫陽",
+          "entity_key": "p239/c1773"
+        },
+        {
+          "id": "c1774",
+          "name": "化平",
+          "entity_key": "p239/c1774"
+        },
+        {
+          "id": "c1775",
+          "name": "西平",
+          "entity_key": "p239/c1775"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p241",
+      "prefecture_name": "寧浦郡",
+      "state_id": "s21",
+      "county_id": "c1781",
+      "county_name": "寧浦",
+      "county_order": [
+        {
+          "id": "c1781",
+          "name": "寧浦",
+          "entity_key": "p241/c1781"
+        },
+        {
+          "id": "c1782",
+          "name": "興道",
+          "entity_key": "p241/c1782"
+        },
+        {
+          "id": "c1783",
+          "name": "吳安",
+          "entity_key": "p241/c1783"
+        },
+        {
+          "id": "c1784",
+          "name": "平山",
+          "entity_key": "p241/c1784"
+        },
+        {
+          "id": "c1785",
+          "name": "澗陽",
+          "entity_key": "p241/c1785"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p242",
+      "prefecture_name": "臨賀郡",
+      "state_id": "s21",
+      "county_id": "c1787",
+      "county_name": "臨賀",
+      "county_order": [
+        {
+          "id": "c1787",
+          "name": "臨賀",
+          "entity_key": "p242/c1787"
+        },
+        {
+          "id": "c1788",
+          "name": "封陽",
+          "entity_key": "p242/c1788"
+        },
+        {
+          "id": "c1789",
+          "name": "馮乘",
+          "entity_key": "p242/c1789"
+        },
+        {
+          "id": "c1790",
+          "name": "富川",
+          "entity_key": "p242/c1790"
+        },
+        {
+          "id": "c1791",
+          "name": "興安",
+          "entity_key": "p242/c1791"
+        },
+        {
+          "id": "c1792",
+          "name": "謝沐",
+          "entity_key": "p242/c1792"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p243",
+      "prefecture_name": "始安郡",
+      "state_id": "s21",
+      "county_id": "c1793",
+      "county_name": "始安",
+      "county_order": [
+        {
+          "id": "c1793",
+          "name": "始安",
+          "entity_key": "p243/c1793"
+        },
+        {
+          "id": "c1794",
+          "name": "荔浦",
+          "entity_key": "p243/c1794"
+        },
+        {
+          "id": "c1795",
+          "name": "平樂",
+          "entity_key": "p243/c1795"
+        },
+        {
+          "id": "c1796",
+          "name": "熙平",
+          "entity_key": "p243/c1796"
+        },
+        {
+          "id": "c1797",
+          "name": "常安",
+          "entity_key": "p243/c1797"
+        },
+        {
+          "id": "c1798",
+          "name": "永豐",
+          "entity_key": "p243/c1798"
+        },
+        {
+          "id": "c1799",
+          "name": "始陽",
+          "entity_key": "p243/c1799"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p244",
+      "prefecture_name": "始興郡",
+      "state_id": "s21",
+      "county_id": "c1800",
+      "county_name": "曲江",
+      "county_order": [
+        {
+          "id": "c1800",
+          "name": "曲江",
+          "entity_key": "p244/c1800"
+        },
+        {
+          "id": "c1801",
+          "name": "桂陽",
+          "entity_key": "p244/c1801"
+        },
+        {
+          "id": "c1802",
+          "name": "含洭",
+          "entity_key": "p244/c1802"
+        },
+        {
+          "id": "c1803",
+          "name": "湞陽",
+          "entity_key": "p244/c1803"
+        },
+        {
+          "id": "c1804",
+          "name": "中宿",
+          "entity_key": "p244/c1804"
+        },
+        {
+          "id": "c1805",
+          "name": "始興",
+          "entity_key": "p244/c1805"
+        },
+        {
+          "id": "c1806",
+          "name": "陽山",
+          "entity_key": "p244/c1806"
+        }
+      ]
+    }
+  ],
+  "source_migrations": [
+    {
+      "kind": "state",
+      "id": "s16",
+      "begin": 266,
+      "end": 279,
+      "county_id": "c1133",
+      "prefecture_id": "p164",
+      "name": "宛",
+      "inferred": false,
+      "source": {
+        "book_page": 704,
+        "pdf_page": 731,
+        "excerpt": "荆州（266—316），魏治宛（今河南南阳市），太康元年（280）移治江陵（今湖北江陵县），建兴元年（313）移治沌口（今湖北武汉市汉阳区东南） ^{①}。魏领南阳、南乡、襄阳、章陵、江夏、魏兴、义阳、上庸、新城九郡。咸宁元年（275）置建平郡。咸宁二年置新野郡，太康元年废，惠帝时复置。晋武帝太康元年平吴，南、建平、天门、武陵、宜都、长沙、衡阳、湘东、零陵、邵陵、武昌、桂阳、安成十三郡来属，分南郡置南平郡，吴之建平郡并入晋之建平郡，九年增置随国（太康二年之荆州政区见图24）。元康元年（291），武昌、桂阳、安成三郡移属江州，六年魏兴、上庸、新城三郡移属梁州，九年增置竟陵郡、建昌郡。又复置新野郡，确年乏考 ^{②}。永嘉元年（307），长沙、衡阳、湘东、邵陵、零陵、建昌六郡移属湘州。永嘉中增置成都郡，建兴中废。"
+      }
+    },
+    {
+      "kind": "state",
+      "id": "s16",
+      "begin": 280,
+      "end": 312,
+      "county_id": "c1111",
+      "prefecture_id": "p161",
+      "name": "江陵",
+      "inferred": false,
+      "source": {
+        "book_page": 704,
+        "pdf_page": 731,
+        "excerpt": "荆州（266—316），魏治宛（今河南南阳市），太康元年（280）移治江陵（今湖北江陵县），建兴元年（313）移治沌口（今湖北武汉市汉阳区东南） ^{①}。魏领南阳、南乡、襄阳、章陵、江夏、魏兴、义阳、上庸、新城九郡。咸宁元年（275）置建平郡。咸宁二年置新野郡，太康元年废，惠帝时复置。晋武帝太康元年平吴，南、建平、天门、武陵、宜都、长沙、衡阳、湘东、零陵、邵陵、武昌、桂阳、安成十三郡来属，分南郡置南平郡，吴之建平郡并入晋之建平郡，九年增置随国（太康二年之荆州政区见图24）。元康元年（291），武昌、桂阳、安成三郡移属江州，六年魏兴、上庸、新城三郡移属梁州，九年增置竟陵郡、建昌郡。又复置新野郡，确年乏考 ^{②}。永嘉元年（307），长沙、衡阳、湘东、邵陵、零陵、建昌六郡移属湘州。永嘉中增置成都郡，建兴中废。"
+      }
+    },
+    {
+      "kind": "state",
+      "id": "s16",
+      "begin": 313,
+      "end": 316,
+      "county_id": null,
+      "name": "沌口",
+      "inferred": false,
+      "location_note": "原文明確建興元年移治沌口，縣表無同名縣，不能借用江陵或推作他縣治",
+      "source": {
+        "book_page": 704,
+        "pdf_page": 731,
+        "excerpt": "荆州（266—316），魏治宛（今河南南阳市），太康元年（280）移治江陵（今湖北江陵县），建兴元年（313）移治沌口（今湖北武汉市汉阳区东南） ^{①}。魏领南阳、南乡、襄阳、章陵、江夏、魏兴、义阳、上庸、新城九郡。咸宁元年（275）置建平郡。咸宁二年置新野郡，太康元年废，惠帝时复置。晋武帝太康元年平吴，南、建平、天门、武陵、宜都、长沙、衡阳、湘东、零陵、邵陵、武昌、桂阳、安成十三郡来属，分南郡置南平郡，吴之建平郡并入晋之建平郡，九年增置随国（太康二年之荆州政区见图24）。元康元年（291），武昌、桂阳、安成三郡移属江州，六年魏兴、上庸、新城三郡移属梁州，九年增置竟陵郡、建昌郡。又复置新野郡，确年乏考 ^{②}。永嘉元年（307），长沙、衡阳、湘东、邵陵、零陵、建昌六郡移属湘州。永嘉中增置成都郡，建兴中废。"
+      }
+    },
+    {
+      "kind": "state",
+      "id": "s17",
+      "begin": 266,
+      "end": 279,
+      "county_id": "c1306",
+      "prefecture_id": "p187",
+      "name": "壽春",
+      "inferred": false,
+      "source": {
+        "book_page": 726,
+        "pdf_page": 753,
+        "excerpt": "扬州（266—316），治寿春（今安徽寿县），太康元年（280）治秣陵（今江苏南京市） ^{①}。魏领郡二，太康元年武帝平吴，丹杨等十三郡来属，领郡十五，又增置宣城郡（太康二年之扬州政区见图25）。太康三年增置晋安郡、南康郡。惠帝元康元年（291）后豫章、鄱阳、庐陵、临川、南康、建安、晋安等七郡移属江州。永兴元年（304）增置历阳郡、义兴郡，领郡十三。"
+      }
+    },
+    {
+      "kind": "state",
+      "id": "s17",
+      "begin": 280,
+      "end": 316,
+      "county_id": "c1337",
+      "prefecture_id": "p189",
+      "name": "秣陵",
+      "inferred": false,
+      "source": {
+        "book_page": 726,
+        "pdf_page": 753,
+        "excerpt": "扬州（266—316），治寿春（今安徽寿县），太康元年（280）治秣陵（今江苏南京市） ^{①}。魏领郡二，太康元年武帝平吴，丹杨等十三郡来属，领郡十五，又增置宣城郡（太康二年之扬州政区见图25）。太康三年增置晋安郡、南康郡。惠帝元康元年（291）后豫章、鄱阳、庐陵、临川、南康、建安、晋安等七郡移属江州。永兴元年（304）增置历阳郡、义兴郡，领郡十三。"
+      }
+    },
+    {
+      "kind": "prefecture",
+      "id": "p188",
+      "begin": 266,
+      "end": 279,
+      "county_id": "c1323",
+      "name": "六安",
+      "inferred": false,
+      "source": {
+        "book_page": 728,
+        "pdf_page": 755,
+        "excerpt": "（二）庐江郡（266—316）——治六安（今安徽六安市北），移治舒（今安徽舒城县）\n\n按：魏末领县九。咸宁元年（275）前松滋等五县移属豫州安丰郡，太康元年武帝平吴，增置舒等四县，阳泉县来属，领县九，太康二年寻阳县来属，领县十，与《晋志》本郡所领合。永兴元年，寻阳县移属寻阳郡，领县九。"
+      }
+    },
+    {
+      "kind": "prefecture",
+      "id": "p188",
+      "begin": 280,
+      "end": 316,
+      "county_id": "c1322",
+      "name": "舒",
+      "inferred": true,
+      "note": "通史記六安移治舒而無確年，舒280置；本輪以280作有界展示銜接，非已考定遷治年",
+      "source": {
+        "book_page": 728,
+        "pdf_page": 755,
+        "excerpt": "（二）庐江郡（266—316）——治六安（今安徽六安市北），移治舒（今安徽舒城县）\n\n按：魏末领县九。咸宁元年（275）前松滋等五县移属豫州安丰郡，太康元年武帝平吴，增置舒等四县，阳泉县来属，领县九，太康二年寻阳县来属，领县十，与《晋志》本郡所领合。永兴元年，寻阳县移属寻阳郡，领县九。"
+      }
+    },
+    {
+      "kind": "prefecture",
+      "id": "p191",
+      "begin": 280,
+      "end": 281,
+      "county_id": "c1359",
+      "name": "丹徒",
+      "inferred": false,
+      "source": {
+        "book_page": 732,
+        "pdf_page": 759,
+        "excerpt": "（五）毗陵典农校尉（280，281—310 毗陵郡，311—316 晋陵郡）——治丹徒（今江苏镇江市东），后移治毗陵（今江苏常州市），永嘉五年还治丹徒\n\n按：吴作毗陵典农校尉。据《宋志》晋陵太守条：“吴时分吴郡无锡以西为毗陵典农校尉，晋武帝太康二年省校尉，立以为毗陵郡，治丹徒，后复还毗陵。东海王越世子名毗，而东海国故食毗陵，永嘉五年，元帝改为晋陵。始自毗陵徙治丹徒。”又《晋志》毗陵郡条：“吴分会稽（当作吴分吴郡）无锡已西为屯田，置典农校尉，太康二年，省校尉为毗陵郡。”则太康二年改其为毗陵郡且治丹徒 ^{①}，后移治毗陵。吴末毗陵典农校尉领县三，太康元年增置无锡县，太康二年增置暨阳、武进、延陵三县，领县七，与《晋志》本郡所领合。永嘉五年改称晋陵郡且还治丹徒。"
+      }
+    },
+    {
+      "kind": "prefecture",
+      "id": "p191",
+      "begin": 311,
+      "end": 316,
+      "county_id": "c1359",
+      "name": "丹徒",
+      "inferred": false,
+      "source": {
+        "book_page": 732,
+        "pdf_page": 759,
+        "excerpt": "（五）毗陵典农校尉（280，281—310 毗陵郡，311—316 晋陵郡）——治丹徒（今江苏镇江市东），后移治毗陵（今江苏常州市），永嘉五年还治丹徒\n\n按：吴作毗陵典农校尉。据《宋志》晋陵太守条：“吴时分吴郡无锡以西为毗陵典农校尉，晋武帝太康二年省校尉，立以为毗陵郡，治丹徒，后复还毗陵。东海王越世子名毗，而东海国故食毗陵，永嘉五年，元帝改为晋陵。始自毗陵徙治丹徒。”又《晋志》毗陵郡条：“吴分会稽（当作吴分吴郡）无锡已西为屯田，置典农校尉，太康二年，省校尉为毗陵郡。”则太康二年改其为毗陵郡且治丹徒 ^{①}，后移治毗陵。吴末毗陵典农校尉领县三，太康元年增置无锡县，太康二年增置暨阳、武进、延陵三县，领县七，与《晋志》本郡所领合。永嘉五年改称晋陵郡且还治丹徒。"
+      }
+    }
+  ],
+  "source_unresolved_migrations": [
+    {
+      "kind": "prefecture",
+      "id": "p191",
+      "name": "毗陵",
+      "county_id": "c1361",
+      "possible_years": [
+        282,
+        310
+      ],
+      "note": "原文明言後復還毗陵，確年未詳；不擅把282定為迁治年，304仍按本輪首縣丹徒。"
+    }
+  ],
+  "source_notes": [
+    "通史冀州原文治信都，304縣名已長樂，對應同一p035/c0293；不可連司州魏郡同名長樂。",
+    "通史江州咸康六年（340）移治尋陽，屬東晉，不回填西晉。",
+    "丹楊於280/281分宣城並移治建業的敘述與304第一縣秣陵規則有差異，304依本輪指定第一縣，不另默改。",
+    "益州成都治所僅行政參考，不代表304成都仍受西晉控制。"
+  ]
+}

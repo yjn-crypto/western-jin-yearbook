@@ -98,6 +98,7 @@
     if (year <= 316 && ['eastern_jin','after_western_jin'].includes(constraint.dynasty)) return false;
     if (finite(constraint.start_min) && year < Number(constraint.start_min)) return false;
     if (finite(constraint.end_max) && year > Number(constraint.end_max)) return false;
+    if (constraint.display_periods) return constraint.display_periods.some(([start,end]) => start <= year && year <= end);
     return (constraint.certain_periods || []).some(([start,end]) => start <= year && year <= end)
       || (record.attested_years || []).includes(year)
       || (record.attested_periods || []).some(period => period.start <= year && year <= period.end);
@@ -105,12 +106,12 @@
 
   function displayRecord(record, constraint, year) {
     const reign = (constraint.display_reigns || []).find(p => p.begin <= year && year <= p.end);
-    const start = reign?.accession ?? constraint.display_start;
-    const dated = constraint.accession_known && finite(start);
+    const start = reign ? reign.accession : constraint.display_start;
+    const dated = (reign?.accession_known ?? constraint.accession_known) && finite(start);
     return {...record, source_start:record.start ?? null, source_end:record.end ?? null,
       start:dated ? Number(start) : null, end:reign?.end ?? record.end,
       display_start:dated ? Number(start) : null,
-      accession_known:Boolean(dated), constraint,
+      accession_known:Boolean(dated), display_inferred:Boolean(constraint.display_inferred), constraint,
       constraint_note:constraint.note || ''};
   }
 
@@ -127,8 +128,16 @@
         : '现有材料不能确认本年的国主；可能起讫与表列次序不作为任年证明。'};
   }
 
-  function rulerAt(records, fief, year) {
-    const all = records.filter(record => record.fief === fief);
+  function rulerAt(records, fief, year, level='prefecture') {
+    const all = records.filter(record => {
+      if(record.fief !== fief)return false;
+      const constraint=constraintFor(record);
+      const period=constraint.level_periods?.find(period=>period.begin<=year&&year<=period.end);
+      return (period?.level||constraint.level||'prefecture')===level
+        && (level!=='county'||((constraint.start_min==null||constraint.start_min<=year)
+          &&(constraint.end_max==null||year<=constraint.end_max)
+          &&(!constraint.display_periods||constraint.display_periods.some(([start,end])=>start<=year&&year<=end))));
+    });
     const constraints = all.map(record => ({id:record.id, ...constraintFor(record)}));
     const active = all.flatMap(record => {
       const constraint = constraintFor(record);

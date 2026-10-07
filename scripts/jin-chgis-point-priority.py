@@ -86,6 +86,18 @@ class AnnualPointIndex:
 
     def _choose(self, entity, row, level, current, annual_name_count):
         annual = annual_module()
+        # The 308 import linked Yan's 廣陽 to the Sichuan observation. 96050
+        # belongs to Wenshan 廣陽 only; the archive has no dated Yan county
+        # observation, so do not manufacture a northern coordinate for it.
+        county_id = row.get('yearbook_entity_id', row['id'])
+        if level == 'county' and row.get('map_location_unresolved'):
+            return None, 'unlocated', 'reviewed_county_location_unknown_do_not_link_distant_homonym'
+        if level == 'county' and county_id == 'c0389':
+            return None, 'unlocated', 'Yan_Guangyang_has_no_reviewed_source_point_96050_is_Wenshan'
+        if level == 'county' and county_id == 'c0770':
+            return strongest([p for p in current if str(p.get('source_id')) == '96050']), 'CHGIS_current_reviewed_identity_correction', None
+        if level == 'county' and county_id in ('c0380', 'c0390'):
+            return strongest([p for p in current if str(p.get('source_id')) == '87436']), 'CHGIS_current_reviewed_identity_correction', None
         normalize = annual.county_key if level == 'county' else annual.key
         names = {normalize(row['name']), normalize(row.get('base_name')),
                  normalize(entity['entity'].get('base_name') or entity['entity'].get('name'))}

@@ -11,6 +11,14 @@
     const prior = cache.get(raw);
     if (prior && prior.review === review) return prior.value;
     const value = JSON.parse(JSON.stringify(raw));
+    for (const addition of review.additions || []) {
+      const entity = JSON.parse(JSON.stringify(addition.entity));
+      if (addition.kind === 'prefecture') {
+        value.states.find(state => state.id === addition.parent_id).prefectures.push(entity);
+      } else if (!review.additions.some(parent => parent.kind === 'prefecture' && parent.entity.id === addition.parent_id)) {
+        value.states.flatMap(state => state.prefectures).find(prefecture => prefecture.id === addition.parent_id).counties.push(entity);
+      }
+    }
     const entities = new Map();
     for (const state of value.states || []) {
       entities.set(state.id, state);
