@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 MAPS = ROOT / 'data/jin-maps/three-basemap-annual'
 GRID = .000001
 CHEN_COUNTIES = {'c0231', 'c0232', 'c0233', 'c0234'}
-NOTE = '本輪恢復已核封爵及多郡關係，採當年變更後結果。289年前新增支郡用括號且不另計郡，289起正式列支郡；梁陳分界以原陳國面和四縣治所局部擬合。中丘291年前仍入趙，291起才列擬定國界。底圖参考範圍的封爵展示不等同當年實際控制。'
+NOTE = '本輪恢復已核封爵及多郡關係，採當年變更後結果；時間依王表及後續Word，僅於明確承襲的既有爵期內繼承封土，不自行補年。289年前新增支郡用括號且不另計郡，289起正式列支郡；梁陳分界以原陳國面和四縣治所局部擬合。中丘291年前仍入趙，291起才列擬定國界。底圖参考範圍的封爵展示不等同當年實際控制。'
 
 
 def clean(g):
@@ -167,25 +167,26 @@ def build():
             touched_fiefs.add('jin-趙')
             patch['entities']['p032'] = {k: zhao['properties'].get(k) for k in ('name', 'display_name', 'fief_id', 'member_role', 'membership_evidence', 'color')}
 
-        # The map continues its institutional reference beyond the text's
-        # control cutoff; no known abolition is inferred from the missing row.
+        # The former Zhongqiu footprint can remain a neutral administrative
+        # reference after its established fief interval has ended.
         if year >= 314:
             zhao_ref = refs['unassigned-reference-tan281-77']
             zhongqiu = clean(zhongqiu_source['_shape'].intersection(zhao_ref['_shape']))
             zhao_ref['_shape'] = clean(zhao_ref['_shape'].difference(zhongqiu))
             patch['replace'][feature_key(zhao_ref)] = save(zhao_ref['_shape'])
             zp = {**deepcopy(zhao_ref['properties']), 'id': 'review-reference-zhongqiu', 'entity_id': None,
-                  'name': '中丘國', 'display_name': '中丘國', 'base_name': '中丘國', 'fief_id': 'jin-中丘',
-                  'member_role': 'seat', 'membership_evidence': 'inferred', 'is_reference': True,
-                  'reference_reason': '沿291後擬定國面保留封爵參考；311終年是疑推，無確證國絕，不據文字控制截止取消。',
-                  'source': '本輪中丘封國展示；既有郡級擬定範圍，不新增實際控制主張。'}
+                  'name': '中丘郡', 'display_name': '中丘郡', 'base_name': '中丘郡', 'fief_id': None,
+                  'member_role': None, 'membership_evidence': None, 'is_reference': True,
+                  'reference_reason': '中丘王爵按既有表列止311；後續只保留擬定郡域參考，不延長封國時間。',
+                  'source': '既有中丘擬定郡域；312起普通郡，參考範圍不等同實際控制。'}
             zf = {'type': 'Feature', 'geometry_id': save(zhongqiu), 'properties': zp}
             patch['add'].append(zf)
             refs[zp['id']] = {**deepcopy(zf), '_shape': zhongqiu}
+            entity_refs['p033'] = refs[zp['id']]
             patch['add'].append({'type': 'Feature', 'geometry_id': save(zhongqiu.boundary.intersection(zhao_ref['_shape'].boundary)),
                                  'properties': {'layer': 'prefecture_boundaries', 'level': 'prefecture', 'year': year, 'name': '郡國界',
                                                 'adjacent_entity_ids': ['tan281-77', 'review-reference-zhongqiu'],
-                                                'adjacent_fief_ids': [None, 'jin-中丘'], 'between_fiefs': True,
+                                                'adjacent_fief_ids': [None, None], 'between_fiefs': False,
                                                 'within_same_fief': False, 'boundary_inferred': True,
                                                 'source': zp['source'], 'coordinate_role': 'boundary'}})
             touched_fiefs.add('jin-中丘')
@@ -253,15 +254,19 @@ def build():
             if not decision['begin'] <= year <= decision['end']:
                 continue
             for pid in decision['ids']:
-                if pid in areas:
+                target = region(pid)
+                if target:
                     name = decision['name']
                     fief_id = 'jin-' + name.removesuffix('國') if decision['rank'] else None
-                    old = areas[pid]['properties'].get('fief_id')
+                    old = target['properties'].get('fief_id')
                     touched_fiefs.update(i for i in [old, fief_id] if i)
                     metadata = {'name': name, 'display_name': name, 'base_name': name, 'fief_id': fief_id, 'member_role': 'seat' if fief_id else None,
-                                'membership_evidence': 'inferred' if decision.get('inferred') else 'confirmed', 'fief_review_note': decision['note']}
-                    patch['entities'][pid] = metadata
-                    areas[pid]['properties'].update(metadata)
+                                'membership_evidence': ('inferred' if decision.get('inferred') else 'confirmed') if fief_id else None, 'fief_review_note': decision['note']}
+                    if pid in areas:
+                        patch['entities'][pid] = metadata
+                    else:
+                        patch['references'][target['properties']['id']] = metadata
+                    target['properties'].update(metadata)
                     changed_ids.add(pid)
                     if old and not fief_id:
                         # An explicitly abolished primary releases its former
@@ -356,6 +361,11 @@ def build():
             metadata['color'] = colors.get(metadata['fief_id']) if metadata['fief_id'] else None
         patch['boundary_fiefs'] = {pid: metadata['fief_id'] for pid, metadata in patch['entities'].items()}
         patch['boundary_fiefs'].update({rid.removeprefix('unassigned-reference-'): metadata['fief_id'] for rid, metadata in patch['references'].items()})
+        patch['boundary_fiefs'].update({pid: f['properties'].get('fief_id') for pid, f in entity_refs.items()})
+        for assignment in patch['county_reassignments'].values():
+            target = areas.get(assignment['prefecture_id']) or entity_refs.get(assignment['prefecture_id'])
+            if target:
+                assignment['prefecture_name'] = target['properties']['display_name']
         for rid, metadata in patch['references'].items():
             for seat in features:
                 p = seat['properties']

@@ -29,32 +29,6 @@
       ]
     },
     {
-      "id": "LIANG_MAP_REFERENCE",
-      "name": "梁國",
-      "fief_id": "jin-梁",
-      "entity_id": "p025",
-      "reference_area_ids": [
-        "unassigned-reference-tan281-147"
-      ],
-      "begin": 314,
-      "end": 316,
-      "inferred": true,
-      "evidence_ids": [
-        "w0156",
-        "w0158"
-      ],
-      "source_note": "禧於311年遇難、子翹317年歸國受立，後嗣存世不等於無後國絕；314—316按未見廢國證據寬泛保留梁國。僅用現成梁國參考面，不增畫陳支縣範圍，也不把317年的悝、翹填入西晉正文。",
-      "source_links": [
-        {
-          "title": "晉朝藩王列表",
-          "url": "https://zh.wikipedia.org/wiki/晉朝藩王列表"
-        }
-      ],
-      "reference_source_ids": [
-        "210769"
-      ]
-    },
-    {
       "id": "PEI_MAP_REFERENCE",
       "name": "沛國",
       "fief_id": "jin-沛",
