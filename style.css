@@ -155,6 +155,14 @@ body.map-reading-open { overflow: hidden; }
 .year-map-panel.is-reading .year-map-kicker,.year-map-panel.is-reading .year-map-note,.year-map-panel.is-reading .year-map-actions a { display: none; }
 .year-map-panel.is-reading .year-map-status { flex-shrink: 0; margin: 4px 0; }
 .year-map-panel.is-reading .year-map-toolbar { flex-shrink: 0; margin: 4px 0 8px; }
+.jin-map-minimap { position: absolute; left: 28px; bottom: 28px; z-index: 3; width: 220px; max-width: 34vw; border: 1px solid #a99b7d; background: #faf6ee; box-shadow: 0 2px 8px #0002; }
+.jin-map-minimap[hidden],.jin-map-minimap svg[hidden] { display: none; }
+.jin-map-minimap.is-minimized { width: auto; }
+.jin-map-minimap button { display: flex; align-items: center; justify-content: space-between; gap: 14px; width: 100%; padding: 5px 8px; border: 0; color: var(--ink); background: #eee6d8; font: inherit; font-size: .75rem; cursor: pointer; }
+.jin-map-minimap button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.jin-map-minimap svg { display: block; width: 100%; height: auto; overflow: hidden; }
+.jin-map-minimap-outline { fill: none; stroke: #6c6043; stroke-width: 1; vector-effect: non-scaling-stroke; }
+.jin-map-minimap-window { fill: #a52f4920; stroke: #a52f49; stroke-width: 1.7; vector-effect: non-scaling-stroke; }
 .year-map-stage { position: relative; width: 100%; line-height: 0; transform-origin: top left; }
 .year-map-stage img { display: block; width: 100%; height: auto; }
 .year-map-overlay { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }

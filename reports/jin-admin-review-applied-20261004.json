@@ -1,7 +1,7 @@
 {
-  "overrides": 482,
-  "ledger_entries": 474,
-  "reviewed_lineages": 169,
+  "overrides": 489,
+  "ledger_entries": 484,
+  "reviewed_lineages": 171,
   "original_duplicate_candidates_resolved": 131,
   "dated_county_transfer_events": 141,
   "source_transfer_events_before_word_revision": 142,
@@ -23,9 +23,9 @@
       "counties": 1243
     },
     "312": {
-      "prefectures": 174,
+      "prefectures": 175,
       "transfer_origin_groups": 0,
-      "counties": 1090
+      "counties": 1091
     },
     "316": {
       "prefectures": 121,

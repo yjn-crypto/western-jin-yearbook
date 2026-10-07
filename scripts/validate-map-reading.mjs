@@ -41,7 +41,7 @@ const overlay=new Node('svg'),results=new Node('section'),controls=new Map();
 const getControl=(id)=>{if(!controls.has(id))controls.set(id,{});return controls.get(id);};
 const context=vm.createContext({
   Math,Map,Set,Boolean,Number,String,console,
-  yearMapOverlay:overlay,results,$:getControl,
+  yearMapOverlay:overlay,results,$:getControl,jinMapMinimap:{},
   svgNode:(...args)=>new Node(...args),
   activeMapKey:'',mapReadingMode:false,mapZoom:1,
   yearMapStage:{clientWidth:1000,style:{}},
@@ -50,7 +50,7 @@ const context=vm.createContext({
   yearMapZoomValue:{},requestAnimationFrame:(callback)=>callback(),
   mapLabelLayouts:new WeakMap(),
 });
-for(const name of ['normalizeName','labelWidth','mapTerritoryLabelGuard','labelCandidates','placeAndDrawLabels','mapLabelVisible','selectMapLabels','restoreMapSelection','selectMapKey','clearMapLinkHighlights','layoutDynamicMapLabels','applyMapZoom','ensureMapLabelVisible']) {
+for(const name of ['normalizeName','labelWidth','mapTerritoryLabelGuard','labelCandidates','placeAndDrawLabels','mapLabelVisible','selectMapLabels','restoreMapSelection','selectMapKey','clearMapLinkHighlights','layoutDynamicMapLabels','syncJinMapMinimap','applyMapZoom','ensureMapLabelVisible']) {
   // labelCandidates is a generator, so its declaration has a different prefix.
   const code=name==='labelCandidates'?source.slice(source.indexOf('  function *labelCandidates('),source.indexOf('  function placeAndDrawLabels(')):extract(name);
   vm.runInContext(code,context);
@@ -231,14 +231,14 @@ const stage={style:{width:'3992px'},get clientWidth(){return Number.parseFloat(t
 let locatedEntity='';
 const reading=vm.createContext({
   Math,Map,Boolean,Number,String,document,$:readingControl,
-  yearMapPanel:panel,yearMapViewport:viewport,yearMapStage:stage,yearMapZoomValue:{},
+  yearMapPanel:panel,yearMapViewport:viewport,yearMapStage:stage,yearMapZoomValue:{},jinMapMinimap:{},
   yearMapOverlay:overlay,results,currentMap:{year:588,width:1000,height:1000},
   mapZoom:4,mapReadingMode:false,mapReadingReturnFocus:null,mapReadingInertNodes:new Map(),
   activeMapKey:selectedKey,sourceModal:{hidden:true},
   requestAnimationFrame:(callback)=>frames.push(callback),layoutDynamicMapLabels:()=>{},
   revealTextEntity:(entityId)=>{locatedEntity=entityId;},
 });
-for(const name of ['restoreMapSelection','applyMapZoom','setMapReadingMode'])vm.runInContext(extract(name),reading);
+for(const name of ['restoreMapSelection','syncJinMapMinimap','applyMapZoom','setMapReadingMode'])vm.runInContext(extract(name),reading);
 const listenerStart=source.indexOf("  $('yearMapReading').addEventListener('click'");
 const listenerEnd=source.indexOf("  yearMapViewport.addEventListener('keydown'",listenerStart);
 assert.ok(listenerStart>=0&&listenerEnd>listenerStart);

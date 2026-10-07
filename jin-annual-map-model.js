@@ -96,7 +96,7 @@
       geojson:{type:'FeatureCollection',features}
     };
   }
-  function hydrateThreeBasemap(bundle,year){
+  function hydrateThreeBasemap(bundle,year,{detail=true}={}){
     if(Number(bundle?.year)!==Number(year)||!Array.isArray(bundle.features))throw new Error(`Missing three-basemap slice: ${year}`);
     const connectivity=root.JIN_LOCAL_CONNECTIVITY,localPatch=connectivity.years[String(year)];
     const review=root.JIN_289_FIEF_MAP_REVIEW,reviewPatch=review.years[String(year)];
@@ -235,6 +235,19 @@
       for(const id of reviewPatch.remove_fiefs)delete fiefColors[id];
       Object.assign(fiefColors,reviewPatch.colors);
     }
+    const detailReview=detail?root.JIN_DETAIL_MAP_REVIEW:null;
+    const detailPatch=detailReview?.years[String(year)];
+    if(detailPatch){
+      const featureKey=feature=>{
+        const p=feature.properties;
+        return [p.layer,p.entity_id||p.id||p.source_id||'',(p.adjacent_entity_ids||[]).slice().sort().join(',')].join(':');
+      };
+      map.geojson.features=features.filter(feature=>!detailPatch.remove.includes(featureKey(feature)));
+      for(const feature of detailPatch.add)map.geojson.features.push({type:'Feature',
+        geometry:detailReview.geometries[feature.geometry_id],properties:{...feature.properties}});
+      for(const id of detailPatch.remove_fief_colors)delete fiefColors[id];
+      Object.assign(fiefColors,detailPatch.colors);
+    }
     const count=layer=>map.geojson.features.filter(f=>f.properties.layer===layer).length;
     const sourceNote=presentation.note?.replace(/ 本年表內但未能單獨繪界：.*?具體缺據見年度coverage記錄。/,'')||'谭圖262、281與CHGIS同級採用；約308圖補晚期局部邊界。政區與支郡依本年文字，改名、整郡改州沿用已有郡界；析置及轉縣局部擬合並註明來源。政權邊界只採三底圖；末期缺少明確控制界線之處保留底圖政區參考，不表示仍屬西晉實際控制。縣面與縣界不展示；州郡大圖使用同一年度的完整矢量邊線。';
     const note=localPatch?sourceNote.replace(/ ?新野內圈為仍屬義陽的朝陽縣推定轄區，並非重複郡界。/,'')+' '+localPatch.note:sourceNote;
@@ -243,7 +256,7 @@
     return {...map,threeBasemap:true,fiefColors,
       title:presentation.title||`${year}年　西晉州郡與封國`,
       subtitle:presentation.subtitle||'據262、281及約308年圖按改置事件取界；CHGIS保留治所。',
-      note:note+abolitionNote+referenceFiefNote+(reviewPatch?' '+reviewPatch.note:''),
+      note:note+abolitionNote+referenceFiefNote+(reviewPatch?' '+reviewPatch.note:'')+(detailPatch?' '+detailPatch.note:''),
       status:presentation.status||`${year}年：${count('prefecture_areas')}處郡國範圍、${count('county_seats')}處縣治；邊界逐段保留底圖年代與擬合說明。`
     };
   }
