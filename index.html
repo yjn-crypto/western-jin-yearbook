@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>漢魏六朝年度州郡縣表</title>
   <meta name="description" content="依據《中國行政區劃通史》逐年重建漢魏六朝州郡縣，並附封國資料。">
-  <link rel="stylesheet" href="style.css?v=20261007.1">
+  <link rel="stylesheet" href="style.css?v=20261007.3">
 </head>
 <body data-theme="metal">
   <header class="site-header">
@@ -115,6 +115,10 @@
           <svg id="yearMapOverlay" class="year-map-overlay" role="group" aria-label="588年州郡縣治所可點擊定位圖層"></svg>
         </div>
       </div>
+      <aside id="jinMapMinimap" class="jin-map-minimap" aria-label="西晉地圖定位" hidden>
+        <button id="jinMapMinimapToggle" type="button" aria-expanded="true" aria-controls="jinMapMinimapSvg" aria-label="最小化定位小圖"><span>西晉定位小圖</span><span id="jinMapMinimapIcon" aria-hidden="true">−</span></button>
+        <svg id="jinMapMinimapSvg" role="img" aria-label="西晉底圖政權輪廓；紅框表示目前可見範圍"><rect id="jinMapMinimapWindow" class="jin-map-minimap-window"></rect></svg>
+      </aside>
       <p id="yearMapNote" class="year-map-note">南陳各年共用地形底圖，州郡縣與封國按年繪製；指定年份的政權疆域改用史圖館地圖矢量化，其餘年份仍明示採 ChinaXMap 572 年斷面近似。</p>
     </section>
 
@@ -178,22 +182,23 @@
   </div>
 
   <script src="data/jin-data.js"></script>
-  <script src="data/jin-admin-review.js?v=20261007.4"></script>
+  <script src="data/jin-admin-review.js?v=20261007.5"></script>
   <script src="data/jin-289-restorations-20261007.js?v=20261007.2"></script>
   <script src="data/jin-fief-abolitions-20261007.js?v=20261007.2"></script>
   <script src="jin-admin-review.js?v=20261007.1"></script>
   <script src="data/princes.js?v=20261007.2"></script>
-  <script src="data/jin-ruler-constraints.js?v=20261007.4"></script>
-  <script src="data/jin-multi-kingdoms.js?v=20261007.4"></script>
+  <script src="data/jin-ruler-constraints.js?v=20261007.5"></script>
+  <script src="data/jin-multi-kingdoms.js?v=20261007.5"></script>
   <script src="jin-kingdom-table.js?v=20261007.2"></script>
   <script src="data/five-rank-fiefs.js?v=20261007.1"></script>
   <script src="jin-map-model.js?v=20261001.5"></script>
   <script src="data/jin-map-label-anchors.js?v=20261001.5"></script>
   <script src="jin-map-view.js?v=20261007.1"></script>
-  <script src="data/jin-map-reference-fiefs-20261007.js?v=20261007.2"></script>
+  <script src="data/jin-map-reference-fiefs-20261007.js?v=20261007.3"></script>
   <script src="data/jin-local-connectivity-20261007.js?v=20261007.2"></script>
   <script src="data/jin-289-fief-map-review-20261007.js?v=20261007.2"></script>
-  <script src="jin-annual-map-model.js?v=20261007.4"></script>
+  <script src="data/jin-detail-map-review-20261007.js?v=20261007.1"></script>
+  <script src="jin-annual-map-model.js?v=20261007.5"></script>
   <script src="data/jin-fief-colors.js?v=20261002.4"></script>
   <script src="data/liang-data.js?v=20260927.1"></script>
   <script src="data/liang-governors.js?v=20260927.1"></script>
@@ -231,6 +236,6 @@
   <script src="data/chen-qiao-prefaces.js?v=20260912.3"></script>
   <script src="source-annotations.js?v=20260912.3"></script>
   <script src="governor-history.js?v=20260912.1"></script>
-  <script src="app.js?v=20261007.3"></script>
+  <script src="app.js?v=20261007.4"></script>
 </body>
 </html>

@@ -297,8 +297,12 @@ for(const year of [305,306,311,312]){
   const rendered=context.renderState({...stateOf(snapshot,'p152'),rows:[donghai]},year);
   assert.equal(rendered.textContent.includes('另見：濟陽支郡（範圍待考）'),false);
   assertAdministrativeCount([{...stateOf(snapshot,'p152'),rows:[donghai]}],1,'The primary commandery counts once');
-  const jiyang=rowOf(snapshot,'p015');
-  assert.equal(jiyang.jinKingdom?.primaryId,year>=306&&year<311?'p152':undefined);
+  assert.equal(rowOf(snapshot,'p015').jinKingdom?.primaryId,undefined);
+  if(year>=306){
+    const jiyang=rowOf(snapshot,'p252');
+    assert.equal(jiyang.jinKingdom?.primaryId,year<311?'p152':undefined);
+    assert.deepEqual(plain(jiyang.counties.map(county=>county.id)),['c0120','c0128']);
+  }
 }
 assert.equal(JSON.stringify({data: context.window.JIN_DATA,
   princes: context.window.JIN_PRINCES, research: context.window.JIN_MULTI_KINGDOMS}), sourceBefore,

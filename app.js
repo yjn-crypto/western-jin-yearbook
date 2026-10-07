@@ -34,6 +34,9 @@
   const yearMapImage = $('yearMapImage');
   const yearMapOverlay = $('yearMapOverlay');
   const yearMapZoomValue = $('yearMapZoomValue');
+  const jinMapMinimap = $('jinMapMinimap');
+  const jinMapMinimapSvg = $('jinMapMinimapSvg');
+  const jinMapMinimapWindow = $('jinMapMinimapWindow');
   const yearMapLoadUhd = $('yearMapLoadUhd');
   const yearMapUhd = $('yearMapUhd');
   const yearMapCsv = $('yearMapCsv');
@@ -1753,6 +1756,7 @@
     requestAnimationFrame(()=>{
       yearMapViewport.scrollLeft=Math.max(0,centerX*yearMapStage.clientWidth-yearMapViewport.clientWidth/2);
       yearMapViewport.scrollTop=Math.max(0,centerY*yearMapStage.clientWidth-yearMapViewport.clientHeight/2);
+      syncJinMapMinimap();
       if(enabled)$('yearMapReading').focus({preventScroll:true});
       else if(mapReadingReturnFocus?.isConnected&&!mapReadingReturnFocus.closest('[inert]'))mapReadingReturnFocus.focus({preventScroll:true});
     });
@@ -2330,6 +2334,37 @@
     return resolved;
   }
 
+  function renderJinMapMinimap(map,project) {
+    const [left,top,right,bottom]=map.plot;
+    jinMapMinimapSvg.setAttribute('viewBox',`${left} ${top} ${right-left} ${bottom-top}`);
+    jinMapMinimapSvg.setAttribute('width',right-left);
+    jinMapMinimapSvg.setAttribute('height',bottom-top);
+    const outlines=map.geojson.features.filter(feature=>feature.properties.layer==='regime_areas'&&feature.properties.is_jin)
+      .map(feature=>svgNode('path',{d:window.JIN_MAP_VIEW.paths(feature.geometry,project),class:'jin-map-minimap-outline'}));
+    jinMapMinimapSvg.replaceChildren(...outlines,jinMapMinimapWindow);
+  }
+
+  function syncJinMapMinimap() {
+    jinMapMinimap.hidden=!(mapReadingMode&&currentMap?.dynasty==='western-jin'&&mapZoom>=4);
+    if(jinMapMinimap.hidden)return;
+    const [left,top,right,bottom]=lastJinMap.map.plot;
+    const scale=yearMapStage.clientWidth/currentMap.width;
+    const x=Math.max(left,Math.min(right,yearMapViewport.scrollLeft/scale));
+    const y=Math.max(top,Math.min(bottom,yearMapViewport.scrollTop/scale));
+    const endX=Math.max(x,Math.min(right,(yearMapViewport.scrollLeft+yearMapViewport.clientWidth)/scale));
+    const endY=Math.max(y,Math.min(bottom,(yearMapViewport.scrollTop+yearMapViewport.clientHeight)/scale));
+    for(const [key,value] of Object.entries({x,y,width:endX-x,height:endY-y}))jinMapMinimapWindow.setAttribute(key,value);
+  }
+
+  function toggleJinMapMinimap() {
+    const minimized=!jinMapMinimapSvg.hasAttribute('hidden');
+    jinMapMinimapSvg.toggleAttribute('hidden',minimized);
+    jinMapMinimap.classList.toggle('is-minimized',minimized);
+    $('jinMapMinimapToggle').setAttribute('aria-expanded',String(!minimized));
+    $('jinMapMinimapToggle').setAttribute('aria-label',minimized?'展開定位小圖':'最小化定位小圖');
+    $('jinMapMinimapIcon').textContent=minimized?'＋':'−';
+  }
+
   function applyMapZoom(next,{clientX=null,clientY=null}={}) {
     if(!currentMap)return;
     const oldWidth=yearMapStage.clientWidth||yearMapViewport.clientWidth;
@@ -2348,6 +2383,7 @@
     requestAnimationFrame(()=>{
       yearMapViewport.scrollLeft=Math.max(0,contentX*yearMapStage.clientWidth-anchorX);
       yearMapViewport.scrollTop=Math.max(0,contentY*yearMapStage.clientWidth-anchorY);
+      syncJinMapMinimap();
     });
   }
 
@@ -2415,6 +2451,7 @@
     yearMapImage.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(base);yearMapImage.alt=`${year}年西晉封國地圖底色`;
     $('yearMapTitle').textContent=jinBoundaryMode?`${year}年　西晉州郡大圖`:(map.title||`${year}年西晉州郡與封國`);
     $('yearMapZoomHelp').textContent=jinBoundaryMode?'州界、郡國界與封國填色；不顯示縣或治所。可拖曳、縮放、切換名稱，Esc退出全屏讀圖。矢量邊線可持續放大。':'100%–1000%；低於300%顯示州名，300%–700%顯示州與郡國範圍名，超過700%加上縣名及治所名；不顯示縣域面或縣界。小字封爵另列。';
+    $('yearMapZoomHelp').textContent+='讀圖模式400%起，左下角提供可收合的定位小圖。';
     yearMapNote.textContent=map.note||'CHGIS與原圖矢量成果接合；多郡王國合併著色，內部郡界淡化。文字位置不是郡治。';
     const unmapped=map.threeBasemap?(map.coverage?.unmapped_details||[]):[];
     if(unmapped.length)yearMapNote.textContent+=' 本年未能單獨繪界：'+unmapped.map(item=>`${item.state_name||''}${item.name||item.entity_id}（${(item.reason||'邊界依據不足').replace(/[。；]+$/,'')}${item.source_parent?'；母範圍：'+item.source_parent:''}${item.book_page?'；《通史》第'+(Array.isArray(item.book_page)?item.book_page.join('、'):item.book_page)+'頁':''}）`).join('；')+'。';
@@ -2423,6 +2460,7 @@
     }
     yearMapExport.hidden=true;yearMapLoadUhd.hidden=true;
     const rendered=window.JIN_MAP_VIEW.draw(map,yearMapOverlay,{svgNode,seatSymbol:mapSeatSymbol,areaGuard:mapTerritoryLabelGuard,boundaryOnly:jinBoundaryMode});
+    renderJinMapMinimap(map,rendered.project);
     currentMapFeatures=rendered.features;
     appendHotspots(yearMapOverlay,rendered.features.filter(f=>f.coordinate_role==='administrative_seat'&&f.renderSeat!==false));
     const layer=svgNode('g',{class:'dynamic-map-label-layer'});yearMapOverlay.appendChild(layer);
@@ -2435,6 +2473,7 @@
 
   function renderYearMap(year,snapshot) {
     const request=++jinMapRequest;
+    jinMapMinimap.hidden=true;
     for(const id of ['jinBoundaryView','jinBoundaryNames','jinBoundaryDownload','jinBoundaryYearControl'])$(id).hidden=true;
     $('yearMapLegend').hidden=currentDynasty.key==='western-jin';
     $('jinMapLegend').hidden=currentDynasty.key!=='western-jin';
@@ -2733,6 +2772,8 @@
   $('yearMapZoomRange').addEventListener('input',(event)=>applyMapZoom(Number(event.target.value)/100));
   $('yearMapFit').addEventListener('click',resetMapView);
   $('yearMapReset').addEventListener('click',()=>{resetMapView();clearMapLinkHighlights();});
+  $('jinMapMinimapToggle').addEventListener('click',toggleJinMapMinimap);
+  yearMapViewport.addEventListener('scroll',syncJinMapMinimap,{passive:true});
   $('yearMapReading').addEventListener('click',()=>setMapReadingMode(!mapReadingMode));
   $('jinBoundaryView').addEventListener('click',()=>setJinBoundaryView(!jinBoundaryMode));
   $('jinBoundaryNames').addEventListener('click',()=>{jinBoundaryNames=!jinBoundaryNames;syncJinBoundaryControls();layoutDynamicMapLabels();});

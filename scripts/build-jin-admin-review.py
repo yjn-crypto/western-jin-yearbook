@@ -578,6 +578,33 @@ exclude('c1305',313,316)
 note('p186',range(304,313),'本輪Word以304起在南郡置成都國；與《通史》所記永嘉中始置有異，留作展示推定。原文明言建興中并還南郡、豐都并監利，暫取313年；不留成都郡，亦不以國主疑似卒年定廢郡年。')
 log('word_chengdu_return',['p186','p161'],'304—312成都國；313推定還南郡，豐都並監利',inferred_return_year=313)
 
+# The latest detail review separates Jiyin from Donghai's Jiyang. Reuse the
+# two Chenliu county identities; Kaocheng's later presence is an explicit
+# display reconstruction, not a silent reversal of the earlier OCR review.
+jiyang_reason='本輪使用者改採分陳留置濟陽的方案：306東海增封時另列濟陽支郡，僅領濟陽、考城；311越卒後還郡。原濟陰改稱濟陽的p015與本郡分列，307—311另顯濟陰國。306析置及完整縣目為本輪展示推定，不宣稱原書已考定。'
+add_prefecture('p252','s02','濟陽郡',306,313,'p013',jiyang_reason)
+for order,ref in enumerate(['p013/c0120','p013/c0128'],1):
+    move_county(ref,'p252',306,313,jiyang_reason,order)
+note('p252/c0128',range(306,314),'《通史》據《太康地志》缺載推考城早省，亦引蔡謨為陳留考城人，保留仍存之可能。本輪據使用者指定與譚圖恢復考城入濟陽；沿用原縣實體與同年有效CHGIS治所，不另造同名縣。',['p013/c0128'])
+
+# Xindu's first kingdom ends in the event year. The later royal grant is
+# placed at the reviewed Sichuan Xindu site; after the local text horizon,
+# its title is shown independently by the map's administrative references.
+include('p104',301,301,284,name='新都國',is_fief=True,fief_rank='王',
+        uncertain=True,review_dating='user_xindu_restoration')
+for old,new in [('c0694','c0698'),('c0695','c0699'),('c0696','c0700'),('c0697','c0701')]:
+    include(new,301,301,284,uncertain=True,review_dating='user_xindu_restoration')
+    exclude(old,301,301)
+    annual[key(new)][301].update(transfer_metadata(key(old),key(new),301,'user_document_inference'))
+    note(new,[301],'本年初屬梁州廣漢郡；依Word暫取301復封新都王，並依使用者最新指定回接四川原新都四縣，當年改列新都國。301是展示推定，非確定復置年。',[old,new])
+note('p103',[301],'依本輪指定，雒、新都、綿竹、什邡四縣自本年轉列復封的新都國；301復封沿Word展示推定，原書四縣屬廣漢至301的記載仍留來源。')
+log('detail_xindu_restoration',['p103','p104'],'本輪將301復封新都定位於四川原新都郡；四縣本年由廣漢移回，302後文字仍按實控範圍，地图另顯名義封國。',display_begin=301,map_royal_end=306)
+
+qin_note='復置年依《通史》p655校勘：本書引《宋志》「惠帝元康七年復立」及《南齊志》「惠帝元康七年復置」，判《晉志》「七年」上脫「元康」二字。故282—296省入雍州，297復置，並非太康七年286。297起領隴西、南安、天水、略陽、武都、陰平，另於此後推置狄道；金城仍屬涼州。'
+note('s10',range(297,317),qin_note)
+note('s08',range(282,297),qin_note,['s10','s08'])
+log('retain_qin_source_restoration',['s10','s08'],qin_note,restoration_year=297)
+
 # Read the parallel peerage review last so abolished or transferred titles
 # supersede the older fief target ranges without deleting their evidence.
 word_decisions=json.loads((ROOT/'data/jin-fief-research/docx-admin-decisions-20261007.json').read_text())
