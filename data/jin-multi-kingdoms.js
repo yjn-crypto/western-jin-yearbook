@@ -1401,7 +1401,7 @@ window.JIN_MULTI_KINGDOMS = {
         "JS038",
         "USER_DOCX_20261007"
       ],
-      "note": "咸寧初增漁陽，本輪暫置277；具體年非史載確年。燕國後續按通史存續，不由國主失考判國亡。",
+      "note": "咸寧初增漁陽，本輪暫置277；具體年非史載確年。燕國後續止於301年，302年明載國除，不由國主失考判國亡。",
       "certainty": "inferred",
       "date_certainty": "inferred_display",
       "holder_end_year": null,
@@ -1417,7 +1417,7 @@ window.JIN_MULTI_KINGDOMS = {
           "source_id": "USER_DOCX_20261007",
           "title": "本輪Word採用說明",
           "kind": "本項目推定",
-          "text": "咸寧初增漁陽，本輪暫置277；具體年非史載確年。燕國後續按通史存續，不由國主失考判國亡。",
+          "text": "咸寧初增漁陽，本輪暫置277；具體年非史載確年。燕國後續止於301年，302年明載國除，不由國主失考判國亡。",
           "note": "此段是編輯決策，不充作史書原文。"
         }
       ]
@@ -1426,7 +1426,7 @@ window.JIN_MULTI_KINGDOMS = {
       "id": "YAN_BRANCHES_293",
       "kingdom_name": "燕",
       "begin": 293,
-      "end": 314,
+      "end": 301,
       "primary_ids": [
         "p049"
       ],
@@ -1462,7 +1462,7 @@ window.JIN_MULTI_KINGDOMS = {
         "JS038",
         "USER_DOCX_20261007"
       ],
-      "note": "本輪據方鎮任職線索暫置293增封北平、上谷、廣寧；上谷與孟觀公國衝突，暫保留上谷公國而不列燕支郡，可能僅部分縣戶增封。其餘按整郡展示仍屬推定。",
+      "note": "本輪據方鎮任職線索暫置293增封北平、上谷、廣寧；上谷與孟觀公國衝突，暫保留上谷公國而不列燕支郡，可能僅部分縣戶增封。其餘按整郡展示仍屬推定。 《晉書》明載齊王冏敗後燕國國除，故302年起主國及漁陽、北平、廣寧均還郡；本關係止於301年。",
       "certainty": "inferred",
       "date_certainty": "inferred_display",
       "holder_end_year": null,
@@ -1815,7 +1815,7 @@ window.JIN_MULTI_KINGDOMS = {
       "fief_names": [
         "趙"
       ],
-      "decision": "277改封、後增五萬戶的資訊保留供讀。",
+      "decision": "277改封、後增五萬戶的資訊保留供讀。 301年司馬倫被誅且無續封，自本年改趙郡。",
       "note": "支郡名單未詳，不新增地圖面。",
       "source_ids": [
         "USER_DOCX_20261007"
@@ -1886,7 +1886,7 @@ window.JIN_MULTI_KINGDOMS = {
         "廣寧",
         "上谷"
       ],
-      "decision": "277起漁陽支郡；293增北平廣寧，保留上谷公國。",
+      "decision": "277起漁陽支郡；293增北平廣寧，保留上谷公國。 燕國302年國除，主國及三支郡自本年均還郡。",
       "note": "燕增封上谷可能只是部分縣戶，與上谷公國衝突在兩邊展开明示；整郡支屬與年份皆推定。",
       "source_ids": [
         "USER_DOCX_20261007"

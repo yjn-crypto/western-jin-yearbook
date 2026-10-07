@@ -98,10 +98,46 @@
   }
   function hydrateThreeBasemap(bundle,year){
     if(Number(bundle?.year)!==Number(year)||!Array.isArray(bundle.features))throw new Error(`Missing three-basemap slice: ${year}`);
-    const features=bundle.features.map(feature=>{
-      const geometry=feature.geometry||bundle.geometries?.[feature.geometry_id];
+    const connectivity=root.JIN_LOCAL_CONNECTIVITY,localPatch=connectivity.years[String(year)];
+    const annualFeatures=localPatch?[...bundle.features.filter(feature=>!localPatch.remove.includes(feature.geometry_id)),...localPatch.add]:bundle.features;
+    const abolished=root.JIN_FIEF_ABOLITIONS.records.filter(record=>record.begin<=year&&year<=record.end);
+    const abolishedFiefIds=new Set(abolished.flatMap(record=>record.fief_ids));
+    const restoredPrefectures=new Map(abolished.flatMap(record=>[
+      ...record.entity_ids.map(id=>[id,{name:record.name,source:record.source_note}]),
+      ...Object.entries(record.branch_entity_ids).map(([id,name])=>[id,{name,source:record.source_note}])
+    ]));
+    const restoredReferenceSeats=new Map(abolished.flatMap(record=>record.reference_source_ids.map(id=>[id,{name:record.name,source:record.source_note}])));
+    const restoredReferenceAreas=new Map(abolished.flatMap(record=>record.reference_area_ids.map(id=>[id,{name:record.name,source:record.source_note}])));
+    // The separately recorded local connectors replace only their exact source
+    // geometry IDs; fief metadata changes reuse all other saved annual geometry.
+    const features=annualFeatures.filter(feature=>!(feature.properties.layer==='kingdom_areas'&&abolishedFiefIds.has(feature.properties.fief_id))).map(feature=>{
+      const geometryId=localPatch?.replace[feature.geometry_id]||feature.geometry_id;
+      const geometry=feature.geometry||connectivity.geometries[geometryId]||bundle.geometries?.[geometryId];
       if(!geometry)throw new Error(`Missing annual geometry: ${feature.geometry_id}`);
-      return {type:'Feature',geometry,properties:{...feature.properties}};
+      const properties={...feature.properties};
+      if(properties.entity_id==='p166'&&localPatch?.replace[feature.geometry_id]&&properties.boundary_note){
+        properties.source_boundary_note=properties.boundary_note;
+        properties.boundary_note=localPatch.note;
+      }
+      const restored=restoredPrefectures.get(properties.entity_id);
+      if(restored&&properties.level==='prefecture'){
+        properties.name=restored.name;
+        properties.display_name=restored.name;
+        properties.fief_abolition_note=restored.source;
+        for(const key of ['fief_id','member_role','membership_evidence','color'])delete properties[key];
+      }
+      const reference=properties.is_reference&&(restoredReferenceSeats.get(properties.source_id)||restoredReferenceAreas.get(properties.id));
+      if(reference){
+        properties.display_name=reference.name;
+        properties.fief_abolition_note=reference.source;
+      }
+      if(properties.adjacent_fief_ids?.some(id=>abolishedFiefIds.has(id))){
+        const [left,right]=properties.adjacent_fief_ids.map(id=>abolishedFiefIds.has(id)?null:id);
+        properties.adjacent_fief_ids=[left,right];
+        properties.between_fiefs=left!==right&&Boolean(left||right);
+        properties.within_same_fief=Boolean(left&&left===right);
+      }
+      return {type:'Feature',geometry,properties};
     });
     for(const seat of features.filter(feature=>feature.properties.layer==='county_seats')){
       const p=seat.properties,base=String(p.name).replace(/[縣县國国]$/,'');
@@ -129,16 +165,53 @@
       extent:presentation.extent||[92.76949194836817,15.25765489858437,128.42883145915184,43.37633897890462],
       plot:presentation.plot||[80,140,2320,1906],coverage:bundle.coverage||{},geojson:{type:'FeatureCollection',features}};
     const fiefColors={...(bundle.fief_colors||presentation.fief_colors||{})};
+    for(const id of abolishedFiefIds)delete fiefColors[id];
     for(const feature of map.geojson.features){
       const p=feature.properties;
       if(p.fief_id&&p.color&&!fiefColors[p.fief_id])fiefColors[p.fief_id]=p.color;
     }
+    const referenceFiefs=root.JIN_MAP_REFERENCE_FIEFS.records.filter(record=>record.begin<=year&&year<=record.end);
+    const referenceMembership=new Map();
+    let referenceFiefCount=0;
+    for(const record of referenceFiefs){
+      for(const seat of features.filter(feature=>feature.properties.is_reference&&record.reference_source_ids.includes(feature.properties.source_id))){
+        seat.properties.display_name=record.name;
+        seat.properties.fief_reference_note=record.source_note;
+      }
+      for(const area of features.filter(feature=>feature.properties.layer==='reference_prefecture_areas'&&record.reference_area_ids.includes(feature.properties.id))){
+        const p=area.properties,color=fiefColors[record.fief_id];
+        p.display_name=record.name;
+        p.fief_id=record.fief_id;
+        p.fief_reference_note=record.source_note;
+        p.source_reference_reason=p.reference_reason;
+        p.reference_reason=`底圖行政參考範圍；封國性質另依封爵資料保留，不表示本年西晉實際控制。${record.source_note}`;
+        referenceMembership.set(p.id.replace('unassigned-reference-',''),record.fief_id);
+        features.push({type:'Feature',geometry:area.geometry,properties:{
+          layer:'kingdom_areas',level:'fief',year:Number(year),entity_id:null,
+          name:record.name,display_name:record.name,fief_id:record.fief_id,color,
+          member_entity_ids:[],member_reference_ids:[p.id],is_multi:false,has_inference:record.inferred,
+          institutional_reference:true,actual_control_claim:false,source:record.source_note,
+          geometry_status:'existing_atlas_reference_fief_overlay',geometry_source_id:p.id}});
+        referenceFiefCount++;
+      }
+    }
+    for(const feature of features){
+      const p=feature.properties;
+      if(!p.adjacent_entity_ids?.some(id=>referenceMembership.has(id)))continue;
+      const [left,right]=p.adjacent_entity_ids.map((id,index)=>referenceMembership.get(id)||p.adjacent_fief_ids[index]);
+      p.adjacent_fief_ids=[left,right];
+      p.between_fiefs=left!==right&&Boolean(left||right);
+      p.within_same_fief=Boolean(left&&left===right);
+    }
     const count=layer=>map.geojson.features.filter(f=>f.properties.layer===layer).length;
-    const note=presentation.note?.replace(/ 本年表內但未能單獨繪界：.*?具體缺據見年度coverage記錄。/,'');
+    const sourceNote=presentation.note?.replace(/ 本年表內但未能單獨繪界：.*?具體缺據見年度coverage記錄。/,'')||'谭圖262、281與CHGIS同級採用；約308圖補晚期局部邊界。政區與支郡依本年文字，改名、整郡改州沿用已有郡界；析置及轉縣局部擬合並註明來源。政權邊界只採三底圖；末期缺少明確控制界線之處保留底圖政區參考，不表示仍屬西晉實際控制。縣面與縣界不展示；州郡大圖使用同一年度的完整矢量邊線。';
+    const note=localPatch?sourceNote.replace(/ ?新野內圈為仍屬義陽的朝陽縣推定轄區，並非重複郡界。/,'')+' '+localPatch.note:sourceNote;
+    const abolitionNote=abolished.length?' 有明確廢國或末任改封且無續封依據者，自變更當年恢復郡名，取消封國及支郡著色；無其他依據時仍沿用《通史》郡國名稱。':'';
+    const referenceFiefNote=referenceFiefCount?' 文字依當年實際控制取捨，地圖底圖行政參考範圍另行處理；有封爵延續依據者沿現成參考面保留封國色，文字缺郡不等於國除。未知國主不撤國，寬泛延續為展示推定；著色不表示本年西晉實控。':'';
     return {...map,threeBasemap:true,fiefColors,
       title:presentation.title||`${year}年　西晉州郡與封國`,
       subtitle:presentation.subtitle||'據262、281及約308年圖按改置事件取界；CHGIS保留治所。',
-      note:note||'谭圖262、281與CHGIS同級採用；約308圖補晚期局部邊界。政區與支郡依本年文字，改名、整郡改州沿用已有郡界；析置及轉縣局部擬合並註明來源。政權邊界只採三底圖；末期缺少明確控制界線之處保留底圖政區參考，不表示仍屬西晉實際控制。縣面與縣界不展示；州郡大圖使用同一年度的完整矢量邊線。',
+      note:note+abolitionNote+referenceFiefNote,
       status:presentation.status||`${year}年：${count('prefecture_areas')}處郡國範圍、${count('county_seats')}處縣治；邊界逐段保留底圖年代與擬合說明。`
     };
   }
