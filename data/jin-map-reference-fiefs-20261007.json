@@ -1,5 +1,5 @@
 {
-  "reviewed_at": "2026-10-07",
+  "reviewed_at": "2026-10-08",
   "scope": "western_jin_map_only",
   "policy": "文字按實際控制取捨，地圖使用三底圖行政參考範圍，兩者分離。下列封國僅在王表及後續Word已批准的爵位時間內，於有據可定位的參考面標名著色；不因文字缺郡判為國除，也不因未見國絕另造存續時間。未知當年國主不補姓名年次，著色不等同本年西晉實際控制。",
   "records": [
@@ -17,7 +17,7 @@
       "evidence_ids": [
         "w0249"
       ],
-      "source_note": "303年後陳留王承襲姓名未詳，沒有本輪可確認的國除證據；314年文字實控表缺項不作廢國理由。僅在281底圖陳留參考面保留國名與封國色，不填曹奐或未知繼承人姓名。",
+      "source_note": "陳留王後段承襲姓名未詳，沿已批准的未知承襲有效區間顯示314—316參考面；314文字實控表缺項不作撤國理由。僅保留國名、封國色及原世系，不補曹奐或未知繼王姓名，不新增未批准爵期。",
       "source_links": [
         {
           "title": "晉朝藩王列表",
@@ -29,53 +29,6 @@
       ]
     },
     {
-      "id": "PEI_MAP_REFERENCE",
-      "name": "沛國",
-      "fief_id": "jin-沛",
-      "entity_id": "p027",
-      "reference_area_ids": [
-        "unassigned-reference-tan281-146"
-      ],
-      "begin": 314,
-      "end": 316,
-      "inferred": true,
-      "evidence_ids": [
-        "w0047",
-        "w0048"
-      ],
-      "source_note": "韜276年後終年未詳，滋卒於311年；世系不全且未見國除，不以問號或314年文字缺項撤銷封國。314—316寬泛保留沛國，未確認本年國主。",
-      "source_links": [
-        {
-          "title": "晉朝藩王列表",
-          "url": "https://zh.wikipedia.org/wiki/晉朝藩王列表"
-        }
-      ],
-      "reference_source_ids": []
-    },
-    {
-      "id": "GAOYANG_MAP_REFERENCE",
-      "name": "高陽國",
-      "fief_id": "jin-高陽",
-      "entity_id": "p044",
-      "reference_area_ids": [
-        "unassigned-reference-tan281-69"
-      ],
-      "begin": 314,
-      "end": 316,
-      "inferred": true,
-      "evidence_ids": [
-        "w0093"
-      ],
-      "source_note": "毅表列至311年，後次可知封王已在東晉；未見本輪可確定廢國證據，314—316僅寬泛保留高陽封國性質，不確認312年以後姓名或在位年。",
-      "source_links": [
-        {
-          "title": "晉朝藩王列表",
-          "url": "https://zh.wikipedia.org/wiki/晉朝藩王列表"
-        }
-      ],
-      "reference_source_ids": []
-    },
-    {
       "id": "XIHE_MAP_REFERENCE",
       "name": "西河國",
       "fief_id": "jin-西河",
@@ -84,13 +37,13 @@
         "unassigned-reference-tan281-64"
       ],
       "begin": 307,
-      "end": 316,
+      "end": 311,
       "inferred": true,
       "evidence_ids": [
         "w0110",
         "w0111"
       ],
-      "source_note": "隱279年起、終年未詳，孴起年未詳而至311年有據；文字306年終點屬控制範圍，不能截斷307—311封爵。312—316因未見廢國證據寬泛保留，不以未知承襲填寫國主。",
+      "source_note": "隱279起、孴起年未詳而終於311有據；文字306終點屬實控範圍，307—311按既定王表仍顯西河國。312起還郡，不以未見國絕延長有效期。",
       "source_links": [
         {
           "title": "晉朝藩王列表",
@@ -113,7 +66,7 @@
       "evidence_ids": [
         "w0015"
       ],
-      "source_note": "滔314年受封有據，終年未詳；314年封国保留有明證，315—316寬泛延續為展示推定。原文字政區313年終點不等於廢國，不把後來的休提前填入西晉。",
+      "source_note": "滔314受封按既定王表有據、終年未詳；314—316沿已批准未知終期顯示，不把後來的休提前填入西晉。原文字政區313截止不代表廢爵。",
       "source_links": [
         {
           "title": "晉朝藩王列表",
@@ -184,7 +137,7 @@
       "evidence_ids": [
         "fr0001"
       ],
-      "source_note": "既有封爵有效段至316年，石演301—310年代的終點仍是範圍；target_periods止313是文字控制截斷。314—316封國性質寬泛保留，不將316當作史料確定終年。",
+      "source_note": "既有Word、封爵資料的有效段止本輪316觀察界；石演卒年僅繫301—310年代而非一個確年，不能由文字target_periods止313另截爵期。314—316保留已批准參考顯示，不將316當史料確定終年，不新增爵期。",
       "source_links": [
         {
           "title": "晉朝公爵列表",
@@ -209,7 +162,7 @@
       "evidence_ids": [
         "fr0004"
       ],
-      "source_note": "既有封爵有效段至316年，裴嵩301—310年代的終點仍是範圍；target_periods止313是文字控制截斷。314—316封國性質寬泛保留，不將316當作史料確定終年。",
+      "source_note": "既有Word、封爵資料的有效段止本輪316觀察界；裴嵩卒年僅繫301—310年代而非一個確年，不能由文字target_periods止313另截爵期。314—316保留已批准參考顯示，不將316當史料確定終年，不新增爵期。",
       "source_links": [
         {
           "title": "晉朝公爵列表",
@@ -232,7 +185,7 @@
       "evidence_ids": [
         "fr0002"
       ],
-      "source_note": "陳輿、陳植、陳粹等承襲起訖不全，陳粹卒年僅繫310年代；既有封爵有效段至316年而文字連接至313年。314—316寬泛保留公國，不唯一指定本年封君。",
+      "source_note": "陳輿、陳植、陳粹等承襲起訖不全，陳粹卒年僅繫310年代。依既有Word及封爵有效段保留314—316公國參考面；文字313截止不改爵期，不唯一指定本年封君或新增後繼。",
       "source_links": [
         {
           "title": "晉朝公爵列表",
@@ -255,7 +208,7 @@
       "evidence_ids": [
         "fr0136"
       ],
-      "source_note": "荀輯、荀畯、荀識等承襲起訖未詳；既有封爵有效段保留至316年而文字連接被313年實控終点截短。314—316寬泛保留侯國，未知本年姓名不作撤國理由。",
+      "source_note": "荀輯、荀畯、荀識等承襲起訖未詳，314—316沿既有Word及封爵資料的有效期顯示侯國；文字313實控截止不改爵期，未知本年姓名不作撤國理由，不新增後繼。",
       "source_links": [
         {
           "title": "晉朝侯爵列表（五等爵）",
@@ -264,5 +217,47 @@
       ],
       "reference_source_ids": []
     }
-  ]
+  ],
+  "reviewed_exclusions": [
+    {
+      "id": "PEI_MAP_REFERENCE",
+      "entity_id": "p027",
+      "previous_begin": 314,
+      "previous_end": 316,
+      "evidence_ids": [
+        "w0047",
+        "w0048"
+      ],
+      "reference_area_ids": [
+        "unassigned-reference-tan281-146"
+      ],
+      "reason": "已知封爵終點後不能以未見國絕延續：沛311明確國絕、高陽按王表311上限；此參考期整段移除封國性質，郡面保留並按最終狀態表顯郡。",
+      "source_links": [
+        {
+          "title": "晉朝藩王列表",
+          "url": "https://zh.wikipedia.org/wiki/晉朝藩王列表"
+        }
+      ]
+    },
+    {
+      "id": "GAOYANG_MAP_REFERENCE",
+      "entity_id": "p044",
+      "previous_begin": 314,
+      "previous_end": 316,
+      "evidence_ids": [
+        "w0093"
+      ],
+      "reference_area_ids": [
+        "unassigned-reference-tan281-69"
+      ],
+      "reason": "已知封爵終點後不能以未見國絕延續：沛311明確國絕、高陽按王表311上限；此參考期整段移除封國性質，郡面保留並按最終狀態表顯郡。",
+      "source_links": [
+        {
+          "title": "晉朝藩王列表",
+          "url": "https://zh.wikipedia.org/wiki/晉朝藩王列表"
+        }
+      ]
+    }
+  ],
+  "final_period_review": "2026-10-08核完原11項：沛、高陽過期段移除；西河止311；其餘8項均在已批准有效期內，未知始終不改造成虛構承繼。"
 }

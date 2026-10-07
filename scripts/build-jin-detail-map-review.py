@@ -45,7 +45,11 @@ def enclave_annotations(areas,year,colors):
             p=member['properties'];pid=p.get('entity_id') or p['id']
             components=sorted(parts(member['_shape']),key=lambda g:-g.area)
             def annotation(component,name,role,suffix):
-                result.append({'geometry':component.representative_point(),'properties':{
+                # Use the saved six-decimal face in both full and label-only
+                # builds, so an unrelated rebuild does not nudge annotations.
+                rings=[[[round(x,6),round(y,6)] for x,y in ring] for ring in mapping(component)['coordinates']]
+                point=shape({'type':'Polygon','coordinates':rings}).representative_point()
+                result.append({'geometry':point,'properties':{
                     'layer':'labels','level':'fief','display_level':'prefecture','entity_id':role+'-'+pid+'-'+suffix,
                     'source_entity_id':p.get('entity_id'),'prefecture_id':p.get('entity_id'),'parent_fief_id':fid,
                     'name':name,'display_name':name,'year':year,'label_type':'prefecture','show_label':True,
@@ -102,11 +106,13 @@ def refresh_annotations():
 
 def build():
     subprocess.run([str(NODE),'scripts/export-jin-detail-map-input.cjs'],cwd=ROOT,check=True)
+    final_titles=json.loads((ROOT/'data/jin-fief-research/reviewed-final-fief-status-20261008.json').read_text())['title_periods']
+    final_reference_areas={'p044':'unassigned-reference-tan281-69','p047':'unassigned-reference-tan281-159','p017':'unassigned-reference-tan281-140','p027':'unassigned-reference-tan281-146','p066':'unassigned-reference-tan281-64'}
     out={'reviewed_at':'2026-10-07','policy':NOTE,'geometries':{},'years':{}}
     report=[]
-    def save(g):
-        geom=mapping(normalize(g))
-        if geom['type'] not in ['Point','MultiPoint']:
+    def save(g,preserved=None):
+        geom=preserved if preserved is not None else mapping(normalize(g))
+        if preserved is None and geom['type'] not in ['Point','MultiPoint']:
             def rounded(value):return [rounded(v) for v in value] if isinstance(value,(list,tuple)) else round(value,6)
             geom['coordinates']=rounded(geom['coordinates'])
         raw=json.dumps(geom,separators=(',',':'))
@@ -140,7 +146,7 @@ def build():
             for f in fs:
                 p=f['properties']
                 if (p.get('entity_id')==pid and p.get('level')=='prefecture') or (rid and p.get('id')==rid):touch(f);p.update(values)
-                if rid and p['layer']=='reference_prefecture_seats' and target['_shape'].covers(f['_shape']):touch(f);p.update({k:v for k,v in values.items() if k in ['display_name','fief_id','color']})
+                if rid and p['layer']=='reference_prefecture_seats' and target['_shape'].covers(f['_shape']):touch(f);p.update({k:v for k,v in values.items() if k in ['display_name','fief_id','color','reference_reason','fief_reference_note']})
             return target
         # Restore only the two source commanderies, not the rest of Korea.
         old_domain=clean(unary_union([f['_shape'] for f in fs if f['properties']['layer']=='regime_areas']))
@@ -230,14 +236,14 @@ def build():
             repaired_ids.add('p252')
             for f in fs:
                 p=f['properties']
-                if p['layer']=='labels' and (p.get('entity_id')=='p013' or p.get('id')==cp.get('id')) and not remain.covers(f['_shape']):change_shape(f,remain.representative_point())
+                if p['layer']=='labels' and (p.get('entity_id')=='p013' or p.get('id')=='unassigned-reference-tan281-137') and not remain.covers(f['_shape']):change_shape(f,remain.representative_point())
                 if p['layer']=='county_seats' and p.get('entity_id')=='c0120':touch(f);p.update(prefecture_id='p252',prefecture_name=name,county_key='p252/c0120')
             if year<=313:
                 source_seat=next(f for f in fs if f['properties']['layer']=='county_seats' and f['properties'].get('entity_id')=='c0120')
                 jp=source_seat['properties']
                 add(shape(kao['geometry']),{**deepcopy(jp),'entity_id':'c0128','name':'考城','display_name':'考城','county_key':'p252/c0128','source_id':'82331','source_name':'考城縣','source':'CHGIS_V6:v6_time_cnty_pts_utf_wgs84','prefecture_id':'p252','prefecture_name':name})
                 add(shape(jiyang['geometry']),{'layer':'prefecture_seats','level':'prefecture','entity_id':'p252','name':name,'display_name':name,'state_id':'s02','state_name':'兗州','year':year,
-                    'fief_id':fid,'member_role':'branch' if fid else None,'membership_evidence':'inferred' if fid else None,
+                    'fief_id':fid,'member_role':'branch' if fid else None,'membership_evidence':'inferred' if fid else None,'color':None,
                     'seat_name':'濟陽','seat_county_id':'c0120','seat_county_key':'p252/c0120','source_id':'44379','source':'CHGIS濟陽縣原坐標；郡治依首縣展示','coordinate_role':'prefecture_seat'})
                 remove(source_seat) # Same-site symbols retain only the highest level.
             # Old p015 has always used the Jiyin source compartment, not Jiyang.
@@ -246,6 +252,21 @@ def build():
                 'member_role':'seat' if 307<=year<=311 else None,'membership_evidence':'confirmed' if 307<=year<=311 else None,
                 'fief_review_note':'原濟陰圖面307—311顯示濟陰王國；濟陽支郡另由陳留東部二縣析置，不重用此面。'})
             checks['jiyang_partition_area_difference']=previous.symmetric_difference(unary_union([new,remain])).area
+        # Apply the shared, reviewed title periods to existing commandery faces.
+        # Late reference areas keep their shape and do not re-enter text counts.
+        for period in final_titles:
+            if not period['begin']<=year<=period['end']:continue
+            kingdom=period['rank'] is not None
+            fid='jin-'+period['name'].removesuffix('國') if kingdom else None
+            for pid in period['ids']:
+                values={
+                    'name':period['name'],'display_name':period['name'],'base_name':period['name'],
+                    'fief_id':fid,'member_role':'seat' if kingdom else None,
+                    'membership_evidence':('inferred' if period['inferred'] else 'confirmed') if kingdom else None,
+                    'color':None,'fief_review_note':period['note'],'final_fief_review_id':period['id']}
+                if pid in final_reference_areas:
+                    values.update(fief_reference_note=period['note'],reference_reason='底圖行政參考範圍，不表示本年西晉實際控制。'+period['note'])
+                metadata(pid,final_reference_areas.get(pid),values)
         # Recalculate only lines touching the changed Lu/Donghai or Chenliu faces.
         areas=[f for f in fs if f['properties']['layer'] in ['prefecture_areas','reference_prefecture_areas']]
         id_of=lambda f:f['properties'].get('entity_id') or f['properties'].get('id','').removeprefix('unassigned-reference-')
@@ -280,11 +301,16 @@ def build():
                 else:add(line,props)
         # Metadata-only fief changes also update boundary colouring.
         byid={id_of(f):f for f in areas}
+        prior_changes=set(changed)
         for f in fs:
             p=f['properties']
             if p.get('adjacent_entity_ids'):
                 values=[byid[i]['properties'].get('fief_id') if i in byid else old for i,old in zip(p['adjacent_entity_ids'],p.get('adjacent_fief_ids',[None,None]))]
-                if values!=p.get('adjacent_fief_ids'):touch(f);p.update(adjacent_fief_ids=values,between_fiefs=values[0]!=values[1] and bool(any(values)),within_same_fief=bool(values[0] and values[0]==values[1]))
+                if values!=p.get('adjacent_fief_ids'):
+                    # A title change updates the line's affiliation, not its
+                    # coordinates, including saved local intersection points.
+                    if key(f) not in prior_changes:f['_preserved_geometry']=f['geometry']
+                    touch(f);p.update(adjacent_fief_ids=values,between_fiefs=values[0]!=values[1] and bool(any(values)),within_same_fief=bool(values[0] and values[0]==values[1]))
         # Only changed kingdom unions are replaced; county membership is untouched elsewhere.
         colors=dict(original['fiefColors']);regions={}
         for f in areas:
@@ -313,7 +339,7 @@ def build():
         checks['branch_affiliation_labels']=sum(i['properties']['coordinate_role']=='branch_affiliation_annotation' for i in labels)
         patch['remove']=sorted(changed)
         for f in fs:
-            if key(f) in changed:patch['add'].append({'type':'Feature','geometry_id':save(f['_shape']),'properties':f['properties']})
+            if key(f) in changed:patch['add'].append({'type':'Feature','geometry_id':save(f['_shape'],f.get('_preserved_geometry')),'properties':f['properties']})
         out['years'][str(year)]=patch;report.append({'year':year,**checks,'county_point_coordinates_moved':0,'restored_joint_commandery_names':['樂浪郡','帶方郡']})
     target=ROOT/'data/jin-detail-map-review-20261007.js'
     target.write_text('window.JIN_DETAIL_MAP_REVIEW = '+json.dumps(out,ensure_ascii=False,separators=(',',':'))+';\n')

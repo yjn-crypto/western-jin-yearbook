@@ -1559,7 +1559,7 @@
     },
     {
       "prefecture_id": "p028",
-      "prefecture_name": "譙郡",
+      "prefecture_name": "譙國",
       "state_id": "s03",
       "county_id": "c0252",
       "county_name": "譙",
@@ -5675,7 +5675,7 @@
     },
     {
       "prefecture_id": "p172",
-      "prefecture_name": "宜都郡",
+      "prefecture_name": "宜都國",
       "state_id": "s16",
       "county_id": "c1210",
       "county_name": "夷陵",
@@ -6222,7 +6222,7 @@
     },
     {
       "prefecture_id": "p188",
-      "prefecture_name": "廬江郡",
+      "prefecture_name": "廬江國",
       "state_id": "s17",
       "county_id": "c1322",
       "county_name": "舒",

@@ -1,0 +1,204 @@
+{
+  "date": "2026-10-08",
+  "source_revision": "5e4756cefaa65c13a1ce9f21c0586c9a05f56cbf",
+  "source_file": "scripts/build-jin-detail-map-review.py",
+  "faulty_condition": "p.get('entity_id')=='p013' or p.get('id')==cp.get('id')",
+  "corrected_condition": "p.get('entity_id')=='p013' or p.get('id')=='unassigned-reference-tan281-137'",
+  "cause": "306—313 ordinary Chenliu and most label rows both lacked id, so None==None classified unrelated labels as Chenliu; source administrative seats were unchanged.",
+  "incorrect_anchor": [
+    114.663733,
+    34.727358
+  ],
+  "affected_years": [
+    {
+      "year": 306,
+      "misplaced_at_chenliu_before": 262,
+      "misplaced_at_chenliu_after": 0,
+      "levels": {
+        "prefecture": 189,
+        "state": 20,
+        "fief": 53
+      }
+    },
+    {
+      "year": 307,
+      "misplaced_at_chenliu_before": 256,
+      "misplaced_at_chenliu_after": 0,
+      "levels": {
+        "prefecture": 185,
+        "state": 21,
+        "fief": 50
+      }
+    },
+    {
+      "year": 308,
+      "misplaced_at_chenliu_before": 255,
+      "misplaced_at_chenliu_after": 0,
+      "levels": {
+        "prefecture": 185,
+        "state": 21,
+        "fief": 49
+      }
+    },
+    {
+      "year": 309,
+      "misplaced_at_chenliu_before": 255,
+      "misplaced_at_chenliu_after": 0,
+      "levels": {
+        "prefecture": 185,
+        "state": 21,
+        "fief": 49
+      }
+    },
+    {
+      "year": 310,
+      "misplaced_at_chenliu_before": 258,
+      "misplaced_at_chenliu_after": 0,
+      "levels": {
+        "prefecture": 187,
+        "state": 21,
+        "fief": 50
+      }
+    },
+    {
+      "year": 311,
+      "misplaced_at_chenliu_before": 253,
+      "misplaced_at_chenliu_after": 0,
+      "levels": {
+        "prefecture": 182,
+        "state": 21,
+        "fief": 50
+      }
+    },
+    {
+      "year": 312,
+      "misplaced_at_chenliu_before": 238,
+      "misplaced_at_chenliu_after": 0,
+      "levels": {
+        "prefecture": 172,
+        "state": 21,
+        "fief": 45
+      }
+    },
+    {
+      "year": 313,
+      "misplaced_at_chenliu_before": 240,
+      "misplaced_at_chenliu_after": 0,
+      "levels": {
+        "prefecture": 173,
+        "state": 21,
+        "fief": 46
+      }
+    }
+  ],
+  "examples_306": [
+    {
+      "entity_id": "p113",
+      "name": "魏興郡",
+      "level": "prefecture",
+      "before": [
+        114.663733,
+        34.727358
+      ],
+      "after": [
+        109.456588,
+        32.987666
+      ]
+    },
+    {
+      "entity_id": "p023",
+      "name": "汝南國",
+      "level": "prefecture",
+      "before": [
+        114.663733,
+        34.727358
+      ],
+      "after": [
+        114.222274,
+        32.886247
+      ]
+    },
+    {
+      "entity_id": "s03",
+      "name": "豫州",
+      "level": "state",
+      "before": [
+        114.663733,
+        34.727358
+      ],
+      "after": [
+        115.36729,
+        32.405345
+      ]
+    },
+    {
+      "entity_id": "s10",
+      "name": "秦州",
+      "level": "state",
+      "before": [
+        114.663733,
+        34.727358
+      ],
+      "after": [
+        104.789365,
+        34.280166
+      ]
+    },
+    {
+      "entity_id": "c0042",
+      "name": "襄陵公",
+      "level": "fief",
+      "before": [
+        114.663733,
+        34.727358
+      ],
+      "after": [
+        111.577577,
+        36.001038
+      ]
+    },
+    {
+      "entity_id": "c0045",
+      "name": "臨汾公",
+      "level": "fief",
+      "before": [
+        114.663733,
+        34.727358
+      ],
+      "after": [
+        111.30285700000002,
+        35.685856
+      ]
+    },
+    {
+      "entity_id": "p062",
+      "name": "樂浪郡",
+      "level": "prefecture",
+      "before": [
+        114.663733,
+        34.727358
+      ],
+      "after": [
+        126.26161640630956,
+        39.43494151767665
+      ]
+    },
+    {
+      "entity_id": "p064",
+      "name": "帶方郡",
+      "level": "prefecture",
+      "before": [
+        114.663733,
+        34.727358
+      ],
+      "after": [
+        125.74626718640405,
+        38.268746697531995
+      ]
+    }
+  ],
+  "non_label_feature_changes": 0,
+  "seat_coordinate_changes": 0,
+  "label_metadata_changes": 0,
+  "checks": "Exact per-feature comparison across 51 saved annual slices; corrected labels only. 304/305 and 314—316 unchanged."
+}

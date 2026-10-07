@@ -1,0 +1,1182 @@
+{
+  "schema_version": "1.0.0",
+  "reviewed_at": "2026-10-08",
+  "scope": "西晉266—316",
+  "policy": "按已批准王表與Word期段、明確授爵改封立儲國除事件糾正封國性質；不以國主未詳撤國，不補造繼王或空檔。所有條目僅修改已有郡面的名稱與封國性質；文字仍受原實控窗口限制，地圖可在已有行政參考面內獨立套用。",
+  "title_periods": [
+    {
+      "id": "QIAO_CONTINUATION",
+      "ids": [
+        "p028"
+      ],
+      "begin": 303,
+      "end": 311,
+      "name": "譙國",
+      "rank": "王",
+      "note": "《晉書》譙王傳明載隨薨、邃嗣，後沒於石勒；既有王表列邃303—311。故原書303改郡不能壓過有據承繼，恢復本期譙國；不把317始嗣的承回填西晉。",
+      "source_links": [
+        {
+          "title": "《晋书》卷037",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷037"
+        },
+        {
+          "title": "维基百科晋朝藩王列表",
+          "url": "https://zh.wikipedia.org/zh-cn/晉朝藩王列表"
+        }
+      ],
+      "authority": "本轮据明确史实纠错",
+      "inferred": false,
+      "apply_to": "existing_text_and_map_reference"
+    },
+    {
+      "id": "YIDU_XIANG",
+      "ids": [
+        "p172"
+      ],
+      "begin": 301,
+      "end": 306,
+      "name": "宜都國",
+      "rank": "王",
+      "note": "既定王表及Word列祥301改宜都，307改淮南；本期宜都應顯為王國，未知確切承襲不另造姓名年次。",
+      "source_links": [
+        {
+          "title": "《晋书》卷064",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷064"
+        },
+        {
+          "title": "维基百科晋朝藩王列表",
+          "url": "https://zh.wikipedia.org/zh-cn/晉朝藩王列表"
+        }
+      ],
+      "authority": "既有王表與Word裁定補入顯示",
+      "inferred": false,
+      "apply_to": "existing_text_and_map_reference"
+    },
+    {
+      "id": "QINGHE_FIRST",
+      "ids": [
+        "p042"
+      ],
+      "begin": 277,
+      "end": 288,
+      "name": "清河國",
+      "rank": "王",
+      "note": "清河王遐277受封，289增封勃海；新增支郡前，清河本國亦須顯為王國。",
+      "source_links": [
+        {
+          "title": "《晋书》卷003",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷003"
+        },
+        {
+          "title": "《晋书》卷064",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷064"
+        },
+        {
+          "title": "维基百科晋朝藩王列表",
+          "url": "https://zh.wikipedia.org/zh-cn/晉朝藩王列表"
+        }
+      ],
+      "authority": "本轮据明确史实纠错",
+      "inferred": false,
+      "apply_to": "existing_text_and_map_reference"
+    },
+    {
+      "id": "SHIPING_WEI",
+      "ids": [
+        "p074"
+      ],
+      "begin": 278,
+      "end": 288,
+      "name": "始平國",
+      "rank": "王",
+      "note": "既有王表列瑋277始平王，289徙楚；補回此前漏標本國。原典對始平承繼另存裕、迪線索，不以此強寫不能唯一確定的本年國主。",
+      "source_links": [
+        {
+          "title": "《晋书》卷003",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷003"
+        },
+        {
+          "title": "《晋书》卷059",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷059"
+        },
+        {
+          "title": "《晋书》卷064",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷064"
+        },
+        {
+          "title": "维基百科晋朝藩王列表",
+          "url": "https://zh.wikipedia.org/zh-cn/晉朝藩王列表"
+        }
+      ],
+      "authority": "本轮据明确史实纠错",
+      "inferred": false,
+      "apply_to": "existing_text_and_map_reference"
+    },
+    {
+      "id": "RUYIN_JUN",
+      "ids": [
+        "p024"
+      ],
+      "begin": 266,
+      "end": 276,
+      "name": "汝陰國",
+      "rank": "王",
+      "note": "駿265封汝陰王，277徙扶風；初封汝陰期段不因《通史》作郡而漏標。277以後既有封國判斷保留。",
+      "source_links": [
+        {
+          "title": "《晋书》卷003",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷003"
+        },
+        {
+          "title": "《晋书》卷038",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷038"
+        },
+        {
+          "title": "维基百科晋朝藩王列表",
+          "url": "https://zh.wikipedia.org/zh-cn/晉朝藩王列表"
+        }
+      ],
+      "authority": "本轮据明确史实纠错",
+      "inferred": false,
+      "apply_to": "existing_text_and_map_reference"
+    },
+    {
+      "id": "BOHAI_FU",
+      "ids": [
+        "p039"
+      ],
+      "begin": 266,
+      "end": 276,
+      "name": "勃海國",
+      "rank": "王",
+      "note": "輔265受封勃海，277徙太原，故本期以勃海國顯示；未把其後清河支屬提前。",
+      "source_links": [
+        {
+          "title": "《晋书》卷003",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷003"
+        },
+        {
+          "title": "《晋书》卷037",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷037"
+        },
+        {
+          "title": "维基百科晋朝藩王列表",
+          "url": "https://zh.wikipedia.org/zh-cn/晉朝藩王列表"
+        }
+      ],
+      "authority": "本轮据明确史实纠错",
+      "inferred": false,
+      "apply_to": "existing_text_and_map_reference"
+    },
+    {
+      "id": "RUNAN_JIAN",
+      "ids": [
+        "p023"
+      ],
+      "begin": 270,
+      "end": 276,
+      "name": "汝南國",
+      "rank": "王",
+      "note": "柬270封汝南王，277徙南陽；汝南王國的既有郡面在本期補名、補色。",
+      "source_links": [
+        {
+          "title": "《晋书》卷064",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷064"
+        },
+        {
+          "title": "维基百科晋朝藩王列表",
+          "url": "https://zh.wikipedia.org/zh-cn/晉朝藩王列表"
+        }
+      ],
+      "authority": "本轮据明确史实纠错",
+      "inferred": false,
+      "apply_to": "existing_text_and_map_reference"
+    },
+    {
+      "id": "GUANGHAN_ZAN",
+      "ids": [
+        "p103"
+      ],
+      "begin": 277,
+      "end": 279,
+      "name": "廣漢國",
+      "rank": "王",
+      "note": "武帝紀咸寧三年277明載封贊為廣漢王；卷38載贊280薨，寔繼廣德後改封北海，王表將寔繼後、改封繫於283。故按當年變更後結果列贊277—279；280—282不據無年號連寫另補王國，仍待考，不能表述為已證明無人承繼。",
+      "source_links": [
+        {
+          "title": "《晋书》卷003",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷003"
+        },
+        {
+          "title": "《晋书》卷038",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷038"
+        },
+        {
+          "title": "维基百科晋朝藩王列表",
+          "url": "https://zh.wikipedia.org/zh-cn/晉朝藩王列表"
+        }
+      ],
+      "authority": "既有Word內容補入；終界按王表及變更後結果，280—282不另推",
+      "inferred": false,
+      "apply_to": "existing_text_and_map_reference"
+    },
+    {
+      "id": "CHENGYANG_JINGDU",
+      "ids": [
+        "p145"
+      ],
+      "begin": 269,
+      "end": 269,
+      "name": "城陽國",
+      "rank": "王",
+      "note": "泰始五年269追封兆為城陽王、以景度為嗣；270景度薨。271憲、273祗均當年封而當年薨，不以年內曾有爵覆蓋當年變更後結果。",
+      "source_links": [
+        {
+          "title": "《晋书》卷003",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷003"
+        },
+        {
+          "title": "《晋书》卷038",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷038"
+        },
+        {
+          "title": "《晋书》卷064",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷064"
+        },
+        {
+          "title": "维基百科晋朝藩王列表",
+          "url": "https://zh.wikipedia.org/zh-cn/晉朝藩王列表"
+        }
+      ],
+      "authority": "本轮据明确史实纠错",
+      "inferred": false,
+      "apply_to": "existing_text_and_map_reference"
+    },
+    {
+      "id": "LUJIANG_PU",
+      "ids": [
+        "p188"
+      ],
+      "begin": 304,
+      "end": 306,
+      "name": "廬江國",
+      "rank": "王",
+      "note": "司馬普獨立廬江王國採既定304—306展示期段；304由成都王穎立皇太弟後之封爵關係推定，原典不明繫始封年。保留此前已批准的306末年展示，不另縮成年內亡故前一年度；307起仍按原淮南祥支郡關係。",
+      "source_links": [
+        {
+          "title": "《晋书》卷059",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷059"
+        },
+        {
+          "title": "维基百科晋朝藩王列表",
+          "url": "https://zh.wikipedia.org/zh-cn/晉朝藩王列表"
+        }
+      ],
+      "authority": "保留已批准展示期段",
+      "inferred": true,
+      "apply_to": "existing_text_and_map_reference"
+    },
+    {
+      "id": "WU_300_p192",
+      "ids": [
+        "p192"
+      ],
+      "begin": 300,
+      "end": 300,
+      "name": "吳郡",
+      "rank": null,
+      "note": "300晏降賓徒縣王，按當年變更後結果，吳本國及丹楊、吳興同年解除多郡關係；301還本封的後段不變。",
+      "source_links": [
+        {
+          "title": "《晋书》卷064",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷064"
+        },
+        {
+          "title": "维基百科晋朝藩王列表",
+          "url": "https://zh.wikipedia.org/zh-cn/晉朝藩王列表"
+        }
+      ],
+      "authority": "本轮据明确史实纠错",
+      "inferred": false,
+      "apply_to": "existing_text_and_map_reference"
+    },
+    {
+      "id": "WU_300_p189",
+      "ids": [
+        "p189"
+      ],
+      "begin": 300,
+      "end": 300,
+      "name": "丹楊郡",
+      "rank": null,
+      "note": "300晏降賓徒縣王，按當年變更後結果，吳本國及丹楊、吳興同年解除多郡關係；301還本封的後段不變。",
+      "source_links": [
+        {
+          "title": "《晋书》卷064",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷064"
+        },
+        {
+          "title": "维基百科晋朝藩王列表",
+          "url": "https://zh.wikipedia.org/zh-cn/晉朝藩王列表"
+        }
+      ],
+      "authority": "本轮据明确史实纠错",
+      "inferred": false,
+      "apply_to": "existing_text_and_map_reference"
+    },
+    {
+      "id": "WU_300_p193",
+      "ids": [
+        "p193"
+      ],
+      "begin": 300,
+      "end": 300,
+      "name": "吳興郡",
+      "rank": null,
+      "note": "300晏降賓徒縣王，按當年變更後結果，吳本國及丹楊、吳興同年解除多郡關係；301還本封的後段不變。",
+      "source_links": [
+        {
+          "title": "《晋书》卷064",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷064"
+        },
+        {
+          "title": "维基百科晋朝藩王列表",
+          "url": "https://zh.wikipedia.org/zh-cn/晉朝藩王列表"
+        }
+      ],
+      "authority": "本轮据明确史实纠错",
+      "inferred": false,
+      "apply_to": "existing_text_and_map_reference"
+    },
+    {
+      "id": "QINGHE_302_p042",
+      "ids": [
+        "p042"
+      ],
+      "begin": 302,
+      "end": 302,
+      "name": "清河郡",
+      "rank": null,
+      "note": "302五月覃立皇太子，清河本國及勃海支郡本年改列普通郡；304復清河王的後段仍保留。",
+      "source_links": [
+        {
+          "title": "《晋书》卷064",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷064"
+        },
+        {
+          "title": "维基百科晋朝藩王列表",
+          "url": "https://zh.wikipedia.org/zh-cn/晉朝藩王列表"
+        }
+      ],
+      "authority": "本轮据明确史实纠错",
+      "inferred": false,
+      "apply_to": "existing_text_and_map_reference"
+    },
+    {
+      "id": "QINGHE_302_p039",
+      "ids": [
+        "p039"
+      ],
+      "begin": 302,
+      "end": 302,
+      "name": "勃海郡",
+      "rank": null,
+      "note": "302五月覃立皇太子，清河本國及勃海支郡本年改列普通郡；304復清河王的後段仍保留。",
+      "source_links": [
+        {
+          "title": "《晋书》卷064",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷064"
+        },
+        {
+          "title": "维基百科晋朝藩王列表",
+          "url": "https://zh.wikipedia.org/zh-cn/晉朝藩王列表"
+        }
+      ],
+      "authority": "本轮据明确史实纠错",
+      "inferred": false,
+      "apply_to": "existing_text_and_map_reference"
+    },
+    {
+      "id": "YUZHANG_304_p200",
+      "ids": [
+        "p200",
+        "p217"
+      ],
+      "begin": 304,
+      "end": 304,
+      "name": "豫章郡",
+      "rank": null,
+      "note": "304十二月炽立皇太弟，當年解除豫章及原支郡關係；306詮受封另起後段，不用支郡延續規則填補空檔。",
+      "source_links": [
+        {
+          "title": "《晋书》卷005",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷005"
+        },
+        {
+          "title": "《晋书》卷064",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷064"
+        },
+        {
+          "title": "维基百科晋朝藩王列表",
+          "url": "https://zh.wikipedia.org/zh-cn/晉朝藩王列表"
+        }
+      ],
+      "authority": "本轮据明确史实纠错",
+      "inferred": false,
+      "apply_to": "existing_text_and_map_reference"
+    },
+    {
+      "id": "YUZHANG_311_p200",
+      "ids": [
+        "p200",
+        "p217"
+      ],
+      "begin": 311,
+      "end": 316,
+      "name": "豫章郡",
+      "rank": null,
+      "note": "311端在洛陽陷後被立為皇太子，後遇害；依當年變更後結果，豫章與原支郡311起均作普通郡，不向後續構王國。",
+      "source_links": [
+        {
+          "title": "《晋书》卷064",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷064"
+        },
+        {
+          "title": "维基百科晋朝藩王列表",
+          "url": "https://zh.wikipedia.org/zh-cn/晉朝藩王列表"
+        }
+      ],
+      "authority": "本轮据明确史实纠错",
+      "inferred": false,
+      "apply_to": "existing_text_and_map_reference"
+    },
+    {
+      "id": "YUZHANG_304_p202",
+      "ids": [
+        "p202",
+        "p218"
+      ],
+      "begin": 304,
+      "end": 304,
+      "name": "鄱陽郡",
+      "rank": null,
+      "note": "304十二月炽立皇太弟，當年解除豫章及原支郡關係；306詮受封另起後段，不用支郡延續規則填補空檔。",
+      "source_links": [
+        {
+          "title": "《晋书》卷005",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷005"
+        },
+        {
+          "title": "《晋书》卷064",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷064"
+        },
+        {
+          "title": "维基百科晋朝藩王列表",
+          "url": "https://zh.wikipedia.org/zh-cn/晉朝藩王列表"
+        }
+      ],
+      "authority": "本轮据明确史实纠错",
+      "inferred": false,
+      "apply_to": "existing_text_and_map_reference"
+    },
+    {
+      "id": "YUZHANG_311_p202",
+      "ids": [
+        "p202",
+        "p218"
+      ],
+      "begin": 311,
+      "end": 316,
+      "name": "鄱陽郡",
+      "rank": null,
+      "note": "311端在洛陽陷後被立為皇太子，後遇害；依當年變更後結果，豫章與原支郡311起均作普通郡，不向後續構王國。",
+      "source_links": [
+        {
+          "title": "《晋书》卷064",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷064"
+        },
+        {
+          "title": "维基百科晋朝藩王列表",
+          "url": "https://zh.wikipedia.org/zh-cn/晉朝藩王列表"
+        }
+      ],
+      "authority": "本轮据明确史实纠错",
+      "inferred": false,
+      "apply_to": "existing_text_and_map_reference"
+    },
+    {
+      "id": "YUZHANG_304_p201",
+      "ids": [
+        "p201",
+        "p220"
+      ],
+      "begin": 304,
+      "end": 304,
+      "name": "臨川郡",
+      "rank": null,
+      "note": "304十二月炽立皇太弟，當年解除豫章及原支郡關係；306詮受封另起後段，不用支郡延續規則填補空檔。",
+      "source_links": [
+        {
+          "title": "《晋书》卷005",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷005"
+        },
+        {
+          "title": "《晋书》卷064",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷064"
+        },
+        {
+          "title": "维基百科晋朝藩王列表",
+          "url": "https://zh.wikipedia.org/zh-cn/晉朝藩王列表"
+        }
+      ],
+      "authority": "本轮据明确史实纠错",
+      "inferred": false,
+      "apply_to": "existing_text_and_map_reference"
+    },
+    {
+      "id": "YUZHANG_311_p201",
+      "ids": [
+        "p201",
+        "p220"
+      ],
+      "begin": 311,
+      "end": 316,
+      "name": "臨川郡",
+      "rank": null,
+      "note": "311端在洛陽陷後被立為皇太子，後遇害；依當年變更後結果，豫章與原支郡311起均作普通郡，不向後續構王國。",
+      "source_links": [
+        {
+          "title": "《晋书》卷064",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷064"
+        },
+        {
+          "title": "维基百科晋朝藩王列表",
+          "url": "https://zh.wikipedia.org/zh-cn/晉朝藩王列表"
+        }
+      ],
+      "authority": "本轮据明确史实纠错",
+      "inferred": false,
+      "apply_to": "existing_text_and_map_reference"
+    },
+    {
+      "id": "BEFORE_277_p018",
+      "ids": [
+        "p018"
+      ],
+      "begin": 266,
+      "end": 276,
+      "name": "任城郡",
+      "rank": null,
+      "note": "既有王表及《晉書》以陵277由北海徙封任城；此前未見西晉同郡王、公、侯有效封爵，不把通史整段國名提前為266起即有國。",
+      "source_links": [
+        {
+          "title": "《晋书》卷003",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷003"
+        },
+        {
+          "title": "《晋书》卷037",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷037"
+        },
+        {
+          "title": "维基百科晋朝藩王列表",
+          "url": "https://zh.wikipedia.org/zh-cn/晉朝藩王列表"
+        }
+      ],
+      "authority": "本轮据明确史实纠错",
+      "inferred": false,
+      "apply_to": "existing_text_and_map_reference"
+    },
+    {
+      "id": "BEFORE_277_p032",
+      "ids": [
+        "p032"
+      ],
+      "begin": 266,
+      "end": 276,
+      "name": "趙郡",
+      "rank": null,
+      "note": "既有王表及《晉書》以倫277由琅邪徙封趙；此前未見西晉同郡王、公、侯有效封爵，不把通史整段國名提前為266起即有國。",
+      "source_links": [
+        {
+          "title": "《晋书》卷003",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷003"
+        },
+        {
+          "title": "《晋书》卷059",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷059"
+        },
+        {
+          "title": "维基百科晋朝藩王列表",
+          "url": "https://zh.wikipedia.org/zh-cn/晉朝藩王列表"
+        }
+      ],
+      "authority": "本轮据明确史实纠错",
+      "inferred": false,
+      "apply_to": "existing_text_and_map_reference"
+    },
+    {
+      "id": "BEFORE_277_p041",
+      "ids": [
+        "p041"
+      ],
+      "begin": 266,
+      "end": 276,
+      "name": "章武郡",
+      "rank": null,
+      "note": "既有王表及《晉書》以威277由河間徙封章武；此前未見西晉同郡王、公、侯有效封爵，不把通史整段國名提前為266起即有國。",
+      "source_links": [
+        {
+          "title": "《晋书》卷003",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷003"
+        },
+        {
+          "title": "《晋书》卷037",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷037"
+        },
+        {
+          "title": "维基百科晋朝藩王列表",
+          "url": "https://zh.wikipedia.org/zh-cn/晉朝藩王列表"
+        }
+      ],
+      "authority": "本轮据明确史实纠错",
+      "inferred": false,
+      "apply_to": "existing_text_and_map_reference"
+    },
+    {
+      "id": "BEFORE_277_p066",
+      "ids": [
+        "p066"
+      ],
+      "begin": 266,
+      "end": 276,
+      "name": "西河郡",
+      "rank": null,
+      "note": "既有王表及《晉書》以斌277由陳徙封西河；此前未見西晉同郡王、公、侯有效封爵，不把通史整段國名提前為266起即有國。",
+      "source_links": [
+        {
+          "title": "《晋书》卷003",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷003"
+        },
+        {
+          "title": "《晋书》卷037",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷037"
+        },
+        {
+          "title": "维基百科晋朝藩王列表",
+          "url": "https://zh.wikipedia.org/zh-cn/晉朝藩王列表"
+        }
+      ],
+      "authority": "本轮据明确史实纠错",
+      "inferred": false,
+      "apply_to": "existing_text_and_map_reference"
+    },
+    {
+      "id": "BEFORE_277_p164",
+      "ids": [
+        "p164"
+      ],
+      "begin": 266,
+      "end": 276,
+      "name": "南陽郡",
+      "rank": null,
+      "note": "既有王表及《晉書》以柬277由汝南徙封南陽；此前未見西晉同郡王、公、侯有效封爵，不把通史整段國名提前為266起即有國。",
+      "source_links": [
+        {
+          "title": "《晋书》卷003",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷003"
+        },
+        {
+          "title": "《晋书》卷064",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷064"
+        },
+        {
+          "title": "维基百科晋朝藩王列表",
+          "url": "https://zh.wikipedia.org/zh-cn/晉朝藩王列表"
+        }
+      ],
+      "authority": "本轮据明确史实纠错",
+      "inferred": false,
+      "apply_to": "existing_text_and_map_reference"
+    },
+    {
+      "id": "CHEN_AFTER_BIN",
+      "ids": [
+        "p026"
+      ],
+      "begin": 277,
+      "end": 280,
+      "name": "陳郡",
+      "rank": null,
+      "note": "斌277由陳徙西河，本期未見陳郡級續封，故改列陳郡；281後已批准的梁內陳組、289正式支郡制度不變。",
+      "source_links": [
+        {
+          "title": "《晋书》卷003",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷003"
+        },
+        {
+          "title": "《晋书》卷037",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷037"
+        },
+        {
+          "title": "维基百科晋朝藩王列表",
+          "url": "https://zh.wikipedia.org/zh-cn/晉朝藩王列表"
+        }
+      ],
+      "authority": "本轮据明确史实纠错",
+      "inferred": false,
+      "apply_to": "existing_text_and_map_reference"
+    },
+    {
+      "id": "BEIHAI_GAP",
+      "ids": [
+        "p142"
+      ],
+      "begin": 277,
+      "end": 282,
+      "name": "北海郡",
+      "rank": null,
+      "note": "陵277徙任城，北海寔王283始封；其間未見郡級王、公、侯續封，保留王表所見空檔。",
+      "source_links": [
+        {
+          "title": "《晋书》卷003",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷003"
+        },
+        {
+          "title": "《晋书》卷037",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷037"
+        },
+        {
+          "title": "《晋书》卷038",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷038"
+        },
+        {
+          "title": "维基百科晋朝藩王列表",
+          "url": "https://zh.wikipedia.org/zh-cn/晉朝藩王列表"
+        }
+      ],
+      "authority": "本轮据明确史实纠错",
+      "inferred": false,
+      "apply_to": "existing_text_and_map_reference"
+    },
+    {
+      "id": "GAOYANG_JI_GAP",
+      "ids": [
+        "p044"
+      ],
+      "begin": 278,
+      "end": 279,
+      "name": "高陽郡",
+      "rank": null,
+      "note": "緝278薨、無後，280睦始徙高陽；按已知國除與下次授爵時間，本兩年回郡。",
+      "source_links": [
+        {
+          "title": "《晋书》卷037",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷037"
+        },
+        {
+          "title": "维基百科晋朝藩王列表",
+          "url": "https://zh.wikipedia.org/zh-cn/晉朝藩王列表"
+        }
+      ],
+      "authority": "本轮据明确史实纠错",
+      "inferred": false,
+      "apply_to": "existing_text_and_map_reference"
+    },
+    {
+      "id": "GAOYANG_AFTER_311",
+      "ids": [
+        "p044"
+      ],
+      "begin": 312,
+      "end": 316,
+      "name": "高陽郡",
+      "rank": null,
+      "note": "既有王表列毅292—311，後繼文深已屬東晉後段；依本輪採用的王表有效期，312起回郡，不以未見國絕另延國祚。311末界沿既定表，不稱考定卒年。",
+      "source_links": [
+        {
+          "title": "《晋书》卷037",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷037"
+        },
+        {
+          "title": "维基百科晋朝藩王列表",
+          "url": "https://zh.wikipedia.org/zh-cn/晉朝藩王列表"
+        }
+      ],
+      "authority": "既定王表有限期及最新使用者規則",
+      "inferred": true,
+      "apply_to": "existing_text_and_map_reference"
+    },
+    {
+      "id": "FANYANG_AFTER_311",
+      "ids": [
+        "p047"
+      ],
+      "begin": 312,
+      "end": 316,
+      "name": "範陽郡",
+      "rank": null,
+      "note": "虓後黎承封，隨模就國而於長安遇害；既有王表止311。312起未見西晉同郡王、公、侯續封，改回郡。",
+      "source_links": [
+        {
+          "title": "《晋书》卷037",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷037"
+        },
+        {
+          "title": "维基百科晋朝藩王列表",
+          "url": "https://zh.wikipedia.org/zh-cn/晉朝藩王列表"
+        }
+      ],
+      "authority": "本轮据明确史实纠错",
+      "inferred": false,
+      "apply_to": "existing_text_and_map_reference"
+    },
+    {
+      "id": "SHUNYANG_AFTER_311",
+      "ids": [
+        "p167"
+      ],
+      "begin": 312,
+      "end": 316,
+      "name": "順陽郡",
+      "rank": null,
+      "note": "暢末年原典作永嘉末不知所終，沿既定王表289—311展示上限；312起回郡，不把失蹤說成確定311卒，也不虛構承繼延續。",
+      "source_links": [
+        {
+          "title": "《晋书》卷038",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷038"
+        },
+        {
+          "title": "维基百科晋朝藩王列表",
+          "url": "https://zh.wikipedia.org/zh-cn/晉朝藩王列表"
+        }
+      ],
+      "authority": "既定王表有限期及最新使用者規則",
+      "inferred": true,
+      "apply_to": "existing_text_and_map_reference"
+    },
+    {
+      "id": "SUI_AFTER_311",
+      "ids": [
+        "p183"
+      ],
+      "begin": 312,
+      "end": 316,
+      "name": "隨郡",
+      "rank": null,
+      "note": "邁沿既定王表288—311，末年有疑；依使用者不因未明國絕續構時段的裁定，312起回郡。保留311為展示上限的推定性質。",
+      "source_links": [
+        {
+          "title": "《晋书》卷037",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷037"
+        },
+        {
+          "title": "维基百科晋朝藩王列表",
+          "url": "https://zh.wikipedia.org/zh-cn/晉朝藩王列表"
+        }
+      ],
+      "authority": "既定王表有限期及最新使用者規則",
+      "inferred": true,
+      "apply_to": "existing_text_and_map_reference"
+    },
+    {
+      "id": "DONGPING_AFTER_311",
+      "ids": [
+        "p017"
+      ],
+      "begin": 312,
+      "end": 316,
+      "name": "東平郡",
+      "rank": null,
+      "note": "東平王楙307徙竟陵；苟晞郡公的既定有效期止311。兼核王、公兩系後，312起未見同郡續封，回郡；不因王爵改封而抹去307—311公國。",
+      "source_links": [
+        {
+          "title": "《晋书》卷037",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷037"
+        },
+        {
+          "title": "《晋书》卷061",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷061"
+        },
+        {
+          "title": "维基百科晋朝藩王列表",
+          "url": "https://zh.wikipedia.org/zh-cn/晉朝藩王列表"
+        }
+      ],
+      "authority": "既有王表及郡公資料結束後回郡",
+      "inferred": false,
+      "apply_to": "existing_text_and_map_reference"
+    },
+    {
+      "id": "LINHUAI_ZANG_TRANSFER",
+      "ids": [
+        "p151"
+      ],
+      "begin": 300,
+      "end": 307,
+      "name": "臨淮郡",
+      "rank": null,
+      "note": "臧300四月為臨淮王、五月立皇太孫；同年顯示變更後結果，308尟受封前不續列臨淮國。",
+      "source_links": [
+        {
+          "title": "《晋书》卷004",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷004"
+        },
+        {
+          "title": "《晋书》卷005",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷005"
+        },
+        {
+          "title": "维基百科晋朝藩王列表",
+          "url": "https://zh.wikipedia.org/zh-cn/晉朝藩王列表"
+        }
+      ],
+      "authority": "本轮据明确史实纠错",
+      "inferred": false,
+      "apply_to": "existing_text_and_map_reference"
+    },
+    {
+      "id": "LINHUAI_AFTER_311",
+      "ids": [
+        "p151"
+      ],
+      "begin": 312,
+      "end": 316,
+      "name": "臨淮郡",
+      "rank": null,
+      "note": "尟按既定王表308—311，311遇難仍帶推測；312以後無據續封，依最新有限期規則還郡，不稱311為已考定卒年。",
+      "source_links": [
+        {
+          "title": "《晋书》卷005",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷005"
+        },
+        {
+          "title": "维基百科晋朝藩王列表",
+          "url": "https://zh.wikipedia.org/zh-cn/晉朝藩王列表"
+        }
+      ],
+      "authority": "既定王表有限期及最新使用者規則",
+      "inferred": true,
+      "apply_to": "existing_text_and_map_reference"
+    },
+    {
+      "id": "QIN_301_GAP",
+      "ids": [
+        "p073"
+      ],
+      "begin": 301,
+      "end": 301,
+      "name": "秦郡",
+      "rank": null,
+      "note": "秦王郁300與淮南王允俱被害，鄴按既定王表302嗣封；本輪使用者已明確撤銷自行補出的秦301期段，現在同步本國名稱性質，始平支郡不另延續。",
+      "source_links": [
+        {
+          "title": "《晋书》卷064",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷064"
+        },
+        {
+          "title": "维基百科晋朝藩王列表",
+          "url": "https://zh.wikipedia.org/zh-cn/晉朝藩王列表"
+        }
+      ],
+      "authority": "既有明確裁定同步主郡",
+      "inferred": false,
+      "apply_to": "existing_text_and_map_reference"
+    },
+    {
+      "id": "QIN_CROWN_PRINCE_312",
+      "ids": [
+        "p073"
+      ],
+      "begin": 312,
+      "end": 313,
+      "name": "秦郡",
+      "rank": null,
+      "note": "《晉書》卷五明載312九月奉秦王鄴為皇太子，313即皇帝位；卷64另明言國絕。依當年立儲後結果，312起秦本國改普通郡；始平支屬306起已解除，不另改。314起既有扶風郡名仍沿原行政資料。",
+      "source_links": [
+        {
+          "title": "《晋书》卷005",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷005"
+        },
+        {
+          "title": "《晋书》卷064",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷064"
+        },
+        {
+          "title": "维基百科晋朝藩王列表",
+          "url": "https://zh.wikipedia.org/zh-cn/晉朝藩王列表"
+        }
+      ],
+      "authority": "本轮据明确史实纠错",
+      "inferred": false,
+      "apply_to": "existing_text_and_map_reference"
+    },
+    {
+      "id": "GUANGLING_290_p155",
+      "ids": [
+        "p155"
+      ],
+      "begin": 290,
+      "end": 290,
+      "name": "廣陵郡",
+      "rank": null,
+      "note": "遹290八月立皇太子，依當年變更後結果，廣陵本國、臨淮支郡本年解除多郡關係。漼的廣陵公為縣級五等公，照舊保留而不升為郡公；陳準300始封廣陵郡公的後段亦不改。",
+      "source_links": [
+        {
+          "title": "《晋书》卷004",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷004"
+        },
+        {
+          "title": "《晋书》卷053",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷053"
+        },
+        {
+          "title": "维基百科晋朝藩王列表",
+          "url": "https://zh.wikipedia.org/zh-cn/晉朝藩王列表"
+        },
+        {
+          "title": "维基百科晋朝公爵列表",
+          "url": "https://zh.wikipedia.org/wiki/晉朝公爵列表"
+        }
+      ],
+      "authority": "本轮据明确立储事件纠错，并核县公与郡公层级",
+      "inferred": false,
+      "apply_to": "existing_text_and_map_reference"
+    },
+    {
+      "id": "GUANGLING_290_p151",
+      "ids": [
+        "p151"
+      ],
+      "begin": 290,
+      "end": 290,
+      "name": "臨淮郡",
+      "rank": null,
+      "note": "遹290八月立皇太子，依當年變更後結果，廣陵本國、臨淮支郡本年解除多郡關係。漼的廣陵公為縣級五等公，照舊保留而不升為郡公；陳準300始封廣陵郡公的後段亦不改。",
+      "source_links": [
+        {
+          "title": "《晋书》卷004",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷004"
+        },
+        {
+          "title": "《晋书》卷053",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷053"
+        },
+        {
+          "title": "维基百科晋朝藩王列表",
+          "url": "https://zh.wikipedia.org/zh-cn/晉朝藩王列表"
+        },
+        {
+          "title": "维基百科晋朝公爵列表",
+          "url": "https://zh.wikipedia.org/wiki/晉朝公爵列表"
+        }
+      ],
+      "authority": "本轮据明确立储事件纠错，并核县公与郡公层级",
+      "inferred": false,
+      "apply_to": "existing_text_and_map_reference"
+    },
+    {
+      "id": "PEI_ABOLISHED_311",
+      "ids": [
+        "p027"
+      ],
+      "begin": 311,
+      "end": 316,
+      "name": "沛郡",
+      "rank": null,
+      "note": "《晉書》卷五永嘉五年秋七月明載沛王滋戰敗遇害，現王表在該系末尾明列國絕。問號只涉及早年承襲，不抵銷已知終點；依當年變更後結果，311起還沛郡，266—310不變。",
+      "source_links": [
+        {
+          "title": "《晋书》卷005",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷005"
+        },
+        {
+          "title": "维基百科晋朝藩王列表·沛国",
+          "url": "https://zh.wikipedia.org/zh-cn/晉朝藩王列表#沛國"
+        }
+      ],
+      "authority": "本轮据明确国绝及原典遇害事件纠错",
+      "inferred": false,
+      "apply_to": "existing_text_and_map_reference"
+    },
+    {
+      "id": "XIHE_AFTER_311",
+      "ids": [
+        "p066"
+      ],
+      "begin": 312,
+      "end": 316,
+      "name": "西河郡",
+      "rank": null,
+      "note": "文字實控表在306止，地图仍可按司馬隱、孴已知爵期保留307—311西河國；原典卷104點名西河王喜於311遇害，既有王表末嗣止311。312—316不再因未見國絕而延國，還西河郡；311仍沿既定王表末年展示。",
+      "source_links": [
+        {
+          "title": "《晋书》卷037",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷037"
+        },
+        {
+          "title": "《晋书》卷104",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷104"
+        },
+        {
+          "title": "维基百科晋朝藩王列表",
+          "url": "https://zh.wikipedia.org/zh-cn/晉朝藩王列表"
+        }
+      ],
+      "authority": "地图独立参考区同步既定王表有限期及最新使用者规则",
+      "inferred": false,
+      "apply_to": "existing_text_and_map_reference"
+    }
+  ],
+  "multi_period_changes": [
+    {
+      "id": "WU_YAN_FIRST",
+      "end": 299
+    },
+    {
+      "id": "QINGHE_TAN_FIRST",
+      "end": 301
+    },
+    {
+      "id": "YUZHANG_CHI",
+      "end": 303
+    },
+    {
+      "id": "YUZHANG_DUAN",
+      "end": 310
+    },
+    {
+      "id": "GUANGLING_YU",
+      "end": 289
+    }
+  ],
+  "deferred": [
+    {
+      "ids": [
+        "p251"
+      ],
+      "name": "壯武國",
+      "begin": 291,
+      "end": 299,
+      "reason": "已知壯武縣，但現有同年CHGIS點、262/281/308資料均未找到可用定位或獨立郡面；保留文字及待定位说明，不補造疆域。"
+    },
+    {
+      "ids": [
+        "p015",
+        "p252"
+      ],
+      "name": "濟陽",
+      "begin": 300,
+      "end": 302,
+      "reason": "爵位可考，但同名濟陽的郡域映射仍未確定；不把本輪306新增陳留東側濟陽支郡直接倒灌為早年疆域。"
+    },
+    {
+      "ids": [
+        "p103"
+      ],
+      "name": "廣漢",
+      "begin": 280,
+      "end": 282,
+      "reason": "卷38寔繼廣德後改封北海連寫而不繫年；既有王表以283繼後並改北海。暫不另推280—282廣漢王國，保留待考，非斷言沒有承繼。"
+    }
+  ]
+}

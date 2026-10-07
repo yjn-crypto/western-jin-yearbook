@@ -1213,8 +1213,9 @@
       if (item.ruler) container.appendChild(createAuxButton(item.ruler.label,jinRulerInfo(item.ruler,year),'fief-badge ruler-year'));
       for (const match of item.fiveRankFiefs||[]) container.appendChild(createAuxButton(jinFiveRankLabel(match),jinFiveRankInfo(match,year),'fief-badge five-rank-note'));
       if (level==='county' && item.fiefAnnotation) {
-        container.appendChild(createAuxButton(item.fiefAnnotation.label || '封國',{
-          title:'縣級封國資料',summary:`${item.name}：${item.fiefAnnotation.label || '封國'}`,
+        const sourceTitle=item.fiefAnnotation.evidence_phrase.replace(/相$/,'');
+        container.appendChild(createAuxButton(`原文見${sourceTitle}`,{
+          title:'縣級封國資料',summary:`${item.name}：原文見${sourceTitle}，封爵起訖未詳`,
           paragraphs:[item.fiefAnnotation.note || '本書正文保存此縣的封國性質。'],sources:[item.source]
         },'fief-badge county-fief-note'));
       }
@@ -2630,7 +2631,7 @@
     ] : [
       '頁面依據《中國行政區劃通史·三國兩晉南朝卷（上）》西晉州郡縣沿革重建；以原書次序為基礎，同州支郡集中列於本國下方，跨州支郡保留原州。',
       '政區沿用《通史》提供的年份，不另作上下半年換算；以281橫表及304人工校對表約束不確定年代，再採用本輪用字與轉屬裁定。本年統一列示變更後的州郡縣歸屬，在新屬條目註明本年變更前的原州原郡；同一縣不在新舊兩處重列，事件年份不後移。',
-      '獨立支郡各計一郡；本輪依《兩晉郡級封國相關分析》將原陳郡全體（含陽夏）列入梁國下的（陳支郡），不另列陳郡、不另計郡數。國主須符合年號、前後承繼及已知起訖的限制；即位年不詳時不算年次，本年國主不能確認時正文不列姓名，展開可查全部世系與可能年代。',
+      '多郡王國以289年為本輪展示分界：此前增封的支郡以括號縣組列示、不另計郡，289年起獨立支郡各計一郡；這是展示制度，不據此斷言各郡機構都在289年設立。梁國原陳郡縣組（含陽夏）於281—288年列為（陳支郡），289年起列陳支郡並計一郡；不重複列縣。國主須符合年號、前後承繼及已知起訖的限制；即位年不詳時不算年次，本年國主不能確認時正文不列姓名，展開可查全部世系與可能年代。',
       '郡級封國區分王國、公國、侯國，未詳者保留封國標記。縣王及縣級五等爵只在縣旁和地圖小字列真實爵號，不畫縣國面。封君未詳時只列爵號，已知或可推定者列姓名；西晉父子承襲無明年者按父卒次年推定，不套用南朝服除規則。',
       '為地圖展示而暫定的改封、廢國年份保留「推定」說明，不作史料已考定。明載「尋省／尋廢」但無確年者至多延留三年；相鄰郡已可確認同一地點的後繼縣目時，據此收窄旧屬的不明終點。',
       '治所採304年校對錨點：州治依指定縣、郡治依首縣，城陽、高密、東莞、淮陵、新野、新昌、武平、九德不標郡治。其他年度由304年推定，原文有遷治記載則隨之移動；符號沿用州雙圈、郡圈中點、縣實心點，同址只畫最高級。洛陽至311年、長安自313年以黄色州治符號標都城，312年不標。'

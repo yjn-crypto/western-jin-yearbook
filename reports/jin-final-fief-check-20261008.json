@@ -1,0 +1,7478 @@
+{
+  "status": "passed_with_documented_geometry_exception",
+  "final_status_periods": 42,
+  "expectedExceptions": [
+    {
+      "year": 291,
+      "id": "p251",
+      "name": "壯武公國",
+      "kind": "fief_no_active_area",
+      "expected": {
+        "name": "壯武公國",
+        "fid": "jin-壯武",
+        "role": "seat"
+      },
+      "actual": null
+    },
+    {
+      "year": 292,
+      "id": "p251",
+      "name": "壯武公國",
+      "kind": "fief_no_active_area",
+      "expected": {
+        "name": "壯武公國",
+        "fid": "jin-壯武",
+        "role": "seat"
+      },
+      "actual": null
+    },
+    {
+      "year": 293,
+      "id": "p251",
+      "name": "壯武公國",
+      "kind": "fief_no_active_area",
+      "expected": {
+        "name": "壯武公國",
+        "fid": "jin-壯武",
+        "role": "seat"
+      },
+      "actual": null
+    },
+    {
+      "year": 294,
+      "id": "p251",
+      "name": "壯武公國",
+      "kind": "fief_no_active_area",
+      "expected": {
+        "name": "壯武公國",
+        "fid": "jin-壯武",
+        "role": "seat"
+      },
+      "actual": null
+    },
+    {
+      "year": 295,
+      "id": "p251",
+      "name": "壯武公國",
+      "kind": "fief_no_active_area",
+      "expected": {
+        "name": "壯武公國",
+        "fid": "jin-壯武",
+        "role": "seat"
+      },
+      "actual": null
+    },
+    {
+      "year": 296,
+      "id": "p251",
+      "name": "壯武公國",
+      "kind": "fief_no_active_area",
+      "expected": {
+        "name": "壯武公國",
+        "fid": "jin-壯武",
+        "role": "seat"
+      },
+      "actual": null
+    },
+    {
+      "year": 297,
+      "id": "p251",
+      "name": "壯武公國",
+      "kind": "fief_no_active_area",
+      "expected": {
+        "name": "壯武公國",
+        "fid": "jin-壯武",
+        "role": "seat"
+      },
+      "actual": null
+    },
+    {
+      "year": 298,
+      "id": "p251",
+      "name": "壯武公國",
+      "kind": "fief_no_active_area",
+      "expected": {
+        "name": "壯武公國",
+        "fid": "jin-壯武",
+        "role": "seat"
+      },
+      "actual": null
+    },
+    {
+      "year": 299,
+      "id": "p251",
+      "name": "壯武公國",
+      "kind": "fief_no_active_area",
+      "expected": {
+        "name": "壯武公國",
+        "fid": "jin-壯武",
+        "role": "seat"
+      },
+      "actual": null
+    }
+  ],
+  "actionableIssues": [],
+  "checked_at": "2026-10-08",
+  "scope": "western_jin_266_316",
+  "stats": [
+    {
+      "year": 266,
+      "text_prefectures": 124,
+      "text_fiefs": 33,
+      "map_prefectures": 123,
+      "map_kingdom_unions": 33
+    },
+    {
+      "year": 267,
+      "text_prefectures": 124,
+      "text_fiefs": 33,
+      "map_prefectures": 123,
+      "map_kingdom_unions": 33
+    },
+    {
+      "year": 268,
+      "text_prefectures": 124,
+      "text_fiefs": 33,
+      "map_prefectures": 123,
+      "map_kingdom_unions": 33
+    },
+    {
+      "year": 269,
+      "text_prefectures": 124,
+      "text_fiefs": 34,
+      "map_prefectures": 123,
+      "map_kingdom_unions": 34
+    },
+    {
+      "year": 270,
+      "text_prefectures": 124,
+      "text_fiefs": 34,
+      "map_prefectures": 123,
+      "map_kingdom_unions": 34
+    },
+    {
+      "year": 271,
+      "text_prefectures": 124,
+      "text_fiefs": 34,
+      "map_prefectures": 123,
+      "map_kingdom_unions": 34
+    },
+    {
+      "year": 272,
+      "text_prefectures": 124,
+      "text_fiefs": 34,
+      "map_prefectures": 123,
+      "map_kingdom_unions": 34
+    },
+    {
+      "year": 273,
+      "text_prefectures": 124,
+      "text_fiefs": 35,
+      "map_prefectures": 123,
+      "map_kingdom_unions": 35
+    },
+    {
+      "year": 274,
+      "text_prefectures": 124,
+      "text_fiefs": 34,
+      "map_prefectures": 123,
+      "map_kingdom_unions": 34
+    },
+    {
+      "year": 275,
+      "text_prefectures": 126,
+      "text_fiefs": 33,
+      "map_prefectures": 125,
+      "map_kingdom_unions": 33
+    },
+    {
+      "year": 276,
+      "text_prefectures": 127,
+      "text_fiefs": 34,
+      "map_prefectures": 126,
+      "map_kingdom_unions": 34
+    },
+    {
+      "year": 277,
+      "text_prefectures": 127,
+      "text_fiefs": 40,
+      "map_prefectures": 126,
+      "map_kingdom_unions": 39
+    },
+    {
+      "year": 278,
+      "text_prefectures": 127,
+      "text_fiefs": 40,
+      "map_prefectures": 126,
+      "map_kingdom_unions": 39
+    },
+    {
+      "year": 279,
+      "text_prefectures": 127,
+      "text_fiefs": 40,
+      "map_prefectures": 126,
+      "map_kingdom_unions": 39
+    },
+    {
+      "year": 280,
+      "text_prefectures": 171,
+      "text_fiefs": 42,
+      "map_prefectures": 170,
+      "map_kingdom_unions": 40
+    },
+    {
+      "year": 281,
+      "text_prefectures": 171,
+      "text_fiefs": 43,
+      "map_prefectures": 170,
+      "map_kingdom_unions": 41
+    },
+    {
+      "year": 282,
+      "text_prefectures": 174,
+      "text_fiefs": 41,
+      "map_prefectures": 173,
+      "map_kingdom_unions": 39
+    },
+    {
+      "year": 283,
+      "text_prefectures": 174,
+      "text_fiefs": 43,
+      "map_prefectures": 173,
+      "map_kingdom_unions": 40
+    },
+    {
+      "year": 284,
+      "text_prefectures": 172,
+      "text_fiefs": 42,
+      "map_prefectures": 171,
+      "map_kingdom_unions": 40
+    },
+    {
+      "year": 285,
+      "text_prefectures": 171,
+      "text_fiefs": 42,
+      "map_prefectures": 170,
+      "map_kingdom_unions": 40
+    },
+    {
+      "year": 286,
+      "text_prefectures": 171,
+      "text_fiefs": 42,
+      "map_prefectures": 170,
+      "map_kingdom_unions": 40
+    },
+    {
+      "year": 287,
+      "text_prefectures": 171,
+      "text_fiefs": 41,
+      "map_prefectures": 170,
+      "map_kingdom_unions": 39
+    },
+    {
+      "year": 288,
+      "text_prefectures": 172,
+      "text_fiefs": 42,
+      "map_prefectures": 171,
+      "map_kingdom_unions": 40
+    },
+    {
+      "year": 289,
+      "text_prefectures": 175,
+      "text_fiefs": 67,
+      "map_prefectures": 174,
+      "map_kingdom_unions": 49
+    },
+    {
+      "year": 290,
+      "text_prefectures": 177,
+      "text_fiefs": 65,
+      "map_prefectures": 174,
+      "map_kingdom_unions": 48
+    },
+    {
+      "year": 291,
+      "text_prefectures": 180,
+      "text_fiefs": 65,
+      "map_prefectures": 178,
+      "map_kingdom_unions": 49
+    },
+    {
+      "year": 292,
+      "text_prefectures": 180,
+      "text_fiefs": 65,
+      "map_prefectures": 178,
+      "map_kingdom_unions": 49
+    },
+    {
+      "year": 293,
+      "text_prefectures": 181,
+      "text_fiefs": 68,
+      "map_prefectures": 179,
+      "map_kingdom_unions": 50
+    },
+    {
+      "year": 294,
+      "text_prefectures": 181,
+      "text_fiefs": 68,
+      "map_prefectures": 179,
+      "map_kingdom_unions": 50
+    },
+    {
+      "year": 295,
+      "text_prefectures": 182,
+      "text_fiefs": 68,
+      "map_prefectures": 180,
+      "map_kingdom_unions": 50
+    },
+    {
+      "year": 296,
+      "text_prefectures": 182,
+      "text_fiefs": 67,
+      "map_prefectures": 180,
+      "map_kingdom_unions": 49
+    },
+    {
+      "year": 297,
+      "text_prefectures": 185,
+      "text_fiefs": 67,
+      "map_prefectures": 183,
+      "map_kingdom_unions": 49
+    },
+    {
+      "year": 298,
+      "text_prefectures": 185,
+      "text_fiefs": 67,
+      "map_prefectures": 183,
+      "map_kingdom_unions": 48
+    },
+    {
+      "year": 299,
+      "text_prefectures": 188,
+      "text_fiefs": 68,
+      "map_prefectures": 186,
+      "map_kingdom_unions": 49
+    },
+    {
+      "year": 300,
+      "text_prefectures": 187,
+      "text_fiefs": 67,
+      "map_prefectures": 186,
+      "map_kingdom_unions": 51
+    },
+    {
+      "year": 301,
+      "text_prefectures": 189,
+      "text_fiefs": 73,
+      "map_prefectures": 188,
+      "map_kingdom_unions": 54
+    },
+    {
+      "year": 302,
+      "text_prefectures": 187,
+      "text_fiefs": 61,
+      "map_prefectures": 186,
+      "map_kingdom_unions": 50
+    },
+    {
+      "year": 303,
+      "text_prefectures": 186,
+      "text_fiefs": 61,
+      "map_prefectures": 185,
+      "map_kingdom_unions": 50
+    },
+    {
+      "year": 304,
+      "text_prefectures": 188,
+      "text_fiefs": 55,
+      "map_prefectures": 187,
+      "map_kingdom_unions": 49
+    },
+    {
+      "year": 305,
+      "text_prefectures": 190,
+      "text_fiefs": 56,
+      "map_prefectures": 189,
+      "map_kingdom_unions": 50
+    },
+    {
+      "year": 306,
+      "text_prefectures": 192,
+      "text_fiefs": 61,
+      "map_prefectures": 191,
+      "map_kingdom_unions": 52
+    },
+    {
+      "year": 307,
+      "text_prefectures": 188,
+      "text_fiefs": 60,
+      "map_prefectures": 187,
+      "map_kingdom_unions": 48
+    },
+    {
+      "year": 308,
+      "text_prefectures": 188,
+      "text_fiefs": 64,
+      "map_prefectures": 187,
+      "map_kingdom_unions": 50
+    },
+    {
+      "year": 309,
+      "text_prefectures": 188,
+      "text_fiefs": 64,
+      "map_prefectures": 187,
+      "map_kingdom_unions": 50
+    },
+    {
+      "year": 310,
+      "text_prefectures": 190,
+      "text_fiefs": 62,
+      "map_prefectures": 189,
+      "map_kingdom_unions": 49
+    },
+    {
+      "year": 311,
+      "text_prefectures": 185,
+      "text_fiefs": 42,
+      "map_prefectures": 184,
+      "map_kingdom_unions": 40
+    },
+    {
+      "year": 312,
+      "text_prefectures": 175,
+      "text_fiefs": 24,
+      "map_prefectures": 174,
+      "map_kingdom_unions": 23
+    },
+    {
+      "year": 313,
+      "text_prefectures": 177,
+      "text_fiefs": 23,
+      "map_prefectures": 175,
+      "map_kingdom_unions": 22
+    },
+    {
+      "year": 314,
+      "text_prefectures": 129,
+      "text_fiefs": 14,
+      "map_prefectures": 127,
+      "map_kingdom_unions": 21
+    },
+    {
+      "year": 315,
+      "text_prefectures": 121,
+      "text_fiefs": 12,
+      "map_prefectures": 119,
+      "map_kingdom_unions": 18
+    },
+    {
+      "year": 316,
+      "text_prefectures": 121,
+      "text_fiefs": 11,
+      "map_prefectures": 119,
+      "map_kingdom_unions": 17
+    }
+  ],
+  "issues": [
+    {
+      "year": 291,
+      "id": "p251",
+      "name": "壯武公國",
+      "kind": "fief_no_active_area",
+      "expected": {
+        "name": "壯武公國",
+        "fid": "jin-壯武",
+        "role": "seat"
+      },
+      "actual": null
+    },
+    {
+      "year": 292,
+      "id": "p251",
+      "name": "壯武公國",
+      "kind": "fief_no_active_area",
+      "expected": {
+        "name": "壯武公國",
+        "fid": "jin-壯武",
+        "role": "seat"
+      },
+      "actual": null
+    },
+    {
+      "year": 293,
+      "id": "p251",
+      "name": "壯武公國",
+      "kind": "fief_no_active_area",
+      "expected": {
+        "name": "壯武公國",
+        "fid": "jin-壯武",
+        "role": "seat"
+      },
+      "actual": null
+    },
+    {
+      "year": 294,
+      "id": "p251",
+      "name": "壯武公國",
+      "kind": "fief_no_active_area",
+      "expected": {
+        "name": "壯武公國",
+        "fid": "jin-壯武",
+        "role": "seat"
+      },
+      "actual": null
+    },
+    {
+      "year": 295,
+      "id": "p251",
+      "name": "壯武公國",
+      "kind": "fief_no_active_area",
+      "expected": {
+        "name": "壯武公國",
+        "fid": "jin-壯武",
+        "role": "seat"
+      },
+      "actual": null
+    },
+    {
+      "year": 296,
+      "id": "p251",
+      "name": "壯武公國",
+      "kind": "fief_no_active_area",
+      "expected": {
+        "name": "壯武公國",
+        "fid": "jin-壯武",
+        "role": "seat"
+      },
+      "actual": null
+    },
+    {
+      "year": 297,
+      "id": "p251",
+      "name": "壯武公國",
+      "kind": "fief_no_active_area",
+      "expected": {
+        "name": "壯武公國",
+        "fid": "jin-壯武",
+        "role": "seat"
+      },
+      "actual": null
+    },
+    {
+      "year": 298,
+      "id": "p251",
+      "name": "壯武公國",
+      "kind": "fief_no_active_area",
+      "expected": {
+        "name": "壯武公國",
+        "fid": "jin-壯武",
+        "role": "seat"
+      },
+      "actual": null
+    },
+    {
+      "year": 299,
+      "id": "p251",
+      "name": "壯武公國",
+      "kind": "fief_no_active_area",
+      "expected": {
+        "name": "壯武公國",
+        "fid": "jin-壯武",
+        "role": "seat"
+      },
+      "actual": null
+    }
+  ],
+  "royalCandidates": [
+    {
+      "year": 270,
+      "id": "p145",
+      "name": "城陽郡",
+      "person": "司⻢景度",
+      "record": "w0177",
+      "explicit_ordinary": [],
+      "abolition": []
+    },
+    {
+      "year": 271,
+      "id": "p145",
+      "name": "城陽郡",
+      "person": "司馬憲",
+      "record": "w0178",
+      "explicit_ordinary": [],
+      "abolition": []
+    },
+    {
+      "year": 275,
+      "id": "p046",
+      "name": "常山郡",
+      "person": "司馬殷",
+      "record": "w0045",
+      "explicit_ordinary": [
+        "司馬殷275年薨、無後，275—290未見可承接的郡級王、公、侯；291司馬乂改封常山才復國。本輪按使用者明確指定修正，301以後原有改郡裁定保留。"
+      ],
+      "abolition": []
+    },
+    {
+      "year": 277,
+      "id": "p026",
+      "name": "陳郡",
+      "person": "司馬斌",
+      "record": "w0108",
+      "explicit_ordinary": [
+        "斌277由陳徙西河，本期未見陳郡級續封，故改列陳郡；281後已批准的梁內陳組、289正式支郡制度不變。"
+      ],
+      "abolition": []
+    },
+    {
+      "year": 277,
+      "id": "p039",
+      "name": "勃海郡",
+      "person": "司馬輔",
+      "record": "w0023",
+      "explicit_ordinary": [],
+      "abolition": []
+    },
+    {
+      "year": 277,
+      "id": "p142",
+      "name": "北海郡",
+      "person": "司馬陵",
+      "record": "w0105",
+      "explicit_ordinary": [
+        "陵277徙任城，北海寔王283始封；其間未見郡級王、公、侯續封，保留王表所見空檔。"
+      ],
+      "abolition": []
+    },
+    {
+      "year": 277,
+      "id": "p143",
+      "name": "濟南郡",
+      "person": "司馬耽",
+      "record": "w0088",
+      "explicit_ordinary": [],
+      "abolition": []
+    },
+    {
+      "year": 278,
+      "id": "p044",
+      "name": "高陽郡",
+      "person": "司馬緝",
+      "record": "w0043",
+      "explicit_ordinary": [
+        "緝278薨、無後，280睦始徙高陽；按已知國除與下次授爵時間，本兩年回郡。"
+      ],
+      "abolition": []
+    },
+    {
+      "year": 280,
+      "id": "p103",
+      "name": "廣漢郡",
+      "person": "司馬贊",
+      "record": "w0186",
+      "explicit_ordinary": [],
+      "abolition": []
+    },
+    {
+      "year": 283,
+      "id": "p104",
+      "name": "新都郡",
+      "person": "司馬該",
+      "record": "w0215",
+      "explicit_ordinary": [
+        "司馬該283卒、無子國除，按當年變更後結果283起列新都郡；285廢郡併廣漢，沿《通史》行政斷年。"
+      ],
+      "abolition": []
+    },
+    {
+      "year": 289,
+      "id": "p014",
+      "name": "濮陽郡",
+      "person": "司馬允",
+      "record": "w0208",
+      "explicit_ordinary": [
+        "289司馬允由濮陽改淮南，當年舊國還郡；301司馬臧短暫改封又卒，沿上一輪301起廢國裁定，不重造年末濮陽國。"
+      ],
+      "abolition": []
+    },
+    {
+      "year": 289,
+      "id": "p164",
+      "name": "南陽郡",
+      "person": "司馬柬",
+      "record": "w0197",
+      "explicit_ordinary": [
+        "289司馬柬由南陽改秦，南陽不再沿舊王名著色；306司馬模另受南陽封，故只在289—305還郡，保留306以後新封。"
+      ],
+      "abolition": []
+    },
+    {
+      "year": 290,
+      "id": "p155",
+      "name": "廣陵郡",
+      "person": "司馬遹",
+      "record": "w0238",
+      "explicit_ordinary": [
+        "遹290八月立皇太子，依當年變更後結果，廣陵本國、臨淮支郡本年解除多郡關係。漼的廣陵公為縣級五等公，照舊保留而不升為郡公；陳準300始封廣陵郡公的後段亦不改。"
+      ],
+      "abolition": []
+    },
+    {
+      "year": 291,
+      "id": "p175",
+      "name": "長沙郡",
+      "person": "司馬乂",
+      "record": "w0222",
+      "explicit_ordinary": [],
+      "abolition": []
+    },
+    {
+      "year": 291,
+      "id": "p191",
+      "name": "毗陵郡",
+      "person": "司馬儀",
+      "record": "w0195",
+      "explicit_ordinary": [],
+      "abolition": []
+    },
+    {
+      "year": 296,
+      "id": "p078",
+      "name": "隴西郡",
+      "person": "司馬泰",
+      "record": "w0059",
+      "explicit_ordinary": [],
+      "abolition": [
+        "LONGXI_TRANSFERRED_296"
+      ]
+    },
+    {
+      "year": 300,
+      "id": "p015",
+      "name": "濟陽郡",
+      "person": "司馬馥",
+      "record": "w0164",
+      "explicit_ordinary": [],
+      "abolition": []
+    },
+    {
+      "year": 300,
+      "id": "p151",
+      "name": "臨淮郡",
+      "person": "司馬臧",
+      "record": "w0239",
+      "explicit_ordinary": [
+        "臧300四月為臨淮王、五月立皇太孫；同年顯示變更後結果，308尟受封前不續列臨淮國。"
+      ],
+      "abolition": []
+    },
+    {
+      "year": 300,
+      "id": "p192",
+      "name": "吳郡",
+      "person": "司馬晏",
+      "record": "w0230",
+      "explicit_ordinary": [
+        "300晏降賓徒縣王，按當年變更後結果，吳本國及丹楊、吳興同年解除多郡關係；301還本封的後段不變。"
+      ],
+      "abolition": []
+    },
+    {
+      "year": 301,
+      "id": "p009",
+      "name": "廣平郡",
+      "person": "司馬虔",
+      "record": "w0167",
+      "explicit_ordinary": [],
+      "abolition": []
+    },
+    {
+      "year": 301,
+      "id": "p014",
+      "name": "濮陽郡",
+      "person": "司馬臧",
+      "record": "w0240",
+      "explicit_ordinary": [],
+      "abolition": []
+    },
+    {
+      "year": 301,
+      "id": "p015",
+      "name": "濟陽郡",
+      "person": "司馬英",
+      "record": "w0176",
+      "explicit_ordinary": [],
+      "abolition": []
+    },
+    {
+      "year": 301,
+      "id": "p032",
+      "name": "趙郡",
+      "person": "司馬倫",
+      "record": "w0163",
+      "explicit_ordinary": [],
+      "abolition": [
+        "ZHAO_ABOLISHED_301"
+      ]
+    },
+    {
+      "year": 301,
+      "id": "p046",
+      "name": "常山郡",
+      "person": "司馬乂",
+      "record": "w0223",
+      "explicit_ordinary": [],
+      "abolition": [
+        "CHANGSHAN_TRANSFERRED_301"
+      ]
+    },
+    {
+      "year": 301,
+      "id": "p071",
+      "name": "京兆郡",
+      "person": "司馬馥",
+      "record": "w0165",
+      "explicit_ordinary": [],
+      "abolition": []
+    },
+    {
+      "year": 301,
+      "id": "p165",
+      "name": "義陽郡",
+      "person": "司馬威",
+      "record": "w0009",
+      "explicit_ordinary": [],
+      "abolition": []
+    },
+    {
+      "year": 302,
+      "id": "p015",
+      "name": "濟陽郡",
+      "person": "司馬英",
+      "record": "w0176",
+      "explicit_ordinary": [],
+      "abolition": []
+    },
+    {
+      "year": 302,
+      "id": "p042",
+      "name": "清河郡",
+      "person": "司馬覃",
+      "record": "w0181",
+      "explicit_ordinary": [
+        "302五月覃立皇太子，清河本國及勃海支郡本年改列普通郡；304復清河王的後段仍保留。"
+      ],
+      "abolition": []
+    },
+    {
+      "year": 302,
+      "id": "p049",
+      "name": "燕郡",
+      "person": "司馬幾",
+      "record": "w0193",
+      "explicit_ordinary": [],
+      "abolition": [
+        "YAN_ABOLISHED_302"
+      ]
+    },
+    {
+      "year": 302,
+      "id": "p142",
+      "name": "北海郡",
+      "person": "司馬寔",
+      "record": "w0187",
+      "explicit_ordinary": [],
+      "abolition": [
+        "BEIHAI_ABOLISHED_302"
+      ]
+    },
+    {
+      "year": 302,
+      "id": "p144",
+      "name": "樂安郡",
+      "person": "司馬冰",
+      "record": "w0190",
+      "explicit_ordinary": [],
+      "abolition": [
+        "LEAN_TRANSFERRED_302"
+      ]
+    },
+    {
+      "year": 302,
+      "id": "p187",
+      "name": "淮南郡",
+      "person": "司馬超",
+      "record": "w0210",
+      "explicit_ordinary": [],
+      "abolition": []
+    },
+    {
+      "year": 304,
+      "id": "p045",
+      "name": "中山郡",
+      "person": "司馬緝",
+      "record": "w0090",
+      "explicit_ordinary": [],
+      "abolition": [
+        "ZHONGSHAN_ABOLISHED_304"
+      ]
+    },
+    {
+      "year": 304,
+      "id": "p217",
+      "name": "豫章郡",
+      "person": "司馬熾",
+      "record": "w0237",
+      "explicit_ordinary": [
+        "304十二月炽立皇太弟，當年解除豫章及原支郡關係；306詮受封另起後段，不用支郡延續規則填補空檔。"
+      ],
+      "abolition": []
+    },
+    {
+      "year": 306,
+      "id": "p040",
+      "name": "河間郡",
+      "person": "司馬顒",
+      "record": "w0036",
+      "explicit_ordinary": [],
+      "abolition": [
+        "HEJIAN_ENDED_306"
+      ]
+    },
+    {
+      "year": 307,
+      "id": "p245",
+      "name": "東燕郡",
+      "person": "司馬騰",
+      "record": "w0072",
+      "explicit_ordinary": [
+        ""
+      ],
+      "abolition": []
+    },
+    {
+      "year": 311,
+      "id": "p018",
+      "name": "任城郡",
+      "person": "司馬濟",
+      "record": "w0107",
+      "explicit_ordinary": [],
+      "abolition": [
+        "RENCHENG_EXTINCT_311"
+      ]
+    },
+    {
+      "year": 311,
+      "id": "p027",
+      "name": "沛郡",
+      "person": "司馬滋",
+      "record": "w0048",
+      "explicit_ordinary": [
+        "《晉書》卷五永嘉五年秋七月明載沛王滋戰敗遇害，現王表在該系末尾明列國絕。問號只涉及早年承襲，不抵銷已知終點；依當年變更後結果，311起還沛郡，266—310不變。"
+      ],
+      "abolition": []
+    },
+    {
+      "year": 311,
+      "id": "p037",
+      "name": "平原郡",
+      "person": "司馬榦",
+      "record": "w0148",
+      "explicit_ordinary": [],
+      "abolition": [
+        "PINGYUAN_EXTINCT_311"
+      ]
+    },
+    {
+      "year": 311,
+      "id": "p141",
+      "name": "齊郡",
+      "person": "司馬超",
+      "record": "w0173",
+      "explicit_ordinary": [],
+      "abolition": [
+        "QI_EXTINCT_311"
+      ]
+    },
+    {
+      "year": 311,
+      "id": "p152",
+      "name": "東海郡",
+      "person": "司馬越",
+      "record": "w0067",
+      "explicit_ordinary": [
+        ""
+      ],
+      "abolition": []
+    },
+    {
+      "year": 311,
+      "id": "p163",
+      "name": "襄陽郡",
+      "person": "司馬範",
+      "record": "w0207",
+      "explicit_ordinary": [],
+      "abolition": []
+    },
+    {
+      "year": 311,
+      "id": "p184",
+      "name": "竟陵郡",
+      "person": "司馬楙",
+      "record": "w0022",
+      "explicit_ordinary": [],
+      "abolition": []
+    },
+    {
+      "year": 311,
+      "id": "p187",
+      "name": "淮南郡",
+      "person": "司馬祥",
+      "record": "w0211",
+      "explicit_ordinary": [],
+      "abolition": []
+    },
+    {
+      "year": 311,
+      "id": "p192",
+      "name": "吳郡",
+      "person": "司馬晏",
+      "record": "w0232",
+      "explicit_ordinary": [
+        "311年吳國明載國絕，依當年變更後結果解除本國及丹楊、吳興支屬，恢復郡名；不將311仍列在司馬晏的多郡關係期段內。"
+      ],
+      "abolition": []
+    },
+    {
+      "year": 311,
+      "id": "p207",
+      "name": "長沙郡",
+      "person": "司馬碩",
+      "record": "w0225",
+      "explicit_ordinary": [
+        "依使用者本次明確指定，長沙國於311年結束；按當年變更後結果，311起長沙、南平、衡陽恢復為郡，解除支屬及封國著色。取代本輪稍早的312—316延續推定。"
+      ],
+      "abolition": []
+    },
+    {
+      "year": 311,
+      "id": "p217",
+      "name": "豫章郡",
+      "person": "司馬端",
+      "record": "w0220",
+      "explicit_ordinary": [
+        "311端在洛陽陷後被立為皇太子，後遇害；依當年變更後結果，豫章與原支郡311起均作普通郡，不向後續構王國。"
+      ],
+      "abolition": []
+    },
+    {
+      "year": 312,
+      "id": "p073",
+      "name": "秦郡",
+      "person": "司馬鄴",
+      "record": "w0200",
+      "explicit_ordinary": [
+        "《晉書》卷五明載312九月奉秦王鄴為皇太子，313即皇帝位；卷64另明言國絕。依當年立儲後結果，312起秦本國改普通郡；始平支屬306起已解除，不另改。314起既有扶風郡名仍沿原行政資料。"
+      ],
+      "abolition": []
+    }
+  ],
+  "royalGapCandidates": [
+    {
+      "year": 274,
+      "id": "p044",
+      "name": "高陽國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0042",
+          "person": "司馬珪",
+          "start": 265,
+          "end": 274,
+          "note": "安平獻王司馬孚第七子。本為曹魏浈陽子,泰始元年(265年)十二月進封高陽王,十年(274年)閏正月去世,無後。"
+        },
+        {
+          "id": "w0043",
+          "person": "司馬緝",
+          "start": 274,
+          "end": 278,
+          "note": "太原成王司馬輔之子,泰始十年(274年)十二月出繼司馬珪,封高陽王,咸寧四年(278年)四月去世,無後。"
+        },
+        {
+          "id": "w0092",
+          "person": "司馬睦",
+          "start": 280,
+          "end": 291,
+          "note": ""
+        },
+        {
+          "id": "w0093",
+          "person": "司馬毅",
+          "start": 292,
+          "end": 311,
+          "note": "司馬蔚之子,後來在永嘉五年(311年)四月與東海世子司馬毗及宗室四十七王一起被石勒俘虜。"
+        },
+        {
+          "id": "w0094",
+          "person": "司馬文深",
+          "start": 397,
+          "end": 401,
+          "note": "譙敬王司馬恬之孫、司馬恢之子,隆安元年(397年)出繼司馬毅,襲封高陽王,五年(401年)去世。"
+        },
+        {
+          "id": "w0095",
+          "person": "司馬法蓮",
+          "start": 406,
+          "end": 420,
+          "note": "高密敬王司馬純之之子,義熙二年(406年)五月出繼司馬文深,襲封高陽王,元熙二年(420年)宋代晉,國除。"
+        }
+      ]
+    },
+    {
+      "year": 276,
+      "id": "p014",
+      "name": "濮陽國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0208",
+          "person": "司馬允",
+          "start": 277,
+          "end": 289,
+          "note": "晉武帝司馬炎第十子,咸寧三年(277年)八月封濮陽王。太康十年(289年)十一月徙封淮南王,以廬江郡為淮南國的支郡。永康元年(300年)起兵討伐司馬倫,兵敗被殺。"
+        },
+        {
+          "id": "w0240",
+          "person": "司馬臧",
+          "start": 301,
+          "end": 301,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "year": 276,
+      "id": "p049",
+      "name": "燕國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0192",
+          "person": "司馬機",
+          "start": 265,
+          "end": null,
+          "note": "晉文帝司馬昭第七子。原為曹魏清惠亭侯,泰始元年(265年)十二月封燕王,後來去世,無子。"
+        },
+        {
+          "id": "w0193",
+          "person": "司馬幾",
+          "start": null,
+          "end": 302,
+          "note": "齊武閔王司馬冏之子,出繼司馬機,太安元年(302年)十二月被囚；原摘錄誤作永興元年，據《晉書》惠帝紀校正。"
+        },
+        {
+          "id": "w0264",
+          "person": "慕容皝",
+          "start": 337,
+          "end": 348,
+          "note": "鮮卑慕容廆之子。咸康三年(337年)十一月自立為燕王,七年(341年)晉朝承認其王位,永和四年(348年)九月去世。"
+        },
+        {
+          "id": "w0265",
+          "person": "慕容儁",
+          "start": 349,
+          "end": 352,
+          "note": "慕容皝之子,永和八年(352年)四月自立為燕皇帝。"
+        }
+      ]
+    },
+    {
+      "year": 277,
+      "id": "p023",
+      "name": "汝南國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0113",
+          "person": "司馬亮",
+          "start": 277,
+          "end": 291,
+          "note": ""
+        },
+        {
+          "id": "w0114",
+          "person": "司馬祐",
+          "start": 292,
+          "end": 326,
+          "note": "司馬矩之子,咸和元年(326年)十月去世。"
+        },
+        {
+          "id": "w0115",
+          "person": "司馬統",
+          "start": 327,
+          "end": 355,
+          "note": "司馬祐之子,咸和元年(326年)因司馬宗謀反之事一度被廢,後復立。永和十一年(355年)正月去世。"
+        },
+        {
+          "id": "w0116",
+          "person": "司馬羲",
+          "start": 356,
+          "end": 389,
+          "note": "司馬統之子,太元十四年(389年)八月去世。"
+        },
+        {
+          "id": "w0117",
+          "person": "司馬遵之",
+          "start": 390,
+          "end": 407,
+          "note": "司馬羲之之子,義熙三年(407年)七月謀反一事被殺。"
+        },
+        {
+          "id": "w0118",
+          "person": "司馬蓮扶",
+          "start": 408,
+          "end": 420,
+          "note": "司馬遵之之弟司馬楷之之子,元熙二年(420年)宋代晉,國除。"
+        },
+        {
+          "id": "w0196",
+          "person": "司馬柬",
+          "start": 270,
+          "end": 277,
+          "note": "晉武帝司馬炎第三子。泰始六年(270年)十一月封汝南王,咸寧三年(277年)八月徙封南陽王。太康十年(289年)十一月徙封秦王,以始平等郡為秦國的支郡,⻝邑八萬戶。元康元年(291年)九月去世。"
+        }
+      ]
+    },
+    {
+      "year": 277,
+      "id": "p024",
+      "name": "汝陰國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0149",
+          "person": "司馬駿",
+          "start": 265,
+          "end": 277,
+          "note": "晉宣帝司馬懿第七子。原為曹魏東牟侯,泰始元年(265年)十二月封汝陰王,咸寧三年(277年)八月徙封扶風王,太康七年(286年)九月去世。"
+        },
+        {
+          "id": "w0166",
+          "person": "司馬虔",
+          "start": 300,
+          "end": 300,
+          "note": "趙王司馬倫之子,永康元年(300年)四月封汝陰王,永寧元年(301年)正月徙封廣平王,四月與司馬倫一起被殺。"
+        },
+        {
+          "id": "w0221",
+          "person": "司馬謨",
+          "start": null,
+          "end": 286,
+          "note": "晉武帝司馬炎第十四?十五?十六?子。約咸寧三年後封王,太康七年(286年)去世。"
+        }
+      ]
+    },
+    {
+      "year": 277,
+      "id": "p027",
+      "name": "沛國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0046",
+          "person": "司⻢子文",
+          "start": 265,
+          "end": 275,
+          "note": "安平獻王司馬孚第九子。本曹魏樂安亭侯,泰始元年(265年)十二月進封沛王,咸寧元年(275年)八月去世。"
+        },
+        {
+          "id": "w0047",
+          "person": "司馬韜",
+          "start": 276,
+          "end": null,
+          "note": "司馬子文之子。"
+        },
+        {
+          "id": "w0048",
+          "person": "司馬滋",
+          "start": null,
+          "end": 311,
+          "note": "世系不明,永嘉五年(311年)七月被石勒殺害。"
+        }
+      ]
+    },
+    {
+      "year": 277,
+      "id": "p040",
+      "name": "河間國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0011",
+          "person": "司馬洪",
+          "start": 265,
+          "end": 276,
+          "note": "義陽成王司馬望第二子,出繼昌武亭侯司馬遗。泰始元年(265年)十二月封河間王,咸寧二年(276年)二月去世。"
+        },
+        {
+          "id": "w0012",
+          "person": "司馬威",
+          "start": 277,
+          "end": 277,
+          "note": "司馬洪長子,咸寧三年(277年)八月徙封章武王,太康九年(288年)六月徙封義陽王,以繼義陽成王司⻢望。"
+        },
+        {
+          "id": "w0036",
+          "person": "司馬顒",
+          "start": 277,
+          "end": 306,
+          "note": ""
+        },
+        {
+          "id": "w0039",
+          "person": "司馬欽",
+          "start": 330,
+          "end": 365,
+          "note": ""
+        },
+        {
+          "id": "w0040",
+          "person": "司馬曇之",
+          "start": 366,
+          "end": 384,
+          "note": "司馬欽之子,太元九年(384年)十月去世。"
+        },
+        {
+          "id": "w0041",
+          "person": "司馬國鎮",
+          "start": 385,
+          "end": 399,
+          "note": "蓋司馬曇之之子,隆安三年(399年)二月去世。"
+        }
+      ]
+    },
+    {
+      "year": 277,
+      "id": "p045",
+      "name": "中山國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0089",
+          "person": "司馬耽",
+          "start": 277,
+          "end": 292,
+          "note": ""
+        },
+        {
+          "id": "w0090",
+          "person": "司馬緝",
+          "start": 293,
+          "end": 304,
+          "note": "司馬耽之弟。永興元年(304年),王浚破鄴,司馬緝沒於陣中。"
+        },
+        {
+          "id": "w0091",
+          "person": "司馬睦",
+          "start": 265,
+          "end": 277,
+          "note": "魏中郎司馬進之子。本安平亭侯,泰始元年(265年)十二月進封中山王,咸寧三年(277年)七月有罪,貶為丹水縣侯,太康元年(280年)六月進封高陽王,元康元年(291年)去世。"
+        }
+      ]
+    },
+    {
+      "year": 277,
+      "id": "p049",
+      "name": "燕國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0192",
+          "person": "司馬機",
+          "start": 265,
+          "end": null,
+          "note": "晉文帝司馬昭第七子。原為曹魏清惠亭侯,泰始元年(265年)十二月封燕王,後來去世,無子。"
+        },
+        {
+          "id": "w0193",
+          "person": "司馬幾",
+          "start": null,
+          "end": 302,
+          "note": "齊武閔王司馬冏之子,出繼司馬機,太安元年(302年)十二月被囚；原摘錄誤作永興元年，據《晉書》惠帝紀校正。"
+        },
+        {
+          "id": "w0264",
+          "person": "慕容皝",
+          "start": 337,
+          "end": 348,
+          "note": "鮮卑慕容廆之子。咸康三年(337年)十一月自立為燕王,七年(341年)晉朝承認其王位,永和四年(348年)九月去世。"
+        },
+        {
+          "id": "w0265",
+          "person": "慕容儁",
+          "start": 349,
+          "end": 352,
+          "note": "慕容皝之子,永和八年(352年)四月自立為燕皇帝。"
+        }
+      ]
+    },
+    {
+      "year": 277,
+      "id": "p065",
+      "name": "太原國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0024",
+          "person": "司馬輔",
+          "start": 277,
+          "end": 284,
+          "note": ""
+        },
+        {
+          "id": "w0025",
+          "person": "司馬泓",
+          "start": 285,
+          "end": 291,
+          "note": "司馬輔之子。元康元年(291年)左右徙封中丘王,元康三年(293年)十月去世。"
+        },
+        {
+          "id": "w0034",
+          "person": "司馬瑰",
+          "start": 265,
+          "end": 274,
+          "note": "安平獻王司馬孚第六子。本曹魏固始子,泰始元年(265年)十二月進封太原王,泰始十年(274年)閏正月去世。"
+        },
+        {
+          "id": "w0035",
+          "person": "司馬顒",
+          "start": 275,
+          "end": 277,
+          "note": "司馬瑰之子,本太原王,咸寧三年(277年)八月徙封河間王,光熙元年(306年)十二月為南陽王司馬模殺害。咸和六年(331年)六月恢復原河間王的爵位。"
+        }
+      ]
+    },
+    {
+      "year": 277,
+      "id": "p073",
+      "name": "扶風國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0112",
+          "person": "司馬亮",
+          "start": 265,
+          "end": 277,
+          "note": "晉宣帝司馬懿第三子。原為曹魏祁陽伯,泰始元年(265年)十二月封扶風王,咸寧三年(277年)八月徙封汝南王,元康元年(291年)六月為楚王司馬瑋殺害。"
+        },
+        {
+          "id": "w0150",
+          "person": "司馬駿",
+          "start": 277,
+          "end": 286,
+          "note": ""
+        },
+        {
+          "id": "w0151",
+          "person": "司馬暢",
+          "start": 287,
+          "end": 289,
+          "note": "司馬駿之子,太康十年(289年)十一月徙封順陽王。永嘉五年(311年)六月劉聰入洛,不知下落。"
+        }
+      ]
+    },
+    {
+      "year": 277,
+      "id": "p153",
+      "name": "琅邪國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0124",
+          "person": "司馬伷",
+          "start": 277,
+          "end": 283,
+          "note": ""
+        },
+        {
+          "id": "w0125",
+          "person": "司馬覲",
+          "start": 284,
+          "end": 290,
+          "note": "司馬伷長子,太熙元年(290年)二月去世。"
+        },
+        {
+          "id": "w0126",
+          "person": "司馬睿",
+          "start": 291,
+          "end": 317,
+          "note": "司馬覲之子,建興五年(317年)三月稱晉王,改元建武。"
+        },
+        {
+          "id": "w0127",
+          "person": "司馬裒",
+          "start": 317,
+          "end": 317,
+          "note": "晉元帝司馬睿第二子。原為宣城公,建武元年(317年)三月封琅邪王,以會稽、宣城二郡為琅邪國的支郡,同年十月去世。"
+        },
+        {
+          "id": "w0128",
+          "person": "司馬安國",
+          "start": 317,
+          "end": 317,
+          "note": "司馬裒之子,建武元年(317年)即位,同年去世。"
+        },
+        {
+          "id": "w0129",
+          "person": "司馬煥",
+          "start": 318,
+          "end": 318,
+          "note": "晉元帝司馬睿第五子。原為顯義亭侯,太興元年(318年)十二月封琅邪王,同月去世。"
+        },
+        {
+          "id": "w0130",
+          "person": "司馬昱",
+          "start": 322,
+          "end": 327,
+          "note": "晉元帝司馬睿第六子,永昌元年(322年)三月封琅邪王,咸和二年(327年)十二月徙封會稽王。"
+        },
+        {
+          "id": "w0131",
+          "person": "司馬岳",
+          "start": 327,
+          "end": 342,
+          "note": "晉明帝司馬紹之子。原為吳王,咸和二年(327年)十二月徙封琅邪王,改以吳郡為琅邪國的支郡,咸康八年(342年)六月即位為晉皇帝。"
+        },
+        {
+          "id": "w0132",
+          "person": "司馬丕",
+          "start": 342,
+          "end": 361,
+          "note": "晉成帝司馬衍之子,咸康八年(342年)六月封琅邪王,升平五年(361年)五月即位為晉皇帝。"
+        },
+        {
+          "id": "w0133",
+          "person": "司馬奕",
+          "start": 361,
+          "end": 365,
+          "note": "晉成帝司馬衍子,升平五年(361年)五月封琅邪王,興寧三年(365年)二月即位為晉皇帝。"
+        },
+        {
+          "id": "w0162",
+          "person": "司馬倫",
+          "start": 265,
+          "end": 277,
+          "note": "晉宣帝司馬懿第九子。原為曹魏東安子,泰始元年(265年)十二月封琅邪王,咸寧三年(277年)八月徙封趙王,永寧元年(301年)正月自立為晉皇帝。"
+        }
+      ]
+    },
+    {
+      "year": 278,
+      "id": "p027",
+      "name": "沛國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0046",
+          "person": "司⻢子文",
+          "start": 265,
+          "end": 275,
+          "note": "安平獻王司馬孚第九子。本曹魏樂安亭侯,泰始元年(265年)十二月進封沛王,咸寧元年(275年)八月去世。"
+        },
+        {
+          "id": "w0047",
+          "person": "司馬韜",
+          "start": 276,
+          "end": null,
+          "note": "司馬子文之子。"
+        },
+        {
+          "id": "w0048",
+          "person": "司馬滋",
+          "start": null,
+          "end": 311,
+          "note": "世系不明,永嘉五年(311年)七月被石勒殺害。"
+        }
+      ]
+    },
+    {
+      "year": 278,
+      "id": "p049",
+      "name": "燕國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0192",
+          "person": "司馬機",
+          "start": 265,
+          "end": null,
+          "note": "晉文帝司馬昭第七子。原為曹魏清惠亭侯,泰始元年(265年)十二月封燕王,後來去世,無子。"
+        },
+        {
+          "id": "w0193",
+          "person": "司馬幾",
+          "start": null,
+          "end": 302,
+          "note": "齊武閔王司馬冏之子,出繼司馬機,太安元年(302年)十二月被囚；原摘錄誤作永興元年，據《晉書》惠帝紀校正。"
+        },
+        {
+          "id": "w0264",
+          "person": "慕容皝",
+          "start": 337,
+          "end": 348,
+          "note": "鮮卑慕容廆之子。咸康三年(337年)十一月自立為燕王,七年(341年)晉朝承認其王位,永和四年(348年)九月去世。"
+        },
+        {
+          "id": "w0265",
+          "person": "慕容儁",
+          "start": 349,
+          "end": 352,
+          "note": "慕容皝之子,永和八年(352年)四月自立為燕皇帝。"
+        }
+      ]
+    },
+    {
+      "year": 279,
+      "id": "p027",
+      "name": "沛國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0046",
+          "person": "司⻢子文",
+          "start": 265,
+          "end": 275,
+          "note": "安平獻王司馬孚第九子。本曹魏樂安亭侯,泰始元年(265年)十二月進封沛王,咸寧元年(275年)八月去世。"
+        },
+        {
+          "id": "w0047",
+          "person": "司馬韜",
+          "start": 276,
+          "end": null,
+          "note": "司馬子文之子。"
+        },
+        {
+          "id": "w0048",
+          "person": "司馬滋",
+          "start": null,
+          "end": 311,
+          "note": "世系不明,永嘉五年(311年)七月被石勒殺害。"
+        }
+      ]
+    },
+    {
+      "year": 279,
+      "id": "p049",
+      "name": "燕國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0192",
+          "person": "司馬機",
+          "start": 265,
+          "end": null,
+          "note": "晉文帝司馬昭第七子。原為曹魏清惠亭侯,泰始元年(265年)十二月封燕王,後來去世,無子。"
+        },
+        {
+          "id": "w0193",
+          "person": "司馬幾",
+          "start": null,
+          "end": 302,
+          "note": "齊武閔王司馬冏之子,出繼司馬機,太安元年(302年)十二月被囚；原摘錄誤作永興元年，據《晉書》惠帝紀校正。"
+        },
+        {
+          "id": "w0264",
+          "person": "慕容皝",
+          "start": 337,
+          "end": 348,
+          "note": "鮮卑慕容廆之子。咸康三年(337年)十一月自立為燕王,七年(341年)晉朝承認其王位,永和四年(348年)九月去世。"
+        },
+        {
+          "id": "w0265",
+          "person": "慕容儁",
+          "start": 349,
+          "end": 352,
+          "note": "慕容皝之子,永和八年(352年)四月自立為燕皇帝。"
+        }
+      ]
+    },
+    {
+      "year": 280,
+      "id": "p027",
+      "name": "沛國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0046",
+          "person": "司⻢子文",
+          "start": 265,
+          "end": 275,
+          "note": "安平獻王司馬孚第九子。本曹魏樂安亭侯,泰始元年(265年)十二月進封沛王,咸寧元年(275年)八月去世。"
+        },
+        {
+          "id": "w0047",
+          "person": "司馬韜",
+          "start": 276,
+          "end": null,
+          "note": "司馬子文之子。"
+        },
+        {
+          "id": "w0048",
+          "person": "司馬滋",
+          "start": null,
+          "end": 311,
+          "note": "世系不明,永嘉五年(311年)七月被石勒殺害。"
+        }
+      ]
+    },
+    {
+      "year": 280,
+      "id": "p049",
+      "name": "燕國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0192",
+          "person": "司馬機",
+          "start": 265,
+          "end": null,
+          "note": "晉文帝司馬昭第七子。原為曹魏清惠亭侯,泰始元年(265年)十二月封燕王,後來去世,無子。"
+        },
+        {
+          "id": "w0193",
+          "person": "司馬幾",
+          "start": null,
+          "end": 302,
+          "note": "齊武閔王司馬冏之子,出繼司馬機,太安元年(302年)十二月被囚；原摘錄誤作永興元年，據《晉書》惠帝紀校正。"
+        },
+        {
+          "id": "w0264",
+          "person": "慕容皝",
+          "start": 337,
+          "end": 348,
+          "note": "鮮卑慕容廆之子。咸康三年(337年)十一月自立為燕王,七年(341年)晉朝承認其王位,永和四年(348年)九月去世。"
+        },
+        {
+          "id": "w0265",
+          "person": "慕容儁",
+          "start": 349,
+          "end": 352,
+          "note": "慕容皝之子,永和八年(352年)四月自立為燕皇帝。"
+        }
+      ]
+    },
+    {
+      "year": 280,
+      "id": "p066",
+      "name": "西河國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0109",
+          "person": "司馬斌",
+          "start": 277,
+          "end": 278,
+          "note": ""
+        },
+        {
+          "id": "w0110",
+          "person": "司馬隱",
+          "start": 279,
+          "end": null,
+          "note": "司馬斌之子。"
+        },
+        {
+          "id": "w0111",
+          "person": "司馬孴",
+          "start": null,
+          "end": 311,
+          "note": "司馬隱之子,永嘉五年(311年)四月為石勒殺害。"
+        }
+      ]
+    },
+    {
+      "year": 281,
+      "id": "p027",
+      "name": "沛國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0046",
+          "person": "司⻢子文",
+          "start": 265,
+          "end": 275,
+          "note": "安平獻王司馬孚第九子。本曹魏樂安亭侯,泰始元年(265年)十二月進封沛王,咸寧元年(275年)八月去世。"
+        },
+        {
+          "id": "w0047",
+          "person": "司馬韜",
+          "start": 276,
+          "end": null,
+          "note": "司馬子文之子。"
+        },
+        {
+          "id": "w0048",
+          "person": "司馬滋",
+          "start": null,
+          "end": 311,
+          "note": "世系不明,永嘉五年(311年)七月被石勒殺害。"
+        }
+      ]
+    },
+    {
+      "year": 281,
+      "id": "p049",
+      "name": "燕國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0192",
+          "person": "司馬機",
+          "start": 265,
+          "end": null,
+          "note": "晉文帝司馬昭第七子。原為曹魏清惠亭侯,泰始元年(265年)十二月封燕王,後來去世,無子。"
+        },
+        {
+          "id": "w0193",
+          "person": "司馬幾",
+          "start": null,
+          "end": 302,
+          "note": "齊武閔王司馬冏之子,出繼司馬機,太安元年(302年)十二月被囚；原摘錄誤作永興元年，據《晉書》惠帝紀校正。"
+        },
+        {
+          "id": "w0264",
+          "person": "慕容皝",
+          "start": 337,
+          "end": 348,
+          "note": "鮮卑慕容廆之子。咸康三年(337年)十一月自立為燕王,七年(341年)晉朝承認其王位,永和四年(348年)九月去世。"
+        },
+        {
+          "id": "w0265",
+          "person": "慕容儁",
+          "start": 349,
+          "end": 352,
+          "note": "慕容皝之子,永和八年(352年)四月自立為燕皇帝。"
+        }
+      ]
+    },
+    {
+      "year": 281,
+      "id": "p066",
+      "name": "西河國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0109",
+          "person": "司馬斌",
+          "start": 277,
+          "end": 278,
+          "note": ""
+        },
+        {
+          "id": "w0110",
+          "person": "司馬隱",
+          "start": 279,
+          "end": null,
+          "note": "司馬斌之子。"
+        },
+        {
+          "id": "w0111",
+          "person": "司馬孴",
+          "start": null,
+          "end": 311,
+          "note": "司馬隱之子,永嘉五年(311年)四月為石勒殺害。"
+        }
+      ]
+    },
+    {
+      "year": 282,
+      "id": "p027",
+      "name": "沛國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0046",
+          "person": "司⻢子文",
+          "start": 265,
+          "end": 275,
+          "note": "安平獻王司馬孚第九子。本曹魏樂安亭侯,泰始元年(265年)十二月進封沛王,咸寧元年(275年)八月去世。"
+        },
+        {
+          "id": "w0047",
+          "person": "司馬韜",
+          "start": 276,
+          "end": null,
+          "note": "司馬子文之子。"
+        },
+        {
+          "id": "w0048",
+          "person": "司馬滋",
+          "start": null,
+          "end": 311,
+          "note": "世系不明,永嘉五年(311年)七月被石勒殺害。"
+        }
+      ]
+    },
+    {
+      "year": 282,
+      "id": "p049",
+      "name": "燕國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0192",
+          "person": "司馬機",
+          "start": 265,
+          "end": null,
+          "note": "晉文帝司馬昭第七子。原為曹魏清惠亭侯,泰始元年(265年)十二月封燕王,後來去世,無子。"
+        },
+        {
+          "id": "w0193",
+          "person": "司馬幾",
+          "start": null,
+          "end": 302,
+          "note": "齊武閔王司馬冏之子,出繼司馬機,太安元年(302年)十二月被囚；原摘錄誤作永興元年，據《晉書》惠帝紀校正。"
+        },
+        {
+          "id": "w0264",
+          "person": "慕容皝",
+          "start": 337,
+          "end": 348,
+          "note": "鮮卑慕容廆之子。咸康三年(337年)十一月自立為燕王,七年(341年)晉朝承認其王位,永和四年(348年)九月去世。"
+        },
+        {
+          "id": "w0265",
+          "person": "慕容儁",
+          "start": 349,
+          "end": 352,
+          "note": "慕容皝之子,永和八年(352年)四月自立為燕皇帝。"
+        }
+      ]
+    },
+    {
+      "year": 282,
+      "id": "p066",
+      "name": "西河國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0109",
+          "person": "司馬斌",
+          "start": 277,
+          "end": 278,
+          "note": ""
+        },
+        {
+          "id": "w0110",
+          "person": "司馬隱",
+          "start": 279,
+          "end": null,
+          "note": "司馬斌之子。"
+        },
+        {
+          "id": "w0111",
+          "person": "司馬孴",
+          "start": null,
+          "end": 311,
+          "note": "司馬隱之子,永嘉五年(311年)四月為石勒殺害。"
+        }
+      ]
+    },
+    {
+      "year": 283,
+      "id": "p027",
+      "name": "沛國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0046",
+          "person": "司⻢子文",
+          "start": 265,
+          "end": 275,
+          "note": "安平獻王司馬孚第九子。本曹魏樂安亭侯,泰始元年(265年)十二月進封沛王,咸寧元年(275年)八月去世。"
+        },
+        {
+          "id": "w0047",
+          "person": "司馬韜",
+          "start": 276,
+          "end": null,
+          "note": "司馬子文之子。"
+        },
+        {
+          "id": "w0048",
+          "person": "司馬滋",
+          "start": null,
+          "end": 311,
+          "note": "世系不明,永嘉五年(311年)七月被石勒殺害。"
+        }
+      ]
+    },
+    {
+      "year": 283,
+      "id": "p049",
+      "name": "燕國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0192",
+          "person": "司馬機",
+          "start": 265,
+          "end": null,
+          "note": "晉文帝司馬昭第七子。原為曹魏清惠亭侯,泰始元年(265年)十二月封燕王,後來去世,無子。"
+        },
+        {
+          "id": "w0193",
+          "person": "司馬幾",
+          "start": null,
+          "end": 302,
+          "note": "齊武閔王司馬冏之子,出繼司馬機,太安元年(302年)十二月被囚；原摘錄誤作永興元年，據《晉書》惠帝紀校正。"
+        },
+        {
+          "id": "w0264",
+          "person": "慕容皝",
+          "start": 337,
+          "end": 348,
+          "note": "鮮卑慕容廆之子。咸康三年(337年)十一月自立為燕王,七年(341年)晉朝承認其王位,永和四年(348年)九月去世。"
+        },
+        {
+          "id": "w0265",
+          "person": "慕容儁",
+          "start": 349,
+          "end": 352,
+          "note": "慕容皝之子,永和八年(352年)四月自立為燕皇帝。"
+        }
+      ]
+    },
+    {
+      "year": 283,
+      "id": "p066",
+      "name": "西河國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0109",
+          "person": "司馬斌",
+          "start": 277,
+          "end": 278,
+          "note": ""
+        },
+        {
+          "id": "w0110",
+          "person": "司馬隱",
+          "start": 279,
+          "end": null,
+          "note": "司馬斌之子。"
+        },
+        {
+          "id": "w0111",
+          "person": "司馬孴",
+          "start": null,
+          "end": 311,
+          "note": "司馬隱之子,永嘉五年(311年)四月為石勒殺害。"
+        }
+      ]
+    },
+    {
+      "year": 284,
+      "id": "p027",
+      "name": "沛國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0046",
+          "person": "司⻢子文",
+          "start": 265,
+          "end": 275,
+          "note": "安平獻王司馬孚第九子。本曹魏樂安亭侯,泰始元年(265年)十二月進封沛王,咸寧元年(275年)八月去世。"
+        },
+        {
+          "id": "w0047",
+          "person": "司馬韜",
+          "start": 276,
+          "end": null,
+          "note": "司馬子文之子。"
+        },
+        {
+          "id": "w0048",
+          "person": "司馬滋",
+          "start": null,
+          "end": 311,
+          "note": "世系不明,永嘉五年(311年)七月被石勒殺害。"
+        }
+      ]
+    },
+    {
+      "year": 284,
+      "id": "p049",
+      "name": "燕國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0192",
+          "person": "司馬機",
+          "start": 265,
+          "end": null,
+          "note": "晉文帝司馬昭第七子。原為曹魏清惠亭侯,泰始元年(265年)十二月封燕王,後來去世,無子。"
+        },
+        {
+          "id": "w0193",
+          "person": "司馬幾",
+          "start": null,
+          "end": 302,
+          "note": "齊武閔王司馬冏之子,出繼司馬機,太安元年(302年)十二月被囚；原摘錄誤作永興元年，據《晉書》惠帝紀校正。"
+        },
+        {
+          "id": "w0264",
+          "person": "慕容皝",
+          "start": 337,
+          "end": 348,
+          "note": "鮮卑慕容廆之子。咸康三年(337年)十一月自立為燕王,七年(341年)晉朝承認其王位,永和四年(348年)九月去世。"
+        },
+        {
+          "id": "w0265",
+          "person": "慕容儁",
+          "start": 349,
+          "end": 352,
+          "note": "慕容皝之子,永和八年(352年)四月自立為燕皇帝。"
+        }
+      ]
+    },
+    {
+      "year": 284,
+      "id": "p066",
+      "name": "西河國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0109",
+          "person": "司馬斌",
+          "start": 277,
+          "end": 278,
+          "note": ""
+        },
+        {
+          "id": "w0110",
+          "person": "司馬隱",
+          "start": 279,
+          "end": null,
+          "note": "司馬斌之子。"
+        },
+        {
+          "id": "w0111",
+          "person": "司馬孴",
+          "start": null,
+          "end": 311,
+          "note": "司馬隱之子,永嘉五年(311年)四月為石勒殺害。"
+        }
+      ]
+    },
+    {
+      "year": 285,
+      "id": "p027",
+      "name": "沛國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0046",
+          "person": "司⻢子文",
+          "start": 265,
+          "end": 275,
+          "note": "安平獻王司馬孚第九子。本曹魏樂安亭侯,泰始元年(265年)十二月進封沛王,咸寧元年(275年)八月去世。"
+        },
+        {
+          "id": "w0047",
+          "person": "司馬韜",
+          "start": 276,
+          "end": null,
+          "note": "司馬子文之子。"
+        },
+        {
+          "id": "w0048",
+          "person": "司馬滋",
+          "start": null,
+          "end": 311,
+          "note": "世系不明,永嘉五年(311年)七月被石勒殺害。"
+        }
+      ]
+    },
+    {
+      "year": 285,
+      "id": "p049",
+      "name": "燕國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0192",
+          "person": "司馬機",
+          "start": 265,
+          "end": null,
+          "note": "晉文帝司馬昭第七子。原為曹魏清惠亭侯,泰始元年(265年)十二月封燕王,後來去世,無子。"
+        },
+        {
+          "id": "w0193",
+          "person": "司馬幾",
+          "start": null,
+          "end": 302,
+          "note": "齊武閔王司馬冏之子,出繼司馬機,太安元年(302年)十二月被囚；原摘錄誤作永興元年，據《晉書》惠帝紀校正。"
+        },
+        {
+          "id": "w0264",
+          "person": "慕容皝",
+          "start": 337,
+          "end": 348,
+          "note": "鮮卑慕容廆之子。咸康三年(337年)十一月自立為燕王,七年(341年)晉朝承認其王位,永和四年(348年)九月去世。"
+        },
+        {
+          "id": "w0265",
+          "person": "慕容儁",
+          "start": 349,
+          "end": 352,
+          "note": "慕容皝之子,永和八年(352年)四月自立為燕皇帝。"
+        }
+      ]
+    },
+    {
+      "year": 285,
+      "id": "p066",
+      "name": "西河國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0109",
+          "person": "司馬斌",
+          "start": 277,
+          "end": 278,
+          "note": ""
+        },
+        {
+          "id": "w0110",
+          "person": "司馬隱",
+          "start": 279,
+          "end": null,
+          "note": "司馬斌之子。"
+        },
+        {
+          "id": "w0111",
+          "person": "司馬孴",
+          "start": null,
+          "end": 311,
+          "note": "司馬隱之子,永嘉五年(311年)四月為石勒殺害。"
+        }
+      ]
+    },
+    {
+      "year": 286,
+      "id": "p027",
+      "name": "沛國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0046",
+          "person": "司⻢子文",
+          "start": 265,
+          "end": 275,
+          "note": "安平獻王司馬孚第九子。本曹魏樂安亭侯,泰始元年(265年)十二月進封沛王,咸寧元年(275年)八月去世。"
+        },
+        {
+          "id": "w0047",
+          "person": "司馬韜",
+          "start": 276,
+          "end": null,
+          "note": "司馬子文之子。"
+        },
+        {
+          "id": "w0048",
+          "person": "司馬滋",
+          "start": null,
+          "end": 311,
+          "note": "世系不明,永嘉五年(311年)七月被石勒殺害。"
+        }
+      ]
+    },
+    {
+      "year": 286,
+      "id": "p049",
+      "name": "燕國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0192",
+          "person": "司馬機",
+          "start": 265,
+          "end": null,
+          "note": "晉文帝司馬昭第七子。原為曹魏清惠亭侯,泰始元年(265年)十二月封燕王,後來去世,無子。"
+        },
+        {
+          "id": "w0193",
+          "person": "司馬幾",
+          "start": null,
+          "end": 302,
+          "note": "齊武閔王司馬冏之子,出繼司馬機,太安元年(302年)十二月被囚；原摘錄誤作永興元年，據《晉書》惠帝紀校正。"
+        },
+        {
+          "id": "w0264",
+          "person": "慕容皝",
+          "start": 337,
+          "end": 348,
+          "note": "鮮卑慕容廆之子。咸康三年(337年)十一月自立為燕王,七年(341年)晉朝承認其王位,永和四年(348年)九月去世。"
+        },
+        {
+          "id": "w0265",
+          "person": "慕容儁",
+          "start": 349,
+          "end": 352,
+          "note": "慕容皝之子,永和八年(352年)四月自立為燕皇帝。"
+        }
+      ]
+    },
+    {
+      "year": 286,
+      "id": "p065",
+      "name": "太原國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0024",
+          "person": "司馬輔",
+          "start": 277,
+          "end": 284,
+          "note": ""
+        },
+        {
+          "id": "w0025",
+          "person": "司馬泓",
+          "start": 285,
+          "end": 291,
+          "note": "司馬輔之子。元康元年(291年)左右徙封中丘王,元康三年(293年)十月去世。"
+        },
+        {
+          "id": "w0034",
+          "person": "司馬瑰",
+          "start": 265,
+          "end": 274,
+          "note": "安平獻王司馬孚第六子。本曹魏固始子,泰始元年(265年)十二月進封太原王,泰始十年(274年)閏正月去世。"
+        },
+        {
+          "id": "w0035",
+          "person": "司馬顒",
+          "start": 275,
+          "end": 277,
+          "note": "司馬瑰之子,本太原王,咸寧三年(277年)八月徙封河間王,光熙元年(306年)十二月為南陽王司馬模殺害。咸和六年(331年)六月恢復原河間王的爵位。"
+        }
+      ]
+    },
+    {
+      "year": 286,
+      "id": "p066",
+      "name": "西河國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0109",
+          "person": "司馬斌",
+          "start": 277,
+          "end": 278,
+          "note": ""
+        },
+        {
+          "id": "w0110",
+          "person": "司馬隱",
+          "start": 279,
+          "end": null,
+          "note": "司馬斌之子。"
+        },
+        {
+          "id": "w0111",
+          "person": "司馬孴",
+          "start": null,
+          "end": 311,
+          "note": "司馬隱之子,永嘉五年(311年)四月為石勒殺害。"
+        }
+      ]
+    },
+    {
+      "year": 287,
+      "id": "p027",
+      "name": "沛國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0046",
+          "person": "司⻢子文",
+          "start": 265,
+          "end": 275,
+          "note": "安平獻王司馬孚第九子。本曹魏樂安亭侯,泰始元年(265年)十二月進封沛王,咸寧元年(275年)八月去世。"
+        },
+        {
+          "id": "w0047",
+          "person": "司馬韜",
+          "start": 276,
+          "end": null,
+          "note": "司馬子文之子。"
+        },
+        {
+          "id": "w0048",
+          "person": "司馬滋",
+          "start": null,
+          "end": 311,
+          "note": "世系不明,永嘉五年(311年)七月被石勒殺害。"
+        }
+      ]
+    },
+    {
+      "year": 287,
+      "id": "p049",
+      "name": "燕國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0192",
+          "person": "司馬機",
+          "start": 265,
+          "end": null,
+          "note": "晉文帝司馬昭第七子。原為曹魏清惠亭侯,泰始元年(265年)十二月封燕王,後來去世,無子。"
+        },
+        {
+          "id": "w0193",
+          "person": "司馬幾",
+          "start": null,
+          "end": 302,
+          "note": "齊武閔王司馬冏之子,出繼司馬機,太安元年(302年)十二月被囚；原摘錄誤作永興元年，據《晉書》惠帝紀校正。"
+        },
+        {
+          "id": "w0264",
+          "person": "慕容皝",
+          "start": 337,
+          "end": 348,
+          "note": "鮮卑慕容廆之子。咸康三年(337年)十一月自立為燕王,七年(341年)晉朝承認其王位,永和四年(348年)九月去世。"
+        },
+        {
+          "id": "w0265",
+          "person": "慕容儁",
+          "start": 349,
+          "end": 352,
+          "note": "慕容皝之子,永和八年(352年)四月自立為燕皇帝。"
+        }
+      ]
+    },
+    {
+      "year": 287,
+      "id": "p065",
+      "name": "太原國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0024",
+          "person": "司馬輔",
+          "start": 277,
+          "end": 284,
+          "note": ""
+        },
+        {
+          "id": "w0025",
+          "person": "司馬泓",
+          "start": 285,
+          "end": 291,
+          "note": "司馬輔之子。元康元年(291年)左右徙封中丘王,元康三年(293年)十月去世。"
+        },
+        {
+          "id": "w0034",
+          "person": "司馬瑰",
+          "start": 265,
+          "end": 274,
+          "note": "安平獻王司馬孚第六子。本曹魏固始子,泰始元年(265年)十二月進封太原王,泰始十年(274年)閏正月去世。"
+        },
+        {
+          "id": "w0035",
+          "person": "司馬顒",
+          "start": 275,
+          "end": 277,
+          "note": "司馬瑰之子,本太原王,咸寧三年(277年)八月徙封河間王,光熙元年(306年)十二月為南陽王司馬模殺害。咸和六年(331年)六月恢復原河間王的爵位。"
+        }
+      ]
+    },
+    {
+      "year": 287,
+      "id": "p066",
+      "name": "西河國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0109",
+          "person": "司馬斌",
+          "start": 277,
+          "end": 278,
+          "note": ""
+        },
+        {
+          "id": "w0110",
+          "person": "司馬隱",
+          "start": 279,
+          "end": null,
+          "note": "司馬斌之子。"
+        },
+        {
+          "id": "w0111",
+          "person": "司馬孴",
+          "start": null,
+          "end": 311,
+          "note": "司馬隱之子,永嘉五年(311年)四月為石勒殺害。"
+        }
+      ]
+    },
+    {
+      "year": 288,
+      "id": "p027",
+      "name": "沛國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0046",
+          "person": "司⻢子文",
+          "start": 265,
+          "end": 275,
+          "note": "安平獻王司馬孚第九子。本曹魏樂安亭侯,泰始元年(265年)十二月進封沛王,咸寧元年(275年)八月去世。"
+        },
+        {
+          "id": "w0047",
+          "person": "司馬韜",
+          "start": 276,
+          "end": null,
+          "note": "司馬子文之子。"
+        },
+        {
+          "id": "w0048",
+          "person": "司馬滋",
+          "start": null,
+          "end": 311,
+          "note": "世系不明,永嘉五年(311年)七月被石勒殺害。"
+        }
+      ]
+    },
+    {
+      "year": 288,
+      "id": "p041",
+      "name": "章武國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0013",
+          "person": "司馬威",
+          "start": 277,
+          "end": 288,
+          "note": ""
+        },
+        {
+          "id": "w0014",
+          "person": "司馬混",
+          "start": 288,
+          "end": 311,
+          "note": "司馬洪第二子,太康九年(288年)十二月封章武王,後來疑在永嘉五年(311年)四月與東海世子司馬毗及宗室四十七王一起被石勒俘虜。"
+        },
+        {
+          "id": "w0015",
+          "person": "司馬滔",
+          "start": 314,
+          "end": null,
+          "note": "司馬混之子,建興二年(314年)承襲章武王位,後來去世。"
+        },
+        {
+          "id": "w0016",
+          "person": "司馬休",
+          "start": null,
+          "end": 328,
+          "note": "司馬滔之子,咸和二年(327年)投奔蘇峻的叛亂,明年蘇峻兵敗被殺。"
+        },
+        {
+          "id": "w0017",
+          "person": "司馬珍",
+          "start": 331,
+          "end": 362,
+          "note": "司馬休之弟,咸和六年(331年)六月封章武王,隆和元年(362年)十月去世。"
+        },
+        {
+          "id": "w0018",
+          "person": "司馬範之",
+          "start": 376,
+          "end": 391,
+          "note": "河間王司馬欽之子,太元元年(376年)六月出繼,襲封章武王,十六年(391年)六月去世。"
+        },
+        {
+          "id": "w0019",
+          "person": "司馬秀",
+          "start": 392,
+          "end": 405,
+          "note": "司馬範之之子,義熙元年(405年)五月謀反被殺。"
+        }
+      ]
+    },
+    {
+      "year": 288,
+      "id": "p049",
+      "name": "燕國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0192",
+          "person": "司馬機",
+          "start": 265,
+          "end": null,
+          "note": "晉文帝司馬昭第七子。原為曹魏清惠亭侯,泰始元年(265年)十二月封燕王,後來去世,無子。"
+        },
+        {
+          "id": "w0193",
+          "person": "司馬幾",
+          "start": null,
+          "end": 302,
+          "note": "齊武閔王司馬冏之子,出繼司馬機,太安元年(302年)十二月被囚；原摘錄誤作永興元年，據《晉書》惠帝紀校正。"
+        },
+        {
+          "id": "w0264",
+          "person": "慕容皝",
+          "start": 337,
+          "end": 348,
+          "note": "鮮卑慕容廆之子。咸康三年(337年)十一月自立為燕王,七年(341年)晉朝承認其王位,永和四年(348年)九月去世。"
+        },
+        {
+          "id": "w0265",
+          "person": "慕容儁",
+          "start": 349,
+          "end": 352,
+          "note": "慕容皝之子,永和八年(352年)四月自立為燕皇帝。"
+        }
+      ]
+    },
+    {
+      "year": 288,
+      "id": "p065",
+      "name": "太原國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0024",
+          "person": "司馬輔",
+          "start": 277,
+          "end": 284,
+          "note": ""
+        },
+        {
+          "id": "w0025",
+          "person": "司馬泓",
+          "start": 285,
+          "end": 291,
+          "note": "司馬輔之子。元康元年(291年)左右徙封中丘王,元康三年(293年)十月去世。"
+        },
+        {
+          "id": "w0034",
+          "person": "司馬瑰",
+          "start": 265,
+          "end": 274,
+          "note": "安平獻王司馬孚第六子。本曹魏固始子,泰始元年(265年)十二月進封太原王,泰始十年(274年)閏正月去世。"
+        },
+        {
+          "id": "w0035",
+          "person": "司馬顒",
+          "start": 275,
+          "end": 277,
+          "note": "司馬瑰之子,本太原王,咸寧三年(277年)八月徙封河間王,光熙元年(306年)十二月為南陽王司馬模殺害。咸和六年(331年)六月恢復原河間王的爵位。"
+        }
+      ]
+    },
+    {
+      "year": 288,
+      "id": "p066",
+      "name": "西河國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0109",
+          "person": "司馬斌",
+          "start": 277,
+          "end": 278,
+          "note": ""
+        },
+        {
+          "id": "w0110",
+          "person": "司馬隱",
+          "start": 279,
+          "end": null,
+          "note": "司馬斌之子。"
+        },
+        {
+          "id": "w0111",
+          "person": "司馬孴",
+          "start": null,
+          "end": 311,
+          "note": "司馬隱之子,永嘉五年(311年)四月為石勒殺害。"
+        }
+      ]
+    },
+    {
+      "year": 288,
+      "id": "p165",
+      "name": "義陽國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0007",
+          "person": "司馬望",
+          "start": 265,
+          "end": 271,
+          "note": "安平獻王司馬孚第二子,出繼伯父司馬朗。泰始元年(265年)十二月封義陽王,泰始七年(271年)六月去世。"
+        },
+        {
+          "id": "w0008",
+          "person": "司馬奇",
+          "start": 272,
+          "end": 288,
+          "note": "司馬望之孫、司馬弈之子。太康九年(288年)五月有罪,貶為三縱亭侯。"
+        },
+        {
+          "id": "w0009",
+          "person": "司馬威",
+          "start": 288,
+          "end": 301,
+          "note": "司馬望之孫、河間平王司馬洪長子。本章武王,太康九年(288年)六月徙封義陽王,永寧元年(301年)四月與趙王司馬倫同誅。"
+        }
+      ]
+    },
+    {
+      "year": 289,
+      "id": "p027",
+      "name": "沛國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0046",
+          "person": "司⻢子文",
+          "start": 265,
+          "end": 275,
+          "note": "安平獻王司馬孚第九子。本曹魏樂安亭侯,泰始元年(265年)十二月進封沛王,咸寧元年(275年)八月去世。"
+        },
+        {
+          "id": "w0047",
+          "person": "司馬韜",
+          "start": 276,
+          "end": null,
+          "note": "司馬子文之子。"
+        },
+        {
+          "id": "w0048",
+          "person": "司馬滋",
+          "start": null,
+          "end": 311,
+          "note": "世系不明,永嘉五年(311年)七月被石勒殺害。"
+        }
+      ]
+    },
+    {
+      "year": 289,
+      "id": "p049",
+      "name": "燕國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0192",
+          "person": "司馬機",
+          "start": 265,
+          "end": null,
+          "note": "晉文帝司馬昭第七子。原為曹魏清惠亭侯,泰始元年(265年)十二月封燕王,後來去世,無子。"
+        },
+        {
+          "id": "w0193",
+          "person": "司馬幾",
+          "start": null,
+          "end": 302,
+          "note": "齊武閔王司馬冏之子,出繼司馬機,太安元年(302年)十二月被囚；原摘錄誤作永興元年，據《晉書》惠帝紀校正。"
+        },
+        {
+          "id": "w0264",
+          "person": "慕容皝",
+          "start": 337,
+          "end": 348,
+          "note": "鮮卑慕容廆之子。咸康三年(337年)十一月自立為燕王,七年(341年)晉朝承認其王位,永和四年(348年)九月去世。"
+        },
+        {
+          "id": "w0265",
+          "person": "慕容儁",
+          "start": 349,
+          "end": 352,
+          "note": "慕容皝之子,永和八年(352年)四月自立為燕皇帝。"
+        }
+      ]
+    },
+    {
+      "year": 289,
+      "id": "p065",
+      "name": "太原國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0024",
+          "person": "司馬輔",
+          "start": 277,
+          "end": 284,
+          "note": ""
+        },
+        {
+          "id": "w0025",
+          "person": "司馬泓",
+          "start": 285,
+          "end": 291,
+          "note": "司馬輔之子。元康元年(291年)左右徙封中丘王,元康三年(293年)十月去世。"
+        },
+        {
+          "id": "w0034",
+          "person": "司馬瑰",
+          "start": 265,
+          "end": 274,
+          "note": "安平獻王司馬孚第六子。本曹魏固始子,泰始元年(265年)十二月進封太原王,泰始十年(274年)閏正月去世。"
+        },
+        {
+          "id": "w0035",
+          "person": "司馬顒",
+          "start": 275,
+          "end": 277,
+          "note": "司馬瑰之子,本太原王,咸寧三年(277年)八月徙封河間王,光熙元年(306年)十二月為南陽王司馬模殺害。咸和六年(331年)六月恢復原河間王的爵位。"
+        }
+      ]
+    },
+    {
+      "year": 289,
+      "id": "p066",
+      "name": "西河國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0109",
+          "person": "司馬斌",
+          "start": 277,
+          "end": 278,
+          "note": ""
+        },
+        {
+          "id": "w0110",
+          "person": "司馬隱",
+          "start": 279,
+          "end": null,
+          "note": "司馬斌之子。"
+        },
+        {
+          "id": "w0111",
+          "person": "司馬孴",
+          "start": null,
+          "end": 311,
+          "note": "司馬隱之子,永嘉五年(311年)四月為石勒殺害。"
+        }
+      ]
+    },
+    {
+      "year": 290,
+      "id": "p027",
+      "name": "沛國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0046",
+          "person": "司⻢子文",
+          "start": 265,
+          "end": 275,
+          "note": "安平獻王司馬孚第九子。本曹魏樂安亭侯,泰始元年(265年)十二月進封沛王,咸寧元年(275年)八月去世。"
+        },
+        {
+          "id": "w0047",
+          "person": "司馬韜",
+          "start": 276,
+          "end": null,
+          "note": "司馬子文之子。"
+        },
+        {
+          "id": "w0048",
+          "person": "司馬滋",
+          "start": null,
+          "end": 311,
+          "note": "世系不明,永嘉五年(311年)七月被石勒殺害。"
+        }
+      ]
+    },
+    {
+      "year": 290,
+      "id": "p049",
+      "name": "燕國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0192",
+          "person": "司馬機",
+          "start": 265,
+          "end": null,
+          "note": "晉文帝司馬昭第七子。原為曹魏清惠亭侯,泰始元年(265年)十二月封燕王,後來去世,無子。"
+        },
+        {
+          "id": "w0193",
+          "person": "司馬幾",
+          "start": null,
+          "end": 302,
+          "note": "齊武閔王司馬冏之子,出繼司馬機,太安元年(302年)十二月被囚；原摘錄誤作永興元年，據《晉書》惠帝紀校正。"
+        },
+        {
+          "id": "w0264",
+          "person": "慕容皝",
+          "start": 337,
+          "end": 348,
+          "note": "鮮卑慕容廆之子。咸康三年(337年)十一月自立為燕王,七年(341年)晉朝承認其王位,永和四年(348年)九月去世。"
+        },
+        {
+          "id": "w0265",
+          "person": "慕容儁",
+          "start": 349,
+          "end": 352,
+          "note": "慕容皝之子,永和八年(352年)四月自立為燕皇帝。"
+        }
+      ]
+    },
+    {
+      "year": 290,
+      "id": "p053",
+      "name": "代國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0213",
+          "person": "司馬演",
+          "start": 289,
+          "end": null,
+          "note": "晉武帝司馬炎第十一子,太康十年(289年)十一月封代王,後來去世。"
+        },
+        {
+          "id": "w0257",
+          "person": "拓跋猗盧",
+          "start": 315,
+          "end": 316,
+          "note": "拓跋沙漠汗之子。本代公,建興三年(315年)二月晉爵代王,四年(316年)三月去世。"
+        },
+        {
+          "id": "w0258",
+          "person": "拓跋鬱律",
+          "start": 317,
+          "end": 321,
+          "note": "拓跋弗之子。"
+        },
+        {
+          "id": "w0259",
+          "person": "拓跋賀傉",
+          "start": 322,
+          "end": 326,
+          "note": "拓跋猗㐌次子。"
+        },
+        {
+          "id": "w0260",
+          "person": "拓跋紇那",
+          "start": 326,
+          "end": 330,
+          "note": "拓跋猗㐌之子,在位5年被拓跋翳槐奪位。"
+        },
+        {
+          "id": "w0261",
+          "person": "拓跋翳槐",
+          "start": 330,
+          "end": 336,
+          "note": "拓跋鬱律長子,在位7年被殺。"
+        },
+        {
+          "id": "w0262",
+          "person": "拓跋紇那",
+          "start": 336,
+          "end": 336,
+          "note": "拓跋猗㐌之子,復立,在位1年去世。"
+        },
+        {
+          "id": "w0263",
+          "person": "拓跋什翼犍",
+          "start": 337,
+          "end": 375,
+          "note": "拓跋鬱律次子,建國三十九年(375年)十二月,被前秦滅亡。"
+        }
+      ]
+    },
+    {
+      "year": 290,
+      "id": "p065",
+      "name": "太原國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0024",
+          "person": "司馬輔",
+          "start": 277,
+          "end": 284,
+          "note": ""
+        },
+        {
+          "id": "w0025",
+          "person": "司馬泓",
+          "start": 285,
+          "end": 291,
+          "note": "司馬輔之子。元康元年(291年)左右徙封中丘王,元康三年(293年)十月去世。"
+        },
+        {
+          "id": "w0034",
+          "person": "司馬瑰",
+          "start": 265,
+          "end": 274,
+          "note": "安平獻王司馬孚第六子。本曹魏固始子,泰始元年(265年)十二月進封太原王,泰始十年(274年)閏正月去世。"
+        },
+        {
+          "id": "w0035",
+          "person": "司馬顒",
+          "start": 275,
+          "end": 277,
+          "note": "司馬瑰之子,本太原王,咸寧三年(277年)八月徙封河間王,光熙元年(306年)十二月為南陽王司馬模殺害。咸和六年(331年)六月恢復原河間王的爵位。"
+        }
+      ]
+    },
+    {
+      "year": 290,
+      "id": "p066",
+      "name": "西河國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0109",
+          "person": "司馬斌",
+          "start": 277,
+          "end": 278,
+          "note": ""
+        },
+        {
+          "id": "w0110",
+          "person": "司馬隱",
+          "start": 279,
+          "end": null,
+          "note": "司馬斌之子。"
+        },
+        {
+          "id": "w0111",
+          "person": "司馬孴",
+          "start": null,
+          "end": 311,
+          "note": "司馬隱之子,永嘉五年(311年)四月為石勒殺害。"
+        }
+      ]
+    },
+    {
+      "year": 291,
+      "id": "p027",
+      "name": "沛國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0046",
+          "person": "司⻢子文",
+          "start": 265,
+          "end": 275,
+          "note": "安平獻王司馬孚第九子。本曹魏樂安亭侯,泰始元年(265年)十二月進封沛王,咸寧元年(275年)八月去世。"
+        },
+        {
+          "id": "w0047",
+          "person": "司馬韜",
+          "start": 276,
+          "end": null,
+          "note": "司馬子文之子。"
+        },
+        {
+          "id": "w0048",
+          "person": "司馬滋",
+          "start": null,
+          "end": 311,
+          "note": "世系不明,永嘉五年(311年)七月被石勒殺害。"
+        }
+      ]
+    },
+    {
+      "year": 291,
+      "id": "p033",
+      "name": "中丘國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0026",
+          "person": "司馬泓",
+          "start": 291,
+          "end": 293,
+          "note": ""
+        },
+        {
+          "id": "w0027",
+          "person": "司馬鑠",
+          "start": 294,
+          "end": 311,
+          "note": "司馬泓之子。後來疑在永嘉五年(311年)四月與東海世子司馬毗及宗室四十七王一起被石勒俘虜。"
+        }
+      ]
+    },
+    {
+      "year": 291,
+      "id": "p049",
+      "name": "燕國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0192",
+          "person": "司馬機",
+          "start": 265,
+          "end": null,
+          "note": "晉文帝司馬昭第七子。原為曹魏清惠亭侯,泰始元年(265年)十二月封燕王,後來去世,無子。"
+        },
+        {
+          "id": "w0193",
+          "person": "司馬幾",
+          "start": null,
+          "end": 302,
+          "note": "齊武閔王司馬冏之子,出繼司馬機,太安元年(302年)十二月被囚；原摘錄誤作永興元年，據《晉書》惠帝紀校正。"
+        },
+        {
+          "id": "w0264",
+          "person": "慕容皝",
+          "start": 337,
+          "end": 348,
+          "note": "鮮卑慕容廆之子。咸康三年(337年)十一月自立為燕王,七年(341年)晉朝承認其王位,永和四年(348年)九月去世。"
+        },
+        {
+          "id": "w0265",
+          "person": "慕容儁",
+          "start": 349,
+          "end": 352,
+          "note": "慕容皝之子,永和八年(352年)四月自立為燕皇帝。"
+        }
+      ]
+    },
+    {
+      "year": 291,
+      "id": "p053",
+      "name": "代國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0213",
+          "person": "司馬演",
+          "start": 289,
+          "end": null,
+          "note": "晉武帝司馬炎第十一子,太康十年(289年)十一月封代王,後來去世。"
+        },
+        {
+          "id": "w0257",
+          "person": "拓跋猗盧",
+          "start": 315,
+          "end": 316,
+          "note": "拓跋沙漠汗之子。本代公,建興三年(315年)二月晉爵代王,四年(316年)三月去世。"
+        },
+        {
+          "id": "w0258",
+          "person": "拓跋鬱律",
+          "start": 317,
+          "end": 321,
+          "note": "拓跋弗之子。"
+        },
+        {
+          "id": "w0259",
+          "person": "拓跋賀傉",
+          "start": 322,
+          "end": 326,
+          "note": "拓跋猗㐌次子。"
+        },
+        {
+          "id": "w0260",
+          "person": "拓跋紇那",
+          "start": 326,
+          "end": 330,
+          "note": "拓跋猗㐌之子,在位5年被拓跋翳槐奪位。"
+        },
+        {
+          "id": "w0261",
+          "person": "拓跋翳槐",
+          "start": 330,
+          "end": 336,
+          "note": "拓跋鬱律長子,在位7年被殺。"
+        },
+        {
+          "id": "w0262",
+          "person": "拓跋紇那",
+          "start": 336,
+          "end": 336,
+          "note": "拓跋猗㐌之子,復立,在位1年去世。"
+        },
+        {
+          "id": "w0263",
+          "person": "拓跋什翼犍",
+          "start": 337,
+          "end": 375,
+          "note": "拓跋鬱律次子,建國三十九年(375年)十二月,被前秦滅亡。"
+        }
+      ]
+    },
+    {
+      "year": 291,
+      "id": "p066",
+      "name": "西河國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0109",
+          "person": "司馬斌",
+          "start": 277,
+          "end": 278,
+          "note": ""
+        },
+        {
+          "id": "w0110",
+          "person": "司馬隱",
+          "start": 279,
+          "end": null,
+          "note": "司馬斌之子。"
+        },
+        {
+          "id": "w0111",
+          "person": "司馬孴",
+          "start": null,
+          "end": 311,
+          "note": "司馬隱之子,永嘉五年(311年)四月為石勒殺害。"
+        }
+      ]
+    },
+    {
+      "year": 292,
+      "id": "p027",
+      "name": "沛國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0046",
+          "person": "司⻢子文",
+          "start": 265,
+          "end": 275,
+          "note": "安平獻王司馬孚第九子。本曹魏樂安亭侯,泰始元年(265年)十二月進封沛王,咸寧元年(275年)八月去世。"
+        },
+        {
+          "id": "w0047",
+          "person": "司馬韜",
+          "start": 276,
+          "end": null,
+          "note": "司馬子文之子。"
+        },
+        {
+          "id": "w0048",
+          "person": "司馬滋",
+          "start": null,
+          "end": 311,
+          "note": "世系不明,永嘉五年(311年)七月被石勒殺害。"
+        }
+      ]
+    },
+    {
+      "year": 292,
+      "id": "p033",
+      "name": "中丘國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0026",
+          "person": "司馬泓",
+          "start": 291,
+          "end": 293,
+          "note": ""
+        },
+        {
+          "id": "w0027",
+          "person": "司馬鑠",
+          "start": 294,
+          "end": 311,
+          "note": "司馬泓之子。後來疑在永嘉五年(311年)四月與東海世子司馬毗及宗室四十七王一起被石勒俘虜。"
+        }
+      ]
+    },
+    {
+      "year": 292,
+      "id": "p049",
+      "name": "燕國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0192",
+          "person": "司馬機",
+          "start": 265,
+          "end": null,
+          "note": "晉文帝司馬昭第七子。原為曹魏清惠亭侯,泰始元年(265年)十二月封燕王,後來去世,無子。"
+        },
+        {
+          "id": "w0193",
+          "person": "司馬幾",
+          "start": null,
+          "end": 302,
+          "note": "齊武閔王司馬冏之子,出繼司馬機,太安元年(302年)十二月被囚；原摘錄誤作永興元年，據《晉書》惠帝紀校正。"
+        },
+        {
+          "id": "w0264",
+          "person": "慕容皝",
+          "start": 337,
+          "end": 348,
+          "note": "鮮卑慕容廆之子。咸康三年(337年)十一月自立為燕王,七年(341年)晉朝承認其王位,永和四年(348年)九月去世。"
+        },
+        {
+          "id": "w0265",
+          "person": "慕容儁",
+          "start": 349,
+          "end": 352,
+          "note": "慕容皝之子,永和八年(352年)四月自立為燕皇帝。"
+        }
+      ]
+    },
+    {
+      "year": 292,
+      "id": "p053",
+      "name": "代國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0213",
+          "person": "司馬演",
+          "start": 289,
+          "end": null,
+          "note": "晉武帝司馬炎第十一子,太康十年(289年)十一月封代王,後來去世。"
+        },
+        {
+          "id": "w0257",
+          "person": "拓跋猗盧",
+          "start": 315,
+          "end": 316,
+          "note": "拓跋沙漠汗之子。本代公,建興三年(315年)二月晉爵代王,四年(316年)三月去世。"
+        },
+        {
+          "id": "w0258",
+          "person": "拓跋鬱律",
+          "start": 317,
+          "end": 321,
+          "note": "拓跋弗之子。"
+        },
+        {
+          "id": "w0259",
+          "person": "拓跋賀傉",
+          "start": 322,
+          "end": 326,
+          "note": "拓跋猗㐌次子。"
+        },
+        {
+          "id": "w0260",
+          "person": "拓跋紇那",
+          "start": 326,
+          "end": 330,
+          "note": "拓跋猗㐌之子,在位5年被拓跋翳槐奪位。"
+        },
+        {
+          "id": "w0261",
+          "person": "拓跋翳槐",
+          "start": 330,
+          "end": 336,
+          "note": "拓跋鬱律長子,在位7年被殺。"
+        },
+        {
+          "id": "w0262",
+          "person": "拓跋紇那",
+          "start": 336,
+          "end": 336,
+          "note": "拓跋猗㐌之子,復立,在位1年去世。"
+        },
+        {
+          "id": "w0263",
+          "person": "拓跋什翼犍",
+          "start": 337,
+          "end": 375,
+          "note": "拓跋鬱律次子,建國三十九年(375年)十二月,被前秦滅亡。"
+        }
+      ]
+    },
+    {
+      "year": 292,
+      "id": "p066",
+      "name": "西河國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0109",
+          "person": "司馬斌",
+          "start": 277,
+          "end": 278,
+          "note": ""
+        },
+        {
+          "id": "w0110",
+          "person": "司馬隱",
+          "start": 279,
+          "end": null,
+          "note": "司馬斌之子。"
+        },
+        {
+          "id": "w0111",
+          "person": "司馬孴",
+          "start": null,
+          "end": 311,
+          "note": "司馬隱之子,永嘉五年(311年)四月為石勒殺害。"
+        }
+      ]
+    },
+    {
+      "year": 292,
+      "id": "p073",
+      "name": "秦國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0198",
+          "person": "司馬柬",
+          "start": 289,
+          "end": 291,
+          "note": ""
+        },
+        {
+          "id": "w0199",
+          "person": "司馬郁",
+          "start": 292,
+          "end": 300,
+          "note": "淮南忠壯王司馬允之子,出繼司馬柬,永康元年(300年)八月遇害。"
+        },
+        {
+          "id": "w0200",
+          "person": "司馬鄴",
+          "start": 302,
+          "end": 312,
+          "note": "吳孝王司馬晏之子。永寧二年(302年)出繼司馬柬,襲封秦王,永嘉六年(312年)九月立為皇太子。"
+        }
+      ]
+    },
+    {
+      "year": 293,
+      "id": "p027",
+      "name": "沛國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0046",
+          "person": "司⻢子文",
+          "start": 265,
+          "end": 275,
+          "note": "安平獻王司馬孚第九子。本曹魏樂安亭侯,泰始元年(265年)十二月進封沛王,咸寧元年(275年)八月去世。"
+        },
+        {
+          "id": "w0047",
+          "person": "司馬韜",
+          "start": 276,
+          "end": null,
+          "note": "司馬子文之子。"
+        },
+        {
+          "id": "w0048",
+          "person": "司馬滋",
+          "start": null,
+          "end": 311,
+          "note": "世系不明,永嘉五年(311年)七月被石勒殺害。"
+        }
+      ]
+    },
+    {
+      "year": 293,
+      "id": "p049",
+      "name": "燕國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0192",
+          "person": "司馬機",
+          "start": 265,
+          "end": null,
+          "note": "晉文帝司馬昭第七子。原為曹魏清惠亭侯,泰始元年(265年)十二月封燕王,後來去世,無子。"
+        },
+        {
+          "id": "w0193",
+          "person": "司馬幾",
+          "start": null,
+          "end": 302,
+          "note": "齊武閔王司馬冏之子,出繼司馬機,太安元年(302年)十二月被囚；原摘錄誤作永興元年，據《晉書》惠帝紀校正。"
+        },
+        {
+          "id": "w0264",
+          "person": "慕容皝",
+          "start": 337,
+          "end": 348,
+          "note": "鮮卑慕容廆之子。咸康三年(337年)十一月自立為燕王,七年(341年)晉朝承認其王位,永和四年(348年)九月去世。"
+        },
+        {
+          "id": "w0265",
+          "person": "慕容儁",
+          "start": 349,
+          "end": 352,
+          "note": "慕容皝之子,永和八年(352年)四月自立為燕皇帝。"
+        }
+      ]
+    },
+    {
+      "year": 293,
+      "id": "p053",
+      "name": "代國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0213",
+          "person": "司馬演",
+          "start": 289,
+          "end": null,
+          "note": "晉武帝司馬炎第十一子,太康十年(289年)十一月封代王,後來去世。"
+        },
+        {
+          "id": "w0257",
+          "person": "拓跋猗盧",
+          "start": 315,
+          "end": 316,
+          "note": "拓跋沙漠汗之子。本代公,建興三年(315年)二月晉爵代王,四年(316年)三月去世。"
+        },
+        {
+          "id": "w0258",
+          "person": "拓跋鬱律",
+          "start": 317,
+          "end": 321,
+          "note": "拓跋弗之子。"
+        },
+        {
+          "id": "w0259",
+          "person": "拓跋賀傉",
+          "start": 322,
+          "end": 326,
+          "note": "拓跋猗㐌次子。"
+        },
+        {
+          "id": "w0260",
+          "person": "拓跋紇那",
+          "start": 326,
+          "end": 330,
+          "note": "拓跋猗㐌之子,在位5年被拓跋翳槐奪位。"
+        },
+        {
+          "id": "w0261",
+          "person": "拓跋翳槐",
+          "start": 330,
+          "end": 336,
+          "note": "拓跋鬱律長子,在位7年被殺。"
+        },
+        {
+          "id": "w0262",
+          "person": "拓跋紇那",
+          "start": 336,
+          "end": 336,
+          "note": "拓跋猗㐌之子,復立,在位1年去世。"
+        },
+        {
+          "id": "w0263",
+          "person": "拓跋什翼犍",
+          "start": 337,
+          "end": 375,
+          "note": "拓跋鬱律次子,建國三十九年(375年)十二月,被前秦滅亡。"
+        }
+      ]
+    },
+    {
+      "year": 293,
+      "id": "p066",
+      "name": "西河國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0109",
+          "person": "司馬斌",
+          "start": 277,
+          "end": 278,
+          "note": ""
+        },
+        {
+          "id": "w0110",
+          "person": "司馬隱",
+          "start": 279,
+          "end": null,
+          "note": "司馬斌之子。"
+        },
+        {
+          "id": "w0111",
+          "person": "司馬孴",
+          "start": null,
+          "end": 311,
+          "note": "司馬隱之子,永嘉五年(311年)四月為石勒殺害。"
+        }
+      ]
+    },
+    {
+      "year": 293,
+      "id": "p073",
+      "name": "秦國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0198",
+          "person": "司馬柬",
+          "start": 289,
+          "end": 291,
+          "note": ""
+        },
+        {
+          "id": "w0199",
+          "person": "司馬郁",
+          "start": 292,
+          "end": 300,
+          "note": "淮南忠壯王司馬允之子,出繼司馬柬,永康元年(300年)八月遇害。"
+        },
+        {
+          "id": "w0200",
+          "person": "司馬鄴",
+          "start": 302,
+          "end": 312,
+          "note": "吳孝王司馬晏之子。永寧二年(302年)出繼司馬柬,襲封秦王,永嘉六年(312年)九月立為皇太子。"
+        }
+      ]
+    },
+    {
+      "year": 294,
+      "id": "p027",
+      "name": "沛國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0046",
+          "person": "司⻢子文",
+          "start": 265,
+          "end": 275,
+          "note": "安平獻王司馬孚第九子。本曹魏樂安亭侯,泰始元年(265年)十二月進封沛王,咸寧元年(275年)八月去世。"
+        },
+        {
+          "id": "w0047",
+          "person": "司馬韜",
+          "start": 276,
+          "end": null,
+          "note": "司馬子文之子。"
+        },
+        {
+          "id": "w0048",
+          "person": "司馬滋",
+          "start": null,
+          "end": 311,
+          "note": "世系不明,永嘉五年(311年)七月被石勒殺害。"
+        }
+      ]
+    },
+    {
+      "year": 294,
+      "id": "p049",
+      "name": "燕國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0192",
+          "person": "司馬機",
+          "start": 265,
+          "end": null,
+          "note": "晉文帝司馬昭第七子。原為曹魏清惠亭侯,泰始元年(265年)十二月封燕王,後來去世,無子。"
+        },
+        {
+          "id": "w0193",
+          "person": "司馬幾",
+          "start": null,
+          "end": 302,
+          "note": "齊武閔王司馬冏之子,出繼司馬機,太安元年(302年)十二月被囚；原摘錄誤作永興元年，據《晉書》惠帝紀校正。"
+        },
+        {
+          "id": "w0264",
+          "person": "慕容皝",
+          "start": 337,
+          "end": 348,
+          "note": "鮮卑慕容廆之子。咸康三年(337年)十一月自立為燕王,七年(341年)晉朝承認其王位,永和四年(348年)九月去世。"
+        },
+        {
+          "id": "w0265",
+          "person": "慕容儁",
+          "start": 349,
+          "end": 352,
+          "note": "慕容皝之子,永和八年(352年)四月自立為燕皇帝。"
+        }
+      ]
+    },
+    {
+      "year": 294,
+      "id": "p053",
+      "name": "代國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0213",
+          "person": "司馬演",
+          "start": 289,
+          "end": null,
+          "note": "晉武帝司馬炎第十一子,太康十年(289年)十一月封代王,後來去世。"
+        },
+        {
+          "id": "w0257",
+          "person": "拓跋猗盧",
+          "start": 315,
+          "end": 316,
+          "note": "拓跋沙漠汗之子。本代公,建興三年(315年)二月晉爵代王,四年(316年)三月去世。"
+        },
+        {
+          "id": "w0258",
+          "person": "拓跋鬱律",
+          "start": 317,
+          "end": 321,
+          "note": "拓跋弗之子。"
+        },
+        {
+          "id": "w0259",
+          "person": "拓跋賀傉",
+          "start": 322,
+          "end": 326,
+          "note": "拓跋猗㐌次子。"
+        },
+        {
+          "id": "w0260",
+          "person": "拓跋紇那",
+          "start": 326,
+          "end": 330,
+          "note": "拓跋猗㐌之子,在位5年被拓跋翳槐奪位。"
+        },
+        {
+          "id": "w0261",
+          "person": "拓跋翳槐",
+          "start": 330,
+          "end": 336,
+          "note": "拓跋鬱律長子,在位7年被殺。"
+        },
+        {
+          "id": "w0262",
+          "person": "拓跋紇那",
+          "start": 336,
+          "end": 336,
+          "note": "拓跋猗㐌之子,復立,在位1年去世。"
+        },
+        {
+          "id": "w0263",
+          "person": "拓跋什翼犍",
+          "start": 337,
+          "end": 375,
+          "note": "拓跋鬱律次子,建國三十九年(375年)十二月,被前秦滅亡。"
+        }
+      ]
+    },
+    {
+      "year": 294,
+      "id": "p066",
+      "name": "西河國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0109",
+          "person": "司馬斌",
+          "start": 277,
+          "end": 278,
+          "note": ""
+        },
+        {
+          "id": "w0110",
+          "person": "司馬隱",
+          "start": 279,
+          "end": null,
+          "note": "司馬斌之子。"
+        },
+        {
+          "id": "w0111",
+          "person": "司馬孴",
+          "start": null,
+          "end": 311,
+          "note": "司馬隱之子,永嘉五年(311年)四月為石勒殺害。"
+        }
+      ]
+    },
+    {
+      "year": 294,
+      "id": "p073",
+      "name": "秦國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0198",
+          "person": "司馬柬",
+          "start": 289,
+          "end": 291,
+          "note": ""
+        },
+        {
+          "id": "w0199",
+          "person": "司馬郁",
+          "start": 292,
+          "end": 300,
+          "note": "淮南忠壯王司馬允之子,出繼司馬柬,永康元年(300年)八月遇害。"
+        },
+        {
+          "id": "w0200",
+          "person": "司馬鄴",
+          "start": 302,
+          "end": 312,
+          "note": "吳孝王司馬晏之子。永寧二年(302年)出繼司馬柬,襲封秦王,永嘉六年(312年)九月立為皇太子。"
+        }
+      ]
+    },
+    {
+      "year": 295,
+      "id": "p027",
+      "name": "沛國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0046",
+          "person": "司⻢子文",
+          "start": 265,
+          "end": 275,
+          "note": "安平獻王司馬孚第九子。本曹魏樂安亭侯,泰始元年(265年)十二月進封沛王,咸寧元年(275年)八月去世。"
+        },
+        {
+          "id": "w0047",
+          "person": "司馬韜",
+          "start": 276,
+          "end": null,
+          "note": "司馬子文之子。"
+        },
+        {
+          "id": "w0048",
+          "person": "司馬滋",
+          "start": null,
+          "end": 311,
+          "note": "世系不明,永嘉五年(311年)七月被石勒殺害。"
+        }
+      ]
+    },
+    {
+      "year": 295,
+      "id": "p049",
+      "name": "燕國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0192",
+          "person": "司馬機",
+          "start": 265,
+          "end": null,
+          "note": "晉文帝司馬昭第七子。原為曹魏清惠亭侯,泰始元年(265年)十二月封燕王,後來去世,無子。"
+        },
+        {
+          "id": "w0193",
+          "person": "司馬幾",
+          "start": null,
+          "end": 302,
+          "note": "齊武閔王司馬冏之子,出繼司馬機,太安元年(302年)十二月被囚；原摘錄誤作永興元年，據《晉書》惠帝紀校正。"
+        },
+        {
+          "id": "w0264",
+          "person": "慕容皝",
+          "start": 337,
+          "end": 348,
+          "note": "鮮卑慕容廆之子。咸康三年(337年)十一月自立為燕王,七年(341年)晉朝承認其王位,永和四年(348年)九月去世。"
+        },
+        {
+          "id": "w0265",
+          "person": "慕容儁",
+          "start": 349,
+          "end": 352,
+          "note": "慕容皝之子,永和八年(352年)四月自立為燕皇帝。"
+        }
+      ]
+    },
+    {
+      "year": 295,
+      "id": "p053",
+      "name": "代國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0213",
+          "person": "司馬演",
+          "start": 289,
+          "end": null,
+          "note": "晉武帝司馬炎第十一子,太康十年(289年)十一月封代王,後來去世。"
+        },
+        {
+          "id": "w0257",
+          "person": "拓跋猗盧",
+          "start": 315,
+          "end": 316,
+          "note": "拓跋沙漠汗之子。本代公,建興三年(315年)二月晉爵代王,四年(316年)三月去世。"
+        },
+        {
+          "id": "w0258",
+          "person": "拓跋鬱律",
+          "start": 317,
+          "end": 321,
+          "note": "拓跋弗之子。"
+        },
+        {
+          "id": "w0259",
+          "person": "拓跋賀傉",
+          "start": 322,
+          "end": 326,
+          "note": "拓跋猗㐌次子。"
+        },
+        {
+          "id": "w0260",
+          "person": "拓跋紇那",
+          "start": 326,
+          "end": 330,
+          "note": "拓跋猗㐌之子,在位5年被拓跋翳槐奪位。"
+        },
+        {
+          "id": "w0261",
+          "person": "拓跋翳槐",
+          "start": 330,
+          "end": 336,
+          "note": "拓跋鬱律長子,在位7年被殺。"
+        },
+        {
+          "id": "w0262",
+          "person": "拓跋紇那",
+          "start": 336,
+          "end": 336,
+          "note": "拓跋猗㐌之子,復立,在位1年去世。"
+        },
+        {
+          "id": "w0263",
+          "person": "拓跋什翼犍",
+          "start": 337,
+          "end": 375,
+          "note": "拓跋鬱律次子,建國三十九年(375年)十二月,被前秦滅亡。"
+        }
+      ]
+    },
+    {
+      "year": 295,
+      "id": "p066",
+      "name": "西河國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0109",
+          "person": "司馬斌",
+          "start": 277,
+          "end": 278,
+          "note": ""
+        },
+        {
+          "id": "w0110",
+          "person": "司馬隱",
+          "start": 279,
+          "end": null,
+          "note": "司馬斌之子。"
+        },
+        {
+          "id": "w0111",
+          "person": "司馬孴",
+          "start": null,
+          "end": 311,
+          "note": "司馬隱之子,永嘉五年(311年)四月為石勒殺害。"
+        }
+      ]
+    },
+    {
+      "year": 295,
+      "id": "p073",
+      "name": "秦國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0198",
+          "person": "司馬柬",
+          "start": 289,
+          "end": 291,
+          "note": ""
+        },
+        {
+          "id": "w0199",
+          "person": "司馬郁",
+          "start": 292,
+          "end": 300,
+          "note": "淮南忠壯王司馬允之子,出繼司馬柬,永康元年(300年)八月遇害。"
+        },
+        {
+          "id": "w0200",
+          "person": "司馬鄴",
+          "start": 302,
+          "end": 312,
+          "note": "吳孝王司馬晏之子。永寧二年(302年)出繼司馬柬,襲封秦王,永嘉六年(312年)九月立為皇太子。"
+        }
+      ]
+    },
+    {
+      "year": 296,
+      "id": "p027",
+      "name": "沛國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0046",
+          "person": "司⻢子文",
+          "start": 265,
+          "end": 275,
+          "note": "安平獻王司馬孚第九子。本曹魏樂安亭侯,泰始元年(265年)十二月進封沛王,咸寧元年(275年)八月去世。"
+        },
+        {
+          "id": "w0047",
+          "person": "司馬韜",
+          "start": 276,
+          "end": null,
+          "note": "司馬子文之子。"
+        },
+        {
+          "id": "w0048",
+          "person": "司馬滋",
+          "start": null,
+          "end": 311,
+          "note": "世系不明,永嘉五年(311年)七月被石勒殺害。"
+        }
+      ]
+    },
+    {
+      "year": 296,
+      "id": "p049",
+      "name": "燕國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0192",
+          "person": "司馬機",
+          "start": 265,
+          "end": null,
+          "note": "晉文帝司馬昭第七子。原為曹魏清惠亭侯,泰始元年(265年)十二月封燕王,後來去世,無子。"
+        },
+        {
+          "id": "w0193",
+          "person": "司馬幾",
+          "start": null,
+          "end": 302,
+          "note": "齊武閔王司馬冏之子,出繼司馬機,太安元年(302年)十二月被囚；原摘錄誤作永興元年，據《晉書》惠帝紀校正。"
+        },
+        {
+          "id": "w0264",
+          "person": "慕容皝",
+          "start": 337,
+          "end": 348,
+          "note": "鮮卑慕容廆之子。咸康三年(337年)十一月自立為燕王,七年(341年)晉朝承認其王位,永和四年(348年)九月去世。"
+        },
+        {
+          "id": "w0265",
+          "person": "慕容儁",
+          "start": 349,
+          "end": 352,
+          "note": "慕容皝之子,永和八年(352年)四月自立為燕皇帝。"
+        }
+      ]
+    },
+    {
+      "year": 296,
+      "id": "p053",
+      "name": "代國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0213",
+          "person": "司馬演",
+          "start": 289,
+          "end": null,
+          "note": "晉武帝司馬炎第十一子,太康十年(289年)十一月封代王,後來去世。"
+        },
+        {
+          "id": "w0257",
+          "person": "拓跋猗盧",
+          "start": 315,
+          "end": 316,
+          "note": "拓跋沙漠汗之子。本代公,建興三年(315年)二月晉爵代王,四年(316年)三月去世。"
+        },
+        {
+          "id": "w0258",
+          "person": "拓跋鬱律",
+          "start": 317,
+          "end": 321,
+          "note": "拓跋弗之子。"
+        },
+        {
+          "id": "w0259",
+          "person": "拓跋賀傉",
+          "start": 322,
+          "end": 326,
+          "note": "拓跋猗㐌次子。"
+        },
+        {
+          "id": "w0260",
+          "person": "拓跋紇那",
+          "start": 326,
+          "end": 330,
+          "note": "拓跋猗㐌之子,在位5年被拓跋翳槐奪位。"
+        },
+        {
+          "id": "w0261",
+          "person": "拓跋翳槐",
+          "start": 330,
+          "end": 336,
+          "note": "拓跋鬱律長子,在位7年被殺。"
+        },
+        {
+          "id": "w0262",
+          "person": "拓跋紇那",
+          "start": 336,
+          "end": 336,
+          "note": "拓跋猗㐌之子,復立,在位1年去世。"
+        },
+        {
+          "id": "w0263",
+          "person": "拓跋什翼犍",
+          "start": 337,
+          "end": 375,
+          "note": "拓跋鬱律次子,建國三十九年(375年)十二月,被前秦滅亡。"
+        }
+      ]
+    },
+    {
+      "year": 296,
+      "id": "p066",
+      "name": "西河國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0109",
+          "person": "司馬斌",
+          "start": 277,
+          "end": 278,
+          "note": ""
+        },
+        {
+          "id": "w0110",
+          "person": "司馬隱",
+          "start": 279,
+          "end": null,
+          "note": "司馬斌之子。"
+        },
+        {
+          "id": "w0111",
+          "person": "司馬孴",
+          "start": null,
+          "end": 311,
+          "note": "司馬隱之子,永嘉五年(311年)四月為石勒殺害。"
+        }
+      ]
+    },
+    {
+      "year": 296,
+      "id": "p073",
+      "name": "秦國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0198",
+          "person": "司馬柬",
+          "start": 289,
+          "end": 291,
+          "note": ""
+        },
+        {
+          "id": "w0199",
+          "person": "司馬郁",
+          "start": 292,
+          "end": 300,
+          "note": "淮南忠壯王司馬允之子,出繼司馬柬,永康元年(300年)八月遇害。"
+        },
+        {
+          "id": "w0200",
+          "person": "司馬鄴",
+          "start": 302,
+          "end": 312,
+          "note": "吳孝王司馬晏之子。永寧二年(302年)出繼司馬柬,襲封秦王,永嘉六年(312年)九月立為皇太子。"
+        }
+      ]
+    },
+    {
+      "year": 297,
+      "id": "p027",
+      "name": "沛國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0046",
+          "person": "司⻢子文",
+          "start": 265,
+          "end": 275,
+          "note": "安平獻王司馬孚第九子。本曹魏樂安亭侯,泰始元年(265年)十二月進封沛王,咸寧元年(275年)八月去世。"
+        },
+        {
+          "id": "w0047",
+          "person": "司馬韜",
+          "start": 276,
+          "end": null,
+          "note": "司馬子文之子。"
+        },
+        {
+          "id": "w0048",
+          "person": "司馬滋",
+          "start": null,
+          "end": 311,
+          "note": "世系不明,永嘉五年(311年)七月被石勒殺害。"
+        }
+      ]
+    },
+    {
+      "year": 297,
+      "id": "p049",
+      "name": "燕國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0192",
+          "person": "司馬機",
+          "start": 265,
+          "end": null,
+          "note": "晉文帝司馬昭第七子。原為曹魏清惠亭侯,泰始元年(265年)十二月封燕王,後來去世,無子。"
+        },
+        {
+          "id": "w0193",
+          "person": "司馬幾",
+          "start": null,
+          "end": 302,
+          "note": "齊武閔王司馬冏之子,出繼司馬機,太安元年(302年)十二月被囚；原摘錄誤作永興元年，據《晉書》惠帝紀校正。"
+        },
+        {
+          "id": "w0264",
+          "person": "慕容皝",
+          "start": 337,
+          "end": 348,
+          "note": "鮮卑慕容廆之子。咸康三年(337年)十一月自立為燕王,七年(341年)晉朝承認其王位,永和四年(348年)九月去世。"
+        },
+        {
+          "id": "w0265",
+          "person": "慕容儁",
+          "start": 349,
+          "end": 352,
+          "note": "慕容皝之子,永和八年(352年)四月自立為燕皇帝。"
+        }
+      ]
+    },
+    {
+      "year": 297,
+      "id": "p053",
+      "name": "代國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0213",
+          "person": "司馬演",
+          "start": 289,
+          "end": null,
+          "note": "晉武帝司馬炎第十一子,太康十年(289年)十一月封代王,後來去世。"
+        },
+        {
+          "id": "w0257",
+          "person": "拓跋猗盧",
+          "start": 315,
+          "end": 316,
+          "note": "拓跋沙漠汗之子。本代公,建興三年(315年)二月晉爵代王,四年(316年)三月去世。"
+        },
+        {
+          "id": "w0258",
+          "person": "拓跋鬱律",
+          "start": 317,
+          "end": 321,
+          "note": "拓跋弗之子。"
+        },
+        {
+          "id": "w0259",
+          "person": "拓跋賀傉",
+          "start": 322,
+          "end": 326,
+          "note": "拓跋猗㐌次子。"
+        },
+        {
+          "id": "w0260",
+          "person": "拓跋紇那",
+          "start": 326,
+          "end": 330,
+          "note": "拓跋猗㐌之子,在位5年被拓跋翳槐奪位。"
+        },
+        {
+          "id": "w0261",
+          "person": "拓跋翳槐",
+          "start": 330,
+          "end": 336,
+          "note": "拓跋鬱律長子,在位7年被殺。"
+        },
+        {
+          "id": "w0262",
+          "person": "拓跋紇那",
+          "start": 336,
+          "end": 336,
+          "note": "拓跋猗㐌之子,復立,在位1年去世。"
+        },
+        {
+          "id": "w0263",
+          "person": "拓跋什翼犍",
+          "start": 337,
+          "end": 375,
+          "note": "拓跋鬱律次子,建國三十九年(375年)十二月,被前秦滅亡。"
+        }
+      ]
+    },
+    {
+      "year": 297,
+      "id": "p066",
+      "name": "西河國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0109",
+          "person": "司馬斌",
+          "start": 277,
+          "end": 278,
+          "note": ""
+        },
+        {
+          "id": "w0110",
+          "person": "司馬隱",
+          "start": 279,
+          "end": null,
+          "note": "司馬斌之子。"
+        },
+        {
+          "id": "w0111",
+          "person": "司馬孴",
+          "start": null,
+          "end": 311,
+          "note": "司馬隱之子,永嘉五年(311年)四月為石勒殺害。"
+        }
+      ]
+    },
+    {
+      "year": 297,
+      "id": "p073",
+      "name": "秦國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0198",
+          "person": "司馬柬",
+          "start": 289,
+          "end": 291,
+          "note": ""
+        },
+        {
+          "id": "w0199",
+          "person": "司馬郁",
+          "start": 292,
+          "end": 300,
+          "note": "淮南忠壯王司馬允之子,出繼司馬柬,永康元年(300年)八月遇害。"
+        },
+        {
+          "id": "w0200",
+          "person": "司馬鄴",
+          "start": 302,
+          "end": 312,
+          "note": "吳孝王司馬晏之子。永寧二年(302年)出繼司馬柬,襲封秦王,永嘉六年(312年)九月立為皇太子。"
+        }
+      ]
+    },
+    {
+      "year": 298,
+      "id": "p027",
+      "name": "沛國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0046",
+          "person": "司⻢子文",
+          "start": 265,
+          "end": 275,
+          "note": "安平獻王司馬孚第九子。本曹魏樂安亭侯,泰始元年(265年)十二月進封沛王,咸寧元年(275年)八月去世。"
+        },
+        {
+          "id": "w0047",
+          "person": "司馬韜",
+          "start": 276,
+          "end": null,
+          "note": "司馬子文之子。"
+        },
+        {
+          "id": "w0048",
+          "person": "司馬滋",
+          "start": null,
+          "end": 311,
+          "note": "世系不明,永嘉五年(311年)七月被石勒殺害。"
+        }
+      ]
+    },
+    {
+      "year": 298,
+      "id": "p049",
+      "name": "燕國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0192",
+          "person": "司馬機",
+          "start": 265,
+          "end": null,
+          "note": "晉文帝司馬昭第七子。原為曹魏清惠亭侯,泰始元年(265年)十二月封燕王,後來去世,無子。"
+        },
+        {
+          "id": "w0193",
+          "person": "司馬幾",
+          "start": null,
+          "end": 302,
+          "note": "齊武閔王司馬冏之子,出繼司馬機,太安元年(302年)十二月被囚；原摘錄誤作永興元年，據《晉書》惠帝紀校正。"
+        },
+        {
+          "id": "w0264",
+          "person": "慕容皝",
+          "start": 337,
+          "end": 348,
+          "note": "鮮卑慕容廆之子。咸康三年(337年)十一月自立為燕王,七年(341年)晉朝承認其王位,永和四年(348年)九月去世。"
+        },
+        {
+          "id": "w0265",
+          "person": "慕容儁",
+          "start": 349,
+          "end": 352,
+          "note": "慕容皝之子,永和八年(352年)四月自立為燕皇帝。"
+        }
+      ]
+    },
+    {
+      "year": 298,
+      "id": "p053",
+      "name": "代國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0213",
+          "person": "司馬演",
+          "start": 289,
+          "end": null,
+          "note": "晉武帝司馬炎第十一子,太康十年(289年)十一月封代王,後來去世。"
+        },
+        {
+          "id": "w0257",
+          "person": "拓跋猗盧",
+          "start": 315,
+          "end": 316,
+          "note": "拓跋沙漠汗之子。本代公,建興三年(315年)二月晉爵代王,四年(316年)三月去世。"
+        },
+        {
+          "id": "w0258",
+          "person": "拓跋鬱律",
+          "start": 317,
+          "end": 321,
+          "note": "拓跋弗之子。"
+        },
+        {
+          "id": "w0259",
+          "person": "拓跋賀傉",
+          "start": 322,
+          "end": 326,
+          "note": "拓跋猗㐌次子。"
+        },
+        {
+          "id": "w0260",
+          "person": "拓跋紇那",
+          "start": 326,
+          "end": 330,
+          "note": "拓跋猗㐌之子,在位5年被拓跋翳槐奪位。"
+        },
+        {
+          "id": "w0261",
+          "person": "拓跋翳槐",
+          "start": 330,
+          "end": 336,
+          "note": "拓跋鬱律長子,在位7年被殺。"
+        },
+        {
+          "id": "w0262",
+          "person": "拓跋紇那",
+          "start": 336,
+          "end": 336,
+          "note": "拓跋猗㐌之子,復立,在位1年去世。"
+        },
+        {
+          "id": "w0263",
+          "person": "拓跋什翼犍",
+          "start": 337,
+          "end": 375,
+          "note": "拓跋鬱律次子,建國三十九年(375年)十二月,被前秦滅亡。"
+        }
+      ]
+    },
+    {
+      "year": 298,
+      "id": "p066",
+      "name": "西河國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0109",
+          "person": "司馬斌",
+          "start": 277,
+          "end": 278,
+          "note": ""
+        },
+        {
+          "id": "w0110",
+          "person": "司馬隱",
+          "start": 279,
+          "end": null,
+          "note": "司馬斌之子。"
+        },
+        {
+          "id": "w0111",
+          "person": "司馬孴",
+          "start": null,
+          "end": 311,
+          "note": "司馬隱之子,永嘉五年(311年)四月為石勒殺害。"
+        }
+      ]
+    },
+    {
+      "year": 298,
+      "id": "p073",
+      "name": "秦國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0198",
+          "person": "司馬柬",
+          "start": 289,
+          "end": 291,
+          "note": ""
+        },
+        {
+          "id": "w0199",
+          "person": "司馬郁",
+          "start": 292,
+          "end": 300,
+          "note": "淮南忠壯王司馬允之子,出繼司馬柬,永康元年(300年)八月遇害。"
+        },
+        {
+          "id": "w0200",
+          "person": "司馬鄴",
+          "start": 302,
+          "end": 312,
+          "note": "吳孝王司馬晏之子。永寧二年(302年)出繼司馬柬,襲封秦王,永嘉六年(312年)九月立為皇太子。"
+        }
+      ]
+    },
+    {
+      "year": 299,
+      "id": "p027",
+      "name": "沛國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0046",
+          "person": "司⻢子文",
+          "start": 265,
+          "end": 275,
+          "note": "安平獻王司馬孚第九子。本曹魏樂安亭侯,泰始元年(265年)十二月進封沛王,咸寧元年(275年)八月去世。"
+        },
+        {
+          "id": "w0047",
+          "person": "司馬韜",
+          "start": 276,
+          "end": null,
+          "note": "司馬子文之子。"
+        },
+        {
+          "id": "w0048",
+          "person": "司馬滋",
+          "start": null,
+          "end": 311,
+          "note": "世系不明,永嘉五年(311年)七月被石勒殺害。"
+        }
+      ]
+    },
+    {
+      "year": 299,
+      "id": "p049",
+      "name": "燕國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0192",
+          "person": "司馬機",
+          "start": 265,
+          "end": null,
+          "note": "晉文帝司馬昭第七子。原為曹魏清惠亭侯,泰始元年(265年)十二月封燕王,後來去世,無子。"
+        },
+        {
+          "id": "w0193",
+          "person": "司馬幾",
+          "start": null,
+          "end": 302,
+          "note": "齊武閔王司馬冏之子,出繼司馬機,太安元年(302年)十二月被囚；原摘錄誤作永興元年，據《晉書》惠帝紀校正。"
+        },
+        {
+          "id": "w0264",
+          "person": "慕容皝",
+          "start": 337,
+          "end": 348,
+          "note": "鮮卑慕容廆之子。咸康三年(337年)十一月自立為燕王,七年(341年)晉朝承認其王位,永和四年(348年)九月去世。"
+        },
+        {
+          "id": "w0265",
+          "person": "慕容儁",
+          "start": 349,
+          "end": 352,
+          "note": "慕容皝之子,永和八年(352年)四月自立為燕皇帝。"
+        }
+      ]
+    },
+    {
+      "year": 299,
+      "id": "p053",
+      "name": "代國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0213",
+          "person": "司馬演",
+          "start": 289,
+          "end": null,
+          "note": "晉武帝司馬炎第十一子,太康十年(289年)十一月封代王,後來去世。"
+        },
+        {
+          "id": "w0257",
+          "person": "拓跋猗盧",
+          "start": 315,
+          "end": 316,
+          "note": "拓跋沙漠汗之子。本代公,建興三年(315年)二月晉爵代王,四年(316年)三月去世。"
+        },
+        {
+          "id": "w0258",
+          "person": "拓跋鬱律",
+          "start": 317,
+          "end": 321,
+          "note": "拓跋弗之子。"
+        },
+        {
+          "id": "w0259",
+          "person": "拓跋賀傉",
+          "start": 322,
+          "end": 326,
+          "note": "拓跋猗㐌次子。"
+        },
+        {
+          "id": "w0260",
+          "person": "拓跋紇那",
+          "start": 326,
+          "end": 330,
+          "note": "拓跋猗㐌之子,在位5年被拓跋翳槐奪位。"
+        },
+        {
+          "id": "w0261",
+          "person": "拓跋翳槐",
+          "start": 330,
+          "end": 336,
+          "note": "拓跋鬱律長子,在位7年被殺。"
+        },
+        {
+          "id": "w0262",
+          "person": "拓跋紇那",
+          "start": 336,
+          "end": 336,
+          "note": "拓跋猗㐌之子,復立,在位1年去世。"
+        },
+        {
+          "id": "w0263",
+          "person": "拓跋什翼犍",
+          "start": 337,
+          "end": 375,
+          "note": "拓跋鬱律次子,建國三十九年(375年)十二月,被前秦滅亡。"
+        }
+      ]
+    },
+    {
+      "year": 299,
+      "id": "p066",
+      "name": "西河國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0109",
+          "person": "司馬斌",
+          "start": 277,
+          "end": 278,
+          "note": ""
+        },
+        {
+          "id": "w0110",
+          "person": "司馬隱",
+          "start": 279,
+          "end": null,
+          "note": "司馬斌之子。"
+        },
+        {
+          "id": "w0111",
+          "person": "司馬孴",
+          "start": null,
+          "end": 311,
+          "note": "司馬隱之子,永嘉五年(311年)四月為石勒殺害。"
+        }
+      ]
+    },
+    {
+      "year": 299,
+      "id": "p073",
+      "name": "秦國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0198",
+          "person": "司馬柬",
+          "start": 289,
+          "end": 291,
+          "note": ""
+        },
+        {
+          "id": "w0199",
+          "person": "司馬郁",
+          "start": 292,
+          "end": 300,
+          "note": "淮南忠壯王司馬允之子,出繼司馬柬,永康元年(300年)八月遇害。"
+        },
+        {
+          "id": "w0200",
+          "person": "司馬鄴",
+          "start": 302,
+          "end": 312,
+          "note": "吳孝王司馬晏之子。永寧二年(302年)出繼司馬柬,襲封秦王,永嘉六年(312年)九月立為皇太子。"
+        }
+      ]
+    },
+    {
+      "year": 300,
+      "id": "p027",
+      "name": "沛國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0046",
+          "person": "司⻢子文",
+          "start": 265,
+          "end": 275,
+          "note": "安平獻王司馬孚第九子。本曹魏樂安亭侯,泰始元年(265年)十二月進封沛王,咸寧元年(275年)八月去世。"
+        },
+        {
+          "id": "w0047",
+          "person": "司馬韜",
+          "start": 276,
+          "end": null,
+          "note": "司馬子文之子。"
+        },
+        {
+          "id": "w0048",
+          "person": "司馬滋",
+          "start": null,
+          "end": 311,
+          "note": "世系不明,永嘉五年(311年)七月被石勒殺害。"
+        }
+      ]
+    },
+    {
+      "year": 300,
+      "id": "p049",
+      "name": "燕國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0192",
+          "person": "司馬機",
+          "start": 265,
+          "end": null,
+          "note": "晉文帝司馬昭第七子。原為曹魏清惠亭侯,泰始元年(265年)十二月封燕王,後來去世,無子。"
+        },
+        {
+          "id": "w0193",
+          "person": "司馬幾",
+          "start": null,
+          "end": 302,
+          "note": "齊武閔王司馬冏之子,出繼司馬機,太安元年(302年)十二月被囚；原摘錄誤作永興元年，據《晉書》惠帝紀校正。"
+        },
+        {
+          "id": "w0264",
+          "person": "慕容皝",
+          "start": 337,
+          "end": 348,
+          "note": "鮮卑慕容廆之子。咸康三年(337年)十一月自立為燕王,七年(341年)晉朝承認其王位,永和四年(348年)九月去世。"
+        },
+        {
+          "id": "w0265",
+          "person": "慕容儁",
+          "start": 349,
+          "end": 352,
+          "note": "慕容皝之子,永和八年(352年)四月自立為燕皇帝。"
+        }
+      ]
+    },
+    {
+      "year": 300,
+      "id": "p053",
+      "name": "代國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0213",
+          "person": "司馬演",
+          "start": 289,
+          "end": null,
+          "note": "晉武帝司馬炎第十一子,太康十年(289年)十一月封代王,後來去世。"
+        },
+        {
+          "id": "w0257",
+          "person": "拓跋猗盧",
+          "start": 315,
+          "end": 316,
+          "note": "拓跋沙漠汗之子。本代公,建興三年(315年)二月晉爵代王,四年(316年)三月去世。"
+        },
+        {
+          "id": "w0258",
+          "person": "拓跋鬱律",
+          "start": 317,
+          "end": 321,
+          "note": "拓跋弗之子。"
+        },
+        {
+          "id": "w0259",
+          "person": "拓跋賀傉",
+          "start": 322,
+          "end": 326,
+          "note": "拓跋猗㐌次子。"
+        },
+        {
+          "id": "w0260",
+          "person": "拓跋紇那",
+          "start": 326,
+          "end": 330,
+          "note": "拓跋猗㐌之子,在位5年被拓跋翳槐奪位。"
+        },
+        {
+          "id": "w0261",
+          "person": "拓跋翳槐",
+          "start": 330,
+          "end": 336,
+          "note": "拓跋鬱律長子,在位7年被殺。"
+        },
+        {
+          "id": "w0262",
+          "person": "拓跋紇那",
+          "start": 336,
+          "end": 336,
+          "note": "拓跋猗㐌之子,復立,在位1年去世。"
+        },
+        {
+          "id": "w0263",
+          "person": "拓跋什翼犍",
+          "start": 337,
+          "end": 375,
+          "note": "拓跋鬱律次子,建國三十九年(375年)十二月,被前秦滅亡。"
+        }
+      ]
+    },
+    {
+      "year": 300,
+      "id": "p066",
+      "name": "西河國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0109",
+          "person": "司馬斌",
+          "start": 277,
+          "end": 278,
+          "note": ""
+        },
+        {
+          "id": "w0110",
+          "person": "司馬隱",
+          "start": 279,
+          "end": null,
+          "note": "司馬斌之子。"
+        },
+        {
+          "id": "w0111",
+          "person": "司馬孴",
+          "start": null,
+          "end": 311,
+          "note": "司馬隱之子,永嘉五年(311年)四月為石勒殺害。"
+        }
+      ]
+    },
+    {
+      "year": 301,
+      "id": "p027",
+      "name": "沛國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0046",
+          "person": "司⻢子文",
+          "start": 265,
+          "end": 275,
+          "note": "安平獻王司馬孚第九子。本曹魏樂安亭侯,泰始元年(265年)十二月進封沛王,咸寧元年(275年)八月去世。"
+        },
+        {
+          "id": "w0047",
+          "person": "司馬韜",
+          "start": 276,
+          "end": null,
+          "note": "司馬子文之子。"
+        },
+        {
+          "id": "w0048",
+          "person": "司馬滋",
+          "start": null,
+          "end": 311,
+          "note": "世系不明,永嘉五年(311年)七月被石勒殺害。"
+        }
+      ]
+    },
+    {
+      "year": 301,
+      "id": "p049",
+      "name": "燕國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0192",
+          "person": "司馬機",
+          "start": 265,
+          "end": null,
+          "note": "晉文帝司馬昭第七子。原為曹魏清惠亭侯,泰始元年(265年)十二月封燕王,後來去世,無子。"
+        },
+        {
+          "id": "w0193",
+          "person": "司馬幾",
+          "start": null,
+          "end": 302,
+          "note": "齊武閔王司馬冏之子,出繼司馬機,太安元年(302年)十二月被囚；原摘錄誤作永興元年，據《晉書》惠帝紀校正。"
+        },
+        {
+          "id": "w0264",
+          "person": "慕容皝",
+          "start": 337,
+          "end": 348,
+          "note": "鮮卑慕容廆之子。咸康三年(337年)十一月自立為燕王,七年(341年)晉朝承認其王位,永和四年(348年)九月去世。"
+        },
+        {
+          "id": "w0265",
+          "person": "慕容儁",
+          "start": 349,
+          "end": 352,
+          "note": "慕容皝之子,永和八年(352年)四月自立為燕皇帝。"
+        }
+      ]
+    },
+    {
+      "year": 301,
+      "id": "p053",
+      "name": "代國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0213",
+          "person": "司馬演",
+          "start": 289,
+          "end": null,
+          "note": "晉武帝司馬炎第十一子,太康十年(289年)十一月封代王,後來去世。"
+        },
+        {
+          "id": "w0257",
+          "person": "拓跋猗盧",
+          "start": 315,
+          "end": 316,
+          "note": "拓跋沙漠汗之子。本代公,建興三年(315年)二月晉爵代王,四年(316年)三月去世。"
+        },
+        {
+          "id": "w0258",
+          "person": "拓跋鬱律",
+          "start": 317,
+          "end": 321,
+          "note": "拓跋弗之子。"
+        },
+        {
+          "id": "w0259",
+          "person": "拓跋賀傉",
+          "start": 322,
+          "end": 326,
+          "note": "拓跋猗㐌次子。"
+        },
+        {
+          "id": "w0260",
+          "person": "拓跋紇那",
+          "start": 326,
+          "end": 330,
+          "note": "拓跋猗㐌之子,在位5年被拓跋翳槐奪位。"
+        },
+        {
+          "id": "w0261",
+          "person": "拓跋翳槐",
+          "start": 330,
+          "end": 336,
+          "note": "拓跋鬱律長子,在位7年被殺。"
+        },
+        {
+          "id": "w0262",
+          "person": "拓跋紇那",
+          "start": 336,
+          "end": 336,
+          "note": "拓跋猗㐌之子,復立,在位1年去世。"
+        },
+        {
+          "id": "w0263",
+          "person": "拓跋什翼犍",
+          "start": 337,
+          "end": 375,
+          "note": "拓跋鬱律次子,建國三十九年(375年)十二月,被前秦滅亡。"
+        }
+      ]
+    },
+    {
+      "year": 301,
+      "id": "p066",
+      "name": "西河國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0109",
+          "person": "司馬斌",
+          "start": 277,
+          "end": 278,
+          "note": ""
+        },
+        {
+          "id": "w0110",
+          "person": "司馬隱",
+          "start": 279,
+          "end": null,
+          "note": "司馬斌之子。"
+        },
+        {
+          "id": "w0111",
+          "person": "司馬孴",
+          "start": null,
+          "end": 311,
+          "note": "司馬隱之子,永嘉五年(311年)四月為石勒殺害。"
+        }
+      ]
+    },
+    {
+      "year": 301,
+      "id": "p163",
+      "name": "襄陽國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0207",
+          "person": "司馬範",
+          "start": 301,
+          "end": 311,
+          "note": "楚隱王司馬瑋之子。永寧元年(301年)九月封襄陽王,永嘉五年(311年)為石勒俘虜後殺害。"
+        },
+        {
+          "id": "w0241",
+          "person": "司馬尚",
+          "start": 300,
+          "end": 301,
+          "note": "晉愍懷太子司馬遹第三子。永康元年(300年)五月封襄陽王,明年五月立為皇太孫。"
+        }
+      ]
+    },
+    {
+      "year": 302,
+      "id": "p027",
+      "name": "沛國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0046",
+          "person": "司⻢子文",
+          "start": 265,
+          "end": 275,
+          "note": "安平獻王司馬孚第九子。本曹魏樂安亭侯,泰始元年(265年)十二月進封沛王,咸寧元年(275年)八月去世。"
+        },
+        {
+          "id": "w0047",
+          "person": "司馬韜",
+          "start": 276,
+          "end": null,
+          "note": "司馬子文之子。"
+        },
+        {
+          "id": "w0048",
+          "person": "司馬滋",
+          "start": null,
+          "end": 311,
+          "note": "世系不明,永嘉五年(311年)七月被石勒殺害。"
+        }
+      ]
+    },
+    {
+      "year": 302,
+      "id": "p053",
+      "name": "代國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0213",
+          "person": "司馬演",
+          "start": 289,
+          "end": null,
+          "note": "晉武帝司馬炎第十一子,太康十年(289年)十一月封代王,後來去世。"
+        },
+        {
+          "id": "w0257",
+          "person": "拓跋猗盧",
+          "start": 315,
+          "end": 316,
+          "note": "拓跋沙漠汗之子。本代公,建興三年(315年)二月晉爵代王,四年(316年)三月去世。"
+        },
+        {
+          "id": "w0258",
+          "person": "拓跋鬱律",
+          "start": 317,
+          "end": 321,
+          "note": "拓跋弗之子。"
+        },
+        {
+          "id": "w0259",
+          "person": "拓跋賀傉",
+          "start": 322,
+          "end": 326,
+          "note": "拓跋猗㐌次子。"
+        },
+        {
+          "id": "w0260",
+          "person": "拓跋紇那",
+          "start": 326,
+          "end": 330,
+          "note": "拓跋猗㐌之子,在位5年被拓跋翳槐奪位。"
+        },
+        {
+          "id": "w0261",
+          "person": "拓跋翳槐",
+          "start": 330,
+          "end": 336,
+          "note": "拓跋鬱律長子,在位7年被殺。"
+        },
+        {
+          "id": "w0262",
+          "person": "拓跋紇那",
+          "start": 336,
+          "end": 336,
+          "note": "拓跋猗㐌之子,復立,在位1年去世。"
+        },
+        {
+          "id": "w0263",
+          "person": "拓跋什翼犍",
+          "start": 337,
+          "end": 375,
+          "note": "拓跋鬱律次子,建國三十九年(375年)十二月,被前秦滅亡。"
+        }
+      ]
+    },
+    {
+      "year": 302,
+      "id": "p066",
+      "name": "西河國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0109",
+          "person": "司馬斌",
+          "start": 277,
+          "end": 278,
+          "note": ""
+        },
+        {
+          "id": "w0110",
+          "person": "司馬隱",
+          "start": 279,
+          "end": null,
+          "note": "司馬斌之子。"
+        },
+        {
+          "id": "w0111",
+          "person": "司馬孴",
+          "start": null,
+          "end": 311,
+          "note": "司馬隱之子,永嘉五年(311年)四月為石勒殺害。"
+        }
+      ]
+    },
+    {
+      "year": 302,
+      "id": "p141",
+      "name": "齊國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0169",
+          "person": "司馬攸",
+          "start": 265,
+          "end": 283,
+          "note": "晉文帝司馬昭第二子,出繼伯父司馬師。原為曹魏安昌侯,泰始元年(265年)十二月封齊王,太康四年(283年)三月去世。"
+        },
+        {
+          "id": "w0170",
+          "person": "司馬冏",
+          "start": 284,
+          "end": 302,
+          "note": "司馬攸之子,永興元年(302年)十二月被殺。"
+        },
+        {
+          "id": "w0171",
+          "person": "司馬照",
+          "start": 302,
+          "end": 302,
+          "note": "東萊王司馬蕤之子,永興元年(302年)封齊王,以後不明。"
+        },
+        {
+          "id": "w0173",
+          "person": "司馬超",
+          "start": 303,
+          "end": 311,
+          "note": ""
+        },
+        {
+          "id": "w0174",
+          "person": "司馬柔之",
+          "start": null,
+          "end": 402,
+          "note": "南頓王司馬宗之孫,太元年間(276-396)紹封齊王,元興元年(402年)二月被桓玄軍殺害。"
+        },
+        {
+          "id": "w0175",
+          "person": "司馬建之",
+          "start": 403,
+          "end": 420,
+          "note": "司馬柔之之子,元熙二年(420年)宋代晉,國除。"
+        }
+      ]
+    },
+    {
+      "year": 302,
+      "id": "p146",
+      "name": "東萊國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0185",
+          "person": "司馬蕤",
+          "start": 283,
+          "end": 301,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "year": 302,
+      "id": "p158",
+      "name": "淮陵國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0144",
+          "person": "司馬漼",
+          "start": 301,
+          "end": null,
+          "note": "琅邪武王司馬伷第四子。原為廣陵公,永寧元年(301年)因廢趙王倫迎晉惠帝之功,進封淮陵王,後來去世。"
+        },
+        {
+          "id": "w0145",
+          "person": "司馬融",
+          "start": null,
+          "end": null,
+          "note": "司馬漼之子,後來去世。無子。"
+        },
+        {
+          "id": "w0146",
+          "person": "司馬蘊",
+          "start": 399,
+          "end": 415,
+          "note": "武陵威王司馬晞之孫,隆安三年(399年)正月封淮陵王,以奉司馬漼之祀,義熙十一年(415年)三月去世。無子。"
+        },
+        {
+          "id": "w0147",
+          "person": "司馬安之",
+          "start": null,
+          "end": 420,
+          "note": "臨川王司馬寶之子,出繼司馬蘊。元熙二年(420年)宋代晉,國除。"
+        }
+      ]
+    },
+    {
+      "year": 303,
+      "id": "p013",
+      "name": "陳留國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0248",
+          "person": "曹奐",
+          "start": 265,
+          "end": 302,
+          "note": "魏燕王曹宇之子。本魏皇帝,泰始元年(265年)十二月廢為陳留王,太安元年(302年)去世。"
+        },
+        {
+          "id": "w0249",
+          "person": "曹奐",
+          "start": null,
+          "end": null,
+          "note": "身份不詳。"
+        },
+        {
+          "id": "w0250",
+          "person": "曹勱",
+          "start": 326,
+          "end": 358,
+          "note": "曹操玄孫,咸和元年(326年)十月立為陳留王,升平二年(358年)十月去世。"
+        },
+        {
+          "id": "w0251",
+          "person": "曹恢",
+          "start": 363,
+          "end": 378,
+          "note": "曹勱世子,興寧元年(363年)十月立為陳留王,太元三年(378年)五月去世。"
+        },
+        {
+          "id": "w0252",
+          "person": "曹靈誕",
+          "start": 383,
+          "end": 408,
+          "note": "曹恢世子,太元八年(383年)十一月立為陳留王,義熙四年(408年)十二月去世。"
+        },
+        {
+          "id": "w0253",
+          "person": "曹虔嗣",
+          "start": null,
+          "end": 420,
+          "note": "曹虔秀之兄,義熙囗年立為陳留王,永初元年(420年)七月去世。"
+        },
+        {
+          "id": "w0254",
+          "person": "曹虔秀",
+          "start": 421,
+          "end": 462,
+          "note": "曹虔嗣之弟,大明六年(462年)十一月去世。"
+        },
+        {
+          "id": "w0255",
+          "person": "曹銑",
+          "start": 463,
+          "end": 473,
+          "note": "曹虔秀世子,元徽元年(473年)八月去世。"
+        },
+        {
+          "id": "w0256",
+          "person": "曹粲",
+          "start": 474,
+          "end": 479,
+          "note": "身份、出生不詳。"
+        }
+      ]
+    },
+    {
+      "year": 303,
+      "id": "p027",
+      "name": "沛國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0046",
+          "person": "司⻢子文",
+          "start": 265,
+          "end": 275,
+          "note": "安平獻王司馬孚第九子。本曹魏樂安亭侯,泰始元年(265年)十二月進封沛王,咸寧元年(275年)八月去世。"
+        },
+        {
+          "id": "w0047",
+          "person": "司馬韜",
+          "start": 276,
+          "end": null,
+          "note": "司馬子文之子。"
+        },
+        {
+          "id": "w0048",
+          "person": "司馬滋",
+          "start": null,
+          "end": 311,
+          "note": "世系不明,永嘉五年(311年)七月被石勒殺害。"
+        }
+      ]
+    },
+    {
+      "year": 303,
+      "id": "p053",
+      "name": "代國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0213",
+          "person": "司馬演",
+          "start": 289,
+          "end": null,
+          "note": "晉武帝司馬炎第十一子,太康十年(289年)十一月封代王,後來去世。"
+        },
+        {
+          "id": "w0257",
+          "person": "拓跋猗盧",
+          "start": 315,
+          "end": 316,
+          "note": "拓跋沙漠汗之子。本代公,建興三年(315年)二月晉爵代王,四年(316年)三月去世。"
+        },
+        {
+          "id": "w0258",
+          "person": "拓跋鬱律",
+          "start": 317,
+          "end": 321,
+          "note": "拓跋弗之子。"
+        },
+        {
+          "id": "w0259",
+          "person": "拓跋賀傉",
+          "start": 322,
+          "end": 326,
+          "note": "拓跋猗㐌次子。"
+        },
+        {
+          "id": "w0260",
+          "person": "拓跋紇那",
+          "start": 326,
+          "end": 330,
+          "note": "拓跋猗㐌之子,在位5年被拓跋翳槐奪位。"
+        },
+        {
+          "id": "w0261",
+          "person": "拓跋翳槐",
+          "start": 330,
+          "end": 336,
+          "note": "拓跋鬱律長子,在位7年被殺。"
+        },
+        {
+          "id": "w0262",
+          "person": "拓跋紇那",
+          "start": 336,
+          "end": 336,
+          "note": "拓跋猗㐌之子,復立,在位1年去世。"
+        },
+        {
+          "id": "w0263",
+          "person": "拓跋什翼犍",
+          "start": 337,
+          "end": 375,
+          "note": "拓跋鬱律次子,建國三十九年(375年)十二月,被前秦滅亡。"
+        }
+      ]
+    },
+    {
+      "year": 303,
+      "id": "p066",
+      "name": "西河國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0109",
+          "person": "司馬斌",
+          "start": 277,
+          "end": 278,
+          "note": ""
+        },
+        {
+          "id": "w0110",
+          "person": "司馬隱",
+          "start": 279,
+          "end": null,
+          "note": "司馬斌之子。"
+        },
+        {
+          "id": "w0111",
+          "person": "司馬孴",
+          "start": null,
+          "end": 311,
+          "note": "司馬隱之子,永嘉五年(311年)四月為石勒殺害。"
+        }
+      ]
+    },
+    {
+      "year": 303,
+      "id": "p146",
+      "name": "東萊國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0185",
+          "person": "司馬蕤",
+          "start": 283,
+          "end": 301,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "year": 303,
+      "id": "p158",
+      "name": "淮陵國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0144",
+          "person": "司馬漼",
+          "start": 301,
+          "end": null,
+          "note": "琅邪武王司馬伷第四子。原為廣陵公,永寧元年(301年)因廢趙王倫迎晉惠帝之功,進封淮陵王,後來去世。"
+        },
+        {
+          "id": "w0145",
+          "person": "司馬融",
+          "start": null,
+          "end": null,
+          "note": "司馬漼之子,後來去世。無子。"
+        },
+        {
+          "id": "w0146",
+          "person": "司馬蘊",
+          "start": 399,
+          "end": 415,
+          "note": "武陵威王司馬晞之孫,隆安三年(399年)正月封淮陵王,以奉司馬漼之祀,義熙十一年(415年)三月去世。無子。"
+        },
+        {
+          "id": "w0147",
+          "person": "司馬安之",
+          "start": null,
+          "end": 420,
+          "note": "臨川王司馬寶之子,出繼司馬蘊。元熙二年(420年)宋代晉,國除。"
+        }
+      ]
+    },
+    {
+      "year": 304,
+      "id": "p013",
+      "name": "陳留國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0248",
+          "person": "曹奐",
+          "start": 265,
+          "end": 302,
+          "note": "魏燕王曹宇之子。本魏皇帝,泰始元年(265年)十二月廢為陳留王,太安元年(302年)去世。"
+        },
+        {
+          "id": "w0249",
+          "person": "曹奐",
+          "start": null,
+          "end": null,
+          "note": "身份不詳。"
+        },
+        {
+          "id": "w0250",
+          "person": "曹勱",
+          "start": 326,
+          "end": 358,
+          "note": "曹操玄孫,咸和元年(326年)十月立為陳留王,升平二年(358年)十月去世。"
+        },
+        {
+          "id": "w0251",
+          "person": "曹恢",
+          "start": 363,
+          "end": 378,
+          "note": "曹勱世子,興寧元年(363年)十月立為陳留王,太元三年(378年)五月去世。"
+        },
+        {
+          "id": "w0252",
+          "person": "曹靈誕",
+          "start": 383,
+          "end": 408,
+          "note": "曹恢世子,太元八年(383年)十一月立為陳留王,義熙四年(408年)十二月去世。"
+        },
+        {
+          "id": "w0253",
+          "person": "曹虔嗣",
+          "start": null,
+          "end": 420,
+          "note": "曹虔秀之兄,義熙囗年立為陳留王,永初元年(420年)七月去世。"
+        },
+        {
+          "id": "w0254",
+          "person": "曹虔秀",
+          "start": 421,
+          "end": 462,
+          "note": "曹虔嗣之弟,大明六年(462年)十一月去世。"
+        },
+        {
+          "id": "w0255",
+          "person": "曹銑",
+          "start": 463,
+          "end": 473,
+          "note": "曹虔秀世子,元徽元年(473年)八月去世。"
+        },
+        {
+          "id": "w0256",
+          "person": "曹粲",
+          "start": 474,
+          "end": 479,
+          "note": "身份、出生不詳。"
+        }
+      ]
+    },
+    {
+      "year": 304,
+      "id": "p027",
+      "name": "沛國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0046",
+          "person": "司⻢子文",
+          "start": 265,
+          "end": 275,
+          "note": "安平獻王司馬孚第九子。本曹魏樂安亭侯,泰始元年(265年)十二月進封沛王,咸寧元年(275年)八月去世。"
+        },
+        {
+          "id": "w0047",
+          "person": "司馬韜",
+          "start": 276,
+          "end": null,
+          "note": "司馬子文之子。"
+        },
+        {
+          "id": "w0048",
+          "person": "司馬滋",
+          "start": null,
+          "end": 311,
+          "note": "世系不明,永嘉五年(311年)七月被石勒殺害。"
+        }
+      ]
+    },
+    {
+      "year": 304,
+      "id": "p066",
+      "name": "西河國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0109",
+          "person": "司馬斌",
+          "start": 277,
+          "end": 278,
+          "note": ""
+        },
+        {
+          "id": "w0110",
+          "person": "司馬隱",
+          "start": 279,
+          "end": null,
+          "note": "司馬斌之子。"
+        },
+        {
+          "id": "w0111",
+          "person": "司馬孴",
+          "start": null,
+          "end": 311,
+          "note": "司馬隱之子,永嘉五年(311年)四月為石勒殺害。"
+        }
+      ]
+    },
+    {
+      "year": 304,
+      "id": "p146",
+      "name": "東萊國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0185",
+          "person": "司馬蕤",
+          "start": 283,
+          "end": 301,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "year": 304,
+      "id": "p158",
+      "name": "淮陵國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0144",
+          "person": "司馬漼",
+          "start": 301,
+          "end": null,
+          "note": "琅邪武王司馬伷第四子。原為廣陵公,永寧元年(301年)因廢趙王倫迎晉惠帝之功,進封淮陵王,後來去世。"
+        },
+        {
+          "id": "w0145",
+          "person": "司馬融",
+          "start": null,
+          "end": null,
+          "note": "司馬漼之子,後來去世。無子。"
+        },
+        {
+          "id": "w0146",
+          "person": "司馬蘊",
+          "start": 399,
+          "end": 415,
+          "note": "武陵威王司馬晞之孫,隆安三年(399年)正月封淮陵王,以奉司馬漼之祀,義熙十一年(415年)三月去世。無子。"
+        },
+        {
+          "id": "w0147",
+          "person": "司馬安之",
+          "start": null,
+          "end": 420,
+          "note": "臨川王司馬寶之子,出繼司馬蘊。元熙二年(420年)宋代晉,國除。"
+        }
+      ]
+    },
+    {
+      "year": 305,
+      "id": "p013",
+      "name": "陳留國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0248",
+          "person": "曹奐",
+          "start": 265,
+          "end": 302,
+          "note": "魏燕王曹宇之子。本魏皇帝,泰始元年(265年)十二月廢為陳留王,太安元年(302年)去世。"
+        },
+        {
+          "id": "w0249",
+          "person": "曹奐",
+          "start": null,
+          "end": null,
+          "note": "身份不詳。"
+        },
+        {
+          "id": "w0250",
+          "person": "曹勱",
+          "start": 326,
+          "end": 358,
+          "note": "曹操玄孫,咸和元年(326年)十月立為陳留王,升平二年(358年)十月去世。"
+        },
+        {
+          "id": "w0251",
+          "person": "曹恢",
+          "start": 363,
+          "end": 378,
+          "note": "曹勱世子,興寧元年(363年)十月立為陳留王,太元三年(378年)五月去世。"
+        },
+        {
+          "id": "w0252",
+          "person": "曹靈誕",
+          "start": 383,
+          "end": 408,
+          "note": "曹恢世子,太元八年(383年)十一月立為陳留王,義熙四年(408年)十二月去世。"
+        },
+        {
+          "id": "w0253",
+          "person": "曹虔嗣",
+          "start": null,
+          "end": 420,
+          "note": "曹虔秀之兄,義熙囗年立為陳留王,永初元年(420年)七月去世。"
+        },
+        {
+          "id": "w0254",
+          "person": "曹虔秀",
+          "start": 421,
+          "end": 462,
+          "note": "曹虔嗣之弟,大明六年(462年)十一月去世。"
+        },
+        {
+          "id": "w0255",
+          "person": "曹銑",
+          "start": 463,
+          "end": 473,
+          "note": "曹虔秀世子,元徽元年(473年)八月去世。"
+        },
+        {
+          "id": "w0256",
+          "person": "曹粲",
+          "start": 474,
+          "end": 479,
+          "note": "身份、出生不詳。"
+        }
+      ]
+    },
+    {
+      "year": 305,
+      "id": "p027",
+      "name": "沛國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0046",
+          "person": "司⻢子文",
+          "start": 265,
+          "end": 275,
+          "note": "安平獻王司馬孚第九子。本曹魏樂安亭侯,泰始元年(265年)十二月進封沛王,咸寧元年(275年)八月去世。"
+        },
+        {
+          "id": "w0047",
+          "person": "司馬韜",
+          "start": 276,
+          "end": null,
+          "note": "司馬子文之子。"
+        },
+        {
+          "id": "w0048",
+          "person": "司馬滋",
+          "start": null,
+          "end": 311,
+          "note": "世系不明,永嘉五年(311年)七月被石勒殺害。"
+        }
+      ]
+    },
+    {
+      "year": 305,
+      "id": "p066",
+      "name": "西河國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0109",
+          "person": "司馬斌",
+          "start": 277,
+          "end": 278,
+          "note": ""
+        },
+        {
+          "id": "w0110",
+          "person": "司馬隱",
+          "start": 279,
+          "end": null,
+          "note": "司馬斌之子。"
+        },
+        {
+          "id": "w0111",
+          "person": "司馬孴",
+          "start": null,
+          "end": 311,
+          "note": "司馬隱之子,永嘉五年(311年)四月為石勒殺害。"
+        }
+      ]
+    },
+    {
+      "year": 305,
+      "id": "p146",
+      "name": "東萊國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0185",
+          "person": "司馬蕤",
+          "start": 283,
+          "end": 301,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "year": 305,
+      "id": "p158",
+      "name": "淮陵國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0144",
+          "person": "司馬漼",
+          "start": 301,
+          "end": null,
+          "note": "琅邪武王司馬伷第四子。原為廣陵公,永寧元年(301年)因廢趙王倫迎晉惠帝之功,進封淮陵王,後來去世。"
+        },
+        {
+          "id": "w0145",
+          "person": "司馬融",
+          "start": null,
+          "end": null,
+          "note": "司馬漼之子,後來去世。無子。"
+        },
+        {
+          "id": "w0146",
+          "person": "司馬蘊",
+          "start": 399,
+          "end": 415,
+          "note": "武陵威王司馬晞之孫,隆安三年(399年)正月封淮陵王,以奉司馬漼之祀,義熙十一年(415年)三月去世。無子。"
+        },
+        {
+          "id": "w0147",
+          "person": "司馬安之",
+          "start": null,
+          "end": 420,
+          "note": "臨川王司馬寶之子,出繼司馬蘊。元熙二年(420年)宋代晉,國除。"
+        }
+      ]
+    },
+    {
+      "year": 305,
+      "id": "p186",
+      "name": "成都國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0227",
+          "person": "司馬穎",
+          "start": 289,
+          "end": 304,
+          "note": "晉武帝司馬炎第十九子。太康十年(289年)十一月封成都王,以廣漢、犍為、汶山三郡為成都國的支郡,⻝邑十萬戶。永安元年(304年)改分南郡之華容縣、州陵縣、监利縣及新设豐都縣共四縣设成都郡為封國;三月立為皇太弟。"
+        },
+        {
+          "id": "w0228",
+          "person": "司馬遵",
+          "start": 307,
+          "end": 311,
+          "note": "東萊王司馬蕤之子,永嘉初(307?)出繼司馬穎,改封華容縣王,後復封成都王,割南郡四縣為成都國。後沒於賊。建興年間(313-316)國除"
+        }
+      ]
+    },
+    {
+      "year": 306,
+      "id": "p013",
+      "name": "陳留國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0248",
+          "person": "曹奐",
+          "start": 265,
+          "end": 302,
+          "note": "魏燕王曹宇之子。本魏皇帝,泰始元年(265年)十二月廢為陳留王,太安元年(302年)去世。"
+        },
+        {
+          "id": "w0249",
+          "person": "曹奐",
+          "start": null,
+          "end": null,
+          "note": "身份不詳。"
+        },
+        {
+          "id": "w0250",
+          "person": "曹勱",
+          "start": 326,
+          "end": 358,
+          "note": "曹操玄孫,咸和元年(326年)十月立為陳留王,升平二年(358年)十月去世。"
+        },
+        {
+          "id": "w0251",
+          "person": "曹恢",
+          "start": 363,
+          "end": 378,
+          "note": "曹勱世子,興寧元年(363年)十月立為陳留王,太元三年(378年)五月去世。"
+        },
+        {
+          "id": "w0252",
+          "person": "曹靈誕",
+          "start": 383,
+          "end": 408,
+          "note": "曹恢世子,太元八年(383年)十一月立為陳留王,義熙四年(408年)十二月去世。"
+        },
+        {
+          "id": "w0253",
+          "person": "曹虔嗣",
+          "start": null,
+          "end": 420,
+          "note": "曹虔秀之兄,義熙囗年立為陳留王,永初元年(420年)七月去世。"
+        },
+        {
+          "id": "w0254",
+          "person": "曹虔秀",
+          "start": 421,
+          "end": 462,
+          "note": "曹虔嗣之弟,大明六年(462年)十一月去世。"
+        },
+        {
+          "id": "w0255",
+          "person": "曹銑",
+          "start": 463,
+          "end": 473,
+          "note": "曹虔秀世子,元徽元年(473年)八月去世。"
+        },
+        {
+          "id": "w0256",
+          "person": "曹粲",
+          "start": 474,
+          "end": 479,
+          "note": "身份、出生不詳。"
+        }
+      ]
+    },
+    {
+      "year": 306,
+      "id": "p027",
+      "name": "沛國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0046",
+          "person": "司⻢子文",
+          "start": 265,
+          "end": 275,
+          "note": "安平獻王司馬孚第九子。本曹魏樂安亭侯,泰始元年(265年)十二月進封沛王,咸寧元年(275年)八月去世。"
+        },
+        {
+          "id": "w0047",
+          "person": "司馬韜",
+          "start": 276,
+          "end": null,
+          "note": "司馬子文之子。"
+        },
+        {
+          "id": "w0048",
+          "person": "司馬滋",
+          "start": null,
+          "end": 311,
+          "note": "世系不明,永嘉五年(311年)七月被石勒殺害。"
+        }
+      ]
+    },
+    {
+      "year": 306,
+      "id": "p066",
+      "name": "西河國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0109",
+          "person": "司馬斌",
+          "start": 277,
+          "end": 278,
+          "note": ""
+        },
+        {
+          "id": "w0110",
+          "person": "司馬隱",
+          "start": 279,
+          "end": null,
+          "note": "司馬斌之子。"
+        },
+        {
+          "id": "w0111",
+          "person": "司馬孴",
+          "start": null,
+          "end": 311,
+          "note": "司馬隱之子,永嘉五年(311年)四月為石勒殺害。"
+        }
+      ]
+    },
+    {
+      "year": 306,
+      "id": "p146",
+      "name": "東萊國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0185",
+          "person": "司馬蕤",
+          "start": 283,
+          "end": 301,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "year": 306,
+      "id": "p158",
+      "name": "淮陵國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0144",
+          "person": "司馬漼",
+          "start": 301,
+          "end": null,
+          "note": "琅邪武王司馬伷第四子。原為廣陵公,永寧元年(301年)因廢趙王倫迎晉惠帝之功,進封淮陵王,後來去世。"
+        },
+        {
+          "id": "w0145",
+          "person": "司馬融",
+          "start": null,
+          "end": null,
+          "note": "司馬漼之子,後來去世。無子。"
+        },
+        {
+          "id": "w0146",
+          "person": "司馬蘊",
+          "start": 399,
+          "end": 415,
+          "note": "武陵威王司馬晞之孫,隆安三年(399年)正月封淮陵王,以奉司馬漼之祀,義熙十一年(415年)三月去世。無子。"
+        },
+        {
+          "id": "w0147",
+          "person": "司馬安之",
+          "start": null,
+          "end": 420,
+          "note": "臨川王司馬寶之子,出繼司馬蘊。元熙二年(420年)宋代晉,國除。"
+        }
+      ]
+    },
+    {
+      "year": 306,
+      "id": "p186",
+      "name": "成都國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0227",
+          "person": "司馬穎",
+          "start": 289,
+          "end": 304,
+          "note": "晉武帝司馬炎第十九子。太康十年(289年)十一月封成都王,以廣漢、犍為、汶山三郡為成都國的支郡,⻝邑十萬戶。永安元年(304年)改分南郡之華容縣、州陵縣、监利縣及新设豐都縣共四縣设成都郡為封國;三月立為皇太弟。"
+        },
+        {
+          "id": "w0228",
+          "person": "司馬遵",
+          "start": 307,
+          "end": 311,
+          "note": "東萊王司馬蕤之子,永嘉初(307?)出繼司馬穎,改封華容縣王,後復封成都王,割南郡四縣為成都國。後沒於賊。建興年間(313-316)國除"
+        }
+      ]
+    },
+    {
+      "year": 307,
+      "id": "p013",
+      "name": "陳留國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0248",
+          "person": "曹奐",
+          "start": 265,
+          "end": 302,
+          "note": "魏燕王曹宇之子。本魏皇帝,泰始元年(265年)十二月廢為陳留王,太安元年(302年)去世。"
+        },
+        {
+          "id": "w0249",
+          "person": "曹奐",
+          "start": null,
+          "end": null,
+          "note": "身份不詳。"
+        },
+        {
+          "id": "w0250",
+          "person": "曹勱",
+          "start": 326,
+          "end": 358,
+          "note": "曹操玄孫,咸和元年(326年)十月立為陳留王,升平二年(358年)十月去世。"
+        },
+        {
+          "id": "w0251",
+          "person": "曹恢",
+          "start": 363,
+          "end": 378,
+          "note": "曹勱世子,興寧元年(363年)十月立為陳留王,太元三年(378年)五月去世。"
+        },
+        {
+          "id": "w0252",
+          "person": "曹靈誕",
+          "start": 383,
+          "end": 408,
+          "note": "曹恢世子,太元八年(383年)十一月立為陳留王,義熙四年(408年)十二月去世。"
+        },
+        {
+          "id": "w0253",
+          "person": "曹虔嗣",
+          "start": null,
+          "end": 420,
+          "note": "曹虔秀之兄,義熙囗年立為陳留王,永初元年(420年)七月去世。"
+        },
+        {
+          "id": "w0254",
+          "person": "曹虔秀",
+          "start": 421,
+          "end": 462,
+          "note": "曹虔嗣之弟,大明六年(462年)十一月去世。"
+        },
+        {
+          "id": "w0255",
+          "person": "曹銑",
+          "start": 463,
+          "end": 473,
+          "note": "曹虔秀世子,元徽元年(473年)八月去世。"
+        },
+        {
+          "id": "w0256",
+          "person": "曹粲",
+          "start": 474,
+          "end": 479,
+          "note": "身份、出生不詳。"
+        }
+      ]
+    },
+    {
+      "year": 307,
+      "id": "p246",
+      "name": "新蔡國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0073",
+          "person": "司馬騰",
+          "start": 307,
+          "end": 307,
+          "note": ""
+        },
+        {
+          "id": "w0074",
+          "person": "司馬確",
+          "start": 308,
+          "end": 311,
+          "note": "司馬騰第四子,永嘉五年(311年)在南頓被石勒殺害。"
+        },
+        {
+          "id": "w0075",
+          "person": "司馬滔",
+          "start": null,
+          "end": 314,
+          "note": "章武王司馬混之子,出繼司馬確,建興二年(314年)還本宗為章武王。"
+        },
+        {
+          "id": "w0076",
+          "person": "司馬弼",
+          "start": 317,
+          "end": 318,
+          "note": "汝南威王司馬祐之子,建武元年(317年)十一月出繼司馬確,襲封新蔡王,太興元年(318年)十一月去世。"
+        },
+        {
+          "id": "w0077",
+          "person": "司馬邈",
+          "start": 333,
+          "end": 366,
+          "note": "汝南威王司馬祐之子、司馬弼之弟,咸和八年(333年)四月立為新蔡王,太和元年(366年)三月去世。"
+        },
+        {
+          "id": "w0078",
+          "person": "司馬晃",
+          "start": 367,
+          "end": 371,
+          "note": "司馬邈之子,咸安元年(317年)十一月被廢,流放衡陽。"
+        },
+        {
+          "id": "w0079",
+          "person": "司馬崇",
+          "start": 384,
+          "end": 402,
+          "note": "司馬邈之子、司馬晃之弟,太元九年(384年)十月封新蔡王,元興元年((402年)七月被殺。"
+        },
+        {
+          "id": "w0080",
+          "person": "司馬惠",
+          "start": 403,
+          "end": 420,
+          "note": "司馬崇之子,元熙二年(420年)宋代晉,國除。"
+        },
+        {
+          "id": "w0216",
+          "person": "司馬籥",
+          "start": null,
+          "end": 308,
+          "note": "晉武帝司馬炎第十三子清河康王司馬遐第二子,晉惠帝末年封為新蔡王,永嘉二年(308年)清河王司馬覃被殺後,紹封清河王。"
+        }
+      ]
+    },
+    {
+      "year": 307,
+      "id": "p027",
+      "name": "沛國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0046",
+          "person": "司⻢子文",
+          "start": 265,
+          "end": 275,
+          "note": "安平獻王司馬孚第九子。本曹魏樂安亭侯,泰始元年(265年)十二月進封沛王,咸寧元年(275年)八月去世。"
+        },
+        {
+          "id": "w0047",
+          "person": "司馬韜",
+          "start": 276,
+          "end": null,
+          "note": "司馬子文之子。"
+        },
+        {
+          "id": "w0048",
+          "person": "司馬滋",
+          "start": null,
+          "end": 311,
+          "note": "世系不明,永嘉五年(311年)七月被石勒殺害。"
+        }
+      ]
+    },
+    {
+      "year": 307,
+      "id": "p186",
+      "name": "成都國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0227",
+          "person": "司馬穎",
+          "start": 289,
+          "end": 304,
+          "note": "晉武帝司馬炎第十九子。太康十年(289年)十一月封成都王,以廣漢、犍為、汶山三郡為成都國的支郡,⻝邑十萬戶。永安元年(304年)改分南郡之華容縣、州陵縣、监利縣及新设豐都縣共四縣设成都郡為封國;三月立為皇太弟。"
+        },
+        {
+          "id": "w0228",
+          "person": "司馬遵",
+          "start": 307,
+          "end": 311,
+          "note": "東萊王司馬蕤之子,永嘉初(307?)出繼司馬穎,改封華容縣王,後復封成都王,割南郡四縣為成都國。後沒於賊。建興年間(313-316)國除"
+        }
+      ]
+    },
+    {
+      "year": 308,
+      "id": "p013",
+      "name": "陳留國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0248",
+          "person": "曹奐",
+          "start": 265,
+          "end": 302,
+          "note": "魏燕王曹宇之子。本魏皇帝,泰始元年(265年)十二月廢為陳留王,太安元年(302年)去世。"
+        },
+        {
+          "id": "w0249",
+          "person": "曹奐",
+          "start": null,
+          "end": null,
+          "note": "身份不詳。"
+        },
+        {
+          "id": "w0250",
+          "person": "曹勱",
+          "start": 326,
+          "end": 358,
+          "note": "曹操玄孫,咸和元年(326年)十月立為陳留王,升平二年(358年)十月去世。"
+        },
+        {
+          "id": "w0251",
+          "person": "曹恢",
+          "start": 363,
+          "end": 378,
+          "note": "曹勱世子,興寧元年(363年)十月立為陳留王,太元三年(378年)五月去世。"
+        },
+        {
+          "id": "w0252",
+          "person": "曹靈誕",
+          "start": 383,
+          "end": 408,
+          "note": "曹恢世子,太元八年(383年)十一月立為陳留王,義熙四年(408年)十二月去世。"
+        },
+        {
+          "id": "w0253",
+          "person": "曹虔嗣",
+          "start": null,
+          "end": 420,
+          "note": "曹虔秀之兄,義熙囗年立為陳留王,永初元年(420年)七月去世。"
+        },
+        {
+          "id": "w0254",
+          "person": "曹虔秀",
+          "start": 421,
+          "end": 462,
+          "note": "曹虔嗣之弟,大明六年(462年)十一月去世。"
+        },
+        {
+          "id": "w0255",
+          "person": "曹銑",
+          "start": 463,
+          "end": 473,
+          "note": "曹虔秀世子,元徽元年(473年)八月去世。"
+        },
+        {
+          "id": "w0256",
+          "person": "曹粲",
+          "start": 474,
+          "end": 479,
+          "note": "身份、出生不詳。"
+        }
+      ]
+    },
+    {
+      "year": 308,
+      "id": "p246",
+      "name": "新蔡國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0073",
+          "person": "司馬騰",
+          "start": 307,
+          "end": 307,
+          "note": ""
+        },
+        {
+          "id": "w0074",
+          "person": "司馬確",
+          "start": 308,
+          "end": 311,
+          "note": "司馬騰第四子,永嘉五年(311年)在南頓被石勒殺害。"
+        },
+        {
+          "id": "w0075",
+          "person": "司馬滔",
+          "start": null,
+          "end": 314,
+          "note": "章武王司馬混之子,出繼司馬確,建興二年(314年)還本宗為章武王。"
+        },
+        {
+          "id": "w0076",
+          "person": "司馬弼",
+          "start": 317,
+          "end": 318,
+          "note": "汝南威王司馬祐之子,建武元年(317年)十一月出繼司馬確,襲封新蔡王,太興元年(318年)十一月去世。"
+        },
+        {
+          "id": "w0077",
+          "person": "司馬邈",
+          "start": 333,
+          "end": 366,
+          "note": "汝南威王司馬祐之子、司馬弼之弟,咸和八年(333年)四月立為新蔡王,太和元年(366年)三月去世。"
+        },
+        {
+          "id": "w0078",
+          "person": "司馬晃",
+          "start": 367,
+          "end": 371,
+          "note": "司馬邈之子,咸安元年(317年)十一月被廢,流放衡陽。"
+        },
+        {
+          "id": "w0079",
+          "person": "司馬崇",
+          "start": 384,
+          "end": 402,
+          "note": "司馬邈之子、司馬晃之弟,太元九年(384年)十月封新蔡王,元興元年((402年)七月被殺。"
+        },
+        {
+          "id": "w0080",
+          "person": "司馬惠",
+          "start": 403,
+          "end": 420,
+          "note": "司馬崇之子,元熙二年(420年)宋代晉,國除。"
+        },
+        {
+          "id": "w0216",
+          "person": "司馬籥",
+          "start": null,
+          "end": 308,
+          "note": "晉武帝司馬炎第十三子清河康王司馬遐第二子,晉惠帝末年封為新蔡王,永嘉二年(308年)清河王司馬覃被殺後,紹封清河王。"
+        }
+      ]
+    },
+    {
+      "year": 308,
+      "id": "p027",
+      "name": "沛國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0046",
+          "person": "司⻢子文",
+          "start": 265,
+          "end": 275,
+          "note": "安平獻王司馬孚第九子。本曹魏樂安亭侯,泰始元年(265年)十二月進封沛王,咸寧元年(275年)八月去世。"
+        },
+        {
+          "id": "w0047",
+          "person": "司馬韜",
+          "start": 276,
+          "end": null,
+          "note": "司馬子文之子。"
+        },
+        {
+          "id": "w0048",
+          "person": "司馬滋",
+          "start": null,
+          "end": 311,
+          "note": "世系不明,永嘉五年(311年)七月被石勒殺害。"
+        }
+      ]
+    },
+    {
+      "year": 308,
+      "id": "p186",
+      "name": "成都國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0227",
+          "person": "司馬穎",
+          "start": 289,
+          "end": 304,
+          "note": "晉武帝司馬炎第十九子。太康十年(289年)十一月封成都王,以廣漢、犍為、汶山三郡為成都國的支郡,⻝邑十萬戶。永安元年(304年)改分南郡之華容縣、州陵縣、监利縣及新设豐都縣共四縣设成都郡為封國;三月立為皇太弟。"
+        },
+        {
+          "id": "w0228",
+          "person": "司馬遵",
+          "start": 307,
+          "end": 311,
+          "note": "東萊王司馬蕤之子,永嘉初(307?)出繼司馬穎,改封華容縣王,後復封成都王,割南郡四縣為成都國。後沒於賊。建興年間(313-316)國除"
+        }
+      ]
+    },
+    {
+      "year": 309,
+      "id": "p013",
+      "name": "陳留國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0248",
+          "person": "曹奐",
+          "start": 265,
+          "end": 302,
+          "note": "魏燕王曹宇之子。本魏皇帝,泰始元年(265年)十二月廢為陳留王,太安元年(302年)去世。"
+        },
+        {
+          "id": "w0249",
+          "person": "曹奐",
+          "start": null,
+          "end": null,
+          "note": "身份不詳。"
+        },
+        {
+          "id": "w0250",
+          "person": "曹勱",
+          "start": 326,
+          "end": 358,
+          "note": "曹操玄孫,咸和元年(326年)十月立為陳留王,升平二年(358年)十月去世。"
+        },
+        {
+          "id": "w0251",
+          "person": "曹恢",
+          "start": 363,
+          "end": 378,
+          "note": "曹勱世子,興寧元年(363年)十月立為陳留王,太元三年(378年)五月去世。"
+        },
+        {
+          "id": "w0252",
+          "person": "曹靈誕",
+          "start": 383,
+          "end": 408,
+          "note": "曹恢世子,太元八年(383年)十一月立為陳留王,義熙四年(408年)十二月去世。"
+        },
+        {
+          "id": "w0253",
+          "person": "曹虔嗣",
+          "start": null,
+          "end": 420,
+          "note": "曹虔秀之兄,義熙囗年立為陳留王,永初元年(420年)七月去世。"
+        },
+        {
+          "id": "w0254",
+          "person": "曹虔秀",
+          "start": 421,
+          "end": 462,
+          "note": "曹虔嗣之弟,大明六年(462年)十一月去世。"
+        },
+        {
+          "id": "w0255",
+          "person": "曹銑",
+          "start": 463,
+          "end": 473,
+          "note": "曹虔秀世子,元徽元年(473年)八月去世。"
+        },
+        {
+          "id": "w0256",
+          "person": "曹粲",
+          "start": 474,
+          "end": 479,
+          "note": "身份、出生不詳。"
+        }
+      ]
+    },
+    {
+      "year": 309,
+      "id": "p027",
+      "name": "沛國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0046",
+          "person": "司⻢子文",
+          "start": 265,
+          "end": 275,
+          "note": "安平獻王司馬孚第九子。本曹魏樂安亭侯,泰始元年(265年)十二月進封沛王,咸寧元年(275年)八月去世。"
+        },
+        {
+          "id": "w0047",
+          "person": "司馬韜",
+          "start": 276,
+          "end": null,
+          "note": "司馬子文之子。"
+        },
+        {
+          "id": "w0048",
+          "person": "司馬滋",
+          "start": null,
+          "end": 311,
+          "note": "世系不明,永嘉五年(311年)七月被石勒殺害。"
+        }
+      ]
+    },
+    {
+      "year": 309,
+      "id": "p186",
+      "name": "成都國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0227",
+          "person": "司馬穎",
+          "start": 289,
+          "end": 304,
+          "note": "晉武帝司馬炎第十九子。太康十年(289年)十一月封成都王,以廣漢、犍為、汶山三郡為成都國的支郡,⻝邑十萬戶。永安元年(304年)改分南郡之華容縣、州陵縣、监利縣及新设豐都縣共四縣设成都郡為封國;三月立為皇太弟。"
+        },
+        {
+          "id": "w0228",
+          "person": "司馬遵",
+          "start": 307,
+          "end": 311,
+          "note": "東萊王司馬蕤之子,永嘉初(307?)出繼司馬穎,改封華容縣王,後復封成都王,割南郡四縣為成都國。後沒於賊。建興年間(313-316)國除"
+        }
+      ]
+    },
+    {
+      "year": 310,
+      "id": "p013",
+      "name": "陳留國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0248",
+          "person": "曹奐",
+          "start": 265,
+          "end": 302,
+          "note": "魏燕王曹宇之子。本魏皇帝,泰始元年(265年)十二月廢為陳留王,太安元年(302年)去世。"
+        },
+        {
+          "id": "w0249",
+          "person": "曹奐",
+          "start": null,
+          "end": null,
+          "note": "身份不詳。"
+        },
+        {
+          "id": "w0250",
+          "person": "曹勱",
+          "start": 326,
+          "end": 358,
+          "note": "曹操玄孫,咸和元年(326年)十月立為陳留王,升平二年(358年)十月去世。"
+        },
+        {
+          "id": "w0251",
+          "person": "曹恢",
+          "start": 363,
+          "end": 378,
+          "note": "曹勱世子,興寧元年(363年)十月立為陳留王,太元三年(378年)五月去世。"
+        },
+        {
+          "id": "w0252",
+          "person": "曹靈誕",
+          "start": 383,
+          "end": 408,
+          "note": "曹恢世子,太元八年(383年)十一月立為陳留王,義熙四年(408年)十二月去世。"
+        },
+        {
+          "id": "w0253",
+          "person": "曹虔嗣",
+          "start": null,
+          "end": 420,
+          "note": "曹虔秀之兄,義熙囗年立為陳留王,永初元年(420年)七月去世。"
+        },
+        {
+          "id": "w0254",
+          "person": "曹虔秀",
+          "start": 421,
+          "end": 462,
+          "note": "曹虔嗣之弟,大明六年(462年)十一月去世。"
+        },
+        {
+          "id": "w0255",
+          "person": "曹銑",
+          "start": 463,
+          "end": 473,
+          "note": "曹虔秀世子,元徽元年(473年)八月去世。"
+        },
+        {
+          "id": "w0256",
+          "person": "曹粲",
+          "start": 474,
+          "end": 479,
+          "note": "身份、出生不詳。"
+        }
+      ]
+    },
+    {
+      "year": 310,
+      "id": "p027",
+      "name": "沛國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0046",
+          "person": "司⻢子文",
+          "start": 265,
+          "end": 275,
+          "note": "安平獻王司馬孚第九子。本曹魏樂安亭侯,泰始元年(265年)十二月進封沛王,咸寧元年(275年)八月去世。"
+        },
+        {
+          "id": "w0047",
+          "person": "司馬韜",
+          "start": 276,
+          "end": null,
+          "note": "司馬子文之子。"
+        },
+        {
+          "id": "w0048",
+          "person": "司馬滋",
+          "start": null,
+          "end": 311,
+          "note": "世系不明,永嘉五年(311年)七月被石勒殺害。"
+        }
+      ]
+    },
+    {
+      "year": 310,
+      "id": "p186",
+      "name": "成都國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0227",
+          "person": "司馬穎",
+          "start": 289,
+          "end": 304,
+          "note": "晉武帝司馬炎第十九子。太康十年(289年)十一月封成都王,以廣漢、犍為、汶山三郡為成都國的支郡,⻝邑十萬戶。永安元年(304年)改分南郡之華容縣、州陵縣、监利縣及新设豐都縣共四縣设成都郡為封國;三月立為皇太弟。"
+        },
+        {
+          "id": "w0228",
+          "person": "司馬遵",
+          "start": 307,
+          "end": 311,
+          "note": "東萊王司馬蕤之子,永嘉初(307?)出繼司馬穎,改封華容縣王,後復封成都王,割南郡四縣為成都國。後沒於賊。建興年間(313-316)國除"
+        }
+      ]
+    },
+    {
+      "year": 311,
+      "id": "p013",
+      "name": "陳留國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0248",
+          "person": "曹奐",
+          "start": 265,
+          "end": 302,
+          "note": "魏燕王曹宇之子。本魏皇帝,泰始元年(265年)十二月廢為陳留王,太安元年(302年)去世。"
+        },
+        {
+          "id": "w0249",
+          "person": "曹奐",
+          "start": null,
+          "end": null,
+          "note": "身份不詳。"
+        },
+        {
+          "id": "w0250",
+          "person": "曹勱",
+          "start": 326,
+          "end": 358,
+          "note": "曹操玄孫,咸和元年(326年)十月立為陳留王,升平二年(358年)十月去世。"
+        },
+        {
+          "id": "w0251",
+          "person": "曹恢",
+          "start": 363,
+          "end": 378,
+          "note": "曹勱世子,興寧元年(363年)十月立為陳留王,太元三年(378年)五月去世。"
+        },
+        {
+          "id": "w0252",
+          "person": "曹靈誕",
+          "start": 383,
+          "end": 408,
+          "note": "曹恢世子,太元八年(383年)十一月立為陳留王,義熙四年(408年)十二月去世。"
+        },
+        {
+          "id": "w0253",
+          "person": "曹虔嗣",
+          "start": null,
+          "end": 420,
+          "note": "曹虔秀之兄,義熙囗年立為陳留王,永初元年(420年)七月去世。"
+        },
+        {
+          "id": "w0254",
+          "person": "曹虔秀",
+          "start": 421,
+          "end": 462,
+          "note": "曹虔嗣之弟,大明六年(462年)十一月去世。"
+        },
+        {
+          "id": "w0255",
+          "person": "曹銑",
+          "start": 463,
+          "end": 473,
+          "note": "曹虔秀世子,元徽元年(473年)八月去世。"
+        },
+        {
+          "id": "w0256",
+          "person": "曹粲",
+          "start": 474,
+          "end": 479,
+          "note": "身份、出生不詳。"
+        }
+      ]
+    },
+    {
+      "year": 311,
+      "id": "p148",
+      "name": "高密國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0060",
+          "person": "司馬泰",
+          "start": 296,
+          "end": 299,
+          "note": ""
+        },
+        {
+          "id": "w0061",
+          "person": "司馬略",
+          "start": 300,
+          "end": 309,
+          "note": "司馬泰第三子,永嘉三年(309年)三月去世。"
+        },
+        {
+          "id": "w0062",
+          "person": "司馬據",
+          "start": 310,
+          "end": null,
+          "note": "司馬略之子,後來去世。"
+        },
+        {
+          "id": "w0063",
+          "person": "司馬紘",
+          "start": 317,
+          "end": 329,
+          "note": "彭城康王司馬釋之子,建武元年(317年)出繼司馬據,襲封高密王。咸和四年(329年)三月歸本宗,襲封彭城王。"
+        },
+        {
+          "id": "w0064",
+          "person": "司馬俊",
+          "start": 330,
+          "end": 371,
+          "note": "彭城王司馬紘之子,咸和五年(330年)九月襲封高密王,太和六年(371年)十月去世。"
+        },
+        {
+          "id": "w0065",
+          "person": "司馬純之",
+          "start": 372,
+          "end": 412,
+          "note": "司馬俊之子,義熙八年(412年)八月去世。"
+        },
+        {
+          "id": "w0066",
+          "person": "司馬恢之",
+          "start": 413,
+          "end": 420,
+          "note": "司馬純之之子,元熙二年(420年)宋代晉,國除。"
+        }
+      ]
+    },
+    {
+      "year": 311,
+      "id": "p186",
+      "name": "成都國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0227",
+          "person": "司馬穎",
+          "start": 289,
+          "end": 304,
+          "note": "晉武帝司馬炎第十九子。太康十年(289年)十一月封成都王,以廣漢、犍為、汶山三郡為成都國的支郡,⻝邑十萬戶。永安元年(304年)改分南郡之華容縣、州陵縣、监利縣及新设豐都縣共四縣设成都郡為封國;三月立為皇太弟。"
+        },
+        {
+          "id": "w0228",
+          "person": "司馬遵",
+          "start": 307,
+          "end": 311,
+          "note": "東萊王司馬蕤之子,永嘉初(307?)出繼司馬穎,改封華容縣王,後復封成都王,割南郡四縣為成都國。後沒於賊。建興年間(313-316)國除"
+        }
+      ]
+    },
+    {
+      "year": 312,
+      "id": "p013",
+      "name": "陳留國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0248",
+          "person": "曹奐",
+          "start": 265,
+          "end": 302,
+          "note": "魏燕王曹宇之子。本魏皇帝,泰始元年(265年)十二月廢為陳留王,太安元年(302年)去世。"
+        },
+        {
+          "id": "w0249",
+          "person": "曹奐",
+          "start": null,
+          "end": null,
+          "note": "身份不詳。"
+        },
+        {
+          "id": "w0250",
+          "person": "曹勱",
+          "start": 326,
+          "end": 358,
+          "note": "曹操玄孫,咸和元年(326年)十月立為陳留王,升平二年(358年)十月去世。"
+        },
+        {
+          "id": "w0251",
+          "person": "曹恢",
+          "start": 363,
+          "end": 378,
+          "note": "曹勱世子,興寧元年(363年)十月立為陳留王,太元三年(378年)五月去世。"
+        },
+        {
+          "id": "w0252",
+          "person": "曹靈誕",
+          "start": 383,
+          "end": 408,
+          "note": "曹恢世子,太元八年(383年)十一月立為陳留王,義熙四年(408年)十二月去世。"
+        },
+        {
+          "id": "w0253",
+          "person": "曹虔嗣",
+          "start": null,
+          "end": 420,
+          "note": "曹虔秀之兄,義熙囗年立為陳留王,永初元年(420年)七月去世。"
+        },
+        {
+          "id": "w0254",
+          "person": "曹虔秀",
+          "start": 421,
+          "end": 462,
+          "note": "曹虔嗣之弟,大明六年(462年)十一月去世。"
+        },
+        {
+          "id": "w0255",
+          "person": "曹銑",
+          "start": 463,
+          "end": 473,
+          "note": "曹虔秀世子,元徽元年(473年)八月去世。"
+        },
+        {
+          "id": "w0256",
+          "person": "曹粲",
+          "start": 474,
+          "end": 479,
+          "note": "身份、出生不詳。"
+        }
+      ]
+    },
+    {
+      "year": 312,
+      "id": "p148",
+      "name": "高密國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0060",
+          "person": "司馬泰",
+          "start": 296,
+          "end": 299,
+          "note": ""
+        },
+        {
+          "id": "w0061",
+          "person": "司馬略",
+          "start": 300,
+          "end": 309,
+          "note": "司馬泰第三子,永嘉三年(309年)三月去世。"
+        },
+        {
+          "id": "w0062",
+          "person": "司馬據",
+          "start": 310,
+          "end": null,
+          "note": "司馬略之子,後來去世。"
+        },
+        {
+          "id": "w0063",
+          "person": "司馬紘",
+          "start": 317,
+          "end": 329,
+          "note": "彭城康王司馬釋之子,建武元年(317年)出繼司馬據,襲封高密王。咸和四年(329年)三月歸本宗,襲封彭城王。"
+        },
+        {
+          "id": "w0064",
+          "person": "司馬俊",
+          "start": 330,
+          "end": 371,
+          "note": "彭城王司馬紘之子,咸和五年(330年)九月襲封高密王,太和六年(371年)十月去世。"
+        },
+        {
+          "id": "w0065",
+          "person": "司馬純之",
+          "start": 372,
+          "end": 412,
+          "note": "司馬俊之子,義熙八年(412年)八月去世。"
+        },
+        {
+          "id": "w0066",
+          "person": "司馬恢之",
+          "start": 413,
+          "end": 420,
+          "note": "司馬純之之子,元熙二年(420年)宋代晉,國除。"
+        }
+      ]
+    },
+    {
+      "year": 312,
+      "id": "p173",
+      "name": "武陵國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0135",
+          "person": "司馬澹",
+          "start": 304,
+          "end": 311,
+          "note": "琅邪武王司馬伷第二子。原為東武公,永興元年(304年)進封武陵王,永嘉五年(311年)死於石勒之亂。"
+        },
+        {
+          "id": "w0136",
+          "person": "司馬晞",
+          "start": 318,
+          "end": 371,
+          "note": "晉元帝司馬睿第四子,出繼司馬喆,太興元年(318年)六月襲封武陵王,咸安元年(371年)十一月為桓溫所廢,太元六年(381年)晉孝武帝追封為新寧郡王,太元十二年(387年)追復武陵王。"
+        },
+        {
+          "id": "w0138",
+          "person": "司馬遵",
+          "start": 387,
+          "end": 408,
+          "note": ""
+        },
+        {
+          "id": "w0139",
+          "person": "司馬季度",
+          "start": 409,
+          "end": 412,
+          "note": "司馬遵之子,義熙八年(412年)七月去世。"
+        },
+        {
+          "id": "w0140",
+          "person": "司馬球之",
+          "start": 413,
+          "end": 420,
+          "note": "司馬季度之子,元熙二年(420年)宋代晉,國除。"
+        },
+        {
+          "id": "w0268",
+          "person": "司馬喆",
+          "start": null,
+          "end": null,
+          "note": "澹子。澹311年為石勒所害，喆繼後亦為石勒所害；不能把父子同列311死而省去承襲。嗣年與卒年未詳，318司馬晞繼其後。據本輪Word及《晉書》卷38補原王表漏項。"
+        }
+      ]
+    },
+    {
+      "year": 312,
+      "id": "p186",
+      "name": "成都國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0227",
+          "person": "司馬穎",
+          "start": 289,
+          "end": 304,
+          "note": "晉武帝司馬炎第十九子。太康十年(289年)十一月封成都王,以廣漢、犍為、汶山三郡為成都國的支郡,⻝邑十萬戶。永安元年(304年)改分南郡之華容縣、州陵縣、监利縣及新设豐都縣共四縣设成都郡為封國;三月立為皇太弟。"
+        },
+        {
+          "id": "w0228",
+          "person": "司馬遵",
+          "start": 307,
+          "end": 311,
+          "note": "東萊王司馬蕤之子,永嘉初(307?)出繼司馬穎,改封華容縣王,後復封成都王,割南郡四縣為成都國。後沒於賊。建興年間(313-316)國除"
+        }
+      ]
+    },
+    {
+      "year": 313,
+      "id": "p013",
+      "name": "陳留國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0248",
+          "person": "曹奐",
+          "start": 265,
+          "end": 302,
+          "note": "魏燕王曹宇之子。本魏皇帝,泰始元年(265年)十二月廢為陳留王,太安元年(302年)去世。"
+        },
+        {
+          "id": "w0249",
+          "person": "曹奐",
+          "start": null,
+          "end": null,
+          "note": "身份不詳。"
+        },
+        {
+          "id": "w0250",
+          "person": "曹勱",
+          "start": 326,
+          "end": 358,
+          "note": "曹操玄孫,咸和元年(326年)十月立為陳留王,升平二年(358年)十月去世。"
+        },
+        {
+          "id": "w0251",
+          "person": "曹恢",
+          "start": 363,
+          "end": 378,
+          "note": "曹勱世子,興寧元年(363年)十月立為陳留王,太元三年(378年)五月去世。"
+        },
+        {
+          "id": "w0252",
+          "person": "曹靈誕",
+          "start": 383,
+          "end": 408,
+          "note": "曹恢世子,太元八年(383年)十一月立為陳留王,義熙四年(408年)十二月去世。"
+        },
+        {
+          "id": "w0253",
+          "person": "曹虔嗣",
+          "start": null,
+          "end": 420,
+          "note": "曹虔秀之兄,義熙囗年立為陳留王,永初元年(420年)七月去世。"
+        },
+        {
+          "id": "w0254",
+          "person": "曹虔秀",
+          "start": 421,
+          "end": 462,
+          "note": "曹虔嗣之弟,大明六年(462年)十一月去世。"
+        },
+        {
+          "id": "w0255",
+          "person": "曹銑",
+          "start": 463,
+          "end": 473,
+          "note": "曹虔秀世子,元徽元年(473年)八月去世。"
+        },
+        {
+          "id": "w0256",
+          "person": "曹粲",
+          "start": 474,
+          "end": 479,
+          "note": "身份、出生不詳。"
+        }
+      ]
+    },
+    {
+      "year": 313,
+      "id": "p148",
+      "name": "高密國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0060",
+          "person": "司馬泰",
+          "start": 296,
+          "end": 299,
+          "note": ""
+        },
+        {
+          "id": "w0061",
+          "person": "司馬略",
+          "start": 300,
+          "end": 309,
+          "note": "司馬泰第三子,永嘉三年(309年)三月去世。"
+        },
+        {
+          "id": "w0062",
+          "person": "司馬據",
+          "start": 310,
+          "end": null,
+          "note": "司馬略之子,後來去世。"
+        },
+        {
+          "id": "w0063",
+          "person": "司馬紘",
+          "start": 317,
+          "end": 329,
+          "note": "彭城康王司馬釋之子,建武元年(317年)出繼司馬據,襲封高密王。咸和四年(329年)三月歸本宗,襲封彭城王。"
+        },
+        {
+          "id": "w0064",
+          "person": "司馬俊",
+          "start": 330,
+          "end": 371,
+          "note": "彭城王司馬紘之子,咸和五年(330年)九月襲封高密王,太和六年(371年)十月去世。"
+        },
+        {
+          "id": "w0065",
+          "person": "司馬純之",
+          "start": 372,
+          "end": 412,
+          "note": "司馬俊之子,義熙八年(412年)八月去世。"
+        },
+        {
+          "id": "w0066",
+          "person": "司馬恢之",
+          "start": 413,
+          "end": 420,
+          "note": "司馬純之之子,元熙二年(420年)宋代晉,國除。"
+        }
+      ]
+    },
+    {
+      "year": 313,
+      "id": "p173",
+      "name": "武陵國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0135",
+          "person": "司馬澹",
+          "start": 304,
+          "end": 311,
+          "note": "琅邪武王司馬伷第二子。原為東武公,永興元年(304年)進封武陵王,永嘉五年(311年)死於石勒之亂。"
+        },
+        {
+          "id": "w0136",
+          "person": "司馬晞",
+          "start": 318,
+          "end": 371,
+          "note": "晉元帝司馬睿第四子,出繼司馬喆,太興元年(318年)六月襲封武陵王,咸安元年(371年)十一月為桓溫所廢,太元六年(381年)晉孝武帝追封為新寧郡王,太元十二年(387年)追復武陵王。"
+        },
+        {
+          "id": "w0138",
+          "person": "司馬遵",
+          "start": 387,
+          "end": 408,
+          "note": ""
+        },
+        {
+          "id": "w0139",
+          "person": "司馬季度",
+          "start": 409,
+          "end": 412,
+          "note": "司馬遵之子,義熙八年(412年)七月去世。"
+        },
+        {
+          "id": "w0140",
+          "person": "司馬球之",
+          "start": 413,
+          "end": 420,
+          "note": "司馬季度之子,元熙二年(420年)宋代晉,國除。"
+        },
+        {
+          "id": "w0268",
+          "person": "司馬喆",
+          "start": null,
+          "end": null,
+          "note": "澹子。澹311年為石勒所害，喆繼後亦為石勒所害；不能把父子同列311死而省去承襲。嗣年與卒年未詳，318司馬晞繼其後。據本輪Word及《晉書》卷38補原王表漏項。"
+        }
+      ]
+    },
+    {
+      "year": 314,
+      "id": "p173",
+      "name": "武陵國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0135",
+          "person": "司馬澹",
+          "start": 304,
+          "end": 311,
+          "note": "琅邪武王司馬伷第二子。原為東武公,永興元年(304年)進封武陵王,永嘉五年(311年)死於石勒之亂。"
+        },
+        {
+          "id": "w0136",
+          "person": "司馬晞",
+          "start": 318,
+          "end": 371,
+          "note": "晉元帝司馬睿第四子,出繼司馬喆,太興元年(318年)六月襲封武陵王,咸安元年(371年)十一月為桓溫所廢,太元六年(381年)晉孝武帝追封為新寧郡王,太元十二年(387年)追復武陵王。"
+        },
+        {
+          "id": "w0138",
+          "person": "司馬遵",
+          "start": 387,
+          "end": 408,
+          "note": ""
+        },
+        {
+          "id": "w0139",
+          "person": "司馬季度",
+          "start": 409,
+          "end": 412,
+          "note": "司馬遵之子,義熙八年(412年)七月去世。"
+        },
+        {
+          "id": "w0140",
+          "person": "司馬球之",
+          "start": 413,
+          "end": 420,
+          "note": "司馬季度之子,元熙二年(420年)宋代晉,國除。"
+        },
+        {
+          "id": "w0268",
+          "person": "司馬喆",
+          "start": null,
+          "end": null,
+          "note": "澹子。澹311年為石勒所害，喆繼後亦為石勒所害；不能把父子同列311死而省去承襲。嗣年與卒年未詳，318司馬晞繼其後。據本輪Word及《晉書》卷38補原王表漏項。"
+        }
+      ]
+    },
+    {
+      "year": 315,
+      "id": "p173",
+      "name": "武陵國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0135",
+          "person": "司馬澹",
+          "start": 304,
+          "end": 311,
+          "note": "琅邪武王司馬伷第二子。原為東武公,永興元年(304年)進封武陵王,永嘉五年(311年)死於石勒之亂。"
+        },
+        {
+          "id": "w0136",
+          "person": "司馬晞",
+          "start": 318,
+          "end": 371,
+          "note": "晉元帝司馬睿第四子,出繼司馬喆,太興元年(318年)六月襲封武陵王,咸安元年(371年)十一月為桓溫所廢,太元六年(381年)晉孝武帝追封為新寧郡王,太元十二年(387年)追復武陵王。"
+        },
+        {
+          "id": "w0138",
+          "person": "司馬遵",
+          "start": 387,
+          "end": 408,
+          "note": ""
+        },
+        {
+          "id": "w0139",
+          "person": "司馬季度",
+          "start": 409,
+          "end": 412,
+          "note": "司馬遵之子,義熙八年(412年)七月去世。"
+        },
+        {
+          "id": "w0140",
+          "person": "司馬球之",
+          "start": 413,
+          "end": 420,
+          "note": "司馬季度之子,元熙二年(420年)宋代晉,國除。"
+        },
+        {
+          "id": "w0268",
+          "person": "司馬喆",
+          "start": null,
+          "end": null,
+          "note": "澹子。澹311年為石勒所害，喆繼後亦為石勒所害；不能把父子同列311死而省去承襲。嗣年與卒年未詳，318司馬晞繼其後。據本輪Word及《晉書》卷38補原王表漏項。"
+        }
+      ]
+    },
+    {
+      "year": 316,
+      "id": "p173",
+      "name": "武陵國",
+      "status": "gap",
+      "records": [
+        {
+          "id": "w0135",
+          "person": "司馬澹",
+          "start": 304,
+          "end": 311,
+          "note": "琅邪武王司馬伷第二子。原為東武公,永興元年(304年)進封武陵王,永嘉五年(311年)死於石勒之亂。"
+        },
+        {
+          "id": "w0136",
+          "person": "司馬晞",
+          "start": 318,
+          "end": 371,
+          "note": "晉元帝司馬睿第四子,出繼司馬喆,太興元年(318年)六月襲封武陵王,咸安元年(371年)十一月為桓溫所廢,太元六年(381年)晉孝武帝追封為新寧郡王,太元十二年(387年)追復武陵王。"
+        },
+        {
+          "id": "w0138",
+          "person": "司馬遵",
+          "start": 387,
+          "end": 408,
+          "note": ""
+        },
+        {
+          "id": "w0139",
+          "person": "司馬季度",
+          "start": 409,
+          "end": 412,
+          "note": "司馬遵之子,義熙八年(412年)七月去世。"
+        },
+        {
+          "id": "w0140",
+          "person": "司馬球之",
+          "start": 413,
+          "end": 420,
+          "note": "司馬季度之子,元熙二年(420年)宋代晉,國除。"
+        },
+        {
+          "id": "w0268",
+          "person": "司馬喆",
+          "start": null,
+          "end": null,
+          "note": "澹子。澹311年為石勒所害，喆繼後亦為石勒所害；不能把父子同列311死而省去承襲。嗣年與卒年未詳，318司馬晞繼其後。據本輪Word及《晉書》卷38補原王表漏項。"
+        }
+      ]
+    }
+  ],
+  "reference_review": {
+    "original_records": 11,
+    "unchanged_period_records": 8,
+    "shortened_to_existing_title_end": [
+      "XIHE_MAP_REFERENCE"
+    ],
+    "withdrawn_expired_periods": [
+      "PEI_MAP_REFERENCE",
+      "GAOYANG_MAP_REFERENCE"
+    ],
+    "note": "每一项均核至王表或已批准Word有效期，未知始终不构造新继承；地图文字实控缺行与国祚分离。"
+  },
+  "county_membership_check": {
+    "annual_slices": 51,
+    "prefecture_row_counts_unchanged": true,
+    "county_ids_and_names_by_prefecture_unchanged": true,
+    "text_prefecture_year_status_changes": 172
+  },
+  "candidate_interpretation": "royalCandidates与royalGapCandidates是供人工阅读的王表对照候选，不等同错误。已知当年改封/国除、既定展示推定、公侯关系以及未知姓名均需保留各自证据，不能把王表问号或匹配失败直接用于撤国。"
+}
