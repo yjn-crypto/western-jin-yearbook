@@ -256,7 +256,7 @@ for (const year of [281, 282, 288]) {
   assert.ok(rowElement(rendered, 'p025').classList.contains('jin-kingdom-continues'));
   assert.ok(!snapshot.states.some(state=>state.rows.some(row=>row.id==='p026')));
 }
-for (const year of [289, 304, 313]) {
+for (const year of [289, 304]) {
   const snapshot = snapshots.get(year);
   const state = stateOf(snapshot, 'p025');
   const parent = rowOf(snapshot, 'p025');
@@ -269,6 +269,17 @@ for (const year of [289, 304, 313]) {
   assertAdministrativeCount([{...state, rows: [parent, chen]}], 2, 'From 289 Liang and Chen each count as a commandery');
   const display = table.displayRows({...state, rows: [parent, chen]});
   assert.equal(display.filter(row => row.displayCountyGroup).length, 0);
+}
+for (const year of [312, 313]) {
+  const snapshot = snapshots.get(year);
+  const parent = rowOf(snapshot, 'p025'), chen = rowOf(snapshot, 'p026');
+  assert.equal(parent.name, '梁郡');
+  assert.equal(chen.name, '陳郡');
+  assert.equal(chen.jinKingdom, undefined);
+  assert.equal(table.joinsNext(parent, chen), false);
+  assert.deepEqual(plain(chen.counties.map(county => county.id).sort()), [...chenCountyIds].sort());
+  assertAdministrativeCount([{...stateOf(snapshot, 'p025'), rows: [parent, chen]}], 2,
+    'After the established Liang fief interval both ordinary commanderies still count');
 }
 for (const [year, id, expectedName] of [[288, 'p048', '（漁陽支郡）'],
   [288, 'p143', '（濟南支郡）'], [283, 'p154', '（東莞支郡）'],

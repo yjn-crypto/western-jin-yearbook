@@ -239,7 +239,7 @@
     const sourceNote=presentation.note?.replace(/ 本年表內但未能單獨繪界：.*?具體缺據見年度coverage記錄。/,'')||'谭圖262、281與CHGIS同級採用；約308圖補晚期局部邊界。政區與支郡依本年文字，改名、整郡改州沿用已有郡界；析置及轉縣局部擬合並註明來源。政權邊界只採三底圖；末期缺少明確控制界線之處保留底圖政區參考，不表示仍屬西晉實際控制。縣面與縣界不展示；州郡大圖使用同一年度的完整矢量邊線。';
     const note=localPatch?sourceNote.replace(/ ?新野內圈為仍屬義陽的朝陽縣推定轄區，並非重複郡界。/,'')+' '+localPatch.note:sourceNote;
     const abolitionNote=abolished.length?' 有明確廢國或末任改封且無續封依據者，自變更當年恢復郡名，取消封國及支郡著色；無其他依據時仍沿用《通史》郡國名稱。':'';
-    const referenceFiefNote=referenceFiefCount?' 文字依當年實際控制取捨，地圖底圖行政參考範圍另行處理；有封爵延續依據者沿現成參考面保留封國色，文字缺郡不等於國除。未知國主不撤國，寬泛延續為展示推定；著色不表示本年西晉實控。':'';
+    const referenceFiefNote=referenceFiefCount?' 文字依當年實際控制取捨，地圖底圖行政參考範圍另行處理；封國沿維基王表及後續Word既定起訖，明確承襲者在其有效爵期內繼承原多郡封土，不因文字缺郡或未見國絕而自行補年。著色不表示本年西晉實控。':'';
     return {...map,threeBasemap:true,fiefColors,
       title:presentation.title||`${year}年　西晉州郡與封國`,
       subtitle:presentation.subtitle||'據262、281及約308年圖按改置事件取界；CHGIS保留治所。',

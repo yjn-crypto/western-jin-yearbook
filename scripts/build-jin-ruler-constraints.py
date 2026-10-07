@@ -206,8 +206,6 @@ display_patch('w0029', [[289,297]], '承卒只知惠帝時；本輪暫置298，�
 display_patch('w0032', [[302,305]], '原311終年僅疑推；為與306東海增封下邳不衝突，本輪獨國展示暫止305，不稱305卒年。', end_min=None, end_max=305, certain_periods=[[302,302]])
 for key in ['w0037','w0038','w0172']:
     pc[key]['level']='county'
-patch('w0027', '司馬鑠294嗣中丘；311遇難僅表注疑推，非確證國除年。294—310仍循既有在位段，311後不硬填本年國主，封國本身按寬泛規則另列。',
-      end_min=None,end_max=316,certain_periods=[[294,310]])
 pc['w0172'].update(end_min=302,end_max=302, certain_periods=[[302,302]])
 patch('w0119', '291先為縣王；本輪因元康初及官歷暫以293進郡王。305廢，306復爵；293為展示推定，不改稱史料確年。', start_min=291,start_max=293,accession_known=False,level_periods=[{'begin':291,'end':292,'level':'county'},{'begin':293,'end':304,'level':'prefecture'},{'begin':306,'end':326,'level':'prefecture'}], certain_periods=[[291,304],[306,326]], display_inferred=True, display_periods=[[291,304],[306,316]], display_reigns=[{'begin':291,'end':292,'accession':291,'accession_known':True},{'begin':293,'end':304,'accession':None,'accession_known':False},{'begin':306,'end':326,'accession':306,'accession_known':True}])
 patch('w0122', '本輪Word按由汝陽公進封及兄弟子國關係作郡王展示，至少有汝陽縣；原王表稱縣王，保留此異說。',level='prefecture',display_inferred=True)
