@@ -229,11 +229,10 @@ const chengduIds = new Set(['p115', 'p103', 'p116', 'p117']);
 const chengduStates = in289.states.map(state => ({...state, rows: state.rows.filter(row => chengduIds.has(row.id))})).filter(state => state.rows.length);
 assertAdministrativeCount(chengduStates, 4, 'The actual four commanderies of Chengdu must count as four, across their original states');
 
-// Chen inside Liang is a presentation partition of the existing county list, not
-// an additional administrative commandery. The Oct 7 Word instruction includes
-// Yangxia and removes the formerly independent Chen row.
+// Before 289 Chen is a county group within Liang. From 289 the latest display
+// policy restores its own row and count, without duplicating counties.
 const chenCountyIds = new Set(['c0231', 'c0232', 'c0233', 'c0234']);
-for (const year of [281, 282, 289, 304]) {
+for (const year of [281, 282, 288]) {
   const snapshot = snapshots.get(year);
   const state = stateOf(snapshot, 'p025');
   const parent = rowOf(snapshot, 'p025');
@@ -255,11 +254,29 @@ for (const year of [281, 282, 289, 304]) {
   assert.equal(walk(rendered).find(item => item.classList?.contains('state-meta')).textContent, '1 郡級政區');
   assert.ok(rowElement(rendered, group.id).classList.contains('jin-subsidiary-row'));
   assert.ok(rowElement(rendered, 'p025').classList.contains('jin-kingdom-continues'));
-  if (year === 304) {
-    assert.equal(group.counties.length, 4);
-    assert.ok(group.counties.some(county => county.id === 'c0233' && county.name === '陽夏'));
-    assert.ok(!snapshot.states.some(state=>state.rows.some(row=>row.id==='p026')));
-  }
+  assert.ok(!snapshot.states.some(state=>state.rows.some(row=>row.id==='p026')));
+}
+for (const year of [289, 304, 313]) {
+  const snapshot = snapshots.get(year);
+  const state = stateOf(snapshot, 'p025');
+  const parent = rowOf(snapshot, 'p025');
+  const chen = rowOf(snapshot, 'p026');
+  assert.equal(chen.displayName, '陳支郡');
+  assert.equal(chen.jinKingdom.primaryId, 'p025');
+  assert.ok(table.joinsNext(parent, chen));
+  assert.ok(!parent.counties.some(county => chenCountyIds.has(county.id)));
+  assert.deepEqual(plain(chen.counties.map(county => county.id).sort()), [...chenCountyIds].sort());
+  assertAdministrativeCount([{...state, rows: [parent, chen]}], 2, 'From 289 Liang and Chen each count as a commandery');
+  const display = table.displayRows({...state, rows: [parent, chen]});
+  assert.equal(display.filter(row => row.displayCountyGroup).length, 0);
+}
+for (const [year, id, expectedName] of [[288, 'p048', '（漁陽支郡）'],
+  [288, 'p143', '（濟南支郡）'], [283, 'p154', '（東莞支郡）'],
+  [289, 'p048', '漁陽支郡'], [289, 'p143', '濟南支郡'], [289, 'p154', '東莞支郡']]) {
+  const row = rowOf(snapshots.get(year), id);
+  assert.equal(row.displayName, expectedName);
+  assert.equal(row.jinKingdom.proto, year < 289);
+  assert.equal(row.phase.administrative_count !== false, year >= 289);
 }
 // The Oct 7 display choice places Jiyang under Donghai from 306 until the
 // 311 abolition; its original state remains unchanged.

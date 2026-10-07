@@ -1183,10 +1183,12 @@
       if(item.jinKingdom){
         const relation=item.jinKingdom,record=relation.record;
         const inferred=relation.member?.certainty==='inferred';
-        const label=relation.role==='primary'?'多郡王國':`屬${relation.name}國${inferred?'（推定）':''}`;
+        const label=relation.role==='primary'?(relation.proto?'多郡王國先聲':'多郡王國'):`屬${relation.name}國${inferred?'（推定）':''}`;
         const sources=(window.JIN_MULTI_KINGDOMS?.sources||[]).filter(source=>(record.source_ids||[]).includes(source.id));
         const info={title:'本國與支郡關係',summary:`${itemDisplayName(item)} · ${label}`,
           paragraphs:[record.note,relation.member?.note,
+            relation.proto?window.JIN_MULTI_KINGDOMS.render_contract.proto_branch_note:null,
+            window.JIN_MULTI_KINGDOMS.render_contract.branch_continuity,
             relation.crossState?'支郡保留本年原隸州，與本國分州列示。':'同州支郡排列於本國下方，縣的隸屬保持原表。',
             ...(record.pending_members||[]).map(member=>typeof member==='string'?member:`${member.name}：${member.note}`)
           ].filter(Boolean),
@@ -2604,6 +2606,14 @@
         summary:'文字依西晉實際控制範圍取捨；地圖依三底圖範圍呈現有據封國，不因此認定其地仍受西晉實際控制。',
         paragraphs:mapFiefs.map(item=>`${item.begin}—${item.end}年 ${item.name}：${item.source_note}`),
         sourceLinks:[...new Map(mapFiefs.flatMap(item=>item.source_links).map(source=>[source.url,source])).values()]
+      },'jin-kingdom-relation'));
+      const restored=window.JIN_289_RESTORATIONS;
+      box.appendChild(createAuxButton('289、308年舊研究的本輪採用與取捨',{
+        title:'289、308年封國研究接回年度展示',summary:restored.policy,
+        paragraphs:[...restored.title_periods.map(item=>`${item.begin}—${item.end}年 ${item.name}：${item.note}`),restored.chen.note],
+        sourceLabel:'《晉書》、晉朝藩王列表；顧江龍《太康十年分封與楊駿的興滅》；姚樂、胡阿祥《略論兩晉統縣政區長官之官名問題》。多郡原文與論證另見各國展開資料。',
+        sourceLinks:[...restored.source_links,{title:'顧江龍論文全文',url:'https://xbzs.ecnu.edu.cn/CN/html/2018-4-61.htm'},
+          {title:'本輪舊研究取捨與姚、胡論文頁碼',url:'https://github.com/yjn-crypto/western-jin-yearbook/blob/main/reports/jin-289-308-source-reconciliation-20261007.md'}]
       },'jin-kingdom-relation'));
     }
     $('footerText').textContent=currentDynasty.key==='chen'

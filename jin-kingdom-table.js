@@ -13,20 +13,23 @@
       if (primaries.length !== 1 || used.has(primaries[0].row.id)) continue;
       const primary = primaries[0];
       const name = record.kingdom_name.replace(/國$/, '');
+      const proto = year < data.formal_multi_begin;
       primary.row.displayName = `${name}國`;
       primary.row.kingdom = true;
-      primary.row.jinKingdom = {record, role: 'primary', name, primaryId: primary.row.id, crossState: false};
+      primary.row.jinKingdom = {record, role: 'primary', name, primaryId: primary.row.id, crossState: false, proto};
       used.add(primary.row.id);
       for (const member of record.members || []) {
         const matches = find(member.ids);
         if (matches.length !== 1 || used.has(matches[0].row.id)) continue;
         const {state, row} = matches[0];
-        row.displayName = `${member.name.replace(/[郡國]$/, '')}支郡`;
+        const branchName = `${member.name.replace(/[郡國]$/, '')}支郡`;
+        row.displayName = proto ? `（${branchName}）` : branchName;
+        if (proto) row.phase = {...row.phase, administrative_count: false};
         row.previousKingdomRuler = row.kingdom ? row.ruler : null;
         row.kingdom = false;
         row.ruler = null;
         row.jinKingdom = {record, member, role: 'member', name, primaryId: primary.row.id,
-          crossState: state.id !== primary.state.id};
+          crossState: state.id !== primary.state.id, proto};
         used.add(row.id);
       }
     }

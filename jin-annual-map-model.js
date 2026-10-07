@@ -99,7 +99,10 @@
   function hydrateThreeBasemap(bundle,year){
     if(Number(bundle?.year)!==Number(year)||!Array.isArray(bundle.features))throw new Error(`Missing three-basemap slice: ${year}`);
     const connectivity=root.JIN_LOCAL_CONNECTIVITY,localPatch=connectivity.years[String(year)];
-    const annualFeatures=localPatch?[...bundle.features.filter(feature=>!localPatch.remove.includes(feature.geometry_id)),...localPatch.add]:bundle.features;
+    const review=root.JIN_289_FIEF_MAP_REVIEW,reviewPatch=review.years[String(year)];
+    const connectedFeatures=localPatch?[...bundle.features.filter(feature=>!localPatch.remove.includes(feature.geometry_id)),...localPatch.add]:bundle.features;
+    const reviewKey=feature=>`${feature.properties.layer}:${feature.geometry_id}`;
+    const annualFeatures=reviewPatch?[...connectedFeatures.filter(feature=>!reviewPatch.remove.includes(reviewKey(feature))),...reviewPatch.add]:connectedFeatures;
     const abolished=root.JIN_FIEF_ABOLITIONS.records.filter(record=>record.begin<=year&&year<=record.end);
     const abolishedFiefIds=new Set(abolished.flatMap(record=>record.fief_ids));
     const restoredPrefectures=new Map(abolished.flatMap(record=>[
@@ -111,8 +114,8 @@
     // The separately recorded local connectors replace only their exact source
     // geometry IDs; fief metadata changes reuse all other saved annual geometry.
     const features=annualFeatures.filter(feature=>!(feature.properties.layer==='kingdom_areas'&&abolishedFiefIds.has(feature.properties.fief_id))).map(feature=>{
-      const geometryId=localPatch?.replace[feature.geometry_id]||feature.geometry_id;
-      const geometry=feature.geometry||connectivity.geometries[geometryId]||bundle.geometries?.[geometryId];
+      const geometryId=reviewPatch?.replace[reviewKey(feature)]||localPatch?.replace[feature.geometry_id]||feature.geometry_id;
+      const geometry=feature.geometry||review.geometries[geometryId]||connectivity.geometries[geometryId]||bundle.geometries?.[geometryId];
       if(!geometry)throw new Error(`Missing annual geometry: ${feature.geometry_id}`);
       const properties={...feature.properties};
       if(properties.entity_id==='p166'&&localPatch?.replace[feature.geometry_id]&&properties.boundary_note){
@@ -203,6 +206,35 @@
       p.between_fiefs=left!==right&&Boolean(left||right);
       p.within_same_fief=Boolean(left&&left===right);
     }
+    if(reviewPatch){
+      // This final pass restores the reviewed 289-era titles after the older
+      // abolition/reference overlays, using their unchanged county coordinates.
+      for(let i=features.length-1;i>=0;i--)if(features[i].properties.layer==='kingdom_areas'
+        &&reviewPatch.remove_fiefs.includes(features[i].properties.fief_id))features.splice(i,1);
+      for(const feature of features){
+        const p=feature.properties;
+        const metadata=reviewPatch.entities[p.entity_id]||reviewPatch.references[p.id];
+        if(metadata&&p.level==='prefecture')Object.assign(p,metadata);
+        if(p.layer==='reference_prefecture_seats'&&reviewPatch.reference_seats[p.source_id])
+          Object.assign(p,reviewPatch.reference_seats[p.source_id]);
+        const county=reviewPatch.county_reassignments[p.entity_id];
+        if(county&&p.level==='county')Object.assign(p,county);
+        const seatCounty=reviewPatch.county_reassignments[p.seat_county_id];
+        if(seatCounty){p.prefecture_id=seatCounty.prefecture_id;p.seat_county_key=seatCounty.county_key;}
+        if(p.adjacent_entity_ids){
+          const [left,right]=p.adjacent_entity_ids.map((id,index)=>id in reviewPatch.boundary_fiefs
+            ?reviewPatch.boundary_fiefs[id]:p.adjacent_fief_ids[index]);
+          p.adjacent_fief_ids=[left,right];
+          p.between_fiefs=left!==right&&Boolean(left||right);
+          p.within_same_fief=Boolean(left&&left===right);
+        }
+        if(p.fief_id&&reviewPatch.colors[p.fief_id])p.color=reviewPatch.colors[p.fief_id];
+      }
+      for(const feature of reviewPatch.add_fiefs)features.push({type:'Feature',
+        geometry:review.geometries[feature.geometry_id],properties:{...feature.properties}});
+      for(const id of reviewPatch.remove_fiefs)delete fiefColors[id];
+      Object.assign(fiefColors,reviewPatch.colors);
+    }
     const count=layer=>map.geojson.features.filter(f=>f.properties.layer===layer).length;
     const sourceNote=presentation.note?.replace(/ 本年表內但未能單獨繪界：.*?具體缺據見年度coverage記錄。/,'')||'谭圖262、281與CHGIS同級採用；約308圖補晚期局部邊界。政區與支郡依本年文字，改名、整郡改州沿用已有郡界；析置及轉縣局部擬合並註明來源。政權邊界只採三底圖；末期缺少明確控制界線之處保留底圖政區參考，不表示仍屬西晉實際控制。縣面與縣界不展示；州郡大圖使用同一年度的完整矢量邊線。';
     const note=localPatch?sourceNote.replace(/ ?新野內圈為仍屬義陽的朝陽縣推定轄區，並非重複郡界。/,'')+' '+localPatch.note:sourceNote;
@@ -211,7 +243,7 @@
     return {...map,threeBasemap:true,fiefColors,
       title:presentation.title||`${year}年　西晉州郡與封國`,
       subtitle:presentation.subtitle||'據262、281及約308年圖按改置事件取界；CHGIS保留治所。',
-      note:note+abolitionNote+referenceFiefNote,
+      note:note+abolitionNote+referenceFiefNote+(reviewPatch?' '+reviewPatch.note:''),
       status:presentation.status||`${year}年：${count('prefecture_areas')}處郡國範圍、${count('county_seats')}處縣治；邊界逐段保留底圖年代與擬合說明。`
     };
   }

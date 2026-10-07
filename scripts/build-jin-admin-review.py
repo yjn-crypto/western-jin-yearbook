@@ -613,7 +613,45 @@ for decision in abolitions['records']:
     log('attested_fief_abolition',list(names),decision['source_note'],
         begin=decision['begin'],end=decision['end'],source_urls=[s['url'] for s in decision['source_links']])
 (ROOT/'data/jin-fief-abolitions-20261007.js').write_text(
-    'window.JIN_FIEF_ABOLITIONS = '+json.dumps(abolitions,ensure_ascii=False,indent=2)+';\n')
+    'window.JIN_FIEF_ABOLITIONS = '+json.dumps(abolitions,ensure_ascii=False,separators=(',',':'))+';\n')
+
+# Reconcile the approved 289/308 fief studies with the annual text. The 289
+# institutional split is a user-selected display convention, not an exact
+# assertion that every branch office was founded in that year.
+restorations=json.loads((ROOT/'data/jin-fief-research/reviewed-289-restorations-20261007.json').read_text())
+for decision in restorations['title_periods']:
+    for pid in decision['ids']:
+        years=[y for y in annual[pid] if decision['begin']<=y<=decision['end']]
+        for y in years:
+            annual[pid][y].update(name=decision['name'],is_fief=bool(decision['rank']),
+                                  fief_rank=decision['rank'])
+        note(pid,years,decision['note'])
+    log('restored_289_308_fief',decision['ids'],decision['note'],begin=decision['begin'],end=decision['end'])
+for period in restorations['proto_members']:
+    for y in range(period['begin'],period['end']+1):
+        if y in annual[period['id']]:annual[period['id']][y]['administrative_count']=False
+    text='依本輪制度展示分界，289年前增封部分以括號支郡縣組列示，不另計郡；289年起作正式支郡計數。'
+    note(period['id'],range(period['begin'],period['end']+1),text)
+
+chen=restorations['chen']
+include('p026',289,313,290,name='陳郡',is_fief=False,fief_rank=None,
+        uncertain=True,review_dating='user_formal_multi_289')
+exclude('p026/c0239',289,313)
+for order,cid in enumerate(chen['county_ids'],1):
+    ck=move_county('p025/'+cid,'p026',289,313,chen['note'],order)
+    annual[ck][289]['transfer_event_certainty']='user_institutional_display'
+note('p025',range(289,314),chen['note'])
+note('p026',range(289,314),chen['note'])
+
+exclude('p033',266,290)
+exclude('p033/c0283',266,290)
+include('p032/c0283',284,290,283,uncertain=True,review_dating='zhongqiu_before_transfer')
+note('p032/c0283',range(284,291),restorations['zhongqiu']['note'])
+annual['p033/c0283'][291].update(transfer_metadata('p032/c0283','p033/c0283',291,'user_display_inference'))
+note('p033/c0283',[291],'本年初列趙國中丘縣；依約291年改封展示推定，本年起列中丘國。不是確定291始置郡。')
+log('zhongqiu_display_start',['p032/c0283','p033'],restorations['zhongqiu']['note'],display_begin=291)
+(ROOT/'data/jin-289-restorations-20261007.js').write_text(
+    'window.JIN_289_RESTORATIONS = '+json.dumps(restorations,ensure_ascii=False,separators=(',',':'))+';\n')
 
 # A copied phase carries status forward, not the old transfer event itself.
 for k,years in annual.items():
@@ -714,7 +752,7 @@ for y in YEARS:
 # Explicit 304 seat choices, plus source migration clauses for the map builder.
 # The eight exclusions are the user's named exceptions to the first-county rule.
 seat_counties={'s01':('p001','c0001','洛陽'),'s02':('p014','c0130','廩丘'),
- 's03':('p025','c0231','陳'),'s04':('p035','c0293','長樂'),'s05':('p049','c0385','薊'),
+ 's03':('p026','c0231','陳'),'s04':('p035','c0293','長樂'),'s05':('p049','c0385','薊'),
  's06':('p061','c0437','襄平'),'s07':('p065','c0461','晉陽'),'s08':('p071','c0506','長安'),
  's09':('p086','c0590','姑臧'),'s10':('p095','c0643','上邽'),'s11':('p101','c0675','南鄭'),
  's12':('p115','c0756','成都'),'s13':('p137','c0928','滇池'),'s14':('p141','c0943','臨淄'),
