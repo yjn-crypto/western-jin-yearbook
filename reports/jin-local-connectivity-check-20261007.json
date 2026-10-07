@@ -17,8 +17,10 @@
     "overlap_area": 2.2001067634391802e-11,
     "county_points_preserved_in_own_area": 8,
     "county_coordinates_changed": 0,
-    "province_or_coast_geometry_changed": false,
-    "province_boundary_max_shift_degrees": 0,
+    "coast_geometry_changed": false,
+    "province_change_only_taishan_dongan": false,
+    "other_province_boundary_max_shift_degrees": 0,
+    "province_area_change_outside_taishan_passage": 0,
     "geometry_replacements": 6,
     "removed_lines": 0,
     "new_boundary_features": 1
@@ -41,8 +43,10 @@
     "overlap_area": 2.2001067634391802e-11,
     "county_points_preserved_in_own_area": 8,
     "county_coordinates_changed": 0,
-    "province_or_coast_geometry_changed": false,
-    "province_boundary_max_shift_degrees": 0,
+    "coast_geometry_changed": false,
+    "province_change_only_taishan_dongan": false,
+    "other_province_boundary_max_shift_degrees": 0,
+    "province_area_change_outside_taishan_passage": 0,
     "geometry_replacements": 6,
     "removed_lines": 0,
     "new_boundary_features": 1
@@ -65,8 +69,10 @@
     "overlap_area": 2.2001067634391802e-11,
     "county_points_preserved_in_own_area": 8,
     "county_coordinates_changed": 0,
-    "province_or_coast_geometry_changed": false,
-    "province_boundary_max_shift_degrees": 0,
+    "coast_geometry_changed": false,
+    "province_change_only_taishan_dongan": false,
+    "other_province_boundary_max_shift_degrees": 0,
+    "province_area_change_outside_taishan_passage": 0,
     "geometry_replacements": 6,
     "removed_lines": 0,
     "new_boundary_features": 1
@@ -89,8 +95,10 @@
     "overlap_area": 2.2001067634391802e-11,
     "county_points_preserved_in_own_area": 8,
     "county_coordinates_changed": 0,
-    "province_or_coast_geometry_changed": false,
-    "province_boundary_max_shift_degrees": 0,
+    "coast_geometry_changed": false,
+    "province_change_only_taishan_dongan": false,
+    "other_province_boundary_max_shift_degrees": 0,
+    "province_area_change_outside_taishan_passage": 0,
     "geometry_replacements": 6,
     "removed_lines": 0,
     "new_boundary_features": 1
@@ -108,7 +116,13 @@
         "type": "chaoyang_to_yiyang_short_passage",
         "from": "p166",
         "to": "p165",
-        "area_degrees2": 0.011923069090000267
+        "area_degrees2": 0.01511179612749981
+      },
+      {
+        "type": "xinye_yiyang_fitted_shared_edge_meanders",
+        "from": "p166",
+        "to": "p165",
+        "county_membership_changed": false
       }
     ],
     "connected_entities": [
@@ -117,12 +131,14 @@
       "p166"
     ],
     "union_area_difference": 0.0,
-    "overlap_area": 2.2001511723601652e-11,
+    "overlap_area": 2.2001067634391802e-11,
     "county_points_preserved_in_own_area": 14,
     "county_coordinates_changed": 0,
-    "province_or_coast_geometry_changed": false,
-    "province_boundary_max_shift_degrees": 0,
-    "geometry_replacements": 8,
+    "coast_geometry_changed": false,
+    "province_change_only_taishan_dongan": false,
+    "other_province_boundary_max_shift_degrees": 0,
+    "province_area_change_outside_taishan_passage": 0,
+    "geometry_replacements": 12,
     "removed_lines": 0,
     "new_boundary_features": 2
   },
@@ -139,7 +155,13 @@
         "type": "chaoyang_to_yiyang_short_passage",
         "from": "p166",
         "to": "p165",
-        "area_degrees2": 0.011923069090000267
+        "area_degrees2": 0.01511179612749981
+      },
+      {
+        "type": "xinye_yiyang_fitted_shared_edge_meanders",
+        "from": "p166",
+        "to": "p165",
+        "county_membership_changed": false
       }
     ],
     "connected_entities": [
@@ -148,12 +170,14 @@
       "p166"
     ],
     "union_area_difference": 0.0,
-    "overlap_area": 2.2001511723601652e-11,
+    "overlap_area": 2.2001067634391802e-11,
     "county_points_preserved_in_own_area": 14,
     "county_coordinates_changed": 0,
-    "province_or_coast_geometry_changed": false,
-    "province_boundary_max_shift_degrees": 0,
-    "geometry_replacements": 8,
+    "coast_geometry_changed": false,
+    "province_change_only_taishan_dongan": false,
+    "other_province_boundary_max_shift_degrees": 0,
+    "province_area_change_outside_taishan_passage": 0,
+    "geometry_replacements": 12,
     "removed_lines": 0,
     "new_boundary_features": 2
   },
@@ -170,7 +194,13 @@
         "type": "chaoyang_to_yiyang_short_passage",
         "from": "p166",
         "to": "p165",
-        "area_degrees2": 0.011923069090000267
+        "area_degrees2": 0.01511179612749981
+      },
+      {
+        "type": "xinye_yiyang_fitted_shared_edge_meanders",
+        "from": "p166",
+        "to": "p165",
+        "county_membership_changed": false
       }
     ],
     "connected_entities": [
@@ -179,12 +209,14 @@
       "p166"
     ],
     "union_area_difference": 0.0,
-    "overlap_area": 2.2001511723601652e-11,
+    "overlap_area": 2.2001067634391802e-11,
     "county_points_preserved_in_own_area": 14,
     "county_coordinates_changed": 0,
-    "province_or_coast_geometry_changed": false,
-    "province_boundary_max_shift_degrees": 0,
-    "geometry_replacements": 8,
+    "coast_geometry_changed": false,
+    "province_change_only_taishan_dongan": false,
+    "other_province_boundary_max_shift_degrees": 0,
+    "province_area_change_outside_taishan_passage": 0,
+    "geometry_replacements": 12,
     "removed_lines": 0,
     "new_boundary_features": 2
   },
@@ -201,7 +233,13 @@
         "type": "chaoyang_to_yiyang_short_passage",
         "from": "p166",
         "to": "p165",
-        "area_degrees2": 0.011923069090000267
+        "area_degrees2": 0.01511179612749981
+      },
+      {
+        "type": "xinye_yiyang_fitted_shared_edge_meanders",
+        "from": "p166",
+        "to": "p165",
+        "county_membership_changed": false
       }
     ],
     "connected_entities": [
@@ -210,12 +248,14 @@
       "p166"
     ],
     "union_area_difference": 0.0,
-    "overlap_area": 2.2001511723601652e-11,
+    "overlap_area": 2.2001067634391802e-11,
     "county_points_preserved_in_own_area": 14,
     "county_coordinates_changed": 0,
-    "province_or_coast_geometry_changed": false,
-    "province_boundary_max_shift_degrees": 0,
-    "geometry_replacements": 8,
+    "coast_geometry_changed": false,
+    "province_change_only_taishan_dongan": false,
+    "other_province_boundary_max_shift_degrees": 0,
+    "province_area_change_outside_taishan_passage": 0,
+    "geometry_replacements": 12,
     "removed_lines": 0,
     "new_boundary_features": 2
   },
@@ -232,7 +272,13 @@
         "type": "chaoyang_to_yiyang_short_passage",
         "from": "p166",
         "to": "p165",
-        "area_degrees2": 0.011923069090000267
+        "area_degrees2": 0.01511179612749981
+      },
+      {
+        "type": "xinye_yiyang_fitted_shared_edge_meanders",
+        "from": "p166",
+        "to": "p165",
+        "county_membership_changed": false
       }
     ],
     "connected_entities": [
@@ -241,12 +287,14 @@
       "p166"
     ],
     "union_area_difference": 0.0,
-    "overlap_area": 2.2001511723601652e-11,
+    "overlap_area": 2.2001067634391802e-11,
     "county_points_preserved_in_own_area": 14,
     "county_coordinates_changed": 0,
-    "province_or_coast_geometry_changed": false,
-    "province_boundary_max_shift_degrees": 0,
-    "geometry_replacements": 8,
+    "coast_geometry_changed": false,
+    "province_change_only_taishan_dongan": false,
+    "other_province_boundary_max_shift_degrees": 0,
+    "province_area_change_outside_taishan_passage": 0,
+    "geometry_replacements": 12,
     "removed_lines": 0,
     "new_boundary_features": 2
   },
@@ -263,7 +311,13 @@
         "type": "chaoyang_to_yiyang_short_passage",
         "from": "p166",
         "to": "p165",
-        "area_degrees2": 0.011923069090000267
+        "area_degrees2": 0.01511179612749981
+      },
+      {
+        "type": "xinye_yiyang_fitted_shared_edge_meanders",
+        "from": "p166",
+        "to": "p165",
+        "county_membership_changed": false
       }
     ],
     "connected_entities": [
@@ -272,12 +326,14 @@
       "p166"
     ],
     "union_area_difference": 0.0,
-    "overlap_area": 2.2001511723601652e-11,
+    "overlap_area": 2.2001067634391802e-11,
     "county_points_preserved_in_own_area": 14,
     "county_coordinates_changed": 0,
-    "province_or_coast_geometry_changed": false,
-    "province_boundary_max_shift_degrees": 0.0,
-    "geometry_replacements": 7,
+    "coast_geometry_changed": false,
+    "province_change_only_taishan_dongan": false,
+    "other_province_boundary_max_shift_degrees": 0.0,
+    "province_area_change_outside_taishan_passage": 0,
+    "geometry_replacements": 11,
     "removed_lines": 0,
     "new_boundary_features": 2
   },
@@ -294,31 +350,47 @@
         "type": "chaoyang_to_yiyang_short_passage",
         "from": "p166",
         "to": "p165",
-        "area_degrees2": 0.011923069090000267
+        "area_degrees2": 0.01511179612749981
+      },
+      {
+        "type": "xinye_yiyang_fitted_shared_edge_meanders",
+        "from": "p166",
+        "to": "p165",
+        "county_membership_changed": false
       },
       {
         "type": "huailing_across_xiapi_southeast_corner",
         "from": "p150",
         "to": "p158",
         "area_degrees2": 0.010454934968999987
+      },
+      {
+        "type": "taishan_nancheng_along_dongan_western_edge",
+        "from": "p157",
+        "to": "p019",
+        "area_degrees2": 0.010323133488500174
       }
     ],
     "connected_entities": [
+      "p019",
       "p150",
+      "p157",
       "p158",
       "p163",
       "p165",
       "p166"
     ],
-    "union_area_difference": 1.4260000198972033e-09,
-    "overlap_area": 2.19957385638736e-11,
-    "county_points_preserved_in_own_area": 21,
+    "union_area_difference": 2.8590944424842726e-09,
+    "overlap_area": 5.766497501724643e-09,
+    "county_points_preserved_in_own_area": 28,
     "county_coordinates_changed": 0,
-    "province_or_coast_geometry_changed": false,
-    "province_boundary_max_shift_degrees": 0.0,
-    "geometry_replacements": 13,
-    "removed_lines": 2,
-    "new_boundary_features": 5
+    "coast_geometry_changed": false,
+    "province_change_only_taishan_dongan": true,
+    "other_province_boundary_max_shift_degrees": 1.8538155188707606e-07,
+    "province_area_change_outside_taishan_passage": 2.0705884502106973e-09,
+    "geometry_replacements": 23,
+    "removed_lines": 3,
+    "new_boundary_features": 7
   },
   {
     "year": 298,
@@ -333,31 +405,47 @@
         "type": "chaoyang_to_yiyang_short_passage",
         "from": "p166",
         "to": "p165",
-        "area_degrees2": 0.011923069090000267
+        "area_degrees2": 0.01511179612749981
+      },
+      {
+        "type": "xinye_yiyang_fitted_shared_edge_meanders",
+        "from": "p166",
+        "to": "p165",
+        "county_membership_changed": false
       },
       {
         "type": "huailing_across_xiapi_southeast_corner",
         "from": "p150",
         "to": "p158",
         "area_degrees2": 0.010454934968999987
+      },
+      {
+        "type": "taishan_nancheng_along_dongan_western_edge",
+        "from": "p157",
+        "to": "p019",
+        "area_degrees2": 0.010323133488500174
       }
     ],
     "connected_entities": [
+      "p019",
       "p150",
+      "p157",
       "p158",
       "p163",
       "p165",
       "p166"
     ],
-    "union_area_difference": 1.4260000198972033e-09,
-    "overlap_area": 2.19957385638736e-11,
-    "county_points_preserved_in_own_area": 21,
+    "union_area_difference": 2.8590944424842726e-09,
+    "overlap_area": 5.766497501724643e-09,
+    "county_points_preserved_in_own_area": 28,
     "county_coordinates_changed": 0,
-    "province_or_coast_geometry_changed": false,
-    "province_boundary_max_shift_degrees": 0.0,
-    "geometry_replacements": 13,
-    "removed_lines": 2,
-    "new_boundary_features": 5
+    "coast_geometry_changed": false,
+    "province_change_only_taishan_dongan": true,
+    "other_province_boundary_max_shift_degrees": 1.8538155188707606e-07,
+    "province_area_change_outside_taishan_passage": 2.0705884502106973e-09,
+    "geometry_replacements": 23,
+    "removed_lines": 3,
+    "new_boundary_features": 7
   },
   {
     "year": 299,
@@ -372,31 +460,47 @@
         "type": "chaoyang_to_yiyang_short_passage",
         "from": "p166",
         "to": "p165",
-        "area_degrees2": 0.011923069090000267
+        "area_degrees2": 0.01511179612749981
+      },
+      {
+        "type": "xinye_yiyang_fitted_shared_edge_meanders",
+        "from": "p166",
+        "to": "p165",
+        "county_membership_changed": false
       },
       {
         "type": "huailing_across_xiapi_southeast_corner",
         "from": "p150",
         "to": "p158",
         "area_degrees2": 0.010454934968999987
+      },
+      {
+        "type": "taishan_nancheng_along_dongan_western_edge",
+        "from": "p157",
+        "to": "p019",
+        "area_degrees2": 0.010323133488500174
       }
     ],
     "connected_entities": [
+      "p019",
       "p150",
+      "p157",
       "p158",
       "p163",
       "p165",
       "p166"
     ],
-    "union_area_difference": 1.4260000198972033e-09,
-    "overlap_area": 2.19957385638736e-11,
-    "county_points_preserved_in_own_area": 21,
+    "union_area_difference": 8.787500224642665e-09,
+    "overlap_area": -7.339503227399291e-09,
+    "county_points_preserved_in_own_area": 28,
     "county_coordinates_changed": 0,
-    "province_or_coast_geometry_changed": false,
-    "province_boundary_max_shift_degrees": 0.0,
-    "geometry_replacements": 13,
-    "removed_lines": 2,
-    "new_boundary_features": 5
+    "coast_geometry_changed": false,
+    "province_change_only_taishan_dongan": true,
+    "other_province_boundary_max_shift_degrees": 1.8538155188707606e-07,
+    "province_area_change_outside_taishan_passage": 2.0705884502106973e-09,
+    "geometry_replacements": 23,
+    "removed_lines": 3,
+    "new_boundary_features": 7
   },
   {
     "year": 300,
@@ -411,31 +515,47 @@
         "type": "chaoyang_to_yiyang_short_passage",
         "from": "p166",
         "to": "p165",
-        "area_degrees2": 0.011923069090000267
+        "area_degrees2": 0.01511179612749981
+      },
+      {
+        "type": "xinye_yiyang_fitted_shared_edge_meanders",
+        "from": "p166",
+        "to": "p165",
+        "county_membership_changed": false
       },
       {
         "type": "huailing_across_xiapi_southeast_corner",
         "from": "p150",
         "to": "p158",
         "area_degrees2": 0.010454934968999987
+      },
+      {
+        "type": "taishan_nancheng_along_dongan_western_edge",
+        "from": "p157",
+        "to": "p019",
+        "area_degrees2": 0.010323133488500174
       }
     ],
     "connected_entities": [
+      "p019",
       "p150",
+      "p157",
       "p158",
       "p163",
       "p165",
       "p166"
     ],
-    "union_area_difference": 1.4260000198972033e-09,
-    "overlap_area": 2.19957385638736e-11,
-    "county_points_preserved_in_own_area": 21,
+    "union_area_difference": 8.787500224642665e-09,
+    "overlap_area": -7.339503227399291e-09,
+    "county_points_preserved_in_own_area": 28,
     "county_coordinates_changed": 0,
-    "province_or_coast_geometry_changed": false,
-    "province_boundary_max_shift_degrees": 0.0,
-    "geometry_replacements": 13,
-    "removed_lines": 2,
-    "new_boundary_features": 5
+    "coast_geometry_changed": false,
+    "province_change_only_taishan_dongan": true,
+    "other_province_boundary_max_shift_degrees": 1.8538155188707606e-07,
+    "province_area_change_outside_taishan_passage": 2.0705884502106973e-09,
+    "geometry_replacements": 23,
+    "removed_lines": 3,
+    "new_boundary_features": 7
   },
   {
     "year": 301,
@@ -450,31 +570,47 @@
         "type": "chaoyang_to_yiyang_short_passage",
         "from": "p166",
         "to": "p165",
-        "area_degrees2": 0.011923069090000267
+        "area_degrees2": 0.01511179612749981
+      },
+      {
+        "type": "xinye_yiyang_fitted_shared_edge_meanders",
+        "from": "p166",
+        "to": "p165",
+        "county_membership_changed": false
       },
       {
         "type": "huailing_across_xiapi_southeast_corner",
         "from": "p150",
         "to": "p158",
         "area_degrees2": 0.010454934968999987
+      },
+      {
+        "type": "taishan_nancheng_along_dongan_western_edge",
+        "from": "p157",
+        "to": "p019",
+        "area_degrees2": 0.010323133488500174
       }
     ],
     "connected_entities": [
+      "p019",
       "p150",
+      "p157",
       "p158",
       "p163",
       "p165",
       "p166"
     ],
-    "union_area_difference": 1.4260000198972033e-09,
-    "overlap_area": 2.19957385638736e-11,
-    "county_points_preserved_in_own_area": 21,
+    "union_area_difference": 8.787500224642665e-09,
+    "overlap_area": -7.339503227399291e-09,
+    "county_points_preserved_in_own_area": 28,
     "county_coordinates_changed": 0,
-    "province_or_coast_geometry_changed": false,
-    "province_boundary_max_shift_degrees": 0.0,
-    "geometry_replacements": 13,
-    "removed_lines": 2,
-    "new_boundary_features": 5
+    "coast_geometry_changed": false,
+    "province_change_only_taishan_dongan": true,
+    "other_province_boundary_max_shift_degrees": 1.8538155188707606e-07,
+    "province_area_change_outside_taishan_passage": 2.0705884502106973e-09,
+    "geometry_replacements": 23,
+    "removed_lines": 3,
+    "new_boundary_features": 7
   },
   {
     "year": 302,
@@ -489,31 +625,47 @@
         "type": "chaoyang_to_yiyang_short_passage",
         "from": "p166",
         "to": "p165",
-        "area_degrees2": 0.011923069090000267
+        "area_degrees2": 0.01511179612749981
+      },
+      {
+        "type": "xinye_yiyang_fitted_shared_edge_meanders",
+        "from": "p166",
+        "to": "p165",
+        "county_membership_changed": false
       },
       {
         "type": "huailing_across_xiapi_southeast_corner",
         "from": "p150",
         "to": "p158",
         "area_degrees2": 0.010454934968999987
+      },
+      {
+        "type": "taishan_nancheng_along_dongan_western_edge",
+        "from": "p157",
+        "to": "p019",
+        "area_degrees2": 0.010323133488500174
       }
     ],
     "connected_entities": [
+      "p019",
       "p150",
+      "p157",
       "p158",
       "p163",
       "p165",
       "p166"
     ],
-    "union_area_difference": 1.4260000198972033e-09,
-    "overlap_area": 2.19957385638736e-11,
-    "county_points_preserved_in_own_area": 21,
+    "union_area_difference": 8.787500224642665e-09,
+    "overlap_area": -7.339503227399291e-09,
+    "county_points_preserved_in_own_area": 28,
     "county_coordinates_changed": 0,
-    "province_or_coast_geometry_changed": false,
-    "province_boundary_max_shift_degrees": 0.0,
-    "geometry_replacements": 13,
-    "removed_lines": 2,
-    "new_boundary_features": 5
+    "coast_geometry_changed": false,
+    "province_change_only_taishan_dongan": true,
+    "other_province_boundary_max_shift_degrees": 1.8538155188707606e-07,
+    "province_area_change_outside_taishan_passage": 2.0705884502106973e-09,
+    "geometry_replacements": 23,
+    "removed_lines": 3,
+    "new_boundary_features": 7
   },
   {
     "year": 303,
@@ -528,31 +680,47 @@
         "type": "chaoyang_to_yiyang_short_passage",
         "from": "p166",
         "to": "p165",
-        "area_degrees2": 0.011923069090000267
+        "area_degrees2": 0.01511179612749981
+      },
+      {
+        "type": "xinye_yiyang_fitted_shared_edge_meanders",
+        "from": "p166",
+        "to": "p165",
+        "county_membership_changed": false
       },
       {
         "type": "huailing_across_xiapi_southeast_corner",
         "from": "p150",
         "to": "p158",
         "area_degrees2": 0.010454934968999987
+      },
+      {
+        "type": "taishan_nancheng_along_dongan_western_edge",
+        "from": "p157",
+        "to": "p019",
+        "area_degrees2": 0.010323133488500174
       }
     ],
     "connected_entities": [
+      "p019",
       "p150",
+      "p157",
       "p158",
       "p163",
       "p165",
       "p166"
     ],
-    "union_area_difference": 1.4260000198972033e-09,
-    "overlap_area": 2.19957385638736e-11,
-    "county_points_preserved_in_own_area": 21,
+    "union_area_difference": 8.787500224642665e-09,
+    "overlap_area": -7.339503227399291e-09,
+    "county_points_preserved_in_own_area": 28,
     "county_coordinates_changed": 0,
-    "province_or_coast_geometry_changed": false,
-    "province_boundary_max_shift_degrees": 0.0,
-    "geometry_replacements": 13,
-    "removed_lines": 2,
-    "new_boundary_features": 5
+    "coast_geometry_changed": false,
+    "province_change_only_taishan_dongan": true,
+    "other_province_boundary_max_shift_degrees": 1.8538155188707606e-07,
+    "province_area_change_outside_taishan_passage": 2.0705884502106973e-09,
+    "geometry_replacements": 23,
+    "removed_lines": 3,
+    "new_boundary_features": 7
   },
   {
     "year": 304,
@@ -567,31 +735,47 @@
         "type": "chaoyang_to_yiyang_short_passage",
         "from": "p166",
         "to": "p165",
-        "area_degrees2": 0.011923069090000267
+        "area_degrees2": 0.01511179612749981
+      },
+      {
+        "type": "xinye_yiyang_fitted_shared_edge_meanders",
+        "from": "p166",
+        "to": "p165",
+        "county_membership_changed": false
       },
       {
         "type": "huailing_across_xiapi_southeast_corner",
         "from": "p150",
         "to": "p158",
         "area_degrees2": 0.010454934968999987
+      },
+      {
+        "type": "taishan_nancheng_along_dongan_western_edge",
+        "from": "p157",
+        "to": "p019",
+        "area_degrees2": 0.010323133488500174
       }
     ],
     "connected_entities": [
+      "p019",
       "p150",
+      "p157",
       "p158",
       "p163",
       "p165",
       "p166"
     ],
-    "union_area_difference": 1.4260000198972033e-09,
-    "overlap_area": 2.19957385638736e-11,
-    "county_points_preserved_in_own_area": 21,
+    "union_area_difference": 8.787500224642665e-09,
+    "overlap_area": -7.339503227399291e-09,
+    "county_points_preserved_in_own_area": 28,
     "county_coordinates_changed": 0,
-    "province_or_coast_geometry_changed": false,
-    "province_boundary_max_shift_degrees": 0.0,
-    "geometry_replacements": 13,
-    "removed_lines": 2,
-    "new_boundary_features": 5
+    "coast_geometry_changed": false,
+    "province_change_only_taishan_dongan": true,
+    "other_province_boundary_max_shift_degrees": 1.8538155188707606e-07,
+    "province_area_change_outside_taishan_passage": 2.0705884502106973e-09,
+    "geometry_replacements": 23,
+    "removed_lines": 3,
+    "new_boundary_features": 7
   },
   {
     "year": 305,
@@ -606,31 +790,47 @@
         "type": "chaoyang_to_yiyang_short_passage",
         "from": "p166",
         "to": "p165",
-        "area_degrees2": 0.011923069090000267
+        "area_degrees2": 0.01511179612749981
+      },
+      {
+        "type": "xinye_yiyang_fitted_shared_edge_meanders",
+        "from": "p166",
+        "to": "p165",
+        "county_membership_changed": false
       },
       {
         "type": "huailing_across_xiapi_southeast_corner",
         "from": "p150",
         "to": "p158",
         "area_degrees2": 0.010454934968999987
+      },
+      {
+        "type": "taishan_nancheng_along_dongan_western_edge",
+        "from": "p157",
+        "to": "p019",
+        "area_degrees2": 0.010323133488500174
       }
     ],
     "connected_entities": [
+      "p019",
       "p150",
+      "p157",
       "p158",
       "p163",
       "p165",
       "p166"
     ],
-    "union_area_difference": 1.4260000198972033e-09,
-    "overlap_area": 2.19957385638736e-11,
-    "county_points_preserved_in_own_area": 21,
+    "union_area_difference": 8.787500224642665e-09,
+    "overlap_area": -7.339503227399291e-09,
+    "county_points_preserved_in_own_area": 28,
     "county_coordinates_changed": 0,
-    "province_or_coast_geometry_changed": false,
-    "province_boundary_max_shift_degrees": 0.0,
-    "geometry_replacements": 13,
-    "removed_lines": 2,
-    "new_boundary_features": 5
+    "coast_geometry_changed": false,
+    "province_change_only_taishan_dongan": true,
+    "other_province_boundary_max_shift_degrees": 1.8538155188707606e-07,
+    "province_area_change_outside_taishan_passage": 2.0705884502106973e-09,
+    "geometry_replacements": 23,
+    "removed_lines": 3,
+    "new_boundary_features": 7
   },
   {
     "year": 306,
@@ -645,31 +845,47 @@
         "type": "chaoyang_to_yiyang_short_passage",
         "from": "p166",
         "to": "p165",
-        "area_degrees2": 0.011923069090000267
+        "area_degrees2": 0.01511179612749981
+      },
+      {
+        "type": "xinye_yiyang_fitted_shared_edge_meanders",
+        "from": "p166",
+        "to": "p165",
+        "county_membership_changed": false
       },
       {
         "type": "huailing_across_xiapi_southeast_corner",
         "from": "p150",
         "to": "p158",
         "area_degrees2": 0.010454934968999987
+      },
+      {
+        "type": "taishan_nancheng_along_dongan_western_edge",
+        "from": "p157",
+        "to": "p019",
+        "area_degrees2": 0.010323133488500174
       }
     ],
     "connected_entities": [
+      "p019",
       "p150",
+      "p157",
       "p158",
       "p163",
       "p165",
       "p166"
     ],
-    "union_area_difference": 1.4260000198972033e-09,
-    "overlap_area": 2.19957385638736e-11,
-    "county_points_preserved_in_own_area": 21,
+    "union_area_difference": 8.787500224642665e-09,
+    "overlap_area": -7.339503227399291e-09,
+    "county_points_preserved_in_own_area": 28,
     "county_coordinates_changed": 0,
-    "province_or_coast_geometry_changed": false,
-    "province_boundary_max_shift_degrees": 0.0,
-    "geometry_replacements": 14,
-    "removed_lines": 2,
-    "new_boundary_features": 5
+    "coast_geometry_changed": false,
+    "province_change_only_taishan_dongan": true,
+    "other_province_boundary_max_shift_degrees": 1.8538155188707606e-07,
+    "province_area_change_outside_taishan_passage": 2.0705884502106973e-09,
+    "geometry_replacements": 24,
+    "removed_lines": 3,
+    "new_boundary_features": 7
   },
   {
     "year": 307,
@@ -684,31 +900,47 @@
         "type": "chaoyang_to_yiyang_short_passage",
         "from": "p166",
         "to": "p165",
-        "area_degrees2": 0.011923069090000267
+        "area_degrees2": 0.01511179612749981
+      },
+      {
+        "type": "xinye_yiyang_fitted_shared_edge_meanders",
+        "from": "p166",
+        "to": "p165",
+        "county_membership_changed": false
       },
       {
         "type": "huailing_across_xiapi_southeast_corner",
         "from": "p150",
         "to": "p158",
         "area_degrees2": 0.010454934968999987
+      },
+      {
+        "type": "taishan_nancheng_along_dongan_western_edge",
+        "from": "p157",
+        "to": "p019",
+        "area_degrees2": 0.010323133488500174
       }
     ],
     "connected_entities": [
+      "p019",
       "p150",
+      "p157",
       "p158",
       "p163",
       "p165",
       "p166"
     ],
-    "union_area_difference": 1.4260000198972033e-09,
-    "overlap_area": 2.19957385638736e-11,
-    "county_points_preserved_in_own_area": 21,
+    "union_area_difference": 8.787500224642665e-09,
+    "overlap_area": -7.339502339220871e-09,
+    "county_points_preserved_in_own_area": 28,
     "county_coordinates_changed": 0,
-    "province_or_coast_geometry_changed": false,
-    "province_boundary_max_shift_degrees": 0.0,
-    "geometry_replacements": 14,
-    "removed_lines": 2,
-    "new_boundary_features": 5
+    "coast_geometry_changed": false,
+    "province_change_only_taishan_dongan": true,
+    "other_province_boundary_max_shift_degrees": 1.8538155188707606e-07,
+    "province_area_change_outside_taishan_passage": 2.0705884502106973e-09,
+    "geometry_replacements": 24,
+    "removed_lines": 3,
+    "new_boundary_features": 7
   },
   {
     "year": 308,
@@ -723,31 +955,47 @@
         "type": "chaoyang_to_yiyang_short_passage",
         "from": "p166",
         "to": "p165",
-        "area_degrees2": 0.011923069090000267
+        "area_degrees2": 0.01511179612749981
+      },
+      {
+        "type": "xinye_yiyang_fitted_shared_edge_meanders",
+        "from": "p166",
+        "to": "p165",
+        "county_membership_changed": false
       },
       {
         "type": "huailing_across_xiapi_southeast_corner",
         "from": "p150",
         "to": "p158",
         "area_degrees2": 0.010454934968999987
+      },
+      {
+        "type": "taishan_nancheng_along_dongan_western_edge",
+        "from": "p157",
+        "to": "p019",
+        "area_degrees2": 0.010323133488500174
       }
     ],
     "connected_entities": [
+      "p019",
       "p150",
+      "p157",
       "p158",
       "p163",
       "p165",
       "p166"
     ],
-    "union_area_difference": 1.4260000198972033e-09,
-    "overlap_area": 2.19957385638736e-11,
-    "county_points_preserved_in_own_area": 21,
+    "union_area_difference": 8.787500224642665e-09,
+    "overlap_area": -7.339502339220871e-09,
+    "county_points_preserved_in_own_area": 28,
     "county_coordinates_changed": 0,
-    "province_or_coast_geometry_changed": false,
-    "province_boundary_max_shift_degrees": 0.0,
-    "geometry_replacements": 14,
-    "removed_lines": 2,
-    "new_boundary_features": 5
+    "coast_geometry_changed": false,
+    "province_change_only_taishan_dongan": true,
+    "other_province_boundary_max_shift_degrees": 1.8538155188707606e-07,
+    "province_area_change_outside_taishan_passage": 2.0705884502106973e-09,
+    "geometry_replacements": 24,
+    "removed_lines": 3,
+    "new_boundary_features": 7
   },
   {
     "year": 309,
@@ -762,31 +1010,47 @@
         "type": "chaoyang_to_yiyang_short_passage",
         "from": "p166",
         "to": "p165",
-        "area_degrees2": 0.011923069090000267
+        "area_degrees2": 0.01511179612749981
+      },
+      {
+        "type": "xinye_yiyang_fitted_shared_edge_meanders",
+        "from": "p166",
+        "to": "p165",
+        "county_membership_changed": false
       },
       {
         "type": "huailing_across_xiapi_southeast_corner",
         "from": "p150",
         "to": "p158",
         "area_degrees2": 0.010454934968999987
+      },
+      {
+        "type": "taishan_nancheng_along_dongan_western_edge",
+        "from": "p157",
+        "to": "p019",
+        "area_degrees2": 0.010323133488500174
       }
     ],
     "connected_entities": [
+      "p019",
       "p150",
+      "p157",
       "p158",
       "p163",
       "p165",
       "p166"
     ],
-    "union_area_difference": 1.4260000198972033e-09,
-    "overlap_area": 2.19957385638736e-11,
-    "county_points_preserved_in_own_area": 21,
+    "union_area_difference": 8.787500224642665e-09,
+    "overlap_area": -7.339502339220871e-09,
+    "county_points_preserved_in_own_area": 28,
     "county_coordinates_changed": 0,
-    "province_or_coast_geometry_changed": false,
-    "province_boundary_max_shift_degrees": 0.0,
-    "geometry_replacements": 14,
-    "removed_lines": 2,
-    "new_boundary_features": 5
+    "coast_geometry_changed": false,
+    "province_change_only_taishan_dongan": true,
+    "other_province_boundary_max_shift_degrees": 1.8538155188707606e-07,
+    "province_area_change_outside_taishan_passage": 2.0705884502106973e-09,
+    "geometry_replacements": 24,
+    "removed_lines": 3,
+    "new_boundary_features": 7
   },
   {
     "year": 310,
@@ -801,31 +1065,47 @@
         "type": "chaoyang_to_yiyang_short_passage",
         "from": "p166",
         "to": "p165",
-        "area_degrees2": 0.011923069090000267
+        "area_degrees2": 0.01511179612749981
+      },
+      {
+        "type": "xinye_yiyang_fitted_shared_edge_meanders",
+        "from": "p166",
+        "to": "p165",
+        "county_membership_changed": false
       },
       {
         "type": "huailing_across_xiapi_southeast_corner",
         "from": "p150",
         "to": "p158",
         "area_degrees2": 0.010454934968999987
+      },
+      {
+        "type": "taishan_nancheng_along_dongan_western_edge",
+        "from": "p157",
+        "to": "p019",
+        "area_degrees2": 0.010323133488500174
       }
     ],
     "connected_entities": [
+      "p019",
       "p150",
+      "p157",
       "p158",
       "p163",
       "p165",
       "p166"
     ],
-    "union_area_difference": 1.4260000198972033e-09,
-    "overlap_area": 2.19957385638736e-11,
-    "county_points_preserved_in_own_area": 21,
+    "union_area_difference": 8.787500224642665e-09,
+    "overlap_area": -7.339502339220871e-09,
+    "county_points_preserved_in_own_area": 28,
     "county_coordinates_changed": 0,
-    "province_or_coast_geometry_changed": false,
-    "province_boundary_max_shift_degrees": 0.0,
-    "geometry_replacements": 14,
-    "removed_lines": 2,
-    "new_boundary_features": 5
+    "coast_geometry_changed": false,
+    "province_change_only_taishan_dongan": true,
+    "other_province_boundary_max_shift_degrees": 1.8538155188707606e-07,
+    "province_area_change_outside_taishan_passage": 2.0705884502106973e-09,
+    "geometry_replacements": 24,
+    "removed_lines": 3,
+    "new_boundary_features": 7
   },
   {
     "year": 311,
@@ -840,31 +1120,47 @@
         "type": "chaoyang_to_yiyang_short_passage",
         "from": "p166",
         "to": "p165",
-        "area_degrees2": 0.011923069090000267
+        "area_degrees2": 0.01511179612749981
+      },
+      {
+        "type": "xinye_yiyang_fitted_shared_edge_meanders",
+        "from": "p166",
+        "to": "p165",
+        "county_membership_changed": false
       },
       {
         "type": "huailing_across_xiapi_southeast_corner",
         "from": "p150",
         "to": "p158",
         "area_degrees2": 0.010454934968999987
+      },
+      {
+        "type": "taishan_nancheng_along_dongan_western_edge",
+        "from": "p157",
+        "to": "p019",
+        "area_degrees2": 0.010323133488500174
       }
     ],
     "connected_entities": [
+      "p019",
       "p150",
+      "p157",
       "p158",
       "p163",
       "p165",
       "p166"
     ],
-    "union_area_difference": 1.4260000198972033e-09,
-    "overlap_area": 2.19957385638736e-11,
-    "county_points_preserved_in_own_area": 21,
+    "union_area_difference": 8.787500224642665e-09,
+    "overlap_area": -7.339502339220871e-09,
+    "county_points_preserved_in_own_area": 28,
     "county_coordinates_changed": 0,
-    "province_or_coast_geometry_changed": false,
-    "province_boundary_max_shift_degrees": 0.0,
-    "geometry_replacements": 13,
-    "removed_lines": 2,
-    "new_boundary_features": 5
+    "coast_geometry_changed": false,
+    "province_change_only_taishan_dongan": true,
+    "other_province_boundary_max_shift_degrees": 1.8538155188707606e-07,
+    "province_area_change_outside_taishan_passage": 2.0705884502106973e-09,
+    "geometry_replacements": 23,
+    "removed_lines": 3,
+    "new_boundary_features": 7
   },
   {
     "year": 312,
@@ -879,31 +1175,47 @@
         "type": "chaoyang_to_yiyang_short_passage",
         "from": "p166",
         "to": "p165",
-        "area_degrees2": 0.011923069090000267
+        "area_degrees2": 0.01511179612749981
+      },
+      {
+        "type": "xinye_yiyang_fitted_shared_edge_meanders",
+        "from": "p166",
+        "to": "p165",
+        "county_membership_changed": false
       },
       {
         "type": "huailing_across_xiapi_southeast_corner",
         "from": "p150",
         "to": "p158",
         "area_degrees2": 0.010454934968999987
+      },
+      {
+        "type": "taishan_nancheng_along_dongan_western_edge",
+        "from": "p157",
+        "to": "p019",
+        "area_degrees2": 0.010323133488500174
       }
     ],
     "connected_entities": [
+      "p019",
       "p150",
+      "p157",
       "p158",
       "p163",
       "p165",
       "p166"
     ],
-    "union_area_difference": 1.4260000198972033e-09,
-    "overlap_area": 2.19957385638736e-11,
-    "county_points_preserved_in_own_area": 19,
+    "union_area_difference": 8.787500224642665e-09,
+    "overlap_area": -7.339502339220871e-09,
+    "county_points_preserved_in_own_area": 26,
     "county_coordinates_changed": 0,
-    "province_or_coast_geometry_changed": false,
-    "province_boundary_max_shift_degrees": 0.0,
-    "geometry_replacements": 13,
-    "removed_lines": 2,
-    "new_boundary_features": 5
+    "coast_geometry_changed": false,
+    "province_change_only_taishan_dongan": true,
+    "other_province_boundary_max_shift_degrees": 1.8538155188707606e-07,
+    "province_area_change_outside_taishan_passage": 2.0705884502106973e-09,
+    "geometry_replacements": 23,
+    "removed_lines": 3,
+    "new_boundary_features": 7
   },
   {
     "year": 313,
@@ -918,31 +1230,47 @@
         "type": "chaoyang_to_yiyang_short_passage",
         "from": "p166",
         "to": "p165",
-        "area_degrees2": 0.011923069090000267
+        "area_degrees2": 0.01511179612749981
+      },
+      {
+        "type": "xinye_yiyang_fitted_shared_edge_meanders",
+        "from": "p166",
+        "to": "p165",
+        "county_membership_changed": false
       },
       {
         "type": "huailing_across_xiapi_southeast_corner",
         "from": "p150",
         "to": "p158",
         "area_degrees2": 0.010454934968999987
+      },
+      {
+        "type": "taishan_nancheng_along_dongan_western_edge",
+        "from": "p157",
+        "to": "p019",
+        "area_degrees2": 0.010323133488500174
       }
     ],
     "connected_entities": [
+      "p019",
       "p150",
+      "p157",
       "p158",
       "p163",
       "p165",
       "p166"
     ],
-    "union_area_difference": 1.4260000198972033e-09,
-    "overlap_area": 2.19957385638736e-11,
-    "county_points_preserved_in_own_area": 19,
+    "union_area_difference": 8.787500224642665e-09,
+    "overlap_area": -7.339502339220871e-09,
+    "county_points_preserved_in_own_area": 26,
     "county_coordinates_changed": 0,
-    "province_or_coast_geometry_changed": false,
-    "province_boundary_max_shift_degrees": 0.0,
-    "geometry_replacements": 13,
-    "removed_lines": 2,
-    "new_boundary_features": 5
+    "coast_geometry_changed": false,
+    "province_change_only_taishan_dongan": true,
+    "other_province_boundary_max_shift_degrees": 1.8538155188707606e-07,
+    "province_area_change_outside_taishan_passage": 2.0705884502106973e-09,
+    "geometry_replacements": 23,
+    "removed_lines": 3,
+    "new_boundary_features": 7
   },
   {
     "year": 314,
@@ -957,31 +1285,47 @@
         "type": "chaoyang_to_yiyang_short_passage",
         "from": "p166",
         "to": "p165",
-        "area_degrees2": 0.011923069090000267
+        "area_degrees2": 0.01511179612749981
+      },
+      {
+        "type": "xinye_yiyang_fitted_shared_edge_meanders",
+        "from": "p166",
+        "to": "p165",
+        "county_membership_changed": false
       },
       {
         "type": "huailing_across_xiapi_southeast_corner",
         "from": "p150",
         "to": "p158",
         "area_degrees2": 0.010454934968999987
+      },
+      {
+        "type": "taishan_nancheng_along_dongan_western_edge",
+        "from": "p157",
+        "to": "p019",
+        "area_degrees2": 0.010323133488500174
       }
     ],
     "connected_entities": [
+      "p019",
       "p150",
+      "p157",
       "p158",
       "p163",
       "p165",
       "p166"
     ],
     "union_area_difference": 1.4260000198972033e-09,
-    "overlap_area": 2.19957385638736e-11,
-    "county_points_preserved_in_own_area": 19,
+    "overlap_area": 2.19966267422933e-11,
+    "county_points_preserved_in_own_area": 26,
     "county_coordinates_changed": 0,
-    "province_or_coast_geometry_changed": false,
-    "province_boundary_max_shift_degrees": 0,
-    "geometry_replacements": 12,
-    "removed_lines": 2,
-    "new_boundary_features": 4
+    "coast_geometry_changed": false,
+    "province_change_only_taishan_dongan": true,
+    "other_province_boundary_max_shift_degrees": 1.8538155188707606e-07,
+    "province_area_change_outside_taishan_passage": 2.0705884502106973e-09,
+    "geometry_replacements": 21,
+    "removed_lines": 3,
+    "new_boundary_features": 6
   },
   {
     "year": 315,
@@ -996,31 +1340,47 @@
         "type": "chaoyang_to_yiyang_short_passage",
         "from": "p166",
         "to": "p165",
-        "area_degrees2": 0.011923069090000267
+        "area_degrees2": 0.01511179612749981
+      },
+      {
+        "type": "xinye_yiyang_fitted_shared_edge_meanders",
+        "from": "p166",
+        "to": "p165",
+        "county_membership_changed": false
       },
       {
         "type": "huailing_across_xiapi_southeast_corner",
         "from": "p150",
         "to": "p158",
         "area_degrees2": 0.010454934968999987
+      },
+      {
+        "type": "taishan_nancheng_along_dongan_western_edge",
+        "from": "p157",
+        "to": "p019",
+        "area_degrees2": 0.010323133488500174
       }
     ],
     "connected_entities": [
+      "p019",
       "p150",
+      "p157",
       "p158",
       "p163",
       "p165",
       "p166"
     ],
     "union_area_difference": 1.4260000198972033e-09,
-    "overlap_area": 2.19957385638736e-11,
-    "county_points_preserved_in_own_area": 19,
+    "overlap_area": 2.19966267422933e-11,
+    "county_points_preserved_in_own_area": 26,
     "county_coordinates_changed": 0,
-    "province_or_coast_geometry_changed": false,
-    "province_boundary_max_shift_degrees": 0,
-    "geometry_replacements": 12,
-    "removed_lines": 2,
-    "new_boundary_features": 4
+    "coast_geometry_changed": false,
+    "province_change_only_taishan_dongan": true,
+    "other_province_boundary_max_shift_degrees": 1.8538155188707606e-07,
+    "province_area_change_outside_taishan_passage": 2.0705884502106973e-09,
+    "geometry_replacements": 21,
+    "removed_lines": 3,
+    "new_boundary_features": 6
   },
   {
     "year": 316,
@@ -1035,30 +1395,46 @@
         "type": "chaoyang_to_yiyang_short_passage",
         "from": "p166",
         "to": "p165",
-        "area_degrees2": 0.011923069090000267
+        "area_degrees2": 0.01511179612749981
+      },
+      {
+        "type": "xinye_yiyang_fitted_shared_edge_meanders",
+        "from": "p166",
+        "to": "p165",
+        "county_membership_changed": false
       },
       {
         "type": "huailing_across_xiapi_southeast_corner",
         "from": "p150",
         "to": "p158",
         "area_degrees2": 0.010454934968999987
+      },
+      {
+        "type": "taishan_nancheng_along_dongan_western_edge",
+        "from": "p157",
+        "to": "p019",
+        "area_degrees2": 0.010323133488500174
       }
     ],
     "connected_entities": [
+      "p019",
       "p150",
+      "p157",
       "p158",
       "p163",
       "p165",
       "p166"
     ],
     "union_area_difference": 1.4260000198972033e-09,
-    "overlap_area": 2.19957385638736e-11,
-    "county_points_preserved_in_own_area": 19,
+    "overlap_area": 2.19966267422933e-11,
+    "county_points_preserved_in_own_area": 26,
     "county_coordinates_changed": 0,
-    "province_or_coast_geometry_changed": false,
-    "province_boundary_max_shift_degrees": 0,
-    "geometry_replacements": 12,
-    "removed_lines": 2,
-    "new_boundary_features": 4
+    "coast_geometry_changed": false,
+    "province_change_only_taishan_dongan": true,
+    "other_province_boundary_max_shift_degrees": 1.8538155188707606e-07,
+    "province_area_change_outside_taishan_passage": 2.0705884502106973e-09,
+    "geometry_replacements": 21,
+    "removed_lines": 3,
+    "new_boundary_features": 6
   }
 ]

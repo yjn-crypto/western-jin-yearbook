@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Repair only the three user-reviewed nearby fragments in saved Jin maps.
+"""Repair only the user-reviewed nearby fragments in saved Jin maps.
 
 Run with the bundled Python and PYTHONPATH=work/_gis_deps. This publishes a
 small geometry overlay; original annual maps, county points and source atlases
@@ -15,12 +15,12 @@ from pathlib import Path
 
 from shapely import normalize, set_precision
 from shapely.geometry import LineString, mapping, shape
-from shapely.ops import nearest_points, unary_union
+from shapely.ops import linemerge, nearest_points, polygonize, unary_union
 
 ROOT = Path(__file__).resolve().parents[1]
 MAPS = ROOT / 'data/jin-maps/three-basemap-annual'
 GRID = .000001
-NOTE = '本輪在各自適用年份作以下局部修正：新野南側無本郡縣治依據的細小擬合殘片歸襄陽；義陽朝陽縣向東連接本郡，淮陵兩部經下邳東南角短接。僅作局部連通展示推定，郡界以間斷曲線表示；縣屬、治所及已有有據飛地不變。'
+NOTE = '本輪在各自適用年份作以下局部修正：新野南側無本郡縣治依據的細小擬合殘片歸襄陽；義陽朝陽縣向東連接本郡，新野、義陽間的擬合邊界採較明顯的緩曲折；淮陵兩部經下邳東南角短接；泰山南城縣一部沿東安西緣接回本郡，該處兗徐州界隨郡界調整。均為局部連通展示推定，擬合郡界沿用間斷樣式，州界沿用州界樣式；縣屬、治所及已有有據飛地不變。'
 
 
 def clean(g):
@@ -37,21 +37,51 @@ def lines(g):
     return unary_union([lines(p) for p in getattr(g, 'geoms', []) if p.geom_type in ('LineString', 'MultiLineString', 'GeometryCollection')])
 
 
-def passage(recipient, donor, width):
+def passage(recipient, donor, width, bow=.006, winding=False):
     """A short, gently bowed passage within the two existing commanderies."""
     main, island = polygons(recipient)
     a, b = nearest_points(island, main)
     dx, dy = b.x - a.x, b.y - a.y
     distance = a.distance(b)
     coordinates = []
-    for i in range(33):
-        t = i / 32
-        bend = .006 * math.sin(math.pi * t) ** 2
+    samples = 64 if winding or abs(bow) > .006 else 32
+    for i in range(samples + 1):
+        t = i / samples
+        bend = bow * (math.sin(2 * math.pi * t) if winding else math.sin(math.pi * t) ** 2)
         coordinates.append((a.x + dx * t - dy / distance * bend,
                             a.y + dy * t + dx / distance * bend))
     corridor = LineString(coordinates).buffer(width, quad_segs=16)
     transfer = clean(corridor.intersection(donor))
     return clean(unary_union([recipient, transfer])), clean(donor.difference(transfer)), transfer
+
+
+def meander_xinye_yiyang(yiyang, xinye):
+    """Bend only their fitted open shared edge; keep the outer perimeter fixed."""
+    mask = clean(unary_union([yiyang, xinye]))
+    shared = linemerge(lines(yiyang.boundary.intersection(xinye.boundary)))
+    curves = []
+    for edge in ([shared] if shared.geom_type == 'LineString' else shared.geoms):
+        if edge.is_ring:
+            curves.append(edge)
+            continue
+        n = max(64, math.ceil(edge.length / .005))
+        coordinates = []
+        for i in range(n + 1):
+            t = i / n
+            p = edge.interpolate(t, normalized=True)
+            a = edge.interpolate(max(0, t - .01), normalized=True)
+            b = edge.interpolate(min(1, t + .01), normalized=True)
+            dx, dy = b.x - a.x, b.y - a.y
+            length = math.hypot(dx, dy)
+            offset = (.038 * math.sin(4 * math.pi * t) + .012 * math.sin(9 * math.pi * t)) * math.sin(math.pi * t) ** 2
+            coordinates.append((p.x - dy / length * offset, p.y + dx / length * offset))
+        coordinates[0], coordinates[-1] = edge.coords[0], edge.coords[-1]
+        curves.append(LineString(coordinates))
+    groups = {'yiyang': [], 'xinye': []}
+    for part in polygonize(unary_union([mask.boundary, *curves])):
+        if mask.covers(part.representative_point()):
+            groups['yiyang' if part.intersection(yiyang).area > part.intersection(xinye).area else 'xinye'].append(part)
+    return clean(unary_union(groups['yiyang'])), clean(unary_union(groups['xinye']))
 
 
 def build():
@@ -85,8 +115,10 @@ def build():
             updated['p163'] = clean(unary_union([original['p163'], scraps]))
             changes.append({'type': 'xinye_fit_slivers_to_xiangyang', 'from': 'p166', 'to': 'p163', 'area_degrees2': scraps.area})
         if original['p165'].geom_type == 'MultiPolygon':
-            updated['p165'], updated['p166'], transfer = passage(updated['p165'], updated['p166'], .023)
+            updated['p165'], updated['p166'] = meander_xinye_yiyang(updated['p165'], updated['p166'])
+            updated['p165'], updated['p166'], transfer = passage(updated['p165'], updated['p166'], .023, bow=.045, winding=True)
             changes.append({'type': 'chaoyang_to_yiyang_short_passage', 'from': 'p166', 'to': 'p165', 'area_degrees2': transfer.area})
+            changes.append({'type': 'xinye_yiyang_fitted_shared_edge_meanders', 'from': 'p166', 'to': 'p165', 'county_membership_changed': False})
         if 'p158' in original and original['p158'].geom_type == 'MultiPolygon':
             updated['p158'], updated['p150'], transfer = passage(updated['p158'], updated['p150'], .027)
             # The passage cuts off Xiapi's empty southeast tip; include that
@@ -96,6 +128,10 @@ def build():
             updated['p158'] = clean(unary_union([updated['p158'], *xiapi_corner]))
             transfer = clean(unary_union([transfer, *xiapi_corner]))
             changes.append({'type': 'huailing_across_xiapi_southeast_corner', 'from': 'p150', 'to': 'p158', 'area_degrees2': transfer.area})
+        taishan_transfer = None
+        if original['p019'].geom_type == 'MultiPolygon':
+            updated['p019'], updated['p157'], taishan_transfer = passage(updated['p019'], updated['p157'], .034, bow=-.055)
+            changes.append({'type': 'taishan_nancheng_along_dongan_western_edge', 'from': 'p157', 'to': 'p019', 'area_degrees2': taishan_transfer.area})
         if not changes:
             continue
 
@@ -136,6 +172,10 @@ def build():
                     g = g.difference(original[pid].difference(updated[pid]))
                     g = unary_union([g, updated[pid].difference(original[pid])])
                 patch['replace'][feature['geometry_id']] = save(clean(g))
+            if p['layer'] == 'province_areas' and taishan_transfer is not None and p['entity_id'] in ('s02', 's15'):
+                g = shape(source_geometries[feature['geometry_id']])
+                g = unary_union([g, taishan_transfer]) if p['entity_id'] == 's02' else g.difference(taishan_transfer)
+                patch['replace'][feature['geometry_id']] = save(clean(g))
             if p['layer'] == 'labels' and p.get('level') == 'prefecture' and p.get('entity_id') in changed:
                 point = shape(source_geometries[feature['geometry_id']])
                 if not updated[p['entity_id']].covers(point):
@@ -154,11 +194,11 @@ def build():
                 if left != right and updated[left].boundary.intersection(updated[right].boundary).length > .00001:
                     pairs.setdefault(tuple(sorted((left, right))), [])
         for (left, right), old_features in pairs.items():
-            # Reference neighbours cannot be crossed by any of these three
+            # Reference neighbours cannot be crossed by these specifically
             # explicitly selected interior patches, so retain their old lines.
             if left not in updated or right not in updated:
                 continue
-            if areas[left]['properties']['state_id'] != areas[right]['properties']['state_id']:
+            if areas[left]['properties']['state_id'] != areas[right]['properties']['state_id'] and not {'p019', 'p157'}.intersection((left, right)):
                 continue
             shared = lines(updated[left].boundary.intersection(updated[right].boundary))
             if not shared.intersects(edited_mask) and not any(shape(source_geometries[f['geometry_id']]).intersects(edited_mask) for f in old_features):
@@ -190,7 +230,7 @@ def build():
                     p.update(boundary_inferred=True, boundary_style='curved_interrupted',
                              boundary_evidence='僅為近距離擬合分片連通而調整的局部郡界，無精確史載界址。')
                 else:
-                    p.update(boundary_evidence='州界位置沿用；僅將原新野殘片所在段的相鄰郡更新為襄陽。')
+                    p.update(boundary_evidence='泰山南城一部接回本郡；此處州界隨擬合共享郡界調整，仍用州界樣式。')
                 patch['add'].append({'geometry_id': save(fresh), 'properties': p})
 
         # Stable province lines are copied exactly, only splitting the old
@@ -215,23 +255,39 @@ def build():
                              within_same_fief=bool(fids[0] and fids[0] == fids[1]))
             patch['add'].append({'geometry_id': save(reassigned), 'properties': new_props})
 
-        # Patches never change coastlines, provinces, county layers or explicit
-        # distant fief members (e.g. Runan's Yundu).
+        # Coastlines, county layers and explicit distant fief members (e.g.
+        # Runan's Yundu) stay fixed; only the approved Taishan passage moves a
+        # province boundary, with both province areas kept consistent.
         for feature in data['features']:
             if feature['geometry_id'] in patch['replace'] or feature['geometry_id'] in patch['remove']:
-                assert feature['properties']['layer'] in ('prefecture_areas', 'kingdom_areas', 'labels', 'prefecture_boundaries', 'province_boundaries'), (year, feature['properties'])
+                assert feature['properties']['layer'] in ('prefecture_areas', 'kingdom_areas', 'labels', 'prefecture_boundaries', 'province_boundaries', 'province_areas'), (year, feature['properties'])
         original_province_lines = [shape(source_geometries[f['geometry_id']]) for f in data['features'] if f['properties']['layer'] == 'province_boundaries' and (f['geometry_id'] in patch['replace'] or f['geometry_id'] in patch['remove'])]
         new_province_lines = [shape(output['geometries'][patch['replace'][f['geometry_id']]]) if f['geometry_id'] in patch['replace'] else shape(source_geometries[f['geometry_id']])
                               for f in data['features'] if f['properties']['layer'] == 'province_boundaries' and f['geometry_id'] in patch['replace'] and f['geometry_id'] not in patch['remove']]
         new_province_lines.extend(shape(output['geometries'][f['geometry_id']]) for f in patch['add'] if f['properties']['layer'] == 'province_boundaries')
-        province_line_difference = unary_union(original_province_lines).hausdorff_distance(unary_union(new_province_lines)) if original_province_lines else 0
+        allowed_province_change = taishan_transfer.buffer(GRID * 3) if taishan_transfer is not None else shape({'type': 'Polygon', 'coordinates': []})
+        old_province_fixed = unary_union(original_province_lines).difference(allowed_province_change)
+        new_province_fixed = unary_union(new_province_lines).difference(allowed_province_change)
+        province_line_difference = old_province_fixed.hausdorff_distance(new_province_fixed) if original_province_lines else 0
         assert province_line_difference < GRID * 2, (year, province_line_difference)
+        province_area_error = 0
+        if taishan_transfer is not None:
+            province_features = [f for f in data['features'] if f['properties']['layer'] == 'province_areas' and f['properties']['entity_id'] in ('s02', 's15')]
+            for feature in province_features:
+                old_state = shape(source_geometries[feature['geometry_id']])
+                new_state = shape(output['geometries'][patch['replace'][feature['geometry_id']]])
+                province_area_error = max(province_area_error, old_state.symmetric_difference(new_state).difference(taishan_transfer.buffer(GRID * 2)).area)
+                pid = 'p019' if feature['properties']['entity_id'] == 's02' else 'p157'
+                assert updated[pid].difference(new_state.buffer(GRID * 2)).area < 1e-8, (year, pid, 'outside province')
+            assert province_area_error < 1e-8, (year, province_area_error)
         output['years'][str(year)] = patch
         audit.append({'year': year, 'changes': changes, 'connected_entities': sorted(changed),
                       'union_area_difference': area_error, 'overlap_area': overlap,
                       'county_points_preserved_in_own_area': affected_county_points,
-                      'county_coordinates_changed': 0, 'province_or_coast_geometry_changed': False,
-                      'province_boundary_max_shift_degrees': province_line_difference,
+                      'county_coordinates_changed': 0, 'coast_geometry_changed': False,
+                      'province_change_only_taishan_dongan': taishan_transfer is not None,
+                      'other_province_boundary_max_shift_degrees': province_line_difference,
+                      'province_area_change_outside_taishan_passage': province_area_error,
                       'geometry_replacements': len(patch['replace']), 'removed_lines': len(patch['remove']),
                       'new_boundary_features': len(patch['add'])})
 
@@ -240,7 +296,8 @@ def build():
     (ROOT / 'reports/jin-local-connectivity-check-20261007.json').write_text(json.dumps(audit, ensure_ascii=False, indent=2) + '\n')
     print(json.dumps({'years_patched': len(audit), 'unique_geometries': len(output['geometries']),
                       'data_bytes': len(raw.encode()), 'all_target_entities_connected': True,
-                      'county_points_moved': 0, 'province_or_coast_geometry_changed': False}))
+                      'county_points_moved': 0, 'coast_geometry_changed': False,
+                      'province_change_only_taishan_dongan': True}))
 
 
 if __name__ == '__main__':

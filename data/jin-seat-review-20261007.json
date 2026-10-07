@@ -25,9 +25,9 @@
     {
       "state_id": "s03",
       "state_name": "豫州",
-      "prefecture_id": "p025",
+      "prefecture_id": "p026",
       "county_id": "c0231",
-      "entity_key": "p025/c0231",
+      "entity_key": "p026/c0231",
       "name": "陳",
       "basis": "本輪Word指定"
     },
@@ -1468,29 +1468,38 @@
           "entity_key": "p025/c0230"
         },
         {
+          "id": "c0235",
+          "name": "苦",
+          "entity_key": "p025/c0235"
+        }
+      ]
+    },
+    {
+      "prefecture_id": "p026",
+      "prefecture_name": "陳郡",
+      "state_id": "s03",
+      "county_id": "c0231",
+      "county_name": "陳",
+      "county_order": [
+        {
           "id": "c0231",
           "name": "陳",
-          "entity_key": "p025/c0231"
+          "entity_key": "p026/c0231"
         },
         {
           "id": "c0232",
           "name": "項",
-          "entity_key": "p025/c0232"
+          "entity_key": "p026/c0232"
         },
         {
           "id": "c0233",
           "name": "陽夏",
-          "entity_key": "p025/c0233"
+          "entity_key": "p026/c0233"
         },
         {
           "id": "c0234",
           "name": "武平",
-          "entity_key": "p025/c0234"
-        },
-        {
-          "id": "c0235",
-          "name": "苦",
-          "entity_key": "p025/c0235"
+          "entity_key": "p026/c0234"
         }
       ]
     },
@@ -1764,7 +1773,7 @@
     },
     {
       "prefecture_id": "p033",
-      "prefecture_name": "中丘郡",
+      "prefecture_name": "中丘國",
       "state_id": "s04",
       "county_id": "c0283",
       "county_name": "中丘",
@@ -3782,7 +3791,7 @@
     },
     {
       "prefecture_id": "p101",
-      "prefecture_name": "漢中郡",
+      "prefecture_name": "漢國",
       "state_id": "s11",
       "county_id": "c0675",
       "county_name": "南鄭",
@@ -4714,7 +4723,7 @@
     },
     {
       "prefecture_id": "p146",
-      "prefecture_name": "東萊郡",
+      "prefecture_name": "東萊國",
       "state_id": "s14",
       "county_id": "c0988",
       "county_name": "掖",
@@ -5372,7 +5381,7 @@
     },
     {
       "prefecture_id": "p163",
-      "prefecture_name": "襄陽郡",
+      "prefecture_name": "襄陽國",
       "state_id": "s16",
       "county_id": "c1125",
       "county_name": "襄陽",
@@ -5406,7 +5415,7 @@
     },
     {
       "prefecture_id": "p164",
-      "prefecture_name": "南陽國",
+      "prefecture_name": "南陽郡",
       "state_id": "s16",
       "county_id": "c1133",
       "county_name": "宛",

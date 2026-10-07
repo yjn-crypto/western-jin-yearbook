@@ -484,15 +484,15 @@
     "w0027": {
       "start_min": 294,
       "start_max": 294,
-      "end_min": 311,
-      "end_max": 311,
+      "end_min": null,
+      "end_max": 316,
       "accession_known": true,
       "posthumous": false,
-      "note": "保留原表明确有限期段；问号、年代与世系次序仅约束可能范围，不补成连续在位。",
+      "note": "司馬鑠294嗣中丘；311遇難僅表注疑推，非確證國除年。294—310仍循既有在位段，311後不硬填本年國主，封國本身按寬泛規則另列。",
       "certain_periods": [
         [
           294,
-          311
+          310
         ]
       ],
       "display_start": 294

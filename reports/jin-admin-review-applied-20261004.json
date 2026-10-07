@@ -1,6 +1,6 @@
 {
-  "overrides": 462,
-  "ledger_entries": 443,
+  "overrides": 478,
+  "ledger_entries": 465,
   "reviewed_lineages": 169,
   "original_duplicate_candidates_resolved": 131,
   "dated_county_transfer_events": 141,
@@ -13,17 +13,17 @@
       "counties": 810
     },
     "281": {
-      "prefectures": 171,
+      "prefectures": 169,
       "transfer_origin_groups": 0,
       "counties": 1228
     },
     "304": {
-      "prefectures": 187,
+      "prefectures": 188,
       "transfer_origin_groups": 0,
       "counties": 1243
     },
     "312": {
-      "prefectures": 173,
+      "prefectures": 174,
       "transfer_origin_groups": 0,
       "counties": 1090
     },
@@ -58,6 +58,24 @@
         "name": "新泰",
         "prefecture_id": "p019",
         "state_id": "s02"
+      },
+      {
+        "key": "p025/c0231",
+        "name": "陳",
+        "prefecture_id": "p025",
+        "state_id": "s03"
+      },
+      {
+        "key": "p025/c0232",
+        "name": "項",
+        "prefecture_id": "p025",
+        "state_id": "s03"
+      },
+      {
+        "key": "p025/c0234",
+        "name": "武平",
+        "prefecture_id": "p025",
+        "state_id": "s03"
       },
       {
         "key": "p026/c0239",
@@ -152,9 +170,27 @@
     ],
     "added_scoped_records": [
       {
-        "key": "p025/c0233",
+        "key": "p026/c0231",
+        "name": "陳",
+        "prefecture_id": "p026",
+        "state_id": "s03"
+      },
+      {
+        "key": "p026/c0232",
+        "name": "項",
+        "prefecture_id": "p026",
+        "state_id": "s03"
+      },
+      {
+        "key": "p026/c0233",
         "name": "陽夏",
-        "prefecture_id": "p025",
+        "prefecture_id": "p026",
+        "state_id": "s03"
+      },
+      {
+        "key": "p026/c0234",
+        "name": "武平",
+        "prefecture_id": "p026",
         "state_id": "s03"
       },
       {
