@@ -1,0 +1,1657 @@
+[
+  {
+    "year": 266,
+    "details": [
+      {
+        "county_king": "隨",
+        "pid": "p164",
+        "parent_fief_id": null,
+        "county_count": 24,
+        "parent_area_km2": 31477.809,
+        "fitted_area_km2": 1311.575,
+        "target_fraction": 0.041666666666666664,
+        "actual_fraction": 0.04166666669418536,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      }
+    ]
+  },
+  {
+    "year": 267,
+    "details": [
+      {
+        "county_king": "隨",
+        "pid": "p164",
+        "parent_fief_id": null,
+        "county_count": 24,
+        "parent_area_km2": 31477.809,
+        "fitted_area_km2": 1311.575,
+        "target_fraction": 0.041666666666666664,
+        "actual_fraction": 0.04166666669418536,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      }
+    ]
+  },
+  {
+    "year": 268,
+    "details": [
+      {
+        "county_king": "隨",
+        "pid": "p164",
+        "parent_fief_id": null,
+        "county_count": 24,
+        "parent_area_km2": 31477.809,
+        "fitted_area_km2": 1311.575,
+        "target_fraction": 0.041666666666666664,
+        "actual_fraction": 0.04166666669418536,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      }
+    ]
+  },
+  {
+    "year": 269,
+    "details": [
+      {
+        "county_king": "隨",
+        "pid": "p164",
+        "parent_fief_id": null,
+        "county_count": 24,
+        "parent_area_km2": 31477.809,
+        "fitted_area_km2": 1311.575,
+        "target_fraction": 0.041666666666666664,
+        "actual_fraction": 0.04166666669418536,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      }
+    ]
+  },
+  {
+    "year": 270,
+    "details": [
+      {
+        "county_king": "隨",
+        "pid": "p164",
+        "parent_fief_id": null,
+        "county_count": 24,
+        "parent_area_km2": 31477.809,
+        "fitted_area_km2": 1311.575,
+        "target_fraction": 0.041666666666666664,
+        "actual_fraction": 0.04166666669418536,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      },
+      {
+        "county_king": "南宮",
+        "pid": "p035",
+        "parent_fief_id": "jin-安平",
+        "county_count": 9,
+        "parent_area_km2": 5660.0,
+        "fitted_area_km2": 628.889,
+        "target_fraction": 0.1111111111111111,
+        "actual_fraction": 0.11111111113278752,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      }
+    ]
+  },
+  {
+    "year": 271,
+    "details": [
+      {
+        "county_king": "隨",
+        "pid": "p164",
+        "parent_fief_id": null,
+        "county_count": 24,
+        "parent_area_km2": 31477.809,
+        "fitted_area_km2": 1311.575,
+        "target_fraction": 0.041666666666666664,
+        "actual_fraction": 0.04166666669418536,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      },
+      {
+        "county_king": "南宮",
+        "pid": "p035",
+        "parent_fief_id": "jin-安平",
+        "county_count": 9,
+        "parent_area_km2": 5660.0,
+        "fitted_area_km2": 628.889,
+        "target_fraction": 0.1111111111111111,
+        "actual_fraction": 0.11111111113278752,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      }
+    ]
+  },
+  {
+    "year": 272,
+    "details": [
+      {
+        "county_king": "隨",
+        "pid": "p164",
+        "parent_fief_id": null,
+        "county_count": 24,
+        "parent_area_km2": 31477.809,
+        "fitted_area_km2": 1311.575,
+        "target_fraction": 0.041666666666666664,
+        "actual_fraction": 0.04166666669418536,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      },
+      {
+        "county_king": "南宮",
+        "pid": "p035",
+        "parent_fief_id": "jin-安平",
+        "county_count": 9,
+        "parent_area_km2": 5660.0,
+        "fitted_area_km2": 628.889,
+        "target_fraction": 0.1111111111111111,
+        "actual_fraction": 0.11111111113278752,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      }
+    ]
+  },
+  {
+    "year": 273,
+    "details": [
+      {
+        "county_king": "隨",
+        "pid": "p164",
+        "parent_fief_id": null,
+        "county_count": 24,
+        "parent_area_km2": 31477.809,
+        "fitted_area_km2": 1311.575,
+        "target_fraction": 0.041666666666666664,
+        "actual_fraction": 0.04166666669418536,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      },
+      {
+        "county_king": "南宮",
+        "pid": "p035",
+        "parent_fief_id": "jin-安平",
+        "county_count": 9,
+        "parent_area_km2": 5660.0,
+        "fitted_area_km2": 628.889,
+        "target_fraction": 0.1111111111111111,
+        "actual_fraction": 0.11111111113278752,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      }
+    ]
+  },
+  {
+    "year": 274,
+    "details": [
+      {
+        "county_king": "隨",
+        "pid": "p164",
+        "parent_fief_id": null,
+        "county_count": 24,
+        "parent_area_km2": 31477.809,
+        "fitted_area_km2": 1311.575,
+        "target_fraction": 0.041666666666666664,
+        "actual_fraction": 0.04166666669418536,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      },
+      {
+        "county_king": "南宮",
+        "pid": "p035",
+        "parent_fief_id": "jin-安平",
+        "county_count": 9,
+        "parent_area_km2": 5660.0,
+        "fitted_area_km2": 628.889,
+        "target_fraction": 0.1111111111111111,
+        "actual_fraction": 0.11111111113278752,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      }
+    ]
+  },
+  {
+    "year": 275,
+    "details": [
+      {
+        "county_king": "隨",
+        "pid": "p164",
+        "parent_fief_id": null,
+        "county_count": 24,
+        "parent_area_km2": 31477.809,
+        "fitted_area_km2": 1311.575,
+        "target_fraction": 0.041666666666666664,
+        "actual_fraction": 0.04166666669418536,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      },
+      {
+        "county_king": "南宮",
+        "pid": "p035",
+        "parent_fief_id": "jin-安平",
+        "county_count": 9,
+        "parent_area_km2": 5660.0,
+        "fitted_area_km2": 628.889,
+        "target_fraction": 0.1111111111111111,
+        "actual_fraction": 0.11111111113278752,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      }
+    ]
+  },
+  {
+    "year": 276,
+    "details": [
+      {
+        "county_king": "隨",
+        "pid": "p164",
+        "parent_fief_id": null,
+        "county_count": 19,
+        "parent_area_km2": 25495.025,
+        "fitted_area_km2": 1341.843,
+        "target_fraction": 0.05263157894736842,
+        "actual_fraction": 0.05263157897299382,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      },
+      {
+        "county_king": "南宮",
+        "pid": "p035",
+        "parent_fief_id": "jin-安平",
+        "county_count": 9,
+        "parent_area_km2": 5660.0,
+        "fitted_area_km2": 628.889,
+        "target_fraction": 0.1111111111111111,
+        "actual_fraction": 0.11111111113278752,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      }
+    ]
+  },
+  {
+    "year": 277,
+    "details": [
+      {
+        "county_king": "隨",
+        "pid": "p164",
+        "parent_fief_id": "jin-南陽",
+        "county_count": 19,
+        "parent_area_km2": 25495.025,
+        "fitted_area_km2": 1341.843,
+        "target_fraction": 0.05263157894736842,
+        "actual_fraction": 0.05263157897299382,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      },
+      {
+        "county_king": "南宮",
+        "pid": "p035",
+        "parent_fief_id": "jin-安平",
+        "county_count": 9,
+        "parent_area_km2": 5660.0,
+        "fitted_area_km2": 628.889,
+        "target_fraction": 0.1111111111111111,
+        "actual_fraction": 0.11111111113278752,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      }
+    ]
+  },
+  {
+    "year": 278,
+    "details": [
+      {
+        "county_king": "隨",
+        "pid": "p164",
+        "parent_fief_id": "jin-南陽",
+        "county_count": 19,
+        "parent_area_km2": 25495.025,
+        "fitted_area_km2": 1341.843,
+        "target_fraction": 0.05263157894736842,
+        "actual_fraction": 0.05263157897299382,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      },
+      {
+        "county_king": "南宮",
+        "pid": "p035",
+        "parent_fief_id": "jin-安平",
+        "county_count": 9,
+        "parent_area_km2": 5660.0,
+        "fitted_area_km2": 628.889,
+        "target_fraction": 0.1111111111111111,
+        "actual_fraction": 0.11111111113278752,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      }
+    ]
+  },
+  {
+    "year": 279,
+    "details": [
+      {
+        "county_king": "隨",
+        "pid": "p164",
+        "parent_fief_id": "jin-南陽",
+        "county_count": 19,
+        "parent_area_km2": 25495.025,
+        "fitted_area_km2": 1341.843,
+        "target_fraction": 0.05263157894736842,
+        "actual_fraction": 0.05263157897299382,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      },
+      {
+        "county_king": "南宮",
+        "pid": "p035",
+        "parent_fief_id": "jin-安平",
+        "county_count": 9,
+        "parent_area_km2": 5660.0,
+        "fitted_area_km2": 628.889,
+        "target_fraction": 0.1111111111111111,
+        "actual_fraction": 0.11111111113278752,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      }
+    ]
+  },
+  {
+    "year": 280,
+    "details": [
+      {
+        "county_king": "隨",
+        "pid": "p164",
+        "parent_fief_id": "jin-南陽",
+        "county_count": 19,
+        "parent_area_km2": 25495.025,
+        "fitted_area_km2": 1341.843,
+        "target_fraction": 0.05263157894736842,
+        "actual_fraction": 0.05263157897299382,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      },
+      {
+        "county_king": "南宮",
+        "pid": "p035",
+        "parent_fief_id": "jin-安平",
+        "county_count": 9,
+        "parent_area_km2": 5660.0,
+        "fitted_area_km2": 628.889,
+        "target_fraction": 0.1111111111111111,
+        "actual_fraction": 0.11111111113278752,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      }
+    ]
+  },
+  {
+    "year": 281,
+    "details": [
+      {
+        "county_king": "隨",
+        "pid": "p165",
+        "parent_fief_id": "jin-義陽",
+        "county_count": 12,
+        "parent_area_km2": 25581.122,
+        "fitted_area_km2": 2131.76,
+        "target_fraction": 0.08333333333333333,
+        "actual_fraction": 0.08333333334152053,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      },
+      {
+        "county_king": "南宮",
+        "pid": "p035",
+        "parent_fief_id": "jin-安平",
+        "county_count": 9,
+        "parent_area_km2": 5660.0,
+        "fitted_area_km2": 628.889,
+        "target_fraction": 0.1111111111111111,
+        "actual_fraction": 0.11111111113278752,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      }
+    ]
+  },
+  {
+    "year": 282,
+    "details": [
+      {
+        "county_king": "隨",
+        "pid": "p165",
+        "parent_fief_id": "jin-義陽",
+        "county_count": 12,
+        "parent_area_km2": 25581.122,
+        "fitted_area_km2": 2131.76,
+        "target_fraction": 0.08333333333333333,
+        "actual_fraction": 0.08333333334152053,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      },
+      {
+        "county_king": "南宮",
+        "pid": "p035",
+        "parent_fief_id": null,
+        "county_count": 9,
+        "parent_area_km2": 5660.0,
+        "fitted_area_km2": 628.889,
+        "target_fraction": 0.1111111111111111,
+        "actual_fraction": 0.11111111113278752,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      }
+    ]
+  },
+  {
+    "year": 283,
+    "details": [
+      {
+        "county_king": "隨",
+        "pid": "p165",
+        "parent_fief_id": "jin-義陽",
+        "county_count": 12,
+        "parent_area_km2": 25581.122,
+        "fitted_area_km2": 2131.76,
+        "target_fraction": 0.08333333333333333,
+        "actual_fraction": 0.08333333334152053,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      },
+      {
+        "county_king": "南宮",
+        "pid": "p035",
+        "parent_fief_id": null,
+        "county_count": 10,
+        "parent_area_km2": 5660.0,
+        "fitted_area_km2": 566.0,
+        "target_fraction": 0.1,
+        "actual_fraction": 0.10000000001744169,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      }
+    ]
+  },
+  {
+    "year": 284,
+    "details": [
+      {
+        "county_king": "隨",
+        "pid": "p165",
+        "parent_fief_id": "jin-義陽",
+        "county_count": 12,
+        "parent_area_km2": 25581.122,
+        "fitted_area_km2": 2131.76,
+        "target_fraction": 0.08333333333333333,
+        "actual_fraction": 0.08333333334152053,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      },
+      {
+        "county_king": "南宮",
+        "pid": "p035",
+        "parent_fief_id": "jin-長樂",
+        "county_count": 10,
+        "parent_area_km2": 5660.0,
+        "fitted_area_km2": 566.0,
+        "target_fraction": 0.1,
+        "actual_fraction": 0.10000000001744169,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      }
+    ]
+  },
+  {
+    "year": 285,
+    "details": [
+      {
+        "county_king": "隨",
+        "pid": "p165",
+        "parent_fief_id": "jin-義陽",
+        "county_count": 12,
+        "parent_area_km2": 25581.122,
+        "fitted_area_km2": 2131.76,
+        "target_fraction": 0.08333333333333333,
+        "actual_fraction": 0.08333333334152053,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      },
+      {
+        "county_king": "南宮",
+        "pid": "p035",
+        "parent_fief_id": "jin-長樂",
+        "county_count": 10,
+        "parent_area_km2": 5660.0,
+        "fitted_area_km2": 566.0,
+        "target_fraction": 0.1,
+        "actual_fraction": 0.10000000001744169,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      }
+    ]
+  },
+  {
+    "year": 286,
+    "details": [
+      {
+        "county_king": "隨",
+        "pid": "p165",
+        "parent_fief_id": "jin-義陽",
+        "county_count": 12,
+        "parent_area_km2": 25581.122,
+        "fitted_area_km2": 2131.76,
+        "target_fraction": 0.08333333333333333,
+        "actual_fraction": 0.08333333334152053,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      },
+      {
+        "county_king": "南宮",
+        "pid": "p035",
+        "parent_fief_id": "jin-長樂",
+        "county_count": 10,
+        "parent_area_km2": 5660.0,
+        "fitted_area_km2": 566.0,
+        "target_fraction": 0.1,
+        "actual_fraction": 0.10000000001744169,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      }
+    ]
+  },
+  {
+    "year": 287,
+    "details": [
+      {
+        "county_king": "隨",
+        "pid": "p165",
+        "parent_fief_id": "jin-義陽",
+        "county_count": 12,
+        "parent_area_km2": 25581.122,
+        "fitted_area_km2": 2131.76,
+        "target_fraction": 0.08333333333333333,
+        "actual_fraction": 0.08333333334152053,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      },
+      {
+        "county_king": "南宮",
+        "pid": "p035",
+        "parent_fief_id": "jin-長樂",
+        "county_count": 10,
+        "parent_area_km2": 5660.0,
+        "fitted_area_km2": 566.0,
+        "target_fraction": 0.1,
+        "actual_fraction": 0.10000000001744169,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      }
+    ]
+  },
+  {
+    "year": 288,
+    "details": [
+      {
+        "county_king": "南宮",
+        "pid": "p035",
+        "parent_fief_id": "jin-長樂",
+        "county_count": 10,
+        "parent_area_km2": 5660.0,
+        "fitted_area_km2": 566.0,
+        "target_fraction": 0.1,
+        "actual_fraction": 0.10000000001744169,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      }
+    ]
+  },
+  {
+    "year": 289,
+    "details": []
+  },
+  {
+    "year": 290,
+    "details": []
+  },
+  {
+    "year": 291,
+    "details": [
+      {
+        "county_king": "西陽",
+        "pid": "p030",
+        "parent_fief_id": null,
+        "county_count": 7,
+        "parent_area_km2": 21278.242,
+        "fitted_area_km2": 3039.749,
+        "target_fraction": 0.14285714285714285,
+        "actual_fraction": 0.14285714290009846,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      },
+      {
+        "zhuangwu": true,
+        "county_count": 9,
+        "parent_area_km2": 8831.46,
+        "fitted_area_km2": 981.273,
+        "target_fraction": 0.1111111111111111,
+        "actual_fraction": 0.11111111111498743,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      }
+    ]
+  },
+  {
+    "year": 292,
+    "details": [
+      {
+        "branch_released": "p074"
+      },
+      {
+        "county_king": "西陽",
+        "pid": "p030",
+        "parent_fief_id": null,
+        "county_count": 7,
+        "parent_area_km2": 21278.242,
+        "fitted_area_km2": 3039.749,
+        "target_fraction": 0.14285714285714285,
+        "actual_fraction": 0.14285714290009846,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      },
+      {
+        "zhuangwu": true,
+        "county_count": 9,
+        "parent_area_km2": 8831.46,
+        "fitted_area_km2": 981.273,
+        "target_fraction": 0.1111111111111111,
+        "actual_fraction": 0.11111111111498743,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      }
+    ]
+  },
+  {
+    "year": 293,
+    "details": [
+      {
+        "branch_released": "p074"
+      },
+      {
+        "zhuangwu": true,
+        "county_count": 9,
+        "parent_area_km2": 8831.46,
+        "fitted_area_km2": 981.273,
+        "target_fraction": 0.1111111111111111,
+        "actual_fraction": 0.11111111111498743,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      }
+    ]
+  },
+  {
+    "year": 294,
+    "details": [
+      {
+        "branch_released": "p074"
+      },
+      {
+        "zhuangwu": true,
+        "county_count": 9,
+        "parent_area_km2": 8831.46,
+        "fitted_area_km2": 981.273,
+        "target_fraction": 0.1111111111111111,
+        "actual_fraction": 0.11111111111498743,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      }
+    ]
+  },
+  {
+    "year": 295,
+    "details": [
+      {
+        "branch_released": "p074"
+      },
+      {
+        "zhuangwu": true,
+        "county_count": 9,
+        "parent_area_km2": 8831.46,
+        "fitted_area_km2": 981.273,
+        "target_fraction": 0.1111111111111111,
+        "actual_fraction": 0.11111111111498743,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      }
+    ]
+  },
+  {
+    "year": 296,
+    "details": [
+      {
+        "branch_released": "p074"
+      },
+      {
+        "zhuangwu": true,
+        "county_count": 9,
+        "parent_area_km2": 8831.46,
+        "fitted_area_km2": 981.273,
+        "target_fraction": 0.1111111111111111,
+        "actual_fraction": 0.11111111111498743,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      }
+    ]
+  },
+  {
+    "year": 297,
+    "details": [
+      {
+        "branch_released": "p074"
+      },
+      {
+        "zhuangwu": true,
+        "county_count": 9,
+        "parent_area_km2": 8831.46,
+        "fitted_area_km2": 981.273,
+        "target_fraction": 0.1111111111111111,
+        "actual_fraction": 0.11111111111498743,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      }
+    ]
+  },
+  {
+    "year": 298,
+    "details": [
+      {
+        "branch_released": "p074"
+      },
+      {
+        "zhuangwu": true,
+        "county_count": 9,
+        "parent_area_km2": 8831.46,
+        "fitted_area_km2": 981.273,
+        "target_fraction": 0.1111111111111111,
+        "actual_fraction": 0.11111111111498743,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      }
+    ]
+  },
+  {
+    "year": 299,
+    "details": [
+      {
+        "branch_released": "p074"
+      },
+      {
+        "zhuangwu": true,
+        "county_count": 3,
+        "parent_area_km2": 3958.305,
+        "fitted_area_km2": 1319.435,
+        "target_fraction": 0.3333333333333333,
+        "actual_fraction": 0.3333333333874336,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      }
+    ]
+  },
+  {
+    "year": 300,
+    "details": [
+      {
+        "branch_released": "p074"
+      }
+    ]
+  },
+  {
+    "year": 301,
+    "details": [
+      {
+        "branch_released": "p031"
+      },
+      {
+        "branch_released": "p188"
+      },
+      {
+        "county_king": "棘陽",
+        "pid": "p166",
+        "parent_fief_id": null,
+        "county_count": 6,
+        "parent_area_km2": 6236.917,
+        "fitted_area_km2": 1039.486,
+        "target_fraction": 0.16666666666666666,
+        "actual_fraction": 0.166666666696628,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      }
+    ]
+  },
+  {
+    "year": 302,
+    "details": [
+      {
+        "branch_released": "p074"
+      },
+      {
+        "county_king": "棘陽",
+        "pid": "p166",
+        "parent_fief_id": "jin-新野",
+        "county_count": 6,
+        "parent_area_km2": 6236.917,
+        "fitted_area_km2": 1039.486,
+        "target_fraction": 0.16666666666666666,
+        "actual_fraction": 0.16666666672671415,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      },
+      {
+        "county_king": "樂平",
+        "unmapped": "同名地望未定，不重複繪成兩國"
+      }
+    ]
+  },
+  {
+    "year": 303,
+    "details": [
+      {
+        "branch_released": "p074"
+      },
+      {
+        "branch_released": "p026"
+      },
+      {
+        "county_king": "棘陽",
+        "pid": "p166",
+        "parent_fief_id": "jin-新野",
+        "county_count": 6,
+        "parent_area_km2": 6236.917,
+        "fitted_area_km2": 1039.486,
+        "target_fraction": 0.16666666666666666,
+        "actual_fraction": 0.16666666672671415,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      }
+    ]
+  },
+  {
+    "year": 304,
+    "details": [
+      {
+        "branch_released": "p074"
+      },
+      {
+        "branch_released": "p026"
+      },
+      {
+        "county_king": "棘陽",
+        "pid": "p166",
+        "parent_fief_id": "jin-新野",
+        "county_count": 6,
+        "parent_area_km2": 6236.917,
+        "fitted_area_km2": 1039.486,
+        "target_fraction": 0.16666666666666666,
+        "actual_fraction": 0.16666666672671415,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      }
+    ]
+  },
+  {
+    "year": 305,
+    "details": [
+      {
+        "branch_released": "p074"
+      },
+      {
+        "branch_released": "p026"
+      },
+      {
+        "county_king": "棘陽",
+        "pid": "p166",
+        "parent_fief_id": "jin-新野",
+        "county_count": 6,
+        "parent_area_km2": 6236.917,
+        "fitted_area_km2": 1039.486,
+        "target_fraction": 0.16666666666666666,
+        "actual_fraction": 0.16666666672671415,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      }
+    ]
+  },
+  {
+    "year": 306,
+    "details": [
+      {
+        "branch_released": "p218"
+      },
+      {
+        "branch_released": "p220"
+      },
+      {
+        "branch_released": "p026"
+      },
+      {
+        "county_king": "棘陽",
+        "pid": "p166",
+        "parent_fief_id": "jin-新野",
+        "county_count": 6,
+        "parent_area_km2": 6236.917,
+        "fitted_area_km2": 1039.486,
+        "target_fraction": 0.16666666666666666,
+        "actual_fraction": 0.16666666672671415,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      },
+      {
+        "county_king": "樂成",
+        "pid": "p040",
+        "parent_fief_id": null,
+        "county_count": 6,
+        "parent_area_km2": 5100.16,
+        "fitted_area_km2": 850.027,
+        "target_fraction": 0.16666666666666666,
+        "actual_fraction": 0.16666666677034248,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      }
+    ]
+  },
+  {
+    "year": 307,
+    "details": [
+      {
+        "branch_released": "p218"
+      },
+      {
+        "branch_released": "p220"
+      },
+      {
+        "branch_released": "p031"
+      },
+      {
+        "branch_released": "p188"
+      },
+      {
+        "branch_released": "p026"
+      },
+      {
+        "county_king": "棘陽",
+        "pid": "p166",
+        "parent_fief_id": "jin-新野",
+        "county_count": 6,
+        "parent_area_km2": 6236.917,
+        "fitted_area_km2": 1039.486,
+        "target_fraction": 0.16666666666666666,
+        "actual_fraction": 0.16666666672671415,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      },
+      {
+        "county_king": "樂成",
+        "pid": "p040",
+        "parent_fief_id": null,
+        "county_count": 6,
+        "parent_area_km2": 5100.16,
+        "fitted_area_km2": 850.027,
+        "target_fraction": 0.16666666666666666,
+        "actual_fraction": 0.16666666677034248,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      },
+      {
+        "county_king": "華容",
+        "pid": "p186",
+        "parent_fief_id": "jin-成都",
+        "county_count": 4,
+        "parent_area_km2": 11784.4,
+        "fitted_area_km2": 2946.1,
+        "target_fraction": 0.25,
+        "actual_fraction": 0.2500000000048996,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 200
+      }
+    ]
+  },
+  {
+    "year": 308,
+    "details": [
+      {
+        "branch_released": "p039"
+      },
+      {
+        "branch_released": "p218"
+      },
+      {
+        "branch_released": "p220"
+      },
+      {
+        "branch_released": "p162"
+      },
+      {
+        "branch_released": "p208"
+      },
+      {
+        "branch_released": "p031"
+      },
+      {
+        "branch_released": "p188"
+      },
+      {
+        "branch_released": "p026"
+      },
+      {
+        "county_king": "棘陽",
+        "pid": "p166",
+        "parent_fief_id": "jin-新野",
+        "county_count": 6,
+        "parent_area_km2": 6236.917,
+        "fitted_area_km2": 1039.486,
+        "target_fraction": 0.16666666666666666,
+        "actual_fraction": 0.16666666672671415,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      },
+      {
+        "county_king": "樂成",
+        "pid": "p040",
+        "parent_fief_id": null,
+        "county_count": 6,
+        "parent_area_km2": 5100.16,
+        "fitted_area_km2": 850.027,
+        "target_fraction": 0.16666666666666666,
+        "actual_fraction": 0.16666666677034248,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      },
+      {
+        "county_king": "華容",
+        "pid": "p186",
+        "parent_fief_id": "jin-成都",
+        "county_count": 4,
+        "parent_area_km2": 11784.4,
+        "fitted_area_km2": 2946.1,
+        "target_fraction": 0.25,
+        "actual_fraction": 0.2500000000048996,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 200
+      }
+    ]
+  },
+  {
+    "year": 309,
+    "details": [
+      {
+        "branch_released": "p039"
+      },
+      {
+        "branch_released": "p218"
+      },
+      {
+        "branch_released": "p220"
+      },
+      {
+        "branch_released": "p162"
+      },
+      {
+        "branch_released": "p208"
+      },
+      {
+        "branch_released": "p031"
+      },
+      {
+        "branch_released": "p188"
+      },
+      {
+        "branch_released": "p026"
+      },
+      {
+        "county_king": "棘陽",
+        "pid": "p166",
+        "parent_fief_id": "jin-新野",
+        "county_count": 6,
+        "parent_area_km2": 6236.917,
+        "fitted_area_km2": 1039.486,
+        "target_fraction": 0.16666666666666666,
+        "actual_fraction": 0.16666666672671415,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      },
+      {
+        "county_king": "樂成",
+        "pid": "p040",
+        "parent_fief_id": null,
+        "county_count": 6,
+        "parent_area_km2": 5100.16,
+        "fitted_area_km2": 850.027,
+        "target_fraction": 0.16666666666666666,
+        "actual_fraction": 0.16666666677034248,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      },
+      {
+        "county_king": "華容",
+        "pid": "p186",
+        "parent_fief_id": "jin-成都",
+        "county_count": 4,
+        "parent_area_km2": 11784.4,
+        "fitted_area_km2": 2946.1,
+        "target_fraction": 0.25,
+        "actual_fraction": 0.2500000000048996,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 200
+      }
+    ]
+  },
+  {
+    "year": 310,
+    "details": [
+      {
+        "branch_released": "p039"
+      },
+      {
+        "branch_released": "p218"
+      },
+      {
+        "branch_released": "p220"
+      },
+      {
+        "branch_released": "p162"
+      },
+      {
+        "branch_released": "p208"
+      },
+      {
+        "branch_released": "p031"
+      },
+      {
+        "branch_released": "p188"
+      },
+      {
+        "branch_released": "p026"
+      },
+      {
+        "county_king": "棘陽",
+        "pid": "p166",
+        "parent_fief_id": "jin-新野",
+        "county_count": 6,
+        "parent_area_km2": 6236.917,
+        "fitted_area_km2": 1039.486,
+        "target_fraction": 0.16666666666666666,
+        "actual_fraction": 0.16666666672671415,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      },
+      {
+        "county_king": "樂成",
+        "pid": "p040",
+        "parent_fief_id": null,
+        "county_count": 6,
+        "parent_area_km2": 5100.16,
+        "fitted_area_km2": 850.027,
+        "target_fraction": 0.16666666666666666,
+        "actual_fraction": 0.16666666677034248,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      },
+      {
+        "county_king": "華容",
+        "pid": "p186",
+        "parent_fief_id": "jin-成都",
+        "county_count": 4,
+        "parent_area_km2": 12623.326,
+        "fitted_area_km2": 3155.831,
+        "target_fraction": 0.25,
+        "actual_fraction": 0.250000000025335,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 200
+      }
+    ]
+  },
+  {
+    "year": 311,
+    "details": [
+      {
+        "branch_released": "p039"
+      },
+      {
+        "branch_released": "p026"
+      },
+      {
+        "county_king": "棘陽",
+        "pid": "p166",
+        "parent_fief_id": "jin-新野",
+        "county_count": 6,
+        "parent_area_km2": 6236.917,
+        "fitted_area_km2": 1039.486,
+        "target_fraction": 0.16666666666666666,
+        "actual_fraction": 0.16666666672671415,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      },
+      {
+        "county_king": "樂成",
+        "pid": "p040",
+        "parent_fief_id": null,
+        "county_count": 6,
+        "parent_area_km2": 5100.16,
+        "fitted_area_km2": 850.027,
+        "target_fraction": 0.16666666666666666,
+        "actual_fraction": 0.16666666677034248,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      },
+      {
+        "county_king": "華容",
+        "pid": "p186",
+        "parent_fief_id": "jin-成都",
+        "county_count": 4,
+        "parent_area_km2": 12623.326,
+        "fitted_area_km2": 3155.831,
+        "target_fraction": 0.25,
+        "actual_fraction": 0.250000000025335,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 200
+      }
+    ]
+  },
+  {
+    "year": 312,
+    "details": [
+      {
+        "county_king": "棘陽",
+        "pid": "p166",
+        "parent_fief_id": null,
+        "county_count": 6,
+        "parent_area_km2": 6236.917,
+        "fitted_area_km2": 1039.486,
+        "target_fraction": 0.16666666666666666,
+        "actual_fraction": 0.166666666696628,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      },
+      {
+        "county_king": "華容",
+        "pid": "p186",
+        "parent_fief_id": "jin-成都",
+        "county_count": 4,
+        "parent_area_km2": 12623.326,
+        "fitted_area_km2": 3155.831,
+        "target_fraction": 0.25,
+        "actual_fraction": 0.250000000025335,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 200
+      }
+    ]
+  },
+  {
+    "year": 313,
+    "details": [
+      {
+        "county_king": "棘陽",
+        "pid": "p166",
+        "parent_fief_id": null,
+        "county_count": 6,
+        "parent_area_km2": 6236.917,
+        "fitted_area_km2": 1039.486,
+        "target_fraction": 0.16666666666666666,
+        "actual_fraction": 0.166666666696628,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      },
+      {
+        "county_king": "樂成",
+        "pid": "p040",
+        "parent_fief_id": null,
+        "county_count": 6,
+        "parent_area_km2": 5100.16,
+        "fitted_area_km2": 850.027,
+        "target_fraction": 0.16666666666666666,
+        "actual_fraction": 0.16666666677034248,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      }
+    ]
+  },
+  {
+    "year": 314,
+    "details": [
+      {
+        "county_king": "棘陽",
+        "pid": "p166",
+        "parent_fief_id": null,
+        "county_count": 6,
+        "parent_area_km2": 6236.917,
+        "fitted_area_km2": 1039.486,
+        "target_fraction": 0.16666666666666666,
+        "actual_fraction": 0.166666666696628,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      },
+      {
+        "county_king": "樂成",
+        "pid": "p040",
+        "parent_fief_id": null,
+        "county_count": 6,
+        "parent_area_km2": 5100.16,
+        "fitted_area_km2": 850.027,
+        "target_fraction": 0.16666666666666666,
+        "actual_fraction": 0.1666666667703425,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      }
+    ]
+  },
+  {
+    "year": 315,
+    "details": [
+      {
+        "county_king": "棘陽",
+        "pid": "p166",
+        "parent_fief_id": null,
+        "county_count": 6,
+        "parent_area_km2": 6236.917,
+        "fitted_area_km2": 1039.486,
+        "target_fraction": 0.16666666666666666,
+        "actual_fraction": 0.166666666696628,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      },
+      {
+        "county_king": "樂成",
+        "pid": "p040",
+        "parent_fief_id": null,
+        "county_count": 6,
+        "parent_area_km2": 5100.16,
+        "fitted_area_km2": 850.027,
+        "target_fraction": 0.16666666666666666,
+        "actual_fraction": 0.1666666667703425,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      }
+    ]
+  },
+  {
+    "year": 316,
+    "details": [
+      {
+        "county_king": "棘陽",
+        "pid": "p166",
+        "parent_fief_id": null,
+        "county_count": 6,
+        "parent_area_km2": 6236.917,
+        "fitted_area_km2": 1039.486,
+        "target_fraction": 0.16666666666666666,
+        "actual_fraction": 0.166666666696628,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      },
+      {
+        "county_king": "樂成",
+        "pid": "p040",
+        "parent_fief_id": null,
+        "county_count": 6,
+        "parent_area_km2": 5100.16,
+        "fitted_area_km2": 850.027,
+        "target_fraction": 0.16666666666666666,
+        "actual_fraction": 0.1666666667703425,
+        "seat_inside": true,
+        "connected": true,
+        "other_seats_inside": 0,
+        "new_parent_fragments": 0,
+        "illustrative_edge_margin_m": 0
+      }
+    ]
+  }
+]

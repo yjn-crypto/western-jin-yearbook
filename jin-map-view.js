@@ -122,7 +122,7 @@
       const layer=p.layer||'',rawLevel=p.level||(/province|state/.test(layer)?'state':/county/.test(layer)?'county':'prefecture');
       // County cells constrain the fitted prefecture geometry internally.
       // They are deliberately absent from the public map at every zoom.
-      if(/county.*area|county.*bound/.test(layer))continue;
+      if(/county.*area|county.*bound/.test(layer)&&!p.county_kingdom)continue;
       const level=rawLevel==='regime'?'state':rawLevel==='fief'?(p.display_level||(/^p/.test(p.entity_id||'')?'prefecture':'county')):rawLevel;
       const name=p.display_name||p.name||'',key=p.entity_id?`entity:${p.entity_id}`:`jin:${layer}:${p.id||features.length}`;
       if(g.type==='Point'){
@@ -171,6 +171,7 @@
       else if(p.is_reference)Object.assign(style,{class:'jin-reference-boundary',fill:'none',stroke:(polygon&&p.explicit_shared_boundaries)||(map.annualVideo&&!map.threeBasemap&&/province|state/.test(layer))?'none':/province|state/.test(layer)?'#686d73':'#92918b','stroke-width':/province|state/.test(layer)?2.6:.85,'stroke-opacity':1});
       else if(/territory/.test(layer))Object.assign(style,{fill:'#ded3a8',stroke:map.annualVideo?'none':'#6c6043','stroke-width':1.8});
       else if(/kingdom.*area/.test(layer))Object.assign(style,{fill:p.color||fiefColor(p.fief_id||p.name),'fill-opacity':.62,stroke:map.threeBasemap?'none':'#915c32','stroke-width':2.2,'stroke-dasharray':p.has_inference?'6 3':'none'});
+      else if(layer==='county_kingdom_boundaries')Object.assign(style,{stroke:'#915c32','stroke-width':1.6,'stroke-dasharray':'6 4'});
       else if(/member.*bound|branch.*bound/.test(layer))Object.assign(style,{stroke:'#766854','stroke-opacity':.24,'stroke-width':.65});
       else if(/province.*bound|state.*bound/.test(layer))Object.assign(style,{class:'jin-province-boundary',stroke:'#292b32','stroke-width':3.2,'stroke-opacity':1});
       else if(/province.*area|state.*area/.test(layer))Object.assign(style,{class:'jin-province-area',fill:'#e2e5d2',stroke:explicitStateBoundaries||map.annualVideo?'none':'#292b32','stroke-width':3.2,'stroke-opacity':1});
@@ -188,6 +189,13 @@
       const evidence=Array.isArray(p.notes)?p.notes.join('；'):p.notes||'';
       path.appendChild(svgNode('title',{},`${name}${p.holder?`；${p.holder}`:''}；${p.source||''}${p.completion_inferred?'；包含依本年郡屬與鄰接關係補齊的推定範圍':''}${p.is_reference?`；無色參考層，參考年代${p.reference_year||'未詳'}；${p.reference_reason||''}`:''}${p.book_page?`；原書第${p.book_page}頁`:''}${p.member_role==='branch'?'；王國支郡':''}${p.boundary_evidence?`；${p.boundary_evidence}`:''}${p.explanation?`；${p.explanation}`:''}${p.control_reason?`；${p.control_reason}`:''}${evidence?`；${evidence}`:''}${p.time_uncertain?'；年代待考':''}`));
       geometryContainer.appendChild(path);
+      if(layer==='kingdom_areas'&&p.county_kingdom){
+        const point=interiorPoint(g),[x,y]=project(point);
+        labels.push({text:name+'※',sourceName:name,x,y,level:boundaryOnly?'prefecture':'county',entityId:p.entity_id,mapKey:key,
+          kind:'county-kingdom-area',fontSize:11.5,priority:920,isTextAnchor:true,areaGuard:areaGuard?.(d),areaId:key,allowAreaFontShrink:true,
+          fief:true,color:'#493b2a',uncertain:true});
+        features.push({entity_id:p.entity_id,x,y,level:'county',label:name,mapKey:key,coordinate_role:'fitted_county_kingdom_label',source:p.source});
+      }
       if(layer==='regime_areas'&&name&&(!p.is_jin||map.politicalOverview)){
         const point=p.label_lonlat||interiorPoint(g);
         if(point){const [x,y]=project(point);

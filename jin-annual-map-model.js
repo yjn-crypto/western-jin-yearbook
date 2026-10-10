@@ -248,6 +248,14 @@
       for(const id of detailPatch.remove_fief_colors)delete fiefColors[id];
       Object.assign(fiefColors,detailPatch.colors);
     }
+    const oct11=root.JIN_OCT11_MAP_REVIEW,oct11Patch=oct11?.years[String(year)];
+    if(oct11Patch){
+      const featureKey=f=>{const p=f.properties;return [p.layer,p.entity_id||p.id||p.source_id||'',(p.adjacent_entity_ids||[]).slice().sort().join(',')].join(':');};
+      map.geojson.features=map.geojson.features.filter(f=>!oct11Patch.remove.includes(featureKey(f)));
+      for(const f of oct11Patch.add)map.geojson.features.push({type:'Feature',geometry:oct11.geometries[f.geometry_id],properties:{...f.properties}});
+      for(const id of oct11Patch.remove_fief_colors)delete fiefColors[id];
+      Object.assign(fiefColors,oct11Patch.colors);
+    }
     const count=layer=>map.geojson.features.filter(f=>f.properties.layer===layer).length;
     const sourceNote=presentation.note?.replace(/ 本年表內但未能單獨繪界：.*?具體缺據見年度coverage記錄。/,'')||'谭圖262、281與CHGIS同級採用；約308圖補晚期局部邊界。政區與支郡依本年文字，改名、整郡改州沿用已有郡界；析置及轉縣局部擬合並註明來源。政權邊界只採三底圖；末期缺少明確控制界線之處保留底圖政區參考，不表示仍屬西晉實際控制。縣面與縣界不展示；州郡大圖使用同一年度的完整矢量邊線。';
     const note=localPatch?sourceNote.replace(/ ?新野內圈為仍屬義陽的朝陽縣推定轄區，並非重複郡界。/,'')+' '+localPatch.note:sourceNote;
@@ -256,7 +264,7 @@
     return {...map,threeBasemap:true,fiefColors,
       title:presentation.title||`${year}年　西晉州郡與封國`,
       subtitle:presentation.subtitle||'據262、281及約308年圖按改置事件取界；CHGIS保留治所。',
-      note:note+abolitionNote+referenceFiefNote+(reviewPatch?' '+reviewPatch.note:'')+(detailPatch?' '+detailPatch.note:''),
+      note:(note+abolitionNote+referenceFiefNote+(reviewPatch?' '+reviewPatch.note:'')+(detailPatch?' '+detailPatch.note:'')).replace(/縣面與縣界不展示/g,'普通縣面與縣界不展示').replace('明確承襲者在其有效爵期內繼承原多郡封土','本人復封或前任親生子連續承襲者在有效爵期內繼承原多郡封土')+(oct11Patch?' '+oct11Patch.note:''),
       status:presentation.status||`${year}年：${count('prefecture_areas')}處郡國範圍、${count('county_seats')}處縣治；邊界逐段保留底圖年代與擬合說明。`
     };
   }

@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.1",
-  "reviewed_at": "2026-10-08",
+  "reviewed_at": "2026-10-11",
   "status": "reviewed_word_decisions_applied",
   "time_basis": "行政設置、轉屬採《通史》現成年份；封爵採既定王表及Word，明確改封、立儲、廢爵按當年變更後結果，同步主國與支郡，不另補空檔或未知繼承。個別經使用者批准的展示期段保留並註明推定，不以本輪規則一律將所有終年減一。",
   "render_contract": {
@@ -16,7 +16,7 @@
     "county_group_identity": "289以前梁内陈县组只分组原有县；289起以原陈郡ID承接当年陈、项、阳夏、武平等县，县不复制，郡数计入正式陈支郡。",
     "branch_administration_evidence": "姚胡2010第39—43页支持289后主国与支郡各置内史；不据官名总论自动决定某郡某年支属，亦不把东晋举例倒填西晋。",
     "proto_branch_note": "289以前视为多郡王国之先声，增封原郡加括号、不另计郡数；289及以后按正式支郡列示并计数。",
-    "branch_continuity": "国爵时间以维基封爵表及后续Word裁定为准，不因未见明确国绝而补出存续年段。只有在已确认承继该多郡王爵的有效时间内，才沿用原本国和支郡封土；封土继承不能用来填补王爵时间空档、延长截止年或另造主国关系。"
+    "branch_continuity": "僅本人復封或前任國主的親生兒子連續承繼，才沿用原有支郡及附加縣組；過繼、兄弟等旁系承繼，或王國消失後由非本人復建，僅領本國。即使為親生子，若中間有明確國爵空檔，亦不恢復原支郡。此為2026-10-11使用者指定展示規則，不宣稱晋制通例；不另改主國爵期，不以國主或繼位年未詳擅造撤支年度。"
   },
   "sources": [
     {
@@ -248,6 +248,12 @@
       "id": "USER_DETAIL_20261007",
       "title": "使用者2026-10-07細節修訂：新都、濟陰與陳留析濟陽",
       "note": "本輪明訂新都王國地望回接四川舊新都；307—311舊p015顯濟陰國，東海濟陽另分陳留濟陽、考城二縣。取代Word先前以p015作東海支郡之候選；306分置年與界線仍屬展示推定。"
+    },
+    {
+      "id": "USER_SUCCESSION_20261011",
+      "title": "2026-10-11使用者多郡及縣組繼承展示裁定",
+      "kind": "使用者展示裁定",
+      "note": "僅本人復封或前任國主的親生兒子連續承繼，才沿用原有支郡及附加縣組；過繼、兄弟等旁系承繼，或王國消失後由非本人復建，僅領本國。即使為親生子，若中間有明確國爵空檔，亦不恢復原支郡。此為2026-10-11使用者指定展示規則，不宣稱晋制通例；不另改主國爵期，不以國主或繼位年未詳擅造撤支年度。"
     }
   ],
   "records": [
@@ -287,7 +293,13 @@
           "text": "清河康王遐，字深度，美容儀，有精彩，武帝愛之。既受封，出繼叔父城陽哀王兆。太康十年，封渤海郡。",
           "note": "此段是清河增封渤海的直接依据；遐薨后的各次承继、复封是否延续原支属，仍按本条所列证据等级区别。"
         }
-      ]
+      ],
+      "succession_review": {
+        "reviewed_at": "2026-10-11",
+        "decision": "retain",
+        "reason": "original_grant",
+        "note": "289增封勃海直接依據不變。"
+      }
     },
     {
       "id": "QINGHE_TAN_FIRST",
@@ -326,7 +338,13 @@
           "text": "清河康王遐，字深度，美容儀，有精彩，武帝愛之。既受封，出繼叔父城陽哀王兆。太康十年，封渤海郡。",
           "note": "此段是清河增封渤海的直接依据；遐薨后的各次承继、复封是否延续原支属，仍按本条所列证据等级区别。"
         }
-      ]
+      ],
+      "succession_review": {
+        "reviewed_at": "2026-10-11",
+        "decision": "retain",
+        "reason": "biological_son",
+        "note": "覃為前任遐親生長子，連續承繼。"
+      }
     },
     {
       "id": "QINGHE_TAN_RESTORED",
@@ -365,7 +383,13 @@
           "text": "清河康王遐，字深度，美容儀，有精彩，武帝愛之。既受封，出繼叔父城陽哀王兆。太康十年，封渤海郡。",
           "note": "此段是清河增封渤海的直接依据；遐薨后的各次承继、复封是否延续原支属，仍按本条所列证据等级区别。"
         }
-      ]
+      ],
+      "succession_review": {
+        "reviewed_at": "2026-10-11",
+        "decision": "retain",
+        "reason": "same_person_restoration",
+        "note": "304為覃本人復封，恢復他此前已有支郡。"
+      }
     },
     {
       "id": "QINGHE_YUE",
@@ -375,24 +399,16 @@
       "primary_ids": [
         "p042"
       ],
-      "members": [
-        {
-          "ids": [
-            "p039"
-          ],
-          "name": "勃海",
-          "certainty": "inferred",
-          "note": "原支郡随继统或复封保留为推定。"
-        }
-      ],
+      "members": [],
       "holder": "司馬籥",
       "holder_accession_year": 308,
       "source_ids": [
         "JS064",
         "JS005",
-        "PRINCES_LOCAL"
+        "PRINCES_LOCAL",
+        "USER_SUCCESSION_20261011"
       ],
-      "note": "308还封明确；依既有王表及后续裁定列至311，312以后不因缺少明确国绝记载而自行补段。不将王号存续等同晋方实际控制。",
+      "note": "司馬籥為前任司馬覃之弟，雖同為遐的親生子，並非前任國主的親生兒子；308—311清河本國保留，勃海不再隨兄弟轉封繼承。 本條依最新繼承展示規則撤支，不表示史書明載各支郡於同年另有罷國詔。",
       "certainty": "inferred",
       "holder_end_year": null,
       "evidence_passages": [
@@ -403,8 +419,32 @@
           "kind": "原文节录",
           "text": "清河康王遐，字深度，美容儀，有精彩，武帝愛之。既受封，出繼叔父城陽哀王兆。太康十年，封渤海郡。",
           "note": "此段是清河增封渤海的直接依据；遐薨后的各次承继、复封是否延续原支属，仍按本条所列证据等级区别。"
+        },
+        {
+          "source_id": "USER_SUCCESSION_20261011",
+          "title": "本輪繼承展示裁定",
+          "kind": "本項目推定",
+          "text": "司馬籥為前任司馬覃之弟，雖同為遐的親生子，並非前任國主的親生兒子；308—311清河本國保留，勃海不再隨兄弟轉封繼承。",
+          "note": "採前任國主的親生兒子口徑；中斷後非本人復封的限制優先。僅修改支屬，國爵時間仍遵既定王表和後續人工裁定。"
         }
-      ]
+      ],
+      "superseded_branch_members": [
+        {
+          "ids": [
+            "p039"
+          ],
+          "name": "勃海",
+          "certainty": "inferred",
+          "note": "原支郡随继统或复封保留为推定。"
+        }
+      ],
+      "superseded_succession_note": "308还封明确；依既有王表及后续裁定列至311，312以后不因缺少明确国绝记载而自行补段。不将王号存续等同晋方实际控制。",
+      "succession_review": {
+        "reviewed_at": "2026-10-11",
+        "decision": "primary_only",
+        "reason": "collateral_successor",
+        "source_id": "USER_SUCCESSION_20261011"
+      }
     },
     {
       "id": "WU_YAN_FIRST",
@@ -460,7 +500,13 @@
           "text": "由“改太守”三字，实应联想到晋代封王的一个特点：诸郡王往往并非仅食一郡。……言“并吴三郡”者，是以吴郡为其本封，而丹杨、吴兴则系支郡。",
           "note": "据用户提供扫描件核对；节录保留原字，省略号表示中间引史内容。支郡据此独立列行和计数，不能合并掉各郡。"
         }
-      ]
+      ],
+      "succession_review": {
+        "reviewed_at": "2026-10-11",
+        "decision": "retain",
+        "reason": "original_grant",
+        "note": "晏初封三郡不變。"
+      }
     },
     {
       "id": "WU_YAN_RESTORED",
@@ -516,7 +562,13 @@
           "text": "由“改太守”三字，实应联想到晋代封王的一个特点：诸郡王往往并非仅食一郡。……言“并吴三郡”者，是以吴郡为其本封，而丹杨、吴兴则系支郡。",
           "note": "据用户提供扫描件核对；节录保留原字，省略号表示中间引史内容。支郡据此独立列行和计数，不能合并掉各郡。"
         }
-      ]
+      ],
+      "succession_review": {
+        "reviewed_at": "2026-10-11",
+        "decision": "retain",
+        "reason": "same_person_restoration",
+        "note": "301為晏本人復封，原丹楊、吳興保留。"
+      }
     },
     {
       "id": "CHENGDU_SICHUAN",
@@ -572,7 +624,13 @@
           "text": "八年，武帝子成都王穎受封，以蜀郡、廣漢、犍為、汶山十萬戶為王國。易蜀郡太守號為成都內史。",
           "note": "略去校勘夹注。原文作“八年”，与《晋书·武帝纪》太康十年有异；本表继续采用已有289年起期。四郡名单与授封纪年分开判断，广汉依当年州属留在梁州。"
         }
-      ]
+      ],
+      "succession_review": {
+        "reviewed_at": "2026-10-11",
+        "decision": "retain",
+        "reason": "original_grant",
+        "note": "穎本人原四郡期段，不涉及新繼承人。"
+      }
     },
     {
       "id": "GUANGLING_YU",
@@ -612,7 +670,13 @@
           "text": "維爾少資岐嶷之質，荷先帝殊異之寵，大啟土宇，奄有淮陵。",
           "note": "顾江龙将“淮陵”释为临淮、广陵二郡；这是郡名释读，不是此处出现一个“淮陵郡”。网页将临淮支属继续标为推定。"
         }
-      ]
+      ],
+      "succession_review": {
+        "reviewed_at": "2026-10-11",
+        "decision": "retain",
+        "reason": "original_grant",
+        "note": "遹本人原增封期段。"
+      }
     },
     {
       "id": "DONGHAI_YUE",
@@ -664,7 +728,13 @@
           "text": "以下邳、濟陽二郡增封。",
           "note": "原典明載二郡增封。本輪改採《宋書》分陳留置濟陽說，依使用者指定列濟陽、考城二縣；原將p015配作東海支郡的Word候選已撤回，保留原地望分歧及展示推定標記。"
         }
-      ]
+      ],
+      "succession_review": {
+        "reviewed_at": "2026-10-11",
+        "decision": "retain",
+        "reason": "original_grant",
+        "note": "越本人306增封期段。"
+      }
     },
     {
       "id": "YUZHANG_CHI",
@@ -727,7 +797,13 @@
           "text": "作者另把豫章封域与江州十郡联系，提出江州因分封而置的假说。",
           "note": "这是论文论证摘要，保留供阅读；本项目不据此扩大支郡名单或改动已校定的江州设置年。"
         }
-      ]
+      ],
+      "succession_review": {
+        "reviewed_at": "2026-10-11",
+        "decision": "retain",
+        "reason": "original_grant",
+        "note": "熾本人原有支屬推定不變。"
+      }
     },
     {
       "id": "YUZHANG_QUAN",
@@ -737,26 +813,7 @@
       "primary_ids": [
         "p217"
       ],
-      "members": [
-        {
-          "ids": [
-            "p202",
-            "p218"
-          ],
-          "name": "鄱陽",
-          "certainty": "inferred",
-          "note": "姚乐、胡阿祥2010第42页注②、⑤据虞溥任鄱阳内史及地理相邻，推其属豫章；王廙312任内史为另证。论文未给289起始及逐年延续，故仍标推定。"
-        },
-        {
-          "ids": [
-            "p201",
-            "p220"
-          ],
-          "name": "臨川",
-          "certainty": "inferred",
-          "note": "315年临川内史谢摛为官名线索；此前何时始属豫章及是否连续，仅按既有研究推定，非289原诏成员明文。姚胡2010未讨论临川支属，不能把鄱阳论证扩大作本项来源。"
-        }
-      ],
+      "members": [],
       "holder": "司馬詮",
       "holder_accession_year": 306,
       "source_ids": [
@@ -766,9 +823,10 @@
         "JS076",
         "YAO_HU2010",
         "JS082",
-        "GU2018"
+        "GU2018",
+        "USER_SUCCESSION_20261011"
       ],
-      "note": "306年十一月改豫章；307三月立太子，307由端条承接。纪传相抵时注记本纪307、本传308异文。",
+      "note": "司馬詮為清河王遐之子，非前任豫章王熾的親生子；304—305豫章有既定爵期空檔。306僅保留豫章本國，不恢復鄱陽、臨川支屬。 本條依最新繼承展示規則撤支，不表示史書明載各支郡於同年另有罷國詔。",
       "certainty": "inferred",
       "holder_end_year": 307,
       "evidence_passages": [
@@ -787,18 +845,16 @@
           "kind": "论文论证摘要",
           "text": "作者另把豫章封域与江州十郡联系，提出江州因分封而置的假说。",
           "note": "这是论文论证摘要，保留供阅读；本项目不据此扩大支郡名单或改动已校定的江州设置年。"
+        },
+        {
+          "source_id": "USER_SUCCESSION_20261011",
+          "title": "本輪繼承展示裁定",
+          "kind": "本項目推定",
+          "text": "司馬詮為清河王遐之子，非前任豫章王熾的親生子；304—305豫章有既定爵期空檔。306僅保留豫章本國，不恢復鄱陽、臨川支屬。",
+          "note": "採前任國主的親生兒子口徑；中斷後非本人復封的限制優先。僅修改支屬，國爵時間仍遵既定王表和後續人工裁定。"
         }
-      ]
-    },
-    {
-      "id": "YUZHANG_DUAN",
-      "kingdom_name": "豫章",
-      "begin": 307,
-      "end": 310,
-      "primary_ids": [
-        "p217"
       ],
-      "members": [
+      "superseded_branch_members": [
         {
           "ids": [
             "p202",
@@ -818,6 +874,23 @@
           "note": "315年临川内史谢摛为官名线索；此前何时始属豫章及是否连续，仅按既有研究推定，非289原诏成员明文。姚胡2010未讨论临川支属，不能把鄱阳论证扩大作本项来源。"
         }
       ],
+      "superseded_succession_note": "306年十一月改豫章；307三月立太子，307由端条承接。纪传相抵时注记本纪307、本传308异文。",
+      "succession_review": {
+        "reviewed_at": "2026-10-11",
+        "decision": "primary_only",
+        "reason": "new_holder_after_gap",
+        "source_id": "USER_SUCCESSION_20261011"
+      }
+    },
+    {
+      "id": "YUZHANG_DUAN",
+      "kingdom_name": "豫章",
+      "begin": 307,
+      "end": 310,
+      "primary_ids": [
+        "p217"
+      ],
+      "members": [],
       "holder": "司馬端",
       "holder_accession_year": 307,
       "source_ids": [
@@ -827,9 +900,10 @@
         "JS076",
         "YAO_HU2010",
         "JS082",
-        "GU2018"
+        "GU2018",
+        "USER_SUCCESSION_20261011"
       ],
-      "note": "307年詮為太子後端轉豫章；311年端被立太子，依當年變更後結果，豫章及原支郡本年皆列普通郡，不續構未知後繼。",
+      "note": "司馬端為前任司馬詮之弟，並非親生子或本人復封；307—310僅領豫章本國，鄱陽、臨川不作支郡。 本條依最新繼承展示規則撤支，不表示史書明載各支郡於同年另有罷國詔。",
       "certainty": "inferred",
       "holder_end_year": 311,
       "evidence_passages": [
@@ -848,8 +922,42 @@
           "kind": "论文论证摘要",
           "text": "作者另把豫章封域与江州十郡联系，提出江州因分封而置的假说。",
           "note": "这是论文论证摘要，保留供阅读；本项目不据此扩大支郡名单或改动已校定的江州设置年。"
+        },
+        {
+          "source_id": "USER_SUCCESSION_20261011",
+          "title": "本輪繼承展示裁定",
+          "kind": "本項目推定",
+          "text": "司馬端為前任司馬詮之弟，並非親生子或本人復封；307—310僅領豫章本國，鄱陽、臨川不作支郡。",
+          "note": "採前任國主的親生兒子口徑；中斷後非本人復封的限制優先。僅修改支屬，國爵時間仍遵既定王表和後續人工裁定。"
         }
-      ]
+      ],
+      "superseded_branch_members": [
+        {
+          "ids": [
+            "p202",
+            "p218"
+          ],
+          "name": "鄱陽",
+          "certainty": "inferred",
+          "note": "姚乐、胡阿祥2010第42页注②、⑤据虞溥任鄱阳内史及地理相邻，推其属豫章；王廙312任内史为另证。论文未给289起始及逐年延续，故仍标推定。"
+        },
+        {
+          "ids": [
+            "p201",
+            "p220"
+          ],
+          "name": "臨川",
+          "certainty": "inferred",
+          "note": "315年临川内史谢摛为官名线索；此前何时始属豫章及是否连续，仅按既有研究推定，非289原诏成员明文。姚胡2010未讨论临川支属，不能把鄱阳论证扩大作本项来源。"
+        }
+      ],
+      "superseded_succession_note": "307年詮為太子後端轉豫章；311年端被立太子，依當年變更後結果，豫章及原支郡本年皆列普通郡，不續構未知後繼。",
+      "succession_review": {
+        "reviewed_at": "2026-10-11",
+        "decision": "primary_only",
+        "reason": "collateral_successor",
+        "source_id": "USER_SUCCESSION_20261011"
+      }
     },
     {
       "id": "QI_JINAN",
@@ -890,7 +998,13 @@
           "text": "又詔下太常，議崇錫之物，以濟南郡益齊國。又以攸子寔為北海王。",
           "note": "283年增封济南有明文；其后承袭时段的持续关系仍区分推定。该句不能当成另封济南王的依据。"
         }
-      ]
+      ],
+      "succession_review": {
+        "reviewed_at": "2026-10-11",
+        "decision": "retain",
+        "reason": "biological_son",
+        "note": "冏是攸親生子，既定濟南支屬283—301不變；302以後本來已不沿用。"
+      }
     },
     {
       "id": "QIN_JIAN",
@@ -948,7 +1062,13 @@
           "text": "惠帝即位，改扶風國為秦國。",
           "note": "可证扶风为秦本国，不能改用京兆；原典地理志所系290与封爵表289有年差，本轮按289封爵事件显示。"
         }
-      ]
+      ],
+      "succession_review": {
+        "reviewed_at": "2026-10-11",
+        "decision": "retain",
+        "reason": "original_grant",
+        "note": "柬本人原有始平支屬不變。"
+      }
     },
     {
       "id": "QIN_YU",
@@ -958,25 +1078,17 @@
       "primary_ids": [
         "p073"
       ],
-      "members": [
-        {
-          "ids": [
-            "p074"
-          ],
-          "name": "始平",
-          "certainty": "inferred",
-          "note": "始平内史官名结合太康分封研究，推为秦国支郡；289起按改封当年的结果列示。主国由扶风改名，不能因近邻地名改把京兆当作本国。"
-        }
-      ],
+      "members": [],
       "holder": "司馬郁",
       "holder_accession_year": null,
       "source_ids": [
         "JS064",
         "PRINCES_LOCAL",
         "JS060",
-        "JS059"
+        "JS059",
+        "USER_SUCCESSION_20261011"
       ],
-      "note": "即位年仅知继柬，不以292逾年表起点强算即位；支郡延续推定。",
+      "note": "司馬郁為淮南王允之子，出繼秦王柬；292—300保留秦本國，取消始平支屬。 本條依最新繼承展示規則撤支，不表示史書明載各支郡於同年另有罷國詔。",
       "certainty": "inferred",
       "holder_end_year": 300,
       "evidence_passages": [
@@ -995,18 +1107,16 @@
           "kind": "原文节录",
           "text": "瞻等與始平太守梁邁合從，迎顒于南山。……弘農太守裴暠、秦國內史賈龕、安定太守賈疋等起義討顒。",
           "note": "同段并列始平太守、秦国内史，阻止把旧支属无条件延续至311年；默认止305是显示上限，不断言305年有确证除属事件。"
+        },
+        {
+          "source_id": "USER_SUCCESSION_20261011",
+          "title": "本輪繼承展示裁定",
+          "kind": "本項目推定",
+          "text": "司馬郁為淮南王允之子，出繼秦王柬；292—300保留秦本國，取消始平支屬。",
+          "note": "採前任國主的親生兒子口徑；中斷後非本人復封的限制優先。僅修改支屬，國爵時間仍遵既定王表和後續人工裁定。"
         }
-      ]
-    },
-    {
-      "id": "QIN_YE",
-      "kingdom_name": "秦",
-      "begin": 302,
-      "end": 305,
-      "primary_ids": [
-        "p073"
       ],
-      "members": [
+      "superseded_branch_members": [
         {
           "ids": [
             "p074"
@@ -1016,6 +1126,23 @@
           "note": "始平内史官名结合太康分封研究，推为秦国支郡；289起按改封当年的结果列示。主国由扶风改名，不能因近邻地名改把京兆当作本国。"
         }
       ],
+      "superseded_succession_note": "即位年仅知继柬，不以292逾年表起点强算即位；支郡延续推定。",
+      "succession_review": {
+        "reviewed_at": "2026-10-11",
+        "decision": "primary_only",
+        "reason": "adopted_successor",
+        "source_id": "USER_SUCCESSION_20261011"
+      }
+    },
+    {
+      "id": "QIN_YE",
+      "kingdom_name": "秦",
+      "begin": 302,
+      "end": 305,
+      "primary_ids": [
+        "p073"
+      ],
+      "members": [],
       "holder": "司馬鄴",
       "holder_accession_year": 302,
       "source_ids": [
@@ -1023,9 +1150,10 @@
         "JS005",
         "PRINCES_LOCAL",
         "JS059",
-        "JS060"
+        "JS060",
+        "USER_SUCCESSION_20261011"
       ],
-      "note": "302继秦。卷59在306政局中并列始平太守梁迈与秦国内史贾龛，是始平支秦延续的反证；因此306以后不默认显示此支郡关系。305不是确证废止年，只是本轮默认显示上限。",
+      "note": "司馬鄴為吳王晏之子，出繼秦王柬，且301年有既定爵期空檔；302—305不恢復始平支屬。秦本國既有有效爵期不因撤支縮短，306以後本來即未列始平支郡。 本條依最新繼承展示規則撤支，不表示史書明載各支郡於同年另有罷國詔。",
       "certainty": "inferred",
       "holder_end_year": 312,
       "date_certainty": "inferred_display_cutoff",
@@ -1045,8 +1173,32 @@
           "kind": "原文节录",
           "text": "瞻等與始平太守梁邁合從，迎顒于南山。……弘農太守裴暠、秦國內史賈龕、安定太守賈疋等起義討顒。",
           "note": "同段并列始平太守、秦国内史，阻止把旧支属无条件延续至311年；默认止305是显示上限，不断言305年有确证除属事件。"
+        },
+        {
+          "source_id": "USER_SUCCESSION_20261011",
+          "title": "本輪繼承展示裁定",
+          "kind": "本項目推定",
+          "text": "司馬鄴為吳王晏之子，出繼秦王柬，且301年有既定爵期空檔；302—305不恢復始平支屬。秦本國既有有效爵期不因撤支縮短，306以後本來即未列始平支郡。",
+          "note": "採前任國主的親生兒子口徑；中斷後非本人復封的限制優先。僅修改支屬，國爵時間仍遵既定王表和後續人工裁定。"
         }
-      ]
+      ],
+      "superseded_branch_members": [
+        {
+          "ids": [
+            "p074"
+          ],
+          "name": "始平",
+          "certainty": "inferred",
+          "note": "始平内史官名结合太康分封研究，推为秦国支郡；289起按改封当年的结果列示。主国由扶风改名，不能因近邻地名改把京兆当作本国。"
+        }
+      ],
+      "superseded_succession_note": "302继秦。卷59在306政局中并列始平太守梁迈与秦国内史贾龛，是始平支秦延续的反证；因此306以后不默认显示此支郡关系。305不是确证废止年，只是本轮默认显示上限。",
+      "succession_review": {
+        "reviewed_at": "2026-10-11",
+        "decision": "primary_only",
+        "reason": "adopted_successor_after_gap",
+        "source_id": "USER_SUCCESSION_20261011"
+      }
     },
     {
       "id": "CHANGSHA_YI_RESTORED",
@@ -1097,7 +1249,13 @@
           "text": "作者结合长沙王301年复封、南平王改封宜都，以及王矩由长沙国官转任南平内史，推定南平为长沙支郡。",
           "note": "这是论文论证摘要；衡阳及308年复封后支属延续仍保留本条推定说明，不把该论证扩充成完整逐年名单。"
         }
-      ]
+      ],
+      "succession_review": {
+        "reviewed_at": "2026-10-11",
+        "decision": "retain",
+        "reason": "same_person_restoration",
+        "note": "301為乂本人復封，保留南平、衡陽。"
+      }
     },
     {
       "id": "CHANGSHA_SHUO",
@@ -1107,7 +1265,36 @@
       "primary_ids": [
         "p207"
       ],
-      "members": [
+      "members": [],
+      "holder": "司馬碩",
+      "holder_accession_year": 308,
+      "source_ids": [
+        "JS005",
+        "PRINCES_LOCAL",
+        "GU2018",
+        "USER_SUCCESSION_20261011"
+      ],
+      "note": "司馬碩雖是司馬乂親生子，304—307長沙已有明確國爵空檔；308復封者並非乂本人，故308—310僅領長沙本國，南平、衡陽維持普通郡。311起主國仍依原裁定還郡。 本條依最新繼承展示規則撤支，不表示史書明載各支郡於同年另有罷國詔。",
+      "certainty": "inferred",
+      "holder_end_year": 311,
+      "evidence_passages": [
+        {
+          "source_id": "GU2018",
+          "title": "顾江龙《太康十年分封与杨骏的兴灭》",
+          "locator": "第二节“太康十年分封”",
+          "kind": "论文论证摘要",
+          "text": "作者结合长沙王301年复封、南平王改封宜都，以及王矩由长沙国官转任南平内史，推定南平为长沙支郡。",
+          "note": "这是论文论证摘要；衡阳及308年复封后支属延续仍保留本条推定说明，不把该论证扩充成完整逐年名单。"
+        },
+        {
+          "source_id": "USER_SUCCESSION_20261011",
+          "title": "本輪繼承展示裁定",
+          "kind": "本項目推定",
+          "text": "司馬碩雖是司馬乂親生子，304—307長沙已有明確國爵空檔；308復封者並非乂本人，故308—310僅領長沙本國，南平、衡陽維持普通郡。311起主國仍依原裁定還郡。",
+          "note": "採前任國主的親生兒子口徑；中斷後非本人復封的限制優先。僅修改支屬，國爵時間仍遵既定王表和後續人工裁定。"
+        }
+      ],
+      "superseded_branch_members": [
         {
           "ids": [
             "p162"
@@ -1126,26 +1313,13 @@
           "note": "后期衡阳内史线索回推，起讫非逐年确证。"
         }
       ],
-      "holder": "司馬碩",
-      "holder_accession_year": 308,
-      "source_ids": [
-        "JS005",
-        "PRINCES_LOCAL",
-        "GU2018"
-      ],
-      "note": "308十二月封硕明确，两支郡是否完整复封仍标推定。使用者本次明确指定长沙国结束于311年；按当年变更后结果，本关系止于310，311起长沙、南平、衡阳恢复郡名并解除支属和封国着色，不再按国绝证据未详延续至316。",
-      "certainty": "inferred",
-      "holder_end_year": 311,
-      "evidence_passages": [
-        {
-          "source_id": "GU2018",
-          "title": "顾江龙《太康十年分封与杨骏的兴灭》",
-          "locator": "第二节“太康十年分封”",
-          "kind": "论文论证摘要",
-          "text": "作者结合长沙王301年复封、南平王改封宜都，以及王矩由长沙国官转任南平内史，推定南平为长沙支郡。",
-          "note": "这是论文论证摘要；衡阳及308年复封后支属延续仍保留本条推定说明，不把该论证扩充成完整逐年名单。"
-        }
-      ]
+      "superseded_succession_note": "308十二月封硕明确，两支郡是否完整复封仍标推定。使用者本次明确指定长沙国结束于311年；按当年变更后结果，本关系止于310，311起长沙、南平、衡阳恢复郡名并解除支属和封国着色，不再按国绝证据未详延续至316。",
+      "succession_review": {
+        "reviewed_at": "2026-10-11",
+        "decision": "primary_only",
+        "reason": "biological_son_after_gap",
+        "source_id": "USER_SUCCESSION_20261011"
+      }
     },
     {
       "id": "HUAINAN_YUN",
@@ -1195,7 +1369,13 @@
           "text": "作者将淮南、安丰列为允的封域，并以支郡各置内史解释多郡王国的行政组织。",
           "note": "这是论文论证摘要；庐江支属另据华谭的庐江内史官名回推。姚、胡第42页以孙惠安丰内史与邻接推向汝阴，但该官职年代晚于本条时段，不能据此改写当前所属。"
         }
-      ]
+      ],
+      "succession_review": {
+        "reviewed_at": "2026-10-11",
+        "decision": "retain",
+        "reason": "original_grant",
+        "note": "允本人原有支屬推定不變。"
+      }
     },
     {
       "id": "HUAINAN_CHAO",
@@ -1205,7 +1385,39 @@
       "primary_ids": [
         "p187"
       ],
-      "members": [
+      "members": [],
+      "holder": "司馬超",
+      "holder_accession_year": 301,
+      "source_ids": [
+        "JS064",
+        "PRINCES_LOCAL",
+        "JS052",
+        "YAO_HU2010",
+        "JS071",
+        "GU2018",
+        "USER_SUCCESSION_20261011"
+      ],
+      "note": "司馬超是齊王冏之子，出繼允；301保留淮南本國，取消安豐、廬江支屬。302改封的既有終點不變。 本條依最新繼承展示規則撤支，不表示史書明載各支郡於同年另有罷國詔。",
+      "certainty": "inferred",
+      "holder_end_year": 302,
+      "evidence_passages": [
+        {
+          "source_id": "GU2018",
+          "title": "顾江龙《太康十年分封与杨骏的兴灭》",
+          "locator": "第二节“太康十年分封”",
+          "kind": "论文论证摘要",
+          "text": "作者将淮南、安丰列为允的封域，并以支郡各置内史解释多郡王国的行政组织。",
+          "note": "这是论文论证摘要；庐江支属另据华谭的庐江内史官名回推。姚、胡第42页以孙惠安丰内史与邻接推向汝阴，但该官职年代晚于本条时段，不能据此改写当前所属。"
+        },
+        {
+          "source_id": "USER_SUCCESSION_20261011",
+          "title": "本輪繼承展示裁定",
+          "kind": "本項目推定",
+          "text": "司馬超是齊王冏之子，出繼允；301保留淮南本國，取消安豐、廬江支屬。302改封的既有終點不變。",
+          "note": "採前任國主的親生兒子口徑；中斷後非本人復封的限制優先。僅修改支屬，國爵時間仍遵既定王表和後續人工裁定。"
+        }
+      ],
+      "superseded_branch_members": [
         {
           "ids": [
             "p031"
@@ -1223,29 +1435,13 @@
           "note": "据内史官名回推；304另封司马普，不把此前推定延至304以后。"
         }
       ],
-      "holder": "司馬超",
-      "holder_accession_year": 301,
-      "source_ids": [
-        "JS064",
-        "PRINCES_LOCAL",
-        "JS052",
-        "YAO_HU2010",
-        "JS071",
-        "GU2018"
-      ],
-      "note": "301复封；302明载被废并改乐平县王，303又改齐，不续为淮南主国及原支属。本轮不把明确改封误读为仅幽禁而延续。",
-      "certainty": "inferred",
-      "holder_end_year": 302,
-      "evidence_passages": [
-        {
-          "source_id": "GU2018",
-          "title": "顾江龙《太康十年分封与杨骏的兴灭》",
-          "locator": "第二节“太康十年分封”",
-          "kind": "论文论证摘要",
-          "text": "作者将淮南、安丰列为允的封域，并以支郡各置内史解释多郡王国的行政组织。",
-          "note": "这是论文论证摘要；庐江支属另据华谭的庐江内史官名回推。姚、胡第42页以孙惠安丰内史与邻接推向汝阴，但该官职年代晚于本条时段，不能据此改写当前所属。"
-        }
-      ]
+      "superseded_succession_note": "301复封；302明载被废并改乐平县王，303又改齐，不续为淮南主国及原支属。本轮不把明确改封误读为仅幽禁而延续。",
+      "succession_review": {
+        "reviewed_at": "2026-10-11",
+        "decision": "primary_only",
+        "reason": "adopted_successor",
+        "source_id": "USER_SUCCESSION_20261011"
+      }
     },
     {
       "id": "DONGHAI_LANLING_307",
@@ -1308,7 +1504,13 @@
           "text": "永嘉中增封蘭陵並使衛璪徙江夏；本輪取最早307作展示，非確證改封年。311越卒後依年度結果回郡。",
           "note": "此段是編輯決策，不充作史書原文。"
         }
-      ]
+      ],
+      "succession_review": {
+        "reviewed_at": "2026-10-11",
+        "decision": "retain",
+        "reason": "same_holder_grant",
+        "note": "越本人307增封蘭陵，未換國主。"
+      }
     },
     {
       "id": "CHANGLE_WUYI_298",
@@ -1353,7 +1555,13 @@
           "text": "武邑承卒只知惠帝時，本輪暫放298並按省還長樂後保留武邑支郡展示；310後兩郡回郡。298與309國絕均不是原典確年。",
           "note": "此段是編輯決策，不充作史書原文。"
         }
-      ]
+      ],
+      "succession_review": {
+        "reviewed_at": "2026-10-11",
+        "decision": "retain",
+        "reason": "same_holder_grant",
+        "note": "玷本人的既定增封期段，未換國主；具體年代仍為原展示推定。"
+      }
     },
     {
       "id": "LANGYE_DONGGUAN_277",
@@ -1398,7 +1606,13 @@
           "text": "277以東莞益琅邪有文；本輪關係說明始277，獨立東莞行只在《通史》有效期呈為支郡，省并時不另造機構或重計郡數。",
           "note": "此段是編輯決策，不充作史書原文。"
         }
-      ]
+      ],
+      "succession_review": {
+        "reviewed_at": "2026-10-11",
+        "decision": "retain",
+        "reason": "biological_son_chain",
+        "note": "伷、覲、睿為連續父子，東莞支屬保留；277—288括號縣組同樣保留。"
+      }
     },
     {
       "id": "YAN_YUYANG_277",
@@ -1443,7 +1657,13 @@
           "text": "咸寧初增漁陽，本輪暫置277；具體年非史載確年。燕國後續止於301年，302年明載國除，不由國主失考判國亡。",
           "note": "此段是編輯決策，不充作史書原文。"
         }
-      ]
+      ],
+      "succession_review": {
+        "reviewed_at": "2026-10-11",
+        "decision": "retain_pending_date",
+        "reason": "unknown_succession_year",
+        "note": "機本人增封有据；几虽为养子，但嗣年未详，不擅造撤支年。"
+      }
     },
     {
       "id": "YAN_BRANCHES_293",
@@ -1504,13 +1724,19 @@
           "text": "本輪據方鎮任職線索暫置293增封北平、上谷、廣寧；上谷與孟觀公國衝突，暫保留上谷公國而不列燕支郡，可能僅部分縣戶增封。其餘按整郡展示仍屬推定。",
           "note": "此段是編輯決策，不充作史書原文。"
         }
-      ]
+      ],
+      "succession_review": {
+        "reviewed_at": "2026-10-11",
+        "decision": "retain_pending_date",
+        "reason": "unknown_succession_year",
+        "note": "北平等為機本人增封；几出继年未详，不自定293、301撤支。明確302國除照舊。"
+      }
     },
     {
       "id": "LIANG_CHEN_289",
       "kingdom_name": "梁",
       "begin": 289,
-      "end": 311,
+      "end": 302,
       "primary_ids": [
         "p025"
       ],
@@ -1524,18 +1750,19 @@
           "note": "本轮使用者以289为制度展示分界，原梁内（陈支郡）自289起正式列支郡、计一郡。沿用原陈诸县组，不复制县。289并非另有明文重置陈郡的确年。"
         }
       ],
-      "holder": null,
-      "holder_accession_year": null,
+      "holder": "司馬肜",
+      "holder_accession_year": 265,
       "source_ids": [
         "JS038",
         "BOOKI_LIANG_CHEN",
         "YAO_HU2010",
-        "GU2018"
+        "GU2018",
+        "USER_SUCCESSION_20261011"
       ],
-      "note": "梁增陈之事早于289；本轮将289以前视为多郡王国之先声，以括号县组展示。289—311依使用者指定取消括号并正式计郡；289并非原典明载重置陈郡确年。梁王禧表列至311，悝在317才嗣，不得补出西晋312—316的梁国或陈支郡封国关系。",
+      "note": "梁增陳早於289；281—288仍列（陳支郡）縣組、不另計郡，289—302依本輪展示分期正式計郡。303養子禧承繼後依2026-10-11新裁定僅领梁本國，陳還郡；梁本國原爵期不因撤支改動。289仍非史書明載重置陳郡確年。",
       "certainty": "inferred",
       "date_certainty": "user_display_policy",
-      "holder_end_year": null,
+      "holder_end_year": 302,
       "evidence_passages": [
         {
           "source_id": "JS038",
@@ -1550,7 +1777,13 @@
           "text": "以太康十年289为正式多郡王国展示起点；此前附加原郡作括号县组，289起改为正式支郡并计郡。",
           "note": "此为使用者指定的展示方案，保留论文解释分歧。"
         }
-      ]
+      ],
+      "succession_review": {
+        "reviewed_at": "2026-10-11",
+        "decision": "retain",
+        "reason": "original_grant_until_adoption",
+        "note": "肜本人至302；303起另列只領本國期段。"
+      }
     },
     {
       "id": "CHANGSHA_YI_FIRST",
@@ -1602,7 +1835,13 @@
           "note": "此为后期关系的研究论证；本轮恢复289—290旧版复原，把向前回推的部分另标推定。"
         }
       ],
-      "date_certainty": "inferred_display"
+      "date_certainty": "inferred_display",
+      "succession_review": {
+        "reviewed_at": "2026-10-11",
+        "decision": "retain",
+        "reason": "original_grant",
+        "note": "乂本人初封，支郡原推定不變。"
+      }
     },
     {
       "id": "CHU_WEI",
@@ -1641,7 +1880,13 @@
           "text": "论文把楚王纳入太康十年分封格局；本国沿襄阳定位，未能确认全部支郡名单。",
           "note": "本轮恢复旧版已采用的襄阳本国定位，支郡仍留未详。"
         }
-      ]
+      ],
+      "succession_review": {
+        "reviewed_at": "2026-10-11",
+        "decision": "retain",
+        "reason": "no_known_branch",
+        "note": "本來沒有可確定支郡，不補造。"
+      }
     },
     {
       "id": "HUAINAN_XIANG_307",
@@ -1651,7 +1896,41 @@
       "primary_ids": [
         "p187"
       ],
-      "members": [
+      "members": [],
+      "holder": "司馬祥",
+      "holder_accession_year": null,
+      "source_ids": [
+        "JS064",
+        "PRINCES_LOCAL",
+        "JS052",
+        "YAO_HU2010",
+        "JS071",
+        "GU2018",
+        "USER_DOCX_20261007",
+        "USER_SUCCESSION_20261011"
+      ],
+      "note": "司馬祥是吳王晏之子，出繼允，且淮南302—306有既定爵期空檔；307—310僅领淮南本國，不恢復安豐、廬江支屬。307展示起年和311終止仍沿用Word既定裁定，未另造國主在位起訖。 本條依最新繼承展示規則撤支，不表示史書明載各支郡於同年另有罷國詔。",
+      "certainty": "inferred",
+      "holder_end_year": 311,
+      "evidence_passages": [
+        {
+          "source_id": "GU2018",
+          "title": "顾江龙《太康十年分封与杨骏的兴灭》",
+          "locator": "第二节“太康十年分封”",
+          "kind": "论文论证摘要",
+          "text": "作者将淮南、安丰列为允的封域，并以支郡各置内史解释多郡王国的行政组织。",
+          "note": "这是论文论证摘要；庐江支属另据华谭的庐江内史官名回推。姚、胡第42页以孙惠安丰内史与邻接推向汝阴，但该官职年代晚于本条时段，不能据此改写当前所属。"
+        },
+        {
+          "source_id": "USER_SUCCESSION_20261011",
+          "title": "本輪繼承展示裁定",
+          "kind": "本項目推定",
+          "text": "司馬祥是吳王晏之子，出繼允，且淮南302—306有既定爵期空檔；307—310僅领淮南本國，不恢復安豐、廬江支屬。307展示起年和311終止仍沿用Word既定裁定，未另造國主在位起訖。",
+          "note": "採前任國主的親生兒子口徑；中斷後非本人復封的限制優先。僅修改支屬，國爵時間仍遵既定王表和後續人工裁定。"
+        }
+      ],
+      "date_certainty": "user_docx_accession_display",
+      "superseded_branch_members": [
         {
           "ids": [
             "p031"
@@ -1669,37 +1948,81 @@
           "note": "304—306庐江为司马普独立王国，明确排除；307司马祥袭淮南后依原有多郡规模恢复庐江支属，属封土继承推定，不另造司马祥在位起讫。"
         }
       ],
-      "holder": "司馬祥",
-      "holder_accession_year": null,
-      "source_ids": [
-        "JS064",
-        "PRINCES_LOCAL",
-        "JS052",
-        "YAO_HU2010",
-        "JS071",
-        "GU2018",
-        "USER_DOCX_20261007"
+      "superseded_succession_note": "司马祥明确出继淮南王允并袭淮南爵；既有Word已将永嘉中转封取307为展示起年，不是本轮新造时间。307—310在该既有爵位期内沿用原安丰、庐江封土，两郡支属仍保留研究推定；304—306庐江独立王国不并入。311按既有国终止处理。即位年不详，不计算在位年次。",
+      "succession_review": {
+        "reviewed_at": "2026-10-11",
+        "decision": "primary_only",
+        "reason": "adopted_successor_after_gap",
+        "source_id": "USER_SUCCESSION_20261011"
+      }
+    },
+    {
+      "id": "LIANG_XI_PRIMARY_ONLY",
+      "kingdom_name": "梁",
+      "begin": 303,
+      "end": 311,
+      "primary_ids": [
+        "p025"
       ],
-      "note": "司马祥明确出继淮南王允并袭淮南爵；既有Word已将永嘉中转封取307为展示起年，不是本轮新造时间。307—310在该既有爵位期内沿用原安丰、庐江封土，两郡支属仍保留研究推定；304—306庐江独立王国不并入。311按既有国终止处理。即位年不详，不计算在位年次。",
+      "members": [],
+      "holder": "司馬禧",
+      "holder_accession_year": 303,
+      "source_ids": [
+        "JS038",
+        "BOOKI_LIANG_CHEN",
+        "YAO_HU2010",
+        "GU2018",
+        "USER_SUCCESSION_20261011"
+      ],
+      "note": "司馬禧為武陵王澹之子，出繼梁王肜；依2026-10-11繼承展示裁定，303—311僅領梁本國，陳不再作支郡。梁本國原定爵期保留；317的悝不回填西晋。陳郡原縣目及原有邊界保留。",
       "certainty": "inferred",
+      "date_certainty": "user_display_policy",
       "holder_end_year": 311,
       "evidence_passages": [
         {
-          "source_id": "GU2018",
-          "title": "顾江龙《太康十年分封与杨骏的兴灭》",
-          "locator": "第二节“太康十年分封”",
-          "kind": "论文论证摘要",
-          "text": "作者将淮南、安丰列为允的封域，并以支郡各置内史解释多郡王国的行政组织。",
-          "note": "这是论文论证摘要；庐江支属另据华谭的庐江内史官名回推。姚、胡第42页以孙惠安丰内史与邻接推向汝阴，但该官职年代晚于本条时段，不能据此改写当前所属。"
+          "source_id": "JS038",
+          "title": "《晋书》卷三十八·梁王肜传",
+          "kind": "原文节录",
+          "text": "咸甯中，復以陳國、汝南南頓增封為次國。",
+          "note": "可证陈国及南顿增封入梁；289起另计陈支郡是本轮展示裁定，此句不能证明289明文重置陈郡机构。"
         },
         {
-          "title": "既有Word爵位期内的封土继承",
+          "title": "本轮制度展示裁定",
           "kind": "本项目推定",
-          "text": "司马祥明确出继淮南王允并袭淮南爵；既有Word已将永嘉中转封取307为展示起年，不是本轮新造时间。307—310在该既有爵位期内沿用原安丰、庐江封土，两郡支属仍保留研究推定；304—306庐江独立王国不并入。311按既有国终止处理。即位年不详，不计算在位年次。",
-          "note": "307展示起年承接既有Word，司马祥出继袭爵有王系依据；仅支郡封土沿用，未据此填补其他时间段。"
+          "text": "以太康十年289为正式多郡王国展示起点；此前附加原郡作括号县组，289起改为正式支郡并计郡。",
+          "note": "此为使用者指定的展示方案，保留论文解释分歧。"
+        },
+        {
+          "source_id": "JS038",
+          "title": "《晋書》卷三十八·梁孝王肜傳",
+          "kind": "原文節錄",
+          "text": "無子，以武陵王澹子禧為後，是為懷王。",
+          "note": "可證禧出繼，不能据此宣稱史書明載撤陳；撤支為本輪指定展示規則。"
+        },
+        {
+          "source_id": "USER_SUCCESSION_20261011",
+          "title": "本輪繼承展示裁定",
+          "kind": "本項目推定",
+          "text": "司馬禧為武陵王澹之子，出繼梁王肜；依2026-10-11繼承展示裁定，303—311僅領梁本國，陳不再作支郡。梁本國原定爵期保留；317的悝不回填西晋。陳郡原縣目及原有邊界保留。"
         }
       ],
-      "date_certainty": "user_docx_accession_display"
+      "superseded_branch_members": [
+        {
+          "ids": [
+            "p026"
+          ],
+          "name": "陳",
+          "certainty": "inferred",
+          "note": "本轮使用者以289为制度展示分界，原梁内（陈支郡）自289起正式列支郡、计一郡。沿用原陈诸县组，不复制县。289并非另有明文重置陈郡的确年。"
+        }
+      ],
+      "superseded_succession_note": "梁增陈之事早于289；本轮将289以前视为多郡王国之先声，以括号县组展示。289—311依使用者指定取消括号并正式计郡；289并非原典明载重置陈郡确年。梁王禧表列至311，悝在317才嗣，不得补出西晋312—316的梁国或陈支郡封国关系。",
+      "succession_review": {
+        "reviewed_at": "2026-10-11",
+        "decision": "primary_only",
+        "reason": "adopted_successor",
+        "source_id": "USER_SUCCESSION_20261011"
+      }
     }
   ],
   "excluded": [
@@ -1772,7 +2095,13 @@
         "JS038",
         "RESEARCH_281_20261003"
       ],
-      "note": "本轮以289为正式多郡王国展示起点；281—288梁内原陈县、项、阳夏、武平等列入（陈支郡）县组，不另计郡数。289起改列独立陈支郡，移交原县目而不复制。"
+      "note": "本轮以289为正式多郡王国展示起点；281—288梁内原陈县、项、阳夏、武平等列入（陈支郡）县组，不另计郡数。289起改列独立陈支郡，移交原县目而不复制。",
+      "succession_review": {
+        "reviewed_at": "2026-10-11",
+        "decision": "retain",
+        "reason": "same_holder",
+        "note": "281—288均為司馬肜本人在位，沒有繼承事件，括號陳縣組保持。新規同樣適用其他括號支郡及附加縣組。"
+      }
     }
   ],
   "literature_review": [
@@ -2410,5 +2739,166 @@
   "final_status_review": {
     "date": "2026-10-08",
     "note": "依當年變更後結果，校正廣陵290立太子、吳300降封、清河302立太子、豫章304立太弟及311立太子的主支郡終界；其他已批准期段不統一減年。"
+  },
+  "succession_review": {
+    "reviewed_at": "2026-10-11",
+    "rule": "僅本人復封或前任國主的親生兒子連續承繼，才沿用原有支郡及附加縣組；過繼、兄弟等旁系承繼，或王國消失後由非本人復建，僅領本國。即使為親生子，若中間有明確國爵空檔，亦不恢復原支郡。此為2026-10-11使用者指定展示規則，不宣稱晋制通例；不另改主國爵期，不以國主或繼位年未詳擅造撤支年度。",
+    "changed_periods": [
+      {
+        "record_id": "QINGHE_YUE",
+        "decision": "primary_only",
+        "reason": "collateral_successor",
+        "begin": 308,
+        "end": 311,
+        "primary_ids": [
+          "p042"
+        ],
+        "released_ids": [
+          "p039"
+        ],
+        "note": "司馬籥為前任司馬覃之弟，雖同為遐的親生子，並非前任國主的親生兒子；308—311清河本國保留，勃海不再隨兄弟轉封繼承。"
+      },
+      {
+        "record_id": "YUZHANG_QUAN",
+        "decision": "primary_only",
+        "reason": "new_holder_after_gap",
+        "begin": 306,
+        "end": 306,
+        "primary_ids": [
+          "p217"
+        ],
+        "released_ids": [
+          "p202",
+          "p218",
+          "p201",
+          "p220"
+        ],
+        "note": "司馬詮為清河王遐之子，非前任豫章王熾的親生子；304—305豫章有既定爵期空檔。306僅保留豫章本國，不恢復鄱陽、臨川支屬。"
+      },
+      {
+        "record_id": "YUZHANG_DUAN",
+        "decision": "primary_only",
+        "reason": "collateral_successor",
+        "begin": 307,
+        "end": 310,
+        "primary_ids": [
+          "p217"
+        ],
+        "released_ids": [
+          "p202",
+          "p218",
+          "p201",
+          "p220"
+        ],
+        "note": "司馬端為前任司馬詮之弟，並非親生子或本人復封；307—310僅領豫章本國，鄱陽、臨川不作支郡。"
+      },
+      {
+        "record_id": "QIN_YU",
+        "decision": "primary_only",
+        "reason": "adopted_successor",
+        "begin": 292,
+        "end": 300,
+        "primary_ids": [
+          "p073"
+        ],
+        "released_ids": [
+          "p074"
+        ],
+        "note": "司馬郁為淮南王允之子，出繼秦王柬；292—300保留秦本國，取消始平支屬。"
+      },
+      {
+        "record_id": "QIN_YE",
+        "decision": "primary_only",
+        "reason": "adopted_successor_after_gap",
+        "begin": 302,
+        "end": 305,
+        "primary_ids": [
+          "p073"
+        ],
+        "released_ids": [
+          "p074"
+        ],
+        "note": "司馬鄴為吳王晏之子，出繼秦王柬，且301年有既定爵期空檔；302—305不恢復始平支屬。秦本國既有有效爵期不因撤支縮短，306以後本來即未列始平支郡。"
+      },
+      {
+        "record_id": "CHANGSHA_SHUO",
+        "decision": "primary_only",
+        "reason": "biological_son_after_gap",
+        "begin": 308,
+        "end": 310,
+        "primary_ids": [
+          "p207"
+        ],
+        "released_ids": [
+          "p162",
+          "p176",
+          "p208"
+        ],
+        "note": "司馬碩雖是司馬乂親生子，304—307長沙已有明確國爵空檔；308復封者並非乂本人，故308—310僅領長沙本國，南平、衡陽維持普通郡。311起主國仍依原裁定還郡。"
+      },
+      {
+        "record_id": "HUAINAN_CHAO",
+        "decision": "primary_only",
+        "reason": "adopted_successor",
+        "begin": 301,
+        "end": 301,
+        "primary_ids": [
+          "p187"
+        ],
+        "released_ids": [
+          "p031",
+          "p188"
+        ],
+        "note": "司馬超是齊王冏之子，出繼允；301保留淮南本國，取消安豐、廬江支屬。302改封的既有終點不變。"
+      },
+      {
+        "record_id": "HUAINAN_XIANG_307",
+        "decision": "primary_only",
+        "reason": "adopted_successor_after_gap",
+        "begin": 307,
+        "end": 310,
+        "primary_ids": [
+          "p187"
+        ],
+        "released_ids": [
+          "p031",
+          "p188"
+        ],
+        "note": "司馬祥是吳王晏之子，出繼允，且淮南302—306有既定爵期空檔；307—310僅领淮南本國，不恢復安豐、廬江支屬。307展示起年和311終止仍沿用Word既定裁定，未另造國主在位起訖。"
+      },
+      {
+        "record_id": "LIANG_CHEN_289",
+        "replacement_id": "LIANG_XI_PRIMARY_ONLY",
+        "decision": "primary_only_from_303",
+        "begin": 303,
+        "end": 311,
+        "primary_ids": [
+          "p025"
+        ],
+        "released_ids": [
+          "p026"
+        ],
+        "note": "司馬禧為武陵王澹之子，出繼梁王肜；依2026-10-11繼承展示裁定，303—311僅領梁本國，陳不再作支郡。梁本國原定爵期保留；317的悝不回填西晋。陳郡原縣目及原有邊界保留。"
+      }
+    ],
+    "pending": [
+      {
+        "kingdom": "燕",
+        "primary_ids": [
+          "p049"
+        ],
+        "member_ids": [
+          "p048",
+          "p050",
+          "p052"
+        ],
+        "source_ids": [
+          "JS038",
+          "PRINCES_LOCAL"
+        ],
+        "note": "司馬几為齊王冏之子，出繼無子的司馬機。按新規應於承繼年撤支，但王表、現有原典均未給承繼年；不把未詳誤作精確某年，暫沿既有支屬至301，302原定國除不變。"
+      }
+    ],
+    "county_groups_reviewed": true
   }
 }

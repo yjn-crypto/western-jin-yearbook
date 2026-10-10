@@ -1,0 +1,549 @@
+{
+  "schema_version": "1.0.0",
+  "reviewed_at": "2026-10-11",
+  "scope": "西晋；僅修支屬，不另改主國有效爵期",
+  "policy": "僅本人復封或前任國主的親生兒子連續承繼，才沿用原有支郡及附加縣組；過繼、兄弟等旁系承繼，或王國消失後由非本人復建，僅領本國。即使為親生子，若中間有明確國爵空檔，亦不恢復原支郡。此為2026-10-11使用者指定展示規則，不宣稱晋制通例；不另改主國爵期，不以國主或繼位年未詳擅造撤支年度。",
+  "branch_releases": [
+    {
+      "pid": "p039",
+      "start": 308,
+      "end": 311,
+      "name": "勃海郡",
+      "fief_id": "jin-清河",
+      "primary_ids": [
+        "p042"
+      ],
+      "relation_id": "QINGHE_YUE",
+      "reason": "collateral_successor",
+      "note": "司馬籥為前任司馬覃之弟，雖同為遐的親生子，並非前任國主的親生兒子；308—311清河本國保留，勃海不再隨兄弟轉封繼承。"
+    },
+    {
+      "pid": "p202",
+      "start": 306,
+      "end": 306,
+      "name": "鄱陽郡",
+      "fief_id": "jin-豫章",
+      "primary_ids": [
+        "p217"
+      ],
+      "relation_id": "YUZHANG_QUAN",
+      "reason": "new_holder_after_gap",
+      "note": "司馬詮為清河王遐之子，非前任豫章王熾的親生子；304—305豫章有既定爵期空檔。306僅保留豫章本國，不恢復鄱陽、臨川支屬。"
+    },
+    {
+      "pid": "p218",
+      "start": 306,
+      "end": 306,
+      "name": "鄱陽郡",
+      "fief_id": "jin-豫章",
+      "primary_ids": [
+        "p217"
+      ],
+      "relation_id": "YUZHANG_QUAN",
+      "reason": "new_holder_after_gap",
+      "note": "司馬詮為清河王遐之子，非前任豫章王熾的親生子；304—305豫章有既定爵期空檔。306僅保留豫章本國，不恢復鄱陽、臨川支屬。"
+    },
+    {
+      "pid": "p201",
+      "start": 306,
+      "end": 306,
+      "name": "臨川郡",
+      "fief_id": "jin-豫章",
+      "primary_ids": [
+        "p217"
+      ],
+      "relation_id": "YUZHANG_QUAN",
+      "reason": "new_holder_after_gap",
+      "note": "司馬詮為清河王遐之子，非前任豫章王熾的親生子；304—305豫章有既定爵期空檔。306僅保留豫章本國，不恢復鄱陽、臨川支屬。"
+    },
+    {
+      "pid": "p220",
+      "start": 306,
+      "end": 306,
+      "name": "臨川郡",
+      "fief_id": "jin-豫章",
+      "primary_ids": [
+        "p217"
+      ],
+      "relation_id": "YUZHANG_QUAN",
+      "reason": "new_holder_after_gap",
+      "note": "司馬詮為清河王遐之子，非前任豫章王熾的親生子；304—305豫章有既定爵期空檔。306僅保留豫章本國，不恢復鄱陽、臨川支屬。"
+    },
+    {
+      "pid": "p202",
+      "start": 307,
+      "end": 310,
+      "name": "鄱陽郡",
+      "fief_id": "jin-豫章",
+      "primary_ids": [
+        "p217"
+      ],
+      "relation_id": "YUZHANG_DUAN",
+      "reason": "collateral_successor",
+      "note": "司馬端為前任司馬詮之弟，並非親生子或本人復封；307—310僅領豫章本國，鄱陽、臨川不作支郡。"
+    },
+    {
+      "pid": "p218",
+      "start": 307,
+      "end": 310,
+      "name": "鄱陽郡",
+      "fief_id": "jin-豫章",
+      "primary_ids": [
+        "p217"
+      ],
+      "relation_id": "YUZHANG_DUAN",
+      "reason": "collateral_successor",
+      "note": "司馬端為前任司馬詮之弟，並非親生子或本人復封；307—310僅領豫章本國，鄱陽、臨川不作支郡。"
+    },
+    {
+      "pid": "p201",
+      "start": 307,
+      "end": 310,
+      "name": "臨川郡",
+      "fief_id": "jin-豫章",
+      "primary_ids": [
+        "p217"
+      ],
+      "relation_id": "YUZHANG_DUAN",
+      "reason": "collateral_successor",
+      "note": "司馬端為前任司馬詮之弟，並非親生子或本人復封；307—310僅領豫章本國，鄱陽、臨川不作支郡。"
+    },
+    {
+      "pid": "p220",
+      "start": 307,
+      "end": 310,
+      "name": "臨川郡",
+      "fief_id": "jin-豫章",
+      "primary_ids": [
+        "p217"
+      ],
+      "relation_id": "YUZHANG_DUAN",
+      "reason": "collateral_successor",
+      "note": "司馬端為前任司馬詮之弟，並非親生子或本人復封；307—310僅領豫章本國，鄱陽、臨川不作支郡。"
+    },
+    {
+      "pid": "p074",
+      "start": 292,
+      "end": 300,
+      "name": "始平郡",
+      "fief_id": "jin-秦",
+      "primary_ids": [
+        "p073"
+      ],
+      "relation_id": "QIN_YU",
+      "reason": "adopted_successor",
+      "note": "司馬郁為淮南王允之子，出繼秦王柬；292—300保留秦本國，取消始平支屬。"
+    },
+    {
+      "pid": "p074",
+      "start": 302,
+      "end": 305,
+      "name": "始平郡",
+      "fief_id": "jin-秦",
+      "primary_ids": [
+        "p073"
+      ],
+      "relation_id": "QIN_YE",
+      "reason": "adopted_successor_after_gap",
+      "note": "司馬鄴為吳王晏之子，出繼秦王柬，且301年有既定爵期空檔；302—305不恢復始平支屬。秦本國既有有效爵期不因撤支縮短，306以後本來即未列始平支郡。"
+    },
+    {
+      "pid": "p162",
+      "start": 308,
+      "end": 310,
+      "name": "南平郡",
+      "fief_id": "jin-長沙",
+      "primary_ids": [
+        "p207"
+      ],
+      "relation_id": "CHANGSHA_SHUO",
+      "reason": "biological_son_after_gap",
+      "note": "司馬碩雖是司馬乂親生子，304—307長沙已有明確國爵空檔；308復封者並非乂本人，故308—310僅領長沙本國，南平、衡陽維持普通郡。311起主國仍依原裁定還郡。"
+    },
+    {
+      "pid": "p176",
+      "start": 308,
+      "end": 310,
+      "name": "衡陽郡",
+      "fief_id": "jin-長沙",
+      "primary_ids": [
+        "p207"
+      ],
+      "relation_id": "CHANGSHA_SHUO",
+      "reason": "biological_son_after_gap",
+      "note": "司馬碩雖是司馬乂親生子，304—307長沙已有明確國爵空檔；308復封者並非乂本人，故308—310僅領長沙本國，南平、衡陽維持普通郡。311起主國仍依原裁定還郡。"
+    },
+    {
+      "pid": "p208",
+      "start": 308,
+      "end": 310,
+      "name": "衡陽郡",
+      "fief_id": "jin-長沙",
+      "primary_ids": [
+        "p207"
+      ],
+      "relation_id": "CHANGSHA_SHUO",
+      "reason": "biological_son_after_gap",
+      "note": "司馬碩雖是司馬乂親生子，304—307長沙已有明確國爵空檔；308復封者並非乂本人，故308—310僅領長沙本國，南平、衡陽維持普通郡。311起主國仍依原裁定還郡。"
+    },
+    {
+      "pid": "p031",
+      "start": 301,
+      "end": 301,
+      "name": "安豐郡",
+      "fief_id": "jin-淮南",
+      "primary_ids": [
+        "p187"
+      ],
+      "relation_id": "HUAINAN_CHAO",
+      "reason": "adopted_successor",
+      "note": "司馬超是齊王冏之子，出繼允；301保留淮南本國，取消安豐、廬江支屬。302改封的既有終點不變。"
+    },
+    {
+      "pid": "p188",
+      "start": 301,
+      "end": 301,
+      "name": "廬江郡",
+      "fief_id": "jin-淮南",
+      "primary_ids": [
+        "p187"
+      ],
+      "relation_id": "HUAINAN_CHAO",
+      "reason": "adopted_successor",
+      "note": "司馬超是齊王冏之子，出繼允；301保留淮南本國，取消安豐、廬江支屬。302改封的既有終點不變。"
+    },
+    {
+      "pid": "p031",
+      "start": 307,
+      "end": 310,
+      "name": "安豐郡",
+      "fief_id": "jin-淮南",
+      "primary_ids": [
+        "p187"
+      ],
+      "relation_id": "HUAINAN_XIANG_307",
+      "reason": "adopted_successor_after_gap",
+      "note": "司馬祥是吳王晏之子，出繼允，且淮南302—306有既定爵期空檔；307—310僅领淮南本國，不恢復安豐、廬江支屬。307展示起年和311終止仍沿用Word既定裁定，未另造國主在位起訖。"
+    },
+    {
+      "pid": "p188",
+      "start": 307,
+      "end": 310,
+      "name": "廬江郡",
+      "fief_id": "jin-淮南",
+      "primary_ids": [
+        "p187"
+      ],
+      "relation_id": "HUAINAN_XIANG_307",
+      "reason": "adopted_successor_after_gap",
+      "note": "司馬祥是吳王晏之子，出繼允，且淮南302—306有既定爵期空檔；307—310僅领淮南本國，不恢復安豐、廬江支屬。307展示起年和311終止仍沿用Word既定裁定，未另造國主在位起訖。"
+    },
+    {
+      "pid": "p026",
+      "start": 303,
+      "end": 311,
+      "name": "陳郡",
+      "fief_id": "jin-梁",
+      "primary_ids": [
+        "p025"
+      ],
+      "relation_id": "LIANG_XI_PRIMARY_ONLY",
+      "reason": "adopted_successor",
+      "note": "司馬禧為武陵王澹之子，出繼梁王肜；依2026-10-11繼承展示裁定，303—311僅領梁本國，陳不再作支郡。梁本國原定爵期保留；317的悝不回填西晋。陳郡原縣目及原有邊界保留。"
+    }
+  ],
+  "changed_periods": [
+    {
+      "record_id": "QINGHE_YUE",
+      "decision": "primary_only",
+      "reason": "collateral_successor",
+      "begin": 308,
+      "end": 311,
+      "primary_ids": [
+        "p042"
+      ],
+      "released_ids": [
+        "p039"
+      ],
+      "note": "司馬籥為前任司馬覃之弟，雖同為遐的親生子，並非前任國主的親生兒子；308—311清河本國保留，勃海不再隨兄弟轉封繼承。"
+    },
+    {
+      "record_id": "YUZHANG_QUAN",
+      "decision": "primary_only",
+      "reason": "new_holder_after_gap",
+      "begin": 306,
+      "end": 306,
+      "primary_ids": [
+        "p217"
+      ],
+      "released_ids": [
+        "p202",
+        "p218",
+        "p201",
+        "p220"
+      ],
+      "note": "司馬詮為清河王遐之子，非前任豫章王熾的親生子；304—305豫章有既定爵期空檔。306僅保留豫章本國，不恢復鄱陽、臨川支屬。"
+    },
+    {
+      "record_id": "YUZHANG_DUAN",
+      "decision": "primary_only",
+      "reason": "collateral_successor",
+      "begin": 307,
+      "end": 310,
+      "primary_ids": [
+        "p217"
+      ],
+      "released_ids": [
+        "p202",
+        "p218",
+        "p201",
+        "p220"
+      ],
+      "note": "司馬端為前任司馬詮之弟，並非親生子或本人復封；307—310僅領豫章本國，鄱陽、臨川不作支郡。"
+    },
+    {
+      "record_id": "QIN_YU",
+      "decision": "primary_only",
+      "reason": "adopted_successor",
+      "begin": 292,
+      "end": 300,
+      "primary_ids": [
+        "p073"
+      ],
+      "released_ids": [
+        "p074"
+      ],
+      "note": "司馬郁為淮南王允之子，出繼秦王柬；292—300保留秦本國，取消始平支屬。"
+    },
+    {
+      "record_id": "QIN_YE",
+      "decision": "primary_only",
+      "reason": "adopted_successor_after_gap",
+      "begin": 302,
+      "end": 305,
+      "primary_ids": [
+        "p073"
+      ],
+      "released_ids": [
+        "p074"
+      ],
+      "note": "司馬鄴為吳王晏之子，出繼秦王柬，且301年有既定爵期空檔；302—305不恢復始平支屬。秦本國既有有效爵期不因撤支縮短，306以後本來即未列始平支郡。"
+    },
+    {
+      "record_id": "CHANGSHA_SHUO",
+      "decision": "primary_only",
+      "reason": "biological_son_after_gap",
+      "begin": 308,
+      "end": 310,
+      "primary_ids": [
+        "p207"
+      ],
+      "released_ids": [
+        "p162",
+        "p176",
+        "p208"
+      ],
+      "note": "司馬碩雖是司馬乂親生子，304—307長沙已有明確國爵空檔；308復封者並非乂本人，故308—310僅領長沙本國，南平、衡陽維持普通郡。311起主國仍依原裁定還郡。"
+    },
+    {
+      "record_id": "HUAINAN_CHAO",
+      "decision": "primary_only",
+      "reason": "adopted_successor",
+      "begin": 301,
+      "end": 301,
+      "primary_ids": [
+        "p187"
+      ],
+      "released_ids": [
+        "p031",
+        "p188"
+      ],
+      "note": "司馬超是齊王冏之子，出繼允；301保留淮南本國，取消安豐、廬江支屬。302改封的既有終點不變。"
+    },
+    {
+      "record_id": "HUAINAN_XIANG_307",
+      "decision": "primary_only",
+      "reason": "adopted_successor_after_gap",
+      "begin": 307,
+      "end": 310,
+      "primary_ids": [
+        "p187"
+      ],
+      "released_ids": [
+        "p031",
+        "p188"
+      ],
+      "note": "司馬祥是吳王晏之子，出繼允，且淮南302—306有既定爵期空檔；307—310僅领淮南本國，不恢復安豐、廬江支屬。307展示起年和311終止仍沿用Word既定裁定，未另造國主在位起訖。"
+    },
+    {
+      "record_id": "LIANG_CHEN_289",
+      "replacement_id": "LIANG_XI_PRIMARY_ONLY",
+      "decision": "primary_only_from_303",
+      "begin": 303,
+      "end": 311,
+      "primary_ids": [
+        "p025"
+      ],
+      "released_ids": [
+        "p026"
+      ],
+      "note": "司馬禧為武陵王澹之子，出繼梁王肜；依2026-10-11繼承展示裁定，303—311僅領梁本國，陳不再作支郡。梁本國原定爵期保留；317的悝不回填西晋。陳郡原縣目及原有邊界保留。"
+    }
+  ],
+  "retained_periods": [
+    {
+      "record_id": "QINGHE_XIA",
+      "reason": "original_grant",
+      "note": "289增封勃海直接依據不變。"
+    },
+    {
+      "record_id": "QINGHE_TAN_FIRST",
+      "reason": "biological_son",
+      "note": "覃為前任遐親生長子，連續承繼。"
+    },
+    {
+      "record_id": "QINGHE_TAN_RESTORED",
+      "reason": "same_person_restoration",
+      "note": "304為覃本人復封，恢復他此前已有支郡。"
+    },
+    {
+      "record_id": "WU_YAN_FIRST",
+      "reason": "original_grant",
+      "note": "晏初封三郡不變。"
+    },
+    {
+      "record_id": "WU_YAN_RESTORED",
+      "reason": "same_person_restoration",
+      "note": "301為晏本人復封，原丹楊、吳興保留。"
+    },
+    {
+      "record_id": "CHENGDU_SICHUAN",
+      "reason": "original_grant",
+      "note": "穎本人原四郡期段，不涉及新繼承人。"
+    },
+    {
+      "record_id": "GUANGLING_YU",
+      "reason": "original_grant",
+      "note": "遹本人原增封期段。"
+    },
+    {
+      "record_id": "DONGHAI_YUE",
+      "reason": "original_grant",
+      "note": "越本人306增封期段。"
+    },
+    {
+      "record_id": "YUZHANG_CHI",
+      "reason": "original_grant",
+      "note": "熾本人原有支屬推定不變。"
+    },
+    {
+      "record_id": "QI_JINAN",
+      "reason": "biological_son",
+      "note": "冏是攸親生子，既定濟南支屬283—301不變；302以後本來已不沿用。"
+    },
+    {
+      "record_id": "QIN_JIAN",
+      "reason": "original_grant",
+      "note": "柬本人原有始平支屬不變。"
+    },
+    {
+      "record_id": "CHANGSHA_YI_RESTORED",
+      "reason": "same_person_restoration",
+      "note": "301為乂本人復封，保留南平、衡陽。"
+    },
+    {
+      "record_id": "HUAINAN_YUN",
+      "reason": "original_grant",
+      "note": "允本人原有支屬推定不變。"
+    },
+    {
+      "record_id": "DONGHAI_LANLING_307",
+      "reason": "same_holder_grant",
+      "note": "越本人307增封蘭陵，未換國主。"
+    },
+    {
+      "record_id": "CHANGLE_WUYI_298",
+      "reason": "same_holder_grant",
+      "note": "玷本人的既定增封期段，未換國主；具體年代仍為原展示推定。"
+    },
+    {
+      "record_id": "LANGYE_DONGGUAN_277",
+      "reason": "biological_son_chain",
+      "note": "伷、覲、睿為連續父子，東莞支屬保留；277—288括號縣組同樣保留。"
+    },
+    {
+      "record_id": "YAN_YUYANG_277",
+      "reason": "unknown_succession_year",
+      "note": "機本人增封有据；几虽为养子，但嗣年未详，不擅造撤支年。"
+    },
+    {
+      "record_id": "YAN_BRANCHES_293",
+      "reason": "unknown_succession_year",
+      "note": "北平等為機本人增封；几出继年未详，不自定293、301撤支。明確302國除照舊。"
+    },
+    {
+      "record_id": "LIANG_CHEN_289",
+      "reason": "original_grant_until_adoption",
+      "note": "肜本人至302；303起另列只領本國期段。"
+    },
+    {
+      "record_id": "CHANGSHA_YI_FIRST",
+      "reason": "original_grant",
+      "note": "乂本人初封，支郡原推定不變。"
+    },
+    {
+      "record_id": "CHU_WEI",
+      "reason": "no_known_branch",
+      "note": "本來沒有可確定支郡，不補造。"
+    }
+  ],
+  "county_groups": [
+    {
+      "id": "LIANG_FORMER_CHEN_COUNTIES",
+      "begin": 281,
+      "end": 288,
+      "decision": "retain",
+      "note": "281—288均為司馬肜本人在位，沒有繼承事件，括號陳縣組保持。新規同樣適用其他括號支郡及附加縣組。"
+    }
+  ],
+  "pending": [
+    {
+      "kingdom": "燕",
+      "primary_ids": [
+        "p049"
+      ],
+      "member_ids": [
+        "p048",
+        "p050",
+        "p052"
+      ],
+      "source_ids": [
+        "JS038",
+        "PRINCES_LOCAL"
+      ],
+      "note": "司馬几為齊王冏之子，出繼無子的司馬機。按新規應於承繼年撤支，但王表、現有原典均未給承繼年；不把未詳誤作精確某年，暫沿既有支屬至301，302原定國除不變。"
+    }
+  ],
+  "primary_ids_preserved": [
+    "p025",
+    "p042",
+    "p073",
+    "p187",
+    "p207",
+    "p217"
+  ],
+  "source_links": [
+    {
+      "title": "《晋書》卷三十八：梁肜、琅邪伷覲、燕機傳",
+      "url": "https://zh.wikisource.org/wiki/晉書/卷038"
+    },
+    {
+      "title": "《晋書》卷六十四：秦柬、淮南允、清河遐、吳晏傳",
+      "url": "https://zh.wikisource.org/wiki/晉書/卷064"
+    },
+    {
+      "title": "晋朝藩王列表（2026-10-11核讀）",
+      "url": "https://zh.wikipedia.org/zh-cn/晉朝藩王列表"
+    }
+  ]
+}

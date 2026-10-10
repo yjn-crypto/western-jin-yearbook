@@ -1186,7 +1186,7 @@
       if(item.jinKingdom){
         const relation=item.jinKingdom,record=relation.record;
         const inferred=relation.member?.certainty==='inferred';
-        const label=relation.role==='primary'?(relation.proto?'多郡王國先聲':'多郡王國'):`屬${relation.name}國${inferred?'（推定）':''}`;
+        const label=relation.role==='primary'?(record.succession_review?.decision==='primary_only'?'僅領本國':relation.proto?'多郡王國先聲':'多郡王國'):`屬${relation.name}國${inferred?'（推定）':''}`;
         const sources=(window.JIN_MULTI_KINGDOMS?.sources||[]).filter(source=>(record.source_ids||[]).includes(source.id));
         const info={title:'本國與支郡關係',summary:`${itemDisplayName(item)} · ${label}`,
           paragraphs:[record.note,relation.member?.note,
@@ -1214,8 +1214,9 @@
       for (const match of item.fiveRankFiefs||[]) container.appendChild(createAuxButton(jinFiveRankLabel(match),jinFiveRankInfo(match,year),'fief-badge five-rank-note'));
       if (level==='county' && item.fiefAnnotation) {
         const sourceTitle=item.fiefAnnotation.evidence_phrase.replace(/相$/,'');
-        container.appendChild(createAuxButton(`原文見${sourceTitle}`,{
-          title:'縣級封國資料',summary:`${item.name}：原文見${sourceTitle}，封爵起訖未詳`,
+        const songSource=item.fiefAnnotation.source_time_scope==='liu_song_shengming_end';
+        container.appendChild(createAuxButton(songSource?`宋志記${sourceTitle}（非西晉確證）`:`原文見${sourceTitle}`,{
+          title:'縣級封國資料',summary:songSource?`${item.name}：宋志爵號屬後世資料，不能據此確認西晉爵期`:`${item.name}：原文見${sourceTitle}，封爵起訖未詳`,
           paragraphs:[item.fiefAnnotation.note || '本書正文保存此縣的封國性質。'],sources:[item.source]
         },'fief-badge county-fief-note'));
       }
@@ -2418,7 +2419,7 @@
     $('jinBoundaryNames').setAttribute('aria-pressed',String(jinBoundaryNames));
     const legend=$('jinMapLegend');
     if(!legend.dataset.fullHtml)legend.dataset.fullHtml=legend.innerHTML;
-    legend.innerHTML=jinBoundaryMode?'<span class="jin-boundary-key jin-province-key">州界</span>　<span class="jin-boundary-key jin-kingdom-key">國界</span>　<span class="jin-boundary-key jin-member-key">國內郡界</span>；彩色面為郡級及以上封國，青灰底為底圖政區範圍，白色為底圖標明的其他政權；末期政區參考不等同西晉實際控制。斜線、虛線與※表示推定。名稱開關控制州郡範圍名。':legend.dataset.fullHtml;
+    legend.innerHTML=jinBoundaryMode?'<span class="jin-boundary-key jin-province-key">州界</span>　<span class="jin-boundary-key jin-kingdom-key">國界</span>　<span class="jin-boundary-key jin-member-key">國內郡界</span>；彩色面為郡級封國及縣王國擬合範圍，青灰底為底圖政區範圍，白色為底圖標明的其他政權；末期政區參考不等同西晉實際控制。斜線、虛線與※表示推定。名稱開關控制州郡範圍名。':legend.dataset.fullHtml;
     const select=$('jinBoundaryYear');
     select.replaceChildren(...[...yearSelect.options].map(option=>option.cloneNode(true)));
     select.value=yearSelect.value;
@@ -2462,7 +2463,7 @@
     const base=`<svg xmlns="http://www.w3.org/2000/svg" width="${map.width}" height="${map.height}"><rect width="100%" height="100%" fill="#f7f3e9"/></svg>`;
     yearMapImage.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(base);yearMapImage.alt=`${year}年西晉封國地圖底色`;
     $('yearMapTitle').textContent=jinBoundaryMode?`${year}年　西晉州郡大圖`:(map.title||`${year}年西晉州郡與封國`);
-    $('yearMapZoomHelp').textContent=jinBoundaryMode?'州界、郡國界與封國填色；不顯示縣或治所。可拖曳、縮放、切換名稱，Esc退出全屏讀圖。矢量邊線可持續放大。':'100%–1000%；低於300%顯示州名，300%–700%顯示州與郡國範圍名，超過700%加上縣名及治所名；不顯示縣域面或縣界。小字封爵另列。';
+    $('yearMapZoomHelp').textContent=jinBoundaryMode?'州界、郡國界與封國填色，另含縣王國模擬面；不顯示普通縣或治所。可拖曳、縮放、切換名稱，Esc退出全屏讀圖。矢量邊線可持續放大。':'100%–1000%；低於300%顯示州名，300%–700%顯示州與郡國範圍名，超過700%加上縣名及治所名；普通縣不繪面；縣王國以擬合面、虛界另列。其他小字封爵仍保留。';
     $('yearMapZoomHelp').textContent+='讀圖模式400%起，左下角提供可收合的定位小圖。';
     yearMapNote.textContent=map.note||'CHGIS與原圖矢量成果接合；多郡王國合併著色，內部郡界淡化。文字位置不是郡治。';
     const unmapped=map.threeBasemap?(map.coverage?.unmapped_details||[]):[];
@@ -2496,7 +2497,7 @@
       yearMapImage.removeAttribute('src');yearMapImage.alt=`正在載入${year}年西晉年度圖`;
       $('yearMapTitle').textContent=`${year}年西晉州郡與封國`;
       $('yearMapStatus').textContent='正在載入本年政區、疆域與封國…';
-      yearMapNote.textContent='年度圖按改置事件接合262、281及約308年底圖；縣域擬合只用於生成郡界，不展示縣面、縣界。';
+      yearMapNote.textContent='年度圖按改置事件接合262、281及約308年底圖；普通縣域只參與郡界擬合；縣王國另按所屬郡面積的1／轄縣數模擬，以曲線虛界表示。';
       $('mapBoundaryResearch').hidden=true;$('liangMapMissing').hidden=true;$('liangMapReference555').hidden=true;
       const model=window.JIN_ANNUAL_MAP_MODEL;
       const annualUrl=model?.THREE_BASEMAP_URLS?.[year];
@@ -2631,8 +2632,8 @@
     ] : [
       '頁面依據《中國行政區劃通史·三國兩晉南朝卷（上）》西晉州郡縣沿革重建；以原書次序為基礎，同州支郡集中列於本國下方，跨州支郡保留原州。',
       '政區沿用《通史》提供的年份，不另作上下半年換算；以281橫表及304人工校對表約束不確定年代，再採用本輪用字與轉屬裁定。本年統一列示變更後的州郡縣歸屬，在新屬條目註明本年變更前的原州原郡；同一縣不在新舊兩處重列，事件年份不後移。',
-      '多郡王國以289年為本輪展示分界：此前增封的支郡以括號縣組列示、不另計郡，289年起獨立支郡各計一郡；這是展示制度，不據此斷言各郡機構都在289年設立。梁國原陳郡縣組（含陽夏）於281—288年列為（陳支郡），289年起列陳支郡並計一郡；不重複列縣。國主須符合年號、前後承繼及已知起訖的限制；即位年不詳時不算年次，本年國主不能確認時正文不列姓名，展開可查全部世系與可能年代。',
-      '郡級封國區分王國、公國、侯國，未詳者保留封國標記。縣王及縣級五等爵只在縣旁和地圖小字列真實爵號，不畫縣國面。封君未詳時只列爵號，已知或可推定者列姓名；西晉父子承襲無明年者按父卒次年推定，不套用南朝服除規則。',
+      '多郡王國以289年為本輪展示分界：此前增封的支郡以括號縣組列示、不另計郡，289年起獨立支郡各計一郡；這是展示制度，不據此斷言各郡機構都在289年設立。梁國原陳郡縣組（含陽夏）於281—288年列為（陳支郡），289年起列陳支郡並計一郡；不重複列縣。支郡及附加縣組僅由本人復封或前任親生子連續承繼；過繼、旁系或空檔後非本人復建只保留本國。國主須符合年號、前後承繼及已知起訖的限制；即位年不詳時不算年次，本年國主不能確認時正文不列姓名，展開可查全部世系與可能年代。',
+      '郡級封國區分王國、公國、侯國，未詳者保留封國標記。縣王國依所屬郡面積除以當年轄縣數擬合，從原封國色面扣除，虛界並非考定縣界；縣級五等爵仍只列真實爵號，不畫縣國面。封君未詳時只列爵號，已知或可推定者列姓名；西晉父子承襲無明年者按父卒次年推定，不套用南朝服除規則。',
       '為地圖展示而暫定的改封、廢國年份保留「推定」說明，不作史料已考定。明載「尋省／尋廢」但無確年者至多延留三年；相鄰郡已可確認同一地點的後繼縣目時，據此收窄旧屬的不明終點。',
       '治所採304年校對錨點：州治依指定縣、郡治依首縣，城陽、高密、東莞、淮陵、新野、新昌、武平、九德不標郡治。其他年度由304年推定，原文有遷治記載則隨之移動；符號沿用州雙圈、郡圈中點、縣實心點，同址只畫最高級。洛陽至311年、長安自313年以黄色州治符號標都城，312年不標。'
     ];
