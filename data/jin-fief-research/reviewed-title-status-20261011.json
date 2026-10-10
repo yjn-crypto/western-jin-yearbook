@@ -1,0 +1,1036 @@
+{
+  "reviewed_at": "2026-10-11",
+  "scope": "西晋定向增补；不重做通史年度表或扩大至其他朝代",
+  "policy": "王、公、侯逐项核末爵；已知终止优先于旧底图称谓；未知姓名而确无终止证据者保留。宋志后世相职不作为西晋封爵。",
+  "title_periods": [
+    {
+      "id": "JIUQUAN_JIAPI_END",
+      "ids": [
+        "p089"
+      ],
+      "begin": 312,
+      "end": 316,
+      "name": "酒泉郡",
+      "rank": null,
+      "note": "賈疋312年遇害，現行爵表未列可確認的續爵。依本輪末位封君終止、年度顯示變更後結果，312起還郡；不再把國名總欄「311—？」當作無限延續。",
+      "inferred": false,
+      "authority": "2026-10-11定向复核；明确末爵终止优先，未知存续不自动撤国",
+      "apply_to": "existing_text_and_map_reference",
+      "reference_area_ids": [],
+      "source_links": [
+        {
+          "title": "《晋书》卷060",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷060"
+        },
+        {
+          "title": "晋朝公爵列表",
+          "url": "https://zh.wikipedia.org/wiki/晉朝公爵列表"
+        }
+      ],
+      "fief_record_ids": [
+        "fr0015"
+      ]
+    },
+    {
+      "id": "GAOPING_YONGJIA_UPPER_BOUND",
+      "ids": [
+        "p020"
+      ],
+      "begin": 314,
+      "end": 316,
+      "name": "高平郡",
+      "rank": null,
+      "note": "《晉書》卷35明載陳粹「永嘉中遇害」，非僅未詳封君。永嘉307—313的範圍約束已排除316仍在位；314是本輪可確定已終止後的第一完整年，不是考定314卒或314廢國，原死亡年範圍仍保留。",
+      "inferred": true,
+      "authority": "2026-10-11定向复核；明确末爵终止优先，未知存续不自动撤国",
+      "apply_to": "existing_text_and_map_reference",
+      "reference_area_ids": [
+        "unassigned-reference-tan281-142"
+      ],
+      "source_links": [
+        {
+          "title": "《晋书》卷035",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷035"
+        },
+        {
+          "title": "晋朝公爵列表",
+          "url": "https://zh.wikipedia.org/wiki/晉朝公爵列表"
+        }
+      ],
+      "fief_record_ids": [
+        "fr0002"
+      ]
+    },
+    {
+      "id": "LELING_WESTERN_JIN_END",
+      "ids": [
+        "p038"
+      ],
+      "begin": 316,
+      "end": 316,
+      "name": "樂陵郡",
+      "rank": null,
+      "note": "現王爵資料的公爵表明列樂陵「西晉末國絕」；石演末年只作310年代，不能因數字解析到319而認為西晉滅亡後仍有國。本輪以316作末年展示上界，316起還郡；確切國絕年未詳，屬展示推定，不能改寫成石演316確切卒年。",
+      "inferred": true,
+      "authority": "2026-10-11定向复核；明确末爵终止优先，未知存续不自动撤国",
+      "apply_to": "existing_text_and_map_reference",
+      "reference_area_ids": [
+        "unassigned-reference-tan281-74"
+      ],
+      "source_links": [
+        {
+          "title": "《晋书》卷033",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷033"
+        },
+        {
+          "title": "晋朝公爵列表",
+          "url": "https://zh.wikipedia.org/wiki/晉朝公爵列表"
+        }
+      ],
+      "fief_record_ids": [
+        "fr0001"
+      ]
+    },
+    {
+      "id": "JULU_WESTERN_JIN_END",
+      "ids": [
+        "p034"
+      ],
+      "begin": 316,
+      "end": 316,
+      "name": "鉅鹿郡",
+      "rank": null,
+      "note": "裴嵩承爵後與裴該為陳午所害，爵表明列西晉末國絕、377繼絕。原310年代只是不詳時段，316起還郡為本輪展示上界推定，不稱316為考定遇害年；不把377裴球回填。",
+      "inferred": true,
+      "authority": "2026-10-11定向复核；明确末爵终止优先，未知存续不自动撤国",
+      "apply_to": "existing_text_and_map_reference",
+      "reference_area_ids": [
+        "unassigned-reference-tan281-76"
+      ],
+      "source_links": [
+        {
+          "title": "《晋书》卷035",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷035"
+        },
+        {
+          "title": "晋朝公爵列表",
+          "url": "https://zh.wikipedia.org/wiki/晉朝公爵列表"
+        }
+      ],
+      "fief_record_ids": [
+        "fr0004"
+      ]
+    },
+    {
+      "id": "LEPING_REFERENCE_OLD_NAME",
+      "ids": [
+        "p068"
+      ],
+      "begin": 282,
+      "end": 316,
+      "name": "樂平郡",
+      "rank": null,
+      "note": "司馬延祚太康初受封後尋薨、國除，現行人工資料已從282還郡。本次只把該裁定接入北方底圖參考面的舊國名；司馬超302樂平縣王不使整個樂平郡變成郡王國。",
+      "inferred": true,
+      "authority": "2026-10-11定向复核；明确末爵终止优先，未知存续不自动撤国",
+      "apply_to": "existing_text_and_map_reference",
+      "reference_area_ids": [
+        "unassigned-reference-tan281-65"
+      ],
+      "source_links": [
+        {
+          "title": "《晋书》卷038",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷038"
+        },
+        {
+          "title": "晋朝藩王列表",
+          "url": "https://zh.wikipedia.org/zh-cn/晉朝藩王列表"
+        }
+      ]
+    },
+    {
+      "id": "CHANGLE_REFERENCE_OLD_ANPING",
+      "ids": [
+        "p035"
+      ],
+      "begin": 310,
+      "end": 316,
+      "name": "長樂郡",
+      "rank": null,
+      "note": "沿既有Word及人工裁定：長樂王玷爵期至309，310起長樂、武邑各还郡。281底圖「安平國」是較早名稱，晚期未匹配参考面也須顯本期長樂郡，不回填東晉安平王邃之。",
+      "inferred": true,
+      "authority": "2026-10-11定向复核；明确末爵终止优先，未知存续不自动撤国",
+      "apply_to": "existing_text_and_map_reference",
+      "reference_area_ids": [
+        "unassigned-reference-tan281-75"
+      ],
+      "source_links": [
+        {
+          "title": "《晋书》卷037",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷037"
+        },
+        {
+          "title": "晋朝藩王列表",
+          "url": "https://zh.wikipedia.org/zh-cn/晉朝藩王列表"
+        }
+      ]
+    },
+    {
+      "id": "BOLING_WANGJUN_END",
+      "ids": [
+        "p043"
+      ],
+      "begin": 314,
+      "end": 316,
+      "name": "博陵郡",
+      "rank": null,
+      "note": "王浚314為石勒所殺，爵表列西晉末國絕、377繼絕。按本年變更後結果314還郡；原底圖標博陵國的舊字樣同步取消，377王道素不回填。",
+      "inferred": false,
+      "authority": "2026-10-11定向复核；明确末爵终止优先，未知存续不自动撤国",
+      "apply_to": "existing_text_and_map_reference",
+      "reference_area_ids": [
+        "unassigned-reference-tan281-70"
+      ],
+      "source_links": [
+        {
+          "title": "《晋书》卷039",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷039"
+        },
+        {
+          "title": "晋朝公爵列表",
+          "url": "https://zh.wikipedia.org/wiki/晉朝公爵列表"
+        }
+      ],
+      "fief_record_ids": [
+        "fr0007"
+      ]
+    },
+    {
+      "id": "QINGHE_REFERENCE_AFTER_LAST_TITLE",
+      "ids": [
+        "p042"
+      ],
+      "begin": 312,
+      "end": 316,
+      "name": "清河郡",
+      "rank": null,
+      "note": "沿既有王表與後續人工裁定：籥後段至311，312起不延續；本次將已撤回的清河312後期段裁定同步到仍沿281名稱的參考面。311上限仍是既定展示口徑，不稱確定卒年。",
+      "inferred": true,
+      "authority": "2026-10-11定向复核；明确末爵终止优先，未知存续不自动撤国",
+      "apply_to": "existing_text_and_map_reference",
+      "reference_area_ids": [
+        "unassigned-reference-tan281-78"
+      ],
+      "source_links": [
+        {
+          "title": "《晋书》卷064",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷064"
+        },
+        {
+          "title": "晋朝藩王列表",
+          "url": "https://zh.wikipedia.org/zh-cn/晉朝藩王列表"
+        }
+      ]
+    },
+    {
+      "id": "PUYANG_REFERENCE_AFTER_TRANSFER",
+      "ids": [
+        "p014"
+      ],
+      "begin": 289,
+      "end": 316,
+      "name": "濮陽郡",
+      "rank": null,
+      "note": "沿既有人工表：允289改淮南，臧301被廢封濮陽後同年遇害，年度顯示變更後結果，故289以後普通郡名；原圖参考面的濮陽國亦須改郡。同名濮陽縣公不升為郡公。",
+      "inferred": false,
+      "authority": "2026-10-11定向复核；明确末爵终止优先，未知存续不自动撤国",
+      "apply_to": "existing_text_and_map_reference",
+      "reference_area_ids": [
+        "unassigned-reference-tan281-138"
+      ],
+      "source_links": [
+        {
+          "title": "《晋书》卷064",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷064"
+        },
+        {
+          "title": "晋朝藩王列表",
+          "url": "https://zh.wikipedia.org/zh-cn/晉朝藩王列表"
+        }
+      ]
+    },
+    {
+      "id": "REFERENCE_NAME_SYNC_ZHAO_ABOLISHED_301",
+      "ids": [
+        "p032"
+      ],
+      "begin": 301,
+      "end": 316,
+      "name": "趙郡",
+      "rank": null,
+      "note": "同步既有裁定至未匹配參考面之名稱欄，不新增爵期判斷。301年司馬倫敗亡被誅，趙王爵隨之終止；現有西晉王、公、侯表無其後趙郡級續封。本輪依明確廢爵事實，自301年顯示變更後的趙郡，不沿用《通史》趙國（266—313）的整段稱謂；郡的存續與領縣不變。",
+      "inferred": false,
+      "authority": "2026-10-07已核裁定同步",
+      "apply_to": "existing_text_and_map_reference",
+      "reference_area_ids": [
+        "unassigned-reference-tan281-77"
+      ],
+      "source_links": [
+        {
+          "title": "《晉書》卷59·趙王倫傳",
+          "url": "https://zh.wikisource.org/zh-hant/晉書/卷059"
+        }
+      ],
+      "previous_decision_id": "ZHAO_ABOLISHED_301"
+    },
+    {
+      "id": "REFERENCE_NAME_SYNC_LEAN_TRANSFERRED_302",
+      "ids": [
+        "p144"
+      ],
+      "begin": 302,
+      "end": 316,
+      "name": "樂安郡",
+      "rank": null,
+      "note": "同步既有裁定至未匹配參考面之名稱欄，不新增爵期判斷。司馬冰於302年由樂安徙封廣陽，冏敗後廢；《晉書》卷38說明所改廣陽國為濟陰，並非幽州同名之地。現有西晉王、公、侯表未見後續樂安郡級封爵，自302年列樂安郡。原摘錄「永興元年（302）」紀年誤配，應為太安元年。",
+      "inferred": false,
+      "authority": "2026-10-07已核裁定同步",
+      "apply_to": "existing_text_and_map_reference",
+      "reference_area_ids": [
+        "unassigned-reference-tan281-81"
+      ],
+      "source_links": [
+        {
+          "title": "《晉書》卷38",
+          "url": "https://zh.wikisource.org/zh-hant/晉書/卷038"
+        },
+        {
+          "title": "晉朝藩王列表",
+          "url": "https://zh.wikipedia.org/wiki/晉朝藩王列表"
+        }
+      ],
+      "previous_decision_id": "LEAN_TRANSFERRED_302"
+    },
+    {
+      "id": "REFERENCE_NAME_SYNC_YAN_ABOLISHED_302",
+      "ids": [
+        "p049"
+      ],
+      "begin": 302,
+      "end": 316,
+      "name": "燕郡",
+      "rank": null,
+      "note": "同步既有裁定至未匹配參考面之名稱欄，不新增爵期判斷。《晉書》卷38燕王傳明載「後冏敗，國除」；齊王冏敗在太安元年（302）。自302年列燕郡，漁陽、北平、廣寧解除燕國支郡關係，仍各為獨立郡。上谷公國及兗州燕縣的曹氏縣公不屬此次幽州燕國，均保留；慕容氏燕王屬西晉之後，不回填。原王表把302年誤配永興元年的文字，應讀太安元年。",
+      "inferred": false,
+      "authority": "2026-10-07已核裁定同步",
+      "apply_to": "existing_text_and_map_reference",
+      "reference_area_ids": [
+        "unassigned-reference-tan281-158"
+      ],
+      "source_links": [
+        {
+          "title": "《晉書》卷38·燕王機、幾傳",
+          "url": "https://zh.wikisource.org/zh-hant/晉書/卷038"
+        },
+        {
+          "title": "《晉書》卷4·惠帝紀",
+          "url": "https://zh.wikisource.org/zh-hant/晉書/卷004"
+        }
+      ],
+      "previous_decision_id": "YAN_ABOLISHED_302"
+    },
+    {
+      "id": "REFERENCE_NAME_SYNC_ZHONGSHAN_ABOLISHED_304",
+      "ids": [
+        "p045"
+      ],
+      "begin": 304,
+      "end": 316,
+      "name": "中山郡",
+      "rank": null,
+      "note": "同步既有裁定至未匹配參考面之名稱欄，不新增爵期判斷。《晉書》卷37載司馬緝迎戰王浚，沒於陣，並明言「無子，國除」；封爵表繫於304年，現有西晉王、公、侯表無其後中山郡級續封。自304年顯示中山郡，並非僅據國主死亡或未知承襲撤國；郡縣建置不變。",
+      "inferred": false,
+      "authority": "2026-10-07已核裁定同步",
+      "apply_to": "existing_text_and_map_reference",
+      "reference_area_ids": [
+        "unassigned-reference-tan281-68"
+      ],
+      "source_links": [
+        {
+          "title": "《晉書》卷37·濟南惠王遂傳附中山王緝",
+          "url": "https://zh.wikisource.org/zh-hant/晉書/卷037"
+        }
+      ],
+      "previous_decision_id": "ZHONGSHAN_ABOLISHED_304"
+    },
+    {
+      "id": "REFERENCE_NAME_SYNC_HEJIAN_ENDED_306",
+      "ids": [
+        "p040"
+      ],
+      "begin": 306,
+      "end": 316,
+      "name": "河間郡",
+      "rank": null,
+      "note": "同步既有裁定至未匹配參考面之名稱欄，不新增爵期判斷。司馬顒及三子被殺，嗣子融承後但改封樂成縣王，不能當作河間郡級王國延續。現行封爵表將顒之死繫於306年；《晉書》卷59作永嘉初，存在年差，本輪沿表取306為展示年並保留此異文。此後未見西晉河間郡級王、公、侯續封，故自306年顯示河間郡；東晉復爵不回填，樂成縣王仍按縣級資料展示。",
+      "inferred": true,
+      "authority": "2026-10-07已核裁定同步",
+      "apply_to": "existing_text_and_map_reference",
+      "reference_area_ids": [
+        "unassigned-reference-tan281-71"
+      ],
+      "source_links": [
+        {
+          "title": "《晉書》卷59",
+          "url": "https://zh.wikisource.org/zh-hant/晉書/卷059"
+        },
+        {
+          "title": "晉朝藩王列表",
+          "url": "https://zh.wikipedia.org/wiki/晉朝藩王列表"
+        }
+      ],
+      "previous_decision_id": "HEJIAN_ENDED_306"
+    },
+    {
+      "id": "REFERENCE_NAME_SYNC_PINGYUAN_EXTINCT_311",
+      "ids": [
+        "p037"
+      ],
+      "begin": 311,
+      "end": 316,
+      "name": "平原郡",
+      "rank": null,
+      "note": "同步既有裁定至未匹配參考面之名稱欄，不新增爵期判斷。《晉書》卷38記平原王幹於永嘉五年（311）遇難，且合門堙滅；現有西晉封爵表無其後平原郡級王、公、侯承接，自311年顯示平原郡。依據為家支覆滅及無續封，非僅據國主去世或年份問號撤國。",
+      "inferred": false,
+      "authority": "2026-10-07已核裁定同步",
+      "apply_to": "existing_text_and_map_reference",
+      "reference_area_ids": [
+        "unassigned-reference-tan281-79"
+      ],
+      "source_links": [
+        {
+          "title": "《晉書》卷38",
+          "url": "https://zh.wikisource.org/zh-hant/晉書/卷038"
+        },
+        {
+          "title": "晉朝藩王列表",
+          "url": "https://zh.wikipedia.org/wiki/晉朝藩王列表"
+        }
+      ],
+      "previous_decision_id": "PINGYUAN_EXTINCT_311"
+    },
+    {
+      "id": "REFERENCE_NAME_SYNC_QI_EXTINCT_311",
+      "ids": [
+        "p141"
+      ],
+      "begin": 311,
+      "end": 316,
+      "name": "齊郡",
+      "rank": null,
+      "note": "同步既有裁定至未匹配參考面之名稱欄，不新增爵期判斷。《晉書》卷59載洛陽陷後司馬超兄弟皆沒於劉聰，冏遂無後；現行王表繫於311年。後次復立在東晉太元，現有西晉王、公、侯表未見中間郡級承接，自311年列齊郡。",
+      "inferred": false,
+      "authority": "2026-10-07已核裁定同步",
+      "apply_to": "existing_text_and_map_reference",
+      "reference_area_ids": [
+        "unassigned-reference-tan281-82"
+      ],
+      "source_links": [
+        {
+          "title": "《晉書》卷59",
+          "url": "https://zh.wikisource.org/zh-hant/晉書/卷059"
+        },
+        {
+          "title": "晉朝藩王列表",
+          "url": "https://zh.wikipedia.org/wiki/晉朝藩王列表"
+        }
+      ],
+      "previous_decision_id": "QI_EXTINCT_311"
+    },
+    {
+      "id": "REFERENCE_NAME_SYNC_RENCHENG_EXTINCT_311",
+      "ids": [
+        "p018"
+      ],
+      "begin": 311,
+      "end": 316,
+      "name": "任城郡",
+      "rank": null,
+      "note": "同步既有裁定至未匹配參考面之名稱欄，不新增爵期判斷。《晉書》卷37載任城王濟於永嘉五年（311）為石勒所害，二子俱沒；現有西晉封爵表無其後任城郡級王、公、侯承接，自311年顯示任城郡，不將東晉封爵回填。",
+      "inferred": false,
+      "authority": "2026-10-07已核裁定同步",
+      "apply_to": "existing_text_and_map_reference",
+      "reference_area_ids": [
+        "unassigned-reference-tan281-141"
+      ],
+      "source_links": [
+        {
+          "title": "《晉書》卷37",
+          "url": "https://zh.wikisource.org/zh-hant/晉書/卷037"
+        },
+        {
+          "title": "晉朝藩王列表",
+          "url": "https://zh.wikipedia.org/wiki/晉朝藩王列表"
+        }
+      ],
+      "previous_decision_id": "RENCHENG_EXTINCT_311"
+    }
+  ],
+  "county_source_annotations": [
+    {
+      "entity_keys": [
+        "p074/c0535"
+      ],
+      "county_id": "c0535",
+      "name": "槐里",
+      "evidence_phrase": "槐里男相",
+      "book_page": 645,
+      "source_excerpt": "1. 槐里（266—316）\n\n按：魏属扶风郡，《晋志》属。检《宋志》：“槐里男相，汉旧名，属扶风，《晋太康地志》属始平。”则西晋太康三年始平郡有槐里县。又《地形志》：“槐里，二汉、晋属始平。”则西晋时槐里县属始平郡。槐里当于泰始二年移属始平郡。",
+      "source_time_scope": "liu_song_shengming_end",
+      "western_jin_title_verified": false,
+      "display_on_map": false,
+      "judgment": "完整《宋志》條文另有「僑立亦屬始平。大明土斷屬此」，此為劉宋雍州順陽郡之僑槐里男相；不能貼到西晉關中槐里。西晉槐里是否另有男爵，現無獨立證據，暫不顯爵。",
+      "source_links": [
+        {
+          "title": "《宋书》卷35州郡志序",
+          "url": "https://zh.wikisource.org/zh-hans/宋書/卷35"
+        },
+        {
+          "title": "《宋书》卷37州郡志三",
+          "url": "https://zh.wikisource.org/zh-hans/宋書/卷37"
+        }
+      ]
+    },
+    {
+      "entity_keys": [
+        "p161/c1114",
+        "p186/c1302"
+      ],
+      "county_id": "c1114",
+      "name": "華容",
+      "evidence_phrase": "華容公相",
+      "book_page": 707,
+      "source_excerpt": "4. 华容（280—307后，316前—316）\n\n按：吴、《晋志》属。检《左传·桓公十一年》《左传·庄公十八年》《左传·昭公七年》杜注有南郡华容县，则太康元年南郡有华容县，太康元年武帝平吴后，其属焉。又《宋志》：“华容公相，汉旧县，晋武太康元年省，后复立。”据杜注，则太康元年有华容县，《宋志》误。永嘉元年后移属成都郡，愍帝建兴中复还。",
+      "source_time_scope": "liu_song_shengming_end",
+      "western_jin_title_verified": false,
+      "display_on_map": false,
+      "judgment": "《宋書》州郡志的相職以昇明末為準；此條所追述的漢晉建置或縣屬，不證明相職及爵號同時始於西晉。保留原文供查，不據此注記標西晉爵號或畫封國面。",
+      "source_links": [
+        {
+          "title": "《宋书》卷35州郡志序",
+          "url": "https://zh.wikisource.org/zh-hans/宋書/卷35"
+        },
+        {
+          "title": "《宋书》卷37州郡志三",
+          "url": "https://zh.wikisource.org/zh-hans/宋書/卷37"
+        }
+      ]
+    },
+    {
+      "entity_keys": [
+        "p161/c1118",
+        "p186/c1304"
+      ],
+      "county_id": "c1118",
+      "name": "監利",
+      "evidence_phrase": "監利侯相",
+      "book_page": 708,
+      "source_excerpt": "8. 监利（283，284—307后，316前—316）\n\n按：吴末无此县，《晋志》属。检《宋志》：“监利侯相，按《晋起居注》：太康四年，复立南郡之监利县，寻复省之。”又《元和志》卷21山南道复州监利县条：“本汉华容县地也，晋武帝太康五年分立监利县，属南郡。”则监利县似太康四年置，旋废，五年又复置，仍属焉。永嘉元年后移属成都郡，愍帝建兴中复还。",
+      "source_time_scope": "liu_song_shengming_end",
+      "western_jin_title_verified": false,
+      "display_on_map": false,
+      "judgment": "《宋書》州郡志的相職以昇明末為準；此條所追述的漢晉建置或縣屬，不證明相職及爵號同時始於西晉。保留原文供查，不據此注記標西晉爵號或畫封國面。",
+      "source_links": [
+        {
+          "title": "《宋书》卷35州郡志序",
+          "url": "https://zh.wikisource.org/zh-hans/宋書/卷35"
+        },
+        {
+          "title": "《宋书》卷37州郡志三",
+          "url": "https://zh.wikisource.org/zh-hans/宋書/卷37"
+        }
+      ]
+    },
+    {
+      "entity_keys": [
+        "p161/c1119",
+        "p186/c1303"
+      ],
+      "county_id": "c1119",
+      "name": "州陵",
+      "evidence_phrase": "州陵侯相",
+      "book_page": 708,
+      "source_excerpt": "9. 州陵（280—307后，316前—316）\n\n按：吴末无此县，《晋志》属。检《宋志》：“州陵侯相，汉旧县，属南郡，晋武帝太康元年复立，疑是吴所省也。”则晋武帝太康元年复立州陵县。永嘉元年后移属成都郡，愍帝建兴中复还。",
+      "source_time_scope": "liu_song_shengming_end",
+      "western_jin_title_verified": false,
+      "display_on_map": false,
+      "judgment": "《宋書》州郡志的相職以昇明末為準；此條所追述的漢晉建置或縣屬，不證明相職及爵號同時始於西晉。保留原文供查，不據此注記標西晉爵號或畫封國面。",
+      "source_links": [
+        {
+          "title": "《宋书》卷35州郡志序",
+          "url": "https://zh.wikisource.org/zh-hans/宋書/卷35"
+        },
+        {
+          "title": "《宋书》卷37州郡志三",
+          "url": "https://zh.wikisource.org/zh-hans/宋書/卷37"
+        }
+      ]
+    },
+    {
+      "entity_keys": [
+        "p162/c1123"
+      ],
+      "county_id": "c1123",
+      "name": "江安",
+      "evidence_phrase": "江安侯相",
+      "book_page": 709,
+      "source_excerpt": "3. 江安（280—316）\n\n按：吴无此县，《晋志》属。检《宋志》：“江安侯相，晋武帝太康元年立。”又《舆地纪胜》卷64荆湖北路江陵府公安县条引《皇朝郡县志》：“晋杜预平江南，置江安县属南平郡，宋为南平郡治，后改公安。”则太康元年立江安县，且属南平郡，其后当仍属焉。",
+      "source_time_scope": "liu_song_shengming_end",
+      "western_jin_title_verified": false,
+      "display_on_map": false,
+      "judgment": "《宋書》州郡志的相職以昇明末為準；此條所追述的漢晉建置或縣屬，不證明相職及爵號同時始於西晉。保留原文供查，不據此注記標西晉爵號或畫封國面。",
+      "source_links": [
+        {
+          "title": "《宋书》卷35州郡志序",
+          "url": "https://zh.wikisource.org/zh-hans/宋書/卷35"
+        },
+        {
+          "title": "《宋书》卷37州郡志三",
+          "url": "https://zh.wikisource.org/zh-hans/宋書/卷37"
+        }
+      ]
+    },
+    {
+      "entity_keys": [
+        "p163/c1130"
+      ],
+      "county_id": "c1130",
+      "name": "山都",
+      "evidence_phrase": "山都男相",
+      "book_page": 709,
+      "source_excerpt": "6. 山都（280—290后）\n\n按：魏属南阳郡，《晋志》属。检《水经注》卷31：“晋咸宁二年，封大司马扶风武王少子（司马）歆为新野郡公，割南阳五属，棘阳、蔡阳、穰、邓、山都封焉。”则山都县至咸宁二年仍属南阳郡，其后似移属新野郡。又《宋志》：“山都男相，汉旧县，属南阳，《晋太康地志》属襄阳。”则太康三年山都属襄阳郡。据新野郡考证，新野郡太康元年废，山都县似于此时来属。惠帝时移属新野郡。",
+      "source_time_scope": "liu_song_shengming_end",
+      "western_jin_title_verified": false,
+      "display_on_map": false,
+      "judgment": "《宋書》州郡志的相職以昇明末為準；此條所追述的漢晉建置或縣屬，不證明相職及爵號同時始於西晉。保留原文供查，不據此注記標西晉爵號或畫封國面。",
+      "source_links": [
+        {
+          "title": "《宋书》卷35州郡志序",
+          "url": "https://zh.wikisource.org/zh-hans/宋書/卷35"
+        },
+        {
+          "title": "《宋书》卷37州郡志三",
+          "url": "https://zh.wikisource.org/zh-hans/宋書/卷37"
+        }
+      ]
+    },
+    {
+      "entity_keys": [
+        "p170/c1201"
+      ],
+      "county_id": "c1201",
+      "name": "廣昌",
+      "evidence_phrase": "廣昌子相",
+      "book_page": 716,
+      "source_excerpt": "7. 广昌（266—279，280 庸昌）\n\n按：魏作“广昌”属，《晋志》无此县。检《宋志》：“广昌子相……《晋地记》，武帝太康元年改上庸之广昌为庸昌，二年省。”则太康二年改广昌为庸昌，旋废，故《晋志》不载。",
+      "source_time_scope": "liu_song_shengming_end",
+      "western_jin_title_verified": false,
+      "display_on_map": false,
+      "judgment": "《宋書》州郡志的相職以昇明末為準；此條所追述的漢晉建置或縣屬，不證明相職及爵號同時始於西晉。保留原文供查，不據此注記標西晉爵號或畫封國面。",
+      "source_links": [
+        {
+          "title": "《宋书》卷35州郡志序",
+          "url": "https://zh.wikisource.org/zh-hans/宋書/卷35"
+        },
+        {
+          "title": "《宋书》卷37州郡志三",
+          "url": "https://zh.wikisource.org/zh-hans/宋書/卷37"
+        }
+      ]
+    },
+    {
+      "entity_keys": [
+        "p175/c1236"
+      ],
+      "county_id": "c1236",
+      "name": "蒲圻",
+      "evidence_phrase": "蒲圻男相",
+      "book_page": 719,
+      "source_excerpt": "9. 蒲圻（280—306）\n\n按：吴末无此县，《晋志》作“蒲沂”，属。检《宋志》：“蒲圻男相，晋武帝太康元年立。”《舆地广记》卷27荆湖北路鄂州蒲圻县条：“晋太康元年置，属长沙郡。”则太康元年增置蒲圻属长沙郡，《晋志》所谓“蒲沂”当为“蒲圻”之讹。",
+      "source_time_scope": "liu_song_shengming_end",
+      "western_jin_title_verified": false,
+      "display_on_map": false,
+      "judgment": "《宋書》州郡志的相職以昇明末為準；此條所追述的漢晉建置或縣屬，不證明相職及爵號同時始於西晉。保留原文供查，不據此注記標西晉爵號或畫封國面。",
+      "source_links": [
+        {
+          "title": "《宋书》卷35州郡志序",
+          "url": "https://zh.wikisource.org/zh-hans/宋書/卷35"
+        },
+        {
+          "title": "《宋书》卷37州郡志三",
+          "url": "https://zh.wikisource.org/zh-hans/宋書/卷37"
+        }
+      ]
+    },
+    {
+      "entity_keys": [
+        "p175/c1237"
+      ],
+      "county_id": "c1237",
+      "name": "巴陵",
+      "evidence_phrase": "巴陵男相",
+      "book_page": 720,
+      "source_excerpt": "10. 巴陵（280—298）\n\n按：吴无此县，《晋志》属。检《宋志》：“巴陵男相，晋武帝太康元年立，属长沙。”又《真诰》卷13“以其叔茂而名地焉”陶弘景小注：“巴陵县，始晋初。”又《水经注》卷38：“晋太康元年立巴陵县。”则晋太康元年置巴陵县，且属长沙郡。元康九年移属建昌郡。",
+      "source_time_scope": "liu_song_shengming_end",
+      "western_jin_title_verified": false,
+      "display_on_map": false,
+      "judgment": "《宋書》州郡志的相職以昇明末為準；此條所追述的漢晉建置或縣屬，不證明相職及爵號同時始於西晉。保留原文供查，不據此注記標西晉爵號或畫封國面。",
+      "source_links": [
+        {
+          "title": "《宋书》卷35州郡志序",
+          "url": "https://zh.wikisource.org/zh-hans/宋書/卷35"
+        },
+        {
+          "title": "《宋书》卷37州郡志三",
+          "url": "https://zh.wikisource.org/zh-hans/宋書/卷37"
+        }
+      ]
+    },
+    {
+      "entity_keys": [
+        "p177/c1251"
+      ],
+      "county_id": "c1251",
+      "name": "臨烝",
+      "evidence_phrase": "臨蒸伯相",
+      "book_page": 721,
+      "source_excerpt": "5. 临烝（280—306）\n\n按：吴属衡阳郡，《晋志》属。检《宋志》：“临烝伯相，吴属衡阳，《晋太康地志》属湘东。”太康三年湘东郡有临烝县，其似于太康元年移属焉。",
+      "source_time_scope": "liu_song_shengming_end",
+      "western_jin_title_verified": false,
+      "display_on_map": false,
+      "judgment": "《宋書》州郡志的相職以昇明末為準；此條所追述的漢晉建置或縣屬，不證明相職及爵號同時始於西晉。保留原文供查，不據此注記標西晉爵號或畫封國面。",
+      "source_links": [
+        {
+          "title": "《宋书》卷35州郡志序",
+          "url": "https://zh.wikisource.org/zh-hans/宋書/卷35"
+        },
+        {
+          "title": "《宋书》卷37州郡志三",
+          "url": "https://zh.wikisource.org/zh-hans/宋書/卷37"
+        }
+      ]
+    },
+    {
+      "entity_keys": [
+        "p179/c1271"
+      ],
+      "county_id": "c1271",
+      "name": "建興",
+      "evidence_phrase": "建興男相",
+      "book_page": 722,
+      "source_excerpt": "7. 建兴（280—306）\n\n按：吴无此县，《晋志》属。检《宋志》：“建兴男相，晋武帝分邵陵立。”则似太康元年分邵陵立建兴县。",
+      "source_time_scope": "liu_song_shengming_end",
+      "western_jin_title_verified": false,
+      "display_on_map": false,
+      "judgment": "《宋書》州郡志的相職以昇明末為準；此條所追述的漢晉建置或縣屬，不證明相職及爵號同時始於西晉。保留原文供查，不據此注記標西晉爵號或畫封國面。",
+      "source_links": [
+        {
+          "title": "《宋书》卷35州郡志序",
+          "url": "https://zh.wikisource.org/zh-hans/宋書/卷35"
+        },
+        {
+          "title": "《宋书》卷37州郡志三",
+          "url": "https://zh.wikisource.org/zh-hans/宋書/卷37"
+        }
+      ]
+    },
+    {
+      "entity_keys": [
+        "p182/c1294"
+      ],
+      "county_id": "c1294",
+      "name": "廣興",
+      "evidence_phrase": "廣興侯相",
+      "book_page": 724,
+      "source_excerpt": "7. 广兴（280—290）\n\n按：吴无此县，《晋志》属。检《宋志》：“广兴侯相，《晋太康地志》有此县。”则太康三年已置广兴县，疑太康元年武帝平吴时置，当属安成郡。",
+      "source_time_scope": "liu_song_shengming_end",
+      "western_jin_title_verified": false,
+      "display_on_map": false,
+      "judgment": "《宋書》州郡志的相職以昇明末為準；此條所追述的漢晉建置或縣屬，不證明相職及爵號同時始於西晉。保留原文供查，不據此注記標西晉爵號或畫封國面。",
+      "source_links": [
+        {
+          "title": "《宋书》卷35州郡志序",
+          "url": "https://zh.wikisource.org/zh-hans/宋書/卷35"
+        },
+        {
+          "title": "《宋书》卷37州郡志三",
+          "url": "https://zh.wikisource.org/zh-hans/宋書/卷37"
+        }
+      ]
+    },
+    {
+      "entity_keys": [
+        "p199/c1438"
+      ],
+      "county_id": "c1438",
+      "name": "晉安",
+      "evidence_phrase": "晉安男相",
+      "book_page": 739,
+      "source_excerpt": "6. 晋安（282—290）\n\n按：吴作“东安”属建安郡，《晋志》属。据本郡考证太康三年置晋安郡，其似于此时来属。又《宋志》：“晋安男相，吴立曰东安，晋武帝更名。”则亦似于太康三年改东安为晋安。",
+      "source_time_scope": "liu_song_shengming_end",
+      "western_jin_title_verified": false,
+      "display_on_map": false,
+      "judgment": "《宋書》州郡志的相職以昇明末為準；此條所追述的漢晉建置或縣屬，不證明相職及爵號同時始於西晉。保留原文供查，不據此注記標西晉爵號或畫封國面。",
+      "source_links": [
+        {
+          "title": "《宋书》卷35州郡志序",
+          "url": "https://zh.wikisource.org/zh-hans/宋書/卷35"
+        },
+        {
+          "title": "《宋书》卷37州郡志三",
+          "url": "https://zh.wikisource.org/zh-hans/宋書/卷37"
+        },
+        {
+          "title": "《宋书》卷36州郡志二",
+          "url": "https://zh.wikisource.org/zh-hans/宋書/卷36"
+        }
+      ]
+    },
+    {
+      "entity_keys": [
+        "p199/c1439"
+      ],
+      "county_id": "c1439",
+      "name": "羅江",
+      "evidence_phrase": "羅江男相",
+      "book_page": 739,
+      "source_excerpt": "7. 罗江（282—290）\n\n按：吴属临海郡，《晋志》属。检《宋志》：“罗江男相，吴立，属临海。晋武帝立晋安郡，度属。”则太康三年罗江县来属。",
+      "source_time_scope": "liu_song_shengming_end",
+      "western_jin_title_verified": false,
+      "display_on_map": false,
+      "judgment": "《宋書》州郡志的相職以昇明末為準；此條所追述的漢晉建置或縣屬，不證明相職及爵號同時始於西晉。保留原文供查，不據此注記標西晉爵號或畫封國面。",
+      "source_links": [
+        {
+          "title": "《宋书》卷35州郡志序",
+          "url": "https://zh.wikisource.org/zh-hans/宋書/卷35"
+        },
+        {
+          "title": "《宋书》卷37州郡志三",
+          "url": "https://zh.wikisource.org/zh-hans/宋書/卷37"
+        }
+      ]
+    },
+    {
+      "entity_keys": [
+        "p202/c1474"
+      ],
+      "county_id": "c1474",
+      "name": "上饒",
+      "evidence_phrase": "上饒男相",
+      "book_page": 741,
+      "source_excerpt": "8. 上饶（280—282）\n\n按：吴属，《晋志》无此县。检《宋志》：“上饶男相，吴立，《太康地志》有，王隐《地道》无。”则太康三年鄱阳郡有上饶县。又《舆地广记》卷24江南东路信州上饶县条：“吴置，晋省之，宋复置。”则上饶县似于太康四年省。",
+      "source_time_scope": "liu_song_shengming_end",
+      "western_jin_title_verified": false,
+      "display_on_map": false,
+      "judgment": "《宋書》州郡志的相職以昇明末為準；此條所追述的漢晉建置或縣屬，不證明相職及爵號同時始於西晉。保留原文供查，不據此注記標西晉爵號或畫封國面。",
+      "source_links": [
+        {
+          "title": "《宋书》卷35州郡志序",
+          "url": "https://zh.wikisource.org/zh-hans/宋書/卷35"
+        },
+        {
+          "title": "《宋书》卷37州郡志三",
+          "url": "https://zh.wikisource.org/zh-hans/宋書/卷37"
+        },
+        {
+          "title": "《宋书》卷36州郡志二",
+          "url": "https://zh.wikisource.org/zh-hans/宋書/卷36"
+        }
+      ]
+    },
+    {
+      "entity_keys": [
+        "p203/c1489"
+      ],
+      "county_id": "c1489",
+      "name": "平固",
+      "evidence_phrase": "平固侯相",
+      "book_page": 742,
+      "source_excerpt": "14. 平固（280—281）\n\n按：吴作“平阳”，属，《晋志》属南康郡。检《宋志》：“平固侯相，吴立曰平阳，晋武帝太康元年更名。”则太康元年改平阳为平固。据南康郡考证，太康三年其移属南康郡。",
+      "source_time_scope": "liu_song_shengming_end",
+      "western_jin_title_verified": false,
+      "display_on_map": false,
+      "judgment": "《宋書》州郡志的相職以昇明末為準；此條所追述的漢晉建置或縣屬，不證明相職及爵號同時始於西晉。保留原文供查，不據此注記標西晉爵號或畫封國面。",
+      "source_links": [
+        {
+          "title": "《宋书》卷35州郡志序",
+          "url": "https://zh.wikisource.org/zh-hans/宋書/卷35"
+        },
+        {
+          "title": "《宋书》卷37州郡志三",
+          "url": "https://zh.wikisource.org/zh-hans/宋書/卷37"
+        },
+        {
+          "title": "《宋书》卷36州郡志二",
+          "url": "https://zh.wikisource.org/zh-hans/宋書/卷36"
+        }
+      ]
+    },
+    {
+      "entity_keys": [
+        "p203/c1490"
+      ],
+      "county_id": "c1490",
+      "name": "南康",
+      "evidence_phrase": "南康公相",
+      "book_page": 742,
+      "source_excerpt": "15. 南康（280—281）\n\n按：吴作“安南”，属，《晋志》属南康郡。检《宋志》：“南康公相，吴立曰安南，晋武帝太康元年更名。”则太康元年改安南为南康。据南康郡考证，太康三年其移属南康郡。",
+      "source_time_scope": "liu_song_shengming_end",
+      "western_jin_title_verified": false,
+      "display_on_map": false,
+      "judgment": "《宋書》州郡志的相職以昇明末為準；此條所追述的漢晉建置或縣屬，不證明相職及爵號同時始於西晉。保留原文供查，不據此注記標西晉爵號或畫封國面。",
+      "source_links": [
+        {
+          "title": "《宋书》卷35州郡志序",
+          "url": "https://zh.wikisource.org/zh-hans/宋書/卷35"
+        },
+        {
+          "title": "《宋书》卷37州郡志三",
+          "url": "https://zh.wikisource.org/zh-hans/宋書/卷37"
+        },
+        {
+          "title": "《宋书》卷36州郡志二",
+          "url": "https://zh.wikisource.org/zh-hans/宋書/卷36"
+        }
+      ]
+    },
+    {
+      "entity_keys": [
+        "p203/c1491"
+      ],
+      "county_id": "c1491",
+      "name": "寧都",
+      "evidence_phrase": "寧都子相",
+      "book_page": 743,
+      "source_excerpt": "16. 宁都（280—281）\n\n按：吴作“杨都”，属，《晋志》无此县。检《宋志》：“宁都子相，吴立曰杨都，晋武帝太康元年更名。”又《寰宇记》卷108江南西道虔州虔化县条：“吴大帝时分赣县立为阳都县，《吴录地志》属庐陵郡之南部，晋武帝改为宁都。《起居注》云：‘太康元年以庐陵郡都尉之阳都县来入。’是也。”则太康元年改杨都县为宁都县。又《宋志》南康公相有宁都子相，则宁都县似于太康三年移属南康郡。",
+      "source_time_scope": "liu_song_shengming_end",
+      "western_jin_title_verified": false,
+      "display_on_map": false,
+      "judgment": "《宋書》州郡志的相職以昇明末為準；此條所追述的漢晉建置或縣屬，不證明相職及爵號同時始於西晉。保留原文供查，不據此注記標西晉爵號或畫封國面。",
+      "source_links": [
+        {
+          "title": "《宋书》卷35州郡志序",
+          "url": "https://zh.wikisource.org/zh-hans/宋書/卷35"
+        },
+        {
+          "title": "《宋书》卷37州郡志三",
+          "url": "https://zh.wikisource.org/zh-hans/宋書/卷37"
+        },
+        {
+          "title": "《宋书》卷36州郡志二",
+          "url": "https://zh.wikisource.org/zh-hans/宋書/卷36"
+        }
+      ]
+    },
+    {
+      "entity_keys": [
+        "p204/c1493"
+      ],
+      "county_id": "c1493",
+      "name": "陂陽",
+      "evidence_phrase": "陂陽男相",
+      "book_page": 743,
+      "source_excerpt": "2. 揭阳（282—283，284—290 陂阳）\n\n按：吴作“揭阳”属庐陵郡，《晋志》作“揭阳”，属。据本郡考证，其当于太康三年来属。又《宋志》南康公相陂阳男相条：“吴立曰揭阳，晋武帝太康五年，以西康 ^{①}揭阳移治故陂阳县，改曰陂阳。”又《太平寰宇记》卷108虔州虔化县废陂阳县条：“吴嘉禾五年置揭阳县，晋太康五年改为陂阳县，以陂阳水为名。”则太康五年改揭阳为陂阳。",
+      "source_time_scope": "liu_song_shengming_end",
+      "western_jin_title_verified": false,
+      "display_on_map": false,
+      "judgment": "《宋書》州郡志的相職以昇明末為準；此條所追述的漢晉建置或縣屬，不證明相職及爵號同時始於西晉。保留原文供查，不據此注記標西晉爵號或畫封國面。",
+      "source_links": [
+        {
+          "title": "《宋书》卷35州郡志序",
+          "url": "https://zh.wikisource.org/zh-hans/宋書/卷35"
+        },
+        {
+          "title": "《宋书》卷37州郡志三",
+          "url": "https://zh.wikisource.org/zh-hans/宋書/卷37"
+        },
+        {
+          "title": "《宋书》卷36州郡志二",
+          "url": "https://zh.wikisource.org/zh-hans/宋書/卷36"
+        }
+      ]
+    },
+    {
+      "entity_keys": [
+        "p235/c1736"
+      ],
+      "county_id": "c1736",
+      "name": "臨賀",
+      "evidence_phrase": "臨賀侯相",
+      "book_page": 759,
+      "source_excerpt": "7. 临贺（282）\n\n按：吴、《晋志》均属临贺郡。检《宋志》：“临贺侯相，汉旧县。《晋太康地志》、王隐云属南海。”则太康三年临贺县暂属南海郡，旋还临贺郡。",
+      "source_time_scope": "liu_song_shengming_end",
+      "western_jin_title_verified": false,
+      "display_on_map": false,
+      "judgment": "《宋書》州郡志的相職以昇明末為準；此條所追述的漢晉建置或縣屬，不證明相職及爵號同時始於西晉。保留原文供查，不據此注記標西晉爵號或畫封國面。",
+      "source_links": [
+        {
+          "title": "《宋书》卷35州郡志序",
+          "url": "https://zh.wikisource.org/zh-hans/宋書/卷35"
+        },
+        {
+          "title": "《宋书》卷37州郡志三",
+          "url": "https://zh.wikisource.org/zh-hans/宋書/卷37"
+        }
+      ]
+    },
+    {
+      "entity_keys": [
+        "p240/c1777"
+      ],
+      "county_id": "c1777",
+      "name": "海安",
+      "evidence_phrase": "海安男相",
+      "book_page": 762,
+      "source_excerpt": "按：吴无此县，《晋志》属。检《宋志》：“广化令，《晋太康地志》有，属高兴。”则太康三年高兴郡有广化县，其似于太康元年置，太康四年后移属高凉郡。\n\n2. 海安（280—283后）\n\n按：吴归属情况乏考，《晋志》属。检《宋志》：“海安男相，吴曰海宁，晋武改名。《太康地志》属高兴。”则晋太康元年改海宁为海安，太康三年高兴郡有海安县，太康四年后移属高凉郡。",
+      "source_time_scope": "liu_song_shengming_end",
+      "western_jin_title_verified": false,
+      "display_on_map": false,
+      "judgment": "《宋書》州郡志的相職以昇明末為準；此條所追述的漢晉建置或縣屬，不證明相職及爵號同時始於西晉。保留原文供查，不據此注記標西晉爵號或畫封國面。",
+      "source_links": [
+        {
+          "title": "《宋书》卷35州郡志序",
+          "url": "https://zh.wikisource.org/zh-hans/宋書/卷35"
+        },
+        {
+          "title": "《宋书》卷37州郡志三",
+          "url": "https://zh.wikisource.org/zh-hans/宋書/卷37"
+        }
+      ]
+    },
+    {
+      "entity_keys": [
+        "p244/c1806"
+      ],
+      "county_id": "c1806",
+      "name": "陽山",
+      "evidence_phrase": "陽山侯相",
+      "book_page": 765,
+      "source_excerpt": "7. 阳山（280—307后）\n\n按：吴无此县，《晋志》属。检《宋志》：“阳山侯相，汉旧县，后汉曰阴山，属桂阳。吴始兴郡无此县，当是晋后立。”疑于太康元年立阳山县。",
+      "source_time_scope": "liu_song_shengming_end",
+      "western_jin_title_verified": false,
+      "display_on_map": false,
+      "judgment": "《宋書》州郡志的相職以昇明末為準；此條所追述的漢晉建置或縣屬，不證明相職及爵號同時始於西晉。保留原文供查，不據此注記標西晉爵號或畫封國面。",
+      "source_links": [
+        {
+          "title": "《宋书》卷35州郡志序",
+          "url": "https://zh.wikisource.org/zh-hans/宋書/卷35"
+        },
+        {
+          "title": "《宋书》卷37州郡志三",
+          "url": "https://zh.wikisource.org/zh-hans/宋書/卷37"
+        }
+      ]
+    }
+  ]
+}

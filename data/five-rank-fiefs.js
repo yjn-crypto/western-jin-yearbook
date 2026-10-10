@@ -105,7 +105,7 @@ window.JIN_FIVE_RANK_FIEFS = {
       "active_periods": [
         {
           "start": 266,
-          "end": 316,
+          "end": 315,
           "uncertain": true,
           "raw": "265年—310年代"
         }
@@ -144,7 +144,9 @@ window.JIN_FIVE_RANK_FIEFS = {
             "石演"
           ]
         }
-      ]
+      ],
+      "reviewed_display_end": 315,
+      "reviewed_display_note": "現王爵資料的公爵表明列樂陵「西晉末國絕」；石演末年只作310年代，不能因數字解析到319而認為西晉滅亡後仍有國。本輪以316作末年展示上界，316起還郡；確切國絕年未詳，屬展示推定，不能改寫成石演316確切卒年。"
     },
     {
       "id": "fr0002",
@@ -244,7 +246,7 @@ window.JIN_FIVE_RANK_FIEFS = {
       "active_periods": [
         {
           "start": 266,
-          "end": 316,
+          "end": 313,
           "uncertain": true,
           "raw": "265年—310年代"
         }
@@ -275,7 +277,9 @@ window.JIN_FIVE_RANK_FIEFS = {
             "陳浩之"
           ]
         }
-      ]
+      ],
+      "reviewed_display_end": 313,
+      "reviewed_display_note": "《晉書》卷35明載陳粹「永嘉中遇害」，非僅未詳封君。永嘉307—313的範圍約束已排除316仍在位；314是本輪可確定已終止後的第一完整年，不是考定314卒或314廢國，原死亡年範圍仍保留。"
     },
     {
       "id": "fr0003",
@@ -517,7 +521,7 @@ window.JIN_FIVE_RANK_FIEFS = {
       "active_periods": [
         {
           "start": 266,
-          "end": 316,
+          "end": 315,
           "uncertain": true,
           "raw": "265年—310年代"
         }
@@ -567,7 +571,9 @@ window.JIN_FIVE_RANK_FIEFS = {
             "裴嵩"
           ]
         }
-      ]
+      ],
+      "reviewed_display_end": 315,
+      "reviewed_display_note": "裴嵩承爵後與裴該為陳午所害，爵表明列西晉末國絕、377繼絕。原310年代只是不詳時段，316起還郡為本輪展示上界推定，不稱316為考定遇害年；不把377裴球回填。"
     },
     {
       "id": "fr0005",
@@ -725,7 +731,7 @@ window.JIN_FIVE_RANK_FIEFS = {
       "active_periods": [
         {
           "start": 277,
-          "end": 314,
+          "end": 313,
           "uncertain": false,
           "raw": "277年—314年"
         }
@@ -754,7 +760,9 @@ window.JIN_FIVE_RANK_FIEFS = {
             "王浚"
           ]
         }
-      ]
+      ],
+      "reviewed_display_end": 313,
+      "reviewed_display_note": "王浚314為石勒所殺，爵表列西晉末國絕、377繼絕。按本年變更後結果314還郡；原底圖標博陵國的舊字樣同步取消，377王道素不回填。"
     },
     {
       "id": "fr0008",
@@ -1315,7 +1323,7 @@ window.JIN_FIVE_RANK_FIEFS = {
       "active_periods": [
         {
           "start": 311,
-          "end": 316,
+          "end": 311,
           "uncertain": true,
           "raw": "311年—?"
         }
@@ -1323,7 +1331,7 @@ window.JIN_FIVE_RANK_FIEFS = {
       "target_periods": [
         {
           "start": 311,
-          "end": 312,
+          "end": 311,
           "target_id": "p089",
           "context": "涼州",
           "uncertain": true,
@@ -1331,17 +1339,10 @@ window.JIN_FIVE_RANK_FIEFS = {
           "holder_names": [
             "賈疋"
           ]
-        },
-        {
-          "start": 313,
-          "end": 316,
-          "target_id": "p089",
-          "context": "涼州",
-          "uncertain": true,
-          "holder_exact": false,
-          "holder_names": []
         }
-      ]
+      ],
+      "reviewed_display_end": 311,
+      "reviewed_display_note": "賈疋312年遇害，現行爵表未列可確認的續爵。依本輪末位封君終止、年度顯示變更後結果，312起還郡；不再把國名總欄「311—？」當作無限延續。"
     },
     {
       "id": "fr0016",

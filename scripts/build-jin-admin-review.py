@@ -683,7 +683,8 @@ log('zhongqiu_display_start',['p032/c0283','p033'],restorations['zhongqiu']['not
 # Final, source-reviewed title corrections only change existing prefectures.
 # Missing rulers and the text's control horizon do not establish abolition.
 final_fiefs=json.loads((ROOT/'data/jin-fief-research/reviewed-final-fief-status-20261008.json').read_text())
-for decision in final_fiefs['title_periods']:
+title_review=json.loads((ROOT/'data/jin-fief-research/reviewed-title-status-20261011.json').read_text())
+for decision in final_fiefs['title_periods']+title_review['title_periods']:
     for pid in decision['ids']:
         years=[y for y in annual[pid] if decision['begin']<=y<=decision['end']]
         for y in years:
@@ -699,6 +700,18 @@ for decision in final_fiefs['title_periods']:
     log('final_fief_status',decision['ids'],decision['note'],
         begin=decision['begin'],end=decision['end'],name=decision['name'],rank=decision['rank'],
         authority=decision['authority'],source_urls=[s['url'] for s in decision['source_links']])
+
+# Song's office headings are dated to Shengming, not to the earlier county
+# histories cited beneath them. Keep the quotation without granting a Jin title.
+for decision in title_review['county_source_annotations']:
+    for ck in decision['entity_keys']:
+        for p in annual[ck].values():
+            annotation=p.get('fief_annotation')
+            if not annotation:continue
+            annotation.update(source_time_scope=decision['source_time_scope'],
+                              western_jin_title_verified=False,display_on_map=False,
+                              note=decision['judgment'])
+            if annotation.get('certainty')=='source-annotation':p['is_fief']=False
 
 # A copied phase carries status forward, not the old transfer event itself.
 for k,years in annual.items():
