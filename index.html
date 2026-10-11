@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>漢魏六朝年度州郡縣表</title>
   <meta name="description" content="依據《中國行政區劃通史》逐年重建漢魏六朝州郡縣，並附封國資料。">
-  <link rel="stylesheet" href="style.css?v=20261007.3">
+  <link rel="stylesheet" href="style.css?v=20261011.2">
 </head>
 <body data-theme="metal">
   <header class="site-header">
@@ -27,7 +27,7 @@
             <option value="eastern-han" disabled>東漢（待建）</option>
             <option value="cao-wei" disabled>曹魏（待建）</option>
             <option value="western-jin" selected>西晉</option>
-            <option value="eastern-jin" disabled>東晉（待建）</option>
+            <option value="eastern-jin">東晉</option>
             <option value="liu-song" disabled>劉宋（待建）</option>
             <option value="southern-qi" disabled>蕭齊（待建）</option>
             <option value="southern-liang">蕭梁</option>
@@ -139,6 +139,15 @@
       </div>
     </section>
 
+    <section id="easternJinReviewPanel" class="eastern-jin-review-panel" hidden>
+      <div><h2>東晉第一輪 · 待考判斷</h2><p id="easternJinReviewSummary">先採最早可行年份與最可能歸屬；仍無法判定者暫緩接入。各條保留原文、候選、判斷理由與人工核對位置。</p></div>
+      <div class="eastern-jin-review-links">
+        <a href="outputs/东晋待考项目机器判断_20261011.docx" download>下載人工核對文檔（Word）</a>
+        <a href="reports/eastern-jin-machine-decisions-20261011.html">閱讀逐項判斷</a>
+        <a href="data/eastern-jin-display/machine-decisions.csv" download>下載判斷表（CSV）</a>
+      </div>
+    </section>
+
     <section id="textMapLinkControl" class="text-map-link-control" hidden aria-label="文字與地圖聯動設定">
       <label for="textMapLinkToggle">
         <input id="textMapLinkToggle" type="checkbox" role="switch">
@@ -235,8 +244,12 @@
   <script src="data/chen-territories.js?v=20260824.4"></script>
   <script src="data/chen-map-588.js?v=20260811"></script>
   <script src="data/chen-qiao-prefaces.js?v=20260912.3"></script>
+  <script src="data/eastern-jin-data.js?v=20261011.1"></script>
+  <script src="eastern-jin-view.js?v=20261011.2"></script>
+  <script src="eastern-jin-map-model.js?v=20261011.2"></script>
+  <script src="eastern-jin-map-view.js?v=20261011.2"></script>
   <script src="source-annotations.js?v=20260912.3"></script>
   <script src="governor-history.js?v=20260912.1"></script>
-  <script src="app.js?v=20261011.1"></script>
+  <script src="app.js?v=20261011.3"></script>
 </body>
 </html>
