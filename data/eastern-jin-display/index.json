@@ -1,0 +1,3534 @@
+{
+  "meta": {
+    "created": "2026-10-11",
+    "status": "machine_adjudication_for_human_review",
+    "open_issue_count": 445,
+    "structural_group_count": 102,
+    "research_sha256": "42a204f518e02b04d176865b972c18bf99cb658fa94964a65eaa941ec910000d",
+    "source_digest": "42a204f518e02b04d176865b972c18bf99cb658fa94964a65eaa941ec910000d",
+    "rules": [
+      "原Work成果只读保留；机器判断另存，不把open原问题自动改为resolved。",
+      "候选起年取最早有据、且不与同一实体明确得失或转属冲突者；“后”取所列年展示但不写成确置。",
+      "只有晚期418或420名录者保留晚期锚；泛称江左、东晋的317—420搜索包络不当作317始置证据。",
+      "归属优先使用明确行政属隶，其次同实体已确认前后及可靠阶段；原籍、寄治、兼督不自动作为父级。",
+      "未能选择唯一父级或无足够时段者暂搁置，仍可查原文及侨置标记；不纳入正文确定数量或地图。",
+      "侨州、侨郡、侨县性质独立；所有来源标记和阶段qiao保留，不能因上级实州而删侨县。",
+      "本轮不增加国主、爵期、支郡制度或封国面，郡/国名称照来源。"
+    ],
+    "counts": {
+      "adopted": 311,
+      "suspended": 104,
+      "partial": 9,
+      "retained_with_note": 21
+    },
+    "kind_counts": {
+      "date": 315,
+      "identity": 7,
+      "text": 9,
+      "other": 7,
+      "parentage": 106,
+      "source_access": 1
+    },
+    "structural_counts": {
+      "suspended": 96,
+      "partial": 3,
+      "adopted": 3
+    },
+    "phase_changes": [
+      {
+        "phase_id": "ej5_c19471_ph3",
+        "entity_id": "ej5_c19471",
+        "name": "许昌",
+        "before": [
+          null,
+          358
+        ],
+        "after": [
+          355,
+          358
+        ],
+        "reason": "许昌355年五月陷后又复、359再陷，Work列复取候选355—358；本轮取最早355展示至358。355仅为“再陷以后复取”的展示投射，不称复取确年。"
+      },
+      {
+        "phase_id": "ej10_c1562_1_1_ph1",
+        "entity_id": "ej5_c18765",
+        "name": "襄垣",
+        "before": [
+          419,
+          419
+        ],
+        "after": [
+          397,
+          419
+        ],
+        "reason": "襄垣“晋末立”已约束为397—419，取候选最早397；原属上党、420转淮南的展示衔接保留。397及420均不是原典确切置县、改属年。"
+      },
+      {
+        "phase_id": "ej10_p1577_2_ph1",
+        "entity_id": "ej10_p1577_2",
+        "name": "武都郡",
+        "before": [
+          402,
+          402
+        ],
+        "after": [
+          397,
+          402
+        ],
+        "reason": "横江武都既有候选397—402，本轮取397作为展示起界；402任官战事为观察锚，只有太守及驻屯证据，不能因此确定郡治或行政州属。"
+      },
+      {
+        "phase_id": "ej10_c1611_1_1_ph1",
+        "entity_id": "ej10_c1611_1_1",
+        "name": "堂邑",
+        "before": [
+          413,
+          413
+        ],
+        "after": [
+          405,
+          413
+        ],
+        "reason": "堂邑郡405已有太守并领同名一县；既列候选405—413，按同一郡县组取最早405展示，413保留既有省并前上限。县与郡同起为本轮推定。"
+      }
+    ],
+    "added_parent_choices": 7,
+    "historical_final": false
+  },
+  "year_start": 317,
+  "year_end": 420,
+  "years": [
+    {
+      "year": 317,
+      "path": "annual/317.json",
+      "counts": {
+        "state": {
+          "unique_total": 16,
+          "displayed_total": 16,
+          "qiao": 6,
+          "non_qiao": 9,
+          "qiao_uncertain": 1,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 11
+        },
+        "prefecture": {
+          "unique_total": 110,
+          "displayed_total": 96,
+          "qiao": 8,
+          "non_qiao": 88,
+          "qiao_uncertain": 0,
+          "unassigned": 14,
+          "date_or_identity_uncertain": 18
+        },
+        "county": {
+          "unique_total": 589,
+          "displayed_total": 554,
+          "qiao": 8,
+          "non_qiao": 546,
+          "qiao_uncertain": 0,
+          "unassigned": 35,
+          "date_or_identity_uncertain": 28
+        }
+      }
+    },
+    {
+      "year": 318,
+      "path": "annual/318.json",
+      "counts": {
+        "state": {
+          "unique_total": 16,
+          "displayed_total": 16,
+          "qiao": 6,
+          "non_qiao": 9,
+          "qiao_uncertain": 1,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 11
+        },
+        "prefecture": {
+          "unique_total": 111,
+          "displayed_total": 97,
+          "qiao": 8,
+          "non_qiao": 89,
+          "qiao_uncertain": 0,
+          "unassigned": 14,
+          "date_or_identity_uncertain": 18
+        },
+        "county": {
+          "unique_total": 590,
+          "displayed_total": 555,
+          "qiao": 8,
+          "non_qiao": 547,
+          "qiao_uncertain": 0,
+          "unassigned": 35,
+          "date_or_identity_uncertain": 28
+        }
+      }
+    },
+    {
+      "year": 319,
+      "path": "annual/319.json",
+      "counts": {
+        "state": {
+          "unique_total": 17,
+          "displayed_total": 17,
+          "qiao": 7,
+          "non_qiao": 9,
+          "qiao_uncertain": 1,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 12
+        },
+        "prefecture": {
+          "unique_total": 111,
+          "displayed_total": 99,
+          "qiao": 9,
+          "non_qiao": 90,
+          "qiao_uncertain": 0,
+          "unassigned": 12,
+          "date_or_identity_uncertain": 20
+        },
+        "county": {
+          "unique_total": 581,
+          "displayed_total": 557,
+          "qiao": 8,
+          "non_qiao": 549,
+          "qiao_uncertain": 0,
+          "unassigned": 24,
+          "date_or_identity_uncertain": 29
+        }
+      }
+    },
+    {
+      "year": 320,
+      "path": "annual/320.json",
+      "counts": {
+        "state": {
+          "unique_total": 18,
+          "displayed_total": 18,
+          "qiao": 7,
+          "non_qiao": 10,
+          "qiao_uncertain": 1,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 13
+        },
+        "prefecture": {
+          "unique_total": 119,
+          "displayed_total": 112,
+          "qiao": 9,
+          "non_qiao": 103,
+          "qiao_uncertain": 0,
+          "unassigned": 7,
+          "date_or_identity_uncertain": 28
+        },
+        "county": {
+          "unique_total": 591,
+          "displayed_total": 586,
+          "qiao": 9,
+          "non_qiao": 577,
+          "qiao_uncertain": 0,
+          "unassigned": 5,
+          "date_or_identity_uncertain": 47
+        }
+      }
+    },
+    {
+      "year": 321,
+      "path": "annual/321.json",
+      "counts": {
+        "state": {
+          "unique_total": 18,
+          "displayed_total": 18,
+          "qiao": 7,
+          "non_qiao": 10,
+          "qiao_uncertain": 1,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 13
+        },
+        "prefecture": {
+          "unique_total": 120,
+          "displayed_total": 113,
+          "qiao": 9,
+          "non_qiao": 104,
+          "qiao_uncertain": 0,
+          "unassigned": 7,
+          "date_or_identity_uncertain": 29
+        },
+        "county": {
+          "unique_total": 592,
+          "displayed_total": 587,
+          "qiao": 9,
+          "non_qiao": 578,
+          "qiao_uncertain": 0,
+          "unassigned": 5,
+          "date_or_identity_uncertain": 47
+        }
+      }
+    },
+    {
+      "year": 322,
+      "path": "annual/322.json",
+      "counts": {
+        "state": {
+          "unique_total": 18,
+          "displayed_total": 18,
+          "qiao": 7,
+          "non_qiao": 10,
+          "qiao_uncertain": 1,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 13
+        },
+        "prefecture": {
+          "unique_total": 116,
+          "displayed_total": 109,
+          "qiao": 9,
+          "non_qiao": 100,
+          "qiao_uncertain": 0,
+          "unassigned": 7,
+          "date_or_identity_uncertain": 28
+        },
+        "county": {
+          "unique_total": 577,
+          "displayed_total": 572,
+          "qiao": 9,
+          "non_qiao": 563,
+          "qiao_uncertain": 0,
+          "unassigned": 5,
+          "date_or_identity_uncertain": 47
+        }
+      }
+    },
+    {
+      "year": 323,
+      "path": "annual/323.json",
+      "counts": {
+        "state": {
+          "unique_total": 18,
+          "displayed_total": 18,
+          "qiao": 7,
+          "non_qiao": 10,
+          "qiao_uncertain": 1,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 13
+        },
+        "prefecture": {
+          "unique_total": 126,
+          "displayed_total": 114,
+          "qiao": 14,
+          "non_qiao": 100,
+          "qiao_uncertain": 0,
+          "unassigned": 12,
+          "date_or_identity_uncertain": 34
+        },
+        "county": {
+          "unique_total": 574,
+          "displayed_total": 564,
+          "qiao": 9,
+          "non_qiao": 555,
+          "qiao_uncertain": 0,
+          "unassigned": 10,
+          "date_or_identity_uncertain": 48
+        }
+      }
+    },
+    {
+      "year": 324,
+      "path": "annual/324.json",
+      "counts": {
+        "state": {
+          "unique_total": 18,
+          "displayed_total": 18,
+          "qiao": 7,
+          "non_qiao": 10,
+          "qiao_uncertain": 1,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 13
+        },
+        "prefecture": {
+          "unique_total": 122,
+          "displayed_total": 110,
+          "qiao": 14,
+          "non_qiao": 96,
+          "qiao_uncertain": 0,
+          "unassigned": 12,
+          "date_or_identity_uncertain": 35
+        },
+        "county": {
+          "unique_total": 556,
+          "displayed_total": 551,
+          "qiao": 9,
+          "non_qiao": 542,
+          "qiao_uncertain": 0,
+          "unassigned": 5,
+          "date_or_identity_uncertain": 52
+        }
+      }
+    },
+    {
+      "year": 325,
+      "path": "annual/325.json",
+      "counts": {
+        "state": {
+          "unique_total": 17,
+          "displayed_total": 17,
+          "qiao": 8,
+          "non_qiao": 9,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 12
+        },
+        "prefecture": {
+          "unique_total": 121,
+          "displayed_total": 104,
+          "qiao": 14,
+          "non_qiao": 90,
+          "qiao_uncertain": 0,
+          "unassigned": 17,
+          "date_or_identity_uncertain": 30
+        },
+        "county": {
+          "unique_total": 547,
+          "displayed_total": 527,
+          "qiao": 9,
+          "non_qiao": 518,
+          "qiao_uncertain": 0,
+          "unassigned": 20,
+          "date_or_identity_uncertain": 37
+        }
+      }
+    },
+    {
+      "year": 326,
+      "path": "annual/326.json",
+      "counts": {
+        "state": {
+          "unique_total": 17,
+          "displayed_total": 17,
+          "qiao": 8,
+          "non_qiao": 9,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 12
+        },
+        "prefecture": {
+          "unique_total": 129,
+          "displayed_total": 109,
+          "qiao": 14,
+          "non_qiao": 95,
+          "qiao_uncertain": 0,
+          "unassigned": 20,
+          "date_or_identity_uncertain": 36
+        },
+        "county": {
+          "unique_total": 556,
+          "displayed_total": 537,
+          "qiao": 9,
+          "non_qiao": 528,
+          "qiao_uncertain": 0,
+          "unassigned": 19,
+          "date_or_identity_uncertain": 52
+        }
+      }
+    },
+    {
+      "year": 327,
+      "path": "annual/327.json",
+      "counts": {
+        "state": {
+          "unique_total": 17,
+          "displayed_total": 17,
+          "qiao": 8,
+          "non_qiao": 9,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 12
+        },
+        "prefecture": {
+          "unique_total": 129,
+          "displayed_total": 109,
+          "qiao": 14,
+          "non_qiao": 95,
+          "qiao_uncertain": 0,
+          "unassigned": 20,
+          "date_or_identity_uncertain": 36
+        },
+        "county": {
+          "unique_total": 556,
+          "displayed_total": 537,
+          "qiao": 9,
+          "non_qiao": 528,
+          "qiao_uncertain": 0,
+          "unassigned": 19,
+          "date_or_identity_uncertain": 52
+        }
+      }
+    },
+    {
+      "year": 328,
+      "path": "annual/328.json",
+      "counts": {
+        "state": {
+          "unique_total": 17,
+          "displayed_total": 17,
+          "qiao": 8,
+          "non_qiao": 9,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 12
+        },
+        "prefecture": {
+          "unique_total": 126,
+          "displayed_total": 106,
+          "qiao": 14,
+          "non_qiao": 92,
+          "qiao_uncertain": 0,
+          "unassigned": 20,
+          "date_or_identity_uncertain": 35
+        },
+        "county": {
+          "unique_total": 527,
+          "displayed_total": 508,
+          "qiao": 9,
+          "non_qiao": 499,
+          "qiao_uncertain": 0,
+          "unassigned": 19,
+          "date_or_identity_uncertain": 52
+        }
+      }
+    },
+    {
+      "year": 329,
+      "path": "annual/329.json",
+      "counts": {
+        "state": {
+          "unique_total": 16,
+          "displayed_total": 16,
+          "qiao": 9,
+          "non_qiao": 7,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 11
+        },
+        "prefecture": {
+          "unique_total": 129,
+          "displayed_total": 109,
+          "qiao": 17,
+          "non_qiao": 92,
+          "qiao_uncertain": 0,
+          "unassigned": 20,
+          "date_or_identity_uncertain": 38
+        },
+        "county": {
+          "unique_total": 529,
+          "displayed_total": 510,
+          "qiao": 11,
+          "non_qiao": 499,
+          "qiao_uncertain": 0,
+          "unassigned": 19,
+          "date_or_identity_uncertain": 59
+        }
+      }
+    },
+    {
+      "year": 330,
+      "path": "annual/330.json",
+      "counts": {
+        "state": {
+          "unique_total": 16,
+          "displayed_total": 16,
+          "qiao": 8,
+          "non_qiao": 7,
+          "qiao_uncertain": 1,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 11
+        },
+        "prefecture": {
+          "unique_total": 129,
+          "displayed_total": 109,
+          "qiao": 17,
+          "non_qiao": 92,
+          "qiao_uncertain": 0,
+          "unassigned": 20,
+          "date_or_identity_uncertain": 38
+        },
+        "county": {
+          "unique_total": 529,
+          "displayed_total": 510,
+          "qiao": 11,
+          "non_qiao": 499,
+          "qiao_uncertain": 0,
+          "unassigned": 19,
+          "date_or_identity_uncertain": 59
+        }
+      }
+    },
+    {
+      "year": 331,
+      "path": "annual/331.json",
+      "counts": {
+        "state": {
+          "unique_total": 16,
+          "displayed_total": 16,
+          "qiao": 8,
+          "non_qiao": 7,
+          "qiao_uncertain": 1,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 11
+        },
+        "prefecture": {
+          "unique_total": 130,
+          "displayed_total": 110,
+          "qiao": 17,
+          "non_qiao": 93,
+          "qiao_uncertain": 0,
+          "unassigned": 20,
+          "date_or_identity_uncertain": 38
+        },
+        "county": {
+          "unique_total": 530,
+          "displayed_total": 511,
+          "qiao": 11,
+          "non_qiao": 500,
+          "qiao_uncertain": 0,
+          "unassigned": 19,
+          "date_or_identity_uncertain": 59
+        }
+      }
+    },
+    {
+      "year": 332,
+      "path": "annual/332.json",
+      "counts": {
+        "state": {
+          "unique_total": 16,
+          "displayed_total": 16,
+          "qiao": 8,
+          "non_qiao": 7,
+          "qiao_uncertain": 1,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 11
+        },
+        "prefecture": {
+          "unique_total": 130,
+          "displayed_total": 110,
+          "qiao": 17,
+          "non_qiao": 93,
+          "qiao_uncertain": 0,
+          "unassigned": 20,
+          "date_or_identity_uncertain": 38
+        },
+        "county": {
+          "unique_total": 532,
+          "displayed_total": 513,
+          "qiao": 11,
+          "non_qiao": 502,
+          "qiao_uncertain": 0,
+          "unassigned": 19,
+          "date_or_identity_uncertain": 59
+        }
+      }
+    },
+    {
+      "year": 333,
+      "path": "annual/333.json",
+      "counts": {
+        "state": {
+          "unique_total": 16,
+          "displayed_total": 16,
+          "qiao": 8,
+          "non_qiao": 7,
+          "qiao_uncertain": 1,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 11
+        },
+        "prefecture": {
+          "unique_total": 121,
+          "displayed_total": 100,
+          "qiao": 17,
+          "non_qiao": 83,
+          "qiao_uncertain": 0,
+          "unassigned": 21,
+          "date_or_identity_uncertain": 34
+        },
+        "county": {
+          "unique_total": 483,
+          "displayed_total": 463,
+          "qiao": 11,
+          "non_qiao": 452,
+          "qiao_uncertain": 0,
+          "unassigned": 20,
+          "date_or_identity_uncertain": 43
+        }
+      }
+    },
+    {
+      "year": 334,
+      "path": "annual/334.json",
+      "counts": {
+        "state": {
+          "unique_total": 16,
+          "displayed_total": 16,
+          "qiao": 8,
+          "non_qiao": 7,
+          "qiao_uncertain": 1,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 11
+        },
+        "prefecture": {
+          "unique_total": 122,
+          "displayed_total": 101,
+          "qiao": 17,
+          "non_qiao": 84,
+          "qiao_uncertain": 0,
+          "unassigned": 21,
+          "date_or_identity_uncertain": 35
+        },
+        "county": {
+          "unique_total": 487,
+          "displayed_total": 468,
+          "qiao": 11,
+          "non_qiao": 457,
+          "qiao_uncertain": 0,
+          "unassigned": 19,
+          "date_or_identity_uncertain": 47
+        }
+      }
+    },
+    {
+      "year": 335,
+      "path": "annual/335.json",
+      "counts": {
+        "state": {
+          "unique_total": 16,
+          "displayed_total": 16,
+          "qiao": 8,
+          "non_qiao": 7,
+          "qiao_uncertain": 1,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 11
+        },
+        "prefecture": {
+          "unique_total": 121,
+          "displayed_total": 100,
+          "qiao": 17,
+          "non_qiao": 83,
+          "qiao_uncertain": 0,
+          "unassigned": 21,
+          "date_or_identity_uncertain": 35
+        },
+        "county": {
+          "unique_total": 488,
+          "displayed_total": 469,
+          "qiao": 12,
+          "non_qiao": 457,
+          "qiao_uncertain": 0,
+          "unassigned": 19,
+          "date_or_identity_uncertain": 48
+        }
+      }
+    },
+    {
+      "year": 336,
+      "path": "annual/336.json",
+      "counts": {
+        "state": {
+          "unique_total": 16,
+          "displayed_total": 16,
+          "qiao": 8,
+          "non_qiao": 7,
+          "qiao_uncertain": 1,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 11
+        },
+        "prefecture": {
+          "unique_total": 121,
+          "displayed_total": 100,
+          "qiao": 17,
+          "non_qiao": 83,
+          "qiao_uncertain": 0,
+          "unassigned": 21,
+          "date_or_identity_uncertain": 35
+        },
+        "county": {
+          "unique_total": 492,
+          "displayed_total": 473,
+          "qiao": 12,
+          "non_qiao": 461,
+          "qiao_uncertain": 0,
+          "unassigned": 19,
+          "date_or_identity_uncertain": 49
+        }
+      }
+    },
+    {
+      "year": 337,
+      "path": "annual/337.json",
+      "counts": {
+        "state": {
+          "unique_total": 16,
+          "displayed_total": 16,
+          "qiao": 8,
+          "non_qiao": 7,
+          "qiao_uncertain": 1,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 11
+        },
+        "prefecture": {
+          "unique_total": 121,
+          "displayed_total": 99,
+          "qiao": 17,
+          "non_qiao": 82,
+          "qiao_uncertain": 0,
+          "unassigned": 22,
+          "date_or_identity_uncertain": 34
+        },
+        "county": {
+          "unique_total": 500,
+          "displayed_total": 473,
+          "qiao": 12,
+          "non_qiao": 461,
+          "qiao_uncertain": 0,
+          "unassigned": 27,
+          "date_or_identity_uncertain": 49
+        }
+      }
+    },
+    {
+      "year": 338,
+      "path": "annual/338.json",
+      "counts": {
+        "state": {
+          "unique_total": 17,
+          "displayed_total": 17,
+          "qiao": 8,
+          "non_qiao": 8,
+          "qiao_uncertain": 1,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 12
+        },
+        "prefecture": {
+          "unique_total": 123,
+          "displayed_total": 102,
+          "qiao": 20,
+          "non_qiao": 82,
+          "qiao_uncertain": 0,
+          "unassigned": 21,
+          "date_or_identity_uncertain": 35
+        },
+        "county": {
+          "unique_total": 503,
+          "displayed_total": 476,
+          "qiao": 15,
+          "non_qiao": 461,
+          "qiao_uncertain": 0,
+          "unassigned": 27,
+          "date_or_identity_uncertain": 43
+        }
+      }
+    },
+    {
+      "year": 339,
+      "path": "annual/339.json",
+      "counts": {
+        "state": {
+          "unique_total": 17,
+          "displayed_total": 17,
+          "qiao": 7,
+          "non_qiao": 8,
+          "qiao_uncertain": 2,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 12
+        },
+        "prefecture": {
+          "unique_total": 122,
+          "displayed_total": 101,
+          "qiao": 20,
+          "non_qiao": 81,
+          "qiao_uncertain": 0,
+          "unassigned": 21,
+          "date_or_identity_uncertain": 36
+        },
+        "county": {
+          "unique_total": 508,
+          "displayed_total": 481,
+          "qiao": 14,
+          "non_qiao": 467,
+          "qiao_uncertain": 0,
+          "unassigned": 27,
+          "date_or_identity_uncertain": 42
+        }
+      }
+    },
+    {
+      "year": 340,
+      "path": "annual/340.json",
+      "counts": {
+        "state": {
+          "unique_total": 17,
+          "displayed_total": 17,
+          "qiao": 7,
+          "non_qiao": 8,
+          "qiao_uncertain": 2,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 12
+        },
+        "prefecture": {
+          "unique_total": 123,
+          "displayed_total": 102,
+          "qiao": 21,
+          "non_qiao": 81,
+          "qiao_uncertain": 0,
+          "unassigned": 21,
+          "date_or_identity_uncertain": 37
+        },
+        "county": {
+          "unique_total": 508,
+          "displayed_total": 483,
+          "qiao": 14,
+          "non_qiao": 469,
+          "qiao_uncertain": 0,
+          "unassigned": 25,
+          "date_or_identity_uncertain": 42
+        }
+      }
+    },
+    {
+      "year": 341,
+      "path": "annual/341.json",
+      "counts": {
+        "state": {
+          "unique_total": 16,
+          "displayed_total": 16,
+          "qiao": 7,
+          "non_qiao": 7,
+          "qiao_uncertain": 2,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 11
+        },
+        "prefecture": {
+          "unique_total": 123,
+          "displayed_total": 102,
+          "qiao": 21,
+          "non_qiao": 81,
+          "qiao_uncertain": 0,
+          "unassigned": 21,
+          "date_or_identity_uncertain": 37
+        },
+        "county": {
+          "unique_total": 508,
+          "displayed_total": 483,
+          "qiao": 14,
+          "non_qiao": 469,
+          "qiao_uncertain": 0,
+          "unassigned": 25,
+          "date_or_identity_uncertain": 42
+        }
+      }
+    },
+    {
+      "year": 342,
+      "path": "annual/342.json",
+      "counts": {
+        "state": {
+          "unique_total": 16,
+          "displayed_total": 16,
+          "qiao": 7,
+          "non_qiao": 7,
+          "qiao_uncertain": 2,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 11
+        },
+        "prefecture": {
+          "unique_total": 122,
+          "displayed_total": 101,
+          "qiao": 21,
+          "non_qiao": 80,
+          "qiao_uncertain": 0,
+          "unassigned": 21,
+          "date_or_identity_uncertain": 37
+        },
+        "county": {
+          "unique_total": 502,
+          "displayed_total": 477,
+          "qiao": 14,
+          "non_qiao": 463,
+          "qiao_uncertain": 0,
+          "unassigned": 25,
+          "date_or_identity_uncertain": 42
+        }
+      }
+    },
+    {
+      "year": 343,
+      "path": "annual/343.json",
+      "counts": {
+        "state": {
+          "unique_total": 16,
+          "displayed_total": 16,
+          "qiao": 7,
+          "non_qiao": 7,
+          "qiao_uncertain": 2,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 11
+        },
+        "prefecture": {
+          "unique_total": 122,
+          "displayed_total": 101,
+          "qiao": 21,
+          "non_qiao": 80,
+          "qiao_uncertain": 0,
+          "unassigned": 21,
+          "date_or_identity_uncertain": 36
+        },
+        "county": {
+          "unique_total": 503,
+          "displayed_total": 478,
+          "qiao": 14,
+          "non_qiao": 464,
+          "qiao_uncertain": 0,
+          "unassigned": 25,
+          "date_or_identity_uncertain": 43
+        }
+      }
+    },
+    {
+      "year": 344,
+      "path": "annual/344.json",
+      "counts": {
+        "state": {
+          "unique_total": 16,
+          "displayed_total": 16,
+          "qiao": 7,
+          "non_qiao": 7,
+          "qiao_uncertain": 2,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 11
+        },
+        "prefecture": {
+          "unique_total": 122,
+          "displayed_total": 101,
+          "qiao": 21,
+          "non_qiao": 80,
+          "qiao_uncertain": 0,
+          "unassigned": 21,
+          "date_or_identity_uncertain": 36
+        },
+        "county": {
+          "unique_total": 503,
+          "displayed_total": 478,
+          "qiao": 14,
+          "non_qiao": 464,
+          "qiao_uncertain": 0,
+          "unassigned": 25,
+          "date_or_identity_uncertain": 43
+        }
+      }
+    },
+    {
+      "year": 345,
+      "path": "annual/345.json",
+      "counts": {
+        "state": {
+          "unique_total": 16,
+          "displayed_total": 16,
+          "qiao": 7,
+          "non_qiao": 7,
+          "qiao_uncertain": 2,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 11
+        },
+        "prefecture": {
+          "unique_total": 124,
+          "displayed_total": 102,
+          "qiao": 21,
+          "non_qiao": 81,
+          "qiao_uncertain": 0,
+          "unassigned": 22,
+          "date_or_identity_uncertain": 37
+        },
+        "county": {
+          "unique_total": 503,
+          "displayed_total": 478,
+          "qiao": 14,
+          "non_qiao": 464,
+          "qiao_uncertain": 0,
+          "unassigned": 25,
+          "date_or_identity_uncertain": 43
+        }
+      }
+    },
+    {
+      "year": 346,
+      "path": "annual/346.json",
+      "counts": {
+        "state": {
+          "unique_total": 16,
+          "displayed_total": 16,
+          "qiao": 7,
+          "non_qiao": 7,
+          "qiao_uncertain": 2,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 11
+        },
+        "prefecture": {
+          "unique_total": 124,
+          "displayed_total": 102,
+          "qiao": 21,
+          "non_qiao": 81,
+          "qiao_uncertain": 0,
+          "unassigned": 22,
+          "date_or_identity_uncertain": 37
+        },
+        "county": {
+          "unique_total": 503,
+          "displayed_total": 478,
+          "qiao": 14,
+          "non_qiao": 464,
+          "qiao_uncertain": 0,
+          "unassigned": 25,
+          "date_or_identity_uncertain": 43
+        }
+      }
+    },
+    {
+      "year": 347,
+      "path": "annual/347.json",
+      "counts": {
+        "state": {
+          "unique_total": 16,
+          "displayed_total": 16,
+          "qiao": 7,
+          "non_qiao": 9,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 11
+        },
+        "prefecture": {
+          "unique_total": 146,
+          "displayed_total": 123,
+          "qiao": 22,
+          "non_qiao": 101,
+          "qiao_uncertain": 0,
+          "unassigned": 23,
+          "date_or_identity_uncertain": 38
+        },
+        "county": {
+          "unique_total": 576,
+          "displayed_total": 550,
+          "qiao": 16,
+          "non_qiao": 534,
+          "qiao_uncertain": 0,
+          "unassigned": 26,
+          "date_or_identity_uncertain": 46
+        }
+      }
+    },
+    {
+      "year": 348,
+      "path": "annual/348.json",
+      "counts": {
+        "state": {
+          "unique_total": 16,
+          "displayed_total": 16,
+          "qiao": 7,
+          "non_qiao": 9,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 11
+        },
+        "prefecture": {
+          "unique_total": 146,
+          "displayed_total": 123,
+          "qiao": 22,
+          "non_qiao": 101,
+          "qiao_uncertain": 0,
+          "unassigned": 23,
+          "date_or_identity_uncertain": 38
+        },
+        "county": {
+          "unique_total": 576,
+          "displayed_total": 550,
+          "qiao": 16,
+          "non_qiao": 534,
+          "qiao_uncertain": 0,
+          "unassigned": 26,
+          "date_or_identity_uncertain": 46
+        }
+      }
+    },
+    {
+      "year": 349,
+      "path": "annual/349.json",
+      "counts": {
+        "state": {
+          "unique_total": 16,
+          "displayed_total": 16,
+          "qiao": 6,
+          "non_qiao": 10,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 11
+        },
+        "prefecture": {
+          "unique_total": 150,
+          "displayed_total": 127,
+          "qiao": 22,
+          "non_qiao": 105,
+          "qiao_uncertain": 0,
+          "unassigned": 23,
+          "date_or_identity_uncertain": 38
+        },
+        "county": {
+          "unique_total": 587,
+          "displayed_total": 561,
+          "qiao": 16,
+          "non_qiao": 545,
+          "qiao_uncertain": 0,
+          "unassigned": 26,
+          "date_or_identity_uncertain": 46
+        }
+      }
+    },
+    {
+      "year": 350,
+      "path": "annual/350.json",
+      "counts": {
+        "state": {
+          "unique_total": 16,
+          "displayed_total": 16,
+          "qiao": 6,
+          "non_qiao": 10,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 11
+        },
+        "prefecture": {
+          "unique_total": 150,
+          "displayed_total": 127,
+          "qiao": 22,
+          "non_qiao": 105,
+          "qiao_uncertain": 0,
+          "unassigned": 23,
+          "date_or_identity_uncertain": 38
+        },
+        "county": {
+          "unique_total": 587,
+          "displayed_total": 561,
+          "qiao": 16,
+          "non_qiao": 545,
+          "qiao_uncertain": 0,
+          "unassigned": 26,
+          "date_or_identity_uncertain": 46
+        }
+      }
+    },
+    {
+      "year": 351,
+      "path": "annual/351.json",
+      "counts": {
+        "state": {
+          "unique_total": 17,
+          "displayed_total": 17,
+          "qiao": 6,
+          "non_qiao": 11,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 12
+        },
+        "prefecture": {
+          "unique_total": 160,
+          "displayed_total": 137,
+          "qiao": 22,
+          "non_qiao": 115,
+          "qiao_uncertain": 0,
+          "unassigned": 23,
+          "date_or_identity_uncertain": 38
+        },
+        "county": {
+          "unique_total": 596,
+          "displayed_total": 570,
+          "qiao": 16,
+          "non_qiao": 554,
+          "qiao_uncertain": 0,
+          "unassigned": 26,
+          "date_or_identity_uncertain": 46
+        }
+      }
+    },
+    {
+      "year": 352,
+      "path": "annual/352.json",
+      "counts": {
+        "state": {
+          "unique_total": 16,
+          "displayed_total": 16,
+          "qiao": 6,
+          "non_qiao": 10,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 11
+        },
+        "prefecture": {
+          "unique_total": 162,
+          "displayed_total": 136,
+          "qiao": 22,
+          "non_qiao": 114,
+          "qiao_uncertain": 0,
+          "unassigned": 26,
+          "date_or_identity_uncertain": 37
+        },
+        "county": {
+          "unique_total": 612,
+          "displayed_total": 576,
+          "qiao": 16,
+          "non_qiao": 560,
+          "qiao_uncertain": 0,
+          "unassigned": 36,
+          "date_or_identity_uncertain": 46
+        }
+      }
+    },
+    {
+      "year": 353,
+      "path": "annual/353.json",
+      "counts": {
+        "state": {
+          "unique_total": 16,
+          "displayed_total": 16,
+          "qiao": 6,
+          "non_qiao": 10,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 11
+        },
+        "prefecture": {
+          "unique_total": 160,
+          "displayed_total": 135,
+          "qiao": 22,
+          "non_qiao": 113,
+          "qiao_uncertain": 0,
+          "unassigned": 25,
+          "date_or_identity_uncertain": 37
+        },
+        "county": {
+          "unique_total": 606,
+          "displayed_total": 571,
+          "qiao": 16,
+          "non_qiao": 555,
+          "qiao_uncertain": 0,
+          "unassigned": 35,
+          "date_or_identity_uncertain": 46
+        }
+      }
+    },
+    {
+      "year": 354,
+      "path": "annual/354.json",
+      "counts": {
+        "state": {
+          "unique_total": 16,
+          "displayed_total": 16,
+          "qiao": 6,
+          "non_qiao": 10,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 11
+        },
+        "prefecture": {
+          "unique_total": 161,
+          "displayed_total": 135,
+          "qiao": 22,
+          "non_qiao": 113,
+          "qiao_uncertain": 0,
+          "unassigned": 26,
+          "date_or_identity_uncertain": 37
+        },
+        "county": {
+          "unique_total": 607,
+          "displayed_total": 571,
+          "qiao": 16,
+          "non_qiao": 555,
+          "qiao_uncertain": 0,
+          "unassigned": 36,
+          "date_or_identity_uncertain": 46
+        }
+      }
+    },
+    {
+      "year": 355,
+      "path": "annual/355.json",
+      "counts": {
+        "state": {
+          "unique_total": 16,
+          "displayed_total": 16,
+          "qiao": 6,
+          "non_qiao": 10,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 11
+        },
+        "prefecture": {
+          "unique_total": 161,
+          "displayed_total": 136,
+          "qiao": 22,
+          "non_qiao": 114,
+          "qiao_uncertain": 0,
+          "unassigned": 25,
+          "date_or_identity_uncertain": 38
+        },
+        "county": {
+          "unique_total": 607,
+          "displayed_total": 573,
+          "qiao": 16,
+          "non_qiao": 557,
+          "qiao_uncertain": 0,
+          "unassigned": 34,
+          "date_or_identity_uncertain": 47
+        }
+      }
+    },
+    {
+      "year": 356,
+      "path": "annual/356.json",
+      "counts": {
+        "state": {
+          "unique_total": 16,
+          "displayed_total": 16,
+          "qiao": 6,
+          "non_qiao": 10,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 11
+        },
+        "prefecture": {
+          "unique_total": 159,
+          "displayed_total": 136,
+          "qiao": 23,
+          "non_qiao": 113,
+          "qiao_uncertain": 0,
+          "unassigned": 23,
+          "date_or_identity_uncertain": 41
+        },
+        "county": {
+          "unique_total": 636,
+          "displayed_total": 602,
+          "qiao": 16,
+          "non_qiao": 586,
+          "qiao_uncertain": 0,
+          "unassigned": 34,
+          "date_or_identity_uncertain": 47
+        }
+      }
+    },
+    {
+      "year": 357,
+      "path": "annual/357.json",
+      "counts": {
+        "state": {
+          "unique_total": 16,
+          "displayed_total": 16,
+          "qiao": 6,
+          "non_qiao": 10,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 11
+        },
+        "prefecture": {
+          "unique_total": 160,
+          "displayed_total": 137,
+          "qiao": 23,
+          "non_qiao": 114,
+          "qiao_uncertain": 0,
+          "unassigned": 23,
+          "date_or_identity_uncertain": 42
+        },
+        "county": {
+          "unique_total": 639,
+          "displayed_total": 605,
+          "qiao": 16,
+          "non_qiao": 589,
+          "qiao_uncertain": 0,
+          "unassigned": 34,
+          "date_or_identity_uncertain": 50
+        }
+      }
+    },
+    {
+      "year": 358,
+      "path": "annual/358.json",
+      "counts": {
+        "state": {
+          "unique_total": 16,
+          "displayed_total": 16,
+          "qiao": 6,
+          "non_qiao": 10,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 11
+        },
+        "prefecture": {
+          "unique_total": 160,
+          "displayed_total": 137,
+          "qiao": 23,
+          "non_qiao": 114,
+          "qiao_uncertain": 0,
+          "unassigned": 23,
+          "date_or_identity_uncertain": 42
+        },
+        "county": {
+          "unique_total": 639,
+          "displayed_total": 605,
+          "qiao": 16,
+          "non_qiao": 589,
+          "qiao_uncertain": 0,
+          "unassigned": 34,
+          "date_or_identity_uncertain": 50
+        }
+      }
+    },
+    {
+      "year": 359,
+      "path": "annual/359.json",
+      "counts": {
+        "state": {
+          "unique_total": 16,
+          "displayed_total": 16,
+          "qiao": 6,
+          "non_qiao": 10,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 11
+        },
+        "prefecture": {
+          "unique_total": 158,
+          "displayed_total": 135,
+          "qiao": 23,
+          "non_qiao": 112,
+          "qiao_uncertain": 0,
+          "unassigned": 23,
+          "date_or_identity_uncertain": 42
+        },
+        "county": {
+          "unique_total": 636,
+          "displayed_total": 602,
+          "qiao": 16,
+          "non_qiao": 586,
+          "qiao_uncertain": 0,
+          "unassigned": 34,
+          "date_or_identity_uncertain": 49
+        }
+      }
+    },
+    {
+      "year": 360,
+      "path": "annual/360.json",
+      "counts": {
+        "state": {
+          "unique_total": 16,
+          "displayed_total": 16,
+          "qiao": 6,
+          "non_qiao": 10,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 11
+        },
+        "prefecture": {
+          "unique_total": 158,
+          "displayed_total": 135,
+          "qiao": 23,
+          "non_qiao": 112,
+          "qiao_uncertain": 0,
+          "unassigned": 23,
+          "date_or_identity_uncertain": 42
+        },
+        "county": {
+          "unique_total": 636,
+          "displayed_total": 602,
+          "qiao": 16,
+          "non_qiao": 586,
+          "qiao_uncertain": 0,
+          "unassigned": 34,
+          "date_or_identity_uncertain": 49
+        }
+      }
+    },
+    {
+      "year": 361,
+      "path": "annual/361.json",
+      "counts": {
+        "state": {
+          "unique_total": 16,
+          "displayed_total": 16,
+          "qiao": 6,
+          "non_qiao": 10,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 11
+        },
+        "prefecture": {
+          "unique_total": 159,
+          "displayed_total": 136,
+          "qiao": 23,
+          "non_qiao": 113,
+          "qiao_uncertain": 0,
+          "unassigned": 23,
+          "date_or_identity_uncertain": 42
+        },
+        "county": {
+          "unique_total": 643,
+          "displayed_total": 608,
+          "qiao": 16,
+          "non_qiao": 592,
+          "qiao_uncertain": 0,
+          "unassigned": 35,
+          "date_or_identity_uncertain": 49
+        }
+      }
+    },
+    {
+      "year": 362,
+      "path": "annual/362.json",
+      "counts": {
+        "state": {
+          "unique_total": 16,
+          "displayed_total": 16,
+          "qiao": 6,
+          "non_qiao": 10,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 11
+        },
+        "prefecture": {
+          "unique_total": 160,
+          "displayed_total": 136,
+          "qiao": 23,
+          "non_qiao": 113,
+          "qiao_uncertain": 0,
+          "unassigned": 24,
+          "date_or_identity_uncertain": 42
+        },
+        "county": {
+          "unique_total": 644,
+          "displayed_total": 610,
+          "qiao": 16,
+          "non_qiao": 594,
+          "qiao_uncertain": 0,
+          "unassigned": 34,
+          "date_or_identity_uncertain": 50
+        }
+      }
+    },
+    {
+      "year": 363,
+      "path": "annual/363.json",
+      "counts": {
+        "state": {
+          "unique_total": 16,
+          "displayed_total": 16,
+          "qiao": 6,
+          "non_qiao": 10,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 11
+        },
+        "prefecture": {
+          "unique_total": 159,
+          "displayed_total": 135,
+          "qiao": 23,
+          "non_qiao": 112,
+          "qiao_uncertain": 0,
+          "unassigned": 24,
+          "date_or_identity_uncertain": 41
+        },
+        "county": {
+          "unique_total": 644,
+          "displayed_total": 609,
+          "qiao": 16,
+          "non_qiao": 593,
+          "qiao_uncertain": 0,
+          "unassigned": 35,
+          "date_or_identity_uncertain": 50
+        }
+      }
+    },
+    {
+      "year": 364,
+      "path": "annual/364.json",
+      "counts": {
+        "state": {
+          "unique_total": 16,
+          "displayed_total": 16,
+          "qiao": 6,
+          "non_qiao": 10,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 11
+        },
+        "prefecture": {
+          "unique_total": 156,
+          "displayed_total": 132,
+          "qiao": 23,
+          "non_qiao": 109,
+          "qiao_uncertain": 0,
+          "unassigned": 24,
+          "date_or_identity_uncertain": 40
+        },
+        "county": {
+          "unique_total": 638,
+          "displayed_total": 604,
+          "qiao": 16,
+          "non_qiao": 588,
+          "qiao_uncertain": 0,
+          "unassigned": 34,
+          "date_or_identity_uncertain": 48
+        }
+      }
+    },
+    {
+      "year": 365,
+      "path": "annual/365.json",
+      "counts": {
+        "state": {
+          "unique_total": 15,
+          "displayed_total": 15,
+          "qiao": 6,
+          "non_qiao": 9,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 10
+        },
+        "prefecture": {
+          "unique_total": 156,
+          "displayed_total": 130,
+          "qiao": 22,
+          "non_qiao": 108,
+          "qiao_uncertain": 0,
+          "unassigned": 26,
+          "date_or_identity_uncertain": 39
+        },
+        "county": {
+          "unique_total": 637,
+          "displayed_total": 603,
+          "qiao": 16,
+          "non_qiao": 587,
+          "qiao_uncertain": 0,
+          "unassigned": 34,
+          "date_or_identity_uncertain": 49
+        }
+      }
+    },
+    {
+      "year": 366,
+      "path": "annual/366.json",
+      "counts": {
+        "state": {
+          "unique_total": 15,
+          "displayed_total": 15,
+          "qiao": 6,
+          "non_qiao": 9,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 10
+        },
+        "prefecture": {
+          "unique_total": 153,
+          "displayed_total": 129,
+          "qiao": 22,
+          "non_qiao": 107,
+          "qiao_uncertain": 0,
+          "unassigned": 24,
+          "date_or_identity_uncertain": 39
+        },
+        "county": {
+          "unique_total": 615,
+          "displayed_total": 588,
+          "qiao": 16,
+          "non_qiao": 572,
+          "qiao_uncertain": 0,
+          "unassigned": 27,
+          "date_or_identity_uncertain": 48
+        }
+      }
+    },
+    {
+      "year": 367,
+      "path": "annual/367.json",
+      "counts": {
+        "state": {
+          "unique_total": 15,
+          "displayed_total": 15,
+          "qiao": 6,
+          "non_qiao": 9,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 10
+        },
+        "prefecture": {
+          "unique_total": 154,
+          "displayed_total": 130,
+          "qiao": 22,
+          "non_qiao": 108,
+          "qiao_uncertain": 0,
+          "unassigned": 24,
+          "date_or_identity_uncertain": 40
+        },
+        "county": {
+          "unique_total": 629,
+          "displayed_total": 603,
+          "qiao": 16,
+          "non_qiao": 587,
+          "qiao_uncertain": 0,
+          "unassigned": 26,
+          "date_or_identity_uncertain": 63
+        }
+      }
+    },
+    {
+      "year": 368,
+      "path": "annual/368.json",
+      "counts": {
+        "state": {
+          "unique_total": 15,
+          "displayed_total": 15,
+          "qiao": 6,
+          "non_qiao": 9,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 10
+        },
+        "prefecture": {
+          "unique_total": 154,
+          "displayed_total": 130,
+          "qiao": 22,
+          "non_qiao": 108,
+          "qiao_uncertain": 0,
+          "unassigned": 24,
+          "date_or_identity_uncertain": 40
+        },
+        "county": {
+          "unique_total": 629,
+          "displayed_total": 603,
+          "qiao": 16,
+          "non_qiao": 587,
+          "qiao_uncertain": 0,
+          "unassigned": 26,
+          "date_or_identity_uncertain": 63
+        }
+      }
+    },
+    {
+      "year": 369,
+      "path": "annual/369.json",
+      "counts": {
+        "state": {
+          "unique_total": 15,
+          "displayed_total": 15,
+          "qiao": 6,
+          "non_qiao": 9,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 10
+        },
+        "prefecture": {
+          "unique_total": 154,
+          "displayed_total": 129,
+          "qiao": 22,
+          "non_qiao": 107,
+          "qiao_uncertain": 0,
+          "unassigned": 25,
+          "date_or_identity_uncertain": 39
+        },
+        "county": {
+          "unique_total": 623,
+          "displayed_total": 592,
+          "qiao": 16,
+          "non_qiao": 576,
+          "qiao_uncertain": 0,
+          "unassigned": 31,
+          "date_or_identity_uncertain": 63
+        }
+      }
+    },
+    {
+      "year": 370,
+      "path": "annual/370.json",
+      "counts": {
+        "state": {
+          "unique_total": 15,
+          "displayed_total": 15,
+          "qiao": 6,
+          "non_qiao": 9,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 10
+        },
+        "prefecture": {
+          "unique_total": 155,
+          "displayed_total": 130,
+          "qiao": 22,
+          "non_qiao": 108,
+          "qiao_uncertain": 0,
+          "unassigned": 25,
+          "date_or_identity_uncertain": 40
+        },
+        "county": {
+          "unique_total": 634,
+          "displayed_total": 603,
+          "qiao": 16,
+          "non_qiao": 587,
+          "qiao_uncertain": 0,
+          "unassigned": 31,
+          "date_or_identity_uncertain": 74
+        }
+      }
+    },
+    {
+      "year": 371,
+      "path": "annual/371.json",
+      "counts": {
+        "state": {
+          "unique_total": 15,
+          "displayed_total": 15,
+          "qiao": 6,
+          "non_qiao": 9,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 10
+        },
+        "prefecture": {
+          "unique_total": 155,
+          "displayed_total": 130,
+          "qiao": 22,
+          "non_qiao": 108,
+          "qiao_uncertain": 0,
+          "unassigned": 25,
+          "date_or_identity_uncertain": 40
+        },
+        "county": {
+          "unique_total": 634,
+          "displayed_total": 603,
+          "qiao": 16,
+          "non_qiao": 587,
+          "qiao_uncertain": 0,
+          "unassigned": 31,
+          "date_or_identity_uncertain": 74
+        }
+      }
+    },
+    {
+      "year": 372,
+      "path": "annual/372.json",
+      "counts": {
+        "state": {
+          "unique_total": 15,
+          "displayed_total": 15,
+          "qiao": 6,
+          "non_qiao": 9,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 10
+        },
+        "prefecture": {
+          "unique_total": 155,
+          "displayed_total": 130,
+          "qiao": 22,
+          "non_qiao": 108,
+          "qiao_uncertain": 0,
+          "unassigned": 25,
+          "date_or_identity_uncertain": 40
+        },
+        "county": {
+          "unique_total": 634,
+          "displayed_total": 603,
+          "qiao": 16,
+          "non_qiao": 587,
+          "qiao_uncertain": 0,
+          "unassigned": 31,
+          "date_or_identity_uncertain": 74
+        }
+      }
+    },
+    {
+      "year": 373,
+      "path": "annual/373.json",
+      "counts": {
+        "state": {
+          "unique_total": 16,
+          "displayed_total": 16,
+          "qiao": 8,
+          "non_qiao": 8,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 11
+        },
+        "prefecture": {
+          "unique_total": 141,
+          "displayed_total": 108,
+          "qiao": 24,
+          "non_qiao": 84,
+          "qiao_uncertain": 0,
+          "unassigned": 33,
+          "date_or_identity_uncertain": 40
+        },
+        "county": {
+          "unique_total": 535,
+          "displayed_total": 501,
+          "qiao": 18,
+          "non_qiao": 483,
+          "qiao_uncertain": 0,
+          "unassigned": 34,
+          "date_or_identity_uncertain": 75
+        }
+      }
+    },
+    {
+      "year": 374,
+      "path": "annual/374.json",
+      "counts": {
+        "state": {
+          "unique_total": 16,
+          "displayed_total": 16,
+          "qiao": 8,
+          "non_qiao": 7,
+          "qiao_uncertain": 1,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 11
+        },
+        "prefecture": {
+          "unique_total": 140,
+          "displayed_total": 107,
+          "qiao": 24,
+          "non_qiao": 83,
+          "qiao_uncertain": 0,
+          "unassigned": 33,
+          "date_or_identity_uncertain": 40
+        },
+        "county": {
+          "unique_total": 533,
+          "displayed_total": 499,
+          "qiao": 18,
+          "non_qiao": 481,
+          "qiao_uncertain": 0,
+          "unassigned": 34,
+          "date_or_identity_uncertain": 75
+        }
+      }
+    },
+    {
+      "year": 375,
+      "path": "annual/375.json",
+      "counts": {
+        "state": {
+          "unique_total": 16,
+          "displayed_total": 16,
+          "qiao": 8,
+          "non_qiao": 7,
+          "qiao_uncertain": 1,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 11
+        },
+        "prefecture": {
+          "unique_total": 140,
+          "displayed_total": 107,
+          "qiao": 24,
+          "non_qiao": 83,
+          "qiao_uncertain": 0,
+          "unassigned": 33,
+          "date_or_identity_uncertain": 40
+        },
+        "county": {
+          "unique_total": 534,
+          "displayed_total": 500,
+          "qiao": 18,
+          "non_qiao": 482,
+          "qiao_uncertain": 0,
+          "unassigned": 34,
+          "date_or_identity_uncertain": 76
+        }
+      }
+    },
+    {
+      "year": 376,
+      "path": "annual/376.json",
+      "counts": {
+        "state": {
+          "unique_total": 16,
+          "displayed_total": 16,
+          "qiao": 8,
+          "non_qiao": 7,
+          "qiao_uncertain": 1,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 11
+        },
+        "prefecture": {
+          "unique_total": 141,
+          "displayed_total": 107,
+          "qiao": 24,
+          "non_qiao": 83,
+          "qiao_uncertain": 0,
+          "unassigned": 34,
+          "date_or_identity_uncertain": 40
+        },
+        "county": {
+          "unique_total": 536,
+          "displayed_total": 500,
+          "qiao": 18,
+          "non_qiao": 482,
+          "qiao_uncertain": 0,
+          "unassigned": 36,
+          "date_or_identity_uncertain": 76
+        }
+      }
+    },
+    {
+      "year": 377,
+      "path": "annual/377.json",
+      "counts": {
+        "state": {
+          "unique_total": 16,
+          "displayed_total": 16,
+          "qiao": 9,
+          "non_qiao": 7,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 11
+        },
+        "prefecture": {
+          "unique_total": 141,
+          "displayed_total": 107,
+          "qiao": 24,
+          "non_qiao": 83,
+          "qiao_uncertain": 0,
+          "unassigned": 34,
+          "date_or_identity_uncertain": 40
+        },
+        "county": {
+          "unique_total": 536,
+          "displayed_total": 500,
+          "qiao": 18,
+          "non_qiao": 482,
+          "qiao_uncertain": 0,
+          "unassigned": 36,
+          "date_or_identity_uncertain": 76
+        }
+      }
+    },
+    {
+      "year": 378,
+      "path": "annual/378.json",
+      "counts": {
+        "state": {
+          "unique_total": 16,
+          "displayed_total": 16,
+          "qiao": 9,
+          "non_qiao": 7,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 11
+        },
+        "prefecture": {
+          "unique_total": 140,
+          "displayed_total": 106,
+          "qiao": 24,
+          "non_qiao": 82,
+          "qiao_uncertain": 0,
+          "unassigned": 34,
+          "date_or_identity_uncertain": 39
+        },
+        "county": {
+          "unique_total": 521,
+          "displayed_total": 485,
+          "qiao": 18,
+          "non_qiao": 467,
+          "qiao_uncertain": 0,
+          "unassigned": 36,
+          "date_or_identity_uncertain": 61
+        }
+      }
+    },
+    {
+      "year": 379,
+      "path": "annual/379.json",
+      "counts": {
+        "state": {
+          "unique_total": 15,
+          "displayed_total": 15,
+          "qiao": 8,
+          "non_qiao": 7,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 10
+        },
+        "prefecture": {
+          "unique_total": 134,
+          "displayed_total": 99,
+          "qiao": 24,
+          "non_qiao": 75,
+          "qiao_uncertain": 0,
+          "unassigned": 35,
+          "date_or_identity_uncertain": 36
+        },
+        "county": {
+          "unique_total": 496,
+          "displayed_total": 460,
+          "qiao": 18,
+          "non_qiao": 442,
+          "qiao_uncertain": 0,
+          "unassigned": 36,
+          "date_or_identity_uncertain": 47
+        }
+      }
+    },
+    {
+      "year": 380,
+      "path": "annual/380.json",
+      "counts": {
+        "state": {
+          "unique_total": 15,
+          "displayed_total": 15,
+          "qiao": 8,
+          "non_qiao": 7,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 10
+        },
+        "prefecture": {
+          "unique_total": 133,
+          "displayed_total": 99,
+          "qiao": 24,
+          "non_qiao": 75,
+          "qiao_uncertain": 0,
+          "unassigned": 34,
+          "date_or_identity_uncertain": 36
+        },
+        "county": {
+          "unique_total": 496,
+          "displayed_total": 460,
+          "qiao": 18,
+          "non_qiao": 442,
+          "qiao_uncertain": 0,
+          "unassigned": 36,
+          "date_or_identity_uncertain": 47
+        }
+      }
+    },
+    {
+      "year": 381,
+      "path": "annual/381.json",
+      "counts": {
+        "state": {
+          "unique_total": 15,
+          "displayed_total": 15,
+          "qiao": 8,
+          "non_qiao": 7,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 10
+        },
+        "prefecture": {
+          "unique_total": 133,
+          "displayed_total": 99,
+          "qiao": 24,
+          "non_qiao": 75,
+          "qiao_uncertain": 0,
+          "unassigned": 34,
+          "date_or_identity_uncertain": 36
+        },
+        "county": {
+          "unique_total": 496,
+          "displayed_total": 460,
+          "qiao": 18,
+          "non_qiao": 442,
+          "qiao_uncertain": 0,
+          "unassigned": 36,
+          "date_or_identity_uncertain": 47
+        }
+      }
+    },
+    {
+      "year": 382,
+      "path": "annual/382.json",
+      "counts": {
+        "state": {
+          "unique_total": 15,
+          "displayed_total": 15,
+          "qiao": 8,
+          "non_qiao": 7,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 10
+        },
+        "prefecture": {
+          "unique_total": 133,
+          "displayed_total": 99,
+          "qiao": 24,
+          "non_qiao": 75,
+          "qiao_uncertain": 0,
+          "unassigned": 34,
+          "date_or_identity_uncertain": 36
+        },
+        "county": {
+          "unique_total": 496,
+          "displayed_total": 460,
+          "qiao": 18,
+          "non_qiao": 442,
+          "qiao_uncertain": 0,
+          "unassigned": 36,
+          "date_or_identity_uncertain": 47
+        }
+      }
+    },
+    {
+      "year": 383,
+      "path": "annual/383.json",
+      "counts": {
+        "state": {
+          "unique_total": 15,
+          "displayed_total": 15,
+          "qiao": 8,
+          "non_qiao": 7,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 10
+        },
+        "prefecture": {
+          "unique_total": 133,
+          "displayed_total": 99,
+          "qiao": 24,
+          "non_qiao": 75,
+          "qiao_uncertain": 0,
+          "unassigned": 34,
+          "date_or_identity_uncertain": 36
+        },
+        "county": {
+          "unique_total": 496,
+          "displayed_total": 460,
+          "qiao": 18,
+          "non_qiao": 442,
+          "qiao_uncertain": 0,
+          "unassigned": 36,
+          "date_or_identity_uncertain": 47
+        }
+      }
+    },
+    {
+      "year": 384,
+      "path": "annual/384.json",
+      "counts": {
+        "state": {
+          "unique_total": 19,
+          "displayed_total": 19,
+          "qiao": 8,
+          "non_qiao": 11,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 14
+        },
+        "prefecture": {
+          "unique_total": 174,
+          "displayed_total": 141,
+          "qiao": 25,
+          "non_qiao": 116,
+          "qiao_uncertain": 0,
+          "unassigned": 33,
+          "date_or_identity_uncertain": 39
+        },
+        "county": {
+          "unique_total": 660,
+          "displayed_total": 624,
+          "qiao": 18,
+          "non_qiao": 606,
+          "qiao_uncertain": 0,
+          "unassigned": 36,
+          "date_or_identity_uncertain": 48
+        }
+      }
+    },
+    {
+      "year": 385,
+      "path": "annual/385.json",
+      "counts": {
+        "state": {
+          "unique_total": 19,
+          "displayed_total": 19,
+          "qiao": 8,
+          "non_qiao": 11,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 14
+        },
+        "prefecture": {
+          "unique_total": 176,
+          "displayed_total": 142,
+          "qiao": 25,
+          "non_qiao": 117,
+          "qiao_uncertain": 0,
+          "unassigned": 34,
+          "date_or_identity_uncertain": 39
+        },
+        "county": {
+          "unique_total": 660,
+          "displayed_total": 624,
+          "qiao": 18,
+          "non_qiao": 606,
+          "qiao_uncertain": 0,
+          "unassigned": 36,
+          "date_or_identity_uncertain": 48
+        }
+      }
+    },
+    {
+      "year": 386,
+      "path": "annual/386.json",
+      "counts": {
+        "state": {
+          "unique_total": 19,
+          "displayed_total": 19,
+          "qiao": 8,
+          "non_qiao": 11,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 14
+        },
+        "prefecture": {
+          "unique_total": 177,
+          "displayed_total": 143,
+          "qiao": 25,
+          "non_qiao": 118,
+          "qiao_uncertain": 0,
+          "unassigned": 34,
+          "date_or_identity_uncertain": 40
+        },
+        "county": {
+          "unique_total": 661,
+          "displayed_total": 626,
+          "qiao": 18,
+          "non_qiao": 608,
+          "qiao_uncertain": 0,
+          "unassigned": 35,
+          "date_or_identity_uncertain": 48
+        }
+      }
+    },
+    {
+      "year": 387,
+      "path": "annual/387.json",
+      "counts": {
+        "state": {
+          "unique_total": 19,
+          "displayed_total": 19,
+          "qiao": 8,
+          "non_qiao": 11,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 14
+        },
+        "prefecture": {
+          "unique_total": 176,
+          "displayed_total": 143,
+          "qiao": 25,
+          "non_qiao": 118,
+          "qiao_uncertain": 0,
+          "unassigned": 33,
+          "date_or_identity_uncertain": 40
+        },
+        "county": {
+          "unique_total": 655,
+          "displayed_total": 626,
+          "qiao": 18,
+          "non_qiao": 608,
+          "qiao_uncertain": 0,
+          "unassigned": 29,
+          "date_or_identity_uncertain": 48
+        }
+      }
+    },
+    {
+      "year": 388,
+      "path": "annual/388.json",
+      "counts": {
+        "state": {
+          "unique_total": 19,
+          "displayed_total": 19,
+          "qiao": 8,
+          "non_qiao": 11,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 14
+        },
+        "prefecture": {
+          "unique_total": 176,
+          "displayed_total": 143,
+          "qiao": 25,
+          "non_qiao": 118,
+          "qiao_uncertain": 0,
+          "unassigned": 33,
+          "date_or_identity_uncertain": 40
+        },
+        "county": {
+          "unique_total": 655,
+          "displayed_total": 626,
+          "qiao": 18,
+          "non_qiao": 608,
+          "qiao_uncertain": 0,
+          "unassigned": 29,
+          "date_or_identity_uncertain": 48
+        }
+      }
+    },
+    {
+      "year": 389,
+      "path": "annual/389.json",
+      "counts": {
+        "state": {
+          "unique_total": 19,
+          "displayed_total": 19,
+          "qiao": 8,
+          "non_qiao": 11,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 14
+        },
+        "prefecture": {
+          "unique_total": 175,
+          "displayed_total": 142,
+          "qiao": 25,
+          "non_qiao": 117,
+          "qiao_uncertain": 0,
+          "unassigned": 33,
+          "date_or_identity_uncertain": 40
+        },
+        "county": {
+          "unique_total": 655,
+          "displayed_total": 626,
+          "qiao": 18,
+          "non_qiao": 608,
+          "qiao_uncertain": 0,
+          "unassigned": 29,
+          "date_or_identity_uncertain": 48
+        }
+      }
+    },
+    {
+      "year": 390,
+      "path": "annual/390.json",
+      "counts": {
+        "state": {
+          "unique_total": 19,
+          "displayed_total": 19,
+          "qiao": 8,
+          "non_qiao": 11,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 14
+        },
+        "prefecture": {
+          "unique_total": 177,
+          "displayed_total": 144,
+          "qiao": 25,
+          "non_qiao": 119,
+          "qiao_uncertain": 0,
+          "unassigned": 33,
+          "date_or_identity_uncertain": 40
+        },
+        "county": {
+          "unique_total": 658,
+          "displayed_total": 629,
+          "qiao": 18,
+          "non_qiao": 611,
+          "qiao_uncertain": 0,
+          "unassigned": 29,
+          "date_or_identity_uncertain": 48
+        }
+      }
+    },
+    {
+      "year": 391,
+      "path": "annual/391.json",
+      "counts": {
+        "state": {
+          "unique_total": 19,
+          "displayed_total": 19,
+          "qiao": 8,
+          "non_qiao": 11,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 14
+        },
+        "prefecture": {
+          "unique_total": 177,
+          "displayed_total": 144,
+          "qiao": 25,
+          "non_qiao": 119,
+          "qiao_uncertain": 0,
+          "unassigned": 33,
+          "date_or_identity_uncertain": 40
+        },
+        "county": {
+          "unique_total": 658,
+          "displayed_total": 629,
+          "qiao": 18,
+          "non_qiao": 611,
+          "qiao_uncertain": 0,
+          "unassigned": 29,
+          "date_or_identity_uncertain": 48
+        }
+      }
+    },
+    {
+      "year": 392,
+      "path": "annual/392.json",
+      "counts": {
+        "state": {
+          "unique_total": 19,
+          "displayed_total": 19,
+          "qiao": 8,
+          "non_qiao": 11,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 14
+        },
+        "prefecture": {
+          "unique_total": 178,
+          "displayed_total": 144,
+          "qiao": 25,
+          "non_qiao": 119,
+          "qiao_uncertain": 0,
+          "unassigned": 34,
+          "date_or_identity_uncertain": 40
+        },
+        "county": {
+          "unique_total": 658,
+          "displayed_total": 629,
+          "qiao": 18,
+          "non_qiao": 611,
+          "qiao_uncertain": 0,
+          "unassigned": 29,
+          "date_or_identity_uncertain": 48
+        }
+      }
+    },
+    {
+      "year": 393,
+      "path": "annual/393.json",
+      "counts": {
+        "state": {
+          "unique_total": 19,
+          "displayed_total": 19,
+          "qiao": 8,
+          "non_qiao": 11,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 14
+        },
+        "prefecture": {
+          "unique_total": 178,
+          "displayed_total": 144,
+          "qiao": 25,
+          "non_qiao": 119,
+          "qiao_uncertain": 0,
+          "unassigned": 34,
+          "date_or_identity_uncertain": 40
+        },
+        "county": {
+          "unique_total": 658,
+          "displayed_total": 629,
+          "qiao": 18,
+          "non_qiao": 611,
+          "qiao_uncertain": 0,
+          "unassigned": 29,
+          "date_or_identity_uncertain": 48
+        }
+      }
+    },
+    {
+      "year": 394,
+      "path": "annual/394.json",
+      "counts": {
+        "state": {
+          "unique_total": 19,
+          "displayed_total": 19,
+          "qiao": 8,
+          "non_qiao": 11,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 14
+        },
+        "prefecture": {
+          "unique_total": 175,
+          "displayed_total": 143,
+          "qiao": 25,
+          "non_qiao": 118,
+          "qiao_uncertain": 0,
+          "unassigned": 32,
+          "date_or_identity_uncertain": 39
+        },
+        "county": {
+          "unique_total": 649,
+          "displayed_total": 626,
+          "qiao": 18,
+          "non_qiao": 608,
+          "qiao_uncertain": 0,
+          "unassigned": 23,
+          "date_or_identity_uncertain": 44
+        }
+      }
+    },
+    {
+      "year": 395,
+      "path": "annual/395.json",
+      "counts": {
+        "state": {
+          "unique_total": 19,
+          "displayed_total": 19,
+          "qiao": 8,
+          "non_qiao": 11,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 14
+        },
+        "prefecture": {
+          "unique_total": 175,
+          "displayed_total": 143,
+          "qiao": 25,
+          "non_qiao": 118,
+          "qiao_uncertain": 0,
+          "unassigned": 32,
+          "date_or_identity_uncertain": 39
+        },
+        "county": {
+          "unique_total": 646,
+          "displayed_total": 623,
+          "qiao": 18,
+          "non_qiao": 605,
+          "qiao_uncertain": 0,
+          "unassigned": 23,
+          "date_or_identity_uncertain": 44
+        }
+      }
+    },
+    {
+      "year": 396,
+      "path": "annual/396.json",
+      "counts": {
+        "state": {
+          "unique_total": 19,
+          "displayed_total": 19,
+          "qiao": 8,
+          "non_qiao": 11,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 14
+        },
+        "prefecture": {
+          "unique_total": 176,
+          "displayed_total": 144,
+          "qiao": 26,
+          "non_qiao": 118,
+          "qiao_uncertain": 0,
+          "unassigned": 32,
+          "date_or_identity_uncertain": 40
+        },
+        "county": {
+          "unique_total": 647,
+          "displayed_total": 624,
+          "qiao": 19,
+          "non_qiao": 605,
+          "qiao_uncertain": 0,
+          "unassigned": 23,
+          "date_or_identity_uncertain": 45
+        }
+      }
+    },
+    {
+      "year": 397,
+      "path": "annual/397.json",
+      "counts": {
+        "state": {
+          "unique_total": 19,
+          "displayed_total": 19,
+          "qiao": 8,
+          "non_qiao": 11,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 14
+        },
+        "prefecture": {
+          "unique_total": 188,
+          "displayed_total": 143,
+          "qiao": 25,
+          "non_qiao": 118,
+          "qiao_uncertain": 0,
+          "unassigned": 45,
+          "date_or_identity_uncertain": 39
+        },
+        "county": {
+          "unique_total": 665,
+          "displayed_total": 628,
+          "qiao": 19,
+          "non_qiao": 609,
+          "qiao_uncertain": 0,
+          "unassigned": 37,
+          "date_or_identity_uncertain": 51
+        }
+      }
+    },
+    {
+      "year": 398,
+      "path": "annual/398.json",
+      "counts": {
+        "state": {
+          "unique_total": 19,
+          "displayed_total": 19,
+          "qiao": 8,
+          "non_qiao": 11,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 14
+        },
+        "prefecture": {
+          "unique_total": 185,
+          "displayed_total": 140,
+          "qiao": 25,
+          "non_qiao": 115,
+          "qiao_uncertain": 0,
+          "unassigned": 45,
+          "date_or_identity_uncertain": 38
+        },
+        "county": {
+          "unique_total": 638,
+          "displayed_total": 601,
+          "qiao": 19,
+          "non_qiao": 582,
+          "qiao_uncertain": 0,
+          "unassigned": 37,
+          "date_or_identity_uncertain": 51
+        }
+      }
+    },
+    {
+      "year": 399,
+      "path": "annual/399.json",
+      "counts": {
+        "state": {
+          "unique_total": 17,
+          "displayed_total": 17,
+          "qiao": 8,
+          "non_qiao": 9,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 12
+        },
+        "prefecture": {
+          "unique_total": 176,
+          "displayed_total": 131,
+          "qiao": 25,
+          "non_qiao": 106,
+          "qiao_uncertain": 0,
+          "unassigned": 45,
+          "date_or_identity_uncertain": 38
+        },
+        "county": {
+          "unique_total": 630,
+          "displayed_total": 593,
+          "qiao": 19,
+          "non_qiao": 574,
+          "qiao_uncertain": 0,
+          "unassigned": 37,
+          "date_or_identity_uncertain": 51
+        }
+      }
+    },
+    {
+      "year": 400,
+      "path": "annual/400.json",
+      "counts": {
+        "state": {
+          "unique_total": 17,
+          "displayed_total": 17,
+          "qiao": 8,
+          "non_qiao": 9,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 12
+        },
+        "prefecture": {
+          "unique_total": 175,
+          "displayed_total": 131,
+          "qiao": 25,
+          "non_qiao": 106,
+          "qiao_uncertain": 0,
+          "unassigned": 44,
+          "date_or_identity_uncertain": 38
+        },
+        "county": {
+          "unique_total": 630,
+          "displayed_total": 593,
+          "qiao": 19,
+          "non_qiao": 574,
+          "qiao_uncertain": 0,
+          "unassigned": 37,
+          "date_or_identity_uncertain": 51
+        }
+      }
+    },
+    {
+      "year": 401,
+      "path": "annual/401.json",
+      "counts": {
+        "state": {
+          "unique_total": 17,
+          "displayed_total": 17,
+          "qiao": 8,
+          "non_qiao": 9,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 12
+        },
+        "prefecture": {
+          "unique_total": 177,
+          "displayed_total": 132,
+          "qiao": 25,
+          "non_qiao": 107,
+          "qiao_uncertain": 0,
+          "unassigned": 45,
+          "date_or_identity_uncertain": 39
+        },
+        "county": {
+          "unique_total": 632,
+          "displayed_total": 595,
+          "qiao": 19,
+          "non_qiao": 576,
+          "qiao_uncertain": 0,
+          "unassigned": 37,
+          "date_or_identity_uncertain": 51
+        }
+      }
+    },
+    {
+      "year": 402,
+      "path": "annual/402.json",
+      "counts": {
+        "state": {
+          "unique_total": 17,
+          "displayed_total": 17,
+          "qiao": 8,
+          "non_qiao": 9,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 12
+        },
+        "prefecture": {
+          "unique_total": 177,
+          "displayed_total": 132,
+          "qiao": 25,
+          "non_qiao": 107,
+          "qiao_uncertain": 0,
+          "unassigned": 45,
+          "date_or_identity_uncertain": 39
+        },
+        "county": {
+          "unique_total": 632,
+          "displayed_total": 595,
+          "qiao": 19,
+          "non_qiao": 576,
+          "qiao_uncertain": 0,
+          "unassigned": 37,
+          "date_or_identity_uncertain": 51
+        }
+      }
+    },
+    {
+      "year": 403,
+      "path": "annual/403.json",
+      "counts": {
+        "state": {
+          "unique_total": 17,
+          "displayed_total": 17,
+          "qiao": 8,
+          "non_qiao": 9,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 12
+        },
+        "prefecture": {
+          "unique_total": 176,
+          "displayed_total": 132,
+          "qiao": 25,
+          "non_qiao": 107,
+          "qiao_uncertain": 0,
+          "unassigned": 44,
+          "date_or_identity_uncertain": 39
+        },
+        "county": {
+          "unique_total": 632,
+          "displayed_total": 595,
+          "qiao": 19,
+          "non_qiao": 576,
+          "qiao_uncertain": 0,
+          "unassigned": 37,
+          "date_or_identity_uncertain": 51
+        }
+      }
+    },
+    {
+      "year": 404,
+      "path": "annual/404.json",
+      "counts": {
+        "state": {
+          "unique_total": 17,
+          "displayed_total": 17,
+          "qiao": 8,
+          "non_qiao": 9,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 12
+        },
+        "prefecture": {
+          "unique_total": 177,
+          "displayed_total": 132,
+          "qiao": 25,
+          "non_qiao": 107,
+          "qiao_uncertain": 0,
+          "unassigned": 45,
+          "date_or_identity_uncertain": 39
+        },
+        "county": {
+          "unique_total": 632,
+          "displayed_total": 595,
+          "qiao": 19,
+          "non_qiao": 576,
+          "qiao_uncertain": 0,
+          "unassigned": 37,
+          "date_or_identity_uncertain": 51
+        }
+      }
+    },
+    {
+      "year": 405,
+      "path": "annual/405.json",
+      "counts": {
+        "state": {
+          "unique_total": 16,
+          "displayed_total": 16,
+          "qiao": 8,
+          "non_qiao": 7,
+          "qiao_uncertain": 1,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 11
+        },
+        "prefecture": {
+          "unique_total": 172,
+          "displayed_total": 123,
+          "qiao": 25,
+          "non_qiao": 98,
+          "qiao_uncertain": 0,
+          "unassigned": 49,
+          "date_or_identity_uncertain": 39
+        },
+        "county": {
+          "unique_total": 621,
+          "displayed_total": 582,
+          "qiao": 23,
+          "non_qiao": 559,
+          "qiao_uncertain": 0,
+          "unassigned": 39,
+          "date_or_identity_uncertain": 52
+        }
+      }
+    },
+    {
+      "year": 406,
+      "path": "annual/406.json",
+      "counts": {
+        "state": {
+          "unique_total": 16,
+          "displayed_total": 16,
+          "qiao": 8,
+          "non_qiao": 7,
+          "qiao_uncertain": 1,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 11
+        },
+        "prefecture": {
+          "unique_total": 171,
+          "displayed_total": 123,
+          "qiao": 25,
+          "non_qiao": 98,
+          "qiao_uncertain": 0,
+          "unassigned": 48,
+          "date_or_identity_uncertain": 39
+        },
+        "county": {
+          "unique_total": 620,
+          "displayed_total": 581,
+          "qiao": 23,
+          "non_qiao": 558,
+          "qiao_uncertain": 0,
+          "unassigned": 39,
+          "date_or_identity_uncertain": 52
+        }
+      }
+    },
+    {
+      "year": 407,
+      "path": "annual/407.json",
+      "counts": {
+        "state": {
+          "unique_total": 16,
+          "displayed_total": 16,
+          "qiao": 8,
+          "non_qiao": 7,
+          "qiao_uncertain": 1,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 11
+        },
+        "prefecture": {
+          "unique_total": 170,
+          "displayed_total": 122,
+          "qiao": 25,
+          "non_qiao": 97,
+          "qiao_uncertain": 0,
+          "unassigned": 48,
+          "date_or_identity_uncertain": 39
+        },
+        "county": {
+          "unique_total": 617,
+          "displayed_total": 578,
+          "qiao": 23,
+          "non_qiao": 555,
+          "qiao_uncertain": 0,
+          "unassigned": 39,
+          "date_or_identity_uncertain": 52
+        }
+      }
+    },
+    {
+      "year": 408,
+      "path": "annual/408.json",
+      "counts": {
+        "state": {
+          "unique_total": 16,
+          "displayed_total": 16,
+          "qiao": 8,
+          "non_qiao": 7,
+          "qiao_uncertain": 1,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 11
+        },
+        "prefecture": {
+          "unique_total": 170,
+          "displayed_total": 122,
+          "qiao": 25,
+          "non_qiao": 97,
+          "qiao_uncertain": 0,
+          "unassigned": 48,
+          "date_or_identity_uncertain": 39
+        },
+        "county": {
+          "unique_total": 617,
+          "displayed_total": 578,
+          "qiao": 23,
+          "non_qiao": 555,
+          "qiao_uncertain": 0,
+          "unassigned": 39,
+          "date_or_identity_uncertain": 52
+        }
+      }
+    },
+    {
+      "year": 409,
+      "path": "annual/409.json",
+      "counts": {
+        "state": {
+          "unique_total": 16,
+          "displayed_total": 16,
+          "qiao": 8,
+          "non_qiao": 7,
+          "qiao_uncertain": 1,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 11
+        },
+        "prefecture": {
+          "unique_total": 171,
+          "displayed_total": 122,
+          "qiao": 25,
+          "non_qiao": 97,
+          "qiao_uncertain": 0,
+          "unassigned": 49,
+          "date_or_identity_uncertain": 39
+        },
+        "county": {
+          "unique_total": 617,
+          "displayed_total": 578,
+          "qiao": 23,
+          "non_qiao": 555,
+          "qiao_uncertain": 0,
+          "unassigned": 39,
+          "date_or_identity_uncertain": 52
+        }
+      }
+    },
+    {
+      "year": 410,
+      "path": "annual/410.json",
+      "counts": {
+        "state": {
+          "unique_total": 17,
+          "displayed_total": 17,
+          "qiao": 8,
+          "non_qiao": 8,
+          "qiao_uncertain": 1,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 12
+        },
+        "prefecture": {
+          "unique_total": 198,
+          "displayed_total": 143,
+          "qiao": 25,
+          "non_qiao": 118,
+          "qiao_uncertain": 0,
+          "unassigned": 55,
+          "date_or_identity_uncertain": 40
+        },
+        "county": {
+          "unique_total": 724,
+          "displayed_total": 685,
+          "qiao": 24,
+          "non_qiao": 661,
+          "qiao_uncertain": 0,
+          "unassigned": 39,
+          "date_or_identity_uncertain": 54
+        }
+      }
+    },
+    {
+      "year": 411,
+      "path": "annual/411.json",
+      "counts": {
+        "state": {
+          "unique_total": 18,
+          "displayed_total": 18,
+          "qiao": 8,
+          "non_qiao": 9,
+          "qiao_uncertain": 1,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 12
+        },
+        "prefecture": {
+          "unique_total": 204,
+          "displayed_total": 149,
+          "qiao": 25,
+          "non_qiao": 124,
+          "qiao_uncertain": 0,
+          "unassigned": 55,
+          "date_or_identity_uncertain": 41
+        },
+        "county": {
+          "unique_total": 745,
+          "displayed_total": 706,
+          "qiao": 29,
+          "non_qiao": 677,
+          "qiao_uncertain": 0,
+          "unassigned": 39,
+          "date_or_identity_uncertain": 54
+        }
+      }
+    },
+    {
+      "year": 412,
+      "path": "annual/412.json",
+      "counts": {
+        "state": {
+          "unique_total": 19,
+          "displayed_total": 19,
+          "qiao": 8,
+          "non_qiao": 10,
+          "qiao_uncertain": 1,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 13
+        },
+        "prefecture": {
+          "unique_total": 203,
+          "displayed_total": 149,
+          "qiao": 26,
+          "non_qiao": 123,
+          "qiao_uncertain": 0,
+          "unassigned": 54,
+          "date_or_identity_uncertain": 41
+        },
+        "county": {
+          "unique_total": 749,
+          "displayed_total": 706,
+          "qiao": 31,
+          "non_qiao": 675,
+          "qiao_uncertain": 0,
+          "unassigned": 43,
+          "date_or_identity_uncertain": 51
+        }
+      }
+    },
+    {
+      "year": 413,
+      "path": "annual/413.json",
+      "counts": {
+        "state": {
+          "unique_total": 20,
+          "displayed_total": 20,
+          "qiao": 7,
+          "non_qiao": 13,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 14
+        },
+        "prefecture": {
+          "unique_total": 219,
+          "displayed_total": 169,
+          "qiao": 29,
+          "non_qiao": 140,
+          "qiao_uncertain": 0,
+          "unassigned": 50,
+          "date_or_identity_uncertain": 45
+        },
+        "county": {
+          "unique_total": 823,
+          "displayed_total": 788,
+          "qiao": 38,
+          "non_qiao": 750,
+          "qiao_uncertain": 0,
+          "unassigned": 35,
+          "date_or_identity_uncertain": 64
+        }
+      }
+    },
+    {
+      "year": 414,
+      "path": "annual/414.json",
+      "counts": {
+        "state": {
+          "unique_total": 20,
+          "displayed_total": 20,
+          "qiao": 7,
+          "non_qiao": 13,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 14
+        },
+        "prefecture": {
+          "unique_total": 219,
+          "displayed_total": 169,
+          "qiao": 29,
+          "non_qiao": 140,
+          "qiao_uncertain": 0,
+          "unassigned": 50,
+          "date_or_identity_uncertain": 45
+        },
+        "county": {
+          "unique_total": 823,
+          "displayed_total": 788,
+          "qiao": 37,
+          "non_qiao": 751,
+          "qiao_uncertain": 0,
+          "unassigned": 35,
+          "date_or_identity_uncertain": 63
+        }
+      }
+    },
+    {
+      "year": 415,
+      "path": "annual/415.json",
+      "counts": {
+        "state": {
+          "unique_total": 20,
+          "displayed_total": 20,
+          "qiao": 7,
+          "non_qiao": 13,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 14
+        },
+        "prefecture": {
+          "unique_total": 219,
+          "displayed_total": 169,
+          "qiao": 29,
+          "non_qiao": 140,
+          "qiao_uncertain": 0,
+          "unassigned": 50,
+          "date_or_identity_uncertain": 45
+        },
+        "county": {
+          "unique_total": 823,
+          "displayed_total": 788,
+          "qiao": 37,
+          "non_qiao": 751,
+          "qiao_uncertain": 0,
+          "unassigned": 35,
+          "date_or_identity_uncertain": 63
+        }
+      }
+    },
+    {
+      "year": 416,
+      "path": "annual/416.json",
+      "counts": {
+        "state": {
+          "unique_total": 21,
+          "displayed_total": 21,
+          "qiao": 7,
+          "non_qiao": 14,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 15
+        },
+        "prefecture": {
+          "unique_total": 229,
+          "displayed_total": 179,
+          "qiao": 31,
+          "non_qiao": 148,
+          "qiao_uncertain": 0,
+          "unassigned": 50,
+          "date_or_identity_uncertain": 47
+        },
+        "county": {
+          "unique_total": 876,
+          "displayed_total": 841,
+          "qiao": 37,
+          "non_qiao": 804,
+          "qiao_uncertain": 0,
+          "unassigned": 35,
+          "date_or_identity_uncertain": 64
+        }
+      }
+    },
+    {
+      "year": 417,
+      "path": "annual/417.json",
+      "counts": {
+        "state": {
+          "unique_total": 22,
+          "displayed_total": 22,
+          "qiao": 8,
+          "non_qiao": 14,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 16
+        },
+        "prefecture": {
+          "unique_total": 233,
+          "displayed_total": 181,
+          "qiao": 31,
+          "non_qiao": 150,
+          "qiao_uncertain": 0,
+          "unassigned": 52,
+          "date_or_identity_uncertain": 48
+        },
+        "county": {
+          "unique_total": 884,
+          "displayed_total": 849,
+          "qiao": 37,
+          "non_qiao": 812,
+          "qiao_uncertain": 0,
+          "unassigned": 35,
+          "date_or_identity_uncertain": 64
+        }
+      }
+    },
+    {
+      "year": 418,
+      "path": "annual/418.json",
+      "counts": {
+        "state": {
+          "unique_total": 22,
+          "displayed_total": 22,
+          "qiao": 8,
+          "non_qiao": 14,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 16
+        },
+        "prefecture": {
+          "unique_total": 235,
+          "displayed_total": 183,
+          "qiao": 31,
+          "non_qiao": 152,
+          "qiao_uncertain": 0,
+          "unassigned": 52,
+          "date_or_identity_uncertain": 49
+        },
+        "county": {
+          "unique_total": 974,
+          "displayed_total": 939,
+          "qiao": 37,
+          "non_qiao": 902,
+          "qiao_uncertain": 0,
+          "unassigned": 35,
+          "date_or_identity_uncertain": 153
+        }
+      }
+    },
+    {
+      "year": 419,
+      "path": "annual/419.json",
+      "counts": {
+        "state": {
+          "unique_total": 22,
+          "displayed_total": 22,
+          "qiao": 8,
+          "non_qiao": 14,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 16
+        },
+        "prefecture": {
+          "unique_total": 232,
+          "displayed_total": 181,
+          "qiao": 31,
+          "non_qiao": 150,
+          "qiao_uncertain": 0,
+          "unassigned": 51,
+          "date_or_identity_uncertain": 49
+        },
+        "county": {
+          "unique_total": 976,
+          "displayed_total": 937,
+          "qiao": 37,
+          "non_qiao": 900,
+          "qiao_uncertain": 0,
+          "unassigned": 39,
+          "date_or_identity_uncertain": 153
+        }
+      }
+    },
+    {
+      "year": 420,
+      "path": "annual/420.json",
+      "counts": {
+        "state": {
+          "unique_total": 22,
+          "displayed_total": 22,
+          "qiao": 8,
+          "non_qiao": 14,
+          "qiao_uncertain": 0,
+          "unassigned": 0,
+          "date_or_identity_uncertain": 16
+        },
+        "prefecture": {
+          "unique_total": 237,
+          "displayed_total": 182,
+          "qiao": 31,
+          "non_qiao": 151,
+          "qiao_uncertain": 0,
+          "unassigned": 55,
+          "date_or_identity_uncertain": 50
+        },
+        "county": {
+          "unique_total": 1202,
+          "displayed_total": 1039,
+          "qiao": 140,
+          "non_qiao": 899,
+          "qiao_uncertain": 0,
+          "unassigned": 163,
+          "date_or_identity_uncertain": 255
+        }
+      }
+    }
+  ]
+}

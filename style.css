@@ -579,6 +579,22 @@ body[data-theme] input:focus { outline-color: color-mix(in srgb, var(--accent) 2
   color: var(--ink-soft);
 }
 
+.eastern-jin-review-panel {
+  margin: 1.25rem 0;
+  padding: 1.1rem 1.3rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--paper, #fffdf8);
+}
+.eastern-jin-review-panel h2 { margin: 0 0 .45rem; font-size: 1.1rem; }
+.eastern-jin-review-panel p { margin: 0; color: var(--muted); line-height: 1.7; }
+.eastern-jin-review-links { display: flex; flex-wrap: wrap; gap: .55rem 1.25rem; margin-top: .8rem; }
+.eastern-jin-pending { margin: 1.4rem 0; padding: 1.1rem 1.3rem; border: 1px dashed var(--line); border-radius: 12px; }
+.eastern-jin-pending summary { cursor: pointer; font-weight: 700; }
+.eastern-jin-pending p { line-height: 1.75; }
+body[data-dynasty="eastern-jin"] .source-entry p { white-space: pre-wrap; }
+.dynamic-map-label.qiao { text-decoration: underline; text-underline-offset: .18em; }
+
 /* 南陳都督/刺史：主表逐人分行，州名與標題均保留完整考證入口。 */
 .state-governor-name {
   appearance: none;

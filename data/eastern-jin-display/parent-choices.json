@@ -1,0 +1,136 @@
+[
+  {
+    "id": "ejmp_001",
+    "subject_id": "ej10_p1509_1",
+    "kind": "administrative_parent",
+    "object_id": "ej5_s19743",
+    "object_label": "司州",
+    "display_start": 317,
+    "display_end": 396,
+    "status": "adopted",
+    "alternative_group_id": null,
+    "boundary_notes": "《晋书》明称“司州之弘农”，安帝应何无忌请后才改江州；本轮只把安帝以前的317—396归司州，安帝期间改属年未定暂搁置。父州本年缺期者仍入待考。",
+    "evidence_ids": [
+      "ejp_jin015_p0126",
+      "ej10_chrono_154"
+    ],
+    "decision_ids": [],
+    "machine_choice": true,
+    "confidence": "中"
+  },
+  {
+    "id": "ejmp_002",
+    "subject_id": "ej10_p1543_1",
+    "kind": "administrative_parent",
+    "object_id": "ej5_s18431",
+    "object_label": "扬州",
+    "display_start": 329,
+    "display_end": 396,
+    "status": "adopted",
+    "alternative_group_id": null,
+    "boundary_notes": "《晋书》明载松滋遥隶扬州，安帝时改江州但确年未定；329—396采用扬州，397后保留两属及转换待考。",
+    "evidence_ids": [
+      "ejp_jin015_p0126",
+      "ejp_song036_p0163",
+      "ej10_chrono_155"
+    ],
+    "decision_ids": [],
+    "machine_choice": true,
+    "confidence": "中"
+  },
+  {
+    "id": "ejmp_003",
+    "subject_id": "ej10_p1520_1",
+    "kind": "administrative_parent",
+    "object_id": "ej10_s1519_1",
+    "object_label": "兖州",
+    "display_start": 338,
+    "display_end": 420,
+    "status": "adopted",
+    "alternative_group_id": null,
+    "boundary_notes": "《晋书》侨兖州沿革直接接记咸康四年于北谯界立陈留，《通史》同一实体且永初仍属兖州；采用此行政上下文连续关系，非从原籍或寄地推州。",
+    "evidence_ids": [
+      "ejp_jin014_p0056",
+      "ej10_chrono_020"
+    ],
+    "decision_ids": [],
+    "machine_choice": true,
+    "confidence": "中"
+  },
+  {
+    "id": "ejmp_004",
+    "subject_id": "ej10_p1611_1",
+    "kind": "administrative_parent",
+    "object_id": "ej5_s18431",
+    "object_label": "扬州",
+    "display_start": 405,
+    "display_end": 413,
+    "status": "adopted",
+    "alternative_group_id": null,
+    "boundary_notes": "《晋书》扬州篇明确把侨京邑堂邑与魏、广川等同列；结合本实体405—413阶段采用扬州，京邑寄治只是身份限定，不是单独州属依据。",
+    "evidence_ids": [
+      "ejp_jin015_p0126",
+      "ej10_chrono_164"
+    ],
+    "decision_ids": [],
+    "machine_choice": true,
+    "confidence": "中"
+  },
+  {
+    "id": "ejmp_005",
+    "subject_id": "ej10_p1573_2",
+    "kind": "administrative_parent",
+    "object_id": "ej10_s1574_1",
+    "object_label": "秦州",
+    "display_start": 373,
+    "display_end": 420,
+    "status": "adopted",
+    "alternative_group_id": null,
+    "boundary_notes": "原文明“本属南秦”，Work已经留下秦州关系但未定时段；按现有秦州最早373年阶段相交采用，362—372父州缺期仍搁置，不造秦州早期。",
+    "evidence_ids": [
+      "ej10_prose_b_1572",
+      "ej10_chrono_084",
+      "ejp_song037_p0393"
+    ],
+    "decision_ids": [],
+    "machine_choice": true,
+    "confidence": "中"
+  },
+  {
+    "id": "ejmp_006",
+    "subject_id": "ej10_p1579_3",
+    "kind": "administrative_parent",
+    "object_id": "ej10_s1574_1",
+    "object_label": "秦州",
+    "display_start": 397,
+    "display_end": 420,
+    "status": "adopted",
+    "alternative_group_id": null,
+    "boundary_notes": "《宋书》怀宁专条追叙晋安帝立并明“本属南秦”，439才度益州；本轮采用已存在侨秦州，成都寄治不当作益州归属。",
+    "evidence_ids": [
+      "ejp_song038_p0045",
+      "ej10_chrono_093"
+    ],
+    "decision_ids": [],
+    "machine_choice": true,
+    "confidence": "较高"
+  },
+  {
+    "id": "ejmp_007",
+    "subject_id": "ej5_c18765",
+    "kind": "administrative_parent",
+    "object_id": "ej10_p1562_1",
+    "object_label": "上党郡",
+    "display_start": 397,
+    "display_end": 419,
+    "status": "adopted",
+    "alternative_group_id": null,
+    "boundary_notes": "《通史》原属上党、后省郡县属淮南；只给本轮扩大至397—419的上党阶段补同一实体的行政父级，420关系不改。",
+    "evidence_ids": [
+      "ej10_chrono_160"
+    ],
+    "decision_ids": [],
+    "machine_choice": true,
+    "confidence": "中"
+  }
+]

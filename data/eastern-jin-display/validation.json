@@ -1,0 +1,132 @@
+{
+  "status": "passed",
+  "years": 104,
+  "open_issues_accounted": 445,
+  "structural_groups_accounted": 102,
+  "immutable_research": true,
+  "unique_entity_per_year": true,
+  "qiao_fields_preserved": true,
+  "source_references_valid": true,
+  "browser_bytes": 5513185,
+  "pooled_nodes": 20596,
+  "undated_entities": 21,
+  "sampled_counts": {
+    "317": {
+      "state": {
+        "unique_total": 16,
+        "displayed_total": 16,
+        "qiao": 6,
+        "non_qiao": 9,
+        "qiao_uncertain": 1,
+        "unassigned": 0,
+        "date_or_identity_uncertain": 11
+      },
+      "prefecture": {
+        "unique_total": 110,
+        "displayed_total": 96,
+        "qiao": 8,
+        "non_qiao": 88,
+        "qiao_uncertain": 0,
+        "unassigned": 14,
+        "date_or_identity_uncertain": 18
+      },
+      "county": {
+        "unique_total": 589,
+        "displayed_total": 554,
+        "qiao": 8,
+        "non_qiao": 546,
+        "qiao_uncertain": 0,
+        "unassigned": 35,
+        "date_or_identity_uncertain": 28
+      }
+    },
+    "382": {
+      "state": {
+        "unique_total": 15,
+        "displayed_total": 15,
+        "qiao": 8,
+        "non_qiao": 7,
+        "qiao_uncertain": 0,
+        "unassigned": 0,
+        "date_or_identity_uncertain": 10
+      },
+      "prefecture": {
+        "unique_total": 133,
+        "displayed_total": 99,
+        "qiao": 24,
+        "non_qiao": 75,
+        "qiao_uncertain": 0,
+        "unassigned": 34,
+        "date_or_identity_uncertain": 36
+      },
+      "county": {
+        "unique_total": 496,
+        "displayed_total": 460,
+        "qiao": 18,
+        "non_qiao": 442,
+        "qiao_uncertain": 0,
+        "unassigned": 36,
+        "date_or_identity_uncertain": 47
+      }
+    },
+    "418": {
+      "state": {
+        "unique_total": 22,
+        "displayed_total": 22,
+        "qiao": 8,
+        "non_qiao": 14,
+        "qiao_uncertain": 0,
+        "unassigned": 0,
+        "date_or_identity_uncertain": 16
+      },
+      "prefecture": {
+        "unique_total": 235,
+        "displayed_total": 183,
+        "qiao": 31,
+        "non_qiao": 152,
+        "qiao_uncertain": 0,
+        "unassigned": 52,
+        "date_or_identity_uncertain": 49
+      },
+      "county": {
+        "unique_total": 974,
+        "displayed_total": 939,
+        "qiao": 37,
+        "non_qiao": 902,
+        "qiao_uncertain": 0,
+        "unassigned": 35,
+        "date_or_identity_uncertain": 153
+      }
+    },
+    "420": {
+      "state": {
+        "unique_total": 22,
+        "displayed_total": 22,
+        "qiao": 8,
+        "non_qiao": 14,
+        "qiao_uncertain": 0,
+        "unassigned": 0,
+        "date_or_identity_uncertain": 16
+      },
+      "prefecture": {
+        "unique_total": 237,
+        "displayed_total": 182,
+        "qiao": 31,
+        "non_qiao": 151,
+        "qiao_uncertain": 0,
+        "unassigned": 55,
+        "date_or_identity_uncertain": 50
+      },
+      "county": {
+        "unique_total": 1202,
+        "displayed_total": 1039,
+        "qiao": 140,
+        "non_qiao": 899,
+        "qiao_uncertain": 0,
+        "unassigned": 163,
+        "date_or_identity_uncertain": 255
+      }
+    }
+  },
+  "scope": "仅生成器与数据接入必要检查；未进行全面历史复核或反复网页审核。"
+}

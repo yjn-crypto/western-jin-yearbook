@@ -1,0 +1,46 @@
+{
+  "scope": "东晋第一次建设必要运行检查；非全站、全面历史或安全审核",
+  "status": "passed",
+  "syntax": [
+    "app.js",
+    "eastern-jin-view.js",
+    "eastern-jin-map-model.js",
+    "eastern-jin-map-view.js"
+  ],
+  "browser": {
+    "years_loaded": [
+      317,
+      382,
+      420
+    ],
+    "annual_selector": "passed",
+    "source_annotation": "passed; 原文、书页、PDF页和展示断限可展开",
+    "reading_mode": "passed",
+    "map_382": {
+      "prefecture_areas": 70,
+      "chgis_prefecture_areas": 39,
+      "county_seats": 283,
+      "rendered_state_labels_at_100_percent": 7,
+      "console_errors": 0,
+      "reading_mode": "passed",
+      "southern_control_fill": "loaded without previous clipping holes"
+    },
+    "resolved_during_build": [
+      "最终年度与共享几何完整写入，全部引用有效",
+      "移除逐郡独立简化与跨来源州面硬裁；州名保留界内约束并允许缩字"
+    ],
+    "final_map_refresh": {
+      "year": 382,
+      "scope": "地图定向修复后仅作一次加载及读图观察；未重复其它网页审核"
+    }
+  },
+  "data_checks": "data/eastern-jin-display/validation.json",
+  "geometry_checks": "reports/eastern-jin-map-build-check-20261011.json",
+  "map_geometry": {
+    "years": 104,
+    "state_union_comparisons": 1158,
+    "control_interior_holes": 0,
+    "unchanged_chgis_county_points": 35757,
+    "errors": 0
+  }
+}

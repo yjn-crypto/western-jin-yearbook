@@ -1,0 +1,2670 @@
+{
+  "status": "passed",
+  "created": "2026-10-11",
+  "scope": "本轮地图生成后的必要数据和几何检查；不扩展历史审核、反复网页审核或安全检查。",
+  "years": 104,
+  "checks": {
+    "geometry_references": 68034,
+    "administrative_membership": 67826,
+    "state_union_comparisons": 1158
+  },
+  "geometry_pool_count": 1776,
+  "referenced_geometry_count": 1776,
+  "county_points_checked": 35757,
+  "original_chgis_county_points_checked": 35757,
+  "precision_grid": 1e-06,
+  "longest_polygon_exterior": {
+    "vertices": 34397,
+    "geometry_id": "g3212fed7934d409d",
+    "polygon_index": 28
+  },
+  "javascript_spread_vertex_threshold": 100000,
+  "javascript_spread_threshold_exceeded": false,
+  "year_382": {
+    "chgis_prefecture_areas": 39,
+    "chgis_by_state": {
+      "扬州": [
+        {
+          "entity_id": "ej5_p18433",
+          "name": "丹杨尹",
+          "source_id": "91544",
+          "begin": 374,
+          "end": 410
+        },
+        {
+          "entity_id": "ej5_p18619",
+          "name": "临海郡",
+          "source_id": "90380",
+          "begin": 323,
+          "end": 539
+        },
+        {
+          "entity_id": "ej5_p18643",
+          "name": "永嘉郡",
+          "source_id": "90394",
+          "begin": 323,
+          "end": 559
+        },
+        {
+          "entity_id": "ej5_p18673",
+          "name": "晋陵郡",
+          "source_id": "90511",
+          "begin": 311,
+          "end": 430
+        },
+        {
+          "entity_id": "ej5_p18659",
+          "name": "义兴郡",
+          "source_id": "90080",
+          "begin": 307,
+          "end": 421
+        },
+        {
+          "entity_id": "ej5_p18537",
+          "name": "吴兴郡",
+          "source_id": "90078",
+          "begin": 304,
+          "end": 421
+        },
+        {
+          "entity_id": "ej5_p18473",
+          "name": "宣城郡",
+          "source_id": "90542",
+          "begin": 281,
+          "end": 410
+        },
+        {
+          "entity_id": "ej5_p18605",
+          "name": "新安郡",
+          "source_id": "90442",
+          "begin": 280,
+          "end": 521
+        },
+        {
+          "entity_id": "ej5_p18503",
+          "name": "吴郡",
+          "source_id": "90223",
+          "begin": 266,
+          "end": 506
+        },
+        {
+          "entity_id": "ej5_p18559",
+          "name": "会稽国",
+          "source_id": "90424",
+          "begin": 266,
+          "end": 588
+        },
+        {
+          "entity_id": "ej5_p18583",
+          "name": "东阳郡",
+          "source_id": "90395",
+          "begin": 266,
+          "end": 525
+        }
+      ],
+      "广州": [
+        {
+          "entity_id": "ej5_p21677",
+          "name": "苍梧郡",
+          "source_id": "92282",
+          "begin": 361,
+          "end": 432
+        },
+        {
+          "entity_id": "ej5_p21715",
+          "name": "晋康郡",
+          "source_id": "92294",
+          "begin": 351,
+          "end": 420
+        },
+        {
+          "entity_id": "ej5_p21753",
+          "name": "新宁郡",
+          "source_id": "92305",
+          "begin": 351,
+          "end": 431
+        },
+        {
+          "entity_id": "ej5_p21603",
+          "name": "南海郡",
+          "source_id": "92254",
+          "begin": 331,
+          "end": 419
+        },
+        {
+          "entity_id": "ej5_p21639",
+          "name": "东官郡",
+          "source_id": "92245",
+          "begin": 331,
+          "end": 412
+        },
+        {
+          "entity_id": "ej5_p21957",
+          "name": "高凉郡",
+          "source_id": "92343",
+          "begin": 289,
+          "end": 431
+        }
+      ],
+      "荆州": [
+        {
+          "entity_id": "ej5_p20319",
+          "name": "零陵郡",
+          "source_id": "97579",
+          "begin": 345,
+          "end": 464
+        },
+        {
+          "entity_id": "ej5_p20345",
+          "name": "营阳郡",
+          "source_id": "97585",
+          "begin": 345,
+          "end": 514
+        },
+        {
+          "entity_id": "ej5_p20255",
+          "name": "长沙郡",
+          "source_id": "97663",
+          "begin": 335,
+          "end": 438
+        },
+        {
+          "entity_id": "ej5_p19901",
+          "name": "南平郡",
+          "source_id": "97671",
+          "begin": 280,
+          "end": 588
+        },
+        {
+          "entity_id": "ej5_p20279",
+          "name": "衡阳郡",
+          "source_id": "97570",
+          "begin": 280,
+          "end": 478
+        },
+        {
+          "entity_id": "ej5_p20299",
+          "name": "湘东郡",
+          "source_id": "97564",
+          "begin": 280,
+          "end": 464
+        },
+        {
+          "entity_id": "ej5_p20357",
+          "name": "邵陵郡",
+          "source_id": "97583",
+          "begin": 280,
+          "end": 588
+        },
+        {
+          "entity_id": "ej5_p20223",
+          "name": "始兴郡",
+          "source_id": "92230",
+          "begin": 265,
+          "end": 469
+        },
+        {
+          "entity_id": "ej5_p20379",
+          "name": "桂阳郡",
+          "source_id": "97588",
+          "begin": 265,
+          "end": 501
+        },
+        {
+          "entity_id": "ej5_p20151",
+          "name": "武陵郡",
+          "source_id": "97593",
+          "begin": 263,
+          "end": 501
+        },
+        {
+          "entity_id": "ej5_p20175",
+          "name": "天门郡",
+          "source_id": "97572",
+          "begin": 263,
+          "end": 553
+        }
+      ],
+      "江州": [
+        {
+          "entity_id": "ej5_p20611",
+          "name": "寻阳郡",
+          "source_id": "97263",
+          "begin": 334,
+          "end": 423
+        },
+        {
+          "entity_id": "ej5_p20629",
+          "name": "豫章郡",
+          "source_id": "97197",
+          "begin": 307,
+          "end": 527
+        },
+        {
+          "entity_id": "ej5_p20681",
+          "name": "庐陵郡",
+          "source_id": "97152",
+          "begin": 282,
+          "end": 527
+        },
+        {
+          "entity_id": "ej5_p20727",
+          "name": "南康郡",
+          "source_id": "97118",
+          "begin": 282,
+          "end": 419
+        },
+        {
+          "entity_id": "ej5_p20745",
+          "name": "建安郡",
+          "source_id": "90176",
+          "begin": 282,
+          "end": 588
+        },
+        {
+          "entity_id": "ej5_p20769",
+          "name": "晋安郡",
+          "source_id": "90177",
+          "begin": 282,
+          "end": 467
+        },
+        {
+          "entity_id": "ej5_p20799",
+          "name": "安成郡",
+          "source_id": "97154",
+          "begin": 267,
+          "end": 557
+        },
+        {
+          "entity_id": "ej5_p20703",
+          "name": "临川郡",
+          "source_id": "97184",
+          "begin": 257,
+          "end": 527
+        },
+        {
+          "entity_id": "ej5_p20663",
+          "name": "鄱阳郡",
+          "source_id": "97217",
+          "begin": 210,
+          "end": 423
+        }
+      ],
+      "徐州": [
+        {
+          "entity_id": "ej5_p18823",
+          "name": "广陵郡",
+          "source_id": "91329",
+          "begin": 280,
+          "end": 396
+        }
+      ],
+      "交州": [
+        {
+          "entity_id": "ej5_p22063",
+          "name": "合浦郡",
+          "source_id": "92354",
+          "begin": 280,
+          "end": 419
+        }
+      ]
+    },
+    "coverage": {
+      "year": 382,
+      "states_in_text": 15,
+      "prefectures_in_text": 99,
+      "counties_in_text": 460,
+      "real_prefectures": 75,
+      "prefecture_areas": 70,
+      "prefecture_seats": 72,
+      "hosted_prefecture_references": 11,
+      "county_seats": 283,
+      "qiao_county_seats": 1,
+      "qiao_prefecture_seats": 2,
+      "qiao_landed_prefecture_ids": [],
+      "qiao_counties_unlocated": 17,
+      "missing_real_prefecture_ids": [
+        "ej5_p18905",
+        "ej5_p18935",
+        "ej5_p18947",
+        "ej5_p21033",
+        "ej5_p21053"
+      ],
+      "unlocated_county_ids": [
+        "ej10_c1516_1_1",
+        "ej10_c1555_2_1",
+        "ej10_c1584_1_2",
+        "ej10_c1584_1_5",
+        "ej10_c1584_1_6",
+        "ej10_c1584_1_9",
+        "ej10_c1604_1_1",
+        "ej10_c1604_1_2",
+        "ej10_c1604_1_3",
+        "ej10_c1604_1_4",
+        "ej10_c1604_1_5",
+        "ej10_c1604_1_6",
+        "ej10_c1604_1_7",
+        "ej5_c18453",
+        "ej5_c18465",
+        "ej5_c18469",
+        "ej5_c18477",
+        "ej5_c18479",
+        "ej5_c18481",
+        "ej5_c18493",
+        "ej5_c18499",
+        "ej5_c18519",
+        "ej5_c18527",
+        "ej5_c18533",
+        "ej5_c18547",
+        "ej5_c18567",
+        "ej5_c18591",
+        "ej5_c18615",
+        "ej5_c18641",
+        "ej5_c18663",
+        "ej5_c18667",
+        "ej5_c18671",
+        "ej5_c18677",
+        "ej5_c18683",
+        "ej5_c18689",
+        "ej5_c18711",
+        "ej5_c18769",
+        "ej5_c18797",
+        "ej5_c18801",
+        "ej5_c18809",
+        "ej5_c18831",
+        "ej5_c18835",
+        "ej5_c18911",
+        "ej5_c18951",
+        "ej5_c19505",
+        "ej5_c19509",
+        "ej5_c19511",
+        "ej5_c19513",
+        "ej5_c19593",
+        "ej5_c19885",
+        "ej5_c19891",
+        "ej5_c19897",
+        "ej5_c19909",
+        "ej5_c19931",
+        "ej5_c19935",
+        "ej5_c19939",
+        "ej5_c19959",
+        "ej5_c19983",
+        "ej5_c19985",
+        "ej5_c20163",
+        "ej5_c20167",
+        "ej5_c20185",
+        "ej5_c20191",
+        "ej5_c20193",
+        "ej5_c20203",
+        "ej5_c20205",
+        "ej5_c20213",
+        "ej5_c20219",
+        "ej5_c20221",
+        "ej5_c20233",
+        "ej5_c20269",
+        "ej5_c20271",
+        "ej5_c20315",
+        "ej5_c20333",
+        "ej5_c20341",
+        "ej5_c20377",
+        "ej5_c20401",
+        "ej5_c20661",
+        "ej5_c20669",
+        "ej5_c20717",
+        "ej5_c20731",
+        "ej5_c20733",
+        "ej5_c20753",
+        "ej5_c20755",
+        "ej5_c20765",
+        "ej5_c20775",
+        "ej5_c20783",
+        "ej5_c20805",
+        "ej5_c20811",
+        "ej5_c21027",
+        "ej5_c21037",
+        "ej5_c21041",
+        "ej5_c21057",
+        "ej5_c21059",
+        "ej5_c21065",
+        "ej5_c21179",
+        "ej5_c21611",
+        "ej5_c21643",
+        "ej5_c21659",
+        "ej5_c21687",
+        "ej5_c21691",
+        "ej5_c21699",
+        "ej5_c21821",
+        "ej5_c21825",
+        "ej5_c21827",
+        "ej5_c21829",
+        "ej5_c21831",
+        "ej5_c21841",
+        "ej5_c21843",
+        "ej5_c21847",
+        "ej5_c21849",
+        "ej5_c21851",
+        "ej5_c21941",
+        "ej5_c21943",
+        "ej5_c21945",
+        "ej5_c21947",
+        "ej5_c21987",
+        "ej5_c21991",
+        "ej5_c21995",
+        "ej5_c22035",
+        "ej5_c22037",
+        "ej5_c22039",
+        "ej5_c22041",
+        "ej5_c22043",
+        "ej5_c22045",
+        "ej5_c22047",
+        "ej5_c22049",
+        "ej5_c22051",
+        "ej5_c22053",
+        "ej5_c22055",
+        "ej5_c22057",
+        "ej5_c22059",
+        "ej5_c22061",
+        "ej5_c22067",
+        "ej5_c22069",
+        "ej5_c22071",
+        "ej5_c22073",
+        "ej5_c22075",
+        "ej5_c22077",
+        "ej5_c22091",
+        "ej5_c22093",
+        "ej5_c22095",
+        "ej5_c22097",
+        "ej5_c22099",
+        "ej5_c22101",
+        "ej5_c22115",
+        "ej5_c22119",
+        "ej5_c22121",
+        "ej5_c22123",
+        "ej5_c22125",
+        "ej5_c22127",
+        "ej5_c22129",
+        "ej5_c22139",
+        "ej5_c22141",
+        "ej5_c22143",
+        "ej5_c22145",
+        "ej5_c22147",
+        "ej5_c22149",
+        "ej5_c22151",
+        "ej5_c22153",
+        "ej5_c22155",
+        "ej5_c22169",
+        "ej5_c22171",
+        "ej5_c22173",
+        "ej5_c22175",
+        "ej5_c22177",
+        "ej5_c22179",
+        "ej5_c22181",
+        "ej5_c22183",
+        "ej5_c22185",
+        "ej5_c22189",
+        "ej5_c22191",
+        "ej5_c22193",
+        "ej5_c22195",
+        "ej5_c22197",
+        "ej5_c22199",
+        "ej5_c22201"
+      ],
+      "unlocated_prefecture_ids": [
+        "ej10_p1520_1",
+        "ej10_p1543_1",
+        "ej10_p1584_1",
+        "ej10_p1602_1",
+        "ej10_p1604_1",
+        "ej10_p1608_1",
+        "ej10_p1610_2",
+        "ej5_p18789",
+        "ej5_p18905",
+        "ej5_p19577",
+        "ej5_p20395",
+        "ej5_p21053",
+        "ej5_p21061"
+      ],
+      "unlocated_state_ids": [
+        "ej10_s1519_1",
+        "ej10_s1550_1",
+        "ej10_s1557_1",
+        "ej10_s1559_2",
+        "ej10_s1574_1",
+        "ej10_s1595_1"
+      ],
+      "fitted_prefectures": 9,
+      "tan382_used": true,
+      "chgis_prefecture_areas": 39,
+      "chgis_prefecture_sources": [
+        {
+          "entity_id": "ej5_p18433",
+          "name": "丹杨尹",
+          "state_id": "ej5_s18431",
+          "state_name": "扬州",
+          "source_id": "91544",
+          "begin": 374,
+          "end": 410
+        },
+        {
+          "entity_id": "ej5_p18473",
+          "name": "宣城郡",
+          "state_id": "ej5_s18431",
+          "state_name": "扬州",
+          "source_id": "90542",
+          "begin": 281,
+          "end": 410
+        },
+        {
+          "entity_id": "ej5_p18503",
+          "name": "吴郡",
+          "state_id": "ej5_s18431",
+          "state_name": "扬州",
+          "source_id": "90223",
+          "begin": 266,
+          "end": 506
+        },
+        {
+          "entity_id": "ej5_p18537",
+          "name": "吴兴郡",
+          "state_id": "ej5_s18431",
+          "state_name": "扬州",
+          "source_id": "90078",
+          "begin": 304,
+          "end": 421
+        },
+        {
+          "entity_id": "ej5_p18559",
+          "name": "会稽国",
+          "state_id": "ej5_s18431",
+          "state_name": "扬州",
+          "source_id": "90424",
+          "begin": 266,
+          "end": 588
+        },
+        {
+          "entity_id": "ej5_p18583",
+          "name": "东阳郡",
+          "state_id": "ej5_s18431",
+          "state_name": "扬州",
+          "source_id": "90395",
+          "begin": 266,
+          "end": 525
+        },
+        {
+          "entity_id": "ej5_p18605",
+          "name": "新安郡",
+          "state_id": "ej5_s18431",
+          "state_name": "扬州",
+          "source_id": "90442",
+          "begin": 280,
+          "end": 521
+        },
+        {
+          "entity_id": "ej5_p18619",
+          "name": "临海郡",
+          "state_id": "ej5_s18431",
+          "state_name": "扬州",
+          "source_id": "90380",
+          "begin": 323,
+          "end": 539
+        },
+        {
+          "entity_id": "ej5_p18643",
+          "name": "永嘉郡",
+          "state_id": "ej5_s18431",
+          "state_name": "扬州",
+          "source_id": "90394",
+          "begin": 323,
+          "end": 559
+        },
+        {
+          "entity_id": "ej5_p18659",
+          "name": "义兴郡",
+          "state_id": "ej5_s18431",
+          "state_name": "扬州",
+          "source_id": "90080",
+          "begin": 307,
+          "end": 421
+        },
+        {
+          "entity_id": "ej5_p18673",
+          "name": "晋陵郡",
+          "state_id": "ej5_s18431",
+          "state_name": "扬州",
+          "source_id": "90511",
+          "begin": 311,
+          "end": 430
+        },
+        {
+          "entity_id": "ej5_p18823",
+          "name": "广陵郡",
+          "state_id": "ej5_s18821",
+          "state_name": "徐州",
+          "source_id": "91329",
+          "begin": 280,
+          "end": 396
+        },
+        {
+          "entity_id": "ej5_p19901",
+          "name": "南平郡",
+          "state_id": "ej5_s19869",
+          "state_name": "荆州",
+          "source_id": "97671",
+          "begin": 280,
+          "end": 588
+        },
+        {
+          "entity_id": "ej5_p20151",
+          "name": "武陵郡",
+          "state_id": "ej5_s19869",
+          "state_name": "荆州",
+          "source_id": "97593",
+          "begin": 263,
+          "end": 501
+        },
+        {
+          "entity_id": "ej5_p20175",
+          "name": "天门郡",
+          "state_id": "ej5_s19869",
+          "state_name": "荆州",
+          "source_id": "97572",
+          "begin": 263,
+          "end": 553
+        },
+        {
+          "entity_id": "ej5_p20223",
+          "name": "始兴郡",
+          "state_id": "ej5_s19869",
+          "state_name": "荆州",
+          "source_id": "92230",
+          "begin": 265,
+          "end": 469
+        },
+        {
+          "entity_id": "ej5_p20255",
+          "name": "长沙郡",
+          "state_id": "ej5_s19869",
+          "state_name": "荆州",
+          "source_id": "97663",
+          "begin": 335,
+          "end": 438
+        },
+        {
+          "entity_id": "ej5_p20279",
+          "name": "衡阳郡",
+          "state_id": "ej5_s19869",
+          "state_name": "荆州",
+          "source_id": "97570",
+          "begin": 280,
+          "end": 478
+        },
+        {
+          "entity_id": "ej5_p20299",
+          "name": "湘东郡",
+          "state_id": "ej5_s19869",
+          "state_name": "荆州",
+          "source_id": "97564",
+          "begin": 280,
+          "end": 464
+        },
+        {
+          "entity_id": "ej5_p20319",
+          "name": "零陵郡",
+          "state_id": "ej5_s19869",
+          "state_name": "荆州",
+          "source_id": "97579",
+          "begin": 345,
+          "end": 464
+        },
+        {
+          "entity_id": "ej5_p20345",
+          "name": "营阳郡",
+          "state_id": "ej5_s19869",
+          "state_name": "荆州",
+          "source_id": "97585",
+          "begin": 345,
+          "end": 514
+        },
+        {
+          "entity_id": "ej5_p20357",
+          "name": "邵陵郡",
+          "state_id": "ej5_s19869",
+          "state_name": "荆州",
+          "source_id": "97583",
+          "begin": 280,
+          "end": 588
+        },
+        {
+          "entity_id": "ej5_p20379",
+          "name": "桂阳郡",
+          "state_id": "ej5_s19869",
+          "state_name": "荆州",
+          "source_id": "97588",
+          "begin": 265,
+          "end": 501
+        },
+        {
+          "entity_id": "ej5_p20611",
+          "name": "寻阳郡",
+          "state_id": "ej5_s20607",
+          "state_name": "江州",
+          "source_id": "97263",
+          "begin": 334,
+          "end": 423
+        },
+        {
+          "entity_id": "ej5_p20629",
+          "name": "豫章郡",
+          "state_id": "ej5_s20607",
+          "state_name": "江州",
+          "source_id": "97197",
+          "begin": 307,
+          "end": 527
+        },
+        {
+          "entity_id": "ej5_p20663",
+          "name": "鄱阳郡",
+          "state_id": "ej5_s20607",
+          "state_name": "江州",
+          "source_id": "97217",
+          "begin": 210,
+          "end": 423
+        },
+        {
+          "entity_id": "ej5_p20681",
+          "name": "庐陵郡",
+          "state_id": "ej5_s20607",
+          "state_name": "江州",
+          "source_id": "97152",
+          "begin": 282,
+          "end": 527
+        },
+        {
+          "entity_id": "ej5_p20703",
+          "name": "临川郡",
+          "state_id": "ej5_s20607",
+          "state_name": "江州",
+          "source_id": "97184",
+          "begin": 257,
+          "end": 527
+        },
+        {
+          "entity_id": "ej5_p20727",
+          "name": "南康郡",
+          "state_id": "ej5_s20607",
+          "state_name": "江州",
+          "source_id": "97118",
+          "begin": 282,
+          "end": 419
+        },
+        {
+          "entity_id": "ej5_p20745",
+          "name": "建安郡",
+          "state_id": "ej5_s20607",
+          "state_name": "江州",
+          "source_id": "90176",
+          "begin": 282,
+          "end": 588
+        },
+        {
+          "entity_id": "ej5_p20769",
+          "name": "晋安郡",
+          "state_id": "ej5_s20607",
+          "state_name": "江州",
+          "source_id": "90177",
+          "begin": 282,
+          "end": 467
+        },
+        {
+          "entity_id": "ej5_p20799",
+          "name": "安成郡",
+          "state_id": "ej5_s20607",
+          "state_name": "江州",
+          "source_id": "97154",
+          "begin": 267,
+          "end": 557
+        },
+        {
+          "entity_id": "ej5_p21603",
+          "name": "南海郡",
+          "state_id": "ej5_s21601",
+          "state_name": "广州",
+          "source_id": "92254",
+          "begin": 331,
+          "end": 419
+        },
+        {
+          "entity_id": "ej5_p21639",
+          "name": "东官郡",
+          "state_id": "ej5_s21601",
+          "state_name": "广州",
+          "source_id": "92245",
+          "begin": 331,
+          "end": 412
+        },
+        {
+          "entity_id": "ej5_p21677",
+          "name": "苍梧郡",
+          "state_id": "ej5_s21601",
+          "state_name": "广州",
+          "source_id": "92282",
+          "begin": 361,
+          "end": 432
+        },
+        {
+          "entity_id": "ej5_p21715",
+          "name": "晋康郡",
+          "state_id": "ej5_s21601",
+          "state_name": "广州",
+          "source_id": "92294",
+          "begin": 351,
+          "end": 420
+        },
+        {
+          "entity_id": "ej5_p21753",
+          "name": "新宁郡",
+          "state_id": "ej5_s21601",
+          "state_name": "广州",
+          "source_id": "92305",
+          "begin": 351,
+          "end": 431
+        },
+        {
+          "entity_id": "ej5_p21957",
+          "name": "高凉郡",
+          "state_id": "ej5_s21601",
+          "state_name": "广州",
+          "source_id": "92343",
+          "begin": 289,
+          "end": 431
+        },
+        {
+          "entity_id": "ej5_p22063",
+          "name": "合浦郡",
+          "state_id": "ej5_s22029",
+          "state_name": "交州",
+          "source_id": "92354",
+          "begin": 280,
+          "end": 419
+        }
+      ],
+      "chgis_state_reference_count": 5,
+      "state_geometry_method": "union_of_current_prefectures",
+      "control_interior_holes": 0,
+      "unassigned_control_area_degrees2": 7.83685558,
+      "ningzhou_control_excluded": true
+    }
+  },
+  "year_results": [
+    {
+      "year": 317,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 86,
+        "prefecture_boundaries": 86,
+        "province_areas": 11,
+        "province_boundaries": 11,
+        "county_seats": 346,
+        "prefecture_seats": 65,
+        "labels": 2,
+        "state_seats": 6
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 318,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 87,
+        "prefecture_boundaries": 87,
+        "province_areas": 11,
+        "province_boundaries": 11,
+        "county_seats": 346,
+        "prefecture_seats": 65,
+        "labels": 2,
+        "state_seats": 5
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 319,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 88,
+        "prefecture_boundaries": 88,
+        "province_areas": 12,
+        "province_boundaries": 12,
+        "county_seats": 347,
+        "prefecture_seats": 66,
+        "labels": 2,
+        "state_seats": 5
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 320,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 95,
+        "prefecture_boundaries": 95,
+        "province_areas": 13,
+        "province_boundaries": 13,
+        "county_seats": 363,
+        "prefecture_seats": 75,
+        "labels": 2,
+        "state_seats": 5
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 321,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 96,
+        "prefecture_boundaries": 96,
+        "province_areas": 13,
+        "province_boundaries": 13,
+        "county_seats": 364,
+        "prefecture_seats": 77,
+        "labels": 2,
+        "state_seats": 5
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 322,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 92,
+        "prefecture_boundaries": 92,
+        "province_areas": 13,
+        "province_boundaries": 13,
+        "county_seats": 353,
+        "prefecture_seats": 75,
+        "labels": 2,
+        "state_seats": 6
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 323,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 92,
+        "prefecture_boundaries": 92,
+        "province_areas": 13,
+        "province_boundaries": 13,
+        "county_seats": 351,
+        "prefecture_seats": 77,
+        "labels": 7,
+        "state_seats": 6
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 324,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 88,
+        "prefecture_boundaries": 87,
+        "province_areas": 13,
+        "province_boundaries": 12,
+        "county_seats": 344,
+        "prefecture_seats": 71,
+        "labels": 7,
+        "state_seats": 6
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 325,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 83,
+        "prefecture_boundaries": 83,
+        "province_areas": 11,
+        "province_boundaries": 11,
+        "county_seats": 330,
+        "prefecture_seats": 66,
+        "labels": 7,
+        "state_seats": 6
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 326,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 87,
+        "prefecture_boundaries": 84,
+        "province_areas": 12,
+        "province_boundaries": 11,
+        "county_seats": 326,
+        "prefecture_seats": 69,
+        "labels": 7,
+        "state_seats": 6
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 327,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 87,
+        "prefecture_boundaries": 84,
+        "province_areas": 12,
+        "province_boundaries": 11,
+        "county_seats": 326,
+        "prefecture_seats": 69,
+        "labels": 7,
+        "state_seats": 6
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 328,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 85,
+        "prefecture_boundaries": 81,
+        "province_areas": 12,
+        "province_boundaries": 11,
+        "county_seats": 309,
+        "prefecture_seats": 68,
+        "labels": 7,
+        "state_seats": 5
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 329,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 85,
+        "prefecture_boundaries": 81,
+        "province_areas": 11,
+        "province_boundaries": 10,
+        "county_seats": 310,
+        "prefecture_seats": 69,
+        "labels": 7,
+        "state_seats": 5
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 330,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 85,
+        "prefecture_boundaries": 81,
+        "province_areas": 11,
+        "province_boundaries": 10,
+        "county_seats": 310,
+        "prefecture_seats": 70,
+        "labels": 7,
+        "state_seats": 4
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 331,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 86,
+        "prefecture_boundaries": 82,
+        "province_areas": 11,
+        "province_boundaries": 10,
+        "county_seats": 310,
+        "prefecture_seats": 71,
+        "labels": 7,
+        "state_seats": 4
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 332,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 86,
+        "prefecture_boundaries": 82,
+        "province_areas": 11,
+        "province_boundaries": 10,
+        "county_seats": 312,
+        "prefecture_seats": 71,
+        "labels": 7,
+        "state_seats": 4
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 333,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 79,
+        "prefecture_boundaries": 75,
+        "province_areas": 11,
+        "province_boundaries": 10,
+        "county_seats": 295,
+        "prefecture_seats": 63,
+        "labels": 7,
+        "state_seats": 4
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 334,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 80,
+        "prefecture_boundaries": 77,
+        "province_areas": 11,
+        "province_boundaries": 10,
+        "county_seats": 299,
+        "prefecture_seats": 65,
+        "labels": 7,
+        "state_seats": 4
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 335,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 79,
+        "prefecture_boundaries": 76,
+        "province_areas": 11,
+        "province_boundaries": 10,
+        "county_seats": 296,
+        "prefecture_seats": 65,
+        "labels": 7,
+        "state_seats": 4
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 336,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 79,
+        "prefecture_boundaries": 78,
+        "province_areas": 11,
+        "province_boundaries": 10,
+        "county_seats": 298,
+        "prefecture_seats": 66,
+        "labels": 7,
+        "state_seats": 4
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 337,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 79,
+        "prefecture_boundaries": 78,
+        "province_areas": 11,
+        "province_boundaries": 10,
+        "county_seats": 298,
+        "prefecture_seats": 66,
+        "labels": 7,
+        "state_seats": 4
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 338,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 79,
+        "prefecture_boundaries": 78,
+        "province_areas": 12,
+        "province_boundaries": 11,
+        "county_seats": 297,
+        "prefecture_seats": 66,
+        "labels": 9,
+        "state_seats": 4
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 339,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 76,
+        "prefecture_boundaries": 75,
+        "province_areas": 12,
+        "province_boundaries": 11,
+        "county_seats": 297,
+        "prefecture_seats": 64,
+        "labels": 9,
+        "state_seats": 4
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 340,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 76,
+        "prefecture_boundaries": 75,
+        "province_areas": 12,
+        "province_boundaries": 11,
+        "county_seats": 298,
+        "prefecture_seats": 64,
+        "labels": 10,
+        "state_seats": 4
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 341,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 76,
+        "prefecture_boundaries": 75,
+        "province_areas": 11,
+        "province_boundaries": 10,
+        "county_seats": 299,
+        "prefecture_seats": 64,
+        "labels": 10,
+        "state_seats": 4
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 342,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 75,
+        "prefecture_boundaries": 74,
+        "province_areas": 11,
+        "province_boundaries": 10,
+        "county_seats": 295,
+        "prefecture_seats": 63,
+        "labels": 10,
+        "state_seats": 4
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 343,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 75,
+        "prefecture_boundaries": 74,
+        "province_areas": 11,
+        "province_boundaries": 10,
+        "county_seats": 295,
+        "prefecture_seats": 63,
+        "labels": 10,
+        "state_seats": 4
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 344,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 75,
+        "prefecture_boundaries": 74,
+        "province_areas": 11,
+        "province_boundaries": 10,
+        "county_seats": 295,
+        "prefecture_seats": 63,
+        "labels": 10,
+        "state_seats": 4
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 345,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 76,
+        "prefecture_boundaries": 75,
+        "province_areas": 11,
+        "province_boundaries": 10,
+        "county_seats": 295,
+        "prefecture_seats": 64,
+        "labels": 10,
+        "state_seats": 5
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 346,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 76,
+        "prefecture_boundaries": 75,
+        "province_areas": 11,
+        "province_boundaries": 10,
+        "county_seats": 295,
+        "prefecture_seats": 64,
+        "labels": 10,
+        "state_seats": 5
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 347,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 90,
+        "prefecture_boundaries": 87,
+        "province_areas": 11,
+        "province_boundaries": 10,
+        "county_seats": 316,
+        "prefecture_seats": 76,
+        "labels": 10,
+        "state_seats": 7
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 348,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 90,
+        "prefecture_boundaries": 87,
+        "province_areas": 11,
+        "province_boundaries": 10,
+        "county_seats": 317,
+        "prefecture_seats": 76,
+        "labels": 10,
+        "state_seats": 7
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 349,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 94,
+        "prefecture_boundaries": 92,
+        "province_areas": 11,
+        "province_boundaries": 10,
+        "county_seats": 326,
+        "prefecture_seats": 78,
+        "labels": 10,
+        "state_seats": 7
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 350,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 94,
+        "prefecture_boundaries": 92,
+        "province_areas": 11,
+        "province_boundaries": 10,
+        "county_seats": 325,
+        "prefecture_seats": 80,
+        "labels": 10,
+        "state_seats": 7
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 351,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 104,
+        "prefecture_boundaries": 102,
+        "province_areas": 12,
+        "province_boundaries": 10,
+        "county_seats": 332,
+        "prefecture_seats": 85,
+        "labels": 10,
+        "state_seats": 7
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 352,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 103,
+        "prefecture_boundaries": 101,
+        "province_areas": 11,
+        "province_boundaries": 10,
+        "county_seats": 333,
+        "prefecture_seats": 85,
+        "labels": 10,
+        "state_seats": 7
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 353,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 102,
+        "prefecture_boundaries": 100,
+        "province_areas": 11,
+        "province_boundaries": 10,
+        "county_seats": 329,
+        "prefecture_seats": 85,
+        "labels": 10,
+        "state_seats": 7
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 354,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 102,
+        "prefecture_boundaries": 100,
+        "province_areas": 11,
+        "province_boundaries": 10,
+        "county_seats": 329,
+        "prefecture_seats": 85,
+        "labels": 10,
+        "state_seats": 7
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 355,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 103,
+        "prefecture_boundaries": 101,
+        "province_areas": 11,
+        "province_boundaries": 10,
+        "county_seats": 330,
+        "prefecture_seats": 86,
+        "labels": 10,
+        "state_seats": 7
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 356,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 103,
+        "prefecture_boundaries": 101,
+        "province_areas": 11,
+        "province_boundaries": 11,
+        "county_seats": 348,
+        "prefecture_seats": 89,
+        "labels": 10,
+        "state_seats": 7
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 357,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 104,
+        "prefecture_boundaries": 101,
+        "province_areas": 11,
+        "province_boundaries": 11,
+        "county_seats": 350,
+        "prefecture_seats": 90,
+        "labels": 10,
+        "state_seats": 7
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 358,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 104,
+        "prefecture_boundaries": 101,
+        "province_areas": 11,
+        "province_boundaries": 11,
+        "county_seats": 350,
+        "prefecture_seats": 90,
+        "labels": 10,
+        "state_seats": 7
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 359,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 103,
+        "prefecture_boundaries": 100,
+        "province_areas": 11,
+        "province_boundaries": 11,
+        "county_seats": 348,
+        "prefecture_seats": 89,
+        "labels": 10,
+        "state_seats": 7
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 360,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 103,
+        "prefecture_boundaries": 100,
+        "province_areas": 11,
+        "province_boundaries": 11,
+        "county_seats": 348,
+        "prefecture_seats": 89,
+        "labels": 10,
+        "state_seats": 7
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 361,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 104,
+        "prefecture_boundaries": 101,
+        "province_areas": 11,
+        "province_boundaries": 11,
+        "county_seats": 349,
+        "prefecture_seats": 90,
+        "labels": 10,
+        "state_seats": 7
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 362,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 104,
+        "prefecture_boundaries": 101,
+        "province_areas": 11,
+        "province_boundaries": 11,
+        "county_seats": 350,
+        "prefecture_seats": 90,
+        "labels": 10,
+        "state_seats": 7
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 363,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 103,
+        "prefecture_boundaries": 100,
+        "province_areas": 11,
+        "province_boundaries": 11,
+        "county_seats": 349,
+        "prefecture_seats": 89,
+        "labels": 10,
+        "state_seats": 7
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 364,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 102,
+        "prefecture_boundaries": 98,
+        "province_areas": 11,
+        "province_boundaries": 11,
+        "county_seats": 346,
+        "prefecture_seats": 86,
+        "labels": 10,
+        "state_seats": 7
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 365,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 101,
+        "prefecture_boundaries": 97,
+        "province_areas": 10,
+        "province_boundaries": 10,
+        "county_seats": 345,
+        "prefecture_seats": 85,
+        "labels": 10,
+        "state_seats": 7
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 366,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 100,
+        "prefecture_boundaries": 96,
+        "province_areas": 10,
+        "province_boundaries": 10,
+        "county_seats": 335,
+        "prefecture_seats": 84,
+        "labels": 10,
+        "state_seats": 7
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 367,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 101,
+        "prefecture_boundaries": 97,
+        "province_areas": 10,
+        "province_boundaries": 10,
+        "county_seats": 345,
+        "prefecture_seats": 85,
+        "labels": 10,
+        "state_seats": 7
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 368,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 101,
+        "prefecture_boundaries": 97,
+        "province_areas": 10,
+        "province_boundaries": 10,
+        "county_seats": 344,
+        "prefecture_seats": 85,
+        "labels": 10,
+        "state_seats": 7
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 369,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 100,
+        "prefecture_boundaries": 96,
+        "province_areas": 10,
+        "province_boundaries": 10,
+        "county_seats": 340,
+        "prefecture_seats": 85,
+        "labels": 10,
+        "state_seats": 7
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 370,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 101,
+        "prefecture_boundaries": 97,
+        "province_areas": 10,
+        "province_boundaries": 10,
+        "county_seats": 344,
+        "prefecture_seats": 85,
+        "labels": 10,
+        "state_seats": 7
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 371,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 101,
+        "prefecture_boundaries": 97,
+        "province_areas": 10,
+        "province_boundaries": 10,
+        "county_seats": 344,
+        "prefecture_seats": 85,
+        "labels": 10,
+        "state_seats": 7
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 372,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 101,
+        "prefecture_boundaries": 97,
+        "province_areas": 10,
+        "province_boundaries": 10,
+        "county_seats": 344,
+        "prefecture_seats": 85,
+        "labels": 10,
+        "state_seats": 7
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 373,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 81,
+        "prefecture_boundaries": 79,
+        "province_areas": 9,
+        "province_boundaries": 9,
+        "county_seats": 305,
+        "prefecture_seats": 68,
+        "labels": 11,
+        "state_seats": 6
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 374,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 80,
+        "prefecture_boundaries": 78,
+        "province_areas": 9,
+        "province_boundaries": 9,
+        "county_seats": 306,
+        "prefecture_seats": 67,
+        "labels": 11,
+        "state_seats": 5
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 375,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 80,
+        "prefecture_boundaries": 78,
+        "province_areas": 9,
+        "province_boundaries": 9,
+        "county_seats": 307,
+        "prefecture_seats": 67,
+        "labels": 11,
+        "state_seats": 5
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 376,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 80,
+        "prefecture_boundaries": 78,
+        "province_areas": 9,
+        "province_boundaries": 9,
+        "county_seats": 308,
+        "prefecture_seats": 67,
+        "labels": 11,
+        "state_seats": 5
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 377,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 80,
+        "prefecture_boundaries": 78,
+        "province_areas": 9,
+        "province_boundaries": 9,
+        "county_seats": 307,
+        "prefecture_seats": 67,
+        "labels": 11,
+        "state_seats": 5
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 378,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 79,
+        "prefecture_boundaries": 77,
+        "province_areas": 9,
+        "province_boundaries": 9,
+        "county_seats": 298,
+        "prefecture_seats": 66,
+        "labels": 11,
+        "state_seats": 5
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 379,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 73,
+        "prefecture_boundaries": 71,
+        "province_areas": 9,
+        "province_boundaries": 9,
+        "county_seats": 282,
+        "prefecture_seats": 61,
+        "labels": 11,
+        "state_seats": 5
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 380,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 73,
+        "prefecture_boundaries": 71,
+        "province_areas": 9,
+        "province_boundaries": 9,
+        "county_seats": 282,
+        "prefecture_seats": 61,
+        "labels": 11,
+        "state_seats": 5
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 381,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 73,
+        "prefecture_boundaries": 71,
+        "province_areas": 9,
+        "province_boundaries": 9,
+        "county_seats": 282,
+        "prefecture_seats": 61,
+        "labels": 11,
+        "state_seats": 5
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 382,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 70,
+        "prefecture_boundaries": 70,
+        "province_areas": 9,
+        "province_boundaries": 9,
+        "county_seats": 283,
+        "prefecture_seats": 72,
+        "labels": 11,
+        "state_seats": 5
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 383,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 73,
+        "prefecture_boundaries": 71,
+        "province_areas": 9,
+        "province_boundaries": 9,
+        "county_seats": 282,
+        "prefecture_seats": 60,
+        "labels": 11,
+        "state_seats": 5
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 384,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 110,
+        "prefecture_boundaries": 108,
+        "province_areas": 12,
+        "province_boundaries": 12,
+        "county_seats": 365,
+        "prefecture_seats": 86,
+        "labels": 11,
+        "state_seats": 6
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 385,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 111,
+        "prefecture_boundaries": 109,
+        "province_areas": 12,
+        "province_boundaries": 12,
+        "county_seats": 363,
+        "prefecture_seats": 87,
+        "labels": 11,
+        "state_seats": 6
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 386,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 112,
+        "prefecture_boundaries": 110,
+        "province_areas": 12,
+        "province_boundaries": 12,
+        "county_seats": 365,
+        "prefecture_seats": 88,
+        "labels": 11,
+        "state_seats": 6
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 387,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 112,
+        "prefecture_boundaries": 110,
+        "province_areas": 12,
+        "province_boundaries": 12,
+        "county_seats": 365,
+        "prefecture_seats": 88,
+        "labels": 11,
+        "state_seats": 6
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 388,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 112,
+        "prefecture_boundaries": 110,
+        "province_areas": 12,
+        "province_boundaries": 12,
+        "county_seats": 365,
+        "prefecture_seats": 87,
+        "labels": 10,
+        "state_seats": 6
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 389,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 111,
+        "prefecture_boundaries": 109,
+        "province_areas": 12,
+        "province_boundaries": 12,
+        "county_seats": 365,
+        "prefecture_seats": 86,
+        "labels": 10,
+        "state_seats": 6
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 390,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 113,
+        "prefecture_boundaries": 111,
+        "province_areas": 12,
+        "province_boundaries": 12,
+        "county_seats": 365,
+        "prefecture_seats": 88,
+        "labels": 10,
+        "state_seats": 7
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 391,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 113,
+        "prefecture_boundaries": 111,
+        "province_areas": 12,
+        "province_boundaries": 12,
+        "county_seats": 365,
+        "prefecture_seats": 88,
+        "labels": 10,
+        "state_seats": 7
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 392,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 113,
+        "prefecture_boundaries": 111,
+        "province_areas": 12,
+        "province_boundaries": 12,
+        "county_seats": 365,
+        "prefecture_seats": 88,
+        "labels": 10,
+        "state_seats": 7
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 393,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 113,
+        "prefecture_boundaries": 111,
+        "province_areas": 12,
+        "province_boundaries": 12,
+        "county_seats": 365,
+        "prefecture_seats": 88,
+        "labels": 10,
+        "state_seats": 7
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 394,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 112,
+        "prefecture_boundaries": 110,
+        "province_areas": 12,
+        "province_boundaries": 11,
+        "county_seats": 365,
+        "prefecture_seats": 87,
+        "labels": 10,
+        "state_seats": 7
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 395,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 112,
+        "prefecture_boundaries": 110,
+        "province_areas": 12,
+        "province_boundaries": 11,
+        "county_seats": 363,
+        "prefecture_seats": 87,
+        "labels": 10,
+        "state_seats": 7
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 396,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 112,
+        "prefecture_boundaries": 110,
+        "province_areas": 12,
+        "province_boundaries": 11,
+        "county_seats": 363,
+        "prefecture_seats": 87,
+        "labels": 10,
+        "state_seats": 7
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 397,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 109,
+        "prefecture_boundaries": 106,
+        "province_areas": 12,
+        "province_boundaries": 11,
+        "county_seats": 359,
+        "prefecture_seats": 85,
+        "labels": 12,
+        "state_seats": 7
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 398,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 106,
+        "prefecture_boundaries": 102,
+        "province_areas": 12,
+        "province_boundaries": 10,
+        "county_seats": 342,
+        "prefecture_seats": 84,
+        "labels": 12,
+        "state_seats": 7
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 399,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 97,
+        "prefecture_boundaries": 94,
+        "province_areas": 10,
+        "province_boundaries": 10,
+        "county_seats": 335,
+        "prefecture_seats": 80,
+        "labels": 12,
+        "state_seats": 7
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 400,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 97,
+        "prefecture_boundaries": 94,
+        "province_areas": 10,
+        "province_boundaries": 10,
+        "county_seats": 335,
+        "prefecture_seats": 80,
+        "labels": 12,
+        "state_seats": 7
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 401,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 98,
+        "prefecture_boundaries": 95,
+        "province_areas": 10,
+        "province_boundaries": 10,
+        "county_seats": 337,
+        "prefecture_seats": 81,
+        "labels": 12,
+        "state_seats": 7
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 402,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 98,
+        "prefecture_boundaries": 95,
+        "province_areas": 10,
+        "province_boundaries": 10,
+        "county_seats": 337,
+        "prefecture_seats": 81,
+        "labels": 12,
+        "state_seats": 7
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 403,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 98,
+        "prefecture_boundaries": 95,
+        "province_areas": 10,
+        "province_boundaries": 10,
+        "county_seats": 338,
+        "prefecture_seats": 81,
+        "labels": 12,
+        "state_seats": 7
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 404,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 98,
+        "prefecture_boundaries": 95,
+        "province_areas": 10,
+        "province_boundaries": 10,
+        "county_seats": 338,
+        "prefecture_seats": 81,
+        "labels": 12,
+        "state_seats": 7
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 405,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 91,
+        "prefecture_boundaries": 88,
+        "province_areas": 9,
+        "province_boundaries": 9,
+        "county_seats": 340,
+        "prefecture_seats": 75,
+        "labels": 13,
+        "state_seats": 6
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 406,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 91,
+        "prefecture_boundaries": 88,
+        "province_areas": 9,
+        "province_boundaries": 9,
+        "county_seats": 339,
+        "prefecture_seats": 75,
+        "labels": 13,
+        "state_seats": 5
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 407,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 91,
+        "prefecture_boundaries": 88,
+        "province_areas": 9,
+        "province_boundaries": 9,
+        "county_seats": 338,
+        "prefecture_seats": 74,
+        "labels": 13,
+        "state_seats": 5
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 408,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 91,
+        "prefecture_boundaries": 88,
+        "province_areas": 9,
+        "province_boundaries": 9,
+        "county_seats": 338,
+        "prefecture_seats": 74,
+        "labels": 13,
+        "state_seats": 5
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 409,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 91,
+        "prefecture_boundaries": 88,
+        "province_areas": 9,
+        "province_boundaries": 9,
+        "county_seats": 338,
+        "prefecture_seats": 74,
+        "labels": 13,
+        "state_seats": 5
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 410,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 112,
+        "prefecture_boundaries": 109,
+        "province_areas": 11,
+        "province_boundaries": 11,
+        "county_seats": 406,
+        "prefecture_seats": 86,
+        "labels": 13,
+        "state_seats": 5
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 411,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 116,
+        "prefecture_boundaries": 113,
+        "province_areas": 12,
+        "province_boundaries": 12,
+        "county_seats": 414,
+        "prefecture_seats": 88,
+        "labels": 13,
+        "state_seats": 5
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 412,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 115,
+        "prefecture_boundaries": 112,
+        "province_areas": 13,
+        "province_boundaries": 13,
+        "county_seats": 413,
+        "prefecture_seats": 88,
+        "labels": 13,
+        "state_seats": 6
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 413,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 129,
+        "prefecture_boundaries": 126,
+        "province_areas": 14,
+        "province_boundaries": 14,
+        "county_seats": 447,
+        "prefecture_seats": 101,
+        "labels": 14,
+        "state_seats": 8
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 414,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 129,
+        "prefecture_boundaries": 126,
+        "province_areas": 14,
+        "province_boundaries": 14,
+        "county_seats": 446,
+        "prefecture_seats": 101,
+        "labels": 14,
+        "state_seats": 8
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 415,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 129,
+        "prefecture_boundaries": 126,
+        "province_areas": 14,
+        "province_boundaries": 14,
+        "county_seats": 446,
+        "prefecture_seats": 101,
+        "labels": 14,
+        "state_seats": 8
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 416,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 137,
+        "prefecture_boundaries": 135,
+        "province_areas": 14,
+        "province_boundaries": 14,
+        "county_seats": 476,
+        "prefecture_seats": 107,
+        "labels": 14,
+        "state_seats": 7
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 417,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 138,
+        "prefecture_boundaries": 136,
+        "province_areas": 14,
+        "province_boundaries": 14,
+        "county_seats": 485,
+        "prefecture_seats": 108,
+        "labels": 14,
+        "state_seats": 7
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 418,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 138,
+        "prefecture_boundaries": 136,
+        "province_areas": 14,
+        "province_boundaries": 14,
+        "county_seats": 501,
+        "prefecture_seats": 108,
+        "labels": 14,
+        "state_seats": 7
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 419,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 138,
+        "prefecture_boundaries": 136,
+        "province_areas": 14,
+        "province_boundaries": 14,
+        "county_seats": 502,
+        "prefecture_seats": 107,
+        "labels": 14,
+        "state_seats": 7
+      },
+      "regime_inner_rings": 0
+    },
+    {
+      "year": 420,
+      "status": "passed",
+      "layers": {
+        "original_territory_boundary": 1,
+        "regime_areas": 1,
+        "prefecture_areas": 139,
+        "prefecture_boundaries": 137,
+        "province_areas": 14,
+        "province_boundaries": 14,
+        "county_seats": 511,
+        "prefecture_seats": 106,
+        "labels": 13,
+        "state_seats": 7
+      },
+      "regime_inner_rings": 0
+    }
+  ],
+  "errors": [],
+  "elapsed_seconds": 53.88
+}
