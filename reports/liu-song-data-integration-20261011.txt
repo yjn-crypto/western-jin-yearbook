@@ -1,0 +1,14 @@
+刘宋首版文字数据接入说明
+
+来源：Work 原 annual/420—479.json，未修改研究目录、日期或归属裁定。
+发布：data/liu-song-data.js；调用 await LIU_SONG_DATA.loadYear(year) 后读取 annual[year]。
+loadShared() 返回 evidence/phase/relation/marker/decision/issue 与实土、引书层注释。
+年度磁盘文件使用共享行元数据池；需经浏览器 loadYear 解码，不直接当展开树读取。
+date_context 全量保留；source_bound、constrained_bound、display_year 与事件确年分开。
+qiao=null 保留待核；下划线原页标记见 qiao_annotation 和 markers，不能由父级继承。
+原属、寄治、行政父级、控制与实土状态互不替代。
+420/479 是交替年；421/478 边界投射原注逐条保留。
+counts.unassigned 为交叉状态，不加计；undated_refs 不另计年。
+714 项待考、121 组结构缺口、464 横表21项差异均保留，未套东晋最早年选择。
+全部60年字段、计数、侨标及引用必要检查通过；未另作全面历史审核。
+可读完整清单：reports/liu-song-data-integration-20261011.html

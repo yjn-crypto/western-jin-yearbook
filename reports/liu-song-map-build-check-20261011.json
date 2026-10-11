@@ -1,0 +1,3404 @@
+{
+  "status": "passed",
+  "scope": "刘宋420—479本轮地图必要发布检查；未做全面历史或网页审核，未读其他朝代地图。",
+  "year_count": 60,
+  "years": [
+    420,
+    421,
+    422,
+    423,
+    424,
+    425,
+    426,
+    427,
+    428,
+    429,
+    430,
+    431,
+    432,
+    433,
+    434,
+    435,
+    436,
+    437,
+    438,
+    439,
+    440,
+    441,
+    442,
+    443,
+    444,
+    445,
+    446,
+    447,
+    448,
+    449,
+    450,
+    451,
+    452,
+    453,
+    454,
+    455,
+    456,
+    457,
+    458,
+    459,
+    460,
+    461,
+    462,
+    463,
+    464,
+    465,
+    466,
+    467,
+    468,
+    469,
+    470,
+    471,
+    472,
+    473,
+    474,
+    475,
+    476,
+    477,
+    478,
+    479
+  ],
+  "precision_grid_degrees": 1e-06,
+  "rules": {
+    "prefecture_faces": "同年CHGIS原郡面；仅容许同源郡面重叠裁切，边线须沿同年CHGIS边界网络，未增拟合。",
+    "province_faces": "可用464/497完整州面补缺；complete_chgis_state_ids严格等于所属郡面并集。",
+    "unassigned": "原年度主树或unassigned实体可标点；unassigned不得绘面。",
+    "county_coordinates": "CHGIS县点的地图geometry、source_coordinates及缓存同年source_id坐标精确相等。",
+    "transition": "469起使用497底图；420—468使用464，具体过渡沿生成器配置。"
+  },
+  "counts": {
+    "geometry_references": 45791,
+    "regime_areas_checked": 60,
+    "administrative_entity_memberships": 45746,
+    "chgis_prefecture_features_checked": 5374,
+    "chgis_county_original_coordinate_checks": 29305,
+    "prefecture_boundary_chgis_network_checks": 2687,
+    "prefecture_containment_in_state_checks": 2687,
+    "complete_chgis_state_union_checks": 27
+  },
+  "errors": [],
+  "max_polygon_outer_ring": {
+    "vertices": 19654,
+    "geometry_id": "lsbaec6f73d9a1633a"
+  },
+  "javascript_spread_argument_limit_note": "只统计最大外环顶点；是否使用扩展实参由前端必要检查处理。",
+  "gzip_bytes": {
+    "data/liu-song-maps/geometries.json.gz": 15323756,
+    "data/liu-song-maps/sources/atlas464-zhou_territories.geojson.gz": 166831,
+    "data/liu-song-maps/sources/atlas497-zhou_territories.geojson.gz": 1152508,
+    "data/liu-song-maps/sources/atlas464-state_seats.geojson.gz": 1212,
+    "data/liu-song-maps/sources/atlas497-polity_territories.geojson.gz": 296813,
+    "data/liu-song-maps/sources/atlas464-polity_territories.geojson.gz": 59246,
+    "data/liu-song-maps/sources/atlas497-state_seats.geojson.gz": 633,
+    "data/liu-song-maps/sources/atlas464-commandery_seats.geojson.gz": 5798,
+    "data/liu-song-maps/sources/atlas497-commandery_seats.geojson.gz": 7510,
+    "data/liu-song-maps/sources/chgis-420-479.geojson.gz": 2351297
+  },
+  "gzip_total_bytes": 19365604,
+  "geometry_sha256": "ab1180f8da523638d3fc7a4701230a90dce5dfd0ca386a39accce5eee2e9dc60",
+  "key_years": {
+    "464": {
+      "year": 464,
+      "basemap_year": 464,
+      "layers": {
+        "regime_areas": 1,
+        "regime_boundaries": 1,
+        "prefecture_areas": 51,
+        "prefecture_boundaries": 51,
+        "province_areas": 19,
+        "province_boundaries": 19,
+        "state_seats": 20,
+        "prefecture_seats": 168,
+        "county_seats": 546
+      },
+      "complete_chgis_state_ids": [
+        "ls6_s180",
+        "ls6_s456"
+      ],
+      "main_text_counts": {
+        "states_in_text": 21,
+        "prefectures_in_text": 199,
+        "counties_in_text": 1017
+      },
+      "coverage": {
+        "year": 464,
+        "basemap_year": 464,
+        "states_in_text": 21,
+        "prefectures_in_text": 199,
+        "counties_in_text": 1017,
+        "state_areas": 19,
+        "shared_state_areas": 0,
+        "prefecture_areas": 51,
+        "chgis_prefecture_areas": 51,
+        "complete_chgis_state_ids": [
+          "ls6_s180",
+          "ls6_s456"
+        ],
+        "state_seats": 20,
+        "prefecture_seats": 168,
+        "county_seats": 546,
+        "unassigned_points": 0,
+        "qiao_points": 41,
+        "control_interior_holes": 0,
+        "unassigned_control_area_degrees2": 0.57421179,
+        "atlas497_points_used": 0,
+        "new_prefecture_boundaries_fitted": 0,
+        "western_jin_data_used": false
+      },
+      "unlocated_count": 730,
+      "missing_prefecture_area_count": 146,
+      "point_checks": {
+        "chgis_county_original_coordinate_checks": 546
+      }
+    },
+    "469": {
+      "year": 469,
+      "basemap_year": 497,
+      "layers": {
+        "regime_areas": 1,
+        "regime_boundaries": 1,
+        "prefecture_areas": 49,
+        "prefecture_boundaries": 49,
+        "province_areas": 15,
+        "province_boundaries": 15,
+        "state_seats": 15,
+        "prefecture_seats": 122,
+        "county_seats": 450
+      },
+      "complete_chgis_state_ids": [],
+      "main_text_counts": {
+        "states_in_text": 17,
+        "prefectures_in_text": 147,
+        "counties_in_text": 828
+      },
+      "coverage": {
+        "year": 469,
+        "basemap_year": 497,
+        "states_in_text": 17,
+        "prefectures_in_text": 147,
+        "counties_in_text": 828,
+        "state_areas": 14,
+        "shared_state_areas": 1,
+        "prefecture_areas": 49,
+        "chgis_prefecture_areas": 49,
+        "complete_chgis_state_ids": [],
+        "state_seats": 15,
+        "prefecture_seats": 122,
+        "county_seats": 450,
+        "unassigned_points": 0,
+        "qiao_points": 25,
+        "control_interior_holes": 0,
+        "unassigned_control_area_degrees2": 5.5166947,
+        "atlas497_points_used": 0,
+        "new_prefecture_boundaries_fitted": 0,
+        "western_jin_data_used": false
+      },
+      "unlocated_count": 662,
+      "missing_prefecture_area_count": 98,
+      "point_checks": {
+        "chgis_county_original_coordinate_checks": 450
+      }
+    },
+    "479": {
+      "year": 479,
+      "basemap_year": 497,
+      "layers": {
+        "regime_areas": 1,
+        "regime_boundaries": 1,
+        "prefecture_areas": 51,
+        "prefecture_boundaries": 51,
+        "province_areas": 17,
+        "province_boundaries": 17,
+        "state_seats": 16,
+        "prefecture_seats": 121,
+        "county_seats": 425
+      },
+      "complete_chgis_state_ids": [],
+      "main_text_counts": {
+        "states_in_text": 18,
+        "prefectures_in_text": 155,
+        "counties_in_text": 763
+      },
+      "coverage": {
+        "year": 479,
+        "basemap_year": 497,
+        "states_in_text": 18,
+        "prefectures_in_text": 155,
+        "counties_in_text": 763,
+        "state_areas": 17,
+        "shared_state_areas": 0,
+        "prefecture_areas": 51,
+        "chgis_prefecture_areas": 51,
+        "complete_chgis_state_ids": [],
+        "state_seats": 16,
+        "prefecture_seats": 121,
+        "county_seats": 425,
+        "unassigned_points": 0,
+        "qiao_points": 11,
+        "control_interior_holes": 0,
+        "unassigned_control_area_degrees2": 2.69488744,
+        "atlas497_points_used": 0,
+        "new_prefecture_boundaries_fitted": 0,
+        "western_jin_data_used": false
+      },
+      "unlocated_count": 380,
+      "missing_prefecture_area_count": 104,
+      "point_checks": {
+        "chgis_county_original_coordinate_checks": 425
+      }
+    }
+  },
+  "annual": [
+    {
+      "year": 420,
+      "basemap_year": 464,
+      "layers": {
+        "regime_areas": 1,
+        "regime_boundaries": 1,
+        "prefecture_areas": 39,
+        "prefecture_boundaries": 39,
+        "province_areas": 14,
+        "province_boundaries": 14,
+        "state_seats": 13,
+        "prefecture_seats": 127,
+        "county_seats": 487
+      },
+      "complete_chgis_state_ids": [],
+      "main_text_counts": {
+        "states_in_text": 15,
+        "prefectures_in_text": 160,
+        "counties_in_text": 858
+      },
+      "coverage": {
+        "year": 420,
+        "basemap_year": 464,
+        "states_in_text": 15,
+        "prefectures_in_text": 160,
+        "counties_in_text": 858,
+        "state_areas": 13,
+        "shared_state_areas": 1,
+        "prefecture_areas": 39,
+        "chgis_prefecture_areas": 39,
+        "complete_chgis_state_ids": [],
+        "state_seats": 13,
+        "prefecture_seats": 127,
+        "county_seats": 487,
+        "unassigned_points": 0,
+        "qiao_points": 5,
+        "control_interior_holes": 0,
+        "unassigned_control_area_degrees2": 9.884e-05,
+        "atlas497_points_used": 0,
+        "new_prefecture_boundaries_fitted": 0,
+        "western_jin_data_used": false
+      },
+      "unlocated_count": 406,
+      "missing_prefecture_area_count": 121,
+      "point_checks": {
+        "chgis_county_original_coordinate_checks": 487
+      }
+    },
+    {
+      "year": 421,
+      "basemap_year": 464,
+      "layers": {
+        "regime_areas": 1,
+        "regime_boundaries": 1,
+        "prefecture_areas": 39,
+        "prefecture_boundaries": 39,
+        "province_areas": 14,
+        "province_boundaries": 14,
+        "state_seats": 14,
+        "prefecture_seats": 132,
+        "county_seats": 492
+      },
+      "complete_chgis_state_ids": [],
+      "main_text_counts": {
+        "states_in_text": 17,
+        "prefectures_in_text": 178,
+        "counties_in_text": 950
+      },
+      "coverage": {
+        "year": 421,
+        "basemap_year": 464,
+        "states_in_text": 17,
+        "prefectures_in_text": 178,
+        "counties_in_text": 950,
+        "state_areas": 13,
+        "shared_state_areas": 1,
+        "prefecture_areas": 39,
+        "chgis_prefecture_areas": 39,
+        "complete_chgis_state_ids": [],
+        "state_seats": 14,
+        "prefecture_seats": 132,
+        "county_seats": 492,
+        "unassigned_points": 0,
+        "qiao_points": 16,
+        "control_interior_holes": 0,
+        "unassigned_control_area_degrees2": 9.884e-05,
+        "atlas497_points_used": 0,
+        "new_prefecture_boundaries_fitted": 0,
+        "western_jin_data_used": false
+      },
+      "unlocated_count": 756,
+      "missing_prefecture_area_count": 135,
+      "point_checks": {
+        "chgis_county_original_coordinate_checks": 492
+      }
+    },
+    {
+      "year": 422,
+      "basemap_year": 464,
+      "layers": {
+        "regime_areas": 1,
+        "regime_boundaries": 1,
+        "prefecture_areas": 39,
+        "prefecture_boundaries": 39,
+        "province_areas": 16,
+        "province_boundaries": 16,
+        "state_seats": 15,
+        "prefecture_seats": 128,
+        "county_seats": 495
+      },
+      "complete_chgis_state_ids": [],
+      "main_text_counts": {
+        "states_in_text": 19,
+        "prefectures_in_text": 164,
+        "counties_in_text": 922
+      },
+      "coverage": {
+        "year": 422,
+        "basemap_year": 464,
+        "states_in_text": 19,
+        "prefectures_in_text": 164,
+        "counties_in_text": 922,
+        "state_areas": 15,
+        "shared_state_areas": 1,
+        "prefecture_areas": 39,
+        "chgis_prefecture_areas": 39,
+        "complete_chgis_state_ids": [],
+        "state_seats": 15,
+        "prefecture_seats": 128,
+        "county_seats": 495,
+        "unassigned_points": 0,
+        "qiao_points": 9,
+        "control_interior_holes": 0,
+        "unassigned_control_area_degrees2": 9.885e-05,
+        "atlas497_points_used": 0,
+        "new_prefecture_boundaries_fitted": 0,
+        "western_jin_data_used": false
+      },
+      "unlocated_count": 741,
+      "missing_prefecture_area_count": 125,
+      "point_checks": {
+        "chgis_county_original_coordinate_checks": 495
+      }
+    },
+    {
+      "year": 423,
+      "basemap_year": 464,
+      "layers": {
+        "regime_areas": 1,
+        "regime_boundaries": 1,
+        "prefecture_areas": 39,
+        "prefecture_boundaries": 39,
+        "province_areas": 15,
+        "province_boundaries": 15,
+        "state_seats": 15,
+        "prefecture_seats": 121,
+        "county_seats": 460
+      },
+      "complete_chgis_state_ids": [],
+      "main_text_counts": {
+        "states_in_text": 17,
+        "prefectures_in_text": 149,
+        "counties_in_text": 832
+      },
+      "coverage": {
+        "year": 423,
+        "basemap_year": 464,
+        "states_in_text": 17,
+        "prefectures_in_text": 149,
+        "counties_in_text": 832,
+        "state_areas": 14,
+        "shared_state_areas": 1,
+        "prefecture_areas": 39,
+        "chgis_prefecture_areas": 39,
+        "complete_chgis_state_ids": [],
+        "state_seats": 15,
+        "prefecture_seats": 121,
+        "county_seats": 460,
+        "unassigned_points": 0,
+        "qiao_points": 9,
+        "control_interior_holes": 0,
+        "unassigned_control_area_degrees2": 9.885e-05,
+        "atlas497_points_used": 0,
+        "new_prefecture_boundaries_fitted": 0,
+        "western_jin_data_used": false
+      },
+      "unlocated_count": 659,
+      "missing_prefecture_area_count": 110,
+      "point_checks": {
+        "chgis_county_original_coordinate_checks": 460
+      }
+    },
+    {
+      "year": 424,
+      "basemap_year": 464,
+      "layers": {
+        "regime_areas": 1,
+        "regime_boundaries": 1,
+        "prefecture_areas": 39,
+        "prefecture_boundaries": 39,
+        "province_areas": 15,
+        "province_boundaries": 15,
+        "state_seats": 15,
+        "prefecture_seats": 121,
+        "county_seats": 464
+      },
+      "complete_chgis_state_ids": [],
+      "main_text_counts": {
+        "states_in_text": 17,
+        "prefectures_in_text": 149,
+        "counties_in_text": 845
+      },
+      "coverage": {
+        "year": 424,
+        "basemap_year": 464,
+        "states_in_text": 17,
+        "prefectures_in_text": 149,
+        "counties_in_text": 845,
+        "state_areas": 14,
+        "shared_state_areas": 1,
+        "prefecture_areas": 39,
+        "chgis_prefecture_areas": 39,
+        "complete_chgis_state_ids": [],
+        "state_seats": 15,
+        "prefecture_seats": 121,
+        "county_seats": 464,
+        "unassigned_points": 0,
+        "qiao_points": 9,
+        "control_interior_holes": 0,
+        "unassigned_control_area_degrees2": 9.885e-05,
+        "atlas497_points_used": 0,
+        "new_prefecture_boundaries_fitted": 0,
+        "western_jin_data_used": false
+      },
+      "unlocated_count": 672,
+      "missing_prefecture_area_count": 110,
+      "point_checks": {
+        "chgis_county_original_coordinate_checks": 464
+      }
+    },
+    {
+      "year": 425,
+      "basemap_year": 464,
+      "layers": {
+        "regime_areas": 1,
+        "regime_boundaries": 1,
+        "prefecture_areas": 39,
+        "prefecture_boundaries": 39,
+        "province_areas": 15,
+        "province_boundaries": 15,
+        "state_seats": 15,
+        "prefecture_seats": 122,
+        "county_seats": 464
+      },
+      "complete_chgis_state_ids": [],
+      "main_text_counts": {
+        "states_in_text": 17,
+        "prefectures_in_text": 149,
+        "counties_in_text": 850
+      },
+      "coverage": {
+        "year": 425,
+        "basemap_year": 464,
+        "states_in_text": 17,
+        "prefectures_in_text": 149,
+        "counties_in_text": 850,
+        "state_areas": 14,
+        "shared_state_areas": 1,
+        "prefecture_areas": 39,
+        "chgis_prefecture_areas": 39,
+        "complete_chgis_state_ids": [],
+        "state_seats": 15,
+        "prefecture_seats": 122,
+        "county_seats": 464,
+        "unassigned_points": 0,
+        "qiao_points": 10,
+        "control_interior_holes": 0,
+        "unassigned_control_area_degrees2": 9.885e-05,
+        "atlas497_points_used": 0,
+        "new_prefecture_boundaries_fitted": 0,
+        "western_jin_data_used": false
+      },
+      "unlocated_count": 683,
+      "missing_prefecture_area_count": 109,
+      "point_checks": {
+        "chgis_county_original_coordinate_checks": 464
+      }
+    },
+    {
+      "year": 426,
+      "basemap_year": 464,
+      "layers": {
+        "regime_areas": 1,
+        "regime_boundaries": 1,
+        "prefecture_areas": 39,
+        "prefecture_boundaries": 39,
+        "province_areas": 15,
+        "province_boundaries": 15,
+        "state_seats": 15,
+        "prefecture_seats": 121,
+        "county_seats": 464
+      },
+      "complete_chgis_state_ids": [],
+      "main_text_counts": {
+        "states_in_text": 17,
+        "prefectures_in_text": 148,
+        "counties_in_text": 845
+      },
+      "coverage": {
+        "year": 426,
+        "basemap_year": 464,
+        "states_in_text": 17,
+        "prefectures_in_text": 148,
+        "counties_in_text": 845,
+        "state_areas": 14,
+        "shared_state_areas": 1,
+        "prefecture_areas": 39,
+        "chgis_prefecture_areas": 39,
+        "complete_chgis_state_ids": [],
+        "state_seats": 15,
+        "prefecture_seats": 121,
+        "county_seats": 464,
+        "unassigned_points": 0,
+        "qiao_points": 9,
+        "control_interior_holes": 0,
+        "unassigned_control_area_degrees2": 9.885e-05,
+        "atlas497_points_used": 0,
+        "new_prefecture_boundaries_fitted": 0,
+        "western_jin_data_used": false
+      },
+      "unlocated_count": 684,
+      "missing_prefecture_area_count": 109,
+      "point_checks": {
+        "chgis_county_original_coordinate_checks": 464
+      }
+    },
+    {
+      "year": 427,
+      "basemap_year": 464,
+      "layers": {
+        "regime_areas": 1,
+        "regime_boundaries": 1,
+        "prefecture_areas": 39,
+        "prefecture_boundaries": 39,
+        "province_areas": 15,
+        "province_boundaries": 15,
+        "state_seats": 15,
+        "prefecture_seats": 121,
+        "county_seats": 464
+      },
+      "complete_chgis_state_ids": [],
+      "main_text_counts": {
+        "states_in_text": 17,
+        "prefectures_in_text": 148,
+        "counties_in_text": 845
+      },
+      "coverage": {
+        "year": 427,
+        "basemap_year": 464,
+        "states_in_text": 17,
+        "prefectures_in_text": 148,
+        "counties_in_text": 845,
+        "state_areas": 14,
+        "shared_state_areas": 1,
+        "prefecture_areas": 39,
+        "chgis_prefecture_areas": 39,
+        "complete_chgis_state_ids": [],
+        "state_seats": 15,
+        "prefecture_seats": 121,
+        "county_seats": 464,
+        "unassigned_points": 0,
+        "qiao_points": 9,
+        "control_interior_holes": 0,
+        "unassigned_control_area_degrees2": 9.885e-05,
+        "atlas497_points_used": 0,
+        "new_prefecture_boundaries_fitted": 0,
+        "western_jin_data_used": false
+      },
+      "unlocated_count": 684,
+      "missing_prefecture_area_count": 109,
+      "point_checks": {
+        "chgis_county_original_coordinate_checks": 464
+      }
+    },
+    {
+      "year": 428,
+      "basemap_year": 464,
+      "layers": {
+        "regime_areas": 1,
+        "regime_boundaries": 1,
+        "prefecture_areas": 39,
+        "prefecture_boundaries": 39,
+        "province_areas": 15,
+        "province_boundaries": 15,
+        "state_seats": 15,
+        "prefecture_seats": 121,
+        "county_seats": 464
+      },
+      "complete_chgis_state_ids": [],
+      "main_text_counts": {
+        "states_in_text": 17,
+        "prefectures_in_text": 148,
+        "counties_in_text": 845
+      },
+      "coverage": {
+        "year": 428,
+        "basemap_year": 464,
+        "states_in_text": 17,
+        "prefectures_in_text": 148,
+        "counties_in_text": 845,
+        "state_areas": 14,
+        "shared_state_areas": 1,
+        "prefecture_areas": 39,
+        "chgis_prefecture_areas": 39,
+        "complete_chgis_state_ids": [],
+        "state_seats": 15,
+        "prefecture_seats": 121,
+        "county_seats": 464,
+        "unassigned_points": 0,
+        "qiao_points": 9,
+        "control_interior_holes": 0,
+        "unassigned_control_area_degrees2": 9.885e-05,
+        "atlas497_points_used": 0,
+        "new_prefecture_boundaries_fitted": 0,
+        "western_jin_data_used": false
+      },
+      "unlocated_count": 684,
+      "missing_prefecture_area_count": 109,
+      "point_checks": {
+        "chgis_county_original_coordinate_checks": 464
+      }
+    },
+    {
+      "year": 429,
+      "basemap_year": 464,
+      "layers": {
+        "regime_areas": 1,
+        "regime_boundaries": 1,
+        "prefecture_areas": 39,
+        "prefecture_boundaries": 39,
+        "province_areas": 15,
+        "province_boundaries": 15,
+        "state_seats": 15,
+        "prefecture_seats": 121,
+        "county_seats": 464
+      },
+      "complete_chgis_state_ids": [],
+      "main_text_counts": {
+        "states_in_text": 17,
+        "prefectures_in_text": 150,
+        "counties_in_text": 846
+      },
+      "coverage": {
+        "year": 429,
+        "basemap_year": 464,
+        "states_in_text": 17,
+        "prefectures_in_text": 150,
+        "counties_in_text": 846,
+        "state_areas": 14,
+        "shared_state_areas": 1,
+        "prefecture_areas": 39,
+        "chgis_prefecture_areas": 39,
+        "complete_chgis_state_ids": [],
+        "state_seats": 15,
+        "prefecture_seats": 121,
+        "county_seats": 464,
+        "unassigned_points": 0,
+        "qiao_points": 9,
+        "control_interior_holes": 0,
+        "unassigned_control_area_degrees2": 9.885e-05,
+        "atlas497_points_used": 0,
+        "new_prefecture_boundaries_fitted": 0,
+        "western_jin_data_used": false
+      },
+      "unlocated_count": 687,
+      "missing_prefecture_area_count": 110,
+      "point_checks": {
+        "chgis_county_original_coordinate_checks": 464
+      }
+    },
+    {
+      "year": 430,
+      "basemap_year": 464,
+      "layers": {
+        "regime_areas": 1,
+        "regime_boundaries": 1,
+        "prefecture_areas": 39,
+        "prefecture_boundaries": 39,
+        "province_areas": 15,
+        "province_boundaries": 15,
+        "state_seats": 16,
+        "prefecture_seats": 126,
+        "county_seats": 480
+      },
+      "complete_chgis_state_ids": [],
+      "main_text_counts": {
+        "states_in_text": 17,
+        "prefectures_in_text": 153,
+        "counties_in_text": 868
+      },
+      "coverage": {
+        "year": 430,
+        "basemap_year": 464,
+        "states_in_text": 17,
+        "prefectures_in_text": 153,
+        "counties_in_text": 868,
+        "state_areas": 14,
+        "shared_state_areas": 1,
+        "prefecture_areas": 39,
+        "chgis_prefecture_areas": 39,
+        "complete_chgis_state_ids": [],
+        "state_seats": 16,
+        "prefecture_seats": 126,
+        "county_seats": 480,
+        "unassigned_points": 0,
+        "qiao_points": 9,
+        "control_interior_holes": 0,
+        "unassigned_control_area_degrees2": 9.885e-05,
+        "atlas497_points_used": 0,
+        "new_prefecture_boundaries_fitted": 0,
+        "western_jin_data_used": false
+      },
+      "unlocated_count": 694,
+      "missing_prefecture_area_count": 114,
+      "point_checks": {
+        "chgis_county_original_coordinate_checks": 480
+      }
+    },
+    {
+      "year": 431,
+      "basemap_year": 464,
+      "layers": {
+        "regime_areas": 1,
+        "regime_boundaries": 1,
+        "prefecture_areas": 40,
+        "prefecture_boundaries": 40,
+        "province_areas": 16,
+        "province_boundaries": 16,
+        "state_seats": 16,
+        "prefecture_seats": 127,
+        "county_seats": 481
+      },
+      "complete_chgis_state_ids": [],
+      "main_text_counts": {
+        "states_in_text": 17,
+        "prefectures_in_text": 154,
+        "counties_in_text": 871
+      },
+      "coverage": {
+        "year": 431,
+        "basemap_year": 464,
+        "states_in_text": 17,
+        "prefectures_in_text": 154,
+        "counties_in_text": 871,
+        "state_areas": 15,
+        "shared_state_areas": 1,
+        "prefecture_areas": 40,
+        "chgis_prefecture_areas": 40,
+        "complete_chgis_state_ids": [],
+        "state_seats": 16,
+        "prefecture_seats": 127,
+        "county_seats": 481,
+        "unassigned_points": 0,
+        "qiao_points": 12,
+        "control_interior_holes": 0,
+        "unassigned_control_area_degrees2": 9.885e-05,
+        "atlas497_points_used": 0,
+        "new_prefecture_boundaries_fitted": 0,
+        "western_jin_data_used": false
+      },
+      "unlocated_count": 693,
+      "missing_prefecture_area_count": 114,
+      "point_checks": {
+        "chgis_county_original_coordinate_checks": 481
+      }
+    },
+    {
+      "year": 432,
+      "basemap_year": 464,
+      "layers": {
+        "regime_areas": 1,
+        "regime_boundaries": 1,
+        "prefecture_areas": 41,
+        "prefecture_boundaries": 41,
+        "province_areas": 15,
+        "province_boundaries": 15,
+        "state_seats": 15,
+        "prefecture_seats": 128,
+        "county_seats": 481
+      },
+      "complete_chgis_state_ids": [],
+      "main_text_counts": {
+        "states_in_text": 16,
+        "prefectures_in_text": 155,
+        "counties_in_text": 876
+      },
+      "coverage": {
+        "year": 432,
+        "basemap_year": 464,
+        "states_in_text": 16,
+        "prefectures_in_text": 155,
+        "counties_in_text": 876,
+        "state_areas": 14,
+        "shared_state_areas": 1,
+        "prefecture_areas": 41,
+        "chgis_prefecture_areas": 41,
+        "complete_chgis_state_ids": [],
+        "state_seats": 15,
+        "prefecture_seats": 128,
+        "county_seats": 481,
+        "unassigned_points": 0,
+        "qiao_points": 12,
+        "control_interior_holes": 0,
+        "unassigned_control_area_degrees2": 9.884e-05,
+        "atlas497_points_used": 0,
+        "new_prefecture_boundaries_fitted": 0,
+        "western_jin_data_used": false
+      },
+      "unlocated_count": 698,
+      "missing_prefecture_area_count": 114,
+      "point_checks": {
+        "chgis_county_original_coordinate_checks": 481
+      }
+    },
+    {
+      "year": 433,
+      "basemap_year": 464,
+      "layers": {
+        "regime_areas": 1,
+        "regime_boundaries": 1,
+        "prefecture_areas": 41,
+        "prefecture_boundaries": 41,
+        "province_areas": 15,
+        "province_boundaries": 15,
+        "state_seats": 15,
+        "prefecture_seats": 128,
+        "county_seats": 481
+      },
+      "complete_chgis_state_ids": [],
+      "main_text_counts": {
+        "states_in_text": 16,
+        "prefectures_in_text": 158,
+        "counties_in_text": 882
+      },
+      "coverage": {
+        "year": 433,
+        "basemap_year": 464,
+        "states_in_text": 16,
+        "prefectures_in_text": 158,
+        "counties_in_text": 882,
+        "state_areas": 14,
+        "shared_state_areas": 1,
+        "prefecture_areas": 41,
+        "chgis_prefecture_areas": 41,
+        "complete_chgis_state_ids": [],
+        "state_seats": 15,
+        "prefecture_seats": 128,
+        "county_seats": 481,
+        "unassigned_points": 0,
+        "qiao_points": 12,
+        "control_interior_holes": 0,
+        "unassigned_control_area_degrees2": 9.884e-05,
+        "atlas497_points_used": 0,
+        "new_prefecture_boundaries_fitted": 0,
+        "western_jin_data_used": false
+      },
+      "unlocated_count": 708,
+      "missing_prefecture_area_count": 117,
+      "point_checks": {
+        "chgis_county_original_coordinate_checks": 481
+      }
+    },
+    {
+      "year": 434,
+      "basemap_year": 464,
+      "layers": {
+        "regime_areas": 1,
+        "regime_boundaries": 1,
+        "prefecture_areas": 41,
+        "prefecture_boundaries": 41,
+        "province_areas": 15,
+        "province_boundaries": 15,
+        "state_seats": 15,
+        "prefecture_seats": 129,
+        "county_seats": 483
+      },
+      "complete_chgis_state_ids": [],
+      "main_text_counts": {
+        "states_in_text": 16,
+        "prefectures_in_text": 155,
+        "counties_in_text": 876
+      },
+      "coverage": {
+        "year": 434,
+        "basemap_year": 464,
+        "states_in_text": 16,
+        "prefectures_in_text": 155,
+        "counties_in_text": 876,
+        "state_areas": 14,
+        "shared_state_areas": 1,
+        "prefecture_areas": 41,
+        "chgis_prefecture_areas": 41,
+        "complete_chgis_state_ids": [],
+        "state_seats": 15,
+        "prefecture_seats": 129,
+        "county_seats": 483,
+        "unassigned_points": 0,
+        "qiao_points": 12,
+        "control_interior_holes": 0,
+        "unassigned_control_area_degrees2": 9.884e-05,
+        "atlas497_points_used": 0,
+        "new_prefecture_boundaries_fitted": 0,
+        "western_jin_data_used": false
+      },
+      "unlocated_count": 691,
+      "missing_prefecture_area_count": 114,
+      "point_checks": {
+        "chgis_county_original_coordinate_checks": 483
+      }
+    },
+    {
+      "year": 435,
+      "basemap_year": 464,
+      "layers": {
+        "regime_areas": 1,
+        "regime_boundaries": 1,
+        "prefecture_areas": 41,
+        "prefecture_boundaries": 41,
+        "province_areas": 15,
+        "province_boundaries": 15,
+        "state_seats": 15,
+        "prefecture_seats": 130,
+        "county_seats": 487
+      },
+      "complete_chgis_state_ids": [],
+      "main_text_counts": {
+        "states_in_text": 16,
+        "prefectures_in_text": 157,
+        "counties_in_text": 886
+      },
+      "coverage": {
+        "year": 435,
+        "basemap_year": 464,
+        "states_in_text": 16,
+        "prefectures_in_text": 157,
+        "counties_in_text": 886,
+        "state_areas": 14,
+        "shared_state_areas": 1,
+        "prefecture_areas": 41,
+        "chgis_prefecture_areas": 41,
+        "complete_chgis_state_ids": [],
+        "state_seats": 15,
+        "prefecture_seats": 130,
+        "county_seats": 487,
+        "unassigned_points": 0,
+        "qiao_points": 14,
+        "control_interior_holes": 0,
+        "unassigned_control_area_degrees2": 9.884e-05,
+        "atlas497_points_used": 0,
+        "new_prefecture_boundaries_fitted": 0,
+        "western_jin_data_used": false
+      },
+      "unlocated_count": 695,
+      "missing_prefecture_area_count": 116,
+      "point_checks": {
+        "chgis_county_original_coordinate_checks": 487
+      }
+    },
+    {
+      "year": 436,
+      "basemap_year": 464,
+      "layers": {
+        "regime_areas": 1,
+        "regime_boundaries": 1,
+        "prefecture_areas": 42,
+        "prefecture_boundaries": 42,
+        "province_areas": 15,
+        "province_boundaries": 15,
+        "state_seats": 15,
+        "prefecture_seats": 130,
+        "county_seats": 492
+      },
+      "complete_chgis_state_ids": [],
+      "main_text_counts": {
+        "states_in_text": 16,
+        "prefectures_in_text": 156,
+        "counties_in_text": 884
+      },
+      "coverage": {
+        "year": 436,
+        "basemap_year": 464,
+        "states_in_text": 16,
+        "prefectures_in_text": 156,
+        "counties_in_text": 884,
+        "state_areas": 14,
+        "shared_state_areas": 1,
+        "prefecture_areas": 42,
+        "chgis_prefecture_areas": 42,
+        "complete_chgis_state_ids": [],
+        "state_seats": 15,
+        "prefecture_seats": 130,
+        "county_seats": 492,
+        "unassigned_points": 0,
+        "qiao_points": 12,
+        "control_interior_holes": 0,
+        "unassigned_control_area_degrees2": 9.884e-05,
+        "atlas497_points_used": 0,
+        "new_prefecture_boundaries_fitted": 0,
+        "western_jin_data_used": false
+      },
+      "unlocated_count": 698,
+      "missing_prefecture_area_count": 114,
+      "point_checks": {
+        "chgis_county_original_coordinate_checks": 492
+      }
+    },
+    {
+      "year": 437,
+      "basemap_year": 464,
+      "layers": {
+        "regime_areas": 1,
+        "regime_boundaries": 1,
+        "prefecture_areas": 42,
+        "prefecture_boundaries": 42,
+        "province_areas": 15,
+        "province_boundaries": 15,
+        "state_seats": 15,
+        "prefecture_seats": 130,
+        "county_seats": 492
+      },
+      "complete_chgis_state_ids": [],
+      "main_text_counts": {
+        "states_in_text": 16,
+        "prefectures_in_text": 156,
+        "counties_in_text": 884
+      },
+      "coverage": {
+        "year": 437,
+        "basemap_year": 464,
+        "states_in_text": 16,
+        "prefectures_in_text": 156,
+        "counties_in_text": 884,
+        "state_areas": 14,
+        "shared_state_areas": 1,
+        "prefecture_areas": 42,
+        "chgis_prefecture_areas": 42,
+        "complete_chgis_state_ids": [],
+        "state_seats": 15,
+        "prefecture_seats": 130,
+        "county_seats": 492,
+        "unassigned_points": 0,
+        "qiao_points": 12,
+        "control_interior_holes": 0,
+        "unassigned_control_area_degrees2": 9.884e-05,
+        "atlas497_points_used": 0,
+        "new_prefecture_boundaries_fitted": 0,
+        "western_jin_data_used": false
+      },
+      "unlocated_count": 698,
+      "missing_prefecture_area_count": 114,
+      "point_checks": {
+        "chgis_county_original_coordinate_checks": 492
+      }
+    },
+    {
+      "year": 438,
+      "basemap_year": 464,
+      "layers": {
+        "regime_areas": 1,
+        "regime_boundaries": 1,
+        "prefecture_areas": 42,
+        "prefecture_boundaries": 42,
+        "province_areas": 15,
+        "province_boundaries": 15,
+        "state_seats": 15,
+        "prefecture_seats": 130,
+        "county_seats": 491
+      },
+      "complete_chgis_state_ids": [],
+      "main_text_counts": {
+        "states_in_text": 16,
+        "prefectures_in_text": 156,
+        "counties_in_text": 883
+      },
+      "coverage": {
+        "year": 438,
+        "basemap_year": 464,
+        "states_in_text": 16,
+        "prefectures_in_text": 156,
+        "counties_in_text": 883,
+        "state_areas": 14,
+        "shared_state_areas": 1,
+        "prefecture_areas": 42,
+        "chgis_prefecture_areas": 42,
+        "complete_chgis_state_ids": [],
+        "state_seats": 15,
+        "prefecture_seats": 130,
+        "county_seats": 491,
+        "unassigned_points": 0,
+        "qiao_points": 12,
+        "control_interior_holes": 0,
+        "unassigned_control_area_degrees2": 9.884e-05,
+        "atlas497_points_used": 0,
+        "new_prefecture_boundaries_fitted": 0,
+        "western_jin_data_used": false
+      },
+      "unlocated_count": 698,
+      "missing_prefecture_area_count": 114,
+      "point_checks": {
+        "chgis_county_original_coordinate_checks": 491
+      }
+    },
+    {
+      "year": 439,
+      "basemap_year": 464,
+      "layers": {
+        "regime_areas": 1,
+        "regime_boundaries": 1,
+        "prefecture_areas": 43,
+        "prefecture_boundaries": 43,
+        "province_areas": 17,
+        "province_boundaries": 17,
+        "state_seats": 16,
+        "prefecture_seats": 132,
+        "county_seats": 493
+      },
+      "complete_chgis_state_ids": [],
+      "main_text_counts": {
+        "states_in_text": 18,
+        "prefectures_in_text": 158,
+        "counties_in_text": 887
+      },
+      "coverage": {
+        "year": 439,
+        "basemap_year": 464,
+        "states_in_text": 18,
+        "prefectures_in_text": 158,
+        "counties_in_text": 887,
+        "state_areas": 16,
+        "shared_state_areas": 1,
+        "prefecture_areas": 43,
+        "chgis_prefecture_areas": 43,
+        "complete_chgis_state_ids": [],
+        "state_seats": 16,
+        "prefecture_seats": 132,
+        "county_seats": 493,
+        "unassigned_points": 0,
+        "qiao_points": 12,
+        "control_interior_holes": 0,
+        "unassigned_control_area_degrees2": 9.885e-05,
+        "atlas497_points_used": 0,
+        "new_prefecture_boundaries_fitted": 0,
+        "western_jin_data_used": false
+      },
+      "unlocated_count": 701,
+      "missing_prefecture_area_count": 115,
+      "point_checks": {
+        "chgis_county_original_coordinate_checks": 493
+      }
+    },
+    {
+      "year": 440,
+      "basemap_year": 464,
+      "layers": {
+        "regime_areas": 1,
+        "regime_boundaries": 1,
+        "prefecture_areas": 43,
+        "prefecture_boundaries": 43,
+        "province_areas": 17,
+        "province_boundaries": 17,
+        "state_seats": 16,
+        "prefecture_seats": 132,
+        "county_seats": 493
+      },
+      "complete_chgis_state_ids": [],
+      "main_text_counts": {
+        "states_in_text": 18,
+        "prefectures_in_text": 158,
+        "counties_in_text": 887
+      },
+      "coverage": {
+        "year": 440,
+        "basemap_year": 464,
+        "states_in_text": 18,
+        "prefectures_in_text": 158,
+        "counties_in_text": 887,
+        "state_areas": 16,
+        "shared_state_areas": 1,
+        "prefecture_areas": 43,
+        "chgis_prefecture_areas": 43,
+        "complete_chgis_state_ids": [],
+        "state_seats": 16,
+        "prefecture_seats": 132,
+        "county_seats": 493,
+        "unassigned_points": 0,
+        "qiao_points": 12,
+        "control_interior_holes": 0,
+        "unassigned_control_area_degrees2": 9.885e-05,
+        "atlas497_points_used": 0,
+        "new_prefecture_boundaries_fitted": 0,
+        "western_jin_data_used": false
+      },
+      "unlocated_count": 701,
+      "missing_prefecture_area_count": 115,
+      "point_checks": {
+        "chgis_county_original_coordinate_checks": 493
+      }
+    },
+    {
+      "year": 441,
+      "basemap_year": 464,
+      "layers": {
+        "regime_areas": 1,
+        "regime_boundaries": 1,
+        "prefecture_areas": 44,
+        "prefecture_boundaries": 44,
+        "province_areas": 17,
+        "province_boundaries": 17,
+        "state_seats": 16,
+        "prefecture_seats": 133,
+        "county_seats": 492
+      },
+      "complete_chgis_state_ids": [],
+      "main_text_counts": {
+        "states_in_text": 18,
+        "prefectures_in_text": 159,
+        "counties_in_text": 890
+      },
+      "coverage": {
+        "year": 441,
+        "basemap_year": 464,
+        "states_in_text": 18,
+        "prefectures_in_text": 159,
+        "counties_in_text": 890,
+        "state_areas": 16,
+        "shared_state_areas": 1,
+        "prefecture_areas": 44,
+        "chgis_prefecture_areas": 44,
+        "complete_chgis_state_ids": [],
+        "state_seats": 16,
+        "prefecture_seats": 133,
+        "county_seats": 492,
+        "unassigned_points": 0,
+        "qiao_points": 12,
+        "control_interior_holes": 0,
+        "unassigned_control_area_degrees2": 9.885e-05,
+        "atlas497_points_used": 0,
+        "new_prefecture_boundaries_fitted": 0,
+        "western_jin_data_used": false
+      },
+      "unlocated_count": 695,
+      "missing_prefecture_area_count": 115,
+      "point_checks": {
+        "chgis_county_original_coordinate_checks": 492
+      }
+    },
+    {
+      "year": 442,
+      "basemap_year": 464,
+      "layers": {
+        "regime_areas": 1,
+        "regime_boundaries": 1,
+        "prefecture_areas": 44,
+        "prefecture_boundaries": 44,
+        "province_areas": 17,
+        "province_boundaries": 17,
+        "state_seats": 16,
+        "prefecture_seats": 133,
+        "county_seats": 493
+      },
+      "complete_chgis_state_ids": [],
+      "main_text_counts": {
+        "states_in_text": 18,
+        "prefectures_in_text": 159,
+        "counties_in_text": 888
+      },
+      "coverage": {
+        "year": 442,
+        "basemap_year": 464,
+        "states_in_text": 18,
+        "prefectures_in_text": 159,
+        "counties_in_text": 888,
+        "state_areas": 16,
+        "shared_state_areas": 1,
+        "prefecture_areas": 44,
+        "chgis_prefecture_areas": 44,
+        "complete_chgis_state_ids": [],
+        "state_seats": 16,
+        "prefecture_seats": 133,
+        "county_seats": 493,
+        "unassigned_points": 0,
+        "qiao_points": 12,
+        "control_interior_holes": 0,
+        "unassigned_control_area_degrees2": 9.885e-05,
+        "atlas497_points_used": 0,
+        "new_prefecture_boundaries_fitted": 0,
+        "western_jin_data_used": false
+      },
+      "unlocated_count": 688,
+      "missing_prefecture_area_count": 115,
+      "point_checks": {
+        "chgis_county_original_coordinate_checks": 493
+      }
+    },
+    {
+      "year": 443,
+      "basemap_year": 464,
+      "layers": {
+        "regime_areas": 1,
+        "regime_boundaries": 1,
+        "prefecture_areas": 44,
+        "prefecture_boundaries": 44,
+        "province_areas": 17,
+        "province_boundaries": 17,
+        "state_seats": 16,
+        "prefecture_seats": 139,
+        "county_seats": 506
+      },
+      "complete_chgis_state_ids": [],
+      "main_text_counts": {
+        "states_in_text": 18,
+        "prefectures_in_text": 184,
+        "counties_in_text": 976
+      },
+      "coverage": {
+        "year": 443,
+        "basemap_year": 464,
+        "states_in_text": 18,
+        "prefectures_in_text": 184,
+        "counties_in_text": 976,
+        "state_areas": 16,
+        "shared_state_areas": 1,
+        "prefecture_areas": 44,
+        "chgis_prefecture_areas": 44,
+        "complete_chgis_state_ids": [],
+        "state_seats": 16,
+        "prefecture_seats": 139,
+        "county_seats": 506,
+        "unassigned_points": 0,
+        "qiao_points": 18,
+        "control_interior_holes": 0,
+        "unassigned_control_area_degrees2": 9.885e-05,
+        "atlas497_points_used": 0,
+        "new_prefecture_boundaries_fitted": 0,
+        "western_jin_data_used": false
+      },
+      "unlocated_count": 743,
+      "missing_prefecture_area_count": 137,
+      "point_checks": {
+        "chgis_county_original_coordinate_checks": 506
+      }
+    },
+    {
+      "year": 444,
+      "basemap_year": 464,
+      "layers": {
+        "regime_areas": 1,
+        "regime_boundaries": 1,
+        "prefecture_areas": 44,
+        "prefecture_boundaries": 44,
+        "province_areas": 17,
+        "province_boundaries": 17,
+        "state_seats": 16,
+        "prefecture_seats": 135,
+        "county_seats": 503
+      },
+      "complete_chgis_state_ids": [],
+      "main_text_counts": {
+        "states_in_text": 18,
+        "prefectures_in_text": 163,
+        "counties_in_text": 910
+      },
+      "coverage": {
+        "year": 444,
+        "basemap_year": 464,
+        "states_in_text": 18,
+        "prefectures_in_text": 163,
+        "counties_in_text": 910,
+        "state_areas": 16,
+        "shared_state_areas": 1,
+        "prefecture_areas": 44,
+        "chgis_prefecture_areas": 44,
+        "complete_chgis_state_ids": [],
+        "state_seats": 16,
+        "prefecture_seats": 135,
+        "county_seats": 503,
+        "unassigned_points": 0,
+        "qiao_points": 12,
+        "control_interior_holes": 0,
+        "unassigned_control_area_degrees2": 9.885e-05,
+        "atlas497_points_used": 0,
+        "new_prefecture_boundaries_fitted": 0,
+        "western_jin_data_used": false
+      },
+      "unlocated_count": 748,
+      "missing_prefecture_area_count": 119,
+      "point_checks": {
+        "chgis_county_original_coordinate_checks": 503
+      }
+    },
+    {
+      "year": 445,
+      "basemap_year": 464,
+      "layers": {
+        "regime_areas": 1,
+        "regime_boundaries": 1,
+        "prefecture_areas": 44,
+        "prefecture_boundaries": 44,
+        "province_areas": 16,
+        "province_boundaries": 16,
+        "state_seats": 16,
+        "prefecture_seats": 135,
+        "county_seats": 504
+      },
+      "complete_chgis_state_ids": [],
+      "main_text_counts": {
+        "states_in_text": 17,
+        "prefectures_in_text": 163,
+        "counties_in_text": 910
+      },
+      "coverage": {
+        "year": 445,
+        "basemap_year": 464,
+        "states_in_text": 17,
+        "prefectures_in_text": 163,
+        "counties_in_text": 910,
+        "state_areas": 15,
+        "shared_state_areas": 1,
+        "prefecture_areas": 44,
+        "chgis_prefecture_areas": 44,
+        "complete_chgis_state_ids": [],
+        "state_seats": 16,
+        "prefecture_seats": 135,
+        "county_seats": 504,
+        "unassigned_points": 0,
+        "qiao_points": 12,
+        "control_interior_holes": 0,
+        "unassigned_control_area_degrees2": 9.885e-05,
+        "atlas497_points_used": 0,
+        "new_prefecture_boundaries_fitted": 0,
+        "western_jin_data_used": false
+      },
+      "unlocated_count": 746,
+      "missing_prefecture_area_count": 119,
+      "point_checks": {
+        "chgis_county_original_coordinate_checks": 504
+      }
+    },
+    {
+      "year": 446,
+      "basemap_year": 464,
+      "layers": {
+        "regime_areas": 1,
+        "regime_boundaries": 1,
+        "prefecture_areas": 44,
+        "prefecture_boundaries": 44,
+        "province_areas": 16,
+        "province_boundaries": 16,
+        "state_seats": 16,
+        "prefecture_seats": 135,
+        "county_seats": 503
+      },
+      "complete_chgis_state_ids": [],
+      "main_text_counts": {
+        "states_in_text": 17,
+        "prefectures_in_text": 163,
+        "counties_in_text": 910
+      },
+      "coverage": {
+        "year": 446,
+        "basemap_year": 464,
+        "states_in_text": 17,
+        "prefectures_in_text": 163,
+        "counties_in_text": 910,
+        "state_areas": 15,
+        "shared_state_areas": 1,
+        "prefecture_areas": 44,
+        "chgis_prefecture_areas": 44,
+        "complete_chgis_state_ids": [],
+        "state_seats": 16,
+        "prefecture_seats": 135,
+        "county_seats": 503,
+        "unassigned_points": 0,
+        "qiao_points": 12,
+        "control_interior_holes": 0,
+        "unassigned_control_area_degrees2": 9.885e-05,
+        "atlas497_points_used": 0,
+        "new_prefecture_boundaries_fitted": 0,
+        "western_jin_data_used": false
+      },
+      "unlocated_count": 747,
+      "missing_prefecture_area_count": 119,
+      "point_checks": {
+        "chgis_county_original_coordinate_checks": 503
+      }
+    },
+    {
+      "year": 447,
+      "basemap_year": 464,
+      "layers": {
+        "regime_areas": 1,
+        "regime_boundaries": 1,
+        "prefecture_areas": 44,
+        "prefecture_boundaries": 44,
+        "province_areas": 16,
+        "province_boundaries": 16,
+        "state_seats": 16,
+        "prefecture_seats": 135,
+        "county_seats": 503
+      },
+      "complete_chgis_state_ids": [],
+      "main_text_counts": {
+        "states_in_text": 17,
+        "prefectures_in_text": 163,
+        "counties_in_text": 910
+      },
+      "coverage": {
+        "year": 447,
+        "basemap_year": 464,
+        "states_in_text": 17,
+        "prefectures_in_text": 163,
+        "counties_in_text": 910,
+        "state_areas": 15,
+        "shared_state_areas": 1,
+        "prefecture_areas": 44,
+        "chgis_prefecture_areas": 44,
+        "complete_chgis_state_ids": [],
+        "state_seats": 16,
+        "prefecture_seats": 135,
+        "county_seats": 503,
+        "unassigned_points": 0,
+        "qiao_points": 12,
+        "control_interior_holes": 0,
+        "unassigned_control_area_degrees2": 9.885e-05,
+        "atlas497_points_used": 0,
+        "new_prefecture_boundaries_fitted": 0,
+        "western_jin_data_used": false
+      },
+      "unlocated_count": 747,
+      "missing_prefecture_area_count": 119,
+      "point_checks": {
+        "chgis_county_original_coordinate_checks": 503
+      }
+    },
+    {
+      "year": 448,
+      "basemap_year": 464,
+      "layers": {
+        "regime_areas": 1,
+        "regime_boundaries": 1,
+        "prefecture_areas": 44,
+        "prefecture_boundaries": 44,
+        "province_areas": 16,
+        "province_boundaries": 16,
+        "state_seats": 16,
+        "prefecture_seats": 135,
+        "county_seats": 508
+      },
+      "complete_chgis_state_ids": [],
+      "main_text_counts": {
+        "states_in_text": 17,
+        "prefectures_in_text": 163,
+        "counties_in_text": 925
+      },
+      "coverage": {
+        "year": 448,
+        "basemap_year": 464,
+        "states_in_text": 17,
+        "prefectures_in_text": 163,
+        "counties_in_text": 925,
+        "state_areas": 15,
+        "shared_state_areas": 1,
+        "prefecture_areas": 44,
+        "chgis_prefecture_areas": 44,
+        "complete_chgis_state_ids": [],
+        "state_seats": 16,
+        "prefecture_seats": 135,
+        "county_seats": 508,
+        "unassigned_points": 0,
+        "qiao_points": 13,
+        "control_interior_holes": 0,
+        "unassigned_control_area_degrees2": 9.885e-05,
+        "atlas497_points_used": 0,
+        "new_prefecture_boundaries_fitted": 0,
+        "western_jin_data_used": false
+      },
+      "unlocated_count": 757,
+      "missing_prefecture_area_count": 119,
+      "point_checks": {
+        "chgis_county_original_coordinate_checks": 508
+      }
+    },
+    {
+      "year": 449,
+      "basemap_year": 464,
+      "layers": {
+        "regime_areas": 1,
+        "regime_boundaries": 1,
+        "prefecture_areas": 44,
+        "prefecture_boundaries": 44,
+        "province_areas": 17,
+        "province_boundaries": 17,
+        "state_seats": 16,
+        "prefecture_seats": 136,
+        "county_seats": 510
+      },
+      "complete_chgis_state_ids": [],
+      "main_text_counts": {
+        "states_in_text": 17,
+        "prefectures_in_text": 163,
+        "counties_in_text": 925
+      },
+      "coverage": {
+        "year": 449,
+        "basemap_year": 464,
+        "states_in_text": 17,
+        "prefectures_in_text": 163,
+        "counties_in_text": 925,
+        "state_areas": 16,
+        "shared_state_areas": 1,
+        "prefecture_areas": 44,
+        "chgis_prefecture_areas": 44,
+        "complete_chgis_state_ids": [],
+        "state_seats": 16,
+        "prefecture_seats": 136,
+        "county_seats": 510,
+        "unassigned_points": 0,
+        "qiao_points": 13,
+        "control_interior_holes": 0,
+        "unassigned_control_area_degrees2": 9.884e-05,
+        "atlas497_points_used": 0,
+        "new_prefecture_boundaries_fitted": 0,
+        "western_jin_data_used": false
+      },
+      "unlocated_count": 754,
+      "missing_prefecture_area_count": 119,
+      "point_checks": {
+        "chgis_county_original_coordinate_checks": 510
+      }
+    },
+    {
+      "year": 450,
+      "basemap_year": 464,
+      "layers": {
+        "regime_areas": 1,
+        "regime_boundaries": 1,
+        "prefecture_areas": 44,
+        "prefecture_boundaries": 44,
+        "province_areas": 17,
+        "province_boundaries": 17,
+        "state_seats": 16,
+        "prefecture_seats": 136,
+        "county_seats": 510
+      },
+      "complete_chgis_state_ids": [],
+      "main_text_counts": {
+        "states_in_text": 17,
+        "prefectures_in_text": 163,
+        "counties_in_text": 925
+      },
+      "coverage": {
+        "year": 450,
+        "basemap_year": 464,
+        "states_in_text": 17,
+        "prefectures_in_text": 163,
+        "counties_in_text": 925,
+        "state_areas": 16,
+        "shared_state_areas": 1,
+        "prefecture_areas": 44,
+        "chgis_prefecture_areas": 44,
+        "complete_chgis_state_ids": [],
+        "state_seats": 16,
+        "prefecture_seats": 136,
+        "county_seats": 510,
+        "unassigned_points": 0,
+        "qiao_points": 13,
+        "control_interior_holes": 0,
+        "unassigned_control_area_degrees2": 9.884e-05,
+        "atlas497_points_used": 0,
+        "new_prefecture_boundaries_fitted": 0,
+        "western_jin_data_used": false
+      },
+      "unlocated_count": 754,
+      "missing_prefecture_area_count": 119,
+      "point_checks": {
+        "chgis_county_original_coordinate_checks": 510
+      }
+    },
+    {
+      "year": 451,
+      "basemap_year": 464,
+      "layers": {
+        "regime_areas": 1,
+        "regime_boundaries": 1,
+        "prefecture_areas": 44,
+        "prefecture_boundaries": 44,
+        "province_areas": 17,
+        "province_boundaries": 17,
+        "state_seats": 16,
+        "prefecture_seats": 136,
+        "county_seats": 509
+      },
+      "complete_chgis_state_ids": [],
+      "main_text_counts": {
+        "states_in_text": 17,
+        "prefectures_in_text": 163,
+        "counties_in_text": 925
+      },
+      "coverage": {
+        "year": 451,
+        "basemap_year": 464,
+        "states_in_text": 17,
+        "prefectures_in_text": 163,
+        "counties_in_text": 925,
+        "state_areas": 16,
+        "shared_state_areas": 1,
+        "prefecture_areas": 44,
+        "chgis_prefecture_areas": 44,
+        "complete_chgis_state_ids": [],
+        "state_seats": 16,
+        "prefecture_seats": 136,
+        "county_seats": 509,
+        "unassigned_points": 0,
+        "qiao_points": 13,
+        "control_interior_holes": 0,
+        "unassigned_control_area_degrees2": 9.884e-05,
+        "atlas497_points_used": 0,
+        "new_prefecture_boundaries_fitted": 0,
+        "western_jin_data_used": false
+      },
+      "unlocated_count": 755,
+      "missing_prefecture_area_count": 119,
+      "point_checks": {
+        "chgis_county_original_coordinate_checks": 509
+      }
+    },
+    {
+      "year": 452,
+      "basemap_year": 464,
+      "layers": {
+        "regime_areas": 1,
+        "regime_boundaries": 1,
+        "prefecture_areas": 44,
+        "prefecture_boundaries": 44,
+        "province_areas": 16,
+        "province_boundaries": 16,
+        "state_seats": 15,
+        "prefecture_seats": 134,
+        "county_seats": 496
+      },
+      "complete_chgis_state_ids": [],
+      "main_text_counts": {
+        "states_in_text": 16,
+        "prefectures_in_text": 161,
+        "counties_in_text": 911
+      },
+      "coverage": {
+        "year": 452,
+        "basemap_year": 464,
+        "states_in_text": 16,
+        "prefectures_in_text": 161,
+        "counties_in_text": 911,
+        "state_areas": 15,
+        "shared_state_areas": 1,
+        "prefecture_areas": 44,
+        "chgis_prefecture_areas": 44,
+        "complete_chgis_state_ids": [],
+        "state_seats": 15,
+        "prefecture_seats": 134,
+        "county_seats": 496,
+        "unassigned_points": 0,
+        "qiao_points": 13,
+        "control_interior_holes": 0,
+        "unassigned_control_area_degrees2": 9.884e-05,
+        "atlas497_points_used": 0,
+        "new_prefecture_boundaries_fitted": 0,
+        "western_jin_data_used": false
+      },
+      "unlocated_count": 754,
+      "missing_prefecture_area_count": 117,
+      "point_checks": {
+        "chgis_county_original_coordinate_checks": 496
+      }
+    },
+    {
+      "year": 453,
+      "basemap_year": 464,
+      "layers": {
+        "regime_areas": 1,
+        "regime_boundaries": 1,
+        "prefecture_areas": 45,
+        "prefecture_boundaries": 45,
+        "province_areas": 16,
+        "province_boundaries": 16,
+        "state_seats": 16,
+        "prefecture_seats": 137,
+        "county_seats": 505
+      },
+      "complete_chgis_state_ids": [],
+      "main_text_counts": {
+        "states_in_text": 16,
+        "prefectures_in_text": 162,
+        "counties_in_text": 920
+      },
+      "coverage": {
+        "year": 453,
+        "basemap_year": 464,
+        "states_in_text": 16,
+        "prefectures_in_text": 162,
+        "counties_in_text": 920,
+        "state_areas": 15,
+        "shared_state_areas": 1,
+        "prefecture_areas": 45,
+        "chgis_prefecture_areas": 45,
+        "complete_chgis_state_ids": [],
+        "state_seats": 16,
+        "prefecture_seats": 137,
+        "county_seats": 505,
+        "unassigned_points": 0,
+        "qiao_points": 13,
+        "control_interior_holes": 0,
+        "unassigned_control_area_degrees2": 9.884e-05,
+        "atlas497_points_used": 0,
+        "new_prefecture_boundaries_fitted": 0,
+        "western_jin_data_used": false
+      },
+      "unlocated_count": 761,
+      "missing_prefecture_area_count": 117,
+      "point_checks": {
+        "chgis_county_original_coordinate_checks": 505
+      }
+    },
+    {
+      "year": 454,
+      "basemap_year": 464,
+      "layers": {
+        "regime_areas": 1,
+        "regime_boundaries": 1,
+        "prefecture_areas": 44,
+        "prefecture_boundaries": 44,
+        "province_areas": 18,
+        "province_boundaries": 18,
+        "state_seats": 19,
+        "prefecture_seats": 144,
+        "county_seats": 513
+      },
+      "complete_chgis_state_ids": [
+        "ls6_s3498",
+        "ls6_s456"
+      ],
+      "main_text_counts": {
+        "states_in_text": 19,
+        "prefectures_in_text": 168,
+        "counties_in_text": 928
+      },
+      "coverage": {
+        "year": 454,
+        "basemap_year": 464,
+        "states_in_text": 19,
+        "prefectures_in_text": 168,
+        "counties_in_text": 928,
+        "state_areas": 18,
+        "shared_state_areas": 0,
+        "prefecture_areas": 44,
+        "chgis_prefecture_areas": 44,
+        "complete_chgis_state_ids": [
+          "ls6_s3498",
+          "ls6_s456"
+        ],
+        "state_seats": 19,
+        "prefecture_seats": 144,
+        "county_seats": 513,
+        "unassigned_points": 0,
+        "qiao_points": 19,
+        "control_interior_holes": 0,
+        "unassigned_control_area_degrees2": 0.59628048,
+        "atlas497_points_used": 0,
+        "new_prefecture_boundaries_fitted": 0,
+        "western_jin_data_used": false
+      },
+      "unlocated_count": 754,
+      "missing_prefecture_area_count": 124,
+      "point_checks": {
+        "chgis_county_original_coordinate_checks": 513
+      }
+    },
+    {
+      "year": 455,
+      "basemap_year": 464,
+      "layers": {
+        "regime_areas": 1,
+        "regime_boundaries": 1,
+        "prefecture_areas": 45,
+        "prefecture_boundaries": 45,
+        "province_areas": 18,
+        "province_boundaries": 18,
+        "state_seats": 19,
+        "prefecture_seats": 147,
+        "county_seats": 516
+      },
+      "complete_chgis_state_ids": [
+        "ls6_s3498",
+        "ls6_s456"
+      ],
+      "main_text_counts": {
+        "states_in_text": 20,
+        "prefectures_in_text": 172,
+        "counties_in_text": 944
+      },
+      "coverage": {
+        "year": 455,
+        "basemap_year": 464,
+        "states_in_text": 20,
+        "prefectures_in_text": 172,
+        "counties_in_text": 944,
+        "state_areas": 18,
+        "shared_state_areas": 0,
+        "prefecture_areas": 45,
+        "chgis_prefecture_areas": 45,
+        "complete_chgis_state_ids": [
+          "ls6_s3498",
+          "ls6_s456"
+        ],
+        "state_seats": 19,
+        "prefecture_seats": 147,
+        "county_seats": 516,
+        "unassigned_points": 0,
+        "qiao_points": 22,
+        "control_interior_holes": 0,
+        "unassigned_control_area_degrees2": 0.59628048,
+        "atlas497_points_used": 0,
+        "new_prefecture_boundaries_fitted": 0,
+        "western_jin_data_used": false
+      },
+      "unlocated_count": 755,
+      "missing_prefecture_area_count": 126,
+      "point_checks": {
+        "chgis_county_original_coordinate_checks": 516
+      }
+    },
+    {
+      "year": 456,
+      "basemap_year": 464,
+      "layers": {
+        "regime_areas": 1,
+        "regime_boundaries": 1,
+        "prefecture_areas": 46,
+        "prefecture_boundaries": 46,
+        "province_areas": 18,
+        "province_boundaries": 18,
+        "state_seats": 19,
+        "prefecture_seats": 146,
+        "county_seats": 514
+      },
+      "complete_chgis_state_ids": [
+        "ls6_s3498",
+        "ls6_s456"
+      ],
+      "main_text_counts": {
+        "states_in_text": 20,
+        "prefectures_in_text": 169,
+        "counties_in_text": 937
+      },
+      "coverage": {
+        "year": 456,
+        "basemap_year": 464,
+        "states_in_text": 20,
+        "prefectures_in_text": 169,
+        "counties_in_text": 937,
+        "state_areas": 18,
+        "shared_state_areas": 0,
+        "prefecture_areas": 46,
+        "chgis_prefecture_areas": 46,
+        "complete_chgis_state_ids": [
+          "ls6_s3498",
+          "ls6_s456"
+        ],
+        "state_seats": 19,
+        "prefecture_seats": 146,
+        "county_seats": 514,
+        "unassigned_points": 0,
+        "qiao_points": 18,
+        "control_interior_holes": 0,
+        "unassigned_control_area_degrees2": 0.59628048,
+        "atlas497_points_used": 0,
+        "new_prefecture_boundaries_fitted": 0,
+        "western_jin_data_used": false
+      },
+      "unlocated_count": 762,
+      "missing_prefecture_area_count": 123,
+      "point_checks": {
+        "chgis_county_original_coordinate_checks": 514
+      }
+    },
+    {
+      "year": 457,
+      "basemap_year": 464,
+      "layers": {
+        "regime_areas": 1,
+        "regime_boundaries": 1,
+        "prefecture_areas": 45,
+        "prefecture_boundaries": 45,
+        "province_areas": 18,
+        "province_boundaries": 18,
+        "state_seats": 19,
+        "prefecture_seats": 147,
+        "county_seats": 513
+      },
+      "complete_chgis_state_ids": [
+        "ls6_s3498",
+        "ls6_s456"
+      ],
+      "main_text_counts": {
+        "states_in_text": 20,
+        "prefectures_in_text": 173,
+        "counties_in_text": 944
+      },
+      "coverage": {
+        "year": 457,
+        "basemap_year": 464,
+        "states_in_text": 20,
+        "prefectures_in_text": 173,
+        "counties_in_text": 944,
+        "state_areas": 18,
+        "shared_state_areas": 0,
+        "prefecture_areas": 45,
+        "chgis_prefecture_areas": 45,
+        "complete_chgis_state_ids": [
+          "ls6_s3498",
+          "ls6_s456"
+        ],
+        "state_seats": 19,
+        "prefecture_seats": 147,
+        "county_seats": 513,
+        "unassigned_points": 0,
+        "qiao_points": 21,
+        "control_interior_holes": 0,
+        "unassigned_control_area_degrees2": 0.59628048,
+        "atlas497_points_used": 0,
+        "new_prefecture_boundaries_fitted": 0,
+        "western_jin_data_used": false
+      },
+      "unlocated_count": 744,
+      "missing_prefecture_area_count": 128,
+      "point_checks": {
+        "chgis_county_original_coordinate_checks": 513
+      }
+    },
+    {
+      "year": 458,
+      "basemap_year": 464,
+      "layers": {
+        "regime_areas": 1,
+        "regime_boundaries": 1,
+        "prefecture_areas": 45,
+        "prefecture_boundaries": 45,
+        "province_areas": 18,
+        "province_boundaries": 18,
+        "state_seats": 19,
+        "prefecture_seats": 147,
+        "county_seats": 513
+      },
+      "complete_chgis_state_ids": [
+        "ls6_s3498",
+        "ls6_s456"
+      ],
+      "main_text_counts": {
+        "states_in_text": 20,
+        "prefectures_in_text": 172,
+        "counties_in_text": 942
+      },
+      "coverage": {
+        "year": 458,
+        "basemap_year": 464,
+        "states_in_text": 20,
+        "prefectures_in_text": 172,
+        "counties_in_text": 942,
+        "state_areas": 18,
+        "shared_state_areas": 0,
+        "prefecture_areas": 45,
+        "chgis_prefecture_areas": 45,
+        "complete_chgis_state_ids": [
+          "ls6_s3498",
+          "ls6_s456"
+        ],
+        "state_seats": 19,
+        "prefecture_seats": 147,
+        "county_seats": 513,
+        "unassigned_points": 0,
+        "qiao_points": 21,
+        "control_interior_holes": 0,
+        "unassigned_control_area_degrees2": 0.59628048,
+        "atlas497_points_used": 0,
+        "new_prefecture_boundaries_fitted": 0,
+        "western_jin_data_used": false
+      },
+      "unlocated_count": 744,
+      "missing_prefecture_area_count": 127,
+      "point_checks": {
+        "chgis_county_original_coordinate_checks": 513
+      }
+    },
+    {
+      "year": 459,
+      "basemap_year": 464,
+      "layers": {
+        "regime_areas": 1,
+        "regime_boundaries": 1,
+        "prefecture_areas": 45,
+        "prefecture_boundaries": 45,
+        "province_areas": 19,
+        "province_boundaries": 19,
+        "state_seats": 20,
+        "prefecture_seats": 151,
+        "county_seats": 517
+      },
+      "complete_chgis_state_ids": [
+        "ls6_s3498",
+        "ls6_s456"
+      ],
+      "main_text_counts": {
+        "states_in_text": 21,
+        "prefectures_in_text": 174,
+        "counties_in_text": 942
+      },
+      "coverage": {
+        "year": 459,
+        "basemap_year": 464,
+        "states_in_text": 21,
+        "prefectures_in_text": 174,
+        "counties_in_text": 942,
+        "state_areas": 19,
+        "shared_state_areas": 0,
+        "prefecture_areas": 45,
+        "chgis_prefecture_areas": 45,
+        "complete_chgis_state_ids": [
+          "ls6_s3498",
+          "ls6_s456"
+        ],
+        "state_seats": 20,
+        "prefecture_seats": 151,
+        "county_seats": 517,
+        "unassigned_points": 0,
+        "qiao_points": 22,
+        "control_interior_holes": 0,
+        "unassigned_control_area_degrees2": 0.59628048,
+        "atlas497_points_used": 0,
+        "new_prefecture_boundaries_fitted": 0,
+        "western_jin_data_used": false
+      },
+      "unlocated_count": 738,
+      "missing_prefecture_area_count": 129,
+      "point_checks": {
+        "chgis_county_original_coordinate_checks": 517
+      }
+    },
+    {
+      "year": 460,
+      "basemap_year": 464,
+      "layers": {
+        "regime_areas": 1,
+        "regime_boundaries": 1,
+        "prefecture_areas": 45,
+        "prefecture_boundaries": 45,
+        "province_areas": 19,
+        "province_boundaries": 19,
+        "state_seats": 20,
+        "prefecture_seats": 151,
+        "county_seats": 517
+      },
+      "complete_chgis_state_ids": [
+        "ls6_s3498",
+        "ls6_s456"
+      ],
+      "main_text_counts": {
+        "states_in_text": 21,
+        "prefectures_in_text": 174,
+        "counties_in_text": 942
+      },
+      "coverage": {
+        "year": 460,
+        "basemap_year": 464,
+        "states_in_text": 21,
+        "prefectures_in_text": 174,
+        "counties_in_text": 942,
+        "state_areas": 19,
+        "shared_state_areas": 0,
+        "prefecture_areas": 45,
+        "chgis_prefecture_areas": 45,
+        "complete_chgis_state_ids": [
+          "ls6_s3498",
+          "ls6_s456"
+        ],
+        "state_seats": 20,
+        "prefecture_seats": 151,
+        "county_seats": 517,
+        "unassigned_points": 0,
+        "qiao_points": 22,
+        "control_interior_holes": 0,
+        "unassigned_control_area_degrees2": 0.59628048,
+        "atlas497_points_used": 0,
+        "new_prefecture_boundaries_fitted": 0,
+        "western_jin_data_used": false
+      },
+      "unlocated_count": 736,
+      "missing_prefecture_area_count": 129,
+      "point_checks": {
+        "chgis_county_original_coordinate_checks": 517
+      }
+    },
+    {
+      "year": 461,
+      "basemap_year": 464,
+      "layers": {
+        "regime_areas": 1,
+        "regime_boundaries": 1,
+        "prefecture_areas": 47,
+        "prefecture_boundaries": 47,
+        "province_areas": 19,
+        "province_boundaries": 19,
+        "state_seats": 20,
+        "prefecture_seats": 153,
+        "county_seats": 519
+      },
+      "complete_chgis_state_ids": [
+        "ls6_s180",
+        "ls6_s3498",
+        "ls6_s456"
+      ],
+      "main_text_counts": {
+        "states_in_text": 21,
+        "prefectures_in_text": 174,
+        "counties_in_text": 943
+      },
+      "coverage": {
+        "year": 461,
+        "basemap_year": 464,
+        "states_in_text": 21,
+        "prefectures_in_text": 174,
+        "counties_in_text": 943,
+        "state_areas": 19,
+        "shared_state_areas": 0,
+        "prefecture_areas": 47,
+        "chgis_prefecture_areas": 47,
+        "complete_chgis_state_ids": [
+          "ls6_s180",
+          "ls6_s3498",
+          "ls6_s456"
+        ],
+        "state_seats": 20,
+        "prefecture_seats": 153,
+        "county_seats": 519,
+        "unassigned_points": 0,
+        "qiao_points": 25,
+        "control_interior_holes": 0,
+        "unassigned_control_area_degrees2": 0.97777673,
+        "atlas497_points_used": 0,
+        "new_prefecture_boundaries_fitted": 0,
+        "western_jin_data_used": false
+      },
+      "unlocated_count": 720,
+      "missing_prefecture_area_count": 127,
+      "point_checks": {
+        "chgis_county_original_coordinate_checks": 519
+      }
+    },
+    {
+      "year": 462,
+      "basemap_year": 464,
+      "layers": {
+        "regime_areas": 1,
+        "regime_boundaries": 1,
+        "prefecture_areas": 46,
+        "prefecture_boundaries": 46,
+        "province_areas": 19,
+        "province_boundaries": 19,
+        "state_seats": 20,
+        "prefecture_seats": 152,
+        "county_seats": 521
+      },
+      "complete_chgis_state_ids": [
+        "ls6_s180",
+        "ls6_s3498",
+        "ls6_s456"
+      ],
+      "main_text_counts": {
+        "states_in_text": 21,
+        "prefectures_in_text": 173,
+        "counties_in_text": 943
+      },
+      "coverage": {
+        "year": 462,
+        "basemap_year": 464,
+        "states_in_text": 21,
+        "prefectures_in_text": 173,
+        "counties_in_text": 943,
+        "state_areas": 19,
+        "shared_state_areas": 0,
+        "prefecture_areas": 46,
+        "chgis_prefecture_areas": 46,
+        "complete_chgis_state_ids": [
+          "ls6_s180",
+          "ls6_s3498",
+          "ls6_s456"
+        ],
+        "state_seats": 20,
+        "prefecture_seats": 152,
+        "county_seats": 521,
+        "unassigned_points": 0,
+        "qiao_points": 26,
+        "control_interior_holes": 0,
+        "unassigned_control_area_degrees2": 0.97777673,
+        "atlas497_points_used": 0,
+        "new_prefecture_boundaries_fitted": 0,
+        "western_jin_data_used": false
+      },
+      "unlocated_count": 718,
+      "missing_prefecture_area_count": 127,
+      "point_checks": {
+        "chgis_county_original_coordinate_checks": 521
+      }
+    },
+    {
+      "year": 463,
+      "basemap_year": 464,
+      "layers": {
+        "regime_areas": 1,
+        "regime_boundaries": 1,
+        "prefecture_areas": 45,
+        "prefecture_boundaries": 45,
+        "province_areas": 19,
+        "province_boundaries": 19,
+        "state_seats": 20,
+        "prefecture_seats": 153,
+        "county_seats": 518
+      },
+      "complete_chgis_state_ids": [
+        "ls6_s180",
+        "ls6_s3498",
+        "ls6_s456"
+      ],
+      "main_text_counts": {
+        "states_in_text": 21,
+        "prefectures_in_text": 174,
+        "counties_in_text": 943
+      },
+      "coverage": {
+        "year": 463,
+        "basemap_year": 464,
+        "states_in_text": 21,
+        "prefectures_in_text": 174,
+        "counties_in_text": 943,
+        "state_areas": 19,
+        "shared_state_areas": 0,
+        "prefecture_areas": 45,
+        "chgis_prefecture_areas": 45,
+        "complete_chgis_state_ids": [
+          "ls6_s180",
+          "ls6_s3498",
+          "ls6_s456"
+        ],
+        "state_seats": 20,
+        "prefecture_seats": 153,
+        "county_seats": 518,
+        "unassigned_points": 0,
+        "qiao_points": 26,
+        "control_interior_holes": 0,
+        "unassigned_control_area_degrees2": 2.94415008,
+        "atlas497_points_used": 0,
+        "new_prefecture_boundaries_fitted": 0,
+        "western_jin_data_used": false
+      },
+      "unlocated_count": 722,
+      "missing_prefecture_area_count": 129,
+      "point_checks": {
+        "chgis_county_original_coordinate_checks": 518
+      }
+    },
+    {
+      "year": 464,
+      "basemap_year": 464,
+      "layers": {
+        "regime_areas": 1,
+        "regime_boundaries": 1,
+        "prefecture_areas": 51,
+        "prefecture_boundaries": 51,
+        "province_areas": 19,
+        "province_boundaries": 19,
+        "state_seats": 20,
+        "prefecture_seats": 168,
+        "county_seats": 546
+      },
+      "complete_chgis_state_ids": [
+        "ls6_s180",
+        "ls6_s456"
+      ],
+      "main_text_counts": {
+        "states_in_text": 21,
+        "prefectures_in_text": 199,
+        "counties_in_text": 1017
+      },
+      "coverage": {
+        "year": 464,
+        "basemap_year": 464,
+        "states_in_text": 21,
+        "prefectures_in_text": 199,
+        "counties_in_text": 1017,
+        "state_areas": 19,
+        "shared_state_areas": 0,
+        "prefecture_areas": 51,
+        "chgis_prefecture_areas": 51,
+        "complete_chgis_state_ids": [
+          "ls6_s180",
+          "ls6_s456"
+        ],
+        "state_seats": 20,
+        "prefecture_seats": 168,
+        "county_seats": 546,
+        "unassigned_points": 0,
+        "qiao_points": 41,
+        "control_interior_holes": 0,
+        "unassigned_control_area_degrees2": 0.57421179,
+        "atlas497_points_used": 0,
+        "new_prefecture_boundaries_fitted": 0,
+        "western_jin_data_used": false
+      },
+      "unlocated_count": 730,
+      "missing_prefecture_area_count": 146,
+      "point_checks": {
+        "chgis_county_original_coordinate_checks": 546
+      }
+    },
+    {
+      "year": 465,
+      "basemap_year": 464,
+      "layers": {
+        "regime_areas": 1,
+        "regime_boundaries": 1,
+        "prefecture_areas": 51,
+        "prefecture_boundaries": 51,
+        "province_areas": 18,
+        "province_boundaries": 18,
+        "state_seats": 20,
+        "prefecture_seats": 159,
+        "county_seats": 542
+      },
+      "complete_chgis_state_ids": [
+        "ls6_s180"
+      ],
+      "main_text_counts": {
+        "states_in_text": 21,
+        "prefectures_in_text": 183,
+        "counties_in_text": 969
+      },
+      "coverage": {
+        "year": 465,
+        "basemap_year": 464,
+        "states_in_text": 21,
+        "prefectures_in_text": 183,
+        "counties_in_text": 969,
+        "state_areas": 18,
+        "shared_state_areas": 0,
+        "prefecture_areas": 51,
+        "chgis_prefecture_areas": 51,
+        "complete_chgis_state_ids": [
+          "ls6_s180"
+        ],
+        "state_seats": 20,
+        "prefecture_seats": 159,
+        "county_seats": 542,
+        "unassigned_points": 0,
+        "qiao_points": 35,
+        "control_interior_holes": 0,
+        "unassigned_control_area_degrees2": 0.57421179,
+        "atlas497_points_used": 0,
+        "new_prefecture_boundaries_fitted": 0,
+        "western_jin_data_used": false
+      },
+      "unlocated_count": 735,
+      "missing_prefecture_area_count": 132,
+      "point_checks": {
+        "chgis_county_original_coordinate_checks": 542
+      }
+    },
+    {
+      "year": 466,
+      "basemap_year": 464,
+      "layers": {
+        "regime_areas": 1,
+        "regime_boundaries": 1,
+        "prefecture_areas": 49,
+        "prefecture_boundaries": 49,
+        "province_areas": 18,
+        "province_boundaries": 18,
+        "state_seats": 20,
+        "prefecture_seats": 156,
+        "county_seats": 538
+      },
+      "complete_chgis_state_ids": [],
+      "main_text_counts": {
+        "states_in_text": 21,
+        "prefectures_in_text": 183,
+        "counties_in_text": 973
+      },
+      "coverage": {
+        "year": 466,
+        "basemap_year": 464,
+        "states_in_text": 21,
+        "prefectures_in_text": 183,
+        "counties_in_text": 973,
+        "state_areas": 18,
+        "shared_state_areas": 0,
+        "prefecture_areas": 49,
+        "chgis_prefecture_areas": 49,
+        "complete_chgis_state_ids": [],
+        "state_seats": 20,
+        "prefecture_seats": 156,
+        "county_seats": 538,
+        "unassigned_points": 0,
+        "qiao_points": 31,
+        "control_interior_holes": 0,
+        "unassigned_control_area_degrees2": 9.884e-05,
+        "atlas497_points_used": 0,
+        "new_prefecture_boundaries_fitted": 0,
+        "western_jin_data_used": false
+      },
+      "unlocated_count": 746,
+      "missing_prefecture_area_count": 134,
+      "point_checks": {
+        "chgis_county_original_coordinate_checks": 538
+      }
+    },
+    {
+      "year": 467,
+      "basemap_year": 464,
+      "layers": {
+        "regime_areas": 1,
+        "regime_boundaries": 1,
+        "prefecture_areas": 49,
+        "prefecture_boundaries": 49,
+        "province_areas": 17,
+        "province_boundaries": 17,
+        "state_seats": 19,
+        "prefecture_seats": 139,
+        "county_seats": 500
+      },
+      "complete_chgis_state_ids": [],
+      "main_text_counts": {
+        "states_in_text": 21,
+        "prefectures_in_text": 168,
+        "counties_in_text": 906
+      },
+      "coverage": {
+        "year": 467,
+        "basemap_year": 464,
+        "states_in_text": 21,
+        "prefectures_in_text": 168,
+        "counties_in_text": 906,
+        "state_areas": 16,
+        "shared_state_areas": 1,
+        "prefecture_areas": 49,
+        "chgis_prefecture_areas": 49,
+        "complete_chgis_state_ids": [],
+        "state_seats": 19,
+        "prefecture_seats": 139,
+        "county_seats": 500,
+        "unassigned_points": 0,
+        "qiao_points": 31,
+        "control_interior_holes": 0,
+        "unassigned_control_area_degrees2": 9.884e-05,
+        "atlas497_points_used": 0,
+        "new_prefecture_boundaries_fitted": 0,
+        "western_jin_data_used": false
+      },
+      "unlocated_count": 721,
+      "missing_prefecture_area_count": 119,
+      "point_checks": {
+        "chgis_county_original_coordinate_checks": 500
+      }
+    },
+    {
+      "year": 468,
+      "basemap_year": 464,
+      "layers": {
+        "regime_areas": 1,
+        "regime_boundaries": 1,
+        "prefecture_areas": 49,
+        "prefecture_boundaries": 49,
+        "province_areas": 16,
+        "province_boundaries": 15,
+        "state_seats": 18,
+        "prefecture_seats": 132,
+        "county_seats": 485
+      },
+      "complete_chgis_state_ids": [
+        "ls6_s180"
+      ],
+      "main_text_counts": {
+        "states_in_text": 20,
+        "prefectures_in_text": 157,
+        "counties_in_text": 880
+      },
+      "coverage": {
+        "year": 468,
+        "basemap_year": 464,
+        "states_in_text": 20,
+        "prefectures_in_text": 157,
+        "counties_in_text": 880,
+        "state_areas": 15,
+        "shared_state_areas": 1,
+        "prefecture_areas": 49,
+        "chgis_prefecture_areas": 49,
+        "complete_chgis_state_ids": [
+          "ls6_s180"
+        ],
+        "state_seats": 18,
+        "prefecture_seats": 132,
+        "county_seats": 485,
+        "unassigned_points": 0,
+        "qiao_points": 32,
+        "control_interior_holes": 0,
+        "unassigned_control_area_degrees2": 0.79349618,
+        "atlas497_points_used": 0,
+        "new_prefecture_boundaries_fitted": 0,
+        "western_jin_data_used": false
+      },
+      "unlocated_count": 710,
+      "missing_prefecture_area_count": 108,
+      "point_checks": {
+        "chgis_county_original_coordinate_checks": 485
+      }
+    },
+    {
+      "year": 469,
+      "basemap_year": 497,
+      "layers": {
+        "regime_areas": 1,
+        "regime_boundaries": 1,
+        "prefecture_areas": 49,
+        "prefecture_boundaries": 49,
+        "province_areas": 15,
+        "province_boundaries": 15,
+        "state_seats": 15,
+        "prefecture_seats": 122,
+        "county_seats": 450
+      },
+      "complete_chgis_state_ids": [],
+      "main_text_counts": {
+        "states_in_text": 17,
+        "prefectures_in_text": 147,
+        "counties_in_text": 828
+      },
+      "coverage": {
+        "year": 469,
+        "basemap_year": 497,
+        "states_in_text": 17,
+        "prefectures_in_text": 147,
+        "counties_in_text": 828,
+        "state_areas": 14,
+        "shared_state_areas": 1,
+        "prefecture_areas": 49,
+        "chgis_prefecture_areas": 49,
+        "complete_chgis_state_ids": [],
+        "state_seats": 15,
+        "prefecture_seats": 122,
+        "county_seats": 450,
+        "unassigned_points": 0,
+        "qiao_points": 25,
+        "control_interior_holes": 0,
+        "unassigned_control_area_degrees2": 5.5166947,
+        "atlas497_points_used": 0,
+        "new_prefecture_boundaries_fitted": 0,
+        "western_jin_data_used": false
+      },
+      "unlocated_count": 662,
+      "missing_prefecture_area_count": 98,
+      "point_checks": {
+        "chgis_county_original_coordinate_checks": 450
+      }
+    },
+    {
+      "year": 470,
+      "basemap_year": 497,
+      "layers": {
+        "regime_areas": 1,
+        "regime_boundaries": 1,
+        "prefecture_areas": 50,
+        "prefecture_boundaries": 50,
+        "province_areas": 15,
+        "province_boundaries": 15,
+        "state_seats": 15,
+        "prefecture_seats": 123,
+        "county_seats": 446
+      },
+      "complete_chgis_state_ids": [],
+      "main_text_counts": {
+        "states_in_text": 19,
+        "prefectures_in_text": 148,
+        "counties_in_text": 829
+      },
+      "coverage": {
+        "year": 470,
+        "basemap_year": 497,
+        "states_in_text": 19,
+        "prefectures_in_text": 148,
+        "counties_in_text": 829,
+        "state_areas": 14,
+        "shared_state_areas": 1,
+        "prefecture_areas": 50,
+        "chgis_prefecture_areas": 50,
+        "complete_chgis_state_ids": [],
+        "state_seats": 15,
+        "prefecture_seats": 123,
+        "county_seats": 446,
+        "unassigned_points": 0,
+        "qiao_points": 25,
+        "control_interior_holes": 0,
+        "unassigned_control_area_degrees2": 5.5166947,
+        "atlas497_points_used": 0,
+        "new_prefecture_boundaries_fitted": 0,
+        "western_jin_data_used": false
+      },
+      "unlocated_count": 670,
+      "missing_prefecture_area_count": 98,
+      "point_checks": {
+        "chgis_county_original_coordinate_checks": 446
+      }
+    },
+    {
+      "year": 471,
+      "basemap_year": 497,
+      "layers": {
+        "regime_areas": 1,
+        "regime_boundaries": 1,
+        "prefecture_areas": 53,
+        "prefecture_boundaries": 53,
+        "province_areas": 16,
+        "province_boundaries": 16,
+        "state_seats": 16,
+        "prefecture_seats": 127,
+        "county_seats": 446
+      },
+      "complete_chgis_state_ids": [],
+      "main_text_counts": {
+        "states_in_text": 21,
+        "prefectures_in_text": 156,
+        "counties_in_text": 830
+      },
+      "coverage": {
+        "year": 471,
+        "basemap_year": 497,
+        "states_in_text": 21,
+        "prefectures_in_text": 156,
+        "counties_in_text": 830,
+        "state_areas": 16,
+        "shared_state_areas": 0,
+        "prefecture_areas": 53,
+        "chgis_prefecture_areas": 53,
+        "complete_chgis_state_ids": [],
+        "state_seats": 16,
+        "prefecture_seats": 127,
+        "county_seats": 446,
+        "unassigned_points": 0,
+        "qiao_points": 25,
+        "control_interior_holes": 0,
+        "unassigned_control_area_degrees2": 5.5167046,
+        "atlas497_points_used": 0,
+        "new_prefecture_boundaries_fitted": 0,
+        "western_jin_data_used": false
+      },
+      "unlocated_count": 678,
+      "missing_prefecture_area_count": 103,
+      "point_checks": {
+        "chgis_county_original_coordinate_checks": 446
+      }
+    },
+    {
+      "year": 472,
+      "basemap_year": 497,
+      "layers": {
+        "regime_areas": 1,
+        "regime_boundaries": 1,
+        "prefecture_areas": 52,
+        "prefecture_boundaries": 52,
+        "province_areas": 16,
+        "province_boundaries": 16,
+        "state_seats": 17,
+        "prefecture_seats": 126,
+        "county_seats": 449
+      },
+      "complete_chgis_state_ids": [],
+      "main_text_counts": {
+        "states_in_text": 21,
+        "prefectures_in_text": 155,
+        "counties_in_text": 830
+      },
+      "coverage": {
+        "year": 472,
+        "basemap_year": 497,
+        "states_in_text": 21,
+        "prefectures_in_text": 155,
+        "counties_in_text": 830,
+        "state_areas": 16,
+        "shared_state_areas": 0,
+        "prefecture_areas": 52,
+        "chgis_prefecture_areas": 52,
+        "complete_chgis_state_ids": [],
+        "state_seats": 17,
+        "prefecture_seats": 126,
+        "county_seats": 449,
+        "unassigned_points": 0,
+        "qiao_points": 26,
+        "control_interior_holes": 0,
+        "unassigned_control_area_degrees2": 5.5167046,
+        "atlas497_points_used": 0,
+        "new_prefecture_boundaries_fitted": 0,
+        "western_jin_data_used": false
+      },
+      "unlocated_count": 680,
+      "missing_prefecture_area_count": 103,
+      "point_checks": {
+        "chgis_county_original_coordinate_checks": 449
+      }
+    },
+    {
+      "year": 473,
+      "basemap_year": 497,
+      "layers": {
+        "regime_areas": 1,
+        "regime_boundaries": 1,
+        "prefecture_areas": 52,
+        "prefecture_boundaries": 52,
+        "province_areas": 16,
+        "province_boundaries": 16,
+        "state_seats": 17,
+        "prefecture_seats": 125,
+        "county_seats": 448
+      },
+      "complete_chgis_state_ids": [],
+      "main_text_counts": {
+        "states_in_text": 21,
+        "prefectures_in_text": 156,
+        "counties_in_text": 831
+      },
+      "coverage": {
+        "year": 473,
+        "basemap_year": 497,
+        "states_in_text": 21,
+        "prefectures_in_text": 156,
+        "counties_in_text": 831,
+        "state_areas": 16,
+        "shared_state_areas": 0,
+        "prefecture_areas": 52,
+        "chgis_prefecture_areas": 52,
+        "complete_chgis_state_ids": [],
+        "state_seats": 17,
+        "prefecture_seats": 125,
+        "county_seats": 448,
+        "unassigned_points": 0,
+        "qiao_points": 25,
+        "control_interior_holes": 0,
+        "unassigned_control_area_degrees2": 5.5167046,
+        "atlas497_points_used": 0,
+        "new_prefecture_boundaries_fitted": 0,
+        "western_jin_data_used": false
+      },
+      "unlocated_count": 683,
+      "missing_prefecture_area_count": 104,
+      "point_checks": {
+        "chgis_county_original_coordinate_checks": 448
+      }
+    },
+    {
+      "year": 474,
+      "basemap_year": 497,
+      "layers": {
+        "regime_areas": 1,
+        "regime_boundaries": 1,
+        "prefecture_areas": 52,
+        "prefecture_boundaries": 52,
+        "province_areas": 16,
+        "province_boundaries": 16,
+        "state_seats": 17,
+        "prefecture_seats": 125,
+        "county_seats": 448
+      },
+      "complete_chgis_state_ids": [],
+      "main_text_counts": {
+        "states_in_text": 21,
+        "prefectures_in_text": 156,
+        "counties_in_text": 832
+      },
+      "coverage": {
+        "year": 474,
+        "basemap_year": 497,
+        "states_in_text": 21,
+        "prefectures_in_text": 156,
+        "counties_in_text": 832,
+        "state_areas": 16,
+        "shared_state_areas": 0,
+        "prefecture_areas": 52,
+        "chgis_prefecture_areas": 52,
+        "complete_chgis_state_ids": [],
+        "state_seats": 17,
+        "prefecture_seats": 125,
+        "county_seats": 448,
+        "unassigned_points": 0,
+        "qiao_points": 25,
+        "control_interior_holes": 0,
+        "unassigned_control_area_degrees2": 5.5167046,
+        "atlas497_points_used": 0,
+        "new_prefecture_boundaries_fitted": 0,
+        "western_jin_data_used": false
+      },
+      "unlocated_count": 684,
+      "missing_prefecture_area_count": 104,
+      "point_checks": {
+        "chgis_county_original_coordinate_checks": 448
+      }
+    },
+    {
+      "year": 475,
+      "basemap_year": 497,
+      "layers": {
+        "regime_areas": 1,
+        "regime_boundaries": 1,
+        "prefecture_areas": 52,
+        "prefecture_boundaries": 52,
+        "province_areas": 16,
+        "province_boundaries": 16,
+        "state_seats": 17,
+        "prefecture_seats": 125,
+        "county_seats": 448
+      },
+      "complete_chgis_state_ids": [],
+      "main_text_counts": {
+        "states_in_text": 21,
+        "prefectures_in_text": 156,
+        "counties_in_text": 832
+      },
+      "coverage": {
+        "year": 475,
+        "basemap_year": 497,
+        "states_in_text": 21,
+        "prefectures_in_text": 156,
+        "counties_in_text": 832,
+        "state_areas": 16,
+        "shared_state_areas": 0,
+        "prefecture_areas": 52,
+        "chgis_prefecture_areas": 52,
+        "complete_chgis_state_ids": [],
+        "state_seats": 17,
+        "prefecture_seats": 125,
+        "county_seats": 448,
+        "unassigned_points": 0,
+        "qiao_points": 25,
+        "control_interior_holes": 0,
+        "unassigned_control_area_degrees2": 5.5167046,
+        "atlas497_points_used": 0,
+        "new_prefecture_boundaries_fitted": 0,
+        "western_jin_data_used": false
+      },
+      "unlocated_count": 684,
+      "missing_prefecture_area_count": 104,
+      "point_checks": {
+        "chgis_county_original_coordinate_checks": 448
+      }
+    },
+    {
+      "year": 476,
+      "basemap_year": 497,
+      "layers": {
+        "regime_areas": 1,
+        "regime_boundaries": 1,
+        "prefecture_areas": 52,
+        "prefecture_boundaries": 52,
+        "province_areas": 17,
+        "province_boundaries": 17,
+        "state_seats": 17,
+        "prefecture_seats": 124,
+        "county_seats": 453
+      },
+      "complete_chgis_state_ids": [],
+      "main_text_counts": {
+        "states_in_text": 21,
+        "prefectures_in_text": 156,
+        "counties_in_text": 835
+      },
+      "coverage": {
+        "year": 476,
+        "basemap_year": 497,
+        "states_in_text": 21,
+        "prefectures_in_text": 156,
+        "counties_in_text": 835,
+        "state_areas": 17,
+        "shared_state_areas": 0,
+        "prefecture_areas": 52,
+        "chgis_prefecture_areas": 52,
+        "complete_chgis_state_ids": [],
+        "state_seats": 17,
+        "prefecture_seats": 124,
+        "county_seats": 453,
+        "unassigned_points": 0,
+        "qiao_points": 25,
+        "control_interior_holes": 0,
+        "unassigned_control_area_degrees2": 2.69488765,
+        "atlas497_points_used": 0,
+        "new_prefecture_boundaries_fitted": 0,
+        "western_jin_data_used": false
+      },
+      "unlocated_count": 683,
+      "missing_prefecture_area_count": 104,
+      "point_checks": {
+        "chgis_county_original_coordinate_checks": 453
+      }
+    },
+    {
+      "year": 477,
+      "basemap_year": 497,
+      "layers": {
+        "regime_areas": 1,
+        "regime_boundaries": 1,
+        "prefecture_areas": 52,
+        "prefecture_boundaries": 52,
+        "province_areas": 17,
+        "province_boundaries": 17,
+        "state_seats": 17,
+        "prefecture_seats": 124,
+        "county_seats": 453
+      },
+      "complete_chgis_state_ids": [],
+      "main_text_counts": {
+        "states_in_text": 21,
+        "prefectures_in_text": 156,
+        "counties_in_text": 835
+      },
+      "coverage": {
+        "year": 477,
+        "basemap_year": 497,
+        "states_in_text": 21,
+        "prefectures_in_text": 156,
+        "counties_in_text": 835,
+        "state_areas": 17,
+        "shared_state_areas": 0,
+        "prefecture_areas": 52,
+        "chgis_prefecture_areas": 52,
+        "complete_chgis_state_ids": [],
+        "state_seats": 17,
+        "prefecture_seats": 124,
+        "county_seats": 453,
+        "unassigned_points": 0,
+        "qiao_points": 25,
+        "control_interior_holes": 0,
+        "unassigned_control_area_degrees2": 2.69488765,
+        "atlas497_points_used": 0,
+        "new_prefecture_boundaries_fitted": 0,
+        "western_jin_data_used": false
+      },
+      "unlocated_count": 683,
+      "missing_prefecture_area_count": 104,
+      "point_checks": {
+        "chgis_county_original_coordinate_checks": 453
+      }
+    },
+    {
+      "year": 478,
+      "basemap_year": 497,
+      "layers": {
+        "regime_areas": 1,
+        "regime_boundaries": 1,
+        "prefecture_areas": 52,
+        "prefecture_boundaries": 52,
+        "province_areas": 17,
+        "province_boundaries": 17,
+        "state_seats": 17,
+        "prefecture_seats": 124,
+        "county_seats": 453
+      },
+      "complete_chgis_state_ids": [],
+      "main_text_counts": {
+        "states_in_text": 21,
+        "prefectures_in_text": 160,
+        "counties_in_text": 848
+      },
+      "coverage": {
+        "year": 478,
+        "basemap_year": 497,
+        "states_in_text": 21,
+        "prefectures_in_text": 160,
+        "counties_in_text": 848,
+        "state_areas": 17,
+        "shared_state_areas": 0,
+        "prefecture_areas": 52,
+        "chgis_prefecture_areas": 52,
+        "complete_chgis_state_ids": [],
+        "state_seats": 17,
+        "prefecture_seats": 124,
+        "county_seats": 453,
+        "unassigned_points": 0,
+        "qiao_points": 25,
+        "control_interior_holes": 0,
+        "unassigned_control_area_degrees2": 2.69488765,
+        "atlas497_points_used": 0,
+        "new_prefecture_boundaries_fitted": 0,
+        "western_jin_data_used": false
+      },
+      "unlocated_count": 727,
+      "missing_prefecture_area_count": 108,
+      "point_checks": {
+        "chgis_county_original_coordinate_checks": 453
+      }
+    },
+    {
+      "year": 479,
+      "basemap_year": 497,
+      "layers": {
+        "regime_areas": 1,
+        "regime_boundaries": 1,
+        "prefecture_areas": 51,
+        "prefecture_boundaries": 51,
+        "province_areas": 17,
+        "province_boundaries": 17,
+        "state_seats": 16,
+        "prefecture_seats": 121,
+        "county_seats": 425
+      },
+      "complete_chgis_state_ids": [],
+      "main_text_counts": {
+        "states_in_text": 18,
+        "prefectures_in_text": 155,
+        "counties_in_text": 763
+      },
+      "coverage": {
+        "year": 479,
+        "basemap_year": 497,
+        "states_in_text": 18,
+        "prefectures_in_text": 155,
+        "counties_in_text": 763,
+        "state_areas": 17,
+        "shared_state_areas": 0,
+        "prefecture_areas": 51,
+        "chgis_prefecture_areas": 51,
+        "complete_chgis_state_ids": [],
+        "state_seats": 16,
+        "prefecture_seats": 121,
+        "county_seats": 425,
+        "unassigned_points": 0,
+        "qiao_points": 11,
+        "control_interior_holes": 0,
+        "unassigned_control_area_degrees2": 2.69488744,
+        "atlas497_points_used": 0,
+        "new_prefecture_boundaries_fitted": 0,
+        "western_jin_data_used": false
+      },
+      "unlocated_count": 380,
+      "missing_prefecture_area_count": 104,
+      "point_checks": {
+        "chgis_county_original_coordinate_checks": 425
+      }
+    }
+  ],
+  "precision_observations": [
+    {
+      "rule": "complete_chgis_state_equals_prefecture_union",
+      "year": 454,
+      "state_id": "ls6_s456",
+      "symmetric_difference_area": 0.0,
+      "difference_empty": true,
+      "difference_type": "Polygon",
+      "difference_wkt": "POLYGON EMPTY",
+      "hausdorff_distance_degrees": 3.6794928297662576e-07,
+      "same_bounds": true,
+      "state_valid": true,
+      "union_valid": true,
+      "note": "定向复查：1e-6度固定精度差集为空；边界浮点差小于网格，equals谓词差异不作为面差异。未改地图、未重跑60年。"
+    },
+    {
+      "rule": "complete_chgis_state_equals_prefecture_union",
+      "year": 455,
+      "state_id": "ls6_s456",
+      "symmetric_difference_area": 0.0,
+      "difference_empty": true,
+      "difference_type": "Polygon",
+      "difference_wkt": "POLYGON EMPTY",
+      "hausdorff_distance_degrees": 3.6794928297662576e-07,
+      "same_bounds": true,
+      "state_valid": true,
+      "union_valid": true,
+      "note": "定向复查：1e-6度固定精度差集为空；边界浮点差小于网格，equals谓词差异不作为面差异。未改地图、未重跑60年。"
+    },
+    {
+      "rule": "complete_chgis_state_equals_prefecture_union",
+      "year": 456,
+      "state_id": "ls6_s456",
+      "symmetric_difference_area": 0.0,
+      "difference_empty": true,
+      "difference_type": "Polygon",
+      "difference_wkt": "POLYGON EMPTY",
+      "hausdorff_distance_degrees": 3.6794928297662576e-07,
+      "same_bounds": true,
+      "state_valid": true,
+      "union_valid": true,
+      "note": "定向复查：1e-6度固定精度差集为空；边界浮点差小于网格，equals谓词差异不作为面差异。未改地图、未重跑60年。"
+    },
+    {
+      "rule": "complete_chgis_state_equals_prefecture_union",
+      "year": 457,
+      "state_id": "ls6_s456",
+      "symmetric_difference_area": 0.0,
+      "difference_empty": true,
+      "difference_type": "Polygon",
+      "difference_wkt": "POLYGON EMPTY",
+      "hausdorff_distance_degrees": 3.6794928297662576e-07,
+      "same_bounds": true,
+      "state_valid": true,
+      "union_valid": true,
+      "note": "定向复查：1e-6度固定精度差集为空；边界浮点差小于网格，equals谓词差异不作为面差异。未改地图、未重跑60年。"
+    },
+    {
+      "rule": "complete_chgis_state_equals_prefecture_union",
+      "year": 458,
+      "state_id": "ls6_s456",
+      "symmetric_difference_area": 0.0,
+      "difference_empty": true,
+      "difference_type": "Polygon",
+      "difference_wkt": "POLYGON EMPTY",
+      "hausdorff_distance_degrees": 3.6794928297662576e-07,
+      "same_bounds": true,
+      "state_valid": true,
+      "union_valid": true,
+      "note": "定向复查：1e-6度固定精度差集为空；边界浮点差小于网格，equals谓词差异不作为面差异。未改地图、未重跑60年。"
+    },
+    {
+      "rule": "complete_chgis_state_equals_prefecture_union",
+      "year": 459,
+      "state_id": "ls6_s456",
+      "symmetric_difference_area": 0.0,
+      "difference_empty": true,
+      "difference_type": "Polygon",
+      "difference_wkt": "POLYGON EMPTY",
+      "hausdorff_distance_degrees": 3.6794928297662576e-07,
+      "same_bounds": true,
+      "state_valid": true,
+      "union_valid": true,
+      "note": "定向复查：1e-6度固定精度差集为空；边界浮点差小于网格，equals谓词差异不作为面差异。未改地图、未重跑60年。"
+    },
+    {
+      "rule": "complete_chgis_state_equals_prefecture_union",
+      "year": 460,
+      "state_id": "ls6_s456",
+      "symmetric_difference_area": 0.0,
+      "difference_empty": true,
+      "difference_type": "Polygon",
+      "difference_wkt": "POLYGON EMPTY",
+      "hausdorff_distance_degrees": 3.6794928297662576e-07,
+      "same_bounds": true,
+      "state_valid": true,
+      "union_valid": true,
+      "note": "定向复查：1e-6度固定精度差集为空；边界浮点差小于网格，equals谓词差异不作为面差异。未改地图、未重跑60年。"
+    },
+    {
+      "rule": "complete_chgis_state_equals_prefecture_union",
+      "year": 461,
+      "state_id": "ls6_s456",
+      "symmetric_difference_area": 0.0,
+      "difference_empty": true,
+      "difference_type": "Polygon",
+      "difference_wkt": "POLYGON EMPTY",
+      "hausdorff_distance_degrees": 3.6794928297662576e-07,
+      "same_bounds": true,
+      "state_valid": true,
+      "union_valid": true,
+      "note": "定向复查：1e-6度固定精度差集为空；边界浮点差小于网格，equals谓词差异不作为面差异。未改地图、未重跑60年。"
+    },
+    {
+      "rule": "complete_chgis_state_equals_prefecture_union",
+      "year": 462,
+      "state_id": "ls6_s456",
+      "symmetric_difference_area": 0.0,
+      "difference_empty": true,
+      "difference_type": "Polygon",
+      "difference_wkt": "POLYGON EMPTY",
+      "hausdorff_distance_degrees": 3.6794928297662576e-07,
+      "same_bounds": true,
+      "state_valid": true,
+      "union_valid": true,
+      "note": "定向复查：1e-6度固定精度差集为空；边界浮点差小于网格，equals谓词差异不作为面差异。未改地图、未重跑60年。"
+    },
+    {
+      "rule": "complete_chgis_state_equals_prefecture_union",
+      "year": 463,
+      "state_id": "ls6_s456",
+      "symmetric_difference_area": 0.0,
+      "difference_empty": true,
+      "difference_type": "Polygon",
+      "difference_wkt": "POLYGON EMPTY",
+      "hausdorff_distance_degrees": 3.6794928297662576e-07,
+      "same_bounds": true,
+      "state_valid": true,
+      "union_valid": true,
+      "note": "定向复查：1e-6度固定精度差集为空；边界浮点差小于网格，equals谓词差异不作为面差异。未改地图、未重跑60年。"
+    },
+    {
+      "rule": "complete_chgis_state_equals_prefecture_union",
+      "year": 464,
+      "state_id": "ls6_s456",
+      "symmetric_difference_area": 0.0,
+      "difference_empty": true,
+      "difference_type": "Polygon",
+      "difference_wkt": "POLYGON EMPTY",
+      "hausdorff_distance_degrees": 3.6794928297662576e-07,
+      "same_bounds": true,
+      "state_valid": true,
+      "union_valid": true,
+      "note": "定向复查：1e-6度固定精度差集为空；边界浮点差小于网格，equals谓词差异不作为面差异。未改地图、未重跑60年。"
+    },
+    {
+      "rule": "complete_chgis_state_equals_prefecture_union",
+      "year": 465,
+      "state_id": "ls6_s180",
+      "symmetric_difference_area": 0.0,
+      "difference_empty": true,
+      "difference_type": "Polygon",
+      "difference_wkt": "POLYGON EMPTY",
+      "hausdorff_distance_degrees": 3.6794928297662576e-07,
+      "same_bounds": true,
+      "state_valid": true,
+      "union_valid": true,
+      "note": "定向复查：1e-6度固定精度差集为空；边界浮点差小于网格，equals谓词差异不作为面差异。未改地图、未重跑60年。"
+    },
+    {
+      "rule": "complete_chgis_state_equals_prefecture_union",
+      "year": 468,
+      "state_id": "ls6_s180",
+      "symmetric_difference_area": 0.0,
+      "difference_empty": true,
+      "difference_type": "Polygon",
+      "difference_wkt": "POLYGON EMPTY",
+      "hausdorff_distance_degrees": 3.6794928297662576e-07,
+      "same_bounds": true,
+      "state_valid": true,
+      "union_valid": true,
+      "note": "定向复查：1e-6度固定精度差集为空；边界浮点差小于网格，equals谓词差异不作为面差异。未改地图、未重跑60年。"
+    }
+  ],
+  "check_completion_note": "一次60年必要检查完成；仅定向确认13项equals谓词差异，三组独立几何配对的对称差均为POLYGON EMPTY，Hausdorff距离3.6794928297662576e-7度，小于1e-6度精度。"
+}

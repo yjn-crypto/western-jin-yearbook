@@ -6,3 +6,6 @@ __pycache__/
 # Local Work sources and repeated annual build inputs; publish the compact bundle.
 data/eastern-jin-research/
 data/eastern-jin-display/annual/
+
+# Liu Song Work research remains local; publish only the display projection.
+data/liu-song-research/
