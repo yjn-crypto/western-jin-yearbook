@@ -915,3 +915,19 @@ body[data-dynasty="eastern-jin"] .source-entry p { white-space: pre-wrap; }
 .evidence-passage-locator, .evidence-passage-note { color: var(--muted); font-size: .86rem; }
 .evidence-passage-text { white-space: pre-wrap; }
 blockquote.evidence-passage-text { margin: 10px 0; padding: 8px 14px; border-left: 3px solid #c8b897; background: var(--paper); }
+
+/* Liu Song research annotations and boundary-year projections. */
+.liu-song-review-panel { margin: 1.4rem 0; padding: 1.2rem 1.4rem; border: 1px solid var(--line); border-radius: 12px; background: var(--surface, #fff); }
+.liu-song-review-panel h2 { margin: 0 0 .45rem; font-size: 1.1rem; }
+.liu-song-review-panel p { margin: .35rem 0; color: var(--muted); line-height: 1.7; }
+.liu-song-review-links { display: flex; flex-wrap: wrap; gap: .55rem 1.25rem; margin-top: .8rem; }
+.liu-song-pending { margin: 1.4rem 0; padding: 1.1rem 1.3rem; border: 1px dashed var(--line); border-radius: 12px; }
+.liu-song-pending summary { cursor: pointer; font-weight: 700; }
+.liu-song-pending p { line-height: 1.75; }
+.liu-song-boundary-notice { padding: .9rem 1.2rem; border-left: 4px solid #99703a; background: #faf1dd; line-height: 1.75; }
+.liu-song-status-badge { margin-left: .25rem; font-size: .67rem; color: #71623c; font-weight: normal; white-space: nowrap; }
+.liu-song-status-badge.boundary { padding: .1em .25em; background: #f7efd9; border-radius: 3px; }
+body[data-dynasty="liu-song"] .source-entry p { white-space: pre-wrap; }
+
+body[data-theme="water"] { --accent:#3e616e; --theme-dark:#274652; --theme-mid:#567783; --theme-pale:#e3edef; --theme-notice:#f0f5f6; --theme-border:#809da6; }
+.liu-song-pending-entity { display:block; }
