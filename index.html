@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>漢魏六朝年度州郡縣表</title>
   <meta name="description" content="依據《中國行政區劃通史》逐年重建漢魏六朝州郡縣，並附封國資料。">
-  <link rel="stylesheet" href="style.css?v=20261011.liusong1">
+  <link rel="stylesheet" href="style.css?v=20261013.qi1">
 </head>
 <body data-theme="metal">
   <header class="site-header">
@@ -29,7 +29,7 @@
             <option value="western-jin" selected>西晉</option>
             <option value="eastern-jin">東晉</option>
             <option value="liu-song">劉宋</option>
-            <option value="southern-qi" disabled>蕭齊（待建）</option>
+            <option value="southern-qi">南齊</option>
             <option value="southern-liang">蕭梁</option>
             <option value="chen">南陳</option>
           </select>
@@ -161,6 +161,20 @@
     </section>
     <p id="liuSongBoundaryNotice" class="liu-song-boundary-notice" role="note" hidden></p>
 
+    <section id="southernQiReviewPanel" class="southern-qi-review-panel" hidden>
+      <h2>南齊第一輪 · 年度草案與待考</h2>
+      <p>保留827項待考、61組結構問題，以及497年對讀的1項差異與13項異文。寧蠻府、北部都尉另列輔助機構；本輪尚未建立封君與爵期。</p>
+      <p id="southernQiAnnualSummary"></p>
+      <div class="southern-qi-review-links">
+        <a id="southernQiIssuesLink" href="reports/southern-qi-data-integration-20261013.html#issues">827 項待考</a>
+        <a id="southernQiStructuralLink" href="reports/southern-qi-data-integration-20261013.html#structural">61 組結構問題</a>
+        <a id="southernQiComparisonLink" href="reports/southern-qi-data-integration-20261013.html#comparison-497">497 年斷代表比對</a>
+        <a id="southernQiOfficesLink" href="reports/southern-qi-data-integration-20261013.html#offices">輔助機構與計數</a>
+        <a id="southernQiReviewJson" href="reports/southern-qi-data-integration-20261013.json" download>下載完整待考資料</a>
+      </div>
+    </section>
+    <p id="southernQiBoundaryNotice" class="southern-qi-boundary-notice" role="note" hidden></p>
+
     <section id="textMapLinkControl" class="text-map-link-control" hidden aria-label="文字與地圖聯動設定">
       <label for="textMapLinkToggle">
         <input id="textMapLinkToggle" type="checkbox" role="switch">
@@ -262,11 +276,15 @@
   <script src="liu-song-view.js?v=20261011.liusong1"></script>
   <script src="liu-song-map-model.js?v=20261011.liusong1"></script>
   <script src="liu-song-map-view.js?v=20261011.liusong1"></script>
+  <script src="data/southern-qi-data.js?v=20261013.qi1"></script>
+  <script src="southern-qi-view.js?v=20261013.qi1"></script>
+  <script src="southern-qi-map-model.js?v=20261013.qi1"></script>
+  <script src="southern-qi-map-view.js?v=20261013.qi1"></script>
   <script src="eastern-jin-view.js?v=20261011.2"></script>
   <script src="eastern-jin-map-model.js?v=20261011.2"></script>
   <script src="eastern-jin-map-view.js?v=20261011.2"></script>
   <script src="source-annotations.js?v=20260912.3"></script>
   <script src="governor-history.js?v=20260912.1"></script>
-  <script src="app.js?v=20261011.liusong1"></script>
+  <script src="app.js?v=20261013.qi1"></script>
 </body>
 </html>
