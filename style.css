@@ -931,3 +931,23 @@ body[data-dynasty="liu-song"] .source-entry p { white-space: pre-wrap; }
 
 body[data-theme="water"] { --accent:#3e616e; --theme-dark:#274652; --theme-mid:#567783; --theme-pale:#e3edef; --theme-notice:#f0f5f6; --theme-border:#809da6; }
 .liu-song-pending-entity { display:block; }
+
+.southern-qi-review-panel { margin: 1.4rem 0; padding: 1.2rem 1.4rem; border: 1px solid var(--line); border-radius: 12px; background: var(--surface, #fff); }
+.southern-qi-review-panel h2 { margin: 0 0 .45rem; font-size: 1.1rem; }
+.southern-qi-review-panel p { margin: .35rem 0; color: var(--muted); line-height: 1.7; }
+.southern-qi-review-links { display: flex; flex-wrap: wrap; gap: .55rem 1.25rem; margin-top: .8rem; }
+.southern-qi-pending { margin: 1.4rem 0; padding: 1.1rem 1.3rem; border: 1px dashed var(--line); border-radius: 12px; }
+.southern-qi-pending summary { cursor: pointer; font-weight: 700; }
+.southern-qi-pending p { line-height: 1.75; }
+.southern-qi-boundary-notice { padding: .9rem 1.2rem; border-left: 4px solid #99703a; background: #faf1dd; line-height: 1.75; }
+.southern-qi-status-badge { margin-left: .25rem; font-size: .67rem; color: #71623c; font-weight: normal; white-space: nowrap; }
+.southern-qi-status-badge.boundary { padding: .1em .25em; background: #f7efd9; border-radius: 3px; }
+body[data-dynasty="southern-qi"] .source-entry p { white-space: pre-wrap; }
+
+body[data-theme="wood"] { --accent:#486b4f; --theme-dark:#2f4e36; --theme-mid:#67846b; --theme-pale:#e8efe6; --theme-notice:#f1f5ed; --theme-border:#8ca086; }
+.southern-qi-office-heading th { background:var(--theme-pale); text-align:left; border-top:2px solid var(--theme-border); padding:.8rem 1rem; }
+.southern-qi-office-note { display:block; margin-top:.25rem; font-size:.8rem; color:var(--muted); font-weight:normal; }
+.southern-qi-office-child td:first-child { padding-left:1.75rem; border-left:3px solid var(--theme-border); }
+.southern-qi-pending-tree { margin:.45rem 0; padding-left:1.4rem; }
+.southern-qi-pending-tree li { margin:.6rem 0; line-height:1.75; }
+.southern-qi-pending-entity { display:inline; }

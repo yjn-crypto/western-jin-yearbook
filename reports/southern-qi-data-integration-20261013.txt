@@ -1,0 +1,14 @@
+南齐首版文字数据接入说明
+
+源：Work annual/479—502.json，原始日期、归属与阶段判断未改。
+入口：data/southern-qi-data.js；await SOUTHERN_QI_DATA.loadYear(year) 后读取 annual[year]，getYear(year)读取缓存。
+年度文件为共享行池索引与拓扑；须经loadYear解码。共享gzip含短节录证据、phases、relations、markers、decisions、issues及引书层。
+administrative_offices递归分支完整保留；辅助机构单独计数，其辖郡县按本级唯一计数。
+population_status、administrative_activity、territorial_status、qiao与control彼此独立。
+qiao=null为性质待核；下划线原页证据另存markers，不由父级继承。
+date_context全量保留，来源界限、约束界限、展示界限与确切史事年代分开。
+479仅齐朝成立后；502逐条标501延续投射，不称502年末齐制。
+827待考、61结构组、497表1差异和13实体相符异文均公开保留；不套东晋最早年判断。
+counts.unassigned为交叉状态不得再加；undated_refs不另计本年。
+24年必要字段、计数、侨标、辅助机构和引用检查通过，不宣称历史定稿。
+详单：reports/southern-qi-data-integration-20261013.html

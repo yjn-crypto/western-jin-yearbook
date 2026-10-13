@@ -1,0 +1,46 @@
+{
+  "status": "passed",
+  "scope": "必要模型和绘图接口检查，不是网页或全朝历史审核",
+  "years": [
+    {
+      "year": 479,
+      "features": 784,
+      "stateLabels": 21,
+      "offices": 1,
+      "areaGuard": true,
+      "unmapped": 782,
+      "basemap": 497,
+      "sharedSeatNotes": 171
+    },
+    {
+      "year": 480,
+      "features": 784,
+      "stateLabels": 21,
+      "offices": 1,
+      "areaGuard": true,
+      "unmapped": 783,
+      "basemap": 497,
+      "sharedSeatNotes": 171
+    },
+    {
+      "year": 497,
+      "features": 896,
+      "stateLabels": 21,
+      "offices": 1,
+      "areaGuard": true,
+      "unmapped": 1017,
+      "basemap": 497,
+      "sharedSeatNotes": 219
+    },
+    {
+      "year": 502,
+      "features": 835,
+      "stateLabels": 21,
+      "offices": 1,
+      "areaGuard": true,
+      "unmapped": 1000,
+      "basemap": 497,
+      "sharedSeatNotes": 194
+    }
+  ]
+}
