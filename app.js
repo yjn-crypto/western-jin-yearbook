@@ -87,6 +87,8 @@
   let modalReturnFocus = null;
   const initialParams = new URLSearchParams(window.location.search);
   let readerLayout = ['split','map','text'].includes(initialParams.get('layout')) ? initialParams.get('layout') : 'split';
+  let readerFocusMode = false;
+  let readerFocusReturn = null;
   let jinBoundaryMode = initialParams.get('jinview')==='boundaries';
   let jinBoundaryNames = true;
   const requestedDynasty = initialParams.get('dynasty') || 'western-jin';
@@ -125,6 +127,26 @@
     $('previousYear').disabled=year<=currentDynasty.years[0];
     $('nextYear').disabled=year>=currentDynasty.years[1];
     $('researchNotes').hidden=currentDynasty.key==='western-jin'||currentDynasty.key==='chen';
+  }
+
+  function setReaderFocus(enabled) {
+    if(enabled===readerFocusMode)return;
+    if(enabled) {
+      readerFocusReturn={scrollY:window.scrollY,layout:readerLayout};
+      setReaderLayout('split');
+    }
+    readerFocusMode=enabled;
+    document.body.classList.toggle('reader-focus-open',enabled);
+    document.body.classList.remove('reader-controls-hidden');
+    $('readerFocusExit').hidden=!enabled;
+    if(!enabled) {
+      setReaderLayout(readerFocusReturn.layout);
+      window.scrollTo({top:readerFocusReturn.scrollY,behavior:'instant'});
+    }
+    requestAnimationFrame(()=>{
+      if(currentMap)applyMapZoom(mapZoom);
+      (enabled?$('readerFocusExit'):$('readerFocus')).focus({preventScroll:true});
+    });
   }
 
   function formatYearLabel(year) {
@@ -1878,7 +1900,7 @@
     if(['liu-song','southern-qi'].includes(currentDynasty.key))for(let parent=target.parentElement;parent;parent=parent.parentElement)if(parent.tagName==='DETAILS')parent.open=true;
     if(!mapReadingMode) {
       const pane=$('textPane');
-      if(readerLayout==='split'&&window.matchMedia('(min-width: 861px)').matches) {
+      if(readerFocusMode||readerLayout==='split'&&window.matchMedia('(min-width: 861px)').matches) {
         pane.scrollTo({top:pane.scrollTop+target.getBoundingClientRect().top-pane.getBoundingClientRect().top-pane.clientHeight/2,behavior:'smooth'});
       } else target.scrollIntoView({behavior:'smooth',block:'center'});
     }
@@ -3170,9 +3192,34 @@
     document.body.style.setProperty('--reader-controls-height',`${Math.ceil(readerControls.getBoundingClientRect().height)}px`);
   }).observe(readerControls);
   const readerHeader=document.querySelector('.site-header');
-  new ResizeObserver(()=>{
-    document.body.style.setProperty('--reader-header-height',`${Math.ceil(readerHeader.getBoundingClientRect().height)}px`);
-  }).observe(readerHeader);
+  // Keep the controls out of the reading area on downward movement, including
+  // scrolling inside the independent text column. Upward movement reveals them.
+  let readerPageY=window.scrollY,readerTextY=$('textPane').scrollTop;
+  let readerScrollDistance=0;
+  function followReaderScroll(delta) {
+    if(readerFocusMode||mapReadingMode||!sourceModal.hidden||!delta)return;
+    if(Math.sign(delta)!==Math.sign(readerScrollDistance))readerScrollDistance=0;
+    readerScrollDistance+=delta;
+    if(Math.abs(readerScrollDistance)<12)return;
+    document.body.classList.toggle('reader-controls-hidden',delta>0&&window.scrollY>readerHeader.offsetHeight);
+    readerScrollDistance=0;
+  }
+  window.addEventListener('scroll',()=>{
+    const y=Math.max(0,window.scrollY);
+    followReaderScroll(y-readerPageY);readerPageY=y;
+    if(y<=readerHeader.offsetHeight)document.body.classList.remove('reader-controls-hidden');
+  },{passive:true});
+  $('textPane').addEventListener('scroll',()=>{
+    const y=$('textPane').scrollTop,delta=y-readerTextY;readerTextY=y;
+    followReaderScroll(delta);
+    if(delta>0&&!readerFocusMode&&!mapReadingMode&&sourceModal.hidden&&window.matchMedia('(min-width: 861px)').matches) {
+      const top=$('readerWorkspace').getBoundingClientRect().top;
+      if(top>12)window.scrollTo({top:window.scrollY+top-12,behavior:'instant'});
+    }
+  },{passive:true});
+  readerControls.addEventListener('focusin',()=>document.body.classList.remove('reader-controls-hidden'));
+  $('readerFocus').addEventListener('click',()=>setReaderFocus(true));
+  $('readerFocusExit').addEventListener('click',()=>setReaderFocus(false));
   let readerMapWidth=0;
   new ResizeObserver(()=>{
     const width=yearMapViewport.clientWidth;
@@ -3220,7 +3267,10 @@
     if(entityId){setMapReadingMode(false);revealTextEntity(entityId);}
   });
   document.addEventListener('keydown',(event)=>{
-    if(event.key==='Escape'&&mapReadingMode&&sourceModal.hidden){event.preventDefault();setMapReadingMode(false);}
+    if(event.key==='Escape'&&sourceModal.hidden) {
+      if(mapReadingMode){event.preventDefault();setMapReadingMode(false);}
+      else if(readerFocusMode){event.preventDefault();setReaderFocus(false);}
+    }
     if(event.key==='Tab'&&mapReadingMode) {
       const controls=[...yearMapPanel.querySelectorAll('button:not(:disabled),a[href],input,select,summary,[tabindex="0"]')].filter((node)=>!node.closest('[hidden]')&&node.getClientRects().length);
       const first=controls[0],last=controls.at(-1);

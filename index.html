@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>漢魏六朝年度州郡縣表</title>
   <meta name="description" content="依據《中國行政區劃通史》逐年重建漢魏六朝州郡縣，並附封國資料。">
-  <link rel="stylesheet" href="style.css?v=20261020.reader2">
-  <link rel="stylesheet" href="reader.css?v=20261020.reader2">
+  <link rel="stylesheet" href="style.css?v=20261020.reader3">
+  <link rel="stylesheet" href="reader.css?v=20261020.reader3">
 </head>
 <body data-theme="metal" data-layout="split">
   <header class="site-header">
@@ -58,6 +58,7 @@
           <button type="button" data-reader-layout="map" aria-pressed="false" aria-controls="mapPane textPane"><span aria-hidden="true">▧</span> 專覽地圖</button>
           <button type="button" data-reader-layout="text" aria-pressed="false" aria-controls="mapPane textPane"><span aria-hidden="true">☰</span> 專覽年表</button>
         </div>
+        <button id="readerFocus" class="reader-focus-toggle" type="button" aria-controls="readerWorkspace">⛶ 沉浸閱覽</button>
         <div class="year-stepper" role="group" aria-label="逐年瀏覽">
           <button id="previousYear" type="button" aria-label="上一年">←</button>
           <span id="readerYearLabel" aria-live="polite">公元304年</span>
@@ -139,7 +140,9 @@
         <div><p class="year-map-kicker"><span class="section-number">02</span> 年表 · 循州讀郡</p><h2 id="textPaneTitle">州郡縣與沿革</h2></div>
         <a href="#methodNote" class="method-jump">資料與方法 ↗</a>
       </header>
-    <section class="notice" id="statusNotice"><strong>資料狀態：</strong> <span id="statusText"></span></section>
+    <details class="reader-status"><summary>本年資料狀態與適用說明</summary>
+      <section class="notice" id="statusNotice"><strong>資料狀態：</strong> <span id="statusText"></span></section>
+    </details>
 
     <section class="summary" aria-live="polite">
       <div><strong id="stateCount">0</strong><span>州</span></div>
@@ -212,11 +215,11 @@
     </section>
 
     <section id="governorYearbookSwitch" class="liang-governor-yearbook-switch" hidden aria-label="切換至刺史年表">
-      <div>
-        <p class="yearbook-switch-kicker">刺史年表</p>
+      <details>
+        <summary>刺史年表說明</summary>
         <h2 id="governorYearbookHeading">按原工作簿查看逐年方鎮</h2>
         <p id="governorYearbookDescription">固定州列、附錄、格內換行與原格着色均依《南朝刺史、長史、司馬年表》重建；從刺史詳情進入時可定位到本年本州。</p>
-      </div>
+      </details>
       <a id="governorYearbookLink" href="liang-governor-yearbook.html">開啟刺史年表</a>
     </section>
 
@@ -236,6 +239,7 @@
     </section>
   </main>
 
+  <button id="readerFocusExit" class="reader-focus-exit" type="button" hidden>退出沉浸 · Esc</button>
   <footer><p id="footerText"></p></footer>
 
   <div id="sourceModal" class="source-modal" hidden>
@@ -316,6 +320,6 @@
   <script src="eastern-jin-map-view.js?v=20261011.2"></script>
   <script src="source-annotations.js?v=20260912.3"></script>
   <script src="governor-history.js?v=20260912.1"></script>
-  <script src="app.js?v=20261020.reader2"></script>
+  <script src="app.js?v=20261020.reader3"></script>
 </body>
 </html>

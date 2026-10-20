@@ -1,5 +1,5 @@
 /* 閱覽台：只改變頁面編排，主題及地圖繪製仍由原有樣式與資料決定。 */
-body { --reader-controls-height: 160px; --reader-header-height: 150px; }
+body { --reader-controls-height: 160px; }
 body[data-theme] .site-header {
   color: var(--ink);
   background: linear-gradient(110deg, var(--paper-2) 55%, var(--theme-pale));
@@ -14,7 +14,8 @@ h1 { margin-top: 9px; font-size: clamp(1.65rem, 2.3vw, 2.7rem); letter-spacing: 
 .subtitle { margin-top: 6px; max-width: 1000px; color: var(--muted); font-size: .86rem; }
 .github-link { margin-top: 8px; color: var(--accent); font-size: .78rem; }
 main { padding-top: 16px; }
-.control-panel { padding: 14px 18px 0; margin-bottom: 20px; border-top: 2px solid var(--accent); box-shadow: 0 4px 18px #30282008; background: var(--paper-2); }
+.control-panel { padding: 14px 18px 0; margin-bottom: 20px; border-top: 2px solid var(--accent); box-shadow: 0 4px 18px #30282008; background: var(--paper-2); transition: transform 180ms ease; }
+body.reader-controls-hidden .control-panel { transform: translateY(calc(-100% - 12px)); pointer-events: none; }
 .control-grid { grid-template-columns: 115px 190px minmax(110px, .7fr) minmax(180px, 1.6fr) auto; gap: 16px; }
 .control-grid label > span { font-size: .74rem; letter-spacing: .05em; }
 .control-grid select, .control-grid input[type="search"] { background: var(--paper-2); border-color: var(--line); border-radius: 0; min-height: 40px; font-size: .88rem; }
@@ -40,8 +41,8 @@ main { padding-top: 16px; }
 .reader-workspace { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr); gap: 22px; align-items: start; }
 .map-pane, .text-pane { min-width: 0; }
 .map-pane[hidden], .text-pane[hidden], #researchNotes[hidden] { display: none; }
-.map-pane { position: sticky; top: calc(var(--reader-controls-height) + 14px); }
-.year-map-panel:not(.is-reading) { display: flex; flex-direction: column; height: max(480px, calc(100dvh - var(--reader-controls-height) - var(--reader-header-height) - 66px)); padding: 18px; margin: 0; box-shadow: none; border-top: 2px solid var(--theme-border); }
+.map-pane { position: sticky; top: 12px; }
+.year-map-panel:not(.is-reading) { display: flex; flex-direction: column; height: max(560px, calc(100dvh - 24px)); padding: 18px; margin: 0; box-shadow: none; border-top: 2px solid var(--theme-border); }
 .year-map-panel[hidden] { display: none; }
 .year-map-heading { align-items: start; gap: 10px; }
 .year-map-heading > div:first-child { min-width: 0; }
@@ -63,7 +64,10 @@ main { padding-top: 16px; }
 .map-reading-notes[open] { max-height: 180px; overflow-y: auto; }
 .map-reading-notes .map-symbol-legend, .map-reading-notes .year-map-note { font-size: .75rem; }
 .year-map-panel.is-reading .map-reading-notes { display: none; }
-.text-pane { height: max(480px, calc(100dvh - var(--reader-controls-height) - var(--reader-header-height) - 66px)); overflow-y: auto; overscroll-behavior-y: contain; scrollbar-gutter: stable; padding: 18px; border: 1px solid var(--line); border-top: 2px solid var(--theme-border); background: var(--paper-2); scroll-padding-block: 16px; }
+.text-pane { height: max(560px, calc(100dvh - 24px)); overflow-y: auto; overscroll-behavior-y: contain; scrollbar-gutter: stable; padding: 18px; border: 1px solid var(--line); border-top: 2px solid var(--theme-border); background: var(--paper-2); scroll-padding-block: 16px; }
+.reader-status { margin-bottom: 12px; font-size: .76rem; color: var(--muted); }
+.reader-status > summary { cursor: pointer; }
+.reader-status .notice { margin-top: 8px; }
 .text-pane-heading { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-bottom: 14px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
 .text-pane-heading h2 { margin: 0; color: var(--accent); font-weight: 600; font-size: 1.15rem; letter-spacing: .1em; }
 .method-jump { font-size: .73rem; color: var(--muted); text-decoration: none; white-space: nowrap; }
@@ -85,6 +89,8 @@ main { padding-top: 16px; }
 .text-pane .liang-governor-yearbook-switch { padding: 12px; margin-bottom: 14px; }
 .text-pane .liang-governor-yearbook-switch h2 { font-size: .95rem; }
 .text-pane .liang-governor-yearbook-switch p { font-size: .75rem; }
+.text-pane .liang-governor-yearbook-switch summary { cursor: pointer; font-size: .78rem; color: var(--accent); }
+.text-pane .liang-governor-yearbook-switch details[open] h2 { margin-top: 10px; }
 .text-pane .state-card { box-shadow: none; }
 .text-pane .state-heading { padding: 10px 12px; }
 .text-pane .state-heading h2 { font-size: 1.15rem; }
@@ -115,11 +121,11 @@ body[data-layout="text"] .text-pane th:first-child, body[data-layout="text"] .te
 }
 @media (max-width: 860px) {
   .header-inner, main { padding-left: 18px; padding-right: 18px; }
-  .control-panel { position: relative; }
+  .control-panel { position: sticky; max-height: 80dvh; overflow-y: auto; }
   .reader-workspace { grid-template-columns: minmax(0, 1fr); }
   .map-pane { position: static; }
   .text-pane { height: auto; overflow: visible; }
-  .year-map-panel:not(.is-reading) { height: 650px; max-height: none; }
+  .year-map-panel:not(.is-reading) { height: max(560px, calc(100dvh - 24px)); max-height: none; }
   .year-stepper { margin-left: auto; }
   .reading-guide { flex: 1 0 100%; border-top: 1px solid var(--line); }
   .reader-navigation { row-gap: 0; }
@@ -152,7 +158,7 @@ body[data-layout="text"] .text-pane th:first-child, body[data-layout="text"] .te
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reader-workspace.is-switching > :not([hidden]) { animation: none; }
-  .layout-switch button::after, .text-pane tbody tr { transition: none; }
+  .layout-switch button::after, .text-pane tbody tr, .control-panel { transition: none; }
 }
 @media print {
   .control-panel, .map-downloads, .method-jump { display: none; }
@@ -170,3 +176,32 @@ body[data-layout="text"] .text-pane th:first-child, body[data-layout="text"] .te
 .text-pane .text-map-link-control { flex-wrap: wrap; gap: 4px 12px; }
 .text-pane .text-map-link-control label span { font-size: .78rem; }
 .text-pane .text-map-link-control small { text-align: left; }
+
+.reader-focus-toggle, .reader-focus-exit { border: 1px solid var(--line); background: var(--paper-2); color: var(--accent); padding: 6px 10px; font: inherit; font-size: .78rem; cursor: pointer; }
+.reader-focus-toggle:hover, .reader-focus-exit:hover { background: var(--theme-pale); }
+.reader-focus-exit[hidden] { display: none; }
+@media screen {
+  body.reader-focus-open { overflow: hidden; }
+  .reader-focus-open .site-header, .reader-focus-open .control-panel,
+  .reader-focus-open #methodNote, .reader-focus-open footer { display: none; }
+  .reader-focus-open .reader-workspace { position: fixed; inset: 0; z-index: 30; height: 100dvh; padding: 42px 12px 12px; background: var(--paper); gap: 14px; }
+  .reader-focus-exit { position: fixed; right: 12px; top: 7px; z-index: 35; }
+  .reader-focus-open .map-pane { position: static; height: 100%; min-height: 0; }
+  .reader-focus-open .year-map-panel:not(.is-reading), .reader-focus-open .text-pane { height: 100%; min-height: 0; }
+  .reader-focus-open .text-pane { overflow-y: auto; }
+  .reader-focus-open .year-map-kicker, .reader-focus-open .method-jump { display: none; }
+  .reader-focus-open .text-pane > :is(.reader-status, .summary, #changePanel, #researchNotes, #textMapLinkControl, #governorYearbookSwitch, #liangMapMissing),
+  .reader-focus-open .year-map-status, .reader-focus-open #yearMapZoomHelp,
+  .reader-focus-open .map-reading-notes { display: none; }
+  .reader-focus-open .year-map-panel:not(.is-reading) .year-map-viewport { min-height: 0; }
+  .reader-focus-open.map-reading-open .reader-focus-exit { visibility: hidden; }
+}
+@media screen and (max-width: 860px) {
+  .reader-focus-open .reader-workspace { grid-template-rows: minmax(0, 1fr) minmax(0, 1fr); gap: 8px; padding: 42px 8px 8px; }
+  .reader-focus-open .year-map-status, .reader-focus-open #yearMapZoomHelp,
+  .reader-focus-open .map-reading-notes { display: none; }
+  .reader-focus-open .year-map-heading h2, .reader-focus-open .text-pane-heading h2 { font-size: .9rem; }
+}
+@media print {
+  .reader-focus-toggle, .reader-focus-exit { display: none; }
+}
