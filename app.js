@@ -86,6 +86,7 @@
   let mapDrag = null;
   let modalReturnFocus = null;
   const initialParams = new URLSearchParams(window.location.search);
+  let readerLayout = ['split','map','text'].includes(initialParams.get('layout')) ? initialParams.get('layout') : 'split';
   let jinBoundaryMode = initialParams.get('jinview')==='boundaries';
   let jinBoundaryNames = true;
   const requestedDynasty = initialParams.get('dynasty') || 'western-jin';
@@ -93,6 +94,38 @@
   const requestedState = initialParams.get('state') || '';
   const EXTRA_GOVERNOR_FILTER_PREFIX = 'governor-extra:';
   let initialLocationApplied = false;
+
+  function setReaderLayout(layout) {
+    readerLayout=layout;
+    document.body.dataset.layout=layout;
+    $('mapPane').hidden=layout==='text';
+    $('textPane').hidden=layout==='map';
+    for(const button of document.querySelectorAll('[data-reader-layout]'))button.setAttribute('aria-pressed',String(button.dataset.readerLayout===layout));
+    const url=new URL(window.location.href);
+    if(layout==='split')url.searchParams.delete('layout');else url.searchParams.set('layout',layout);
+    history.replaceState(null,'',url);
+    const workspace=$('readerWorkspace');
+    workspace.classList.remove('is-switching');
+    requestAnimationFrame(()=>{
+      workspace.classList.add('is-switching');
+      if(currentMap&&layout!=='text')applyMapZoom(mapZoom);
+    });
+  }
+
+  function updateReaderHeading(year,snapshot) {
+    const exampleStates=snapshot.states.filter(state=>state.rows.some(row=>row.counties.length));
+    if(exampleStates.length) {
+      const state=exampleStates[Object.keys(DYNASTIES).indexOf(currentDynasty.key)%exampleStates.length];
+      const row=state.rows.find(row=>row.counties.length);
+      searchInput.placeholder=`例如：${state.name}、${itemDisplayName(row)}、${row.counties[0].name}`;
+    } else searchInput.placeholder='輸入州、郡、縣名稱';
+    $('readerYearLabel').textContent=formatYearLabel(year);
+    $('readerChangeCount').textContent=`（${$('changeCount').textContent}項）`;
+    $('textPaneTitle').textContent=`${currentDynasty.label} · 州郡縣與沿革`;
+    $('previousYear').disabled=year<=currentDynasty.years[0];
+    $('nextYear').disabled=year>=currentDynasty.years[1];
+    $('researchNotes').hidden=currentDynasty.key==='western-jin'||currentDynasty.key==='chen';
+  }
 
   function formatYearLabel(year) {
     if (currentDynasty.key === 'chen') {
@@ -1814,6 +1847,7 @@
     if (yearMapPanel.hidden) return;
     const feature=mapFeatureById(entityId);
     if (!feature) return;
+    if(readerLayout==='text')setReaderLayout('split');
     ensureMapLabelVisible(feature.level);selectMapKey(`entity:${entityId}`);
     const stageWidth=yearMapStage.clientWidth,stageHeight=yearMapStage.clientHeight;
     if (stageWidth && stageHeight) {
@@ -1823,7 +1857,7 @@
         behavior:'smooth'
       }));
     }
-    if (scrollToMap&&!mapReadingMode) yearMapPanel.scrollIntoView({behavior:'smooth',block:'start'});
+    if (scrollToMap&&!mapReadingMode) yearMapPanel.scrollIntoView({behavior:'smooth',block:'nearest'});
     $('yearMapStatus').textContent=`已在地圖定位：${feature.label}（${feature.level==='state'?'州':feature.level==='prefecture'?'郡級':feature.level==='administrative_office'?'輔助行政機構':'縣級'}）`;
   }
 
@@ -1840,8 +1874,14 @@
       $('yearMapStatus').textContent='此治所已進入地圖，但目前年表沒有可唯一聯動的同一實體。';
       return;
     }
+    if(readerLayout==='map'&&!mapReadingMode)setReaderLayout('split');
     if(['liu-song','southern-qi'].includes(currentDynasty.key))for(let parent=target.parentElement;parent;parent=parent.parentElement)if(parent.tagName==='DETAILS')parent.open=true;
-    if(!mapReadingMode)target.scrollIntoView({behavior:'smooth',block:'center'});
+    if(!mapReadingMode) {
+      const pane=$('textPane');
+      if(readerLayout==='split'&&window.matchMedia('(min-width: 861px)').matches) {
+        pane.scrollTo({top:pane.scrollTop+target.getBoundingClientRect().top-pane.getBoundingClientRect().top-pane.clientHeight/2,behavior:'smooth'});
+      } else target.scrollIntoView({behavior:'smooth',block:'center'});
+    }
   }
 
   function activateMapTarget(target) {
@@ -3034,7 +3074,7 @@
       : currentDynasty.key==='southern-liang'
       ? `蕭梁·${formatYearLabel(year)}州郡縣表`
       : `${currentDynasty.label}·${formatYearLabel(year)}州郡縣表`;
-    document.title=title;$('pageTitle').textContent=title;
+    document.title=title;$('pageTitle').textContent=title;updateReaderHeading(year,current);
   }
 
   async function prepareLiuSongYear(year,request) {
@@ -3119,6 +3159,26 @@
     history.replaceState(null,'',url);
   }
 
+  for(const button of document.querySelectorAll('[data-reader-layout]'))button.addEventListener('click',()=>setReaderLayout(button.dataset.readerLayout));
+  for(const [id,step] of [['previousYear',-1],['nextYear',1]])$(id).addEventListener('click',()=>{
+    const next=Number(yearSelect.value)+step;
+    if(next<currentDynasty.years[0]||next>currentDynasty.years[1])return;
+    yearSelect.value=String(next);yearSelect.dispatchEvent(new Event('change'));
+  });
+  const readerControls=document.querySelector('.control-panel');
+  new ResizeObserver(()=>{
+    document.body.style.setProperty('--reader-controls-height',`${Math.ceil(readerControls.getBoundingClientRect().height)}px`);
+  }).observe(readerControls);
+  const readerHeader=document.querySelector('.site-header');
+  new ResizeObserver(()=>{
+    document.body.style.setProperty('--reader-header-height',`${Math.ceil(readerHeader.getBoundingClientRect().height)}px`);
+  }).observe(readerHeader);
+  let readerMapWidth=0;
+  new ResizeObserver(()=>{
+    const width=yearMapViewport.clientWidth;
+    if(width&&width!==readerMapWidth){readerMapWidth=width;if(currentMap)applyMapZoom(mapZoom);}
+  }).observe(yearMapViewport);
+  setReaderLayout(readerLayout);
   dynastySelect.addEventListener('change',switchDynasty);
   yearSelect.addEventListener('change',async()=>{
     const selectionRequest=++annualLoadRequest,year=Number(yearSelect.value);
@@ -3162,7 +3222,7 @@
   document.addEventListener('keydown',(event)=>{
     if(event.key==='Escape'&&mapReadingMode&&sourceModal.hidden){event.preventDefault();setMapReadingMode(false);}
     if(event.key==='Tab'&&mapReadingMode) {
-      const controls=[...yearMapPanel.querySelectorAll('button:not(:disabled),a[href],input,select,[tabindex="0"]')].filter((node)=>!node.closest('[hidden]')&&node.getClientRects().length);
+      const controls=[...yearMapPanel.querySelectorAll('button:not(:disabled),a[href],input,select,summary,[tabindex="0"]')].filter((node)=>!node.closest('[hidden]')&&node.getClientRects().length);
       const first=controls[0],last=controls.at(-1);
       if(event.shiftKey&&document.activeElement===first){event.preventDefault();last?.focus();}
       else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first?.focus();}

@@ -5,13 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>漢魏六朝年度州郡縣表</title>
   <meta name="description" content="依據《中國行政區劃通史》逐年重建漢魏六朝州郡縣，並附封國資料。">
-  <link rel="stylesheet" href="style.css?v=20261013.qi1">
+  <link rel="stylesheet" href="style.css?v=20261020.reader2">
+  <link rel="stylesheet" href="reader.css?v=20261020.reader2">
 </head>
-<body data-theme="metal">
+<body data-theme="metal" data-layout="split">
   <header class="site-header">
     <div class="header-inner">
       <a class="github-link" href="https://github.com/yjn-crypto/western-jin-yearbook" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-      <p class="eyebrow">中國歷史行政區劃 · 年度重建</p>
+      <p class="eyebrow"><span class="archive-seal" aria-hidden="true">輿地</span> 漢魏六朝 · 年度州郡縣表</p>
       <h1 id="pageTitle">西晉州郡縣表</h1>
       <p id="pageSubtitle" class="subtitle">選擇公元年份，按《通史》所列年度查看各州郡國與所轄縣級政區。</p>
     </div>
@@ -44,13 +45,25 @@
         </label>
         <label class="search-label">
           <span>檢索政區、官員或封爵</span>
-          <input id="searchInput" type="search" placeholder="例如：丹陽、到仲舉、建康" autocomplete="off">
+          <input id="searchInput" type="search" placeholder="輸入州、郡、縣名稱" autocomplete="off">
         </label>
         <label class="check-label">
           <input id="changedOnly" type="checkbox">
           <span>只看本年有變動者</span>
         </label>
       </div>
+      <div class="reader-navigation">
+        <div class="layout-switch" role="group" aria-label="閱覽分區">
+          <button type="button" data-reader-layout="split" aria-pressed="true" aria-controls="mapPane textPane"><span aria-hidden="true">▥</span> 圖文分區</button>
+          <button type="button" data-reader-layout="map" aria-pressed="false" aria-controls="mapPane textPane"><span aria-hidden="true">▧</span> 專覽地圖</button>
+          <button type="button" data-reader-layout="text" aria-pressed="false" aria-controls="mapPane textPane"><span aria-hidden="true">☰</span> 專覽年表</button>
+        </div>
+        <div class="year-stepper" role="group" aria-label="逐年瀏覽">
+          <button id="previousYear" type="button" aria-label="上一年">←</button>
+          <span id="readerYearLabel" aria-live="polite">公元304年</span>
+          <button id="nextYear" type="button" aria-label="下一年">→</button>
+        </div>
+        <details class="reading-guide"><summary>讀表圖例與說明</summary>
       <p id="jinMapSourceNote" class="jin-map-source-note">266–316年年度圖按改置事件接合262、281及約308年底圖；CHGIS保留治所。政權邊界只採三底圖，末期缺少明確控制界線之處保留底圖政區參考。</p>
       <div class="legend" aria-label="圖例">
         <span><i class="legend-normal">郡縣</i> 宋體類字體</span>
@@ -64,30 +77,25 @@
         <span id="localOfficerLegend" hidden><i class="legend-local-officer">地方長官</i> 本年曾任；<i class="legend-local-officer probable">斜體</i> 為推定</span>
         <span id="liangColorLegend" hidden title="皇弟紅、皇子深紅、庶姓綠、皇弟皇子之庶子藍、嗣王紫、疏屬褐、昭明太子諸子橙、皇太子諸子黃、蕃王洋紅、特封郡王玫紅；同一人物跨年按各年身份保留各年顏色，同年顏色衝突者暫不著色。"><i class="liang-color-key">人物色彩</i> 依梁代刺史表逐年身份</span>
       </div>
+        </details>
+      </div>
     </section>
 
-    <section class="notice" id="statusNotice"><strong>資料狀態：</strong> <span id="statusText"></span></section>
-
-    <section class="summary" aria-live="polite">
-      <div><strong id="stateCount">0</strong><span>州</span></div>
-      <div><strong id="prefCount">0</strong><span>郡國</span></div>
-      <div><strong id="countyCount">0</strong><span>縣級政區</span></div>
-      <div><strong id="changeCount">0</strong><span>本年變動項</span></div>
-    </section>
-
+    <div id="readerWorkspace" class="reader-workspace">
+    <div id="mapPane" class="map-pane">
     <section id="yearMapPanel" class="year-map-panel" aria-labelledby="yearMapTitle" hidden>
       <header class="year-map-heading">
         <div>
-          <p class="year-map-kicker">州郡縣封國地圖</p>
+          <p class="year-map-kicker"><span class="section-number">01</span> 輿圖 · 按年閱覽</p>
           <h2 id="yearMapTitle">公元588年隋陳疆域與州郡縣封國</h2>
         </div>
-        <div class="year-map-actions">
+        <details class="map-downloads"><summary>匯出與下載</summary><div class="year-map-actions">
           <a id="yearMapUhd" href="assets/maps/chen-588-terrain-map-uhd.png" download>下載588年超高清 PNG</a>
           <a id="yearMapCsv" href="data/chen-map-588.csv" download>下載588年 CSV</a>
           <a id="yearMapGeoJson" href="data/chen-territories.geojson" download>下載史圖館分期疆域 GeoJSON</a>
           <a id="liangMapReference555" href="assets/maps/reference/liang-555-max-chgis.png" target="_blank" hidden>555年參考原圖</a>
           <button id="yearMapExport" type="button">匯出當前年份 PNG</button>
-        </div>
+        </div></details>
       </header>
       <p id="yearMapStatus" class="year-map-status" role="status">點擊地圖上的治所熱點可定位到下方州郡縣；點擊表中政區名稱可在地圖上定位。</p>
       <div class="year-map-toolbar" role="toolbar" aria-label="地圖縮放與瀏覽">
@@ -104,11 +112,8 @@
         <button id="yearMapLoadUhd" type="button">載入588年超高清原圖</button>
         <input id="yearMapZoomRange" type="range" min="100" max="1000" step="10" value="100" aria-label="地圖縮放百分比" aria-describedby="yearMapZoomHelp">
         <output id="yearMapZoomValue" aria-live="polite">100%</output>
-        <span id="yearMapZoomHelp">100%–1000%；低於300%只顯示州名，300%–700%顯示州郡名，超過700%顯示州郡縣名。滾輪縮放，拖曳或聚焦地圖後用方向鍵平移。</span>
+
       </div>
-      <p id="yearMapLegend" class="map-symbol-legend">◎ 州治　⊙ 郡治　● 縣治；範圍名較大且限於對應界內，治所名較小。封國文字及治所符號沿用正文當年封君色，未詳或顏色有歧義者為黑色。底圖填色表示政權，邊界線粗細表示層級；選中項以淡黃底與下劃線提示。</p>
-      <p id="jinMapLegend" class="map-symbol-legend" hidden><span class="jin-boundary-key jin-province-key">州界</span>　<span class="jin-boundary-key jin-kingdom-key">國界</span>　<span class="jin-boundary-key jin-member-key">國內郡界</span>；彩色面表示郡級封國及縣王國擬合範圍，青灰底為底圖政區範圍，白色為底圖標明的其他政權；末期政區參考不等同西晉實際控制。◎ 州治　⊙ 郡治　● 縣治；同址只畫最高級治所，都城州治用黃色（洛陽至311年，312年不標，313年起長安）。304年據校對表標注，其他年份未見遷治者由304年推定；治所未詳的郡不標郡治。較大字為界內範圍名，小字為治所名。斜體、※表示封國資料推定，斜線填充或虛線表示範圍、歸屬推定。縣王國按所屬郡面積的1／轄縣數模擬，以曲線虛界表示；其他縣爵小字不表示占有整個行政縣。地圖研究與正文沿革有分歧時各自保留。</p>
-      <div id="mapBoundaryResearch" class="map-symbol-legend" hidden></div>
       <div id="yearMapViewport" class="year-map-viewport" tabindex="0" role="region" aria-label="地圖瀏覽區" aria-describedby="yearMapZoomHelp">
         <div id="yearMapStage" class="year-map-stage">
           <img id="yearMapImage" alt="公元588年隋陳疆域與州郡縣封國地形圖" loading="eager">
@@ -119,14 +124,38 @@
         <button id="jinMapMinimapToggle" type="button" aria-expanded="true" aria-controls="jinMapMinimapSvg" aria-label="最小化定位小圖"><span>西晉定位小圖</span><span id="jinMapMinimapIcon" aria-hidden="true">−</span></button>
         <svg id="jinMapMinimapSvg" role="img" aria-label="西晉底圖政權輪廓；紅框表示目前可見範圍"><rect id="jinMapMinimapWindow" class="jin-map-minimap-window"></rect></svg>
       </aside>
+      <details class="map-reading-notes"><summary>圖例、來源與適用範圍 <span>參考界線不等同當年實控</span></summary>
+        <p id="yearMapZoomHelp">100%–1000%；低於300%只顯示州名，300%–700%顯示州郡名，超過700%顯示州郡縣名。滾輪縮放，拖曳或聚焦地圖後用方向鍵平移。</p>
+      <p id="yearMapLegend" class="map-symbol-legend">◎ 州治　⊙ 郡治　● 縣治；範圍名較大且限於對應界內，治所名較小。封國文字及治所符號沿用正文當年封君色，未詳或顏色有歧義者為黑色。底圖填色表示政權，邊界線粗細表示層級；選中項以淡黃底與下劃線提示。</p>
+      <p id="jinMapLegend" class="map-symbol-legend" hidden><span class="jin-boundary-key jin-province-key">州界</span>　<span class="jin-boundary-key jin-kingdom-key">國界</span>　<span class="jin-boundary-key jin-member-key">國內郡界</span>；彩色面表示郡級封國及縣王國擬合範圍，青灰底為底圖政區範圍，白色為底圖標明的其他政權；末期政區參考不等同西晉實際控制。◎ 州治　⊙ 郡治　● 縣治；同址只畫最高級治所，都城州治用黃色（洛陽至311年，312年不標，313年起長安）。304年據校對表標注，其他年份未見遷治者由304年推定；治所未詳的郡不標郡治。較大字為界內範圍名，小字為治所名。斜體、※表示封國資料推定，斜線填充或虛線表示範圍、歸屬推定。縣王國按所屬郡面積的1／轄縣數模擬，以曲線虛界表示；其他縣爵小字不表示占有整個行政縣。地圖研究與正文沿革有分歧時各自保留。</p>
+      <div id="mapBoundaryResearch" class="map-symbol-legend" hidden></div>
       <p id="yearMapNote" class="year-map-note">南陳各年共用地形底圖，州郡縣與封國按年繪製；指定年份的政權疆域改用史圖館地圖矢量化，其餘年份仍明示採 ChinaXMap 572 年斷面近似。</p>
+      </details>
+    </section>
+
+    </div>
+    <section id="textPane" class="text-pane" aria-labelledby="textPaneTitle" tabindex="0">
+      <header class="text-pane-heading">
+        <div><p class="year-map-kicker"><span class="section-number">02</span> 年表 · 循州讀郡</p><h2 id="textPaneTitle">州郡縣與沿革</h2></div>
+        <a href="#methodNote" class="method-jump">資料與方法 ↗</a>
+      </header>
+    <section class="notice" id="statusNotice"><strong>資料狀態：</strong> <span id="statusText"></span></section>
+
+    <section class="summary" aria-live="polite">
+      <div><strong id="stateCount">0</strong><span>州</span></div>
+      <div><strong id="prefCount">0</strong><span>郡國</span></div>
+      <div><strong id="countyCount">0</strong><span>縣級政區</span></div>
+      <div><strong id="changeCount">0</strong><span>本年變動項</span></div>
     </section>
 
     <section id="changePanel" class="change-panel" hidden>
-      <h2>本年變動索引</h2>
-      <div id="changeList"></div>
+      <details><summary>本年變動索引 <span id="readerChangeCount"></span></summary>
+      <div id="changeList"></div></details>
     </section>
 
+    <p id="liuSongBoundaryNotice" class="liu-song-boundary-notice" role="note" hidden></p>
+    <p id="southernQiBoundaryNotice" class="southern-qi-boundary-notice" role="note" hidden></p>
+    <details id="researchNotes" class="research-notes" hidden><summary>本朝整理進度與待考資料</summary>
     <section id="liangReviewPanel" class="liang-review-panel" hidden>
       <div>
         <h2>縣級人工校勘</h2>
@@ -159,7 +188,6 @@
         <a id="liuSongReviewJson" href="reports/liu-song-data-integration-20261011.json" download>下載完整待考資料</a>
       </div>
     </section>
-    <p id="liuSongBoundaryNotice" class="liu-song-boundary-notice" role="note" hidden></p>
 
     <section id="southernQiReviewPanel" class="southern-qi-review-panel" hidden>
       <h2>南齊第一輪 · 年度草案與待考</h2>
@@ -173,8 +201,8 @@
         <a id="southernQiReviewJson" href="reports/southern-qi-data-integration-20261013.json" download>下載完整待考資料</a>
       </div>
     </section>
-    <p id="southernQiBoundaryNotice" class="southern-qi-boundary-notice" role="note" hidden></p>
 
+    </details>
     <section id="textMapLinkControl" class="text-map-link-control" hidden aria-label="文字與地圖聯動設定">
       <label for="textMapLinkToggle">
         <input id="textMapLinkToggle" type="checkbox" role="switch">
@@ -199,7 +227,10 @@
     </details>
     <section id="results" class="results" aria-live="polite"></section>
 
-    <section class="method-note">
+    </section>
+    </div>
+
+    <section id="methodNote" class="method-note">
       <h2>資料與方法</h2>
       <div id="methodContent"></div>
     </section>
@@ -285,6 +316,6 @@
   <script src="eastern-jin-map-view.js?v=20261011.2"></script>
   <script src="source-annotations.js?v=20260912.3"></script>
   <script src="governor-history.js?v=20260912.1"></script>
-  <script src="app.js?v=20261013.qi1"></script>
+  <script src="app.js?v=20261020.reader2"></script>
 </body>
 </html>
