@@ -87,6 +87,7 @@
   let modalReturnFocus = null;
   const initialParams = new URLSearchParams(window.location.search);
   let readerLayout = ['split','map','text'].includes(initialParams.get('layout')) ? initialParams.get('layout') : 'split';
+  textMapLinkToggle.checked=readerLayout==='split';
   let readerFocusMode = false;
   let readerFocusReturn = null;
   let jinBoundaryMode = initialParams.get('jinview')==='boundaries';
@@ -98,6 +99,10 @@
   let initialLocationApplied = false;
 
   function setReaderLayout(layout) {
+    if(layout==='split'&&readerLayout!=='split') {
+      textMapLinkToggle.checked=true;
+      results.classList.toggle('text-map-link-enabled',!yearMapPanel.hidden&&!textMapLinkControl.hidden);
+    }
     readerLayout=layout;
     document.body.dataset.layout=layout;
     $('mapPane').hidden=layout==='text';
@@ -2575,12 +2580,12 @@
     const anchorY=clientY==null?yearMapViewport.clientHeight/2:clientY-rect.top;
     const contentX=(yearMapViewport.scrollLeft+anchorX)/oldWidth;
     const contentY=(yearMapViewport.scrollTop+anchorY)/oldWidth;
-    mapZoom=Math.min(10,Math.max(1,Math.round((Number(next)||1)*100)/100));
+    mapZoom=Math.min(12,Math.max(1,Math.round((Number(next)||1)*100)/100));
     const fitWidth=Math.max(320,yearMapViewport.clientWidth-2);
     yearMapStage.style.width=`${Math.round(fitWidth*mapZoom)}px`;
     yearMapZoomValue.value=`${Math.round(mapZoom*100)}%`;
     $('yearMapZoomRange').value=String(Math.round(mapZoom*100));
-    $('yearMapZoomOut').disabled=mapZoom<=1;$('yearMapZoomIn').disabled=mapZoom>=10;
+    $('yearMapZoomOut').disabled=mapZoom<=1;$('yearMapZoomIn').disabled=mapZoom>=12;
     layoutDynamicMapLabels();
     requestAnimationFrame(()=>{
       yearMapViewport.scrollLeft=Math.max(0,contentX*yearMapStage.clientWidth-anchorX);
@@ -2652,7 +2657,7 @@
     const base=`<svg xmlns="http://www.w3.org/2000/svg" width="${map.width}" height="${map.height}"><rect width="100%" height="100%" fill="#f7f3e9"/></svg>`;
     yearMapImage.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(base);yearMapImage.alt=`${year}年西晉封國地圖底色`;
     $('yearMapTitle').textContent=jinBoundaryMode?`${year}年　西晉州郡大圖`:(map.title||`${year}年西晉州郡與封國`);
-    $('yearMapZoomHelp').textContent=jinBoundaryMode?'州界、郡國界與封國填色，另含縣王國模擬面；不顯示普通縣或治所。可拖曳、縮放、切換名稱，Esc退出全屏讀圖。矢量邊線可持續放大。':'100%–1000%；低於300%顯示州名，300%–700%顯示州與郡國範圍名，超過700%加上縣名及治所名；普通縣不繪面；縣王國以擬合面、虛界另列。其他小字封爵仍保留。';
+    $('yearMapZoomHelp').textContent=jinBoundaryMode?'州界、郡國界與封國填色，另含縣王國模擬面；不顯示普通縣或治所。可拖曳、縮放、切換名稱，Esc退出全屏讀圖。矢量邊線可持續放大。':'100%–1200%；低於300%顯示州名，300%–700%顯示州與郡國範圍名，超過700%加上縣名及治所名；普通縣不繪面；縣王國以擬合面、虛界另列。其他小字封爵仍保留。';
     $('yearMapZoomHelp').textContent+='讀圖模式400%起，左下角提供可收合的定位小圖。';
     yearMapNote.textContent=map.note||'CHGIS與原圖矢量成果接合；多郡王國合併著色，內部郡界淡化。文字位置不是郡治。';
     const unmapped=map.threeBasemap?(map.coverage?.unmapped_details||[]):[];
@@ -2684,7 +2689,7 @@
     const base=`<svg xmlns="http://www.w3.org/2000/svg" width="${map.width}" height="${map.height}"><rect width="100%" height="100%" fill="#f7f3e9"/></svg>`;
     yearMapImage.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(base);yearMapImage.alt=`${year}年東晉州郡縣地圖底色`;
     $('yearMapTitle').textContent=map.title||`${year}年東晉州郡縣 · 第一輪地理參考`;
-    $('yearMapZoomHelp').textContent='100%–1000%；低於300%顯示州名，300%起增加郡名，超過700%增加縣名。可拖曳、縮放、進入讀圖模式及與文字聯動。';
+    $('yearMapZoomHelp').textContent='100%–1200%；低於300%顯示州名，300%起增加郡名，超過700%增加縣名。可拖曳、縮放、進入讀圖模式及與文字聯動。';
     $('yearMapLegend').textContent='◎ 州治　⊙ 郡治　● 縣治；下劃線表示僑州、僑郡、僑縣。只在本年正文所列東晉實控政區繪州郡界；西晉政權外框是共同參考範圍，北方空白不是漏繪。僑置原籍不作寄治點；境內資料未定區域仍保持東晉底色。';
     yearMapNote.textContent=map.note||map.notes?.join(' ')||'年度州郡縣按正文沿革接合CHGIS治所及既有西晉參考界；382年譚圖用於該斷面的參照。疆界擬合與未定位記錄保留待後續修訂。';
     yearMapUhd.hidden=true;yearMapUhd.removeAttribute('href');yearMapLoadUhd.hidden=true;yearMapExport.hidden=false;
@@ -2724,7 +2729,7 @@
     const base=`<svg xmlns="http://www.w3.org/2000/svg" width="${map.width}" height="${map.height}"><rect width="100%" height="100%" fill="#f7f3e9"/></svg>`;
     yearMapImage.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(base);yearMapImage.alt=`${year}年劉宋州郡縣地圖底色`;
     $('yearMapTitle').textContent=map.title||`${year}年劉宋州郡縣 · 第一輪地理參考`;
-    $('yearMapZoomHelp').textContent='100%–1000%；低於300%顯示州名，300%起增加郡名，超過700%增加縣名。可拖曳、縮放、進入讀圖模式及與文字聯動。';
+    $('yearMapZoomHelp').textContent='100%–1200%；低於300%顯示州名，300%起增加郡名，超過700%增加縣名。可拖曳、縮放、進入讀圖模式及與文字聯動。';
     $('yearMapLegend').textContent='◎ 州治　⊙ 郡治　● 縣治；下劃線表示僑州、僑郡、僑縣。侨置與實土互相獨立；不繪縣界，無實土機構不畫面。明確治所或寄地可獨立落點，未定統屬不藉地點補造行政歸屬。';
     yearMapNote.textContent=map.note||map.notes?.join(' ')||'CHGIS當年有效治所、州郡界與譚圖464／497年範圍相互參照；465—468依正文沿革逐年過渡，469年起採497年圖政權範圍作參考。未定界線留待續考。';
     yearMapUhd.hidden=true;yearMapUhd.removeAttribute('href');yearMapLoadUhd.hidden=true;yearMapExport.hidden=false;
@@ -2764,7 +2769,7 @@
     const base=`<svg xmlns="http://www.w3.org/2000/svg" width="${map.width}" height="${map.height}"><rect width="100%" height="100%" fill="#f7f3e9"/></svg>`;
     yearMapImage.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(base);yearMapImage.alt=`${year}年南齊州郡縣地圖底色`;
     $('yearMapTitle').textContent=map.title||`${year}年南齊州郡縣 · 第一輪地理參考`;
-    $('yearMapZoomHelp').textContent='100%–1000%；低於300%顯示州名，300%起增加郡名，超過700%增加縣名。可拖曳、縮放、進入讀圖模式及與文字聯動。';
+    $('yearMapZoomHelp').textContent='100%–1200%；低於300%顯示州名，300%起增加郡名，超過700%增加縣名。可拖曳、縮放、進入讀圖模式及與文字聯動。';
     $('yearMapLegend').textContent='◎ 州治　⊙ 郡治／輔助機構治　● 縣治；下劃線表示僑州、僑郡、僑縣。僑置、實土、人口與行政活動互相獨立；輔助機構不另造州郡面；不繪縣界，無實土機構不畫面。明確治所或寄地可獨立落點，未定統屬不藉地點補造行政歸屬。';
     yearMapNote.textContent=map.note||map.notes?.join(' ')||'CHGIS當年有效治所與郡界、譚圖497年範圍及南齊年度沿革相互參照；缺少可靠郡界處不作新擬合，參考範圍不等同當年精確控制線。';
     yearMapUhd.hidden=true;yearMapUhd.removeAttribute('href');yearMapLoadUhd.hidden=true;yearMapExport.hidden=false;
@@ -2893,7 +2898,7 @@
         yearMapOverlay.setAttribute('aria-label',`${year}年蕭梁治所參考圖層`);
         yearMapImage.src=dynamic.base;yearMapImage.alt=`${year}年蕭梁年度治所參考圖`;
         $('yearMapTitle').textContent=`公元${year}年蕭梁州郡縣 · 年度地理參考`;
-        $('yearMapZoomHelp').textContent='100%–1000%；300%起顯示郡名，超過700%顯示縣名；名稱、治所與正文可聯動。';
+        $('yearMapZoomHelp').textContent='100%–1200%；300%起顯示郡名，超過700%顯示縣名；名稱、治所與正文可聯動。';
         yearMapNote.textContent='年度治所和參考郡界取自新提供的CHGIS V6，州治以V4地理坐標欄補充。名稱按年表所屬地域窗口與本年有效資料匹配；同名仍有多個候選者保留未定位。這些匹配供地理參考，不能代替行政沿革考證，郡界亦不等同梁朝疆域。各筆起止年、CHGIS判年規則、來源ID及匹配方法隨CSV／GeoJSON匯出；V4坐標未作測量級基準轉換。534／555年原圖另列，不外推為其他年份疆域。';
         yearMapUhd.hidden=false;yearMapUhd.href='assets/maps/reference/liang-534-chgis.png';yearMapUhd.textContent='下載534年參考原圖';
         yearMapUhd.setAttribute('download','');
@@ -2902,7 +2907,7 @@
         yearMapExport.hidden=false;yearMapLoadUhd.hidden=true;mapUhdLoaded=false;
         renderLiangDynamicMap(year,snapshot,dynamic);resetMapView();return;
       }
-      $('yearMapZoomHelp').textContent='100%–1000%；此為原圖參考斷面，原圖內文字隨圖顯示。滾輪縮放，拖曳或聚焦地圖後用方向鍵平移。';
+      $('yearMapZoomHelp').textContent='100%–1200%；此為原圖參考斷面，原圖內文字隨圖顯示。滾輪縮放，拖曳或聚焦地圖後用方向鍵平移。';
       const early=year<=544;
       const src=early?'assets/maps/reference/liang-534-chgis.png':'assets/maps/reference/liang-555-max-chgis.png';
       const width=early?4800:3960,height=early?4128:4290,referenceYear=early?534:555;
@@ -2920,12 +2925,12 @@
     yearMapUhd.textContent='下載588年舊版覆核原圖（未更新標注）';yearMapCsv.textContent='下載588年 CSV';
     yearMapGeoJson.textContent='下載史圖館分期疆域 GeoJSON';yearMapGeoJson.href='data/chen-territories.geojson';
     for(const link of [yearMapUhd,yearMapCsv,yearMapGeoJson])link.setAttribute('download','');
-    $('yearMapZoomHelp').textContent='100%–1000%；低於300%只顯示州名，300%–700%顯示州郡名，超過700%顯示州郡縣名。滾輪縮放，拖曳或聚焦地圖後用方向鍵平移。';
+    $('yearMapZoomHelp').textContent='100%–1200%；低於300%只顯示州名，300%–700%顯示州郡名，超過700%顯示州郡縣名。滾輪縮放，拖曳或聚焦地圖後用方向鍵平移。';
     const territory=chenTerritoryFeature(year);
     const territoryNote=territory
       ? `${year}年陳境採史圖館${territory.properties.source_year}年圖矢量化${territory.properties.year_relation==='exact'?'':'（最近可用年份）'}；以建康、江陵、武陵、廣州、交趾、海南六處分布式控制點配準CHGIS／經緯網，東南海岸另依地形底圖校準，海南與大陸之間保留瓊州海峽。${year===569?'廣州叛亂區先依海陸掩膜裁至陸地，仍計入陳境，另以綠色叛亂層疊加。':''}`
       : '本年尚無史圖館分期矢量，政權疆域仍以ChinaXMap 572年斷面近似。';
-    yearMapNote.textContent=`${year===557?'557年不反向補造正文行政資料。':'各年共用一份地形底圖，州郡縣、封國及可用邊界按年即時繪製。'}${territoryNote} 州郡縣治所與邊界以CHGIS V6為主、V4／V5補足；缺坐標者不臆測。縮放範圍100%–1000%：低於300%只顯示州名；300%至700%（含兩端）顯示州與郡國名；超過700%顯示全部州、郡國、縣名，封國按所屬行政層級同步顯示。範圍名使用較大字，完整文字須在對應參考界內；界內無空位時暫隱，不移至界外。治所名使用接近縣名的小字，州治雙圈、郡治圈中點、縣治實心點；移位治所名用細線指回原位置，同治所分列。封國文字與治所沿用正文當年封君色，未能唯一判定者黑色。總覽過密時，剩餘治所名列於圖下並一併匯出。點擊名稱或治所會持續高亮對應文字、位置及引線；點選尚未顯示名稱的治所時自動放大至該層級。讀圖模式佔滿視窗並保留圖中位置，可按Esc退出或按「查看正文」定位年表。588年舊版人工覆核原圖仍可下載，未套用本輪標注；請用「匯出當前年份 PNG」取得新圖。`;
+    yearMapNote.textContent=`${year===557?'557年不反向補造正文行政資料。':'各年共用一份地形底圖，州郡縣、封國及可用邊界按年即時繪製。'}${territoryNote} 州郡縣治所與邊界以CHGIS V6為主、V4／V5補足；缺坐標者不臆測。縮放範圍100%–1200%：低於300%只顯示州名；300%至700%（含兩端）顯示州與郡國名；超過700%顯示全部州、郡國、縣名，封國按所屬行政層級同步顯示。範圍名使用較大字，完整文字須在對應參考界內；界內無空位時暫隱，不移至界外。治所名使用接近縣名的小字，州治雙圈、郡治圈中點、縣治實心點；移位治所名用細線指回原位置，同治所分列。封國文字與治所沿用正文當年封君色，未能唯一判定者黑色。總覽過密時，剩餘治所名列於圖下並一併匯出。點擊名稱或治所會持續高亮對應文字、位置及引線；點選尚未顯示名稱的治所時自動放大至該層級。讀圖模式佔滿視窗並保留圖中位置，可按Esc退出或按「查看正文」定位年表。588年舊版人工覆核原圖仍可下載，未套用本輪標注；請用「匯出當前年份 PNG」取得新圖。`;
     currentMap={year,width:dynamic.width,height:dynamic.height,uhd:dynamic.map588.uhd};
     yearMapOverlay.setAttribute('viewBox',`0 0 ${dynamic.width} ${dynamic.height}`);
     yearMapOverlay.setAttribute('aria-label',`${year}年州郡縣治所可點擊定位圖層`);
@@ -3220,10 +3225,48 @@
   readerControls.addEventListener('focusin',()=>document.body.classList.remove('reader-controls-hidden'));
   $('readerFocus').addEventListener('click',()=>setReaderFocus(true));
   $('readerFocusExit').addEventListener('click',()=>setReaderFocus(false));
+  const readerDivider=$('readerDivider'),readerWorkspace=$('readerWorkspace');
+  let readerMapShare=52,readerResizePointer=null;
+  function setReaderSplit(share) {
+    readerMapShare=Math.max(30,Math.min(70,Math.round(share)));
+    readerWorkspace.style.setProperty('--reader-map-width',`${readerMapShare}fr`);
+    readerWorkspace.style.setProperty('--reader-text-width',`${100-readerMapShare}fr`);
+    readerDivider.setAttribute('aria-valuenow',String(readerMapShare));
+    readerDivider.setAttribute('aria-valuetext',`地圖 ${readerMapShare}%，年表 ${100-readerMapShare}%`);
+  }
+  readerDivider.addEventListener('pointerdown',event=>{
+    if(event.button!==0)return;
+    event.preventDefault();
+    readerResizePointer=event.pointerId;
+    readerDivider.setPointerCapture(event.pointerId);
+    readerDivider.focus({preventScroll:true});
+    document.body.classList.add('reader-resizing');
+  });
+  readerDivider.addEventListener('pointermove',event=>{
+    if(event.pointerId!==readerResizePointer)return;
+    const rect=readerWorkspace.getBoundingClientRect(),style=getComputedStyle(readerWorkspace);
+    const left=rect.left+parseFloat(style.paddingLeft),width=rect.width-parseFloat(style.paddingLeft)-parseFloat(style.paddingRight);
+    const gap=parseFloat(style.columnGap),handle=readerDivider.getBoundingClientRect().width;
+    setReaderSplit((event.clientX-left-gap-handle/2)/(width-gap*2-handle)*100);
+  });
+  function finishReaderResize() {
+    if(readerResizePointer===null)return;
+    readerResizePointer=null;document.body.classList.remove('reader-resizing');
+    if(currentMap)applyMapZoom(mapZoom);
+  }
+  readerDivider.addEventListener('pointerup',finishReaderResize);
+  readerDivider.addEventListener('pointercancel',finishReaderResize);
+  readerDivider.addEventListener('lostpointercapture',finishReaderResize);
+  readerDivider.addEventListener('dblclick',()=>setReaderSplit(52));
+  readerDivider.addEventListener('keydown',event=>{
+    const shares={ArrowLeft:readerMapShare-2,ArrowRight:readerMapShare+2,Home:30,End:70};
+    if(!(event.key in shares))return;
+    event.preventDefault();setReaderSplit(shares[event.key]);
+  });
   let readerMapWidth=0;
   new ResizeObserver(()=>{
     const width=yearMapViewport.clientWidth;
-    if(width&&width!==readerMapWidth){readerMapWidth=width;if(currentMap)applyMapZoom(mapZoom);}
+    if(width&&width!==readerMapWidth){readerMapWidth=width;if(currentMap&&readerResizePointer===null)applyMapZoom(mapZoom);}
   }).observe(yearMapViewport);
   setReaderLayout(readerLayout);
   dynastySelect.addEventListener('change',switchDynasty);

@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>漢魏六朝年度州郡縣表</title>
   <meta name="description" content="依據《中國行政區劃通史》逐年重建漢魏六朝州郡縣，並附封國資料。">
-  <link rel="stylesheet" href="style.css?v=20261020.reader3">
-  <link rel="stylesheet" href="reader.css?v=20261020.reader3">
+  <link rel="stylesheet" href="style.css?v=20261020.reader4">
+  <link rel="stylesheet" href="reader.css?v=20261020.reader4">
 </head>
-<body data-theme="metal" data-layout="split">
+<body data-theme="metal" data-layout="split" data-map-downloads="paused">
   <header class="site-header">
     <div class="header-inner">
       <a class="github-link" href="https://github.com/yjn-crypto/western-jin-yearbook" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
@@ -111,7 +111,7 @@
         <button id="jinBoundaryDownload" type="button" hidden>下載大圖（SVG）</button>
         <button id="yearMapLocateText" type="button" hidden>查看正文</button>
         <button id="yearMapLoadUhd" type="button">載入588年超高清原圖</button>
-        <input id="yearMapZoomRange" type="range" min="100" max="1000" step="10" value="100" aria-label="地圖縮放百分比" aria-describedby="yearMapZoomHelp">
+        <input id="yearMapZoomRange" type="range" min="100" max="1200" step="10" value="100" aria-label="地圖縮放百分比" aria-describedby="yearMapZoomHelp">
         <output id="yearMapZoomValue" aria-live="polite">100%</output>
 
       </div>
@@ -126,7 +126,7 @@
         <svg id="jinMapMinimapSvg" role="img" aria-label="西晉底圖政權輪廓；紅框表示目前可見範圍"><rect id="jinMapMinimapWindow" class="jin-map-minimap-window"></rect></svg>
       </aside>
       <details class="map-reading-notes"><summary>圖例、來源與適用範圍 <span>參考界線不等同當年實控</span></summary>
-        <p id="yearMapZoomHelp">100%–1000%；低於300%只顯示州名，300%–700%顯示州郡名，超過700%顯示州郡縣名。滾輪縮放，拖曳或聚焦地圖後用方向鍵平移。</p>
+        <p id="yearMapZoomHelp">100%–1200%；低於300%只顯示州名，300%–700%顯示州郡名，超過700%顯示州郡縣名。滾輪縮放，拖曳或聚焦地圖後用方向鍵平移。</p>
       <p id="yearMapLegend" class="map-symbol-legend">◎ 州治　⊙ 郡治　● 縣治；範圍名較大且限於對應界內，治所名較小。封國文字及治所符號沿用正文當年封君色，未詳或顏色有歧義者為黑色。底圖填色表示政權，邊界線粗細表示層級；選中項以淡黃底與下劃線提示。</p>
       <p id="jinMapLegend" class="map-symbol-legend" hidden><span class="jin-boundary-key jin-province-key">州界</span>　<span class="jin-boundary-key jin-kingdom-key">國界</span>　<span class="jin-boundary-key jin-member-key">國內郡界</span>；彩色面表示郡級封國及縣王國擬合範圍，青灰底為底圖政區範圍，白色為底圖標明的其他政權；末期政區參考不等同西晉實際控制。◎ 州治　⊙ 郡治　● 縣治；同址只畫最高級治所，都城州治用黃色（洛陽至311年，312年不標，313年起長安）。304年據校對表標注，其他年份未見遷治者由304年推定；治所未詳的郡不標郡治。較大字為界內範圍名，小字為治所名。斜體、※表示封國資料推定，斜線填充或虛線表示範圍、歸屬推定。縣王國按所屬郡面積的1／轄縣數模擬，以曲線虛界表示；其他縣爵小字不表示占有整個行政縣。地圖研究與正文沿革有分歧時各自保留。</p>
       <div id="mapBoundaryResearch" class="map-symbol-legend" hidden></div>
@@ -135,10 +135,15 @@
     </section>
 
     </div>
+    <div id="readerDivider" class="reader-divider" role="separator" tabindex="0" aria-label="調整地圖與年表寬度" aria-orientation="vertical" aria-controls="mapPane textPane" aria-valuemin="30" aria-valuemax="70" aria-valuenow="52" title="左右拖曳調整分欄；方向鍵微調，雙擊還原"></div>
     <section id="textPane" class="text-pane" aria-labelledby="textPaneTitle" tabindex="0">
       <header class="text-pane-heading">
         <div><p class="year-map-kicker"><span class="section-number">02</span> 年表 · 循州讀郡</p><h2 id="textPaneTitle">州郡縣與沿革</h2></div>
         <a href="#methodNote" class="method-jump">資料與方法 ↗</a>
+        <section id="textMapLinkControl" class="text-map-link-control" hidden aria-label="文字與地圖聯動設定">
+          <label for="textMapLinkToggle"><input id="textMapLinkToggle" type="checkbox" role="switch" checked><span>點擊文字定位地圖</span></label>
+          <small>雙欄預設開啟；註釋與人物考證仍可照常展開。</small>
+        </section>
       </header>
     <details class="reader-status"><summary>本年資料狀態與適用說明</summary>
       <section class="notice" id="statusNotice"><strong>資料狀態：</strong> <span id="statusText"></span></section>
@@ -206,13 +211,7 @@
     </section>
 
     </details>
-    <section id="textMapLinkControl" class="text-map-link-control" hidden aria-label="文字與地圖聯動設定">
-      <label for="textMapLinkToggle">
-        <input id="textMapLinkToggle" type="checkbox" role="switch">
-        <span>點擊州郡縣名稱時定位到地圖</span>
-      </label>
-      <small>預設關閉；地圖點擊定位文字、頁碼註釋及封國與方鎮說明不受影響。</small>
-    </section>
+
 
     <section id="governorYearbookSwitch" class="liang-governor-yearbook-switch" hidden aria-label="切換至刺史年表">
       <details>
@@ -320,6 +319,6 @@
   <script src="eastern-jin-map-view.js?v=20261011.2"></script>
   <script src="source-annotations.js?v=20260912.3"></script>
   <script src="governor-history.js?v=20260912.1"></script>
-  <script src="app.js?v=20261020.reader3"></script>
+  <script src="app.js?v=20261020.reader4"></script>
 </body>
 </html>

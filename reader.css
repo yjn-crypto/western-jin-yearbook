@@ -38,7 +38,15 @@ body.reader-controls-hidden .control-panel { transform: translateY(calc(-100% - 
 .reading-guide[open] > summary { padding-top: 0; }
 .reading-guide .legend { gap: 8px 20px; margin: 0; padding-top: 8px; font-size: .78rem; }
 .reading-guide .jin-map-source-note { margin-top: 0; }
-.reader-workspace { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr); gap: 22px; align-items: start; }
+.reader-workspace { display: grid; grid-template-columns: minmax(0, var(--reader-map-width, 52fr)) 12px minmax(0, var(--reader-text-width, 48fr)); gap: 5px; align-items: start; }
+.reader-divider { align-self: stretch; min-height: 80px; position: relative; cursor: col-resize; touch-action: none; border-radius: 5px; }
+.reader-divider::before { content: ""; position: absolute; top: 0; bottom: 0; left: 5px; width: 2px; background: var(--line); }
+.reader-divider::after { content: "⋮"; position: sticky; display: block; top: 45vh; text-align: center; color: var(--accent); background: var(--paper); border: 1px solid var(--line); border-radius: 5px; }
+.reader-divider:hover, .reader-divider:focus-visible { background: var(--theme-pale); outline: 1px solid var(--accent); }
+.reader-resizing, .reader-resizing * { cursor: col-resize !important; user-select: none !important; }
+body:not([data-layout="split"]) .reader-divider { display: none; }
+/* 暫停地圖下載入口；移除此屬性即可恢復原有匯出功能。 */
+body[data-map-downloads="paused"] :is(.map-downloads, #jinBoundaryDownload, #yearMapLoadUhd) { display: none; }
 .map-pane, .text-pane { min-width: 0; }
 .map-pane[hidden], .text-pane[hidden], #researchNotes[hidden] { display: none; }
 .map-pane { position: sticky; top: 12px; }
@@ -68,7 +76,7 @@ body.reader-controls-hidden .control-panel { transform: translateY(calc(-100% - 
 .reader-status { margin-bottom: 12px; font-size: .76rem; color: var(--muted); }
 .reader-status > summary { cursor: pointer; }
 .reader-status .notice { margin-top: 8px; }
-.text-pane-heading { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-bottom: 14px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+.text-pane-heading { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 14px; margin-bottom: 14px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
 .text-pane-heading h2 { margin: 0; color: var(--accent); font-weight: 600; font-size: 1.15rem; letter-spacing: .1em; }
 .method-jump { font-size: .73rem; color: var(--muted); text-decoration: none; white-space: nowrap; }
 .text-pane .notice { font-size: .76rem; line-height: 1.8; padding: 9px 12px; margin-bottom: 12px; border-left-width: 2px; }
@@ -85,6 +93,7 @@ body.reader-controls-hidden .control-panel { transform: translateY(calc(-100% - 
 .research-notes > section { margin: 10px 0 0; padding: 12px; border-radius: 0; }
 .research-notes h2 { font-size: .95rem; }
 .text-pane .text-map-link-control { padding: 8px 0; margin: 0 0 14px; border: 0; background: transparent; }
+.text-pane-heading .text-map-link-control { flex: 1 0 100%; padding: 0; margin: 0; }
 .text-pane .text-map-link-control small { font-size: .7rem; }
 .text-pane .liang-governor-yearbook-switch { padding: 12px; margin-bottom: 14px; }
 .text-pane .liang-governor-yearbook-switch h2 { font-size: .95rem; }
@@ -114,7 +123,7 @@ body[data-layout="text"] .text-pane th:first-child, body[data-layout="text"] .te
   .control-grid { grid-template-columns: 110px 180px minmax(90px, .8fr) minmax(150px, 1fr); }
   .control-grid .search-label { grid-column: auto; }
   .check-label { grid-column: 1 / -1; min-height: 24px; }
-  .reader-workspace { gap: 14px; }
+  .reader-workspace { gap: 5px; }
   .year-map-panel:not(.is-reading), .text-pane { padding: 12px; }
   .reading-guide { font-size: .72rem; }
   .reader-navigation { gap: 14px; }
@@ -123,6 +132,7 @@ body[data-layout="text"] .text-pane th:first-child, body[data-layout="text"] .te
   .header-inner, main { padding-left: 18px; padding-right: 18px; }
   .control-panel { position: sticky; max-height: 80dvh; overflow-y: auto; }
   .reader-workspace { grid-template-columns: minmax(0, 1fr); }
+  .reader-divider { display: none; }
   .map-pane { position: static; }
   .text-pane { height: auto; overflow: visible; }
   .year-map-panel:not(.is-reading) { height: max(560px, calc(100dvh - 24px)); max-height: none; }
@@ -161,7 +171,7 @@ body[data-layout="text"] .text-pane th:first-child, body[data-layout="text"] .te
   .layout-switch button::after, .text-pane tbody tr, .control-panel { transition: none; }
 }
 @media print {
-  .control-panel, .map-downloads, .method-jump { display: none; }
+  .control-panel, .map-downloads, .method-jump, .reader-divider { display: none; }
   .reader-workspace { display: block; }
   .map-pane { position: static; }
   .text-pane { height: auto; overflow: visible; border: 0; padding: 0; }
@@ -184,13 +194,13 @@ body[data-layout="text"] .text-pane th:first-child, body[data-layout="text"] .te
   body.reader-focus-open { overflow: hidden; }
   .reader-focus-open .site-header, .reader-focus-open .control-panel,
   .reader-focus-open #methodNote, .reader-focus-open footer { display: none; }
-  .reader-focus-open .reader-workspace { position: fixed; inset: 0; z-index: 30; height: 100dvh; padding: 42px 12px 12px; background: var(--paper); gap: 14px; }
+  .reader-focus-open .reader-workspace { position: fixed; inset: 0; z-index: 30; height: 100dvh; padding: 42px 12px 12px; background: var(--paper); gap: 5px; }
   .reader-focus-exit { position: fixed; right: 12px; top: 7px; z-index: 35; }
   .reader-focus-open .map-pane { position: static; height: 100%; min-height: 0; }
   .reader-focus-open .year-map-panel:not(.is-reading), .reader-focus-open .text-pane { height: 100%; min-height: 0; }
   .reader-focus-open .text-pane { overflow-y: auto; }
   .reader-focus-open .year-map-kicker, .reader-focus-open .method-jump { display: none; }
-  .reader-focus-open .text-pane > :is(.reader-status, .summary, #changePanel, #researchNotes, #textMapLinkControl, #governorYearbookSwitch, #liangMapMissing),
+  .reader-focus-open .text-pane > :is(.reader-status, .summary, #changePanel, #researchNotes, #governorYearbookSwitch, #liangMapMissing),
   .reader-focus-open .year-map-status, .reader-focus-open #yearMapZoomHelp,
   .reader-focus-open .map-reading-notes { display: none; }
   .reader-focus-open .year-map-panel:not(.is-reading) .year-map-viewport { min-height: 0; }
