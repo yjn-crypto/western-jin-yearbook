@@ -191,6 +191,10 @@ body[data-layout="text"] .text-pane th:first-child, body[data-layout="text"] .te
 .reader-focus-toggle:hover, .reader-focus-exit:hover { background: var(--theme-pale); }
 .reader-focus-exit[hidden] { display: none; }
 @media screen {
+  /* Let the full-screen map escape the sticky pane's stacking context. */
+  body.map-reading-open .reader-workspace > .map-pane { position: static; animation: none; }
+  /* Preserve the split layout and scroll position for returning from map reading. */
+  body.map-reading-open .reader-divider, body.map-reading-open .control-panel { visibility: hidden; }
   body.reader-focus-open { overflow: hidden; }
   .reader-focus-open .site-header, .reader-focus-open .control-panel,
   .reader-focus-open #methodNote, .reader-focus-open footer { display: none; }
